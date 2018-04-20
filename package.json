@@ -1,0 +1,22 @@
+{
+  "name": "blocks",
+  "version": "1.0.0",
+  "description": "cbre build design system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floored/blocks.git"
+  },
+  "author": "emma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/floored/blocks/issues"
+  },
+  "homepage": "https://github.com/floored/blocks#readme",
+  "dependencies": {
+    "stylus": "^0.54.5"
+  }
+}
