@@ -37,12 +37,12 @@
       "route": "progress"
     },
     {
-      "name": "Accordions",
-      "route": "accordions"
+      "name": "Tables",
+      "route": "tables"
     },
     {
-      "name": "Table",
-      "route": "table"
+      "name": "Accordions",
+      "route": "accordions"
     },
     {
       "name": "Dropdowns",
