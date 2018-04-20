@@ -33,12 +33,16 @@
       "route": "alerts"
     },
     {
-      "name": "Modals",
-      "route": "modals"
-    },
-    {
       "name": "Progress",
       "route": "progress"
+    },
+    {
+      "name": "Accordions",
+      "route": "accordions"
+    },
+    {
+      "name": "Table",
+      "route": "table"
     },
     {
       "name": "Dropdowns",
@@ -49,12 +53,8 @@
       "route": "sortablelists"
     },
     {
-      "name": "Accordions",
-      "route": "accordions"
-    },
-    {
-      "name": "Table",
-      "route": "table"
+      "name": "Modals",
+      "route": "modals"
     }
   ]
 }

@@ -2,7 +2,43 @@
 title: Progress Indicators
 layout: componentSection
 route: progress
-doc-tab: Progress
 ---
 
-<p>Stuff about progress</p>
+{% capture progress_dots_example %}
+  <div class="progress-dots">
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" checked />
+      <span class="progress-dot"></span>
+    </label>
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" />
+      <span class="progress-dot"></span>
+    </label>
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" />
+      <span class="progress-dot"></span>
+    </label>
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" />
+      <span class="progress-dot"></span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture breadcrumbs_example %}
+  <nav class="breadcrumbs">
+    <ul>
+      <li><a href="#">Breadcrumb 1</a></li>
+      <li><a href="#">Breadcrumb 2</a></li>
+      <li><a href="#">Breadcrumb 3</a></li>
+      <li><a href="#">Breadcrumb 4</a></li>
+    </ul>
+  </nav>
+{% endcapture %}
+
+<p>Different progress indicators.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=progress_dots_example %}
+  {% include snippet.html content=breadcrumbs_example %}
+</div>
