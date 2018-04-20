@@ -1,0 +1,60 @@
+{
+  "sections": [
+    {
+      "name": "Text",
+      "route": "text"
+    },
+    {
+      "name": "Alerts",
+      "route": "alerts"
+    },
+    {
+      "name": "Buttons",
+      "route": "buttons"
+    },
+    {
+      "name": "Modals",
+      "route": "modals"
+    },
+    {
+      "name": "Progress",
+      "route": "progress"
+    },
+    {
+      "name": "Dropdowns",
+      "route": "dropdowns"
+    },
+    {
+      "name": "Text Fields",
+      "route": "textfields"
+    },
+    {
+      "name": "Checkboxes",
+      "route": "checkboxes"
+    },
+    {
+      "name": "Radio Buttons",
+      "route": "radiobuttons"
+    },
+    {
+      "name": "Sortable Lists",
+      "route": "sortablelists"
+    },
+    {
+      "name": "Accordions",
+      "route": "accordions"
+    },
+    {
+      "name": "Toggles",
+      "route": "toggles"
+    },
+    {
+      "name": "Tabs",
+      "route": "tabs"
+    },
+    {
+      "name": "Table",
+      "route": "table"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<nav>
+  <div class="horizontal-tabs">
+    {% for section in site.data.components.sections %}
+      <a class="horizontal-tab tab tab-title" href="{{ site.url }}/components/{{ section.route }}">{{ section.name }}</a>
+    {% endfor %}
+  </div>
+</nav>
