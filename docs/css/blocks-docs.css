@@ -308,10 +308,6 @@ a.disabled,
   background-size: 12px 12px;
   background-position: 1px 1px;
 }
-.alert-close:focus {
-  outline: none;
-  border: 1px solid var(--brand-02);
-}
 .success .alert-icon-background {
   background-color: var(--brand-01);
 }
@@ -1150,6 +1146,9 @@ a.disabled,
 .invalid-label-marker {
   color: var(--support-01);
 }
+.text-field-input.invalid {
+  border: 1px solid var(--support-01);
+}
 .invalid-label-message {
   color: var(--text-02);
 }
@@ -1363,6 +1362,7 @@ a.disabled,
 .snippet-container {
   overflow: hidden;
   border-radius: 7px;
+  margin: 16px 0;
 }
 .snippet-container > div {
   padding: 12px 16px;

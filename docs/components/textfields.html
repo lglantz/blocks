@@ -5,4 +5,48 @@ route: textfields
 doc-tab: Text Fields
 ---
 
-<p>Stuff about text fields</p>
+{% capture text_fields_example %}
+  <div class="text-field">
+    <label class="text-field-label">A text field</label>
+    <input type="text" class="text-field-input" />
+  </div>
+
+  <div class="text-field">
+    <label class="text-field-label">Disabled text field</label>
+    <input
+      type="text"
+      class="text-field-input"
+      disabled
+      placeholder="Can't touch this"
+    />
+  </div>
+
+  <div class="text-field">
+    <div>
+      <label class="text-field-label">Invalid text field</label>
+      <span class="invalid-label-marker">*</span>
+    </div>
+    <input type="text" class="text-field-input invalid" value="Pepsi is good." />
+    <span class="invalid-label-message">My text is invalid</span>
+  </div>
+{% endcapture %}
+
+{% capture prefix_suffix_example %}
+  <div class="text-field ">
+    <div>
+      <label class="text-field-label">Sample text field with prefix/suffix</label>
+    </div>
+    <div class="text-field-container">
+      <span class="text-field-prefix">$</span>
+      <span class="text-field-suffix">USD</span>
+      <input type="text" class="text-field-input text-field-with-prefix text-field-with-suffix" placeholder="Text input">
+    </div>
+  </div>
+{% endcapture %}
+
+<p>Look at all these text fields.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=text_fields_example %}
+  {% include snippet.html content=prefix_suffix_example %}
+</div>
