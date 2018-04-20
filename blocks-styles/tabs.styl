@@ -1,0 +1,114 @@
+//
+// STRUCTURE
+//
+
+.horizontal-tabs {
+  display: inline-flex;
+  height: 40px;
+  min-height: 40px;
+  user-select: none;
+}
+
+.horizontal-tab {
+  position: relative;
+  margin-right: 32px;
+  cursor: pointer;
+}
+
+.vertical-tabs {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  user-select: none;
+  padding: 20px 32px;
+}
+
+.vertical-tab {
+  position: relative;
+  cursor: pointer;
+}
+
+.tab-title {
+  display: block;
+  height: 40px;
+  padding-top: 10px;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid transparent;
+}
+
+.horizontal-tab input {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vertical-tab input {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.horizontal-tabs, .vertical-tabs {
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+//
+// THEME
+//
+
+.horizontal-tabs, .vertical-tabs {
+  background-color: transparent;
+}
+
+.tab-title {
+  color: var(--text-02);
+
+  &:focus {
+    outline: none;
+    border-bottom: 4px solid var(--brand-02);
+  }
+
+  &:hover {
+    border-bottom: 4px solid var(--ui-04);
+  }
+
+  &.active {
+    color: $text-01;
+    border-bottom: 4px solid var(--brand-01);
+  }
+}
+
+.horizontal-tab input:checked ~ .tab-title {
+  color: $text-01;
+  border-bottom: 4px solid var(--brand-01);
+}
+
+.horizontal-tab input:focus + .tab-title {
+  border-bottom: 4px solid var(--brand-02);
+}
+
+.vertical-tab input:checked ~ .tab-title {
+  color: $text-01;
+  border-bottom: 4px solid var(--brand-01);
+}
+
+.vertical-tab input:focus + .tab-title {
+  border-bottom: 4px solid var(--brand-02);
+}
+
+.horizontal-tabs, .vertical-tabs {
+  &.disabled {
+    .tab-title {
+      color: var(--text-02);
+      border: none;
+    }
+  }
+}

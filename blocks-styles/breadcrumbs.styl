@@ -1,0 +1,33 @@
+//
+// STRUCTURE
+//
+
+.breadcrumbs ul {
+  display: flex;
+  padding: 11px 16px 9px 16px;
+  list-style-type: none;
+  margin: 0;
+}
+
+.breadcrumbs li::before {
+  content: "/";
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.breadcrumbs li:first-child::before {
+  content: "";
+  padding: 0;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: none;
+}
+
+//
+// THEME
+//
+
+.breadcrumbs a:hover {
+  color: var(--brand-03);
+}

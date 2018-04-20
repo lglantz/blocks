@@ -1,0 +1,51 @@
+//
+// STRUCTURE
+//
+
+.progress-dots {
+  display: flex;
+}
+
+.progress-dot-container {
+  position: relative;
+  margin-right: 8px;
+}
+
+.progress-dot-container input {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.progress-dot {
+  display: block;
+  position: relative;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//
+// THEME
+//
+
+.progress-dot {
+  background-color: var(--ui-04);
+
+  &:hover {
+    background-color: var(--brand-02);
+  }
+}
+
+.progress-dot-container input:checked ~ .progress-dot {
+  background-color: var(--brand-01);
+}
+
+.progress-dot-container input:focus ~ .progress-dot {
+  background-color: var(--brand-02);
+}
