@@ -2,7 +2,42 @@
 title: Toggles
 layout: componentSection
 route: toggles
-doc-tab: Toggles
 ---
 
-<p>Stuff about toggles</p>
+{% capture toggle_example %}
+  <div class="toggle">
+    <label class="toggle-container">
+      <input type="radio" name="toggle-example" checked />
+      <span class="toggle-button-text">Option 1</span>
+    </label>
+    <label class="toggle-container">
+      <input type="radio" name="toggle-example" />
+      <span class="toggle-button-text">Option 2</span>
+    </label>
+    <label class="toggle-container">
+      <input type="radio" name="toggle-example" />
+      <span class="toggle-button-text">Option 3</span>
+    </label>
+  </div>
+
+  <div class="toggle disabled">
+    <label class="toggle-container">
+      <input type="radio" name="toggle-example-2" checked disabled />
+      <span class="toggle-button-text">Option 1</span>
+    </label>
+    <label class="toggle-container">
+      <input type="radio" name="toggle-example-2" disabled />
+      <span class="toggle-button-text">Option 2</span>
+    </label>
+    <label class="toggle-container">
+      <input type="radio" name="toggle-example-2" disabled />
+      <span class="toggle-button-text">Option 3</span>
+    </label>
+  </div>
+{% endcapture %}
+
+<p>Toggles.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=toggle_example %}
+</div>
