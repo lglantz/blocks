@@ -2,12 +2,16 @@
 <html lang="en">
   <head>
     <title>CBRE Building Blocks</title>
-    <link rel="stylesheet" href="../blocks-docs.css">
+    <link rel="stylesheet" href="../css/blocks-docs.css">
+    <link rel="stylesheet" href="../vendor/prism.css">
+    <script type="text/javascript" src="../vendor/prism.css"></script>
   </head>
   <body>
-    {% include header.html %}
-    <div class="design-page">
-      {{ content }}
+    <div class="l-root">
+      {% include header.html %}
+      <div class="design-page">
+        {{ content }}
+      </div>
     </div>
   </body>
 </html>
