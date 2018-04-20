@@ -8,11 +8,11 @@ gulp.task('dev:css', function () {
   gulp.src('docs/_styl/blocks-docs.styl')
     .pipe(stylus())
     .pipe(autoprefixer())
-    .pipe(gulp.dest('docs/'));
+    .pipe(gulp.dest('docs/css'));
 });
 
 gulp.task('watch:css', function () {
-  gulp.watch(['docs/_styl/*.styl'], ['dev:css']);
+  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['dev:css']);
 });
 
 gulp.task('dev:fonts', function() {
@@ -48,9 +48,9 @@ gulp.task('dev:jekyll', () => {
 });
 
 gulp.task('server', [
-  'dev:jekyll',
   'dev:fonts',
   'dev:icons',
   'dev:css',
+  'dev:jekyll',
   'watch:css'
 ]);
