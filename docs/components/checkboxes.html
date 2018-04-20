@@ -2,7 +2,36 @@
 title: Checkboxes
 layout: componentSection
 route: checkboxes
-doc-tab: Checkboxes
 ---
 
-<p>Stuff about checkboxes</p>
+{% capture checkbox_example %}
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Checkbox 1</span>
+    <input type="checkbox" checked />
+    <span class="checkmark"></span>
+  </label>
+
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Checkbox 2</span>
+    <input type="checkbox" />
+    <span class="checkmark"></span>
+  </label>
+
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Disabled Checkbox 1</span>
+    <input type="checkbox" checked disabled />
+    <span class="checkmark disabled"></span>
+  </label>
+
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Disabled Checkbox 2</span>
+    <input type="checkbox" disabled />
+    <span class="checkmark disabled"></span>
+  </label>
+{% endcapture %}
+
+<p>Pretty checkboxes.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=checkbox_example %}
+</div>

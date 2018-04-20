@@ -2,7 +2,36 @@
 title: Radio Buttons
 layout: componentSection
 route: radiobuttons
-doc-tab: Radio Buttons
 ---
 
-<p>Stuff about radio buttons</p>
+{% capture radio_button_example %}
+  <label class="radio-button-container">
+    <span class="radio-label-text">Radio 1</span>
+    <input type="radio" name="radio-example" checked />
+    <span class="radio-check"></span>
+  </label>
+
+  <label class="radio-button-container">
+    <span class="radio-label-text">Radio 2</span>
+    <input type="radio" name="radio-example" />
+    <span class="radio-check"></span>
+  </label>
+
+  <label class="radio-button-container">
+    <span class="radio-label-text">Disabled Radio 1</span>
+    <input type="radio" name="radio-example-2" checked disabled />
+    <span class="radio-check disabled"></span>
+  </label>
+
+  <label class="radio-button-container">
+    <span class="radio-label-text">Disabled Radio 2</span>
+    <input type="radio" name="radio-example-2" disabled />
+    <span class="radio-check disabled"></span>
+  </label>
+{% endcapture %}
+
+<p>Pretty radio buttons.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=radio_button_example %}
+</div>
