@@ -2,12 +2,18 @@ const gulp = require('gulp');
 const child = require('child_process');
 const gutil = require('gulp-util');
 const stylus = require('gulp-stylus');
-const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssvariables = require('postcss-css-variables');
 
 gulp.task('dev:css', function () {
+  const plugins = [
+    autoprefixer(),
+    cssvariables()
+  ];
   gulp.src('docs/_styl/blocks-docs.styl')
     .pipe(stylus())
-    .pipe(autoprefixer())
+    .pipe(postcss(plugins))
     .pipe(gulp.dest('docs/css'));
 });
 

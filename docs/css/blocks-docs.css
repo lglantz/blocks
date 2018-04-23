@@ -21,20 +21,6 @@ body {
   margin: 0;
   font-family: FranklinGothicNormal;
 }
-body {
-  --brand-01: #00b07d;
-  --brand-02: #75e6c9;
-  --brand-03: #6f6bf8;
-  --brand-04: #fdb100;
-  --ui-01: #fff;
-  --ui-02: #f5faf8;
-  --ui-03: #f0f6f3;
-  --ui-04: #d6e2e0;
-  --ui-05: #8ca59c;
-  --text-01: #2b3836;
-  --text-02: #686f6d;
-  --support-01: #ec4f07;
-}
 * {
   box-sizing: border-box;
 }
@@ -135,60 +121,69 @@ a:focus,
   font-family: FranklinGothicMedium;
 }
 .heading-large {
-  color: var(--brand-01);
+  color: undefined;
 }
 .heading-medium {
-  color: var(--text-01);
+  color: undefined;
 }
 .title {
-  color: var(--text-01);
+  color: undefined;
 }
 .success {
-  color: var(--brand-01);
+  color: undefined;
 }
 .warning {
-  color: var(--brand-04);
+  color: undefined;
 }
 .error {
-  color: var(--support-01);
+  color: undefined;
 }
 .information {
-  color: var(--brand-03);
+  color: undefined;
 }
 .tab {
-  color: var(--text-02);
+  color: undefined;
 }
 .tab:active {
-  color: var(--text-01);
+  color: undefined;
 }
 .tab:hover {
-  color: var(--brand-01);
+  color: undefined;
 }
 .ui {
-  color: var(--text-01);
+  color: undefined;
 }
 label {
-  color: var(--text-01);
+  color: undefined;
 }
 p {
-  color: var(--text-01);
+  color: undefined;
 }
-a,
-.link {
-  color: var(--brand-03);
+a {
+  color: undefined;
   text-decoration: none;
 }
-a:hover,
+.link {
+  color: undefined;
+  text-decoration: none;
+}
+a:hover {
+  color: undefined;
+}
 .link:hover {
-  color: var(--text-01);
+  color: undefined;
 }
 a:focus,
 .link:focus {
   outline: none;
 }
-a.disabled,
+a.disabled {
+  color: undefined;
+  opacity: 0.5;
+  pointer-events: none;
+}
 .link.disabled {
-  color: var(--text-01);
+  color: undefined;
   opacity: 0.5;
   pointer-events: none;
 }
@@ -244,10 +239,10 @@ a.disabled,
   transition: max-height 0.25s;
 }
 .accordion-trigger {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .accordion-content {
-  background-color: var(--ui-03);
+  background-color: undefined;
 }
 .accordion-content .accordion-trigger {
   background-color: transparent;
@@ -292,14 +287,14 @@ a.disabled,
   border: 1px solid transparent;
 }
 .alert {
-  background-color: var(--ui-02);
-  box-shadow: 0 3px 6px 1px var(--ui-04);
+  background-color: undefined;
+  box-shadow: undefined;
 }
 .alert-icon-container {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .alert-icon {
-  background-color: var(--ui-01);
+  background-color: undefined;
 }
 .alert-close {
   background-color: transparent;
@@ -309,28 +304,28 @@ a.disabled,
   background-position: 1px 1px;
 }
 .success .alert-icon-background {
-  background-color: var(--brand-01);
+  background-color: undefined;
 }
 .success .alert-icon {
   -webkit-mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
 }
 .warning .alert-icon-background {
-  background-color: var(--brand-04);
+  background-color: undefined;
 }
 .warning .alert-icon {
   -webkit-mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
 }
 .error .alert-icon-background {
-  background-color: var(--support-01);
+  background-color: undefined;
 }
 .error .alert-icon {
   -webkit-mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
 }
 .information .alert-icon-background {
-  background-color: var(--brand-03);
+  background-color: undefined;
 }
 .information .alert-icon {
   -webkit-mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
@@ -360,7 +355,7 @@ a.disabled,
   text-decoration: none;
 }
 .breadcrumbs a:hover {
-  color: var(--brand-03);
+  color: undefined;
 }
 .button {
   height: 40px;
@@ -393,34 +388,53 @@ a.disabled,
   opacity: 0.5;
   pointer-events: none;
 }
-.button.primary,
+.button.primary {
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
+}
 .button-small.primary {
-  background-color: var(--brand-01);
-  border: 1px solid var(--brand-01);
-  color: var(--ui-01);
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
 }
-.button.primary:hover,
+.button.primary:hover {
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
+}
 .button-small.primary:hover {
-  background-color: var(--brand-02);
-  border: 1px solid var(--brand-02);
-  color: var(--ui-01);
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
 }
-.button.primary.disabled,
+.button.primary.disabled {
+  background-color: undefined;
+  border: undefined;
+}
 .button-small.primary.disabled {
-  background-color: var(--ui-05);
-  border: 1px solid var(--ui-05);
+  background-color: undefined;
+  border: undefined;
 }
-.button.secondary,
+.button.secondary {
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
+}
 .button-small.secondary {
-  background-color: var(--ui-02);
-  border: 1px solid var(--ui-05);
-  color: var(--ui-05);
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
 }
-.button.secondary:hover,
+.button.secondary:hover {
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
+}
 .button-small.secondary:hover {
-  background-color: var(--brand-01);
-  border: 1px solid var(--brand-01);
-  color: var(--ui-01);
+  background-color: undefined;
+  border: undefined;
+  color: undefined;
 }
 .button:focus,
 .button-small:focus,
@@ -428,22 +442,49 @@ a.disabled,
 .button-small:active {
   outline: none;
 }
-.button:focus.primary,
-.button-small:focus.primary,
-.button:active.primary,
-.button-small:active.primary {
-  border: 1px solid var(--brand-02);
-  box-shadow: inset 0 0 0 1px var(--ui-01);
-  background-color: var(--brand-02);
+.button:focus.primary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
 }
-.button:focus.secondary,
-.button-small:focus.secondary,
-.button:active.secondary,
+.button-small:focus.primary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+}
+.button:active.primary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+}
+.button-small:active.primary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+}
+.button:focus.secondary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+  color: undefined;
+}
+.button-small:focus.secondary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+  color: undefined;
+}
+.button:active.secondary {
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+  color: undefined;
+}
 .button-small:active.secondary {
-  border: 1px solid var(--brand-01);
-  box-shadow: inset 0 0 0 1px var(--ui-01);
-  background-color: var(--brand-01);
-  color: var(--ui-01);
+  border: undefined;
+  box-shadow: undefined;
+  background-color: undefined;
+  color: undefined;
 }
 .checkbox-label-text {
   font-size: 16px;
@@ -503,23 +544,23 @@ a.disabled,
           transform: rotate(45deg);
 }
 .checkbox-label-text {
-  color: var(--text-01);
+  color: undefined;
 }
 .checkmark {
-  background-color: var(--ui-01);
-  border: 1px solid var(--ui-04);
+  background-color: undefined;
+  border: undefined;
 }
 .checkbox-container input:checked ~ .checkmark {
-  background-color: var(--brand-01);
-  border: 1px solid var(--brand-01);
+  background-color: undefined;
+  border: undefined;
 }
 .checkbox-container input:checked ~ .checkmark.disabled {
-  background-color: var(--ui-05);
-  border: 1px solid var(--ui-05);
+  background-color: undefined;
+  border: undefined;
 }
 .checkbox-container input[type="checkbox"]:focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px var(--brand-02);
+  box-shadow: undefined;
 }
 .dropdown-select {
   min-width: 200px;
@@ -605,38 +646,45 @@ a.disabled,
 .dropdown-item:focus {
   outline: none;
 }
-.dropdown-menu,
+.dropdown-menu {
+  background-color: undefined;
+  border: undefined;
+  box-shadow: undefined;
+}
 .dropdown-bubble {
-  background-color: var(--ui-01);
-  border: 1px solid var(--ui-04);
-  box-shadow: 0 3px 6px 0 var(--ui-04);
+  background-color: undefined;
+  border: undefined;
+  box-shadow: undefined;
 }
 .dropdown-triangle-outer {
-  border-bottom: 10px solid var(--ui-04);
+  border-bottom: undefined;
 }
 .dropdown-triangle-inner {
-  border-bottom: 9px solid var(--ui-01);
+  border-bottom: undefined;
 }
 .dropdown-item {
   background-color: transparent;
-  color: var(--text-01);
+  color: undefined;
 }
-.dropdown-item:hover,
+.dropdown-item:hover {
+  color: undefined;
+  background-color: undefined;
+}
 .dropdown-item:active {
-  color: var(--ui-01);
-  background-color: var(--brand-01);
+  color: undefined;
+  background-color: undefined;
 }
 .dropdown-select {
-  background-color: var(--ui-01);
-  border: 1px solid var(--ui-04);
+  background-color: undefined;
+  border: undefined;
 }
 .dropdown-select:hover {
-  border: 1px solid var(--ui-03);
-  box-shadow: 0 0 0 1px var(--ui-03);
+  border: undefined;
+  box-shadow: undefined;
 }
 .dropdown-select:focus {
   outline: none;
-  border: 1px solid var(--brand-02);
+  border: undefined;
 }
 .dropdown-select.disabled {
   opacity: 0.5;
@@ -654,10 +702,10 @@ a.disabled,
   border: 1px solid transparent;
 }
 .icon {
-  background-color: var(--brand-01);
+  background-color: undefined;
 }
 .icon-info {
-  background-color: var(--brand-03);
+  background-color: undefined;
 }
 .icon,
 .icon-info {
@@ -687,15 +735,15 @@ a.disabled,
           mask: url("../svgs/icon-drag.svg") no-repeat 50% 50%;
 }
 .icon-plus {
-  background-color: var(--brand-01);
+  background-color: undefined;
   -webkit-mask: url("../svgs/icon-plus.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-plus.svg") no-repeat 50% 50%;
 }
 .icon-plus:hover {
-  background-color: var(--brand-02);
+  background-color: undefined;
 }
 .icon-plus:focus {
-  background-color: var(--brand-02);
+  background-color: undefined;
 }
 .icon-close {
   -webkit-mask: url("../svgs/icon-close.svg") no-repeat 50% 50%;
@@ -772,12 +820,12 @@ a.disabled,
   border: 1px solid transparent;
 }
 .modal {
-  border: solid 1px var(--ui-04);
-  background-color: var(--ui-01);
-  box-shadow: 0 3px 6px 0 var(--ui-04);
+  border: undefined;
+  background-color: undefined;
+  box-shadow: undefined;
 }
 .modal-overlay {
-  background-color: var(--ui-05);
+  background-color: undefined;
 }
 .modal-close {
   background-color: transparent;
@@ -788,7 +836,7 @@ a.disabled,
 }
 .modal-close:focus {
   outline: none;
-  border: 1px solid var(--brand-02);
+  border: undefined;
 }
 .progress-dots {
   display: flex;
@@ -814,16 +862,16 @@ a.disabled,
   cursor: pointer;
 }
 .progress-dot {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .progress-dot:hover {
-  background-color: var(--brand-02);
+  background-color: undefined;
 }
 .progress-dot-container input:checked ~ .progress-dot {
-  background-color: var(--brand-01);
+  background-color: undefined;
 }
 .progress-dot-container input:focus ~ .progress-dot {
-  background-color: var(--brand-02);
+  background-color: undefined;
 }
 .radio-label-text {
   font-size: 16px;
@@ -871,28 +919,28 @@ a.disabled,
   border-radius: 50%;
 }
 .radio-label-text {
-  color: var(--text-01);
+  color: undefined;
 }
 .radio-check {
-  background-color: var(--ui-01);
-  border: 1px solid var(--ui-04);
+  background-color: undefined;
+  border: undefined;
 }
 .radio-button-container input:checked ~ .radio-check {
-  background-color: var(--ui-01);
-  border: 1px solid var(--brand-01);
+  background-color: undefined;
+  border: undefined;
 }
 .radio-button-container input:checked ~ .radio-check.disabled {
-  border: 1px solid var(--ui-05);
+  border: undefined;
 }
 .radio-button-container .radio-check:after {
-  background-color: var(--brand-01);
+  background-color: undefined;
 }
 .radio-button-container .radio-check.disabled:after {
-  background-color: var(--ui-05);
+  background-color: undefined;
 }
 .radio-button-container input[type="radio"]:focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px var(--brand-02);
+  box-shadow: undefined;
 }
 .sortable-list {
   background: transparent;
@@ -924,16 +972,16 @@ a.disabled,
   cursor: move;
 }
 .sortable-list-item.dragging {
-  background-color: var(--brand-02);
+  background-color: undefined;
 }
 .sortable-list-item.dragover {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .sortable-list-section > .sortable-list-draggable {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .sortable-list-drag-icon {
-  background-color: var(--ui-05);
+  background-color: undefined;
 }
 .table {
   margin: 12px 16px;
@@ -975,19 +1023,19 @@ a.disabled,
   text-align: right;
 }
 .table {
-  color: var(--text-01);
-  border: 1px solid var(--ui-04);
+  color: undefined;
+  border: undefined;
 }
 .table-header-row {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .table-row {
-  background-color: var(--ui-02);
-  border-top: 1px solid var(--ui-04);
+  background-color: undefined;
+  border-top: undefined;
 }
 .table-row:hover {
-  background-color: var(--ui-04);
-  border: 1px solid var(--brand-01);
+  background-color: undefined;
+  border: undefined;
 }
 .horizontal-tabs {
   display: inline-flex;
@@ -1056,36 +1104,39 @@ a.disabled,
   background-color: transparent;
 }
 .tab-title {
-  color: var(--text-02);
+  color: undefined;
 }
 .tab-title:focus {
   outline: none;
-  border-bottom: 4px solid var(--brand-02);
+  border-bottom: undefined;
 }
 .tab-title:hover {
-  border-bottom: 4px solid var(--ui-04);
+  border-bottom: undefined;
 }
 .tab-title.active {
   color: #2b3836;
-  border-bottom: 4px solid var(--brand-01);
+  border-bottom: undefined;
 }
 .horizontal-tabs > label input[type="radio"]:checked ~ .tab-title {
-  color: var(--text-01);
-  border-bottom: 4px solid var(--brand-01);
+  color: undefined;
+  border-bottom: undefined;
 }
 .horizontal-tabs > label input[type="radio"]:focus + .tab-title {
-  border-bottom: 4px solid var(--brand-02);
+  border-bottom: undefined;
 }
 .vertical-tabs > label input[type="radio"]:checked ~ .tab-title {
-  color: var(--text-01);
-  border-bottom: 4px solid var(--brand-01);
+  color: undefined;
+  border-bottom: undefined;
 }
 .vertical-tabs > label input[type="radio"]:focus + .tab-title {
-  border-bottom: 4px solid var(--brand-02);
+  border-bottom: undefined;
 }
-.horizontal-tabs.disabled .tab-title,
+.horizontal-tabs.disabled .tab-title {
+  color: undefined;
+  border: none;
+}
 .vertical-tabs.disabled .tab-title {
-  color: var(--text-02);
+  color: undefined;
   border: none;
 }
 .text-field {
@@ -1142,36 +1193,38 @@ a.disabled,
   line-height: 18px;
 }
 .text-field label {
-  color: var(--text-01);
+  color: undefined;
 }
 .text-field input[type="text"] {
-  background-color: var(--ui-01);
-  border: 1px solid var(--ui-03);
+  background-color: undefined;
+  border: undefined;
 }
 .text-field input[type="text"].invalid {
-  border: 1px solid var(--support-01);
+  border: undefined;
 }
 .text-field input[type="text"]:hover {
-  border: 1px solid var(--ui-03);
-  box-shadow: 0 0 0 1px var(--ui-03);
+  border: undefined;
+  box-shadow: undefined;
 }
 .text-field input[type="text"]:focus {
   outline: none;
-  border: 1px solid var(--brand-02);
+  border: undefined;
 }
 .text-field input[type="text"].disabled {
   opacity: 0.5;
   pointer-events: none;
 }
-.text-field-prefix,
+.text-field-prefix {
+  color: undefined;
+}
 .text-field-suffix {
-  color: var(--text-01);
+  color: undefined;
 }
 .invalid-label-marker {
-  color: var(--support-01);
+  color: undefined;
 }
 .invalid-label-message {
-  color: var(--text-02);
+  color: undefined;
 }
 .toggle {
   display: inline-flex;
@@ -1206,21 +1259,21 @@ a.disabled,
   border-left: none;
 }
 .toggle-button-text {
-  border: 1px solid var(--ui-05);
-  background-color: var(--ui-01);
+  border: undefined;
+  background-color: undefined;
 }
 .toggle-button-text:hover {
-  background-color: var(--brand-02);
-  color: var(--ui-01);
+  background-color: undefined;
+  color: undefined;
 }
 .toggle-container input:checked ~ .toggle-button-text {
-  border: 1px solid var(--brand-01);
-  background-color: var(--brand-01);
-  color: var(--ui-01);
+  border: undefined;
+  background-color: undefined;
+  color: undefined;
 }
 .toggle-container input:focus ~ .toggle-button-text {
-  background-color: var(--brand-02);
-  color: var(--ui-01);
+  background-color: undefined;
+  color: undefined;
 }
 .l-root {
   position: relative;
@@ -1384,7 +1437,7 @@ a.disabled,
   overflow-x: auto;
 }
 .snippet-container > div:last-child {
-  background-color: var(--ui-02);
+  background-color: undefined;
 }
 .snippet-container .highlight {
   margin: 0;
@@ -1404,11 +1457,11 @@ a.disabled,
   padding: 8px 16px;
 }
 .header {
-  background-color: var(--ui-04);
+  background-color: undefined;
 }
 .snippet-container {
-  border: 2px solid var(--ui-04);
+  border: undefined;
 }
 .left-nav-panel {
-  background-color: var(--ui-03);
+  background-color: undefined;
 }
