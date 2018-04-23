@@ -52,20 +52,20 @@
 //
 
 .table {
-  color: var(--text-01);
-  border: 1px solid var(--ui-04);
+  color: var(--text-01, $text-01);
+  border: 1px solid var(--ui-04, $ui-04);
 }
 
 .table-header-row {
-  background-color: var(--ui-04);
+  background-color: var(--ui-04, $ui-04);
 }
 
 .table-row {
-  background-color: var(--ui-02);
-  border-top: 1px solid var(--ui-04);
+  background-color: var(--ui-02, $ui-02);
+  border-top: 1px solid var(--ui-04, $ui-04);
 
   &:hover {
-    background-color: var(--ui-04);
-    border: 1px solid var(--brand-01);
+    background-color: var(--ui-04, $ui-04);
+    border: 1px solid var(--brand-01, $brand-01);
   }
 }

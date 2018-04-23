@@ -35,17 +35,17 @@
 //
 
 .progress-dot {
-  background-color: var(--ui-04);
+  background-color: var(--ui-04, $ui-04);
 
   &:hover {
-    background-color: var(--brand-02);
+    background-color: var(--brand-02, $brand-02);
   }
 }
 
 .progress-dot-container input:checked ~ .progress-dot {
-  background-color: var(--brand-01);
+  background-color: var(--brand-01, $brand-01);
 }
 
 .progress-dot-container input:focus ~ .progress-dot {
-  background-color: var(--brand-02);
+  background-color: var(--brand-02, $brand-02);
 }

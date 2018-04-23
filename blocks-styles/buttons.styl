@@ -43,31 +43,31 @@
 
 .button, .button-small {
   &.primary {
-    background-color: var(--brand-01);
-    border: 1px solid var(--brand-01);
-    color: var(--ui-01);
+    background-color: var(--brand-01, $brand-01);
+    border: 1px solid var(--brand-01, $brand-01);
+    color: var(--ui-01, $ui-01);
 
     &:hover {
-      background-color: var(--brand-02);
-      border: 1px solid var(--brand-02);
-      color: var(--ui-01);
+      background-color: var(--brand-02, $brand-02);
+      border: 1px solid var(--brand-02, $brand-02);
+      color: var(--ui-01, $ui-01);
     }
 
     &.disabled {
-      background-color: var(--ui-05);
-      border: 1px solid var(--ui-05);
+      background-color: var(--ui-05, $ui-05);
+      border: 1px solid var(--ui-05, $ui-05);
     }
   }
   
   &.secondary {
-    background-color: var(--ui-02);
-    border: 1px solid var(--ui-05);
-    color: var(--ui-05);
+    background-color: var(--ui-02, $ui-02);
+    border: 1px solid var(--ui-05, $ui-05);
+    color: var(--ui-05, $ui-05);
 
     &:hover {
-      background-color: var(--brand-01);
-      border: 1px solid var(--brand-01);
-      color: var(--ui-01);
+      background-color: var(--brand-01, $brand-01);
+      border: 1px solid var(--brand-01, $brand-01);
+      color: var(--ui-01, $ui-01);
     }
   }
 }
@@ -75,15 +75,15 @@
 .button:focus, .button-small:focus, .button:active, .button-small:active {
   outline: none;
   &.primary {
-    border: 1px solid var(--brand-02);
-    box-shadow: inset 0 0 0 1px var(--ui-01);
-    background-color: var(--brand-02);
+    border: 1px solid var(--brand-02, $brand-02);
+    box-shadow: inset 0 0 0 1px var(--ui-01, $ui-01);
+    background-color: var(--brand-02, $brand-02);
   }
 
   &.secondary {
-    border: 1px solid var(--brand-01);
-    box-shadow: inset 0 0 0 1px var(--ui-01);
-    background-color: var(--brand-01);
-    color: var(--ui-01);
+    border: 1px solid var(--brand-01, $brand-01);
+    box-shadow: inset 0 0 0 1px var(--ui-01, $ui-01);
+    background-color: var(--brand-01, $brand-01);
+    color: var(--ui-01, $ui-01);
   }
 }
