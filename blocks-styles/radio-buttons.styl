@@ -67,32 +67,32 @@
 //
 
 .radio-label-text {
-  color: var(--text-01);
+  color: var(--text-01, $text-01);
 }
 
 .radio-check {
-  background-color: var(--ui-01);
-  border: 1px solid var(--ui-04);
+  background-color: var(--ui-01, $ui-01);
+  border: 1px solid var(--ui-04, $ui-04);
 }
 
 .radio-button-container input:checked ~ .radio-check {
-  background-color: var(--ui-01);
-  border: 1px solid var(--brand-01);
+  background-color: var(--ui-01, $ui-01);
+  border: 1px solid var(--brand-01, $brand-01);
 
   &.disabled {
-    border: 1px solid var(--ui-05);
+    border: 1px solid var(--ui-05, $ui-05);
   }
 }
 
 .radio-button-container .radio-check:after {
-  background-color: var(--brand-01);
+  background-color: var(--brand-01, $brand-01);
 }
 
 .radio-button-container .radio-check.disabled:after {
-  background-color: var(--ui-05);
+  background-color: var(--ui-05, $ui-05);
 }
 
 .radio-button-container input[type="radio"]:focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px var(--brand-02);
+  box-shadow: 0 0 0 2px var(--brand-02, $brand-02);
 }

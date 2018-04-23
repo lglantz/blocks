@@ -45,13 +45,13 @@
 //
 
 .modal {
-  border: solid 1px var(--ui-04);
-  background-color: var(--ui-01);
-  box-shadow: 0 3px 6px 0 var(--ui-04);
+  border: solid 1px var(--ui-04, $ui-04);
+  background-color: var(--ui-01, $ui-01);
+  box-shadow: 0 3px 6px 0 var(--ui-04, $ui-04);
 }
 
 .modal-overlay {
-  background-color: var(--ui-05);
+  background-color: var(--ui-05, $ui-05);
 }
 
 .modal-close {
@@ -63,6 +63,6 @@
 
   &:focus {
     outline: none;
-    border: 1px solid var(--brand-02);
+    border: 1px solid var(--brand-02, $brand-02);
   }
 }

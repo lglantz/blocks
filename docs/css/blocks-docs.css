@@ -121,69 +121,69 @@ a:focus,
   font-family: FranklinGothicMedium;
 }
 .heading-large {
-  color: undefined;
+  color: #00b07d;
 }
 .heading-medium {
-  color: undefined;
+  color: #2b3836;
 }
 .title {
-  color: undefined;
+  color: #2b3836;
 }
 .success {
-  color: undefined;
+  color: #00b07d;
 }
 .warning {
-  color: undefined;
+  color: #fdb100;
 }
 .error {
-  color: undefined;
+  color: #ec4f07;
 }
 .information {
-  color: undefined;
+  color: #6f6bf8;
 }
 .tab {
-  color: undefined;
+  color: #686f6d;
 }
 .tab:active {
-  color: undefined;
+  color: #2b3836;
 }
 .tab:hover {
-  color: undefined;
+  color: #00b07d;
 }
 .ui {
-  color: undefined;
+  color: #2b3836;
 }
 label {
-  color: undefined;
+  color: #2b3836;
 }
 p {
-  color: undefined;
+  color: #2b3836;
 }
 a {
-  color: undefined;
+  color: #6f6bf8;
   text-decoration: none;
 }
 .link {
-  color: undefined;
+  color: #6f6bf8;
   text-decoration: none;
 }
 a:hover {
-  color: undefined;
+  color: #2b3836;
 }
 .link:hover {
-  color: undefined;
+  color: #2b3836;
 }
 a:focus,
 .link:focus {
   outline: none;
 }
 a.disabled {
-  color: undefined;
+  color: #2b3836;
   opacity: 0.5;
   pointer-events: none;
 }
 .link.disabled {
-  color: undefined;
+  color: #2b3836;
   opacity: 0.5;
   pointer-events: none;
 }
@@ -239,10 +239,10 @@ a.disabled {
   transition: max-height 0.25s;
 }
 .accordion-trigger {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .accordion-content {
-  background-color: undefined;
+  background-color: #f0f6f3;
 }
 .accordion-content .accordion-trigger {
   background-color: transparent;
@@ -287,14 +287,14 @@ a.disabled {
   border: 1px solid transparent;
 }
 .alert {
-  background-color: undefined;
-  box-shadow: undefined;
+  background-color: #f5faf8;
+  box-shadow: 0 3px 6px 1px #d6e2e0;
 }
 .alert-icon-container {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .alert-icon {
-  background-color: undefined;
+  background-color: #fff;
 }
 .alert-close {
   background-color: transparent;
@@ -304,28 +304,28 @@ a.disabled {
   background-position: 1px 1px;
 }
 .success .alert-icon-background {
-  background-color: undefined;
+  background-color: #00b07d;
 }
 .success .alert-icon {
   -webkit-mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
 }
 .warning .alert-icon-background {
-  background-color: undefined;
+  background-color: #fdb100;
 }
 .warning .alert-icon {
   -webkit-mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
 }
 .error .alert-icon-background {
-  background-color: undefined;
+  background-color: #ec4f07;
 }
 .error .alert-icon {
   -webkit-mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
 }
 .information .alert-icon-background {
-  background-color: undefined;
+  background-color: #6f6bf8;
 }
 .information .alert-icon {
   -webkit-mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
@@ -355,7 +355,7 @@ a.disabled {
   text-decoration: none;
 }
 .breadcrumbs a:hover {
-  color: undefined;
+  color: #6f6bf8;
 }
 .button {
   height: 40px;
@@ -389,52 +389,52 @@ a.disabled {
   pointer-events: none;
 }
 .button.primary {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #00b07d;
+  border: 1px solid #00b07d;
+  color: #fff;
 }
 .button-small.primary {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #00b07d;
+  border: 1px solid #00b07d;
+  color: #fff;
 }
 .button.primary:hover {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #75e6c9;
+  border: 1px solid #75e6c9;
+  color: #fff;
 }
 .button-small.primary:hover {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #75e6c9;
+  border: 1px solid #75e6c9;
+  color: #fff;
 }
 .button.primary.disabled {
-  background-color: undefined;
-  border: undefined;
+  background-color: #8ca59c;
+  border: 1px solid #8ca59c;
 }
 .button-small.primary.disabled {
-  background-color: undefined;
-  border: undefined;
+  background-color: #8ca59c;
+  border: 1px solid #8ca59c;
 }
 .button.secondary {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #f5faf8;
+  border: 1px solid #8ca59c;
+  color: #8ca59c;
 }
 .button-small.secondary {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #f5faf8;
+  border: 1px solid #8ca59c;
+  color: #8ca59c;
 }
 .button.secondary:hover {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #00b07d;
+  border: 1px solid #00b07d;
+  color: #fff;
 }
 .button-small.secondary:hover {
-  background-color: undefined;
-  border: undefined;
-  color: undefined;
+  background-color: #00b07d;
+  border: 1px solid #00b07d;
+  color: #fff;
 }
 .button:focus,
 .button-small:focus,
@@ -443,48 +443,48 @@ a.disabled {
   outline: none;
 }
 .button:focus.primary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
+  border: 1px solid #75e6c9;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #75e6c9;
 }
 .button-small:focus.primary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
+  border: 1px solid #75e6c9;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #75e6c9;
 }
 .button:active.primary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
+  border: 1px solid #75e6c9;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #75e6c9;
 }
 .button-small:active.primary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
+  border: 1px solid #75e6c9;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #75e6c9;
 }
 .button:focus.secondary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
-  color: undefined;
+  border: 1px solid #00b07d;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #00b07d;
+  color: #fff;
 }
 .button-small:focus.secondary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
-  color: undefined;
+  border: 1px solid #00b07d;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #00b07d;
+  color: #fff;
 }
 .button:active.secondary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
-  color: undefined;
+  border: 1px solid #00b07d;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #00b07d;
+  color: #fff;
 }
 .button-small:active.secondary {
-  border: undefined;
-  box-shadow: undefined;
-  background-color: undefined;
-  color: undefined;
+  border: 1px solid #00b07d;
+  box-shadow: inset 0 0 0 1px #fff;
+  background-color: #00b07d;
+  color: #fff;
 }
 .checkbox-label-text {
   font-size: 16px;
@@ -544,23 +544,23 @@ a.disabled {
           transform: rotate(45deg);
 }
 .checkbox-label-text {
-  color: undefined;
+  color: #2b3836;
 }
 .checkmark {
-  background-color: undefined;
-  border: undefined;
+  background-color: #fff;
+  border: 1px solid #d6e2e0;
 }
 .checkbox-container input:checked ~ .checkmark {
-  background-color: undefined;
-  border: undefined;
+  background-color: #00b07d;
+  border: 1px solid #00b07d;
 }
 .checkbox-container input:checked ~ .checkmark.disabled {
-  background-color: undefined;
-  border: undefined;
+  background-color: #8ca59c;
+  border: 1px solid #8ca59c;
 }
 .checkbox-container input[type="checkbox"]:focus + span {
   outline: none;
-  box-shadow: undefined;
+  box-shadow: 0 0 0 2px #75e6c9;
 }
 .dropdown-select {
   min-width: 200px;
@@ -647,44 +647,44 @@ a.disabled {
   outline: none;
 }
 .dropdown-menu {
-  background-color: undefined;
-  border: undefined;
-  box-shadow: undefined;
+  background-color: #fff;
+  border: 1px solid #d6e2e0;
+  box-shadow: 0 3px 6px 0 #d6e2e0;
 }
 .dropdown-bubble {
-  background-color: undefined;
-  border: undefined;
-  box-shadow: undefined;
+  background-color: #fff;
+  border: 1px solid #d6e2e0;
+  box-shadow: 0 3px 6px 0 #d6e2e0;
 }
 .dropdown-triangle-outer {
-  border-bottom: undefined;
+  border-bottom: 10px solid #d6e2e0;
 }
 .dropdown-triangle-inner {
-  border-bottom: undefined;
+  border-bottom: 9px solid #fff;
 }
 .dropdown-item {
   background-color: transparent;
-  color: undefined;
+  color: #2b3836;
 }
 .dropdown-item:hover {
-  color: undefined;
-  background-color: undefined;
+  color: #fff;
+  background-color: #00b07d;
 }
 .dropdown-item:active {
-  color: undefined;
-  background-color: undefined;
+  color: #fff;
+  background-color: #00b07d;
 }
 .dropdown-select {
-  background-color: undefined;
-  border: undefined;
+  background-color: #fff;
+  border: 1px solid #d6e2e0;
 }
 .dropdown-select:hover {
-  border: undefined;
-  box-shadow: undefined;
+  border: 1px solid #f0f6f3;
+  box-shadow: 0 0 0 1px #f0f6f3;
 }
 .dropdown-select:focus {
   outline: none;
-  border: undefined;
+  border: 1px solid #75e6c9;
 }
 .dropdown-select.disabled {
   opacity: 0.5;
@@ -702,10 +702,10 @@ a.disabled {
   border: 1px solid transparent;
 }
 .icon {
-  background-color: undefined;
+  background-color: #00b07d;
 }
 .icon-info {
-  background-color: undefined;
+  background-color: #6f6bf8;
 }
 .icon,
 .icon-info {
@@ -735,15 +735,15 @@ a.disabled {
           mask: url("../svgs/icon-drag.svg") no-repeat 50% 50%;
 }
 .icon-plus {
-  background-color: undefined;
+  background-color: #00b07d;
   -webkit-mask: url("../svgs/icon-plus.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-plus.svg") no-repeat 50% 50%;
 }
 .icon-plus:hover {
-  background-color: undefined;
+  background-color: #75e6c9;
 }
 .icon-plus:focus {
-  background-color: undefined;
+  background-color: #75e6c9;
 }
 .icon-close {
   -webkit-mask: url("../svgs/icon-close.svg") no-repeat 50% 50%;
@@ -820,12 +820,12 @@ a.disabled {
   border: 1px solid transparent;
 }
 .modal {
-  border: undefined;
-  background-color: undefined;
-  box-shadow: undefined;
+  border: solid 1px #d6e2e0;
+  background-color: #fff;
+  box-shadow: 0 3px 6px 0 #d6e2e0;
 }
 .modal-overlay {
-  background-color: undefined;
+  background-color: #8ca59c;
 }
 .modal-close {
   background-color: transparent;
@@ -836,7 +836,7 @@ a.disabled {
 }
 .modal-close:focus {
   outline: none;
-  border: undefined;
+  border: 1px solid #75e6c9;
 }
 .progress-dots {
   display: flex;
@@ -862,16 +862,16 @@ a.disabled {
   cursor: pointer;
 }
 .progress-dot {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .progress-dot:hover {
-  background-color: undefined;
+  background-color: #75e6c9;
 }
 .progress-dot-container input:checked ~ .progress-dot {
-  background-color: undefined;
+  background-color: #00b07d;
 }
 .progress-dot-container input:focus ~ .progress-dot {
-  background-color: undefined;
+  background-color: #75e6c9;
 }
 .radio-label-text {
   font-size: 16px;
@@ -919,28 +919,28 @@ a.disabled {
   border-radius: 50%;
 }
 .radio-label-text {
-  color: undefined;
+  color: #2b3836;
 }
 .radio-check {
-  background-color: undefined;
-  border: undefined;
+  background-color: #fff;
+  border: 1px solid #d6e2e0;
 }
 .radio-button-container input:checked ~ .radio-check {
-  background-color: undefined;
-  border: undefined;
+  background-color: #fff;
+  border: 1px solid #00b07d;
 }
 .radio-button-container input:checked ~ .radio-check.disabled {
-  border: undefined;
+  border: 1px solid #8ca59c;
 }
 .radio-button-container .radio-check:after {
-  background-color: undefined;
+  background-color: #00b07d;
 }
 .radio-button-container .radio-check.disabled:after {
-  background-color: undefined;
+  background-color: #8ca59c;
 }
 .radio-button-container input[type="radio"]:focus + span {
   outline: none;
-  box-shadow: undefined;
+  box-shadow: 0 0 0 2px #75e6c9;
 }
 .sortable-list {
   background: transparent;
@@ -972,16 +972,16 @@ a.disabled {
   cursor: move;
 }
 .sortable-list-item.dragging {
-  background-color: undefined;
+  background-color: #75e6c9;
 }
 .sortable-list-item.dragover {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .sortable-list-section > .sortable-list-draggable {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .sortable-list-drag-icon {
-  background-color: undefined;
+  background-color: #8ca59c;
 }
 .table {
   margin: 12px 16px;
@@ -1023,19 +1023,19 @@ a.disabled {
   text-align: right;
 }
 .table {
-  color: undefined;
-  border: undefined;
+  color: #2b3836;
+  border: 1px solid #d6e2e0;
 }
 .table-header-row {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .table-row {
-  background-color: undefined;
-  border-top: undefined;
+  background-color: #f5faf8;
+  border-top: 1px solid #d6e2e0;
 }
 .table-row:hover {
-  background-color: undefined;
-  border: undefined;
+  background-color: #d6e2e0;
+  border: 1px solid #00b07d;
 }
 .horizontal-tabs {
   display: inline-flex;
@@ -1104,39 +1104,39 @@ a.disabled {
   background-color: transparent;
 }
 .tab-title {
-  color: undefined;
+  color: #686f6d;
 }
 .tab-title:focus {
   outline: none;
-  border-bottom: undefined;
+  border-bottom: 4px solid #75e6c9;
 }
 .tab-title:hover {
-  border-bottom: undefined;
+  border-bottom: 4px solid #d6e2e0;
 }
 .tab-title.active {
   color: #2b3836;
-  border-bottom: undefined;
+  border-bottom: 4px solid #00b07d;
 }
 .horizontal-tabs > label input[type="radio"]:checked ~ .tab-title {
-  color: undefined;
-  border-bottom: undefined;
+  color: #2b3836;
+  border-bottom: 4px solid #00b07d;
 }
 .horizontal-tabs > label input[type="radio"]:focus + .tab-title {
-  border-bottom: undefined;
+  border-bottom: 4px solid #75e6c9;
 }
 .vertical-tabs > label input[type="radio"]:checked ~ .tab-title {
-  color: undefined;
-  border-bottom: undefined;
+  color: #2b3836;
+  border-bottom: 4px solid #00b07d;
 }
 .vertical-tabs > label input[type="radio"]:focus + .tab-title {
-  border-bottom: undefined;
+  border-bottom: 4px solid #75e6c9;
 }
 .horizontal-tabs.disabled .tab-title {
-  color: undefined;
+  color: #686f6d;
   border: none;
 }
 .vertical-tabs.disabled .tab-title {
-  color: undefined;
+  color: #686f6d;
   border: none;
 }
 .text-field {
@@ -1193,38 +1193,38 @@ a.disabled {
   line-height: 18px;
 }
 .text-field label {
-  color: undefined;
+  color: #2b3836;
 }
 .text-field input[type="text"] {
-  background-color: undefined;
-  border: undefined;
+  background-color: #fff;
+  border: 1px solid #f0f6f3;
 }
 .text-field input[type="text"].invalid {
-  border: undefined;
+  border: 1px solid #ec4f07;
 }
 .text-field input[type="text"]:hover {
-  border: undefined;
-  box-shadow: undefined;
+  border: 1px solid #f0f6f3;
+  box-shadow: 0 0 0 1px #f0f6f3;
 }
 .text-field input[type="text"]:focus {
   outline: none;
-  border: undefined;
+  border: 1px solid #75e6c9;
 }
 .text-field input[type="text"].disabled {
   opacity: 0.5;
   pointer-events: none;
 }
 .text-field-prefix {
-  color: undefined;
+  color: #2b3836;
 }
 .text-field-suffix {
-  color: undefined;
+  color: #2b3836;
 }
 .invalid-label-marker {
-  color: undefined;
+  color: #ec4f07;
 }
 .invalid-label-message {
-  color: undefined;
+  color: #686f6d;
 }
 .toggle {
   display: inline-flex;
@@ -1259,21 +1259,21 @@ a.disabled {
   border-left: none;
 }
 .toggle-button-text {
-  border: undefined;
-  background-color: undefined;
+  border: 1px solid #8ca59c;
+  background-color: #fff;
 }
 .toggle-button-text:hover {
-  background-color: undefined;
-  color: undefined;
+  background-color: #75e6c9;
+  color: #fff;
 }
 .toggle-container input:checked ~ .toggle-button-text {
-  border: undefined;
-  background-color: undefined;
-  color: undefined;
+  border: 1px solid #00b07d;
+  background-color: #00b07d;
+  color: #fff;
 }
 .toggle-container input:focus ~ .toggle-button-text {
-  background-color: undefined;
-  color: undefined;
+  background-color: #75e6c9;
+  color: #fff;
 }
 .l-root {
   position: relative;
@@ -1436,9 +1436,6 @@ a.disabled {
   border-radius: 7px;
   overflow-x: auto;
 }
-.snippet-container > div:last-child {
-  background-color: undefined;
-}
 .snippet-container .highlight {
   margin: 0;
 }
@@ -1457,11 +1454,14 @@ a.disabled {
   padding: 8px 16px;
 }
 .header {
-  background-color: undefined;
+  background-color: #d6e2e0;
 }
 .snippet-container {
-  border: undefined;
+  border: 2px solid #d6e2e0;
+}
+.snippet-container > div:last-child {
+  background-color: #f5faf8;
 }
 .left-nav-panel {
-  background-color: undefined;
+  background-color: #f0f6f3;
 }

@@ -36,10 +36,6 @@
     overflow-x: auto;
   }
   
-  & > div:last-child {
-    background-color: var(--ui-02);
-  }
-  
   .highlight {
     margin: 0;
   }
@@ -67,13 +63,17 @@
 //
 
 .header {
-  background-color: var(--ui-04);
+  background-color: var(--ui-04, $ui-04);
 }
 
 .snippet-container {
-  border: 2px solid var(--ui-04);
+  border: 2px solid var(--ui-04, $ui-04);
+  
+  & > div:last-child {
+    background-color: var(--ui-02, $ui-02);
+  }
 }
 
 .left-nav-panel {
-  background-color: var(--ui-03);
+  background-color: var(--ui-03, $ui-03);
 }
