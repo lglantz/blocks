@@ -21,6 +21,7 @@
     "autoprefixer": "^8.3.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.7.0",
     "gulp-util": "^3.0.8",
     "postcss-css-variables": "^0.8.1"

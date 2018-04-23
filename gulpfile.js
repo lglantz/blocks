@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const child = require('child_process');
 const gutil = require('gulp-util');
+const rename = require('gulp-rename');
 const stylus = require('gulp-stylus');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -15,6 +16,12 @@ gulp.task('dev:css', function () {
     .pipe(stylus())
     .pipe(postcss(plugins))
     .pipe(gulp.dest('docs/css'));
+
+  gulp.src('blocks-styles/_all.styl')
+    .pipe(stylus())
+    .pipe(postcss(plugins))
+    .pipe(rename('blocks.css'))
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('watch:css', function () {
