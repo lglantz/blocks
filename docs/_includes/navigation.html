@@ -1,7 +1,17 @@
-<nav>
-  <div class="horizontal-tabs">
-    {% for section in site.data.components.sections %}
-      <a class="horizontal-tab tab tab-title" href="{{ site.url }}/components/{{ section.route }}">{{ section.name }}</a>
-    {% endfor %}
-  </div>
-</nav>
+<div class="left-nav-panel">
+  <nav>
+    <p class="title">Elements</p>
+    <ul>
+      {% for section in site.data.pieces.elements %}
+        <li><a href="{{ site.url }}/components/{{ section.route }}">{{ section.name }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <p class="title">Components</p>
+    <ul>
+      {% for section in site.data.pieces.components %}
+        <li><a href="{{ site.url }}/components/{{ section.route }}">{{ section.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

@@ -1,5 +1,5 @@
 {
-  "sections": [
+  "elements": [
     {
       "name": "Text",
       "route": "text"
@@ -19,7 +19,9 @@
     {
       "name": "Radio Buttons",
       "route": "radiobuttons"
-    },
+    }
+  ],
+  "components": [
     {
       "name": "Toggles",
       "route": "toggles"
@@ -39,22 +41,6 @@
     {
       "name": "Tables",
       "route": "tables"
-    },
-    {
-      "name": "Accordions",
-      "route": "accordions"
-    },
-    {
-      "name": "Dropdowns",
-      "route": "dropdowns"
-    },
-    {
-      "name": "Sortable Lists",
-      "route": "sortablelists"
-    },
-    {
-      "name": "Modals",
-      "route": "modals"
     }
   ]
 }

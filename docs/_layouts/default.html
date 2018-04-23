@@ -8,8 +8,11 @@
   <body>
     <div class="l-root">
       {% include header.html %}
-      <div class="design-page">
-        {{ content }}
+      <div class="l-flex-horizontal l-page">
+        {% include navigation.html %}
+        <div class="design-page">
+          {{ content }}
+        </div>
       </div>
     </div>
   </body>
