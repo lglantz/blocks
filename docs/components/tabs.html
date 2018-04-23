@@ -1,0 +1,54 @@
+---
+title: Tabs
+layout: componentSection
+route: tabs
+---
+
+{% capture horizontal_tab_example %}
+  <div class="horizontal-tabs">
+    <label>
+      <input type="radio" name="horizontal-tab-example" checked>
+      <span class="tab-title">Tab 1</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="tab-title">Tab 2</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="tab-title">Tab 3</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="tab-title">Tab 4</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture vertical_tab_example %}
+  <div class="vertical-tabs">
+    <label>
+      <input type="radio" name="vertical-tab-example" checked>
+      <span class="tab-title">Tab 1</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="tab-title">Tab 2</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="tab-title">Tab 3</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="tab-title">Tab 4</span>
+    </label>
+  </div>
+{% endcapture %}
+
+<p>Tabs can be horizontal or vertical.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=horizontal_tab_example %}
+  {% include snippet.html content=vertical_tab_example %}
+</div>

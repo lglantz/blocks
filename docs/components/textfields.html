@@ -1,0 +1,45 @@
+---
+title: Text Fields
+layout: componentSection
+route: textfields
+doc-tab: Text Fields
+---
+
+{% capture text_fields_example %}
+  <div class="text-field">
+    <label>A text field</label>
+    <input type="text" />
+  </div>
+
+  <div class="text-field">
+    <label>Disabled text field</label>
+    <input type="text" placeholder="Can't touch this" disabled />
+  </div>
+
+  <div class="text-field">
+    <div>
+      <label>Invalid text field</label>
+      <span class="invalid-label-marker">*</span>
+    </div>
+    <input type="text" class="invalid" value="Pepsi is good." />
+    <span class="invalid-label-message">My text is invalid</span>
+  </div>
+{% endcapture %}
+
+{% capture prefix_suffix_example %}
+  <div class="text-field ">
+    <label>Sample text field with prefix/suffix</label>
+    <div class="text-field-container">
+      <span class="text-field-prefix">$</span>
+      <span class="text-field-suffix">USD</span>
+      <input type="text" placeholder="Text input">
+    </div>
+  </div>
+{% endcapture %}
+
+<p>Look at all these text fields.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=text_fields_example %}
+  {% include snippet.html content=prefix_suffix_example %}
+</div>

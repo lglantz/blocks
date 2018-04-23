@@ -1,0 +1,31 @@
+---
+title: Text
+layout: componentSection
+route: text
+---
+
+{% capture text_example %}
+  <p class="heading-large">Heading - Large</p>
+  <p class="heading-medium">Heading - Medium</p>
+  <span class="title">Title</span>
+  <span class="title success">Title - Success</span>
+  <span class="title warning">Title - Warning</span>
+  <span class="title error">Title - Error</span>
+  <span class="title information">Title - Information</span>
+
+  <p class="tab">Tab</p>
+  <p class="tab unselected">Unselected Tab</p>
+
+  <p class="ui">UI</p>
+  <p class="ui-placeholder">UI Placeholder</p>
+  <a href="#">Link</a>
+  <a href="#" class="disabled">Disabled Link</a>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{% endcapture %}
+
+<p>These are text styles.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=text_example %}
+</div>

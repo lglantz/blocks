@@ -1,0 +1,67 @@
+---
+title: Alerts
+layout: componentSection
+route: alerts
+---
+
+{% capture alerts_example %}
+  <div class="alert success">
+    <div class="alert-icon-container">
+      <div class="alert-icon-background"></div>
+      <div class="alert-icon"></div>
+    </div>
+    <div class="alert-text">
+      <span class="title success">Success Alert</span>
+      <p>
+        Additional information or directions go here. Brevity is the soul of wit, however, text may wrap to another line in the off chance that we want the user hooked on phonics.
+      </p>
+    </div>
+    <button class="alert-close"></button>
+  </div>
+
+  <div class="alert information">
+    <div class="alert-icon-container">
+      <div class="alert-icon-background"></div>
+      <div class="alert-icon"></div>
+    </div>
+    <div class="alert-text">
+      <span class="title information">Informational Alert</span>
+      <p>
+        Additional information or directions go here. We may decide this particular information is very important and remove the option to close it. If users can’t get rid of it, maybe they’ll read it.
+      </p>
+    </div>
+  </div>
+
+  <div class="alert warning">
+    <div class="alert-icon-container">
+      <div class="alert-icon-background"></div>
+      <div class="alert-icon"></div>
+    </div>
+    <div class="alert-text">
+      <span class="title warning">Informational Alert</span>
+      <p>
+        An explanation of the warning goes here.
+      </p>
+    </div>
+    <button class="alert-close"></button>
+  </div>
+
+  <div class="alert error">
+    <div class="alert-icon-container">
+      <div class="alert-icon-background"></div>
+      <div class="alert-icon"></div>
+    </div>
+    <div class="alert-text">
+      <span class="title error">Informational Alert</span>
+      <p>
+        An explanation of the error goes here. This should be the scariest looking banner — but not too scary. Maybe we’ll choose to add a button on this banner.
+      </p>
+    </div>
+  </div>
+{% endcapture %}
+
+<p>There are four kinds of alerts.</p>
+
+<div class="design-page-container">
+  {% include snippet.html content=alerts_example %}
+</div>

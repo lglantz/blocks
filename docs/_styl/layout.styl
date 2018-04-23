@@ -1,0 +1,157 @@
+.l-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.l-header {
+  height: $header-height;
+  min-height: $header-height;
+  max-height: $header-height;
+  width: 100%;
+  z-index: 500;
+  display: flex;
+}
+
+.l-header-tall {
+  flex: 0 0 $tall-header-height;
+  height: $tall-header-height;
+  min-height: $tall-header-height;
+  max-height: $tall-header-height;
+  width: 100%;
+  z-index: 500;
+}
+
+.l-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.l-scrollable-content {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.l-scrollable-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.l-container {
+  margin: 50px;
+  padding: 50px;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+}
+
+.l-container-full {
+  position: relative;
+  display: flex;
+}
+
+.l-container-center {
+  width: 100%
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-half-screen {
+  width: 50%;
+  flex: 0 1 50%;
+}
+
+.l-full-screen {
+  flex: 0 1 100%;
+  height: 100%;
+}
+
+.l-flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.l-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.l-flex-position-right {
+  justify-content: flex-end;
+}
+
+.l-flex-position-left {
+  justify-content: flex-start;
+}
+
+.l-float-top-left {
+  position: absolute;
+  top: 40px;
+  left: 5%;
+}
+
+.l-float-top-center {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.l-float-top-right {
+  position: absolute;
+  top: 40px;
+  right: 5%;
+}
+
+.l-float-bottom-left {
+  position: absolute;
+  bottom: 24px;
+  left: 5%;
+}
+
+.l-float-bottom-center {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.l-float-bottom-right {
+  position: absolute;
+  bottom: 24px;
+  right: 5%;
+}
+
+//
+// GRID LAYOUT
+//
+
+.l-left-panel {
+  width: 320px;
+  height: 100%;
+  flex: 0 0 320px;
+}
+
+.l-right-panel {
+  width: 320px;
+  height: 100%;
+  flex: 0 0 320px;
+}

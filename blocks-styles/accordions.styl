@@ -1,0 +1,76 @@
+//
+// STRUCTURE
+//
+.accordion {
+  position: relative;
+  width: 320px;
+}
+
+.accordion-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  input[type=checkbox][name='accordion-tab'] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+
+    &:checked + label::before {
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+  }
+
+  .accordion-trigger {
+    position: relative;
+    display: block;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    & > p {
+      font-family: FranklinGothicMedium;
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 16px;
+      height: 16px;
+      padding: 12px 16px;
+      transition: all 0.25s;
+      content: "";
+      background-image: url('../svgs/icon-forward.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    & > * {
+      margin: 0 0 0 32px;
+    }
+  }
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s;
+}
+
+//
+// THEME
+//
+
+.accordion-trigger {
+  background-color: var(--ui-04);
+}
+
+.accordion-content {
+  background-color: var(--ui-03);
+
+  .accordion-trigger {
+    background-color: transparent;
+  }
+}

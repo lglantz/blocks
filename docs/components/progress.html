@@ -1,0 +1,46 @@
+---
+title: Progress Indicators
+layout: componentSection
+route: progress
+---
+
+{% capture progress_dots_example %}
+  <div class="progress-dots">
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" checked />
+      <span class="progress-dot"></span>
+    </label>
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" />
+      <span class="progress-dot"></span>
+    </label>
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" />
+      <span class="progress-dot"></span>
+    </label>
+    <label class="progress-dot-container">
+      <input type="radio" name="progress-dots-example" />
+      <span class="progress-dot"></span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture breadcrumbs_example %}
+  <nav class="breadcrumbs">
+    <ul>
+      <li><a title="Breadcrumb 1" href="#">Breadcrumb 1</a></li>
+      <li><a title="Breadcrumb 2" href="#">Breadcrumb 2</a></li>
+      <li><a title="Breadcrumb 3" href="#">Breadcrumb 3</a></li>
+      <li><a title="Breadcrumb 4" href="#">Breadcrumb 4</a></li>
+    </ul>
+  </nav>
+{% endcapture %}
+
+<p>Different progress indicators.</p>
+
+<div class="design-page-container">
+  <p class="title">Progress dots</p>
+  {% include snippet.html content=progress_dots_example %}
+  <p class="title">Breadcrumbs</p>
+  {% include snippet.html content=breadcrumbs_example %}
+</div>

@@ -1,0 +1,71 @@
+//
+// STRUCTURE
+//
+
+.table {
+  margin: 12px 16px;
+  border-collapse: collapse;
+}
+
+.table-header-row {
+  height: 56px;
+  font-size: 16px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 20px;
+}
+
+.table-row {
+  height: 48px;
+  font-size: 16px;
+  font-family: $sans-serif-font-family-normal;
+  line-height: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.table-header-cell, .table-cell {
+  padding: 0 28px;
+  border: none;
+  text-align: left;
+
+  &:first-child {
+    padding-left: 24px;
+  }
+  &:last-child {
+    padding-right: 24px;
+  }
+}
+
+.table-cell {
+  text-align: left;
+
+  &.numeric {
+    text-align: right;
+  }
+}
+
+
+//
+// THEME
+//
+
+.table {
+  color: var(--text-01);
+  border: 1px solid var(--ui-04);
+}
+
+.table-header-row {
+  background-color: var(--ui-04);
+}
+
+.table-row {
+  background-color: var(--ui-02);
+  border-top: 1px solid var(--ui-04);
+
+  &:hover {
+    background-color: var(--ui-04);
+    border: 1px solid var(--brand-01);
+  }
+}

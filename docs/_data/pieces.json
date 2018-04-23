@@ -1,0 +1,46 @@
+{
+  "elements": [
+    {
+      "name": "Text",
+      "route": "text"
+    },
+    {
+      "name": "Buttons",
+      "route": "buttons"
+    },
+    {
+      "name": "Text Fields",
+      "route": "textfields"
+    },
+    {
+      "name": "Checkboxes",
+      "route": "checkboxes"
+    },
+    {
+      "name": "Radio Buttons",
+      "route": "radiobuttons"
+    }
+  ],
+  "components": [
+    {
+      "name": "Toggles",
+      "route": "toggles"
+    },
+    {
+      "name": "Tabs",
+      "route": "tabs"
+    },
+    {
+      "name": "Alerts",
+      "route": "alerts"
+    },
+    {
+      "name": "Progress",
+      "route": "progress"
+    },
+    {
+      "name": "Tables",
+      "route": "tables"
+    }
+  ]
+}
