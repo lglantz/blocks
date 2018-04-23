@@ -1086,14 +1086,11 @@ a.disabled,
   flex-direction: column;
   margin: 12px 16px;
 }
-.text-field-container {
-  position: relative;
-}
-.text-field-label {
+.text-field label {
   font-size: 16px;
   line-height: 20px;
 }
-.text-field-input {
+.text-field input[type="text"] {
   width: 300px;
   height: 40px;
   font-size: 16px;
@@ -1101,15 +1098,8 @@ a.disabled,
   border-radius: 3px;
   padding: 11px 16px 9px 16px;
 }
-.text-field-with-prefix {
-  padding-left: 40px;
-}
-.text-field-with-suffix {
-  padding-right: 40px;
-}
-.invalid-label-message {
-  font-size: 12px;
-  line-height: 18px;
+.text-field-container {
+  position: relative;
 }
 .text-field-prefix,
 .text-field-suffix {
@@ -1126,6 +1116,9 @@ a.disabled,
       -ms-user-select: none;
           user-select: none;
 }
+.text-field-prefix ~ input[type="text"] {
+  padding-left: 40px;
+}
 .text-field-suffix {
   position: absolute;
   right: 8px;
@@ -1134,37 +1127,44 @@ a.disabled,
       -ms-user-select: none;
           user-select: none;
 }
-.text-field-label {
+.text-field-suffix ~ input[type="text"] {
+  padding-right: 40px;
+}
+.invalid-label-message {
+  font-size: 12px;
+  line-height: 18px;
+}
+.text-field label {
   color: var(--text-01);
 }
-.text-field-input {
+.text-field input[type="text"] {
   background-color: var(--ui-01);
   border: 1px solid var(--ui-03);
 }
-.text-field-input:hover {
+.text-field input[type="text"].invalid {
+  border: 1px solid var(--support-01);
+}
+.text-field input[type="text"]:hover {
   border: 1px solid var(--ui-03);
   box-shadow: 0 0 0 1px var(--ui-03);
 }
-.text-field-input:focus {
+.text-field input[type="text"]:focus {
   outline: none;
   border: 1px solid var(--brand-02);
 }
-.text-field-input.disabled {
+.text-field input[type="text"].disabled {
   opacity: 0.5;
   pointer-events: none;
-}
-.invalid-label-marker {
-  color: var(--support-01);
-}
-.text-field-input.invalid {
-  border: 1px solid var(--support-01);
-}
-.invalid-label-message {
-  color: var(--text-02);
 }
 .text-field-prefix,
 .text-field-suffix {
   color: var(--text-01);
+}
+.invalid-label-marker {
+  color: var(--support-01);
+}
+.invalid-label-message {
+  color: var(--text-02);
 }
 .toggle {
   display: inline-flex;
