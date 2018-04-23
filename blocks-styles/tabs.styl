@@ -7,12 +7,19 @@
   height: 40px;
   min-height: 40px;
   user-select: none;
-}
-
-.horizontal-tab {
-  position: relative;
-  margin-right: 32px;
-  cursor: pointer;
+  
+  label {
+    position: relative;
+    margin-right: 32px;
+    cursor: pointer;
+    
+    input[type="radio"] {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
 }
 
 .vertical-tabs {
@@ -21,15 +28,26 @@
   align-items: flex-start;
   user-select: none;
   padding: 20px 32px;
-}
-
-.vertical-tab {
-  position: relative;
-  cursor: pointer;
+  
+  label {
+    position: relative;
+    cursor: pointer;
+    
+    input[type="radio"] {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
 }
 
 .tab-title {
   display: block;
+  font-size: 16px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 20px;
+  text-align: left;
   height: 40px;
   padding-top: 10px;
   background: transparent;
@@ -37,20 +55,10 @@
   border-left: none;
   border-right: none;
   border-bottom: 4px solid transparent;
-}
 
-.horizontal-tab input {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.vertical-tab input {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .horizontal-tabs, .vertical-tabs {
@@ -86,22 +94,26 @@
   }
 }
 
-.horizontal-tab input:checked ~ .tab-title {
-  color: $text-01;
-  border-bottom: 4px solid var(--brand-01);
+.horizontal-tabs {
+  & > label input[type="radio"]:checked ~ .tab-title {
+    color: var(--text-01);
+    border-bottom: 4px solid var(--brand-01);
+  }
+  
+  & > label input[type="radio"]:focus + .tab-title {
+    border-bottom: 4px solid var(--brand-02);
+  }
 }
 
-.horizontal-tab input:focus + .tab-title {
-  border-bottom: 4px solid var(--brand-02);
-}
-
-.vertical-tab input:checked ~ .tab-title {
-  color: $text-01;
-  border-bottom: 4px solid var(--brand-01);
-}
-
-.vertical-tab input:focus + .tab-title {
-  border-bottom: 4px solid var(--brand-02);
+.vertical-tabs {
+  & > label input[type="radio"]:checked ~ .tab-title {
+    color: var(--text-01);
+    border-bottom: 4px solid var(--brand-01);
+  }
+  
+  & > label input[type="radio"]:focus + .tab-title {
+    border-bottom: 4px solid var(--brand-02);
+  }
 }
 
 .horizontal-tabs, .vertical-tabs {

@@ -998,9 +998,15 @@ a.disabled,
       -ms-user-select: none;
           user-select: none;
 }
-.horizontal-tab {
+.horizontal-tabs label {
   position: relative;
   margin-right: 32px;
+  cursor: pointer;
+}
+.horizontal-tabs label input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
   cursor: pointer;
 }
 .vertical-tabs {
@@ -1013,12 +1019,22 @@ a.disabled,
           user-select: none;
   padding: 20px 32px;
 }
-.vertical-tab {
+.vertical-tabs label {
   position: relative;
+  cursor: pointer;
+}
+.vertical-tabs label input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
   cursor: pointer;
 }
 .tab-title {
   display: block;
+  font-size: 16px;
+  font-family: FranklinGothicMedium;
+  line-height: 20px;
+  text-align: left;
   height: 40px;
   padding-top: 10px;
   background: transparent;
@@ -1027,16 +1043,7 @@ a.disabled,
   border-right: none;
   border-bottom: 4px solid transparent;
 }
-.horizontal-tab input {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
-  cursor: pointer;
-}
-.vertical-tab input {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
+.tab-title:hover {
   cursor: pointer;
 }
 .horizontal-tabs.disabled,
@@ -1062,18 +1069,18 @@ a.disabled,
   color: #2b3836;
   border-bottom: 4px solid var(--brand-01);
 }
-.horizontal-tab input:checked ~ .tab-title {
-  color: #2b3836;
+.horizontal-tabs > label input[type="radio"]:checked ~ .tab-title {
+  color: var(--text-01);
   border-bottom: 4px solid var(--brand-01);
 }
-.horizontal-tab input:focus + .tab-title {
+.horizontal-tabs > label input[type="radio"]:focus + .tab-title {
   border-bottom: 4px solid var(--brand-02);
 }
-.vertical-tab input:checked ~ .tab-title {
-  color: #2b3836;
+.vertical-tabs > label input[type="radio"]:checked ~ .tab-title {
+  color: var(--text-01);
   border-bottom: 4px solid var(--brand-01);
 }
-.vertical-tab input:focus + .tab-title {
+.vertical-tabs > label input[type="radio"]:focus + .tab-title {
   border-bottom: 4px solid var(--brand-02);
 }
 .horizontal-tabs.disabled .tab-title,
