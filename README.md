@@ -31,3 +31,5 @@ You can then run the documentation site with
 ```
 gulp server
 ```
+
+You can then navigate to the site at http://localhost:8080
