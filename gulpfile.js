@@ -31,6 +31,8 @@ gulp.task('dev:jekyll', () => {
     'docs',
     '--destination',
     'docs/_site',
+    '--port', // TODO: move to _config.yml file?
+    '8080',
     '--watch',
     '--livereload',
     '--incremental',
