@@ -9,8 +9,8 @@ const cssvariables = require('postcss-css-variables');
 
 gulp.task('dev:css', function () {
   const plugins = [
-    autoprefixer(),
-    cssvariables()
+    autoprefixer()//,
+    // cssvariables() // TODO: put back in? wasn't doing what I expected
   ];
   gulp.src('docs/_styl/blocks-docs.styl')
     .pipe(stylus())
