@@ -5,7 +5,6 @@
 .text-field {
   display: inline-flex;
   flex-direction: column;
-  margin: 12px 16px;
   
   label {
     font-size: 16px;
@@ -75,12 +74,12 @@
       border: 1px solid $support-01;
     }
 
-    &:hover {
+    &:hover, &.hover {
       border: 1px solid $ui-03;
       box-shadow: 0 0 0 1px $ui-03;
     }
 
-    &:focus {
+    &:focus, &.focus {
       outline: none;
       border: 1px solid $brand-02;
     }

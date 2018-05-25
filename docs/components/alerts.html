@@ -6,7 +6,7 @@ version: v.0
 definition: Messages to direct the attention of the user to a change in the state of the application.
 ---
 
-{% capture example %}
+{% capture success_example %}
   <div class="alert success">
     <div class="alert-icon-container">
       <div class="alert-icon-background"></div>
@@ -20,7 +20,9 @@ definition: Messages to direct the attention of the user to a change in the stat
     </div>
     <button class="alert-close"></button>
   </div>
+{% endcapture %}
 
+{% capture info_example %}
   <div class="alert information">
     <div class="alert-icon-container">
       <div class="alert-icon-background"></div>
@@ -33,7 +35,9 @@ definition: Messages to direct the attention of the user to a change in the stat
       </p>
     </div>
   </div>
+{% endcapture %}
 
+{% capture warning_example %}
   <div class="alert warning">
     <div class="alert-icon-container">
       <div class="alert-icon-background"></div>
@@ -47,7 +51,9 @@ definition: Messages to direct the attention of the user to a change in the stat
     </div>
     <button class="alert-close"></button>
   </div>
+{% endcapture %}
 
+{% capture error_example %}
   <div class="alert error">
     <div class="alert-icon-container">
       <div class="alert-icon-background"></div>
@@ -62,6 +68,21 @@ definition: Messages to direct the attention of the user to a change in the stat
   </div>
 {% endcapture %}
 
+{% capture example %}
+  {{ success_example }}
+  {{ info_example }}
+  {{ warning_example }}
+  {{ error_example }}
+{% endcapture %}
+
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">Banners</span>
+  <p>Banners communicate one of the following states: success, information, warning, or error. Some banners may be dismissable and/or have additional buttons or links for secondary actions. Banners show at the top of the page or section they apply to until they are dismissed.</p>
+  {{ example }}
+</div>
+
+<!-- code snippets -->
 <div class="design-page-container">
   <span class="heading-medium">Code Snippets</span>
   {% include snippet.html content=example %}

@@ -6,32 +6,121 @@ version: v.0
 definition: An input that allows users to select or unselect options.
 ---
 
-{% capture example %}
+{% capture checkbox_example_checked %}
   <label class="checkbox-container">
-    <span class="checkbox-label-text">Checkbox 1</span>
+    <span class="checkbox-label-text">Selected</span>
     <input type="checkbox" checked />
     <span class="checkmark"></span>
   </label>
+{% endcapture %}
 
+{% capture checkbox_example_unchecked %}
   <label class="checkbox-container">
-    <span class="checkbox-label-text">Checkbox 2</span>
+    <span class="checkbox-label-text">Unselected</span>
     <input type="checkbox" />
     <span class="checkmark"></span>
   </label>
+{% endcapture %}
 
+{% capture checkbox_example_hovered_checked %}
   <label class="checkbox-container">
-    <span class="checkbox-label-text">Disabled Checkbox 1</span>
+    <span class="checkbox-label-text">Selected, Hover</span>
+    <input type="checkbox" checked />
+    <span class="checkmark hover"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_hovered_unchecked %}
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Unselected, Hover</span>
+    <input type="checkbox" />
+    <span class="checkmark hover"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_focused_checked %}
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Selected, Focused</span>
+    <input class="focus" type="checkbox" checked />
+    <span class="checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_focused_unchecked %}
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Unselected, Focused</span>
+    <input class="focus" type="checkbox" />
+    <span class="checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_disabled_checked %}
+  <label class="checkbox-container">
+    <span class="checkbox-label-text">Selected, Disabled</span>
     <input type="checkbox" checked disabled />
     <span class="checkmark disabled"></span>
   </label>
+{% endcapture %}
 
+{% capture checkbox_example_disabled_unchecked %}
   <label class="checkbox-container">
-    <span class="checkbox-label-text">Disabled Checkbox 2</span>
+    <span class="checkbox-label-text">Unselected, Disabled</span>
     <input type="checkbox" disabled />
     <span class="checkmark disabled"></span>
   </label>
 {% endcapture %}
 
+{% capture example %}
+  {{ checkbox_example_checked }}
+  {{ checkbox_example_unchecked }}
+  {{ checkbox_example_disabled_checked }}
+  {{ checkbox_example_disabled_unchecked }}
+{% endcapture %}
+
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">States & Behavior</span>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Active
+      </span>
+      <div class="doc-state-content">
+        {{ checkbox_example_unchecked }}
+        {{ checkbox_example_checked }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ checkbox_example_hovered_unchecked }}
+        {{ checkbox_example_hovered_checked }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ checkbox_example_focused_unchecked }}
+        {{ checkbox_example_focused_checked }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ checkbox_example_disabled_unchecked }}
+        {{ checkbox_example_disabled_checked }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- code snippets -->
 <div class="design-page-container">
   <span class="heading-medium">Code Snippets</span>
   {% include snippet.html content=example %}

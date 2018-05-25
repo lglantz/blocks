@@ -19,7 +19,7 @@ a, .link {
   font-size: 16px;
   line-height: 20px;
 
-  &:hover, &:focus {
+  &:hover, &.hover, &:focus, &.focus {
     cursor: pointer;
     text-decoration: underline;
   }
@@ -187,12 +187,15 @@ a, .link {
   color: $brand-03;
   text-decoration: none;
 
-  &:hover {
+  &:hover, &.hover {
     color: $text-01;
   }
 
-  &:focus {
+  &:focus, &.focus {
+    background-color: $ui-03;
     outline: none;
+    text-decoration: none;
+    color: $brand-03;
   }
 
   &.disabled {

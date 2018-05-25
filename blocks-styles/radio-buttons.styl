@@ -73,6 +73,11 @@
 .radio-check {
   background-color: $ui-01;
   border: 1px solid $ui-04;
+  
+  &:hover, &.hover {
+    background-color: $ui-01;
+    border: 1px solid $ui-04;
+  }
 }
 
 .radio-button-container input:checked ~ .radio-check {
@@ -92,7 +97,8 @@
   background-color: $ui-05;
 }
 
-.radio-button-container input[type="radio"]:focus + span {
+.radio-button-container input[type="radio"]:focus + span,
+.radio-button-container input[type="radio"].focus + span {
   outline: none;
   box-shadow: 0 0 0 2px $brand-02;
 }

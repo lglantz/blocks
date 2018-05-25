@@ -6,25 +6,56 @@ version: v.0
 definition: 'An input for freeform data entry. It supports a number of input types: simple text, numbers, email addresses.'
 ---
 
-{% capture example %}
+{% capture text_field_example %}
   <div class="text-field">
-    <label>A text field</label>
-    <input type="text" />
+    <label>Text input label</label>
+    <input type="text" placeholder="e.g. Text input" />
   </div>
+{% endcapture %}
 
+{% capture text_field_hover_example %}
   <div class="text-field">
-    <label>Disabled text field</label>
+    <label>Text input label</label>
+    <input type="text" placeholder="e.g. Text input" class="hover" />
+  </div>
+{% endcapture %}
+
+{% capture text_field_focus_example %}
+  <div class="text-field">
+    <label>Text input label</label>
+    <input type="text" placeholder="e.g. Text input" class="focus" />
+  </div>
+{% endcapture %}
+
+{% capture text_field_disabled_example %}
+  <div class="text-field">
+    <label>Text input label</label>
     <input type="text" placeholder="Can't touch this" disabled />
   </div>
+{% endcapture %}
 
+{% capture text_field_filled_example %}
+  <div class="text-field">
+    <label>Text input label</label>
+    <input type="text" value="More than a placeholder" />
+  </div>
+{% endcapture %}
+
+{% capture text_field_invalid_example %}
   <div class="text-field">
     <div>
-      <label>Invalid text field</label>
+      <label>Text input label</label>
       <span class="invalid-label-marker">*</span>
     </div>
     <input type="text" class="invalid" value="Pepsi is good." />
     <span class="invalid-label-message">My text is invalid</span>
   </div>
+{% endcapture %}
+
+{% capture example %}
+  {{ text_field_example }}
+  {{ text_field_disabled_example }}
+  {{ text_field_invalid_example }}
 {% endcapture %}
 
 {% capture example2 %}
@@ -38,6 +69,62 @@ definition: 'An input for freeform data entry. It supports a number of input typ
   </div>
 {% endcapture %}
 
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">States & Behavior</span>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Default
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_hover_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_focus_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_disabled_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Idle, Filled
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_filled_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Validation
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_invalid_example }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- code snippets -->
 <div class="design-page-container">
   <span class="heading-medium">Code Snippets</span>
   {% include snippet.html content=example %}

@@ -89,6 +89,11 @@
 .checkmark {
   background-color: $ui-01;
   border: 1px solid $ui-04;
+  
+  &:hover, &.hover {
+    background-color: $ui-01;
+    border: 1px solid $ui-04;
+  }
 }
 
 .checkbox-container input:checked ~ .checkmark {
@@ -99,9 +104,15 @@
     background-color: $ui-05;
     border: 1px solid $ui-05;
   }
+  
+  &:hover, &.hover {
+    background-color: $brand-01;
+    border: 1px solid $brand-01;
+  }
 }
 
-.checkbox-container input[type="checkbox"]:focus + span {
+.checkbox-container input[type="checkbox"]:focus + span,
+.checkbox-container input[type="checkbox"].focus + span {
   outline: none;
   box-shadow: 0 0 0 2px $brand-02;
 }
