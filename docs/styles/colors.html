@@ -6,11 +6,52 @@ version: v.0
 definition: Rules about the relative usage of colors.
 ---
 
-{% capture example %}
-  <div></div>
-{% endcapture %}
-
-<div class="design-page-container">
-  <span class="heading-medium">Code Snippets</span>
-  {% include snippet.html content=example %}
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">Brand Colors</span>
+  <div class="l-flex-horizontal">
+    <span class="doc-definition-title">Usage</span>
+    <span class="doc-definition-value">Use sparingly for emphasis, large headings, and to grab attention.</span>
+  </div>
+  <div>
+    {% include color_card.html name='brand-01' value='#00B07D' %}
+    {% include color_card.html name='brand-02' value='#75E6C9' %}
+  </div>
+  <span class="heading-medium">UI Colors</span>
+  <div class="l-flex-horizontal">
+    <span class="doc-definition-title">Usage</span>
+    <span class="doc-definition-value">For backgrounds and text.</span>
+  </div>
+  <div>
+    {% include color_card.html name='ui-01' value='#FFFFFF' %}
+    {% include color_card.html name='ui-02' value='#F5FAF8' %}
+    {% include color_card.html name='ui-03' value='#F0F6F3' %}
+    {% include color_card.html name='ui-04' value='#D6E2E0' %}
+    {% include color_card.html name='ui-05' value='#8CA59C' %}
+  </div>
+  <div>
+    {% include color_card.html name='text-01' value='#2B3836' %}
+    {% include color_card.html name='text-02' value='#686F6D' %}
+  </div>
+  <span class="heading-medium">Application State Colors</span>
+  <div class="l-flex-horizontal">
+    <span class="doc-definition-title">Usage</span>
+    <span class="doc-definition-value">To consistently indicate a state or change in the application.</span>
+  </div>
+  <div>
+    {% include color_card.html name='information' value='#6F6BF8' %}
+    {% include color_card.html name='warning' value='#FDB100' %}
+    {% include color_card.html name='error' value='#EC4F07' %}
+  </div>
+  <span class="heading-medium">Map Colors</span>
+  <div class="l-flex-horizontal">
+    <span class="doc-definition-title">Usage</span>
+    <span class="doc-definition-value">For map gradients.</span>
+  </div>
+  <div>
+    {% include color_card.html name='map-01' value='#D3F2DC' %}
+    {% include color_card.html name='map-02' value='#7FD4A5' %}
+    {% include color_card.html name='map-03' value='#24B377' %}
+    {% include color_card.html name='map-04' value='#0F915F' %}
+    {% include color_card.html name='map-05' value='#006141' %}
+  </div>
 </div>

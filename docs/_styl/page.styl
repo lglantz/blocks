@@ -129,6 +129,30 @@
   margin-bottom: 40px;
 }
 
+.color-card {
+  display: inline-block;
+  width:128px;
+  margin: 0 32px 32px 0;
+  
+  .color-card-background {
+    width: 100%;
+    height: 80px;
+    display: table;
+  }
+  
+  .color-card-title {
+    width: 100%;
+    height: 32px;
+    display: table;
+  }
+  
+  .color-card-name, .color-card-value {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
 //
 // THEME
 //
@@ -161,4 +185,18 @@
 
 .doc-section {
   border-bottom: solid 1px $ui-04;
+}
+
+.color-card {
+  .color-card-background {
+  }
+  
+  .color-card-title {
+    border: 1px solid $text-02;
+    color: $text-02;
+  }
+  
+  .color-card-value {
+    color: $text-02;
+  }
 }

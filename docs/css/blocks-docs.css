@@ -1486,6 +1486,27 @@ a.disabled,
 .doc-state-content {
   margin-bottom: 40px;
 }
+.color-card {
+  display: inline-block;
+  width: 128px;
+  margin: 0 32px 32px 0;
+}
+.color-card .color-card-background {
+  width: 100%;
+  height: 80px;
+  display: table;
+}
+.color-card .color-card-title {
+  width: 100%;
+  height: 32px;
+  display: table;
+}
+.color-card .color-card-name,
+.color-card .color-card-value {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
 .cbre {
   background-color: var(--brand-01, #00b07d);
 }
@@ -1508,4 +1529,11 @@ a.disabled,
 }
 .doc-section {
   border-bottom: solid 1px var(--ui-04, #d6e2e0);
+}
+.color-card .color-card-title {
+  border: 1px solid var(--text-02, #686f6d);
+  color: var(--text-02, #686f6d);
+}
+.color-card .color-card-value {
+  color: var(--text-02, #686f6d);
 }
