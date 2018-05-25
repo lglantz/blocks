@@ -2,12 +2,8 @@
 // STRUCTURE
 //
 
-button {
-  font-family: $sans-serif-font-family-normal;
-}
-
 p {
-  font-size: 16px;
+  font-size: $base-font-size;
   font-family: $sans-serif-font-family-normal;
   line-height: 24px;
   text-align: left;
@@ -17,13 +13,6 @@ p {
   &.text-emph {
     font-family: $sans-serif-font-family-medium;
   }
-}
-
-.button {
-  font-size: 16px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 20px;
-  text-align: left;
 }
 
 a, .link {
@@ -61,6 +50,20 @@ a, .link {
   text-align: left;
 }
 
+.category-title {
+  font-size: 20px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 24px;
+  margin: 0;
+}
+
+.statistic-title {
+  font-size: 20px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 25px;
+  margin: 0;
+}
+
 .small-title {
   font-size: 16px;
   font-family: $sans-serif-font-family-medium;
@@ -82,9 +85,11 @@ a, .link {
   font-family: $sans-serif-font-family-medium;
   line-height: 20px;
   text-align: left;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -130,20 +135,28 @@ a, .link {
   color: $text-01;
 }
 
+.category-title {
+  color: $ui-05;
+}
+
+.statistic-title {
+  color: $text-02;
+}
+
 .success {
-  color: $brand-01;
+  color: $success-color;
 }
 
 .warning {
-  color: $brand-04;
+  color: $warning-color;
 }
 
 .error {
-  color: $support-01;
+  color: $error-color;
 }
 
 .information {
-  color: $brand-03;
+  color: $information-color;
 }
 
 .tab {

@@ -1,11 +1,12 @@
 ---
-title: Text Fields
 layout: componentSection
-route: textfields
-doc-tab: Text Fields
+title: Text Fields
+status: Design review
+version: v.0
+definition: 'An input for freeform data entry. It supports a number of input types: simple text, numbers, email addresses.'
 ---
 
-{% capture text_fields_example %}
+{% capture example %}
   <div class="text-field">
     <label>A text field</label>
     <input type="text" />
@@ -26,7 +27,7 @@ doc-tab: Text Fields
   </div>
 {% endcapture %}
 
-{% capture prefix_suffix_example %}
+{% capture example2 %}
   <div class="text-field ">
     <label>Sample text field with prefix/suffix</label>
     <div class="text-field-container">
@@ -37,9 +38,8 @@ doc-tab: Text Fields
   </div>
 {% endcapture %}
 
-<p>Look at all these text fields.</p>
-
 <div class="design-page-container">
-  {% include snippet.html content=text_fields_example %}
-  {% include snippet.html content=prefix_suffix_example %}
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
+  {% include snippet.html content=example2 %}
 </div>

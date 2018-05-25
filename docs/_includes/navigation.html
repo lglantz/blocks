@@ -1,18 +1,34 @@
 <div class="left-nav-panel">
+  <div class="blocks-heading">
+    <div class="cbre"></div>
+    <span class="blocks-title">Blocks</span>
+  </div>
   <nav>
     <a href="{{ site.url }}">Home</a>
-    <p class="title">Elements</p>
-    <ul>
-      {% for section in site.data.pieces.elements %}
-        <li><a href="{{ site.url }}/components/{{ section.route }}">{{ section.name }}</a></li>
-      {% endfor %}
-    </ul>
 
-    <p class="title">Components</p>
-    <ul>
-      {% for section in site.data.pieces.components %}
-        <li><a href="{{ site.url }}/components/{{ section.route }}">{{ section.name }}</a></li>
+    {% assign current_page = site.data.navigation | where: "title",page.title %}
+    {% assign current_section_title = current_page[0].section %}
+    {% assign section = site.data.sections[current_section_title] %}
+
+    {% if section.subsections %}
+      {% for subsection in section.subsections %}
+        <p class="category-title">{{ subsection }}</p>
+        <ul>
+          {% for doc in site.data.navigation %}
+            {% if doc.subsection == subsection %}
+              <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ site.url }}/{{ doc.url }}">{{ doc.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       {% endfor %}
-    </ul>
+    {% else %}
+      <ul>
+        {% for doc in site.data.navigation %}
+          {% if doc.section == current_section_title %}
+            <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ site.url }}/{{ doc.url }}">{{ doc.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
   </nav>
 </div>

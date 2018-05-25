@@ -34,7 +34,7 @@ gulp.task('dev:fonts', function() {
 });
 
 gulp.task('dev:icons', function() {
-  gulp.src('svgs/icon-*.svg')
+  gulp.src('svgs/icon-*.svg') // TODO: this doesn't handle the CBRE svg
     .pipe(gulp.dest('docs/svgs/'));
 });
 
@@ -47,7 +47,6 @@ gulp.task('dev:jekyll', () => {
     '--port', // TODO: move to _config.yml file?
     '8080',
     '--watch',
-    '--livereload',
     '--incremental',
     '--drafts'
   ]);

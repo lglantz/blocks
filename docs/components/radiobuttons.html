@@ -1,10 +1,12 @@
 ---
-title: Radio Buttons
 layout: componentSection
-route: radiobuttons
+title: Radio Buttons
+status: Design review
+version: v.0
+definition: An input that allows the user to select a single option from a group.
 ---
 
-{% capture radio_button_example %}
+{% capture example %}
   <label class="radio-button-container">
     <span class="radio-label-text">Radio 1</span>
     <input type="radio" name="radio-example" checked />
@@ -30,8 +32,7 @@ route: radiobuttons
   </label>
 {% endcapture %}
 
-<p>Pretty radio buttons.</p>
-
 <div class="design-page-container">
-  {% include snippet.html content=radio_button_example %}
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
 </div>

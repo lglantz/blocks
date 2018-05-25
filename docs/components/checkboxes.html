@@ -1,10 +1,12 @@
 ---
-title: Checkboxes
 layout: componentSection
-route: checkboxes
+title: Checkboxes
+status: Design review
+version: v.0
+definition: An input that allows users to select or unselect options.
 ---
 
-{% capture checkbox_example %}
+{% capture example %}
   <label class="checkbox-container">
     <span class="checkbox-label-text">Checkbox 1</span>
     <input type="checkbox" checked />
@@ -30,8 +32,7 @@ route: checkboxes
   </label>
 {% endcapture %}
 
-<p>Pretty checkboxes.</p>
-
 <div class="design-page-container">
-  {% include snippet.html content=checkbox_example %}
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
 </div>

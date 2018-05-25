@@ -1,10 +1,12 @@
 ---
-title: Alerts
 layout: componentSection
-route: alerts
+title: Alerts
+status: Design review
+version: v.0
+definition: Messages to direct the attention of the user to a change in the state of the application.
 ---
 
-{% capture alerts_example %}
+{% capture example %}
   <div class="alert success">
     <div class="alert-icon-container">
       <div class="alert-icon-background"></div>
@@ -60,8 +62,7 @@ route: alerts
   </div>
 {% endcapture %}
 
-<p>There are four kinds of alerts.</p>
-
 <div class="design-page-container">
-  {% include snippet.html content=alerts_example %}
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
 </div>
