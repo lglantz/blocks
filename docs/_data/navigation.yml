@@ -6,17 +6,17 @@
   url: styles/type
   section: Styles
 
-- title: Grid & Spacing
-  url: styles/grid
-  section: Styles
-
-- title: Icons
-  url: styles/icons
-  section: Styles
-
-- title: CBRE Brand Placement
-  url: styles/brand
-  section: Styles
+#- title: Grid & Spacing
+#  url: styles/grid
+#  section: Styles
+#
+#- title: Icons
+#  url: styles/icons
+#  section: Styles
+#
+#- title: CBRE Brand Placement
+#  url: styles/brand
+#  section: Styles
 
 - title: Buttons
   url: components/buttons

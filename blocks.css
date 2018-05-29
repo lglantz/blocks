@@ -1098,6 +1098,8 @@ a.disabled,
 }
 .tab-title:focus {
   outline: none;
+  color: var(--text-02, #686f6d);
+  background-color: transparent;
   border-bottom: 4px solid var(--brand-02, #75e6c9);
 }
 .tab-title:hover {
