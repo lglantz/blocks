@@ -34,8 +34,6 @@ $bold-weight = 700;
 
 $brand-01-hex = #00b07d;
 $brand-02-hex = #75e6c9;
-$brand-03-hex = #6f6bf8;
-$brand-04-hex = #fdb100;
 
 $ui-01-hex = #ffffff;
 $ui-02-hex = #f5faf8;
@@ -47,12 +45,14 @@ $text-01-hex = #2b3836;
 $text-02-hex = #686f6d;
 
 $support-01-hex = #ec4f07;
+$success-01-hex = #00b07d;
+$information-01-hex = #6f6bf8;
+$warning-01-hex = #fdb100;
+$error-01-hex = $support-01-hex;
 
 :root {
   --brand-01: $brand-01-hex;
   --brand-02: $brand-02-hex;
-  --brand-03: $brand-03-hex;
-  --brand-04: $brand-04-hex;
 
   --ui-01: $ui-01-hex;
   --ui-02: $ui-02-hex;
@@ -64,12 +64,14 @@ $support-01-hex = #ec4f07;
   --text-02: $text-02-hex;
 
   --support-01: $support-01-hex;
+  --success-01: $success-01-hex;
+  --information-01: $information-01-hex;
+  --warning-01: $warning-01-hex;
+  --error-01: $error-01-hex;
 }
 
 $brand-01 = var(--brand-01, $brand-01-hex);
 $brand-02 = var(--brand-02, $brand-02-hex);
-$brand-03 = var(--brand-03, $brand-03-hex);
-$brand-04 = var(--brand-04, $brand-04-hex);
 
 $ui-01 = var(--ui-01, $ui-01-hex);
 $ui-02 = var(--ui-02, $ui-02-hex);
@@ -81,12 +83,10 @@ $text-01 = var(--text-01, $text-01-hex);
 $text-02 = var(--text-02, $text-02-hex);
 
 $support-01 = var(--support-01, $support-01-hex);
-
-$success-color = $brand-01-hex;
-$information-color = $brand-03-hex;
-$warning-color = $brand-04-hex;
-$error-color = $support-01-hex;
-
+$success-01 = var(--success-01-hex, $success-01-hex);
+$information-01 = var(--information-01, $information-01-hex);
+$warning-01 = var(--warning-01, $warning-01-hex);
+$error-01 = var(--error-01, $error-01-hex);
 
 //
 // TEXT VARIABLES
@@ -99,52 +99,3 @@ $base-font-size = 16px;
 
 // common variables
 $base-border-radius = 7px;
-
-//
-// button variables
-//
-
-// button structure
-$button-height = 40px;
-$button-small-height = 28px;
-
-$button-top-padding = 12px;
-$button-side-padding = 16px;
-
-$button-small-top-padding = 4px;
-$button-small-side-padding = 12px;
-
-$button-font-size = 16px;
-$button-small-font-size = 16px;
-
-// button colors
-$button-focus-inset-color = $ui-01;
-
-$primary-button-background-color = $brand-01;
-$primary-button-hover-background-color = $brand-02;
-$primary-button-disabled-background-color = $ui-05;
-$primary-button-focus-background-color = $brand-02;
-
-$primary-button-border-color = $brand-01;
-$primary-button-hover-border-color = $brand-02;
-$primary-button-disabled-border-color = $ui-05;
-$primary-button-focus-border-color = $brand-02;
-
-$primary-button-text-color = $ui-01;
-$primary-button-hover-text-color = $ui-01;
-$primary-button-focus-text-color = $ui-01;
-
-$secondary-button-background-color = $ui-02;
-$secondary-button-hover-background-color = $brand-01;
-$secondary-button-disabled-background-color = $ui-02;
-$secondary-button-focus-background-color = $brand-01;
-
-$secondary-button-border-color = $ui-05;
-$secondary-button-hover-border-color = $brand-01;
-$secondary-button-disabled-border-color = $ui-05;
-$secondary-button-focus-border-color = $brand-01;
-
-$secondary-button-text-color = $ui-05;
-$secondary-button-hover-text-color = $ui-01;
-$secondary-button-focus-text-color = $ui-01;
-
