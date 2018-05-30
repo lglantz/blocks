@@ -1,10 +1,10 @@
 ---
-title: Progress Indicators
 layout: componentSection
-route: progress
+section: Components
+title: Progress
 ---
 
-{% capture progress_dots_example %}
+{% capture example %}
   <div class="progress-dots">
     <label class="progress-dot-container">
       <input type="radio" name="progress-dots-example" checked />
@@ -25,7 +25,7 @@ route: progress
   </div>
 {% endcapture %}
 
-{% capture breadcrumbs_example %}
+{% capture example2 %}
   <nav class="breadcrumbs">
     <ul>
       <li><a title="Breadcrumb 1" href="#">Breadcrumb 1</a></li>
@@ -36,11 +36,10 @@ route: progress
   </nav>
 {% endcapture %}
 
-<p>Different progress indicators.</p>
-
 <div class="design-page-container">
+  <span class="heading-medium">Code Snippets</span>
   <p class="title">Progress dots</p>
-  {% include snippet.html content=progress_dots_example %}
+  {% include snippet.html content=example %}
   <p class="title">Breadcrumbs</p>
-  {% include snippet.html content=breadcrumbs_example %}
+  {% include snippet.html content=example2 %}
 </div>

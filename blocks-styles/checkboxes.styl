@@ -4,7 +4,7 @@
 
 .checkbox-label-text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: $normal-weight;
   text-align: left;
   line-height: 20px;
 }
@@ -33,7 +33,7 @@
   left: 0;
   height: 18px;
   width: 18px;
-  border-radius: 7px;
+  border-radius: $base-border-radius;
   margin: 6px 0;
 
   &.disabled {
@@ -83,25 +83,36 @@
 //
 
 .checkbox-label-text {
-  color: var(--text-01, $text-01);
+  color: $text-01;
 }
 
 .checkmark {
-  background-color: var(--ui-01, $ui-01);
-  border: 1px solid var(--ui-04, $ui-04);
-}
-
-.checkbox-container input:checked ~ .checkmark {
-  background-color: var(--brand-01, $brand-01);
-  border: 1px solid var(--brand-01, $brand-01);
-
-  &.disabled {
-    background-color: var(--ui-05, $ui-05);
-    border: 1px solid var(--ui-05, $ui-05);
+  background-color: $ui-01;
+  border: 1px solid $ui-04;
+  
+  &:hover, &.hover {
+    background-color: $ui-01;
+    border: 1px solid $ui-04;
   }
 }
 
-.checkbox-container input[type="checkbox"]:focus + span {
+.checkbox-container input:checked ~ .checkmark {
+  background-color: $brand-01;
+  border: 1px solid $brand-01;
+
+  &.disabled {
+    background-color: $ui-05;
+    border: 1px solid $ui-05;
+  }
+  
+  &:hover, &.hover {
+    background-color: $brand-01;
+    border: 1px solid $brand-01;
+  }
+}
+
+.checkbox-container input[type="checkbox"]:focus + span,
+.checkbox-container input[type="checkbox"].focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px var(--brand-02, $brand-02);
+  box-shadow: 0 0 0 2px $brand-02;
 }

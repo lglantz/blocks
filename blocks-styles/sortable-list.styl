@@ -20,20 +20,22 @@
 }
 
 .sortable-list-section > .sortable-list-draggable {
-  // TODO: feel like this should be a variable
-  font-family: FranklinGothicMedium;
+  font-family: $sans-serif-font-family-medium;
 }
 
 .sortable-list-draggable {
-  height: 36px;
   padding-top: 6px;
   padding-left: 32px;
+  padding-right: 48px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .sortable-list-drag-icon {
   position: absolute;
-  top: 8px;
-  right: 32px;
+  right: 0;
+  margin-top: 8px;
+  margin-right: 24px;
   cursor: move;
 }
 
@@ -43,17 +45,17 @@
 //
 .sortable-list-item {
   &.dragging {
-    background-color: var(--brand-02, $brand-02);
+    background-color: $brand-02;
   }
   &.dragover {
-    background-color: var(--ui-04, $ui-04);
+    background-color: $ui-04;
   }
 }
 
 .sortable-list-section > .sortable-list-draggable {
-  background-color: var(--ui-04, $ui-04);
+  background-color: $ui-04;
 }
 
 .sortable-list-drag-icon {
-  background-color: var(--ui-05, $ui-05);
+  background-color: $ui-05;
 }

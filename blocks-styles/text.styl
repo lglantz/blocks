@@ -2,12 +2,8 @@
 // STRUCTURE
 //
 
-button {
-  font-family: $sans-serif-font-family-normal;
-}
-
 p {
-  font-size: 16px;
+  font-size: $base-font-size;
   font-family: $sans-serif-font-family-normal;
   line-height: 24px;
   text-align: left;
@@ -19,18 +15,11 @@ p {
   }
 }
 
-.button {
-  font-size: 16px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 20px;
-  text-align: left;
-}
-
 a, .link {
   font-size: 16px;
   line-height: 20px;
 
-  &:hover, &:focus {
+  &:hover, &.hover, &:focus, &.focus {
     cursor: pointer;
     text-decoration: underline;
   }
@@ -61,6 +50,20 @@ a, .link {
   text-align: left;
 }
 
+.category-title {
+  font-size: 20px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 24px;
+  margin: 0;
+}
+
+.statistic-title {
+  font-size: 20px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 25px;
+  margin: 0;
+}
+
 .small-title {
   font-size: 16px;
   font-family: $sans-serif-font-family-medium;
@@ -82,9 +85,11 @@ a, .link {
   font-family: $sans-serif-font-family-medium;
   line-height: 20px;
   text-align: left;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -119,71 +124,82 @@ a, .link {
 //
 
 .heading-large {
-  color: var(--brand-01, $brand-01);
+  color: $brand-01;
 }
 
 .heading-medium {
-  color: var(--text-01, $text-01);
+  color: $text-01;
 }
 
 .title {
-  color: var(--text-01, $text-01);
+  color: $text-01;
+}
+
+.category-title {
+  color: $ui-05;
+}
+
+.statistic-title {
+  color: $text-02;
 }
 
 .success {
-  color: var(--brand-01, $brand-01);
+  color: $success-01;
 }
 
 .warning {
-  color: var(--brand-04, $brand-04);
+  color: $warning-01;
 }
 
 .error {
-  color: var(--support-01, $support-01);
+  color: $error-01;
 }
 
 .information {
-  color: var(--brand-03, $brand-03);
+  color: $information-01;
 }
 
 .tab {
-  color: var(--text-02, $text-02);
+  color: $text-02;
 
   &:active {
-    color: var(--text-01, $text-01);
+    color: $text-01;
   }
 
   &:hover {
-    color: var(--brand-01, $brand-01);
+    color: $brand-01;
   }
 }
 
 .ui {
-  color: var(--text-01, $text-01);
+  color: $text-01;
 }
 
 label {
-  color: var(--text-01, $text-01);
+  color: $text-01;
 }
 
 p {
-  color: var(--text-01, $text-01);
+  color: $text-01;
 }
 
 a, .link {
-  color: var(--brand-03, $brand-03);
+  color: $informatino-01;
   text-decoration: none;
 
-  &:hover {
-    color: var(--text-01, $text-01);
+  &:hover, &.hover {
+    color: $text-01;
   }
 
-  &:focus {
+  &:focus, &.focus {
+    background-color: $ui-03;
     outline: none;
+    text-decoration: none;
+    color: $informatino-01;
   }
 
   &.disabled {
-    color: var(--text-01, $text-01);
+    color: $text-01;
     opacity: 0.5;
     pointer-events: none;
   }

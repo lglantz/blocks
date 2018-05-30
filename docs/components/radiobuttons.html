@@ -1,37 +1,127 @@
 ---
-title: Radio Buttons
 layout: componentSection
-route: radiobuttons
+title: Radio Buttons
+status: Design review
+version: v.0
+definition: An input that allows the user to select a single option from a group.
 ---
 
-{% capture radio_button_example %}
+{% capture radio_example_checked %}
   <label class="radio-button-container">
-    <span class="radio-label-text">Radio 1</span>
+    <span class="radio-label-text">Selected</span>
     <input type="radio" name="radio-example" checked />
     <span class="radio-check"></span>
   </label>
+{% endcapture %}
 
+{% capture radio_example_unchecked %}
   <label class="radio-button-container">
-    <span class="radio-label-text">Radio 2</span>
+    <span class="radio-label-text">Unselected</span>
     <input type="radio" name="radio-example" />
     <span class="radio-check"></span>
   </label>
+{% endcapture %}
 
+{% capture radio_example_hovered_checked %}
   <label class="radio-button-container">
-    <span class="radio-label-text">Disabled Radio 1</span>
-    <input type="radio" name="radio-example-2" checked disabled />
-    <span class="radio-check disabled"></span>
+    <span class="radio-label-text">Selected, Hover</span>
+    <input type="radio" name="radio-example-2" checked />
+    <span class="radio-check hover"></span>
   </label>
+{% endcapture %}
 
+{% capture radio_example_hovered_unchecked %}
   <label class="radio-button-container">
-    <span class="radio-label-text">Disabled Radio 2</span>
-    <input type="radio" name="radio-example-2" disabled />
+    <span class="radio-label-text">Unselected, Hover</span>
+    <input type="radio" name="radio-example-2" />
+    <span class="radio-check hover"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_focused_checked %}
+  <label class="radio-button-container">
+    <span class="radio-label-text">Selected, Focused</span>
+    <input class="focus" type="radio" name="radio-example-3" checked />
+    <span class="radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_focused_unchecked %}
+  <label class="radio-button-container">
+    <span class="radio-label-text">Unselected, Focused</span>
+    <input class="focus" type="radio" name="radio-example-3" />
+    <span class="radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_disabled_checked %}
+  <label class="radio-button-container">
+    <span class="radio-label-text">Selected, Disabled</span>
+    <input type="radio" name="radio-example-4" checked disabled />
     <span class="radio-check disabled"></span>
   </label>
 {% endcapture %}
 
-<p>Pretty radio buttons.</p>
+{% capture radio_example_disabled_unchecked %}
+  <label class="radio-button-container">
+    <span class="radio-label-text">Unselected, Disabled</span>
+    <input type="radio" name="radio-example-4" disabled />
+    <span class="radio-check disabled"></span>
+  </label>
+{% endcapture %}
 
+{% capture example %}
+  {{ radio_example_checked }}
+  {{ radio_example_unchecked }}
+  {{ radio_example_disabled_checked }}
+  {{ radio_example_disabled_unchecked }}
+{% endcapture %}
+
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">States & Behavior</span>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Active
+      </span>
+      <div class="doc-state-content">
+        {{ radio_example_unchecked }}
+        {{ radio_example_checked }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ radio_example_hovered_unchecked }}
+        {{ radio_example_hovered_checked }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ radio_example_focused_unchecked }}
+        {{ radio_example_focused_checked }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ radio_example_disabled_unchecked }}
+        {{ radio_example_disabled_checked }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- code snippets -->
 <div class="design-page-container">
-  {% include snippet.html content=radio_button_example %}
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
 </div>

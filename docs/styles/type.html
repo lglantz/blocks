@@ -1,0 +1,35 @@
+---
+layout: componentSection
+title: Type
+status: Design review
+version: v.0
+definition: Rules about the appearance of text in relation to other text.
+---
+
+{% capture example %}
+  <p class="heading-large">Heading - Large</p>
+  <p class="heading-medium">Heading - Medium</p>
+  <span class="title">Title</span>
+  <span class="title success">Title - Success</span>
+  <span class="title warning">Title - Warning</span>
+  <span class="title error">Title - Error</span>
+  <span class="title information">Title - Information</span>
+
+  <p class="tab">Tab</p>
+  <p class="tab unselected">Unselected Tab</p>
+
+  <p>Body copy.</p>
+  
+  <p class="ui">UI</p>
+  <p class="ui-placeholder">UI Placeholder</p>
+
+{% endcapture %}
+
+<div class="l-flex-vertical doc-section">
+  {{ example }}
+</div>
+
+<div class="design-page-container">
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
+</div>

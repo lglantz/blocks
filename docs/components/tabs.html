@@ -1,10 +1,10 @@
 ---
-title: Tabs
 layout: componentSection
-route: tabs
+section: Components
+title: Tabs
 ---
 
-{% capture horizontal_tab_example %}
+{% capture example %}
   <div class="horizontal-tabs">
     <label>
       <input type="radio" name="horizontal-tab-example" checked>
@@ -25,7 +25,7 @@ route: tabs
   </div>
 {% endcapture %}
 
-{% capture vertical_tab_example %}
+{% capture example2 %}
   <div class="vertical-tabs">
     <label>
       <input type="radio" name="vertical-tab-example" checked>
@@ -46,9 +46,8 @@ route: tabs
   </div>
 {% endcapture %}
 
-<p>Tabs can be horizontal or vertical.</p>
-
 <div class="design-page-container">
-  {% include snippet.html content=horizontal_tab_example %}
-  {% include snippet.html content=vertical_tab_example %}
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
+  {% include snippet.html content=example2 %}
 </div>

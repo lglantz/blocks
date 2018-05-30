@@ -2,16 +2,18 @@
 <html lang="en">
   <head>
     <title>CBRE Building Blocks</title>
-    <link rel="stylesheet" href="../css/blocks-docs.css">
-    <link rel="stylesheet" href="../css/syntax.css">
+    <link rel="stylesheet" href="../../css/blocks-docs.css">
+    <link rel="stylesheet" href="../../css/syntax.css">
   </head>
   <body>
     <div class="l-root">
-      {% include header.html %}
       <div class="l-flex-horizontal l-page">
         {% include navigation.html %}
         <div class="design-page">
-          {{ content }}
+          {% include header.html url=page.route %}
+          <div class="design-page-content">
+            {{ content }}
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,23 @@
 ---
 layout: default
-route: components
 ---
 
 <section class="design-page-section">
-  <span class="heading-medium">{{ page.title }}</span>
+  <!-- top component definition section-->
+  <div class="l-flex-vertical doc-section">
+    <span class="heading-large">{{ page.title }}</span>
+    <div class="l-flex-horizontal">
+      <span class="doc-definition-title">Definition</span>
+      <span class="doc-definition-value">{{ page.definition }}</span>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-definition-title">Status</span>
+      <span class="doc-definition-value">{{ page.status }}</span>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-definition-title">Blocks Version</span>
+      <span class="doc-definition-value">{{ page.version }}</span>
+    </div>
+  </div>
   {{ content }}
 </section>

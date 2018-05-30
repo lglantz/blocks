@@ -1,0 +1,75 @@
+---
+layout: componentSection
+title: Links
+status: Design review
+version: v.0
+definition: Links lead the user away from their current screen in the application
+---
+
+{% capture link_example %}
+  <a href="#">Link</a>
+{% endcapture %}
+
+{% capture link_hover_example %}
+  <a class="hover" href="#">Link</a>
+{% endcapture %}
+
+{% capture link_focus_example %}
+  <a class="focus" href="#">Link</a>
+{% endcapture %}
+
+{% capture link_disabled_example %}
+  <a class="disabled" href="#">Link</a>
+{% endcapture %}
+
+{% capture example %}
+  {{ link_example }}
+  {{ link_hover_example }}
+  {{ link_focus_example }}
+  {{ link_disabled_example }}
+{% endcapture %}
+
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">States & Behavior</span>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Active
+      </span>
+      <div class="doc-state-content">
+        {{ link_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ link_hover_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ link_focus_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ link_disabled_example }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- code snippets -->
+<div class="design-page-container">
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
+</div>

@@ -1,20 +1,139 @@
 ---
-title: Buttons
 layout: componentSection
-route: buttons
+title: Buttons
+status: Design review
+version: v.0
+definition: Buttons make common actions immediately visible and easy to perform with one click or tap. They can be used for any type of action, including navigation (stolen from shopify).
 ---
 
-{% capture buttons_example %}
+{% capture primary_button_example %}
   <button class="button primary">Primary Button</button>
+{% endcapture %}
+
+{% capture primary_button_hover_example %}
+  <button class="button primary hover">Primary Button</button>
+{% endcapture %}
+
+{% capture primary_button_focus_example %}
+  <button class="button primary focus">Primary Button</button>
+{% endcapture %}
+
+{% capture primary_button_disabled_example %}
   <button class="button primary disabled">Primary Button Disabled</button>
-  <button class="button-small primary">Small Primary Button</button>
+{% endcapture %}
+
+{% capture primary_button_small_example %}
+  <button class="button small primary">Small Primary Button</button>
+{% endcapture %}
+
+{% capture secondary_button_example %}
   <button class="button secondary">Secondary Button</button>
-  <button class="button-small secondary">Small Secondary Button</button>
+{% endcapture %}
+
+{% capture secondary_button_hover_example %}
+  <button class="button secondary hover">Secondary Button</button>
+{% endcapture %}
+
+{% capture secondary_button_focus_example %}
+  <button class="button secondary focus">Secondary Button</button>
+{% endcapture %}
+
+{% capture secondary_button_disabled_example %}
   <button class="button secondary disabled">Secondary Button Disabled</button>
 {% endcapture %}
 
-<p>Here are some button styles.</p>
+{% capture secondary_button_small_example %}
+  <button class="button small secondary">Small Secondary Button</button>
+{% endcapture %}
 
-<div class="design-page-container">
-  {% include snippet.html content=buttons_example %}
+{% capture example %}
+  {{ primary_button_example }}
+  {{ primary_button_disabled_example }}
+  {{ primary_button_small_example }}
+  {{ secondary_button_example }}
+  {{ secondary_button_disabled_example }}
+  {{ secondary_button_small_example }}
+{% endcapture %}
+
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">States & Behavior</span>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Primary Button Enabled
+      </span>
+      <div class="doc-state-content">
+        {{ primary_button_example }}
+      </div>
+      <span class="doc-state-title">
+        Secondary Button Enabled
+      </span>
+      <div class="doc-state-content">
+        {{ secondary_button_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ primary_button_hover_example }}
+      </div>
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ secondary_button_hover_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ primary_button_focus_example }}
+      </div>
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ secondary_button_focus_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ primary_button_disabled_example }}
+      </div>
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ secondary_button_disabled_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Small button-primary
+      </span>
+      <div class="doc-state-content">
+        {{ primary_button_small_example }}
+      </div>
+      <span class="doc-state-title">
+        Small button-secondary
+      </span>
+      <div class="doc-state-content">
+        {{ secondary_button_small_example }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- code snippets -->
+<div class="l-flex-vertical doc-section">
+  <span class="heading-medium">Code Snippets</span>
+  {% include snippet.html content=example %}
 </div>
