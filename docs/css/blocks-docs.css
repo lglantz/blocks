@@ -16,8 +16,6 @@
 :root {
   --brand-01: #00b07d;
   --brand-02: #75e6c9;
-  --brand-03: #6f6bf8;
-  --brand-04: #fdb100;
   --ui-01: #fff;
   --ui-02: #f5faf8;
   --ui-03: #f0f6f3;
@@ -26,6 +24,10 @@
   --text-01: #2b3836;
   --text-02: #686f6d;
   --support-01: #ec4f07;
+  --success-01: #00b07d;
+  --information-01: #6f6bf8;
+  --warning-01: #fdb100;
+  --error-01: #ec4f07;
 }
 html,
 body {
@@ -159,16 +161,16 @@ a.focus,
   color: var(--text-02, #686f6d);
 }
 .success {
-  color: #00b07d;
+  color: var(--success-01-hex, #00b07d);
 }
 .warning {
-  color: #fdb100;
+  color: var(--warning-01, #fdb100);
 }
 .error {
-  color: #ec4f07;
+  color: var(--error-01, #ec4f07);
 }
 .information {
-  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
 }
 .tab {
   color: var(--text-02, #686f6d);
@@ -190,7 +192,7 @@ p {
 }
 a,
 .link {
-  color: var(--brand-03, #6f6bf8);
+  color: $informatino-01;
   text-decoration: none;
 }
 a:hover,
@@ -206,7 +208,7 @@ a.focus,
   background-color: var(--ui-03, #f0f6f3);
   outline: none;
   text-decoration: none;
-  color: var(--brand-03, #6f6bf8);
+  color: $informatino-01;
 }
 a.disabled,
 .link.disabled {
@@ -331,28 +333,28 @@ a.disabled,
   background-position: 1px 1px;
 }
 .success .alert-icon-background {
-  background-color: #00b07d;
+  background-color: var(--success-01-hex, #00b07d);
 }
 .success .alert-icon {
   -webkit-mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
 }
 .warning .alert-icon-background {
-  background-color: #fdb100;
+  background-color: var(--warning-01, #fdb100);
 }
 .warning .alert-icon {
   -webkit-mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
 }
 .error .alert-icon-background {
-  background-color: #ec4f07;
+  background-color: var(--error-01, #ec4f07);
 }
 .error .alert-icon {
   -webkit-mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
 }
 .information .alert-icon-background {
-  background-color: #6f6bf8;
+  background-color: var(--information-01, #6f6bf8);
 }
 .information .alert-icon {
   -webkit-mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
@@ -382,7 +384,7 @@ a.disabled,
   text-decoration: none;
 }
 .breadcrumbs a:hover {
-  color: var(--brand-03, #6f6bf8);
+  color: var(--information-01, #6f6bf8);
 }
 .button {
   margin: 0;
@@ -684,7 +686,7 @@ a.disabled,
   background-color: var(--brand-01, #00b07d);
 }
 .icon-info {
-  background-color: var(--brand-03, #6f6bf8);
+  background-color: var(--information-01, #6f6bf8);
 }
 .icon,
 .icon-info {
