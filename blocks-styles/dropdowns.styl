@@ -101,11 +101,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    cursor: pointer;
-    
-    &:hover, &.hover {
-      text-decoration: none;
-    }
   }
 }
 
@@ -133,6 +128,10 @@
   }
 }
 
+.dropdown-trigger-blank {
+  color: $text-02;
+}
+
 .dropdown-menu {
   background-color: $ui-00;
   border: solid 1px $ui-04;
@@ -156,5 +155,11 @@
     * {
       color: $ui-00;
     }
+  }
+
+  &:focus, &.focus, &:active, &.active {
+    outline: none;
+    color: $ui-01;
+    background-color: $brand-01;
   }
 }

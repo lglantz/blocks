@@ -9,10 +9,30 @@
   transform: translate(-50%, -50%);
   width: 600px;
   max-height: 90%;
-  padding: 40px;
   z-index: 1001;
 
   border-radius: 3px;
+}
+
+.modal-section {
+  padding: 24px 40px;
+}
+
+.modal-header {
+  padding-top: 24px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.modal-footer {
+  padding-bottom: 24px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.modal-body {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .modal-buttons {
@@ -40,6 +60,10 @@
   border: none;
   border-radius: 50%;
   border: 1px solid transparent;
+
+  &:focus, &.focus, &:active, &.active {
+    transform: scale(1.25);
+  }
 }
 
 //
@@ -57,14 +81,14 @@
 }
 
 .modal-close {
-  background-color: transparent;
-  background-image: url('../svgs/icon-close.svg');
-  background-repeat: no-repeat;
-  background-size: 12px 12px;
-  background-position: 1px 1px;
+  background-color: $ui-05;
 
-  &:focus {
+  &:hover, &.hover {
+    background-color: $ui-04;
+  }
+
+  &:focus, &.focus, &:active, &.active {
     outline: none;
-    border: 1px solid $selection;
+    background-color: $brand-02;
   }
 }

@@ -4,13 +4,12 @@
 
 .horizontal-tabs, .vertical-tabs {
   user-select: none;
-  
-  li, label {
-    min-height: 32px;
-    margin: 4px 32px 4px 0;
-  }
-  
+
   label {
+    position: relative;
+    margin-right: 32px;
+    cursor: pointer;
+
     input[type="radio"] {
       position: absolute;
       left: -9999px;
@@ -18,21 +17,23 @@
       cursor: pointer;
     }
   }
-  
-  &.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  .tab-item {
-    height: 32px;
-    vertical-align: middle;
-    
-    font-family: $sans-serif-font-family-medium;
-    font-size: 16px;
-    line-height: 24px;
-    
-    &:hover, &.hover {
+}
+
+.vertical-tabs {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  user-select: none;
+  padding: 20px 32px;
+
+  label {
+    position: relative;
+    cursor: pointer;
+
+    input[type="radio"] {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
       cursor: pointer;
       text-decoration: none;
     }
@@ -45,7 +46,18 @@
 
 .vertical-tabs {
   display: block;
-}
+  font-size: 16px;
+  font-family: $sans-serif-font-family-medium;
+  line-height: 20px;
+  text-align: left;
+  height: 40px;
+  padding-top: 16px;
+  margin-bottom: 8px;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid transparent;
 
 .horizontal-tabs .tab-item {
   padding: 4px 0;
@@ -79,16 +91,9 @@
   &:hover, &.hover {
     color: $text-01;
   }
-  
-  &:focus, &:active {
-    outline: none;
-    color: $selection;
-    background: transparent;
-  }
-  
-  & > input[type="radio"]:focus + span,
-  & > input[type="radio"]:active + span {
-    color: $selection;
+
+  & > label input[type="radio"]:focus + .tab-title {
+    border-bottom: 4px solid $brand-02;
   }
 }
 
@@ -100,12 +105,9 @@
   &.active {
     border-bottom: 4px solid $brand-01;
   }
-  &:focus, &:active {
-    border-bottom: 4px solid $selection;
-  }
-  ^[0] > input[type="radio"]:focus,
-  ^[0] > input[type="radio"]:active {
-    border-bottom: 4px solid $selection;
+
+  & > label input[type="radio"]:focus + .tab-title {
+    border-bottom: 4px solid $brand-02;
   }
 }
 
