@@ -8,11 +8,11 @@ const BaseModal = (props) => {
   if (!props.isHidden) {
     popup = (
       <div className="modal">
-        <div className="modal-text">
+        <div className="modal-section modal-text">
           {props.children}
         </div>
         <button
-          className="modal-close"
+          className="icon icon-close modal-close"
           onClick={props.onClose}
         />
       </div>
