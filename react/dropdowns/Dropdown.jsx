@@ -13,7 +13,8 @@ class Dropdown extends React.Component {
 
   getOptionTrigger() {
     let content = this.props.text;
-    if (this.props.value) {
+    const isBlank = !this.props.value;
+    if (!isBlank) {
       for (let i = 0; i < this.props.options.length; i++) {
         const option = this.props.options[i];
         if (option.value == this.props.value) {
@@ -22,9 +23,16 @@ class Dropdown extends React.Component {
         }
       }
     }
+
+    let classNames = 'dropdown-trigger';
+    if (isBlank) classNames += ' dropdown-trigger-blank';
+    if (this.props.isOpen) classNames += ' active';
+    if (!this.props.value) classNames += ' blank';
+    if (this.props.isDisabled) classNames += ' disabled';
+
     return (
       <button
-        className={`dropdown-trigger ${this.props.isOpen ? 'active' : ''} ${this.props.isDisabled ? 'disabled' : ''}`}
+        className={classNames}
         disabled={this.props.isDisabled}
         onClick={this.props.toggle}
       >
@@ -61,7 +69,7 @@ class Dropdown extends React.Component {
                   );
                 }
                 return (
-                  <li className="dropdown-item" key={option.text}>
+                  <li className={`dropdown-item ${option.disabled ? 'disabled' : ''}`} key={option.text}>
                     {item}
                   </li>
                 );
@@ -93,7 +101,8 @@ Dropdown.propTypes = {
       PropTypes.string,
       PropTypes.number
     ]),
-    href: PropTypes.string
+    href: PropTypes.string,
+    disabled: PropTypes.bool
   })),
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func

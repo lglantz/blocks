@@ -48,6 +48,7 @@ class SortableList extends React.Component {
     // we want to ignore the icons always and pretend like the list items
     // are the draggable elements
     if (e.target.className.indexOf('icon-drag') >= 0) return e.target.parentNode;
+    if (e.target.className.indexOf('sortable-list-draggable') >= 0) return e.target.parentNode;
     return e.target;
   }
 

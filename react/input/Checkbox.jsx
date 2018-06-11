@@ -6,6 +6,7 @@ const Checkbox = props => (
   <label className="checkbox-container">
     <span className="checkbox-label-text" title={props.text}>
       {props.text}
+      {props.children}
     </span>
     <input
       type="checkbox"
