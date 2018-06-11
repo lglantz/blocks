@@ -14,16 +14,20 @@ If you want to view the Blocks docs or develop Blocks, you'll want to download [
 
 For those that also work on Build or Plans, you may need to update RVM and your Ruby version (this is currently using Ruby 2.4.2).
 
-Once you've updated Ruby (and are using the new version), run
+Once you've updated Ruby, be sure you're using the new version:
+```
+rvm use ruby-2.4.2
+```
 
+Install Jekyll:
 ```
 gem install jekyll bundler
 ```
 
-You'll also need [Gulp](https://gulpjs.com/) 
+You'll also need to install some node modules
 
 ```
-npm install gulp
+npm install
 ```
 
 You can then run the documentation site with
