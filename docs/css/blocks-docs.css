@@ -207,9 +207,14 @@ p {
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
-a,
+a {
+  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
+  text-decoration: none;
+}
 .link {
-  color: $informatino-01;
+  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
   text-decoration: none;
 }
 a:hover {
@@ -233,28 +238,32 @@ a:focus {
   background-color: var(--ui-03, #f0f6f3);
   outline: none;
   text-decoration: none;
-  color: $informatino-01;
+  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
 }
 .link:focus {
   background-color: #f0f6f3;
   background-color: var(--ui-03, #f0f6f3);
   outline: none;
   text-decoration: none;
-  color: $informatino-01;
+  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
 }
 a.focus {
   background-color: #f0f6f3;
   background-color: var(--ui-03, #f0f6f3);
   outline: none;
   text-decoration: none;
-  color: $informatino-01;
+  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
 }
 .link.focus {
   background-color: #f0f6f3;
   background-color: var(--ui-03, #f0f6f3);
   outline: none;
   text-decoration: none;
-  color: $informatino-01;
+  color: #6f6bf8;
+  color: var(--information-01, #6f6bf8);
 }
 a.disabled {
   color: #2b3836;
