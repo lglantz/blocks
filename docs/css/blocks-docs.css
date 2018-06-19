@@ -1228,6 +1228,13 @@ a.disabled {
   background-color: #8ca59c;
   background-color: var(--ui-05, #8ca59c);
 }
+.hidden {
+  display: none;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .table {
   margin: 12px 16px;
   border-collapse: collapse;
