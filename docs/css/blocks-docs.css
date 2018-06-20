@@ -466,7 +466,7 @@ a.disabled {
   border-radius: 7px;
   cursor: pointer;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1.25;
   font-family: FranklinGothicMedium;
   text-align: center;
 }
@@ -474,7 +474,7 @@ a.disabled {
   height: 28px;
   padding: 4px 12px;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1.5;
 }
 .button:last-child {
   margin-right: 0;
