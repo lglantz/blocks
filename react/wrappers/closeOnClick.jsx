@@ -1,61 +1,78 @@
 const React = require('react');
-const ReactDOM = require('react-dom');
-
+const PropTypes = require('prop-types');
 
 function closeOnClick(WrappedComponent) {
-  return React.createClass({
-    getInitialState: function() {
-      return {
-        isOpen: !!this.props.isOpen
-      };
-    },
-    componentDidMount: function() {
-      // TODO: not best practice to use findDOMNode
-      // see if we can use refs instead
-      this.domElement = ReactDOM.findDOMNode(this);
-    },
-    componentWillUnmount: function() {
-      if (this.state.isOpen) document.body.removeEventListener('click', this.closeOnClick);
-    },
-    open: function() {
+  class ComponentWithCloseOnClick extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.state = { isOpen: !!props.isOpen };
+
+      this.open = this.open.bind(this);
+      this.close = this.close.bind(this);
+      this.toggle = this.toggle.bind(this);
+      this.closeOnClick = this.closeOnClick.bind(this);
+    }
+
+    componentDidMount() {
+      document.body.addEventListener('click', this.closeOnClick);
+    }
+
+    componentWillUnmount() {
+      document.body.removeEventListener('click', this.closeOnClick);
+    }
+
+    open() {
       this.setState({
         isOpen: true
-      }, () => {
-        document.body.addEventListener('click', this.closeOnClick);
       });
-    },
-    close: function() {
+    }
+
+    close() {
       this.setState({
         isOpen: false
-      }, () => {
-        document.body.removeEventListener('click', this.closeOnClick);
       });
-    },
-    toggle: function() {
+    }
+
+    toggle() {
       if (this.state.isOpen) {
         this.close();
       } else {
         this.open();
       }
-    },
-    closeOnClick: function(e) {
+    }
+
+    closeOnClick(e) {
       if (!this.domElement) return;
       if (e.target === this.domElement || this.domElement.contains(e.target)) return;
       this.close();
-    },
-    render: function() {
+    }
+
+    render() {
       return (
-        <WrappedComponent
-          {...this.props}
-          {...this.state}
-          isOpen={this.state.isOpen}
-          toggle={this.toggle}
-          open={this.open}
-          close={this.close}
-        />
+        <div ref={(node) => { this.domElement = node; }}>
+          <WrappedComponent
+            {...this.props}
+            {...this.state}
+            isOpen={this.state.isOpen}
+            toggle={this.toggle}
+            open={this.open}
+            close={this.close}
+          />
+        </div>
       );
     }
-  });
+  }
+
+  ComponentWithCloseOnClick.propTypes = {
+    isOpen: PropTypes.bool
+  };
+
+  ComponentWithCloseOnClick.defaultProps = {
+    isOpen: false
+  };
+
+  return ComponentWithCloseOnClick;
 }
 
 module.exports = closeOnClick;
