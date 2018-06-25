@@ -13,11 +13,21 @@
   border: 1px solid transparent;
 }
 
+.icon-big {
+  display: inline-block
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  border: none;
+  border: 1px solid transparent;
+}
+
 //
 // THEME
 //
 
-.icon {
+.icon, .icon-big {
   background-color: $brand-01;
 }
 
@@ -28,6 +38,12 @@
 .icon, .icon-info {
   background-repeat: no-repeat;
   background-size: 12px 12px;
+  background-position: 1px 1px;
+}
+
+.icon-big {
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
   background-position: 1px 1px;
 }
 
@@ -52,6 +68,10 @@
   mask: url('../svgs/icon-drag.svg') no-repeat 50% 50%;
 }
 
+.icon-check {
+  mask: url('../svgs/icon-check.svg') no-repeat 50% 50%;
+}
+
 .icon-plus {
   background-color: $brand-01;
   mask: url('../svgs/icon-plus.svg') no-repeat 50% 50%;
@@ -67,8 +87,4 @@
 
 .icon-close {
   mask: url('../svgs/icon-close.svg') no-repeat 50% 50%;
-}
-
-.icon-more {
-  mask: url('../svgs/icon-more.svg') no-repeat 50% 50%;
 }
