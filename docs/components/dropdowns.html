@@ -7,13 +7,189 @@ definition: An input that allows users to make a single selection from a pre-def
 ---
 
 {% capture example %}
-  <div></div>
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <p class="dropdown-description">Here is a dropdown</p>
+      <button class="dropdown-trigger active">
+        Choose an option
+      </button>
+      <ul class="dropdown-menu">
+        <li class="dropdown-item">
+          <button>Button option</button>
+        </li>
+        <li class="dropdown-item">
+          <a href="#">Link option</a>
+        </li>
+        <li class="dropdown-item disabled">
+          <button>Button option 2</button>
+        </li>
+        <li class="dropdown-item disabled">
+          <a href="#">Link option 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_example %}
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropdown-trigger">
+        Choose an option
+      </button>
+      <ul class="dropdown-menu hidden">
+        <li class="dropdown-item">
+          <button>Button option</button>
+        </li>
+        <li class="dropdown-item">
+          <a href="#">Link option</a>
+        </li>
+        <li class="dropdown-item disabled">
+          <button>Button option 2</button>
+        </li>
+        <li class="dropdown-item disabled">
+          <a href="#">Link option 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_hover_example %}
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropdown-trigger hover">
+        Choose an option
+      </button>
+      <ul class="dropdown-menu hidden">
+        <li class="dropdown-item">
+          <button>Button option</button>
+        </li>
+        <li class="dropdown-item">
+          <a href="#">Link option</a>
+        </li>
+        <li class="dropdown-item disabled">
+          <button>Button option 2</button>
+        </li>
+        <li class="dropdown-item disabled">
+          <a href="#">Link option 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_focus_example %}
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropdown-trigger focus">
+        Choose an option
+      </button>
+      <ul class="dropdown-menu hidden">
+        <li class="dropdown-item">
+          <button>Button option</button>
+        </li>
+        <li class="dropdown-item">
+          <a href="#">Link option</a>
+        </li>
+        <li class="dropdown-item disabled">
+          <button>Button option 2</button>
+        </li>
+        <li class="dropdown-item disabled">
+          <a href="#">Link option 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_disabled_example %}
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropdown-trigger disabled">
+        Choose an option
+      </button>
+      <ul class="dropdown-menu hidden">
+        <li class="dropdown-item">
+          <button>Button option</button>
+        </li>
+        <li class="dropdown-item">
+          <a href="#">Link option</a>
+        </li>
+        <li class="dropdown-item disabled">
+          <button>Button option 2</button>
+        </li>
+        <li class="dropdown-item disabled">
+          <a href="#">Link option 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_open_example %}
+  <div class="dropdown-wrapper">
+    <div class="dropdown">
+      <button class="dropdown-trigger active">
+        Choose an option
+      </button>
+      <ul class="dropdown-menu">
+        <li class="dropdown-item">
+          <button>One option</button>
+        </li>
+        <li class="dropdown-item disabled">
+          <a href="#">Disabled option</a>
+        </li>
+        <li class="dropdown-item hover">
+          <button>Best option</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 {% endcapture %}
 
 <!-- state & behavior section -->
 <div class="l-flex-vertical doc-section">
   <span class="heading-medium">States & Behavior</span>
   <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Default
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_example }}
+      </div>
+      <span class="doc-state-title">
+        Open
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_open_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_hover_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_focus_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_disabled_example }}
+      </div>
+    </div>
   </div>
 </div>
 
