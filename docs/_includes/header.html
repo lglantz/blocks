@@ -6,7 +6,7 @@
     {% for section in site.data.sections %}
       {% for doc in site.data.navigation %}
         {% if doc.section == section[0] %}
-          <li><a class="tab-item {% if current_section_title == section[0] %}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ section[0] }}</a></li>
+          <li><a class="tab tab-title {% if current_section_title == section[0] %}active{% endif %}" href="{{ doc.url | relative_url }}">{{ section[0] }}</a></li>
           {% break %}
         {% endif %}
       {% endfor %}

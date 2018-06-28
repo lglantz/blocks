@@ -11,8 +11,6 @@
 
 .dropdown-wrapper {
   display: inline-block;
-  margin: 24px 0;
-  width: 100%;
 }
 
 .dropdown-description {
@@ -103,6 +101,11 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    cursor: pointer;
+    
+    &:hover, &.hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -152,10 +155,10 @@
 
   &:hover, &.hover {
     background-color: $brand-01;
-    color: $ui-00;
+    color: $ui-01;
     
     * {
-      color: $ui-00;
+      color: $ui-01;
     }
   }
 
