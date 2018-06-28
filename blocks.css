@@ -1058,6 +1058,10 @@ a.disabled {
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
+.dropdown-item * {
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
 .dropdown-item *:focus {
   outline: none;
   color: #fff;
@@ -1105,6 +1109,14 @@ a.disabled {
 .dropdown-item.hover * {
   color: #fff;
   color: var(--ui-00, #fff);
+}
+.dropdown-item:hover * {
+  color: #fff;
+  color: var(--ui-01, #fff);
+}
+.dropdown-item.hover * {
+  color: #fff;
+  color: var(--ui-01, #fff);
 }
 .icon,
 .icon-info {
@@ -1684,7 +1696,7 @@ a.disabled {
   font-size: 16px;
   line-height: 20px;
 }
-.text-field input {
+.text-field input[type="text"] {
   height: 40px;
   font-size: 16px;
   line-height: 20px;
