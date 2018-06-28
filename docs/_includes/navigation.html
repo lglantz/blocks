@@ -4,7 +4,7 @@
     <span class="blocks-title">Blocks</span>
   </div>
   <nav>
-    <a href="{{ site.url }}">Home</a>
+    <a href="{{ site.baseurl }}">Home</a>
 
     {% assign current_page = site.data.navigation | where: "title",page.title %}
     {% assign current_section_title = current_page[0].section %}
@@ -16,7 +16,7 @@
         <ul>
           {% for doc in site.data.navigation %}
             {% if doc.subsection == subsection %}
-              <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ site.url }}/{{ doc.url }}">{{ doc.title }}</a></li>
+              <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -25,7 +25,7 @@
       <ul>
         {% for doc in site.data.navigation %}
           {% if doc.section == current_section_title %}
-            <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ site.url }}/{{ doc.url }}">{{ doc.title }}</a></li>
+            <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

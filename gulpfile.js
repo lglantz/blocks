@@ -48,7 +48,9 @@ gulp.task('dev:jekyll', () => {
     '8080',
     '--watch',
     '--incremental',
-    '--drafts'
+    '--drafts',
+    '--baseurl', // allow access of docs on localhost normally - when deployed,
+    ''           // baseurl is blocks/ for use with github pages
   ]);
 
   const jekyllLogger = (buffer) => {
