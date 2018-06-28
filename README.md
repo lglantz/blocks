@@ -10,12 +10,14 @@ If you just want to use Blocks, you can copy the blocks.css file along with the 
 
 Blocks can be included in your project as a subrepo by running
 ```
-git clone https://github.com/floored/blocks /path/to/blocks
+git subrepo clone https://github.com/floored/blocks.git /path/to/blocks
 ```
 in the base folder of your project. So, for example, for DataVis, we included Blocks by running:
 ```
-git clone https://github.com/floored/blocks /lib/blocks
+git subrepo clone https://github.com/floored/blocks.git /lib/blocks
 ```
+
+Note that the folder you are putting Blocks into must already exist in git.
 
 If you want to use the included React components, they can be included by pointing to the react-index, ex:
 ```
