@@ -31,8 +31,8 @@
   position: absolute;
   top: -2px;
   left: 0;
-  height: 18px;
-  width: 18px;
+  height: $checkbox-size;
+  width: $checkbox-size;
   border-radius: $base-border-radius;
   margin: 6px 0;
 
@@ -42,15 +42,11 @@
   }
 }
 
-/* On mouse-over, add a grey background color */
-.checkbox-container:hover input ~ .checkmark {
-  //
-}
-
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked */
 .checkbox-container input:checked ~ .checkmark {
   &.disabled {
     opacity: 0.5;
+    cursor: default;
     pointer-events: none;
   }
 }
@@ -83,36 +79,41 @@
 //
 
 .checkbox-label-text {
-  color: $text-01;
+  color: $checkbox-text-color;
 }
 
 .checkmark {
-  background-color: $ui-00;
-  border: 1px solid $ui-04;
+  background-color: $checkbox-unselected-background-color;
+  border: 1px solid $checkbox-unselected-border-color;
   
   &:hover, &.hover {
-    background-color: $ui-00;
-    border: 1px solid $ui-04;
+    background-color: $checkbox-unselected-hover-background-color;
+    border: 1px solid $checkbox-unselected-hover-border-color;
+    box-shadow: 0 2px 4px 0 $checkbox-hover-shadow-color;
   }
 }
 
 .checkbox-container input:checked ~ .checkmark {
-  background-color: $brand-01;
-  border: 1px solid $brand-01;
-
-  &.disabled {
-    background-color: $ui-07;
-    border: 1px solid $ui-07;
-  }
+  background-color: $checkbox-selected-background-color;
+  border: 1px solid $checkbox-selected-border-color;
   
   &:hover, &.hover {
-    background-color: $brand-01;
-    border: 1px solid $brand-01;
+    background-color: $checkbox-selected-hover-background-color;
+    border: 1px solid $checkbox-selected-hover-border-color;
+    box-shadow: 0 2px 4px 0 $checkbox-hover-shadow-color;
   }
 }
 
 .checkbox-container input[type="checkbox"]:focus + span,
 .checkbox-container input[type="checkbox"].focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px $selection;
+  border: 1px solid $checkbox-unselected-focus-border-color;
+  box-shadow: 0 2px 4px 0 $checkbox-hover-shadow-color;
+}
+
+.checkbox-container input[type="checkbox"]:checked:focus + span,
+.checkbox-container input[type="checkbox"]:checked.focus + span {
+  background-color: $checkbox-selected-focus-background-color;
+  outline: none;
+  border: 1px solid $checkbox-selected-focus-border-color;
 }

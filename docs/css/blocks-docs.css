@@ -762,6 +762,7 @@ a.disabled {
 }
 .checkbox-container input:checked ~ .checkmark.disabled {
   opacity: 0.5;
+  cursor: default;
   pointer-events: none;
 }
 .checkmark:after {
@@ -797,12 +798,16 @@ a.disabled {
   background-color: var(--ui-00, #fff);
   border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkmark.hover {
   background-color: #fff;
   background-color: var(--ui-00, #fff);
   border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input:checked ~ .checkmark {
   background-color: #00b07d;
@@ -810,33 +815,49 @@ a.disabled {
   border: 1px solid #00b07d;
   border: 1px solid var(--brand-01, #00b07d);
 }
-.checkbox-container input:checked ~ .checkmark.disabled {
-  background-color: #91a49e;
-  background-color: var(--ui-07, #91a49e);
-  border: 1px solid #91a49e;
-  border: 1px solid var(--ui-07, #91a49e);
-}
 .checkbox-container input:checked ~ .checkmark:hover {
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  border: 1px solid #009f6f;
+  border: 1px solid var(--interactive, #009f6f);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input:checked ~ .checkmark.hover {
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  border: 1px solid #009f6f;
+  border: 1px solid var(--interactive, #009f6f);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input[type="checkbox"]:focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px #49a1ff;
-  box-shadow: 0 0 0 2px var(--selection, #49a1ff);
+  border: 1px solid #00b07d;
+  border: 1px solid var(--brand-01, #00b07d);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input[type="checkbox"].focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px #49a1ff;
-  box-shadow: 0 0 0 2px var(--selection, #49a1ff);
+  border: 1px solid #00b07d;
+  border: 1px solid var(--brand-01, #00b07d);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.checkbox-container input[type="checkbox"]:checked:focus + span {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  outline: none;
+  border: 1px solid #39cf94;
+  border: 1px solid var(--success-hex, #39cf94);
+}
+.checkbox-container input[type="checkbox"]:checked.focus + span {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  outline: none;
+  border: 1px solid #39cf94;
+  border: 1px solid var(--success-hex, #39cf94);
 }
 .dropdown {
   position: relative;
