@@ -142,9 +142,13 @@
   }
   
   .color-card-name, .color-card-value {
+    width: 128px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 

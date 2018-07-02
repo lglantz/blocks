@@ -114,9 +114,9 @@
 //
 
 .dropdown-trigger {
-  background-color: $ui-01;
+  background-color: $ui-00;
   border: 1px solid $ui-03;
-  color: $ui-05;
+  color: $ui-07;
 
   &::after {
     background-color: $brand-01;
@@ -128,13 +128,13 @@
 
   &:focus, &.focus {
     outline: none;
-    border: 1px solid $brand-02;
+    border: 1px solid $selection;
     color: $text-01;
   }
 }
 
 .dropdown-menu {
-  background-color: $ui-01;
+  background-color: $ui-00;
   border: solid 1px $ui-04;
   box-shadow: 0 3px 6px 0 $ui-04;
 }
@@ -144,17 +144,17 @@
     color: $text-01;
     &:focus, &.focus, &:active, &.active {
       outline: none;
-      color: $ui-01;
+      color: $ui-00;
       background-color: $brand-01;
     }
   }
 
   &:hover, &.hover {
     background-color: $brand-01;
-    color: $ui-01;
+    color: $ui-00;
     
     * {
-      color: $ui-01;
+      color: $ui-00;
     }
   }
 }
