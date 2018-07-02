@@ -35,6 +35,7 @@ $bold-weight = 700;
 $interactive-hex = #009f6f;
 $interactive-hover-hex = #008b61;
 $interactive-shadow-hex = rgba(0, 72, 51, 0.25);
+$interactive-shadow-hover-hex = rgba(0, 72, 51, 0.35);
 
 $brand-01-hex = #00b07d;
 
@@ -60,6 +61,7 @@ $selection-hex = #49a1ff;
   --interactive: $interactive-hex;
   --interactive-hover: $interactive-hover-hex;
   --interactive-shadow: $interactive-shadow-hex;
+  --interactive-shadow-hover: $interactive-shadow-hover-hex;
 
   --brand-01: $brand-01-hex;
 
@@ -85,6 +87,7 @@ $selection-hex = #49a1ff;
 $interactive = var(--interactive, $interactive-hex);
 $interactive-hover = var(--interactive-hover, $interactive-hover-hex);
 $interactive-shadow = var(--interactive-shadow, $interactive-shadow-hex);
+$interactive-shadow-hover = var(--interactive-shadow-hover, $interactive-shadow-hover-hex);
 
 $brand-01 = var(--brand-01, $brand-01-hex);
 
@@ -134,33 +137,31 @@ $button-font-size = 16px;
 $button-small-font-size = 16px;
 
 // button colors
-$button-focus-inset-color = $ui-00;
+$button-shadow-color = $interactive-shadow;
+$button-hover-shadow-color = $interactive-shadow-hover;
+$button-focus-shadow-color = $interactive-shadow-hover;
 
-$primary-button-background-color = $brand-01;
-$primary-button-hover-background-color = $selection;
-$primary-button-disabled-background-color = $ui-07;
-$primary-button-focus-background-color = $selection;
+$primary-button-background-color = $interactive;
+$primary-button-hover-background-color = $interactive-hover;
+$primary-button-focus-background-color = $interactive-hover;
 
-$primary-button-border-color = $brand-01;
-$primary-button-hover-border-color = $selection;
-$primary-button-disabled-border-color = $ui-07;
-$primary-button-focus-border-color = $selection;
+$primary-button-border-color = $interactive;
+$primary-button-hover-border-color = $interactive-hover;
+$primary-button-focus-border-color = $brand-01;
 
 $primary-button-text-color = $ui-00;
 $primary-button-hover-text-color = $ui-00;
 $primary-button-focus-text-color = $ui-00;
 
-$secondary-button-background-color = $ui-02;
-$secondary-button-hover-background-color = $brand-01;
-$secondary-button-disabled-background-color = $ui-02;
-$secondary-button-focus-background-color = $brand-01;
+$secondary-button-background-color = $ui-00;
+$secondary-button-hover-background-color = $ui-02;
+$secondary-button-focus-background-color = $ui-02;
 
-$secondary-button-border-color = $ui-07;
-$secondary-button-hover-border-color = $brand-01;
-$secondary-button-disabled-border-color = $ui-07;
-$secondary-button-focus-border-color = $brand-01;
+$secondary-button-border-color = $ui-00;
+$secondary-button-hover-border-color = $ui-03;
+$secondary-button-focus-border-color = $ui-04;
 
-$secondary-button-text-color = $ui-07;
-$secondary-button-hover-text-color = $ui-00;
-$secondary-button-focus-text-color = $ui-00;
+$secondary-button-text-color = $interactive;
+$secondary-button-hover-text-color = $interactive;
+$secondary-button-focus-text-color = $interactive;
 

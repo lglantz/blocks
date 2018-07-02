@@ -91,6 +91,7 @@ th {
   --interactive: #009f6f;
   --interactive-hover: #008b61;
   --interactive-shadow: rgba(0,72,51,0.25);
+  --interactive-shadow-hover: rgba(0,72,51,0.35);
   --brand-01: #00b07d;
   --ui-00: #fff;
   --ui-01: #f6f8f8;
@@ -598,125 +599,131 @@ a.disabled {
   opacity: 0.5;
   pointer-events: none;
 }
+.button {
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
+}
 .button.primary {
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  border: 2px solid #009f6f;
+  border: 2px solid var(--interactive, #009f6f);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.primary:hover {
-  background-color: #49a1ff;
-  background-color: var(--selection, #49a1ff);
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+  border: 2px solid #008b61;
+  border: 2px solid var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.primary.hover {
-  background-color: #49a1ff;
-  background-color: var(--selection, #49a1ff);
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+  border: 2px solid #008b61;
+  border: 2px solid var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
-}
-.button.primary.disabled {
-  background-color: #91a49e;
-  background-color: var(--ui-07, #91a49e);
-  border: 1px solid #91a49e;
-  border: 1px solid var(--ui-07, #91a49e);
 }
 .button.secondary {
-  background-color: #f5faf8;
-  background-color: var(--ui-02, #f5faf8);
-  border: 1px solid #91a49e;
-  border: 1px solid var(--ui-07, #91a49e);
-  color: #91a49e;
-  color: var(--ui-07, #91a49e);
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+  border: 2px solid #fff;
+  border: 2px solid var(--ui-00, #fff);
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
 }
 .button.secondary:hover {
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
-  color: #fff;
-  color: var(--ui-00, #fff);
+  background-color: #f5faf8;
+  background-color: var(--ui-02, #f5faf8);
+  border: 2px solid #edf0ee;
+  border: 2px solid var(--ui-03, #edf0ee);
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
 }
 .button.secondary.hover {
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
-  color: #fff;
-  color: var(--ui-00, #fff);
+  background-color: #f5faf8;
+  background-color: var(--ui-02, #f5faf8);
+  border: 2px solid #edf0ee;
+  border: 2px solid var(--ui-03, #edf0ee);
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
 }
-.button:focus,
-.button:active,
+.button:hover {
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.button.hover {
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.button:focus {
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.button:active {
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
 .button.focus {
   outline: none;
   text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .button:focus.primary {
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
-  box-shadow: inset 0 0 0 1px #fff;
-  box-shadow: inset 0 0 0 1px var(--ui-00, #fff);
-  background-color: #49a1ff;
-  background-color: var(--selection, #49a1ff);
+  border: 2px solid #00b07d;
+  border: 2px solid var(--brand-01, #00b07d);
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .button:active.primary {
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
-  box-shadow: inset 0 0 0 1px #fff;
-  box-shadow: inset 0 0 0 1px var(--ui-00, #fff);
-  background-color: #49a1ff;
-  background-color: var(--selection, #49a1ff);
+  border: 2px solid #00b07d;
+  border: 2px solid var(--brand-01, #00b07d);
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.focus.primary {
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
-  box-shadow: inset 0 0 0 1px #fff;
-  box-shadow: inset 0 0 0 1px var(--ui-00, #fff);
-  background-color: #49a1ff;
-  background-color: var(--selection, #49a1ff);
+  border: 2px solid #00b07d;
+  border: 2px solid var(--brand-01, #00b07d);
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .button:focus.secondary {
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
-  box-shadow: inset 0 0 0 1px #fff;
-  box-shadow: inset 0 0 0 1px var(--ui-00, #fff);
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  color: #fff;
-  color: var(--ui-00, #fff);
+  border: 2px solid #d9e1e0;
+  border: 2px solid var(--ui-04, #d9e1e0);
+  background-color: #f5faf8;
+  background-color: var(--ui-02, #f5faf8);
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
 }
 .button:active.secondary {
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
-  box-shadow: inset 0 0 0 1px #fff;
-  box-shadow: inset 0 0 0 1px var(--ui-00, #fff);
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  color: #fff;
-  color: var(--ui-00, #fff);
+  border: 2px solid #d9e1e0;
+  border: 2px solid var(--ui-04, #d9e1e0);
+  background-color: #f5faf8;
+  background-color: var(--ui-02, #f5faf8);
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
 }
 .button.focus.secondary {
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
-  box-shadow: inset 0 0 0 1px #fff;
-  box-shadow: inset 0 0 0 1px var(--ui-00, #fff);
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  color: #fff;
-  color: var(--ui-00, #fff);
+  border: 2px solid #d9e1e0;
+  border: 2px solid var(--ui-04, #d9e1e0);
+  background-color: #f5faf8;
+  background-color: var(--ui-02, #f5faf8);
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
 }
 .checkbox-label-text {
   font-size: 16px;
