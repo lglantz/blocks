@@ -5,13 +5,13 @@
 .text-field {
   display: inline-flex;
   flex-direction: column;
-  
+
   label {
     font-size: 16px;
     line-height: 20px;
   }
-  
-  input[type="text"] {
+
+  input {
     height: 40px;
     font-size: 16px;
     line-height: 20px;
@@ -35,8 +35,8 @@
   position: absolute;
   left: 16px;
   user-select: none;
-  
-  & ~ input[type="text"] {
+
+  & ~ input {
     padding-left: 40px;
   }
 }
@@ -45,8 +45,8 @@
   position: absolute;
   right: 8px;
   user-select: none;
-  
-  & ~ input[type="text"] {
+
+  & ~ input {
     padding-right: 40px;
   }
 }
@@ -64,11 +64,11 @@
   label {
     color: $text-01;
   }
-  
-  input[type="text"] {
+
+  input {
     background-color: $ui-01;
     border: 1px solid $ui-03;
-    
+
     &.invalid {
       border: 1px solid $error-01;
     }
@@ -81,6 +81,10 @@
     &:focus, &.focus {
       outline: none;
       border: 1px solid $brand-02;
+    }
+
+    &:read-only {
+      pointer-events: none;
     }
 
     &.disabled {

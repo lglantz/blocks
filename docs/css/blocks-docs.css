@@ -1523,7 +1523,7 @@ a.disabled {
   font-size: 16px;
   line-height: 20px;
 }
-.text-field input[type="text"] {
+.text-field input {
   height: 40px;
   font-size: 16px;
   line-height: 20px;
@@ -1548,7 +1548,7 @@ a.disabled {
       -ms-user-select: none;
           user-select: none;
 }
-.text-field-prefix ~ input[type="text"] {
+.text-field-prefix ~ input {
   padding-left: 40px;
 }
 .text-field-suffix {
@@ -1559,7 +1559,7 @@ a.disabled {
       -ms-user-select: none;
           user-select: none;
 }
-.text-field-suffix ~ input[type="text"] {
+.text-field-suffix ~ input {
   padding-right: 40px;
 }
 .invalid-label-message {
@@ -1570,39 +1570,45 @@ a.disabled {
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
-.text-field input[type="text"] {
+.text-field input {
   background-color: #fff;
   background-color: var(--ui-01, #fff);
   border: 1px solid #f0f6f3;
   border: 1px solid var(--ui-03, #f0f6f3);
 }
-.text-field input[type="text"].invalid {
+.text-field input.invalid {
   border: 1px solid #ec4f07;
   border: 1px solid var(--error-01, #ec4f07);
 }
-.text-field input[type="text"]:hover {
+.text-field input:hover {
   border: 1px solid #f0f6f3;
   border: 1px solid var(--ui-03, #f0f6f3);
   box-shadow: 0 0 0 1px #f0f6f3;
   box-shadow: 0 0 0 1px var(--ui-03, #f0f6f3);
 }
-.text-field input[type="text"].hover {
+.text-field input.hover {
   border: 1px solid #f0f6f3;
   border: 1px solid var(--ui-03, #f0f6f3);
   box-shadow: 0 0 0 1px #f0f6f3;
   box-shadow: 0 0 0 1px var(--ui-03, #f0f6f3);
 }
-.text-field input[type="text"]:focus {
+.text-field input:focus {
   outline: none;
   border: 1px solid #75e6c9;
   border: 1px solid var(--brand-02, #75e6c9);
 }
-.text-field input[type="text"].focus {
+.text-field input.focus {
   outline: none;
   border: 1px solid #75e6c9;
   border: 1px solid var(--brand-02, #75e6c9);
 }
-.text-field input[type="text"].disabled {
+.text-field input:-moz-read-only {
+  pointer-events: none;
+}
+.text-field input:read-only {
+  pointer-events: none;
+}
+.text-field input.disabled {
   opacity: 0.5;
   pointer-events: none;
 }
