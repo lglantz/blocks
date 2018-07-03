@@ -9,7 +9,7 @@ button {
 p {
   font-size: $base-font-size;
   font-family: $sans-serif-font-family-normal;
-  line-height: 24px;
+  line-height: 28px;
   text-align: left;
 
   margin: 12px 0;
@@ -64,6 +64,47 @@ h6 {
   font-size: 20px;
   color: $text-01;
 }
+
+.subtitle {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.subtitle-small {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.ui-text {
+  font-family: $sans-serif-font-family-normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.body-caps {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: $sans-serif-font-family-normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.overline {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+}
+
+
 
 .heading-large {
   margin: 12px 0;
@@ -162,6 +203,16 @@ h6 {
 //
 // THEME
 //
+
+.subtitle, .subtitle-small {
+  &.active {
+    color: $brand-01;
+  }
+  
+  &.inactive {
+    color: $text-02;
+  }
+}
 
 .heading-large {
   color: $brand-01;
