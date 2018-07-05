@@ -1524,9 +1524,11 @@ a.disabled {
           user-select: none;
 }
 .horizontal-tabs li,
-.vertical-tabs li {
+.vertical-tabs li,
+.horizontal-tabs label,
+.vertical-tabs label {
   min-height: 32px;
-  margin: 4px;
+  margin: 4px 32px 4px 0;
 }
 .horizontal-tabs label input[type="radio"],
 .vertical-tabs label input[type="radio"] {
@@ -1565,6 +1567,7 @@ a.disabled {
   padding: 4px 0;
 }
 .vertical-tabs .tab-item {
+  display: block;
   margin-left: -12px;
   padding: 8px;
 }
