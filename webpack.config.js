@@ -1,4 +1,5 @@
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './docs/_javascript/preview.jsx',
@@ -16,5 +17,16 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../docs/lib/'),
     filename: 'preview.js'
-  }
+  },
+  plugins: [
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        ie8: false,
+        output: {
+          comments: false,
+          beautify: false
+        }
+      }
+    })
+  ]
 };
