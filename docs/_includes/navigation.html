@@ -4,8 +4,6 @@
     <span class="blocks-title">Blocks</span>
   </div>
   <nav>
-    <a href="{{ site.baseurl }}">Home</a>
-
     {% assign current_page = site.data.navigation | where: "title",page.title %}
     {% assign current_section_title = current_page[0].section %}
     {% assign section = site.data.sections[current_section_title] %}
