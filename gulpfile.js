@@ -6,6 +6,9 @@ const stylus = require('gulp-stylus');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
+const webpack = require('webpack-stream');
+
+const config = require('./webpack.config.js');
 
 gulp.task('dev:css', function () {
   const plugins = [
@@ -63,10 +66,22 @@ gulp.task('dev:jekyll', () => {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
+gulp.task('dev:react', () => {
+  return gulp.src('react/preview.jsx')
+    .pipe(webpack(config))
+    .pipe(gulp.dest('docs/lib'));
+});
+
+gulp.task('watch:react', function () {
+  gulp.watch('react/*', ['dev:react']);
+});
+
 gulp.task('server', [
   'dev:fonts',
   'dev:icons',
   'dev:css',
+  'dev:react',
   'dev:jekyll',
-  'watch:css'
+  'watch:css',
+  'watch:react'
 ]);
