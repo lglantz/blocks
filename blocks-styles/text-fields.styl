@@ -12,7 +12,7 @@
     line-height: 20px;
   }
 
-  input[type="text"] {
+  input {
     height: 40px;
     font-size: 16px;
     line-height: 20px;
@@ -35,7 +35,7 @@
   left: 16px;
   user-select: none;
 
-  & ~ input[type="text"] {
+  & ~ input {
     padding-left: 40px;
   }
 }
@@ -45,7 +45,7 @@
   right: 8px;
   user-select: none;
 
-  & ~ input[type="text"] {
+  & ~ input {
     padding-right: 40px;
   }
 }
@@ -63,9 +63,9 @@
   label {
     color: $text-01;
   }
-
-  input[type="text"] {
-    background-color: $ui-01;
+  
+  input {
+    background-color: $ui-00;
     border: 1px solid $ui-03;
 
     &.invalid {
