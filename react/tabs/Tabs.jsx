@@ -2,12 +2,12 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const HorizontalTabs = props => (
-  <div className={`horizontal-tabs ${props.isDisabled ? 'disabled' : ''}`}>
+const Tabs = props => (
+  <div className={`${props.isVertical ? 'vertical-tabs' : 'horizontal-tabs'} ${props.isDisabled ? 'disabled' : ''}`}>
     {
       props.tabs.map((tab, idx) => (
         <label
-          className="horizontal-tab"
+          className={`tab-item ${idx === props.activeTabIdx ? 'active' : 'inactive'}`}
           key={tab}
         >
           <input
@@ -18,7 +18,7 @@ const HorizontalTabs = props => (
             disabled={props.isDisabled}
             onChange={props.onChange}
           />
-          <span className="tab tab-title">
+          <span>
             {tab}
           </span>
         </label>
@@ -27,21 +27,23 @@ const HorizontalTabs = props => (
   </div>
 );
 
-HorizontalTabs.propTypes = {
+Tabs.propTypes = {
   name: PropTypes.string,
   tabs: PropTypes.arrayOf(PropTypes.string),
   activeTabIdx: PropTypes.number,
   isDisabled: PropTypes.bool,
+  isVertical: PropTypes.bool,
   onChange: PropTypes.func
 };
 
-HorizontalTabs.defaultProps = {
+Tabs.defaultProps = {
   name: '',
   tabs: [],
   activeTabIdx: 0,
   isDisabled: false,
+  isVertical: false,
   onChange: () => {}
 };
 
-module.exports = HorizontalTabs;
+module.exports = Tabs;
 

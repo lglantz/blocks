@@ -10,20 +10,20 @@
 
     {% if section.subsections %}
       {% for subsection in section.subsections %}
-        <p class="category-title">{{ subsection }}</p>
-        <ul>
+        <p class="body-caps">{{ subsection }}</p>
+        <ul class="vertical-tabs">
           {% for doc in site.data.navigation %}
             {% if doc.subsection == subsection %}
-              <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+              <li><a class="tab-item {% if doc.title == page.title%}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>
       {% endfor %}
     {% else %}
-      <ul>
+      <ul class="vertical-tabs">
         {% for doc in site.data.navigation %}
           {% if doc.section == current_section_title %}
-            <li><a class="title {% if doc.title == page.title%}active{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+            <li><a class="tab-item {% if doc.title == page.title%}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

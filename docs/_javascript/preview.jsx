@@ -25,8 +25,7 @@ const AccordionSection = BlocksReact.Accordion;
 const Breadcrumbs = BlocksReact.Progress.Breadcrumbs;
 const ProgressDots = BlocksReact.Progress.ProgressDots;
 
-const HorizontalTabs = BlocksReact.Tabs.HorizontalTabs;
-const VerticalTabs = BlocksReact.Tabs.VerticalTabs;
+const Tabs = BlocksReact.Tabs;
 
 const SortableList = BlocksReact.SortableList;
 
@@ -393,7 +392,7 @@ const Preview = () => (
     <div className="l-flex-vertical doc-section">
       <span className="heading-medium">Tabs</span>
       <div>
-        <HorizontalTabs
+        <Tabs
           name="design-page-horizontal-tabs"
           tabs={
             [
@@ -404,7 +403,7 @@ const Preview = () => (
         />
       </div>
       <div>
-        <HorizontalTabs
+        <Tabs
           name="design-page-horizontal-tabs-disabled"
           tabs={
             [
@@ -416,7 +415,7 @@ const Preview = () => (
         />
       </div>
       <div>
-        <VerticalTabs
+        <Tabs
           name="design-page-vertical-tabs"
           tabs={
             [
@@ -424,6 +423,7 @@ const Preview = () => (
             ]
           }
           activeTabIdx={0}
+          isVertical
         />
       </div>
     </div>

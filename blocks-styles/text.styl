@@ -9,7 +9,7 @@ button {
 p {
   font-size: $base-font-size;
   font-family: $sans-serif-font-family-normal;
-  line-height: 24px;
+  line-height: 28px;
   text-align: left;
 
   margin: 12px 0;
@@ -28,6 +28,83 @@ a, .link {
     text-decoration: underline;
   }
 }
+
+h1 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 96px;
+  color: $text-01;
+}
+
+h2 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 60px;
+  color: $text-01;
+}
+
+h3 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 48px;
+  color: $text-01;
+}
+
+h4 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 34px;
+  color: $text-01;
+}
+
+h5 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 24px;
+  color: $text-01;
+}
+
+h6 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 20px;
+  color: $text-01;
+}
+
+.subtitle {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.subtitle-small {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.ui-text {
+  font-family: $sans-serif-font-family-normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.body-caps {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: $sans-serif-font-family-normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.overline {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+}
+
+
 
 .heading-large {
   margin: 12px 0;
@@ -127,6 +204,16 @@ a, .link {
 // THEME
 //
 
+.subtitle, .subtitle-small {
+  &.active {
+    color: $brand-01;
+  }
+  
+  &.inactive {
+    color: $text-02;
+  }
+}
+
 .heading-large {
   color: $brand-01;
 }
@@ -140,7 +227,7 @@ a, .link {
 }
 
 .category-title {
-  color: $ui-05;
+  color: $ui-07;
 }
 
 .statistic-title {
@@ -148,19 +235,19 @@ a, .link {
 }
 
 .success {
-  color: $success-01;
+  color: $success;
 }
 
 .warning {
-  color: $warning-01;
+  color: $warning;
 }
 
 .error {
-  color: $error-01;
+  color: $error;
 }
 
 .information {
-  color: $information-01;
+  color: $information;
 }
 
 .tab {
@@ -188,7 +275,7 @@ p {
 }
 
 a, .link {
-  color: $information-01;
+  color: $information;
   text-decoration: none;
 
   &:hover, &.hover {
@@ -199,7 +286,7 @@ a, .link {
     background-color: $ui-03;
     outline: none;
     text-decoration: none;
-    color: $information-01;
+    color: $information;
   }
 
   &.disabled {

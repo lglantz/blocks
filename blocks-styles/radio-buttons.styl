@@ -71,21 +71,21 @@
 }
 
 .radio-check {
-  background-color: $ui-01;
+  background-color: $ui-00;
   border: 1px solid $ui-04;
   
   &:hover, &.hover {
-    background-color: $ui-01;
+    background-color: $ui-00;
     border: 1px solid $ui-04;
   }
 }
 
 .radio-button-container input:checked ~ .radio-check {
-  background-color: $ui-01;
+  background-color: $ui-00;
   border: 1px solid $brand-01;
 
   &.disabled {
-    border: 1px solid $ui-05;
+    border: 1px solid $ui-07;
   }
 }
 
@@ -94,11 +94,11 @@
 }
 
 .radio-button-container .radio-check.disabled:after {
-  background-color: $ui-05;
+  background-color: $ui-07;
 }
 
 .radio-button-container input[type="radio"]:focus + span,
 .radio-button-container input[type="radio"].focus + span {
   outline: none;
-  box-shadow: 0 0 0 2px $brand-02;
+  box-shadow: 0 0 0 2px $selection;
 }

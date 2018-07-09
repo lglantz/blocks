@@ -64,13 +64,13 @@
   label {
     color: $text-01;
   }
-
+  
   input {
-    background-color: $ui-01;
+    background-color: $ui-00;
     border: 1px solid $ui-03;
 
     &.invalid {
-      border: 1px solid $error-01;
+      border: 1px solid $error;
     }
 
     &:hover, &.hover {
@@ -80,7 +80,7 @@
 
     &:focus, &.focus {
       outline: none;
-      border: 1px solid $brand-02;
+      border: 1px solid $selection;
     }
 
     &:read-only {
@@ -99,7 +99,7 @@
 }
 
 .invalid-label-marker {
-  color: $error-01;
+  color: $error;
 }
 
 .invalid-label-message {
