@@ -4,12 +4,12 @@
 
 .horizontal-tabs, .vertical-tabs {
   user-select: none;
-  
+
   li, label {
     min-height: 32px;
-    margin: 4px 32px 4px 0;
+    margin: 4px 0 4px 0;
   }
-  
+
   label {
     input[type="radio"] {
       position: absolute;
@@ -18,20 +18,20 @@
       cursor: pointer;
     }
   }
-  
+
   &.disabled {
     opacity: 0.5;
     pointer-events: none;
   }
-  
+
   .tab-item {
     height: 32px;
     vertical-align: middle;
-    
+
     font-family: $sans-serif-font-family-medium;
     font-size: 16px;
     line-height: 24px;
-    
+
     &:hover, &.hover {
       cursor: pointer;
       text-decoration: none;
@@ -41,6 +41,9 @@
 
 .horizontal-tabs {
   display: inline-flex;
+  li, label {
+    margin: 4px 24px 4px 0;
+  }
 }
 
 .vertical-tabs {
@@ -67,25 +70,25 @@
 
 .tab-item {
   border: none;
-  
+
   &.inactive {
     color: $text-02;
   }
-  
+
   &.active {
     color: $brand-01;
   }
-  
+
   &:hover, &.hover {
     color: $text-01;
   }
-  
+
   &:focus, &:active {
     outline: none;
     color: $selection;
     background: transparent;
   }
-  
+
   & > input[type="radio"]:focus + span,
   & > input[type="radio"]:active + span {
     color: $selection;
