@@ -32,7 +32,10 @@ module.exports = {
   },
   SortableList: require('./react/lists/SortableList.jsx'),
   Table: require('./react/table/Table.jsx'),
-  Tabs: require('./react/tabs/Tabs.jsx'),
+  Tabs: {
+    RadioTabs: require('./react/tabs/RadioTabs.jsx'),
+    LinkTabs: require('./react/tabs/LinkTabs.jsx')
+  },
   wrappers: {
     closeOnClick: require('./react/wrappers/closeOnClick.jsx')
   }

@@ -25,7 +25,8 @@ const AccordionSection = BlocksReact.Accordion;
 const Breadcrumbs = BlocksReact.Progress.Breadcrumbs;
 const ProgressDots = BlocksReact.Progress.ProgressDots;
 
-const Tabs = BlocksReact.Tabs;
+const RadioTabs = BlocksReact.Tabs.RadioTabs;
+const LinkTabs = BlocksReact.Tabs.LinkTabs;
 
 const SortableList = BlocksReact.SortableList;
 
@@ -394,8 +395,8 @@ const Preview = () => (
     <div className="l-flex-vertical doc-section">
       <span className="heading-medium">Tabs</span>
       <div>
-        <Tabs
-          name="design-page-horizontal-tabs"
+        <p>Horizontal tabs</p>
+        <RadioTabs
           tabs={
             [
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
@@ -404,8 +405,8 @@ const Preview = () => (
         />
       </div>
       <div>
-        <Tabs
-          name="design-page-horizontal-tabs-disabled"
+        <p>Disabled horizontal tabs</p>
+        <RadioTabs
           tabs={
             [
               'Disabled Tab 1', 'Disabled Tab 2', 'Disabled Tab 3', 'Disabled Tab 4'
@@ -415,14 +416,27 @@ const Preview = () => (
         />
       </div>
       <div>
-        <Tabs
-          name="design-page-vertical-tabs"
+        <p>Vertical tabs</p>
+        <RadioTabs
           tabs={
             [
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
             ]
           }
           isVertical
+        />
+      </div>
+      <div>
+        <p>Link tabs</p>
+        <LinkTabs
+          tabs={
+            [
+              { name: 'Tab 1', href: '#' },
+              { name: 'Tab 2', href: '#' },
+              { name: 'Tab 3', href: '#' },
+              { name: 'Tab 4', href: '#' }
+            ]
+          }
         />
       </div>
     </div>

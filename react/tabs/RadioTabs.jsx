@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const Tabs = props => (
+const RadioTabs = props => (
   <div className={`${props.isVertical ? 'vertical-tabs' : 'horizontal-tabs'} ${props.isDisabled ? 'disabled' : ''}`}>
     {
       props.tabs.map((tab, idx) => (
@@ -26,7 +26,7 @@ const Tabs = props => (
   </div>
 );
 
-Tabs.propTypes = {
+RadioTabs.propTypes = {
   name: PropTypes.string,
   tabs: PropTypes.arrayOf(PropTypes.string),
   activeTabIdx: PropTypes.number,
@@ -35,8 +35,8 @@ Tabs.propTypes = {
   onChange: PropTypes.func
 };
 
-Tabs.defaultProps = {
-  name: '',
+RadioTabs.defaultProps = {
+  name: Math.random().toString(),
   tabs: [],
   activeTabIdx: 0,
   isDisabled: false,
@@ -44,5 +44,5 @@ Tabs.defaultProps = {
   onChange: () => {}
 };
 
-module.exports = Tabs;
+module.exports = RadioTabs;
 

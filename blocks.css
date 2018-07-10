@@ -1591,9 +1591,21 @@ a.disabled {
   color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
-.horizontal-tabs input[type="radio"]:checked + .tab-item,
+.horizontal-tabs input[type="radio"] + .tab-item {
+  color: #7c8c88;
+  color: var(--text-02, #7c8c88);
+}
+.vertical-tabs input[type="radio"] + .tab-item {
+  color: #7c8c88;
+  color: var(--text-02, #7c8c88);
+}
+.horizontal-tabs input[type="radio"]:checked + .tab-item {
+  color: #00b07d;
+  color: var(--brand-01, #00b07d);
+}
 .vertical-tabs input[type="radio"]:checked + .tab-item {
-  color: #bbb rand-01;
+  color: #00b07d;
+  color: var(--brand-01, #00b07d);
 }
 .tab-item {
   border: none;
