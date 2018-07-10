@@ -7,7 +7,6 @@ const Tabs = props => (
     {
       props.tabs.map((tab, idx) => (
         <label
-          className={`tab-item ${idx === props.activeTabIdx ? 'active' : 'inactive'}`}
           key={tab}
         >
           <input
@@ -18,7 +17,7 @@ const Tabs = props => (
             disabled={props.isDisabled}
             onChange={props.onChange}
           />
-          <span>
+          <span className="tab-item">
             {tab}
           </span>
         </label>

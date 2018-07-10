@@ -210,6 +210,7 @@ const Preview = () => (
             <TextField
               label="Text input label"
               value="More than a placeholder"
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -222,7 +223,8 @@ const Preview = () => (
               label="Text input label"
               isValid={() => (false)}
               invalidErrorMessage="My text is invalid"
-              value="Pepsi is good"
+              value="Wronggg"
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -399,7 +401,6 @@ const Preview = () => (
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
             ]
           }
-          activeTabIdx={0}
         />
       </div>
       <div>
@@ -410,7 +411,6 @@ const Preview = () => (
               'Disabled Tab 1', 'Disabled Tab 2', 'Disabled Tab 3', 'Disabled Tab 4'
             ]
           }
-          activeTabIdx={0}
           isDisabled
         />
       </div>
@@ -422,7 +422,6 @@ const Preview = () => (
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
             ]
           }
-          activeTabIdx={0}
           isVertical
         />
       </div>

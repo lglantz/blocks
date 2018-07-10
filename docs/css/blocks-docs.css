@@ -1575,6 +1575,26 @@ a.disabled {
 .vertical-tabs {
   background-color: transparent;
 }
+.horizontal-tabs input[type="radio"]:focus + .tab-item {
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+}
+.vertical-tabs input[type="radio"]:focus + .tab-item {
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+}
+.horizontal-tabs input[type="radio"]:active + .tab-item {
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+}
+.vertical-tabs input[type="radio"]:active + .tab-item {
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+}
+.horizontal-tabs input[type="radio"]:checked + .tab-item,
+.vertical-tabs input[type="radio"]:checked + .tab-item {
+  color: #bbb rand-01;
+}
 .tab-item {
   border: none;
 }
@@ -1605,14 +1625,6 @@ a.disabled {
   color: #49a1ff;
   color: var(--selection, #49a1ff);
   background: transparent;
-}
-.tab-item > input[type="radio"]:focus + span {
-  color: #49a1ff;
-  color: var(--selection, #49a1ff);
-}
-.tab-item > input[type="radio"]:active + span {
-  color: #49a1ff;
-  color: var(--selection, #49a1ff);
 }
 .horizontal-tabs .tab-item {
   border-bottom: 4px solid transparent;
@@ -1675,6 +1687,14 @@ a.disabled {
 .vertical-tabs .tab-item > input[type="radio"]:active {
   border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
+}
+.horizontal-tabs input[type="radio"]:checked + .tab-item {
+  border-bottom: 4px solid #00b07d;
+  border-bottom: 4px solid var(--brand-01, #00b07d);
+}
+.vertical-tabs input[type="radio"]:checked + .tab-item {
+  border-left: 4px solid #00b07d;
+  border-left: 4px solid var(--brand-01, #00b07d);
 }
 .text-field {
   display: inline-flex;
