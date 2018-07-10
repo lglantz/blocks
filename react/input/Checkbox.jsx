@@ -11,7 +11,7 @@ const Checkbox = props => (
       type="checkbox"
       name={props.name}
       value={props.value}
-      checked={props.isChecked}
+      defaultChecked={props.isChecked}
       disabled={props.isDisabled}
       onChange={props.onChange}
     />
