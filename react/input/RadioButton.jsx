@@ -21,9 +21,9 @@ const RadioButton = props => (
 );
 
 RadioButton.propTypes = {
+  name: PropTypes.string.isRequired,
   text: PropTypes.string,
   value: PropTypes.string,
-  name: PropTypes.string,
   isDisabled: PropTypes.bool,
   isChecked: PropTypes.bool,
   onChange: PropTypes.func
@@ -32,7 +32,6 @@ RadioButton.propTypes = {
 RadioButton.defaultProps = {
   text: '',
   value: '',
-  name: '',
   isDisabled: false,
   isChecked: false,
   onChange: () => {}

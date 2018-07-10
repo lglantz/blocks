@@ -19,6 +19,7 @@ module.exports = {
   Input: {
     Checkbox: require('./react/input/Checkbox.jsx'),
     RadioButton: require('./react/input/RadioButton.jsx'),
+    RadioButtonGroup: require('./react/input/RadioButtonGroup.jsx'),
     TextField: require('./react/input/TextField.jsx'),
     Toggle: require('./react/input/Toggle.jsx')
   },

@@ -9,7 +9,7 @@ const ButtonSecondary = BlocksReact.Buttons.ButtonSecondary;
 const ButtonSmallSecondary = BlocksReact.Buttons.ButtonSmallSecondary;
 
 const Checkbox = BlocksReact.Input.Checkbox;
-const RadioButton = BlocksReact.Input.RadioButton;
+const RadioButtonGroup = BlocksReact.Input.RadioButtonGroup;
 const TextField = BlocksReact.Input.TextField;
 const Toggle = BlocksReact.Input.Toggle;
 
@@ -144,8 +144,9 @@ const Preview = () => (
             Unselected
           </span>
           <div className="doc-state-content">
-            <RadioButton name="radio-1" text="Unselected" />
-            <RadioButton name="radio-1" text="Unselected 2" />
+            <RadioButtonGroup
+              options={['Unselected', 'Unselected 2']}
+            />
           </div>
         </div>
         <div className="l-flex-horizontal">
@@ -153,8 +154,10 @@ const Preview = () => (
             Selected
           </span>
           <div className="doc-state-content">
-            <RadioButton name="radio-2" text="Selected" isChecked />
-            <RadioButton name="radio-2" text="Selected 2" />
+            <RadioButtonGroup
+              options={['Selected', 'Selected 2']}
+              checkedIndex={0}
+            />
           </div>
         </div>
         <div className="l-flex-horizontal">
@@ -162,7 +165,10 @@ const Preview = () => (
             Unselected, Disabled
           </span>
           <div className="doc-state-content">
-            <RadioButton text="Unselected, Disabled" isDisabled />
+            <RadioButtonGroup
+              options={['Unselected, Disabled']}
+              isDisabled
+            />
           </div>
         </div>
         <div className="l-flex-horizontal">
@@ -170,7 +176,11 @@ const Preview = () => (
             Selected, Disabled
           </span>
           <div className="doc-state-content">
-            <RadioButton text="Selected, Disabled" isDisabled isChecked />
+            <RadioButtonGroup
+              options={['Selected, Disabled']}
+              isDisabled
+              checkedIndex={0}
+            />
           </div>
         </div>
       </div>
