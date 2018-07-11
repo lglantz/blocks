@@ -63,6 +63,19 @@
 
 .horizontal-tabs, .vertical-tabs {
   background-color: transparent;
+  
+  input[type="radio"]:focus + .tab-item,
+  input[type="radio"]:active + .tab-item {
+    color: $selection;
+  }
+  
+  input[type="radio"] + .tab-item {
+    color: $text-02;
+  }
+  
+  input[type="radio"]:checked + .tab-item {
+    color: $brand-01;
+  }
 }
 
 .tab-item {
@@ -84,11 +97,6 @@
     outline: none;
     color: $selection;
     background: transparent;
-  }
-  
-  & > input[type="radio"]:focus + span,
-  & > input[type="radio"]:active + span {
-    color: $selection;
   }
 }
 
@@ -123,5 +131,17 @@
   ^[0] > input[type="radio"]:focus,
   ^[0] > input[type="radio"]:active {
     border-left: 4px solid $selection;
+  }
+}
+
+.horizontal-tabs {
+  input[type="radio"]:checked + .tab-item {
+    border-bottom: 4px solid $brand-01;
+  }
+}
+
+.vertical-tabs {
+  input[type="radio"]:checked + .tab-item {
+    border-left: 4px solid $brand-01;
   }
 }

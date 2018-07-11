@@ -19,6 +19,7 @@ module.exports = {
   Input: {
     Checkbox: require('./react/input/Checkbox.jsx'),
     RadioButton: require('./react/input/RadioButton.jsx'),
+    RadioButtonGroup: require('./react/input/RadioButtonGroup.jsx'),
     TextField: require('./react/input/TextField.jsx'),
     Toggle: require('./react/input/Toggle.jsx')
   },
@@ -32,7 +33,10 @@ module.exports = {
   },
   SortableList: require('./react/lists/SortableList.jsx'),
   Table: require('./react/table/Table.jsx'),
-  Tabs: require('./react/tabs/Tabs.jsx'),
+  Tabs: {
+    RadioTabs: require('./react/tabs/RadioTabs.jsx'),
+    LinkTabs: require('./react/tabs/LinkTabs.jsx')
+  },
   wrappers: {
     closeOnClick: require('./react/wrappers/closeOnClick.jsx')
   }

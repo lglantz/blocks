@@ -9,7 +9,7 @@ const ButtonSecondary = BlocksReact.Buttons.ButtonSecondary;
 const ButtonSmallSecondary = BlocksReact.Buttons.ButtonSmallSecondary;
 
 const Checkbox = BlocksReact.Input.Checkbox;
-const RadioButton = BlocksReact.Input.RadioButton;
+const RadioButtonGroup = BlocksReact.Input.RadioButtonGroup;
 const TextField = BlocksReact.Input.TextField;
 const Toggle = BlocksReact.Input.Toggle;
 
@@ -25,7 +25,8 @@ const AccordionSection = BlocksReact.Accordion;
 const Breadcrumbs = BlocksReact.Progress.Breadcrumbs;
 const ProgressDots = BlocksReact.Progress.ProgressDots;
 
-const Tabs = BlocksReact.Tabs;
+const RadioTabs = BlocksReact.Tabs.RadioTabs;
+const LinkTabs = BlocksReact.Tabs.LinkTabs;
 
 const SortableList = BlocksReact.SortableList;
 
@@ -143,8 +144,11 @@ const Preview = () => (
             Unselected
           </span>
           <div className="doc-state-content">
-            <RadioButton name="radio-1" text="Unselected" />
-            <RadioButton name="radio-1" text="Unselected 2" />
+            <RadioButtonGroup
+              name="radio-1"
+              options={['Unselected', 'Unselected 2']}
+              onChange={() => {}}
+            />
           </div>
         </div>
         <div className="l-flex-horizontal">
@@ -152,8 +156,12 @@ const Preview = () => (
             Selected
           </span>
           <div className="doc-state-content">
-            <RadioButton name="radio-2" text="Selected" isChecked />
-            <RadioButton name="radio-2" text="Selected 2" />
+            <RadioButtonGroup
+              name="radio-2"
+              options={['Selected', 'Selected 2']}
+              checkedIndex={0}
+              onChange={() => {}}
+            />
           </div>
         </div>
         <div className="l-flex-horizontal">
@@ -161,7 +169,12 @@ const Preview = () => (
             Unselected, Disabled
           </span>
           <div className="doc-state-content">
-            <RadioButton text="Unselected, Disabled" isDisabled />
+            <RadioButtonGroup
+              name="radio-3"
+              options={['Unselected, Disabled']}
+              isDisabled
+              onChange={() => {}}
+            />
           </div>
         </div>
         <div className="l-flex-horizontal">
@@ -169,7 +182,13 @@ const Preview = () => (
             Selected, Disabled
           </span>
           <div className="doc-state-content">
-            <RadioButton text="Selected, Disabled" isDisabled isChecked />
+            <RadioButtonGroup
+              name="radio-4"
+              options={['Selected, Disabled']}
+              isDisabled
+              checkedIndex={0}
+              onChange={() => {}}
+            />
           </div>
         </div>
       </div>
@@ -210,6 +229,7 @@ const Preview = () => (
             <TextField
               label="Text input label"
               value="More than a placeholder"
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -222,7 +242,8 @@ const Preview = () => (
               label="Text input label"
               isValid={() => (false)}
               invalidErrorMessage="My text is invalid"
-              value="Pepsi is good"
+              value="Wronggg"
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -392,38 +413,51 @@ const Preview = () => (
     <div className="l-flex-vertical doc-section">
       <span className="heading-medium">Tabs</span>
       <div>
-        <Tabs
-          name="design-page-horizontal-tabs"
+        <p>Horizontal tabs</p>
+        <RadioTabs
           tabs={
             [
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
             ]
           }
-          activeTabIdx={0}
+          onChange={() => {}}
         />
       </div>
       <div>
-        <Tabs
-          name="design-page-horizontal-tabs-disabled"
+        <p>Disabled horizontal tabs</p>
+        <RadioTabs
           tabs={
             [
               'Disabled Tab 1', 'Disabled Tab 2', 'Disabled Tab 3', 'Disabled Tab 4'
             ]
           }
-          activeTabIdx={0}
           isDisabled
+          onChange={() => {}}
         />
       </div>
       <div>
-        <Tabs
-          name="design-page-vertical-tabs"
+        <p>Vertical tabs</p>
+        <RadioTabs
           tabs={
             [
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
             ]
           }
-          activeTabIdx={0}
           isVertical
+          onChange={() => {}}
+        />
+      </div>
+      <div>
+        <p>Link tabs</p>
+        <LinkTabs
+          tabs={
+            [
+              { name: 'Tab 1', href: '#' },
+              { name: 'Tab 2', href: '#' },
+              { name: 'Tab 3', href: '#' },
+              { name: 'Tab 4', href: '#' }
+            ]
+          }
         />
       </div>
     </div>

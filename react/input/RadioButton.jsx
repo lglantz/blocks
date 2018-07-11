@@ -21,21 +21,19 @@ const RadioButton = props => (
 );
 
 RadioButton.propTypes = {
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   text: PropTypes.string,
   value: PropTypes.string,
-  name: PropTypes.string,
   isDisabled: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  onChange: PropTypes.func
+  isChecked: PropTypes.bool
 };
 
 RadioButton.defaultProps = {
   text: '',
   value: '',
-  name: '',
   isDisabled: false,
-  isChecked: false,
-  onChange: () => {}
+  isChecked: false
 };
 
 module.exports = RadioButton;
