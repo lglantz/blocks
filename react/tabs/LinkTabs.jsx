@@ -25,14 +25,13 @@ LinkTabs.propTypes = {
   tabs: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     href: PropTypes.string
-  })),
+  })).isRequired,
   activeTabIdx: PropTypes.number,
   isDisabled: PropTypes.bool,
   isVertical: PropTypes.bool
 };
 
 LinkTabs.defaultProps = {
-  tabs: [],
   activeTabIdx: 0,
   isDisabled: false,
   isVertical: false

@@ -30,19 +30,17 @@ const RadioTabs = (props) => {
 }
 
 RadioTabs.propTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.string),
+  tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChange: PropTypes.func.isRequired,
   activeTabIdx: PropTypes.number,
   isDisabled: PropTypes.bool,
-  isVertical: PropTypes.bool,
-  onChange: PropTypes.func
+  isVertical: PropTypes.bool
 };
 
 RadioTabs.defaultProps = {
-  tabs: [],
   activeTabIdx: 0,
   isDisabled: false,
-  isVertical: false,
-  onChange: () => {}
+  isVertical: false
 };
 
 module.exports = RadioTabs;
