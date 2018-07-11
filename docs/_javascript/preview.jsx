@@ -145,7 +145,9 @@ const Preview = () => (
           </span>
           <div className="doc-state-content">
             <RadioButtonGroup
+              name="radio-1"
               options={['Unselected', 'Unselected 2']}
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -155,8 +157,10 @@ const Preview = () => (
           </span>
           <div className="doc-state-content">
             <RadioButtonGroup
+              name="radio-2"
               options={['Selected', 'Selected 2']}
               checkedIndex={0}
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -166,8 +170,10 @@ const Preview = () => (
           </span>
           <div className="doc-state-content">
             <RadioButtonGroup
+              name="radio-3"
               options={['Unselected, Disabled']}
               isDisabled
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -177,9 +183,11 @@ const Preview = () => (
           </span>
           <div className="doc-state-content">
             <RadioButtonGroup
+              name="radio-4"
               options={['Selected, Disabled']}
               isDisabled
               checkedIndex={0}
+              onChange={() => {}}
             />
           </div>
         </div>
@@ -412,6 +420,7 @@ const Preview = () => (
               'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
             ]
           }
+          onChange={() => {}}
         />
       </div>
       <div>
@@ -423,6 +432,7 @@ const Preview = () => (
             ]
           }
           isDisabled
+          onChange={() => {}}
         />
       </div>
       <div>
@@ -434,6 +444,7 @@ const Preview = () => (
             ]
           }
           isVertical
+          onChange={() => {}}
         />
       </div>
       <div>
