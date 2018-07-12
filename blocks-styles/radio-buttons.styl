@@ -77,15 +77,29 @@
   &:hover, &.hover {
     background-color: $ui-00;
     border: 1px solid $ui-04;
+    box-shadow: 0 2px 4px 0 $interactive-shadow;
   }
 }
 
 .radio-button-container input:checked ~ .radio-check {
   background-color: $ui-00;
   border: 1px solid $brand-01;
+  
+  &.hover {
+    border: 1px solid $interactive-hover;
+  }
 
   &.disabled {
     border: 1px solid $ui-07;
+  }
+}
+
+.radio-button-container input:checked:hover ~ .radio-check {
+  border: 1px solid $interactive-hover;
+  box-shadow: 0 2px 4px 0 $interactive-shadow;
+  
+  &:after {
+    background-color: $interactive-hover;
   }
 }
 
@@ -93,12 +107,44 @@
   background-color: $brand-01;
 }
 
+.radio-button-container .radio-check.hover:after {
+  background-color: $interactive-hover;
+}
+
 .radio-button-container .radio-check.disabled:after {
   background-color: $ui-07;
 }
 
-.radio-button-container input[type="radio"]:focus + span,
-.radio-button-container input[type="radio"].focus + span {
+.radio-button-container input[type="radio"]:focus + .radio-check,
+.radio-button-container input[type="radio"].focus + .radio-check {
   outline: none;
-  box-shadow: 0 0 0 2px $selection;
+  border: 1px solid $success;
+  box-shadow: 0 2px 4px 0 $interactive-shadow;
+}
+
+.radio-button-container input[type="radio"]:checked:focus + .radio-check,
+.radio-button-container input[type="radio"]:checked.focus + .radio-check {
+  outline: none;
+  border: 1px solid $interactive-hover;
+  box-shadow: 0 2px 4px 0 $interactive-shadow,
+              0 0 0 1px $success;
+              
+  &:after {
+    background-color: $interactive-hover;
+  }
+}
+
+.radio-button-container input[type="radio"]:disabled + .radio-check {
+  opacity: 0.5;
+  border: 1px solid $ui-04;
+  box-shadow: none;
+  pointer-events: none;
+  
+  &:after {
+    background-color: $brand-01;
+  }
+}
+
+.radio-button-container input[type="radio"]:checked:disabled + .radio-check {
+  border: 1px solid $brand-01;
 }

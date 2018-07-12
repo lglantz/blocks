@@ -82,39 +82,59 @@ definition: An input that allows the user to select a single option from a group
   <h4>States & Behavior</h4>
   <div class="l-flex-vertical">
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
-        Default
-      </span>
       <div class="doc-state-content">
-        {{ radio_example_unchecked }}
-        {{ radio_example_checked }}
+        <label class="radio-button-container">
+          <span class="radio-label-text">Default Selected</span>
+          <input type="radio" name="radio-default" checked />
+          <span class="radio-check"></span>
+        </label>
+        <label class="radio-button-container">
+          <span class="radio-label-text">Default Unselected</span>
+          <input type="radio" name="radio-default" />
+          <span class="radio-check"></span>
+        </label>
       </div>
     </div>
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
-        Hover
-      </span>
       <div class="doc-state-content">
-        {{ radio_example_hovered_unchecked }}
-        {{ radio_example_hovered_checked }}
+        <label class="radio-button-container">
+          <span class="radio-label-text">Hover Selected</span>
+          <input type="radio" name="radio-hover" checked />
+          <span class="radio-check hover"></span>
+        </label>
+        <label class="radio-button-container">
+          <span class="radio-label-text">Hover Unselected</span>
+          <input type="radio" name="radio-hover" />
+          <span class="radio-check hover"></span>
+        </label>
       </div>
     </div>
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
-        Focus
-      </span>
       <div class="doc-state-content">
-        {{ radio_example_focused_unchecked }}
-        {{ radio_example_focused_checked }}
+        <label class="radio-button-container">
+          <span class="radio-label-text">Focus Selected</span>
+          <input class="focus" type="radio" name="radio-focus" checked />
+          <span class="radio-check"></span>
+        </label>
+        <label class="radio-button-container">
+          <span class="radio-label-text">Focus Unselected</span>
+          <input class="focus" type="radio" name="radio-focus" />
+          <span class="radio-check"></span>
+        </label>
       </div>
     </div>
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
-        Disabled
-      </span>
       <div class="doc-state-content">
-        {{ radio_example_disabled_unchecked }}
-        {{ radio_example_disabled_checked }}
+        <label class="radio-button-container">
+          <span class="radio-label-text">Disabled Selected</span>
+          <input type="radio" name="radio-disabled" checked disabled/>
+          <span class="radio-check"></span>
+        </label>
+        <label class="radio-button-container">
+          <span class="radio-label-text">Disabled Unselected</span>
+          <input type="radio" name="radio-disabled" disabled />
+          <span class="radio-check"></span>
+        </label>
       </div>
     </div>
   </div>
