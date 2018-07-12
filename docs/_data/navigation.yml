@@ -52,3 +52,8 @@
   url: components/links
   section: Components
   subsection: Navigation
+
+- title: Tabs
+  url: components/tabs
+  section: Components
+  subsection: Navigation

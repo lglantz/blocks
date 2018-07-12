@@ -1470,6 +1470,38 @@ h6 {
 .vertical-tabs {
   background-color: transparent;
 }
+.horizontal-tabs input[type="radio"] + .tab-item {
+  color: #7c8c88;
+  color: var(--text-02, #7c8c88);
+}
+.vertical-tabs input[type="radio"] + .tab-item {
+  color: #7c8c88;
+  color: var(--text-02, #7c8c88);
+}
+.horizontal-tabs input[type="radio"] + .tab-item.focus {
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+}
+.vertical-tabs input[type="radio"] + .tab-item.focus {
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+}
+.horizontal-tabs input[type="radio"] + .tab-item:hover {
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
+.vertical-tabs input[type="radio"] + .tab-item:hover {
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
+.horizontal-tabs input[type="radio"] + .tab-item.hover {
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
+.vertical-tabs input[type="radio"] + .tab-item.hover {
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
 .horizontal-tabs input[type="radio"]:focus + .tab-item {
   color: #49a1ff;
   color: var(--selection, #49a1ff);
@@ -1485,14 +1517,6 @@ h6 {
 .vertical-tabs input[type="radio"]:active + .tab-item {
   color: #49a1ff;
   color: var(--selection, #49a1ff);
-}
-.horizontal-tabs input[type="radio"] + .tab-item {
-  color: #7c8c88;
-  color: var(--text-02, #7c8c88);
-}
-.vertical-tabs input[type="radio"] + .tab-item {
-  color: #7c8c88;
-  color: var(--text-02, #7c8c88);
 }
 .horizontal-tabs input[type="radio"]:checked + .tab-item {
   color: #00b07d;
@@ -1533,6 +1557,12 @@ h6 {
   color: var(--selection, #49a1ff);
   background: transparent;
 }
+.tab-item.focus {
+  outline: none;
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
+  background: transparent;
+}
 .horizontal-tabs .tab-item {
   border-bottom: 4px solid transparent;
 }
@@ -1553,6 +1583,10 @@ h6 {
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
 .horizontal-tabs .tab-item:active {
+  border-bottom: 4px solid #49a1ff;
+  border-bottom: 4px solid var(--selection, #49a1ff);
+}
+.horizontal-tabs .tab-item.focus {
   border-bottom: 4px solid #49a1ff;
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
@@ -1584,6 +1618,10 @@ h6 {
   border-left: 4px solid var(--selection, #49a1ff);
 }
 .vertical-tabs .tab-item:active {
+  border-left: 4px solid #49a1ff;
+  border-left: 4px solid var(--selection, #49a1ff);
+}
+.vertical-tabs .tab-item.focus {
   border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
 }
