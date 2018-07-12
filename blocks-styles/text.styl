@@ -1,282 +1,25 @@
-//
-// STRUCTURE
-//
-
 button {
   font-family: $sans-serif-font-family-normal;
 }
 
-p {
-  font-size: $base-font-size;
+p, label {
   font-family: $sans-serif-font-family-normal;
+  font-size: $base-font-size;
   line-height: 28px;
   text-align: left;
-
-  margin: 12px 0;
-
-  &.text-emph {
-    font-family: $sans-serif-font-family-medium;
-  }
+  color: $text-01;
 }
 
 a, .link {
-  font-size: 16px;
+  font-size: $base-font-size;
   line-height: 20px;
+  color: $information;
+  text-decoration: none;
 
   &:hover, &.hover, &:focus, &.focus {
     cursor: pointer;
     text-decoration: underline;
   }
-}
-
-h1 {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 96px;
-  color: $text-01;
-}
-
-h2 {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 60px;
-  color: $text-01;
-}
-
-h3 {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 48px;
-  color: $text-01;
-}
-
-h4 {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 34px;
-  color: $text-01;
-}
-
-h5 {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 24px;
-  color: $text-01;
-}
-
-h6 {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 20px;
-  color: $text-01;
-}
-
-.subtitle {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.subtitle-small {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.ui-text {
-  font-family: $sans-serif-font-family-normal;
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.body-caps {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 14px;
-  line-height: 19px;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-}
-
-.caption {
-  font-family: $sans-serif-font-family-normal;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.overline {
-  font-family: $sans-serif-font-family-medium;
-  font-size: 10px;
-  line-height: 16px;
-  letter-spacing: 1.5px;
-}
-
-
-
-.heading-large {
-  margin: 12px 0;
-  display: block;
-  font-size: 52px;
-  font-family: $sans-serif-font-family-bold;
-  line-height: 65px;
-  text-align: left;
-}
-
-.heading-medium {
-  display: block;
-  font-size: 36px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 45px;
-  text-align: left;
-}
-
-.title {
-  margin: 12px 0;
-  font-size: 20px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 25px;
-  text-align: left;
-}
-
-.category-title {
-  font-size: 20px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 24px;
-  margin: 0;
-}
-
-.statistic-title {
-  font-size: 20px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 25px;
-  margin: 0;
-}
-
-.small-title {
-  font-size: 16px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 20px;
-  text-align: left;
-  margin: 0;
-}
-
-.small-text {
-  font-family: $sans-serif-font-family-normal;
-  font-size: 12px;
-  line-height: 18px;
-  text-align: left;
-  margin: 0;
-}
-
-.tab {
-  font-size: 16px;
-  font-family: $sans-serif-font-family-medium;
-  line-height: 20px;
-  text-align: left;
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: none;
-  }
-}
-
-.ui {
-  font-size: 16px;
-  font-family: $sans-serif-font-family-normal;
-  line-height: 20px;
-  text-align: left;
-
-  margin: 12px 0;
-
-  &:hover {
-    border-radius: 3px;
-    cursor: pointer;
-  }
-}
-
-.capitalize {
-  text-transform: uppercase;
-}
-
-.brand-name {
-  font-family: $sans-serif-font-family-bold;
-}
-
-.brand-name-by {
-  font-family: $sans-serif-font-family-medium;
-}
-
-//
-// THEME
-//
-
-.subtitle, .subtitle-small {
-  &.active {
-    color: $brand-01;
-  }
-  
-  &.inactive {
-    color: $text-02;
-  }
-}
-
-.heading-large {
-  color: $brand-01;
-}
-
-.heading-medium {
-  color: $text-01;
-}
-
-.title {
-  color: $text-01;
-}
-
-.category-title {
-  color: $ui-07;
-}
-
-.statistic-title {
-  color: $text-02;
-}
-
-.success {
-  color: $success;
-}
-
-.warning {
-  color: $warning;
-}
-
-.error {
-  color: $error;
-}
-
-.information {
-  color: $information;
-}
-
-.tab {
-  color: $text-02;
-
-  &:active {
-    color: $text-01;
-  }
-
-  &:hover {
-    color: $brand-01;
-  }
-}
-
-.ui {
-  color: $text-01;
-}
-
-label {
-  color: $text-01;
-}
-
-p {
-  color: $text-01;
-}
-
-a, .link {
-  color: $information;
-  text-decoration: none;
 
   &:hover, &.hover {
     color: $text-01;
@@ -294,4 +37,132 @@ a, .link {
     opacity: 0.5;
     pointer-events: none;
   }
+}
+
+h1 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 96px;
+  line-height: 123px;
+  color: $text-01;
+}
+
+h2 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 60px;
+  line-height: 77px;
+  color: $text-01;
+}
+
+h3 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 48px;
+  line-height: 67px;
+  color: $text-01;
+}
+
+h4 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 34px;
+  line-height: 43px;
+  color: $text-01;
+}
+
+h5 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 24px;
+  line-height: 31px;
+  color: $text-01;
+}
+
+h6 {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 20px;
+  line-height: 26px;
+  color: $text-01;
+}
+
+.subtitle {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-01;
+  
+  &.dark-bg {
+    background-color: $text-01;
+    color: $ui-00;
+  }
+}
+
+.subtitle-small {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text-01;
+}
+
+.ui-text {
+  font-family: $sans-serif-font-family-normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text-01;
+}
+
+.body-caps {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: $text-01;
+}
+
+.caption {
+  font-family: $sans-serif-font-family-normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: $text-01;
+}
+
+.overline {
+  font-family: $sans-serif-font-family-medium;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}
+
+.brand-name {
+  font-family: $sans-serif-font-family-bold;
+}
+
+.brand-name-by {
+  font-family: $sans-serif-font-family-medium;
+}
+
+.interactive {
+  color: $interactive;
+}
+
+.inactive {
+  color: $text-02;
+}
+
+.success {
+  color: $success;
+}
+
+.warning {
+  color: $warning;
+}
+
+.error {
+  color: $error;
+}
+
+.information {
+  color: $information;
 }

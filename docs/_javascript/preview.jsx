@@ -47,10 +47,10 @@ class Preview extends React.Component {
       <div>
         { /* BUTTONS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Buttons</span>
+          <h4>Buttons</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Primary Button
               </span>
               <div className="doc-state-content">
@@ -58,7 +58,7 @@ class Preview extends React.Component {
                   text="Primary button"
                 />
               </div>
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Secondary Button
               </span>
               <div className="doc-state-content">
@@ -68,7 +68,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Primary Button Disabled
               </span>
               <div className="doc-state-content">
@@ -77,7 +77,7 @@ class Preview extends React.Component {
                   isDisabled
                 />
               </div>
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Secondary Button Disabled
               </span>
               <div className="doc-state-content">
@@ -88,7 +88,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Primary Button small
               </span>
               <div className="doc-state-content">
@@ -96,7 +96,7 @@ class Preview extends React.Component {
                   text="Primary button small"
                 />
               </div>
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Secondary Button small
               </span>
               <div className="doc-state-content">
@@ -110,10 +110,10 @@ class Preview extends React.Component {
 
         { /* CHECKBOXES */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Checkboxes</span>
+          <h4>Checkboxes</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Unselected
               </span>
               <div className="doc-state-content">
@@ -121,7 +121,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Selected
               </span>
               <div className="doc-state-content">
@@ -129,7 +129,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Unselected, Disabled
               </span>
               <div className="doc-state-content">
@@ -137,7 +137,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Selected, Disabled
               </span>
               <div className="doc-state-content">
@@ -149,10 +149,10 @@ class Preview extends React.Component {
 
         { /* RADIO BUTTONS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Radio Buttons</span>
+          <h4>Radio Buttons</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Unselected
               </span>
               <div className="doc-state-content">
@@ -164,7 +164,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Selected
               </span>
               <div className="doc-state-content">
@@ -177,7 +177,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Unselected, Disabled
               </span>
               <div className="doc-state-content">
@@ -190,7 +190,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Selected, Disabled
               </span>
               <div className="doc-state-content">
@@ -208,10 +208,10 @@ class Preview extends React.Component {
 
         { /* TEXT FIELDS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Text Fields</span>
+          <h4>Text Fields</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Default
               </span>
               <div className="doc-state-content">
@@ -222,7 +222,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Disabled
               </span>
               <div className="doc-state-content">
@@ -234,7 +234,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Idle, Filled
               </span>
               <div className="doc-state-content">
@@ -246,7 +246,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Validation
               </span>
               <div className="doc-state-content">
@@ -260,7 +260,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Prefix/Suffix
               </span>
               <div className="doc-state-content">
@@ -276,10 +276,10 @@ class Preview extends React.Component {
 
         { /* DROPDOWNS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Dropdowns</span>
+          <h4>Dropdowns</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Default
               </span>
               <div className="doc-state-content">
@@ -296,7 +296,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
+              <span className="doc-state-title caption">
                 Disabled
               </span>
               <div className="doc-state-content">
@@ -318,7 +318,7 @@ class Preview extends React.Component {
 
         { /* ALERTS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Alerts</span>
+          <h4>Alerts</h4>
           <SuccessAlert
             message="Additional information or directions go here. Brevity is the soul of wit, however, text may wrap to another line in the off chance that we want the user hooked on phonics."
           />
@@ -337,20 +337,20 @@ class Preview extends React.Component {
 
         { /* ACCORDIONS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Accordions</span>
+          <h4>Accordions</h4>
           <div>
             <AccordionSection
-              trigger={<span className="title">Item 1</span>}
+              trigger={<span className="subtitle">Item 1</span>}
             >
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </AccordionSection>
             <AccordionSection
-              trigger={<span className="title">Item 2</span>}
+              trigger={<span className="subtitle">Item 2</span>}
             >
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </AccordionSection>
             <AccordionSection
-              trigger={<span className="title">Item 3</span>}
+              trigger={<span className="subtitle">Item 3</span>}
             >
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </AccordionSection>
@@ -359,7 +359,7 @@ class Preview extends React.Component {
 
         { /* PROGRESS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Progress</span>
+          <h4>Progress</h4>
           <ProgressDots
             name="design-page-progress"
             numSteps={7}
@@ -395,7 +395,7 @@ class Preview extends React.Component {
 
         { /* TOGGLES */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Toggles</span>
+          <h4>Toggles</h4>
           <div>
             <Toggle
               name="design-page-toggle"
@@ -423,7 +423,7 @@ class Preview extends React.Component {
 
         { /* TABS */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Tabs</span>
+          <h4>Tabs</h4>
           <div>
             <p>Horizontal tabs</p>
             <RadioTabs
@@ -476,7 +476,7 @@ class Preview extends React.Component {
 
         { /* SORTABLE LIST */ }
         <div className="l-flex-vertical doc-section">
-          <span className="heading-medium">Sortable List</span>
+          <h4>Sortable List</h4>
           <div>
             <SortableList>
               <span>Item 1</span>
@@ -489,7 +489,6 @@ class Preview extends React.Component {
             </SortableList>
           </div>
         </div>
-
       </div>
     );
   }

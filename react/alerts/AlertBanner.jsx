@@ -40,7 +40,7 @@ class AlertBanner extends React.Component {
           <div className="alert-icon" />
         </div>
         <div className="alert-text">
-          <span className={`title ${this.props.type}`}>{this.props.title}</span>
+          <span className={`subtitle ${this.props.type}`}>{this.props.title}</span>
           <p>{this.props.message}</p>
         </div>
         {closeIcon}
