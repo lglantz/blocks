@@ -1783,13 +1783,13 @@ h6 {
 }
 .text-field input:focus {
   outline: none;
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
+  border: 1px solid #39cf94;
+  border: 1px solid var(--success-hex, #39cf94);
 }
 .text-field input.focus {
   outline: none;
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
+  border: 1px solid #39cf94;
+  border: 1px solid var(--success-hex, #39cf94);
 }
 .text-field input:-moz-read-only {
   pointer-events: none;
