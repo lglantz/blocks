@@ -1,88 +1,101 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-function TextField(props) {
-  // the label field
-  let labelElement = null;
-  if (props.label) {
-    labelElement = (
-      <label className="text-field-label">{props.label}</label>
-    );
+class TextField extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isValid: props.isValid(props.value)
+    };
   }
 
-  // text input element itself
-  let textFieldClasses = 'text-field-input';
-
-  // red asterisk if the value is invalid
-  let invalidLabelMarker = null;
-  let invalidLabelMessage = null;
-  if (!props.isValid(props.value)) {
-    invalidLabelMarker = (
-      <span className="invalid-label-marker">*</span>
-    );
-    invalidLabelMessage = (
-      <span className="invalid-label-message">{props.invalidErrorMessage}</span>
-    );
-
-    textFieldClasses += ' invalid';
+  updateValidity() {
+    this.setState({
+      isValid: this.props.isValid(this.props.value)
+    });
   }
 
-  // prefix element
-  let prefixElement = null;
-  if (props.prefix) {
-    prefixElement = (
-      <span className="text-field-prefix">{props.prefix}</span>
+  render() {
+    // the label field
+    let labelElement = null;
+    if (this.props.label) {
+      labelElement = <label className="text-field-label">{this.props.label}</label>;
+    }
+
+    // text input element itself
+    let textFieldClasses = 'text-field-input';
+
+    // red asterisk if the value is invalid
+    let invalidLabelMarker = null;
+    let invalidLabelMessage = null;
+    if (!this.state.isValid) {
+      invalidLabelMarker = <span className="invalid-label-marker">*</span>;
+      invalidLabelMessage = <span className="invalid-label-message">{this.props.invalidErrorMessage}</span>;
+      textFieldClasses += ' invalid';
+    }
+
+    // prefix element
+    let prefixElement = null;
+    if (this.props.prefix) {
+      prefixElement = <span className="text-field-prefix">{this.props.prefix}</span>;
+      textFieldClasses += ' text-field-with-prefix';
+    }
+
+    // suffix element
+    let suffixElement = null;
+    if (this.props.suffix) {
+      suffixElement = <span className="text-field-suffix">{this.props.suffix}</span>;
+      textFieldClasses += ' text-field-with-suffix';
+    }
+
+    const textInputElement = (
+      <input
+        type={this.props.type}
+        name={this.props.name}
+        className={textFieldClasses}
+        value={this.props.value}
+        placeholder={this.props.placeholder}
+        disabled={this.props.isDisabled}
+        autoComplete={this.props.autoComplete}
+        readOnly={this.props.readOnly}
+        onChange={this.props.onChange}
+        onBlur={(e) => {
+          this.updateValidity();
+          if (this.props.onBlur) {
+            this.props.onBlur(e);
+          }
+        }}
+        onKeyUp={(e) => {
+          if (e.keyCode === 13) { // ENTER
+            e.target.blur();
+          } else if (this.props.onKeyUp) {
+            this.props.onKeyUp(e);
+          }
+          // If an invalid message has already appeared via blur,
+          // do the user a favor and update validity once they fix it (before another blur)
+          if (!this.state.isValid) {
+            this.updateValidity();
+          }
+        }}
+      />
     );
 
-    textFieldClasses += ' text-field-with-prefix';
-  }
-
-  // suffix element
-  let suffixElement = null;
-  if (props.suffix) {
-    suffixElement = (
-      <span className="text-field-suffix">{props.suffix}</span>
-    );
-
-    textFieldClasses += ' text-field-with-suffix';
-  }
-
-  const textInputElement = (
-    <input
-      type={props.type}
-      name={props.name}
-      className={textFieldClasses}
-      value={props.value}
-      placeholder={props.placeholder}
-      disabled={props.isDisabled}
-      autoComplete={props.autoComplete}
-      readOnly={props.readOnly}
-      onChange={props.onChange}
-      onBlur={props.onBlur}
-      onKeyUp={(e) => {
-        if (e.keyCode === 13) { // ENTER
-          e.target.blur();
-        } else if (props.onKeyUp) {
-          props.onKeyUp(e);
-        }
-      }}
-    />
-  );
-
-  return (
-    <div className={`text-field ${props.isDisabled ? 'disabled' : ''}`}>
-      <div>
-        {labelElement}
-        {invalidLabelMarker}
+    return (
+      <div className={`text-field ${this.props.isDisabled ? 'disabled' : ''}`}>
+        <div>
+          {labelElement}
+          {invalidLabelMarker}
+        </div>
+        <div className="text-field-container">
+          {prefixElement}
+          {suffixElement}
+          {textInputElement}
+        </div>
+        {invalidLabelMessage}
       </div>
-      <div className="text-field-container">
-        {prefixElement}
-        {suffixElement}
-        {textInputElement}
-      </div>
-      {invalidLabelMessage}
-    </div>
-  );
+    );
+  }
 }
 
 TextField.propTypes = {
@@ -115,7 +128,7 @@ TextField.defaultProps = {
   prefix: null,
   suffix: null,
   isDisabled: false,
-  isValid: () => (true),
+  isValid: () => true,
   invalidErrorMessage: '',
   onChange: null,
   onKeyUp: null,
