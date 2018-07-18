@@ -7,25 +7,35 @@ definition: Rules about the appearance of text in relation to other text.
 ---
 
 {% capture example %}
-  <p class="heading-large">Heading - Large</p>
-  <p class="heading-medium">Heading - Medium</p>
-  <span class="title">Title</span>
-  <span class="title success">Title - Success</span>
-  <span class="title warning">Title - Warning</span>
-  <span class="title error">Title - Error</span>
-  <span class="title information">Title - Information</span>
+  <h1>H1 Headline</h1>
+  <h2>H2 Headline</h2>
+  <h3>H3 Headline</h3>
+  <h4>H4 Headline</h4>
+  <h5>H5 Headline</h5>
+  <h6>H6 Headline</h6>
+  <h6 class="inactive">H6</h6>
+  <h6 class="success">H6</h6>
+  <h6 class="warning">H6</h6>
+  <h6 class="error">H6</h6>
+  <h6 class="information">H6</h6>
 
-  <p class="tab">Tab</p>
-  <p class="tab unselected">Unselected Tab</p>
+  <span class="subtitle">Subtitle</span>
+  <span class="subtitle interactive">Subtitle</span>
+  <span class="subtitle inactive">Subtitle</span>
+  <span class="subtitle dark-bg">Subtitle</span>
 
-  <p>Body copy.</p>
-  
-  <p class="ui">UI</p>
-  <p class="ui-placeholder">UI Placeholder</p>
+  <span class="subtitle-small">Subtitle Small</span>
+  <span class="subtitle-small interactive">Subtitle Small</span>
+  <span class="subtitle-small inactive">Subtitle Small</span>
 
+  <p>Body 1</p>
+  <p class="ui-text">UI Text</p>
+  <p class="body-caps">Body caps</p>
+  <p class="caption">Caption</p>
+  <p class="overline">Overline</p>
 {% endcapture %}
 
-<div class="l-flex-vertical doc-section">
+<div class="doc-section">
   {{ example }}
 </div>
 

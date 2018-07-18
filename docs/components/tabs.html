@@ -2,25 +2,28 @@
 layout: componentSection
 section: Components
 title: Tabs
+status: Design review
+version: v.0
+definition: Tabs
 ---
 
 {% capture example %}
   <div class="horizontal-tabs">
     <label>
       <input type="radio" name="horizontal-tab-example" checked>
-      <span class="tab-title">Tab 1</span>
+      <span class="tab-item">Tab 1</span>
     </label>
     <label>
       <input type="radio" name="horizontal-tab-example">
-      <span class="tab-title">Tab 2</span>
+      <span class="tab-item">Tab 2</span>
     </label>
     <label>
       <input type="radio" name="horizontal-tab-example">
-      <span class="tab-title">Tab 3</span>
+      <span class="tab-item">Tab 3</span>
     </label>
     <label>
       <input type="radio" name="horizontal-tab-example">
-      <span class="tab-title">Tab 4</span>
+      <span class="tab-item">Tab 4</span>
     </label>
   </div>
 {% endcapture %}
@@ -29,25 +32,100 @@ title: Tabs
   <div class="vertical-tabs">
     <label>
       <input type="radio" name="vertical-tab-example" checked>
-      <span class="tab-title">Tab 1</span>
+      <span class="tab-item">Tab 1</span>
     </label>
     <label>
       <input type="radio" name="vertical-tab-example">
-      <span class="tab-title">Tab 2</span>
+      <span class="tab-item">Tab 2</span>
     </label>
     <label>
       <input type="radio" name="vertical-tab-example">
-      <span class="tab-title">Tab 3</span>
+      <span class="tab-item">Tab 3</span>
     </label>
     <label>
       <input type="radio" name="vertical-tab-example">
-      <span class="tab-title">Tab 4</span>
+      <span class="tab-item">Tab 4</span>
     </label>
   </div>
 {% endcapture %}
 
+<!-- state & behavior section -->
+<div class="l-flex-vertical doc-section">
+  <h4>States & Behavior</h4>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title caption">
+        Default
+      </span>
+      <div class="doc-state-content">
+        <div class="horizontal-tabs">
+          <label>
+            <input type="radio" name="horizontal-tab-example-2" checked>
+            <span class="tab-item">Tab 1</span>
+          </label>
+          <label>
+            <input type="radio" name="horizontal-tab-example-2">
+            <span class="tab-item">Tab 2</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title caption">
+        Hover
+      </span>
+      <div class="doc-state-content">
+        <div class="horizontal-tabs">
+          <label>
+            <input type="radio" name="horizontal-tab-example-3" checked>
+            <span class="tab-item">Tab 1</span>
+          </label>
+          <label>
+            <input type="radio" name="horizontal-tab-example-3">
+            <span class="tab-item hover">Tab 2</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title caption">
+        Focus
+      </span>
+      <div class="doc-state-content">
+        <div class="horizontal-tabs">
+          <label>
+            <input type="radio" name="horizontal-tab-example-4" checked>
+            <span class="tab-item">Tab 1</span>
+          </label>
+          <label>
+            <input type="radio" name="horizontal-tab-example-4">
+            <span class="tab-item focus">Tab 2</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title caption">
+        Disabled
+      </span>
+      <div class="doc-state-content">
+        <div class="horizontal-tabs disabled">
+          <label>
+            <input type="radio" name="horizontal-tab-example-5" checked>
+            <span class="tab-item">Tab 1</span>
+          </label>
+          <label>
+            <input type="radio" name="horizontal-tab-example-5">
+            <span class="tab-item">Tab 2</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="design-page-container">
-  <span class="heading-medium">Code Snippets</span>
+  <h4>Code Snippets</h4>
   {% include snippet.html content=example %}
   {% include snippet.html content=example2 %}
 </div>

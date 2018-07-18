@@ -54,7 +54,7 @@
 .vertical-tabs .tab-item {
   display: block;
   margin-left: -12px;
-  padding: 8px;
+  padding: 4px 8px;
 }
 
 //
@@ -64,13 +64,21 @@
 .horizontal-tabs, .vertical-tabs {
   background-color: transparent;
   
+  input[type="radio"] + .tab-item {
+    color: $text-02;
+    
+    &.focus {
+      color: $selection;
+    }
+    
+    &:hover, &.hover {
+      color: $text-01;
+    }
+  }
+  
   input[type="radio"]:focus + .tab-item,
   input[type="radio"]:active + .tab-item {
     color: $selection;
-  }
-  
-  input[type="radio"] + .tab-item {
-    color: $text-02;
   }
   
   input[type="radio"]:checked + .tab-item {
@@ -93,7 +101,7 @@
     color: $text-01;
   }
   
-  &:focus, &:active {
+  &:focus, &:active, &.focus {
     outline: none;
     color: $selection;
     background: transparent;
@@ -108,7 +116,7 @@
   &.active {
     border-bottom: 4px solid $brand-01;
   }
-  &:focus, &:active {
+  &:focus, &:active, &.focus {
     border-bottom: 4px solid $selection;
   }
   ^[0] > input[type="radio"]:focus,
@@ -125,7 +133,7 @@
   &.active {
     border-left: 4px solid $brand-01;
   }
-  &:focus, &:active {
+  &:focus, &:active, &.focus {
     border-left: 4px solid $selection;
   }
   ^[0] > input[type="radio"]:focus,
