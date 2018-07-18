@@ -66,16 +66,16 @@ th {
   text-align: left;
 }
 @font-face {
-  font-family: GraphikRegular;
-  src: url("../fonts/Graphik-Regular.otf") format("opentype");
+  font-family: FranklinGothicNormal;
+  src: url("../fonts/FG0.otf") format("opentype");
 }
 @font-face {
-  font-family: GraphikMedium;
-  src: url("../fonts/Graphik-Medium.otf") format("opentype");
+  font-family: FranklinGothicMedium;
+  src: url("../fonts/FG2.otf") format("opentype");
 }
 @font-face {
-  font-family: GraphikBold;
-  src: url("../fonts/Graphik-Bold.otf") format("opentype");
+  font-family: FranklinGothicBold;
+  src: url("../fonts/FG4.otf") format("opentype");
 }
 :root {
   --interactive: #009f6f;
@@ -103,13 +103,13 @@ html,
 body {
   min-height: 100%;
   height: 100%;
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
 }
 button {
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
 }
 p {
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -117,7 +117,7 @@ p {
   color: var(--text-01, #2b3836);
 }
 label {
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   font-size: 16px;
   line-height: 28px;
   text-align: left;
@@ -210,49 +210,49 @@ a.disabled {
   pointer-events: none;
 }
 h1 {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 96px;
   line-height: 123px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h2 {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 60px;
   line-height: 77px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h3 {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 48px;
   line-height: 67px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h4 {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 34px;
   line-height: 43px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h5 {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 24px;
   line-height: 31px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h6 {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 20px;
   line-height: 26px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .subtitle {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 16px;
   line-height: 24px;
   color: #2b3836;
@@ -265,21 +265,21 @@ h6 {
   color: var(--ui-00, #fff);
 }
 .subtitle-small {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 14px;
   line-height: 18px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .ui-text {
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   font-size: 14px;
   line-height: 18px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .body-caps {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 0.7px;
@@ -288,14 +288,14 @@ h6 {
   color: var(--text-01, #2b3836);
 }
 .caption {
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   font-size: 12px;
   line-height: 16px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .overline {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 10px;
   line-height: 16px;
   letter-spacing: 1.5px;
@@ -305,10 +305,10 @@ h6 {
   text-transform: uppercase;
 }
 .brand-name {
-  font-family: GraphikBold;
+  font-family: FranklinGothicBold;
 }
 .brand-name-by {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
 }
 .interactive {
   color: #009f6f;
@@ -361,7 +361,7 @@ h6 {
   cursor: pointer;
 }
 .accordion-section .accordion-trigger > p {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
 }
 .accordion-section .accordion-trigger::before {
   position: absolute;
@@ -523,7 +523,7 @@ h6 {
   border-radius: 7px;
   cursor: pointer;
   font-size: 16px;
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   text-align: center;
 }
 .button.small {
@@ -820,7 +820,7 @@ h6 {
   height: 40px;
   border-radius: 7px;
   font-size: 16px;
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   line-height: 20px;
   text-align: left;
   padding: 0 48px 0 16px;
@@ -895,7 +895,7 @@ h6 {
   border: none;
   text-decoration: none;
   font-size: 16px;
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   line-height: 20px;
   text-align: left;
   overflow: hidden;
@@ -1374,7 +1374,7 @@ h6 {
   width: 100%;
 }
 .sortable-list-section > .sortable-list-draggable {
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
 }
 .sortable-list-draggable {
   padding-top: 6px;
@@ -1420,13 +1420,13 @@ h6 {
 .table-header-row {
   height: 56px;
   font-size: 16px;
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   line-height: 20px;
 }
 .table-row {
   height: 48px;
   font-size: 16px;
-  font-family: GraphikRegular;
+  font-family: FranklinGothicNormal;
   line-height: 20px;
 }
 .table-row:hover {
@@ -1504,7 +1504,7 @@ h6 {
 .vertical-tabs .tab-item {
   height: 32px;
   vertical-align: middle;
-  font-family: GraphikMedium;
+  font-family: FranklinGothicMedium;
   font-size: 16px;
   line-height: 24px;
 }
@@ -2009,7 +2009,7 @@ h6 {
 .blocks-title {
   font-size: 36px;
   line-height: 25px;
-  font-family: GraphikBold;
+  font-family: FranklinGothicBold;
   margin-left: 16px;
   position: relative;
   top: 4px;
