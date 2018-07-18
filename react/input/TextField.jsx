@@ -17,12 +17,6 @@ class TextField extends React.Component {
   }
 
   render() {
-    // the label field
-    let labelElement = null;
-    if (this.props.label) {
-      labelElement = <label className="text-field-label">{this.props.label}</label>;
-    }
-
     // text input element itself
     let textFieldClasses = 'text-field-input';
 
@@ -85,7 +79,7 @@ class TextField extends React.Component {
     return (
       <div className={`text-field ${this.props.isDisabled ? 'disabled' : ''}`}>
         <div>
-          {labelElement}
+          {this.props.label && <label className="text-field-label">{this.props.label}</label>}
           {invalidLabelMarker}
         </div>
         <div className="text-field-container">
@@ -125,7 +119,7 @@ TextField.defaultProps = {
   type: 'text',
   name: '',
   value: '',
-  label: null,
+  label: '',
   placeholder: 'Text input',
   prefix: null,
   suffix: null,

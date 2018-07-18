@@ -37,7 +37,11 @@ class Dropdown extends React.Component {
     return (
       <div className="dropdown-wrapper">
         <div className="dropdown">
-          <p className="dropdown-description">{this.props.description}</p>
+          {this.props.description && (
+            <div>
+              <label className="dropdown-description">{this.props.description}</label>
+            </div>
+          )}
           {this.getOptionTrigger() }
           <ul className={`dropdown-menu ${this.props.isOpen ? '' : 'hidden'}`}>
             {
