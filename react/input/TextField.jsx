@@ -60,6 +60,7 @@ class TextField extends React.Component {
         autoComplete={this.props.autoComplete}
         readOnly={this.props.readOnly}
         onChange={this.props.onChange}
+        onFocus={this.props.onFocus}
         onBlur={(e) => {
           this.updateValidity();
           if (this.props.onBlur) {
@@ -114,6 +115,7 @@ TextField.propTypes = {
   invalidErrorMessage: PropTypes.string,
   onChange: PropTypes.func,
   onKeyUp: PropTypes.func,
+  onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   autoComplete: PropTypes.string,
   readOnly: PropTypes.bool
@@ -132,6 +134,7 @@ TextField.defaultProps = {
   invalidErrorMessage: '',
   onChange: null,
   onKeyUp: null,
+  onFocus: null,
   onBlur: null,
   autoComplete: '',
   readOnly: false
