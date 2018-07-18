@@ -813,6 +813,7 @@ h6 {
   display: inline-block;
 }
 .dropdown-description {
+  display: inline-block;
   margin: 0;
 }
 .dropdown-trigger {
@@ -1721,6 +1722,9 @@ h6 {
 }
 .text-field-container {
   position: relative;
+}
+.text-field-label {
+  display: inline-block;
 }
 .text-field-prefix,
 .text-field-suffix {
