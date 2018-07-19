@@ -92,7 +92,7 @@ gulp.task('stylusGeneration', () => {
 });
 
 gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
-  return gulp.src(['./blocks-styles/variables-base.styl', './blocks-styles/variables.styl'])
+  return gulp.src(['./blocks-styles/variables.styl', './blocks-styles/variables-base.styl'])
           .pipe(concat('variables.styl'))
           .pipe(gulp.dest('./blocks-styles'));
 

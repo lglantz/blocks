@@ -78,26 +78,26 @@ th {
   src: url("../fonts/FG4.otf") format("opentype");
 }
 :root {
-  --interactive: $interactive-hex;
-  --interactive-hover: $interactive-hover-hex;
-  --interactive-shadow: $interactive-shadow-hex;
-  --interactive-shadow-hover: $interactive-shadow-hover-hex;
-  --brand-01: $brand-01-hex;
-  --ui-00: $ui-00-hex;
-  --ui-01: $ui-01-hex;
-  --ui-02: $ui-02-hex;
-  --ui-03: $ui-03-hex;
-  --ui-04: $ui-04-hex;
-  --ui-05: $ui-05-hex;
-  --ui-06: $ui-06-hex;
-  --ui-07: $ui-07-hex;
-  --text-01: $text-01-hex;
-  --text-02: $text-02-hex;
-  --success: $success-hex;
-  --information: $information-hex;
-  --warning: $warning-hex;
-  --error: $error-hex;
-  --selection: $selection-hex;
+  --interactive: #009f6f;
+  --interactive-hover: #008b61;
+  --interactive-shadow: rgba(0,72,51,0.25);
+  --interactive-shadow-hover: rgba(0,72,51,0.35);
+  --brand-01: #00b07d;
+  --ui-00: #fff;
+  --ui-01: #f6f8f8;
+  --ui-02: #f5faf8;
+  --ui-03: #edf0ee;
+  --ui-04: #d9e1e0;
+  --ui-05: #bdc7c3;
+  --ui-06: #aab7b2;
+  --ui-07: #91a49e;
+  --text-01: #2b3836;
+  --text-02: #7c8c88;
+  --success: #39cf94;
+  --information: #6f6bf8;
+  --warning: #fdb100;
+  --error: #ec4f07;
+  --selection: #49a1ff;
 }
 html,
 body {
@@ -113,7 +113,7 @@ p {
   font-size: 16px;
   line-height: 28px;
   text-align: left;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 label {
@@ -121,20 +121,20 @@ label {
   font-size: 16px;
   line-height: 28px;
   text-align: left;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 a {
   font-size: 16px;
   line-height: 20px;
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
   text-decoration: none;
 }
 .link {
   font-size: 16px;
   line-height: 20px;
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
   text-decoration: none;
 }
@@ -150,61 +150,61 @@ a.focus,
   text-decoration: underline;
 }
 a:hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .link:hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 a.hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .link.hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 a:focus {
-  background-color: $ui-03-hex;
+  background-color: #edf0ee;
   background-color: var(--ui-03, #edf0ee);
   outline: none;
   text-decoration: none;
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
 }
 .link:focus {
-  background-color: $ui-03-hex;
+  background-color: #edf0ee;
   background-color: var(--ui-03, #edf0ee);
   outline: none;
   text-decoration: none;
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
 }
 a.focus {
-  background-color: $ui-03-hex;
+  background-color: #edf0ee;
   background-color: var(--ui-03, #edf0ee);
   outline: none;
   text-decoration: none;
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
 }
 .link.focus {
-  background-color: $ui-03-hex;
+  background-color: #edf0ee;
   background-color: var(--ui-03, #edf0ee);
   outline: none;
   text-decoration: none;
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
 }
 a.disabled {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
   opacity: 0.5;
   pointer-events: none;
 }
 .link.disabled {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
   opacity: 0.5;
   pointer-events: none;
@@ -213,69 +213,69 @@ h1 {
   font-family: FranklinGothicMedium;
   font-size: 96px;
   line-height: 123px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h2 {
   font-family: FranklinGothicMedium;
   font-size: 60px;
   line-height: 77px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h3 {
   font-family: FranklinGothicMedium;
   font-size: 48px;
   line-height: 67px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h4 {
   font-family: FranklinGothicMedium;
   font-size: 34px;
   line-height: 43px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h5 {
   font-family: FranklinGothicMedium;
   font-size: 24px;
   line-height: 31px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 h6 {
   font-family: FranklinGothicMedium;
   font-size: 20px;
   line-height: 26px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .subtitle {
   font-family: FranklinGothicMedium;
   font-size: 16px;
   line-height: 24px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .subtitle.dark-bg {
-  background-color: $text-01-hex;
+  background-color: #2b3836;
   background-color: var(--text-01, #2b3836);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .subtitle-small {
   font-family: FranklinGothicMedium;
   font-size: 14px;
   line-height: 18px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .ui-text {
   font-family: FranklinGothicNormal;
   font-size: 14px;
   line-height: 18px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .body-caps {
@@ -284,14 +284,14 @@ h6 {
   line-height: 19px;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .caption {
   font-family: FranklinGothicNormal;
   font-size: 12px;
   line-height: 16px;
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .overline {
@@ -311,11 +311,11 @@ h6 {
   font-family: FranklinGothicMedium;
 }
 .interactive {
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .inactive {
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
 .success {
@@ -323,15 +323,15 @@ h6 {
   color: var(--success-hex, #39cf94);
 }
 .warning {
-  color: $warning-hex;
+  color: #fdb100;
   color: var(--warning, #fdb100);
 }
 .error {
-  color: $error-hex;
+  color: #ec4f07;
   color: var(--error, #ec4f07);
 }
 .information {
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
 }
 .accordion {
@@ -386,11 +386,11 @@ h6 {
   transition: max-height 0.25s;
 }
 .accordion-trigger {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
 }
 .accordion-content {
-  background-color: $ui-03-hex;
+  background-color: #edf0ee;
   background-color: var(--ui-03, #edf0ee);
 }
 .accordion-content .accordion-trigger {
@@ -436,17 +436,17 @@ h6 {
   border: 1px solid transparent;
 }
 .alert {
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  box-shadow: 0 3px 6px 1px $ui-04-hex;
+  box-shadow: 0 3px 6px 1px #d9e1e0;
   box-shadow: 0 3px 6px 1px var(--ui-04, #d9e1e0);
 }
 .alert-icon-container {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
 }
 .alert-icon {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
 }
 .alert-close {
@@ -465,7 +465,7 @@ h6 {
           mask: url("../svgs/icon-check.svg") no-repeat 50% 50%;
 }
 .warning .alert-icon-background {
-  background-color: $warning-hex;
+  background-color: #fdb100;
   background-color: var(--warning, #fdb100);
 }
 .warning .alert-icon {
@@ -473,7 +473,7 @@ h6 {
           mask: url("../svgs/icon-warning.svg") no-repeat 50% 50%;
 }
 .error .alert-icon-background {
-  background-color: $error-hex;
+  background-color: #ec4f07;
   background-color: var(--error, #ec4f07);
 }
 .error .alert-icon {
@@ -481,7 +481,7 @@ h6 {
           mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
 }
 .information .alert-icon-background {
-  background-color: $information-hex;
+  background-color: #6f6bf8;
   background-color: var(--information, #6f6bf8);
 }
 .information .alert-icon {
@@ -512,7 +512,7 @@ h6 {
   text-decoration: none;
 }
 .breadcrumbs a:hover {
-  color: $information-hex;
+  color: #6f6bf8;
   color: var(--information, #6f6bf8);
 }
 .button {
@@ -544,129 +544,129 @@ h6 {
   pointer-events: none;
 }
 .button {
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .button.primary {
-  background-color: $interactive-hex;
+  background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
-  border: 2px solid $interactive-hex;
+  border: 2px solid #009f6f;
   border: 2px solid var(--interactive, #009f6f);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.primary:hover {
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
-  border: 2px solid $interactive-hover-hex;
+  border: 2px solid #008b61;
   border: 2px solid var(--interactive-hover, #008b61);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.primary.hover {
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
-  border: 2px solid $interactive-hover-hex;
+  border: 2px solid #008b61;
   border: 2px solid var(--interactive-hover, #008b61);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.secondary {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 2px solid $ui-00-hex;
+  border: 2px solid #fff;
   border: 2px solid var(--ui-00, #fff);
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .button.secondary:hover {
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  border: 2px solid $ui-03-hex;
+  border: 2px solid #edf0ee;
   border: 2px solid var(--ui-03, #edf0ee);
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .button.secondary.hover {
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  border: 2px solid $ui-03-hex;
+  border: 2px solid #edf0ee;
   border: 2px solid var(--ui-03, #edf0ee);
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .button:hover {
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .button.hover {
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .button:focus {
   outline: none;
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .button:active {
   outline: none;
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .button.focus {
   outline: none;
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .button:focus.primary {
-  border: 2px solid $brand-01-hex;
+  border: 2px solid #00b07d;
   border: 2px solid var(--brand-01, #00b07d);
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .button:active.primary {
-  border: 2px solid $brand-01-hex;
+  border: 2px solid #00b07d;
   border: 2px solid var(--brand-01, #00b07d);
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .button.focus.primary {
-  border: 2px solid $brand-01-hex;
+  border: 2px solid #00b07d;
   border: 2px solid var(--brand-01, #00b07d);
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .button:focus.secondary {
-  border: 2px solid $ui-04-hex;
+  border: 2px solid #d9e1e0;
   border: 2px solid var(--ui-04, #d9e1e0);
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .button:active.secondary {
-  border: 2px solid $ui-04-hex;
+  border: 2px solid #d9e1e0;
   border: 2px solid var(--ui-04, #d9e1e0);
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .button.focus.secondary {
-  border: 2px solid $ui-04-hex;
+  border: 2px solid #d9e1e0;
   border: 2px solid var(--ui-04, #d9e1e0);
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  color: $interactive-hex;
+  color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .checkbox-label-text {
@@ -728,76 +728,76 @@ h6 {
           transform: rotate(45deg);
 }
 .checkbox-label-text {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .checkmark {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
 }
 .checkmark:hover {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkmark.hover {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input:checked ~ .checkmark {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
-  border: 1px solid $brand-01-hex;
+  border: 1px solid #00b07d;
   border: 1px solid var(--brand-01, #00b07d);
 }
 .checkbox-container input:checked ~ .checkmark:hover {
-  background-color: $interactive-hex;
+  background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
-  border: 1px solid $interactive-hex;
+  border: 1px solid #009f6f;
   border: 1px solid var(--interactive, #009f6f);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input:checked ~ .checkmark.hover {
-  background-color: $interactive-hex;
+  background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
-  border: 1px solid $interactive-hex;
+  border: 1px solid #009f6f;
   border: 1px solid var(--interactive, #009f6f);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input[type="checkbox"]:focus + span {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input[type="checkbox"].focus + span {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hover-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .checkbox-container input[type="checkbox"]:checked:focus + span {
-  background-color: $interactive-hex;
+  background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
 }
 .checkbox-container input[type="checkbox"]:checked.focus + span {
-  background-color: $interactive-hex;
+  background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
   outline: none;
   border: 1px solid #39cf94;
@@ -908,97 +908,97 @@ h6 {
   text-decoration: none;
 }
 .dropdown-trigger {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-03-hex;
+  border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
-  color: $ui-07-hex;
+  color: #91a49e;
   color: var(--ui-07, #91a49e);
 }
 .dropdown-trigger::after {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .dropdown-trigger:hover {
-  border: 2px solid $ui-03-hex;
+  border: 2px solid #edf0ee;
   border: 2px solid var(--ui-03, #edf0ee);
 }
 .dropdown-trigger.hover {
-  border: 2px solid $ui-03-hex;
+  border: 2px solid #edf0ee;
   border: 2px solid var(--ui-03, #edf0ee);
 }
 .dropdown-trigger:focus {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .dropdown-trigger.focus {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .dropdown-menu {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: solid 1px $ui-04-hex;
+  border: solid 1px #d9e1e0;
   border: solid 1px var(--ui-04, #d9e1e0);
-  box-shadow: 0 3px 6px 0 $ui-04-hex;
+  box-shadow: 0 3px 6px 0 #d9e1e0;
   box-shadow: 0 3px 6px 0 var(--ui-04, #d9e1e0);
 }
 .dropdown-item * {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .dropdown-item *:focus {
   outline: none;
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .dropdown-item *.focus {
   outline: none;
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .dropdown-item *:active {
   outline: none;
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .dropdown-item *.active {
   outline: none;
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .dropdown-item:hover {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .dropdown-item.hover {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .dropdown-item:hover * {
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .dropdown-item.hover * {
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .icon,
@@ -1013,11 +1013,11 @@ h6 {
   border: 1px solid transparent;
 }
 .icon {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .icon-info {
-  background-color: $information-hex;
+  background-color: #6f6bf8;
   background-color: var(--information, #6f6bf8);
 }
 .icon,
@@ -1048,17 +1048,17 @@ h6 {
           mask: url("../svgs/icon-drag.svg") no-repeat 50% 50%;
 }
 .icon-plus {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
   -webkit-mask: url("../svgs/icon-plus.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-plus.svg") no-repeat 50% 50%;
 }
 .icon-plus:hover {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
 .icon-plus:focus {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
 .icon-close {
@@ -1138,15 +1138,15 @@ h6 {
   border: 1px solid transparent;
 }
 .modal {
-  border: solid 1px $ui-04-hex;
+  border: solid 1px #d9e1e0;
   border: solid 1px var(--ui-04, #d9e1e0);
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  box-shadow: 0 3px 6px 0 $ui-04-hex;
+  box-shadow: 0 3px 6px 0 #d9e1e0;
   box-shadow: 0 3px 6px 0 var(--ui-04, #d9e1e0);
 }
 .modal-overlay {
-  background-color: $ui-07-hex;
+  background-color: #91a49e;
   background-color: var(--ui-07, #91a49e);
 }
 .modal-close {
@@ -1158,7 +1158,7 @@ h6 {
 }
 .modal-close:focus {
   outline: none;
-  border: 1px solid $selection-hex;
+  border: 1px solid #49a1ff;
   border: 1px solid var(--selection, #49a1ff);
 }
 .progress-dots {
@@ -1185,19 +1185,19 @@ h6 {
   cursor: pointer;
 }
 .progress-dot {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
 }
 .progress-dot:hover {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
 .progress-dot-container input:checked ~ .progress-dot {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .progress-dot-container input:focus ~ .progress-dot {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
 .radio-label-text {
@@ -1246,116 +1246,116 @@ h6 {
   border-radius: 50%;
 }
 .radio-label-text {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .radio-check {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
 }
 .radio-check:hover {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .radio-check.hover {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .radio-button-container input:checked ~ .radio-check {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $brand-01-hex;
+  border: 1px solid #00b07d;
   border: 1px solid var(--brand-01, #00b07d);
 }
 .radio-button-container input:checked ~ .radio-check.hover {
-  border: 1px solid $interactive-hover-hex;
+  border: 1px solid #008b61;
   border: 1px solid var(--interactive-hover, #008b61);
 }
 .radio-button-container input:checked ~ .radio-check.disabled {
-  border: 1px solid $ui-07-hex;
+  border: 1px solid #91a49e;
   border: 1px solid var(--ui-07, #91a49e);
 }
 .radio-button-container input:checked:hover ~ .radio-check {
-  border: 1px solid $interactive-hover-hex;
+  border: 1px solid #008b61;
   border: 1px solid var(--interactive-hover, #008b61);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .radio-button-container input:checked:hover ~ .radio-check:after {
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
 }
 .radio-button-container .radio-check:after {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .radio-button-container .radio-check.hover:after {
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
 }
 .radio-button-container .radio-check.disabled:after {
-  background-color: $ui-07-hex;
+  background-color: #91a49e;
   background-color: var(--ui-07, #91a49e);
 }
 .radio-button-container input[type="radio"]:focus + .radio-check {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .radio-button-container input[type="radio"].focus + .radio-check {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .radio-button-container input[type="radio"]:checked:focus + .radio-check {
   outline: none;
-  border: 1px solid $interactive-hover-hex;
+  border: 1px solid #008b61;
   border: 1px solid var(--interactive-hover, #008b61);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25)), 0 0 0 1px var(--success-hex, #39cf94);
 }
 .radio-button-container input[type="radio"]:checked.focus + .radio-check {
   outline: none;
-  border: 1px solid $interactive-hover-hex;
+  border: 1px solid #008b61;
   border: 1px solid var(--interactive-hover, #008b61);
-  box-shadow: 0 2px 4px 0 $interactive-shadow-hex;
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25)), 0 0 0 1px var(--success-hex, #39cf94);
 }
 .radio-button-container input[type="radio"]:checked:focus + .radio-check:after {
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
 }
 .radio-button-container input[type="radio"]:checked.focus + .radio-check:after {
-  background-color: $interactive-hover-hex;
+  background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
 }
 .radio-button-container input[type="radio"]:disabled + .radio-check {
   opacity: 0.5;
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
   box-shadow: none;
   pointer-events: none;
 }
 .radio-button-container input[type="radio"]:disabled + .radio-check:after {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .radio-button-container input[type="radio"]:checked:disabled + .radio-check {
-  border: 1px solid $brand-01-hex;
+  border: 1px solid #00b07d;
   border: 1px solid var(--brand-01, #00b07d);
 }
 .sortable-list {
@@ -1391,19 +1391,19 @@ h6 {
   cursor: move;
 }
 .sortable-list-item.dragging {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
 .sortable-list-item.dragover {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
 }
 .sortable-list-section > .sortable-list-draggable {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
 }
 .sortable-list-drag-icon {
-  background-color: $ui-07-hex;
+  background-color: #91a49e;
   background-color: var(--ui-07, #91a49e);
 }
 .hidden {
@@ -1453,25 +1453,25 @@ h6 {
   text-align: right;
 }
 .table {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
-  border: 1px solid $ui-04-hex;
+  border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
 }
 .table-header-row {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
 }
 .table-row {
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  border-top: 1px solid $ui-04-hex;
+  border-top: 1px solid #d9e1e0;
   border-top: 1px solid var(--ui-04, #d9e1e0);
 }
 .table-row:hover {
-  background-color: $ui-04-hex;
+  background-color: #d9e1e0;
   background-color: var(--ui-04, #d9e1e0);
-  border: 1px solid $brand-01-hex;
+  border: 1px solid #00b07d;
   border: 1px solid var(--brand-01, #00b07d);
 }
 .horizontal-tabs,
@@ -1534,95 +1534,95 @@ h6 {
   background-color: transparent;
 }
 .horizontal-tabs input[type="radio"] + .tab-item {
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
 .vertical-tabs input[type="radio"] + .tab-item {
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
 .horizontal-tabs input[type="radio"] + .tab-item.focus {
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
 .vertical-tabs input[type="radio"] + .tab-item.focus {
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
 .horizontal-tabs input[type="radio"] + .tab-item:hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .vertical-tabs input[type="radio"] + .tab-item:hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .horizontal-tabs input[type="radio"] + .tab-item.hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .vertical-tabs input[type="radio"] + .tab-item.hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .horizontal-tabs input[type="radio"]:focus + .tab-item {
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
 .vertical-tabs input[type="radio"]:focus + .tab-item {
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
 .horizontal-tabs input[type="radio"]:active + .tab-item {
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
 .vertical-tabs input[type="radio"]:active + .tab-item {
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
 }
 .horizontal-tabs input[type="radio"]:checked + .tab-item {
-  color: $brand-01-hex;
+  color: #00b07d;
   color: var(--brand-01, #00b07d);
 }
 .vertical-tabs input[type="radio"]:checked + .tab-item {
-  color: $brand-01-hex;
+  color: #00b07d;
   color: var(--brand-01, #00b07d);
 }
 .tab-item {
   border: none;
 }
 .tab-item.inactive {
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
 .tab-item.active {
-  color: $brand-01-hex;
+  color: #00b07d;
   color: var(--brand-01, #00b07d);
 }
 .tab-item:hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .tab-item.hover {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .tab-item:focus {
   outline: none;
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
   background: transparent;
 }
 .tab-item:active {
   outline: none;
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
   background: transparent;
 }
 .tab-item.focus {
   outline: none;
-  color: $selection-hex;
+  color: #49a1ff;
   color: var(--selection, #49a1ff);
   background: transparent;
 }
@@ -1630,78 +1630,78 @@ h6 {
   border-bottom: 4px solid transparent;
 }
 .horizontal-tabs .tab-item:hover {
-  border-bottom: 4px solid $ui-04-hex;
+  border-bottom: 4px solid #d9e1e0;
   border-bottom: 4px solid var(--ui-04, #d9e1e0);
 }
 .horizontal-tabs .tab-item.hover {
-  border-bottom: 4px solid $ui-04-hex;
+  border-bottom: 4px solid #d9e1e0;
   border-bottom: 4px solid var(--ui-04, #d9e1e0);
 }
 .horizontal-tabs .tab-item.active {
-  border-bottom: 4px solid $brand-01-hex;
+  border-bottom: 4px solid #00b07d;
   border-bottom: 4px solid var(--brand-01, #00b07d);
 }
 .horizontal-tabs .tab-item:focus {
-  border-bottom: 4px solid $selection-hex;
+  border-bottom: 4px solid #49a1ff;
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
 .horizontal-tabs .tab-item:active {
-  border-bottom: 4px solid $selection-hex;
+  border-bottom: 4px solid #49a1ff;
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
 .horizontal-tabs .tab-item.focus {
-  border-bottom: 4px solid $selection-hex;
+  border-bottom: 4px solid #49a1ff;
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
 .horizontal-tabs .tab-item > input[type="radio"]:focus {
-  border-bottom: 4px solid $selection-hex;
+  border-bottom: 4px solid #49a1ff;
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
 .horizontal-tabs .tab-item > input[type="radio"]:active {
-  border-bottom: 4px solid $selection-hex;
+  border-bottom: 4px solid #49a1ff;
   border-bottom: 4px solid var(--selection, #49a1ff);
 }
 .vertical-tabs .tab-item {
   border-left: 4px solid transparent;
 }
 .vertical-tabs .tab-item:hover {
-  border-left: 4px solid $ui-04-hex;
+  border-left: 4px solid #d9e1e0;
   border-left: 4px solid var(--ui-04, #d9e1e0);
 }
 .vertical-tabs .tab-item.hover {
-  border-left: 4px solid $ui-04-hex;
+  border-left: 4px solid #d9e1e0;
   border-left: 4px solid var(--ui-04, #d9e1e0);
 }
 .vertical-tabs .tab-item.active {
-  border-left: 4px solid $brand-01-hex;
+  border-left: 4px solid #00b07d;
   border-left: 4px solid var(--brand-01, #00b07d);
 }
 .vertical-tabs .tab-item:focus {
-  border-left: 4px solid $selection-hex;
+  border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
 }
 .vertical-tabs .tab-item:active {
-  border-left: 4px solid $selection-hex;
+  border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
 }
 .vertical-tabs .tab-item.focus {
-  border-left: 4px solid $selection-hex;
+  border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
 }
 .vertical-tabs .tab-item > input[type="radio"]:focus {
-  border-left: 4px solid $selection-hex;
+  border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
 }
 .vertical-tabs .tab-item > input[type="radio"]:active {
-  border-left: 4px solid $selection-hex;
+  border-left: 4px solid #49a1ff;
   border-left: 4px solid var(--selection, #49a1ff);
 }
 .horizontal-tabs input[type="radio"]:checked + .tab-item {
-  border-bottom: 4px solid $brand-01-hex;
+  border-bottom: 4px solid #00b07d;
   border-bottom: 4px solid var(--brand-01, #00b07d);
 }
 .vertical-tabs input[type="radio"]:checked + .tab-item {
-  border-left: 4px solid $brand-01-hex;
+  border-left: 4px solid #00b07d;
   border-left: 4px solid var(--brand-01, #00b07d);
 }
 .text-field {
@@ -1756,29 +1756,29 @@ h6 {
   line-height: 18px;
 }
 .text-field label {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .text-field input {
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
-  border: 1px solid $ui-03-hex;
+  border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
 }
 .text-field input.invalid {
-  border: 1px solid $error-hex;
+  border: 1px solid #ec4f07;
   border: 1px solid var(--error, #ec4f07);
 }
 .text-field input:hover {
-  border: 1px solid $ui-03-hex;
+  border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
-  box-shadow: 0 0 0 1px $ui-03-hex;
+  box-shadow: 0 0 0 1px #edf0ee;
   box-shadow: 0 0 0 1px var(--ui-03, #edf0ee);
 }
 .text-field input.hover {
-  border: 1px solid $ui-03-hex;
+  border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
-  box-shadow: 0 0 0 1px $ui-03-hex;
+  box-shadow: 0 0 0 1px #edf0ee;
   box-shadow: 0 0 0 1px var(--ui-03, #edf0ee);
 }
 .text-field input:focus {
@@ -1802,19 +1802,19 @@ h6 {
   pointer-events: none;
 }
 .text-field-prefix {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .text-field-suffix {
-  color: $text-01-hex;
+  color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .invalid-label-marker {
-  color: $error-hex;
+  color: #ec4f07;
   color: var(--error, #ec4f07);
 }
 .invalid-label-message {
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
 .toggle {
@@ -1850,29 +1850,29 @@ h6 {
   border-left: none;
 }
 .toggle-button-text {
-  border: 1px solid $ui-07-hex;
+  border: 1px solid #91a49e;
   border: 1px solid var(--ui-07, #91a49e);
-  background-color: $ui-00-hex;
+  background-color: #fff;
   background-color: var(--ui-00, #fff);
 }
 .toggle-button-text:hover {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .toggle-container input:checked ~ .toggle-button-text {
-  border: 1px solid $brand-01-hex;
+  border: 1px solid #00b07d;
   border: 1px solid var(--brand-01, #00b07d);
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .toggle-container input:focus ~ .toggle-button-text {
-  background-color: $selection-hex;
+  background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
-  color: $ui-00-hex;
+  color: #fff;
   color: var(--ui-00, #fff);
 }
 .l-root {
@@ -2114,42 +2114,42 @@ h6 {
   text-align: center;
 }
 .cbre {
-  background-color: $brand-01-hex;
+  background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
 .blocks-title {
-  color: $brand-01-hex;
+  color: #00b07d;
   color: var(--brand-01, #00b07d);
 }
 .snippet-container {
-  border: 2px solid $ui-04-hex;
+  border: 2px solid #d9e1e0;
   border: 2px solid var(--ui-04, #d9e1e0);
 }
 .snippet-container > div:last-child {
-  background-color: $ui-02-hex;
+  background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
 }
 .left-nav-panel {
-  background-color: $ui-03-hex;
+  background-color: #edf0ee;
   background-color: var(--ui-03, #edf0ee);
   box-shadow: 2px 0 3px 0 rgba(43,56,54,0.15);
 }
 .left-nav-panel .category-title {
   padding: 16px 0;
-  border-bottom: 2px solid $ui-04-hex;
+  border-bottom: 2px solid #d9e1e0;
   border-bottom: 2px solid var(--ui-04, #d9e1e0);
 }
 .doc-section {
-  border-bottom: solid 1px $ui-04-hex;
+  border-bottom: solid 1px #d9e1e0;
   border-bottom: solid 1px var(--ui-04, #d9e1e0);
 }
 .color-card .color-card-title {
-  border: 1px solid $text-02-hex;
+  border: 1px solid #7c8c88;
   border: 1px solid var(--text-02, #7c8c88);
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
 .color-card .color-card-value {
-  color: $text-02-hex;
+  color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
