@@ -78,6 +78,7 @@ class TextField extends React.Component {
             this.updateValidity();
           }
         }}
+        onKeyDown={this.props.onKeyDown}
       />
     );
 
@@ -114,6 +115,7 @@ TextField.propTypes = {
   invalidErrorMessage: PropTypes.string,
   onChange: PropTypes.func,
   onKeyUp: PropTypes.func,
+  onKeyDown: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   autoComplete: PropTypes.string,
@@ -133,6 +135,7 @@ TextField.defaultProps = {
   invalidErrorMessage: '',
   onChange: null,
   onKeyUp: null,
+  onKeyDown: null,
   onFocus: null,
   onBlur: null,
   autoComplete: '',
