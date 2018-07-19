@@ -1821,6 +1821,30 @@ h6 {
   color: #7c8c88;
   color: var(--text-02, #7c8c88);
 }
+.dropdown-text-field {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+.dropdown-text-field label {
+  font-size: 16px;
+  line-height: 20px;
+}
+.dropdown-text-field input {
+  height: 40px;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 7px 0 0 7px;
+  padding: 11px 16px 9px 16px;
+}
+.dropdown-text-field .dropdown-wrapper .dropdown {
+  display: inline-block;
+  min-width: initial;
+}
+.dropdown-text-field .dropdown-wrapper .dropdown .dropdown-trigger {
+  border-radius: 0 7px 7px 0;
+  padding: 0 42px 0 16px;
+}
 .toggle {
   display: inline-flex;
   height: 40px;
