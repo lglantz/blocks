@@ -8,9 +8,13 @@ const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
 const webpack = require('webpack-stream');
 
+const jsonSass = require('gulp-json-sass');
+const jsonStylus = require('gulp-json-stylus');
+const concat = require('gulp-concat');
+
 const config = require('./webpack.config.js');
 
-gulp.task('dev:css', function () {
+gulp.task('dev:css', ['dev:jsonToStylus'], function () {
   const plugins = [
     autoprefixer(),
     cssvariables({ preserve: true })
@@ -27,7 +31,7 @@ gulp.task('dev:css', function () {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('watch:css', function () {
+gulp.task('watch:css', ['dev:jsonToStylus'], function () {
   gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['dev:css']);
 });
 
@@ -72,6 +76,28 @@ gulp.task('dev:react', () => {
     .pipe(gulp.dest('docs/lib'));
 });
 
+gulp.task('dev:jsonToSass', () => {
+  return gulp.src('./blocks-styles/variables.json')
+    .pipe(jsonSass({
+      sass: true
+    }))
+    .pipe(gulp.dest('./blocks-styles'))
+});
+
+gulp.task('stylusGeneration', () => {
+  return gulp.src('./blocks-styles/variables.json')
+          .pipe(jsonStylus({ namespace : "$" }))
+          .pipe(concat('variables.styl'))
+          .pipe(gulp.dest('./blocks-styles'));
+});
+
+gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
+  return gulp.src(['./blocks-styles/variables-base.styl', './blocks-styles/variables.styl'])
+          .pipe(concat('variables.styl'))
+          .pipe(gulp.dest('./blocks-styles'));
+
+})
+
 gulp.task('watch:react', function () {
   gulp.watch('react/*', ['dev:react']);
 });
@@ -83,5 +109,7 @@ gulp.task('server', [
   'dev:react',
   'dev:jekyll',
   'watch:css',
-  'watch:react'
+  'watch:react',
+  'dev:jsonToSass',
+  'dev:jsonToStylus'
 ]);
