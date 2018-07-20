@@ -36,10 +36,11 @@ class SortableList extends React.Component {
   }
 
   componentDidMount() {
-    this.listDOM = ReactDOM.findDOMNode(this);
-    this.listDOM.addEventListener('dragstart', this.onDragStart);
-    this.listDOM.addEventListener('dragover', this.onDragOver);
-    this.listDOM.addEventListener('dragend', this.onDragEnd);
+    if (this.listDOM) {
+      this.listDOM.addEventListener('dragstart', this.onDragStart);
+      this.listDOM.addEventListener('dragover', this.onDragOver);
+      this.listDOM.addEventListener('dragend', this.onDragEnd);
+    }
   }
 
   getDragTarget(e) {
@@ -107,7 +108,10 @@ class SortableList extends React.Component {
 
   render() {
     return (
-      <ul className="sortable-list">
+      <ul
+        className="sortable-list"
+        ref={(el) => { this.listDOM = el; }}
+      >
         {
           this.props.children.map((child, idx) => (
             <li
