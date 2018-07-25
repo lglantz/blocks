@@ -274,14 +274,18 @@ class Preview extends React.Component {
             </div>
             <div className="l-flex-horizontal">
               <span className="doc-state-title">
-                Dropdown
+                Text Field with Dropdown
               </span>
               <div className="doc-state-content">
                 <TextFieldWithDropdown
-                  label="Text input label"
-                  placeholder='100,000'
-                  valueDD="ft"
-                  options={[{text: 'ft', value: 'ft'}, {text: 'cm', value: 'cm'}, {text: 'm', value: 'm'}]}
+                  textField={{
+                    label: "Text input label",
+                    placeholder: "100,000"
+                  }}
+                  dropdown={{
+                    options: [{text: 'ft', value: 'ft'}, {text: 'cm', value: 'cm'}, {text: 'm', value: 'm'}],
+                    value: "ft"
+                  }}
                 />
               </div>
             </div>

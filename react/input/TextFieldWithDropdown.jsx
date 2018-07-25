@@ -3,76 +3,68 @@ const PropTypes = require('prop-types');
 const TextField = require('./TextField.jsx');
 const Dropdown = require('../dropdowns/Dropdown.jsx');
 
-class DropdownTextField extends React.Component {
-  render() {
-    return (
-      <div className={`text-field-with-dropdown ${this.props.isDisabled ? 'disabled' : ''}`}>
-        <TextField
-          label={this.props.label}
-          value={this.props.valueTF}
-          isValid={this.props.isValid}
-          invalidErrorMessage={this.props.invalidErrorMessage}
-          placeHolder={this.props.placeholder}
-          type={this.props.type}
-          name={this.props.name}
-          onChange={this.props.onChangeTF}
-        />
-        <Dropdown
-          text={this.props.text}
-          options={this.props.options}
-          onChange={this.props.onChangeDD}
-          value={this.props.valueDD}
-        />
-      </div>
-    );
-  }
+const TextFieldWithDropdown = (props) => {
+  return (
+    <div className={`text-field-with-dropdown ${props.isDisabled ? 'disabled' : ''}`}>
+      <TextField {...props.textField}/>
+      <Dropdown {...props.dropdown}/>
+    </div>
+  );
 }
 
-DropdownTextField.propTypes = {
-  text: PropTypes.string,
-  valueDD: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
+TextFieldWithDropdown.propTypes = {
+  isDisabled: PropTypes.bool,
+  textField: PropTypes.shape({
+    label: PropTypes.string,
+    onChange: PropTypes.func,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    invalidErrorMessage: PropTypes.string,
+    value: PropTypes.string,
+    isValid: PropTypes.func
+  }),
+  dropdown: PropTypes.shape({
+    text: PropTypes.string,
+    onChange: PropTypes.func,
+    options: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+      href: PropTypes.string,
+      disabled: PropTypes.bool
+    })),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
-    ]),
-    href: PropTypes.string,
-    disabled: PropTypes.bool
-  })),
-  isDisabled: PropTypes.bool,
-  onChangeDD: PropTypes.func,
-  isValid: PropTypes.func,
-  valueTF: PropTypes.string,
-  label: PropTypes.string,
-  invalidErrorMessage: PropTypes.string,
-  placeholder: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  onChangeTF: PropTypes.func
+    ])
+  })
 };
 
-DropdownTextField.defaultProps = {
-  text: 'Choose an option',
-  valueDD: null,
-  options: [],
+TextFieldWithDropdown.defaultProps = {
   isDisabled: false,
-  onChangeDD: () => {},
-  isValid: () => (true),
-  valueTF: '',
-  label: null,
-  invalidErrorMessage: '',
-  placeholder: 'Text input',
-  type: 'text',
-  name: '',
-  onChangeTF: () => {}
+  textField: {
+    label: null,
+    onChange: () => {},
+    name: '',
+    type: 'text',
+    placeholder: 'Text input',
+    invalidErrorMessage: '',
+    value: '',
+    isValid: () => (true)
+  },
+  dropdown: {
+    text: 'Choose an option',
+    onChange: () => {},
+    options: [],
+    value: null
+  }
 };
 
-module.exports = DropdownTextField;
+module.exports = TextFieldWithDropdown;
 
