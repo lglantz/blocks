@@ -4,15 +4,9 @@ const TextField = require('./TextField.jsx');
 const Dropdown = require('../dropdowns/Dropdown.jsx');
 
 class DropdownTextField extends React.Component {
-  constructor(props) {
-    super(props);
-
-    console.log('DropdownTextField created...');
-  }
-
   render() {
     return (
-      <div className={`dropdown-text-field ${this.props.isDisabled ? 'disabled' : ''}`}>
+      <div className={`text-field-with-dropdown ${this.props.isDisabled ? 'disabled' : ''}`}>
         <TextField
           label={this.props.label}
           value={this.props.valueTF}

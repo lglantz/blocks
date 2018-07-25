@@ -11,7 +11,7 @@ const ButtonSmallSecondary = BlocksReact.Buttons.ButtonSmallSecondary;
 const Checkbox = BlocksReact.Input.Checkbox;
 const RadioButtonGroup = BlocksReact.Input.RadioButtonGroup;
 const TextField = BlocksReact.Input.TextField;
-const DropdownTextField = BlocksReact.Input.DropdownTextField;
+const TextFieldWithDropdown = BlocksReact.Input.TextFieldWithDropdown;
 const Toggle = BlocksReact.Input.Toggle;
 
 const Dropdown = BlocksReact.Dropdowns.Dropdown;
@@ -277,7 +277,7 @@ class Preview extends React.Component {
                 Dropdown
               </span>
               <div className="doc-state-content">
-                <DropdownTextField
+                <TextFieldWithDropdown
                   label="Text input label"
                   placeholder='100,000'
                   valueDD="ft"
