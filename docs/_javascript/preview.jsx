@@ -11,6 +11,7 @@ const ButtonSmallSecondary = BlocksReact.Buttons.ButtonSmallSecondary;
 const Checkbox = BlocksReact.Input.Checkbox;
 const RadioButtonGroup = BlocksReact.Input.RadioButtonGroup;
 const TextField = BlocksReact.Input.TextField;
+const TextFieldWithDropdown = BlocksReact.Input.TextFieldWithDropdown;
 const Toggle = BlocksReact.Input.Toggle;
 
 const Dropdown = BlocksReact.Dropdowns.Dropdown;
@@ -268,6 +269,23 @@ class Preview extends React.Component {
                   label="Text input label"
                   prefix="$"
                   suffix="USD"
+                />
+              </div>
+            </div>
+            <div className="l-flex-horizontal">
+              <span className="doc-state-title">
+                Text Field with Dropdown
+              </span>
+              <div className="doc-state-content">
+                <TextFieldWithDropdown
+                  textField={{
+                    label: "Text input label",
+                    placeholder: "100,000"
+                  }}
+                  dropdown={{
+                    options: [{text: 'ft', value: 'ft'}, {text: 'cm', value: 'cm'}, {text: 'm', value: 'm'}],
+                    value: "ft"
+                  }}
                 />
               </div>
             </div>

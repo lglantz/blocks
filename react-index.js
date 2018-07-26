@@ -21,6 +21,7 @@ module.exports = {
     RadioButton: require('./react/input/RadioButton.jsx'),
     RadioButtonGroup: require('./react/input/RadioButtonGroup.jsx'),
     TextField: require('./react/input/TextField.jsx'),
+    TextFieldWithDropdown: require('./react/input/TextFieldWithDropdown.jsx'),
     Toggle: require('./react/input/Toggle.jsx')
   },
   Modals: {
