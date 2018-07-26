@@ -27,46 +27,99 @@
   src: url("../fonts/FG4.otf") format("opentype");
 }
 
-//
-// font  variables
-//
 
-$sans-serif-font-family-normal = FranklinGothicNormal;
-$sans-serif-font-family-medium = FranklinGothicMedium;
-$sans-serif-font-family-bold = FranklinGothicBold;
-
-$normal-weight = 400;
-$medium-weight = 500;
-$bold-weight = 700;
-
-//
-// theme colors
-//
-
-$interactive-hex = #009f6f;
-$interactive-hover-hex = #008b61;
-$interactive-shadow-hex = rgba(0, 72, 51, 0.25);
-$interactive-shadow-hover-hex = rgba(0, 72, 51, 0.35);
-
-$brand-01-hex = #00b07d;
-
-$ui-00-hex = #ffffff;
-$ui-01-hex = #f6f8f8;
-$ui-02-hex = #f5faf8;
-$ui-03-hex = #edf0ee;
-$ui-04-hex = #d9e1e0;
-$ui-05-hex = #bdc7c3;
-$ui-06-hex = #aab7b2;
-$ui-07-hex = #91a49e;
-
-$text-01-hex = #2b3836;
-$text-02-hex = #7c8c88;
-
-$success-hex = #39cf94;
-$information-hex = #6f6bf8;
-$warning-hex = #fdb100;
-$error-hex = #ec4f07;
-$selection-hex = #49a1ff;
+$sans-serif-font-family-normal = FranklinGothicNormal
+$sans-serif-font-family-medium = FranklinGothicMedium
+$sans-serif-font-family-bold = FranklinGothicBold
+$normal-weight = 400
+$medium-weight = 500
+$bold-weight = 700
+$interactive-hex = #009f6f
+$interactive-hover-hex = #008b61
+$interactive-shadow-hex = rgba(0, 72, 51, 0.25)
+$interactive-shadow-hover-hex = rgba(0, 72, 51, 0.35)
+$brand-01-hex = #00b07d
+$ui-00-hex = #ffffff
+$ui-01-hex = #f6f8f8
+$ui-02-hex = #f5faf8
+$ui-03-hex = #edf0ee
+$ui-04-hex = #d9e1e0
+$ui-05-hex = #bdc7c3
+$ui-06-hex = #aab7b2
+$ui-07-hex = #91a49e
+$text-01-hex = #2b3836
+$text-02-hex = #7c8c88
+$success-hex = #39cf94
+$information-hex = #6f6bf8
+$warning-hex = #fdb100
+$error-hex = #ec4f07
+$selection-hex = #49a1ff
+$interactive = var(--interactive, $interactive-hex)
+$interactive-hover = var(--interactive-hover, $interactive-hover-hex)
+$interactive-shadow = var(--interactive-shadow, $interactive-shadow-hex)
+$interactive-shadow-hover = var(--interactive-shadow-hover, $interactive-shadow-hover-hex)
+$brand-01 = var(--brand-01, $brand-01-hex)
+$ui-00 = var(--ui-00, $ui-00-hex)
+$ui-01 = var(--ui-01, $ui-01-hex)
+$ui-02 = var(--ui-02, $ui-02-hex)
+$ui-03 = var(--ui-03, $ui-03-hex)
+$ui-04 = var(--ui-04, $ui-04-hex)
+$ui-05 = var(--ui-05, $ui-05-hex)
+$ui-06 = var(--ui-06, $ui-06-hex)
+$ui-07 = var(--ui-07, $ui-07-hex)
+$text-01 = var(--text-01, $text-01-hex)
+$text-02 = var(--text-02, $text-02-hex)
+$success = var(--success-hex, $success-hex)
+$information = var(--information, $information-hex)
+$warning = var(--warning, $warning-hex)
+$error = var(--error, $error-hex)
+$selection = var(--selection, $selection-hex)
+$base-font-size = 16px
+$base-border-radius = 7px
+$button-height = 40px
+$button-small-height = 28px
+$button-top-padding = 0
+$button-side-padding = 16px
+$button-small-top-padding = 0
+$button-small-side-padding = 12px
+$button-font-size = 16px
+$button-small-font-size = 16px
+$button-shadow-color = $interactive-shadow
+$button-hover-shadow-color = $interactive-shadow-hover
+$button-focus-shadow-color = $interactive-shadow-hover
+$primary-button-background-color = $interactive
+$primary-button-hover-background-color = $interactive-hover
+$primary-button-focus-background-color = $interactive-hover
+$primary-button-border-color = $interactive
+$primary-button-hover-border-color = $interactive-hover
+$primary-button-focus-border-color = $brand-01
+$primary-button-text-color = $ui-00
+$primary-button-hover-text-color = $ui-00
+$primary-button-focus-text-color = $ui-00
+$secondary-button-background-color = $ui-00
+$secondary-button-hover-background-color = $ui-02
+$secondary-button-focus-background-color = $ui-02
+$secondary-button-border-color = $ui-00
+$secondary-button-hover-border-color = $ui-03
+$secondary-button-focus-border-color = $ui-04
+$secondary-button-text-color = $interactive
+$secondary-button-hover-text-color = $interactive
+$secondary-button-focus-text-color = $interactive
+$checkbox-size = 18px
+$checkbox-text-color = $text-01
+$checkbox-hover-shadow-color = $interactive-shadow-hover
+$checkbox-unselected-border-color = $ui-04
+$checkbox-unselected-hover-border-color = $ui-04
+$checkbox-unselected-focus-border-color = $success
+$checkbox-unselected-background-color = $ui-00
+$checkbox-unselected-hover-background-color = $ui-00
+$checkbox-unselected-focus-background-color = $ui-00
+$checkbox-selected-border-color = $brand-01
+$checkbox-selected-hover-border-color = $interactive
+$checkbox-selected-focus-border-color = $success
+$checkbox-selected-background-color = $brand-01
+$checkbox-selected-hover-background-color = $interactive
+$checkbox-selected-focus-background-color = $interactive
 
 :root {
   --interactive: $interactive-hex;
@@ -95,108 +148,3 @@ $selection-hex = #49a1ff;
   --selection: $selection-hex;
 }
 
-$interactive = var(--interactive, $interactive-hex);
-$interactive-hover = var(--interactive-hover, $interactive-hover-hex);
-$interactive-shadow = var(--interactive-shadow, $interactive-shadow-hex);
-$interactive-shadow-hover = var(--interactive-shadow-hover, $interactive-shadow-hover-hex);
-
-$brand-01 = var(--brand-01, $brand-01-hex);
-
-$ui-00 = var(--ui-00, $ui-00-hex);
-$ui-01 = var(--ui-01, $ui-01-hex);
-$ui-02 = var(--ui-02, $ui-02-hex);
-$ui-03 = var(--ui-03, $ui-03-hex);
-$ui-04 = var(--ui-04, $ui-04-hex);
-$ui-05 = var(--ui-05, $ui-05-hex);
-$ui-06 = var(--ui-06, $ui-06-hex);
-$ui-07 = var(--ui-07, $ui-07-hex);
-
-$text-01 = var(--text-01, $text-01-hex);
-$text-02 = var(--text-02, $text-02-hex);
-
-$success = var(--success-hex, $success-hex);
-$information = var(--information, $information-hex);
-$warning = var(--warning, $warning-hex);
-$error = var(--error, $error-hex);
-$selection = var(--selection, $selection-hex);
-
-//
-// TEXT VARIABLES
-//
-$base-font-size = 16px;
-
-//
-// COMPONENT VARIABLES
-//
-
-// common variables
-$base-border-radius = 7px;
-
-// BUTTONS
-
-// button structure
-$button-height = 40px;
-$button-small-height = 28px;
-
-$button-top-padding = 0;
-$button-side-padding = 16px;
-
-$button-small-top-padding = 0;
-$button-small-side-padding = 12px;
-
-$button-font-size = 16px;
-$button-small-font-size = 16px;
-
-// button colors
-$button-shadow-color = $interactive-shadow;
-$button-hover-shadow-color = $interactive-shadow-hover;
-$button-focus-shadow-color = $interactive-shadow-hover;
-
-$primary-button-background-color = $interactive;
-$primary-button-hover-background-color = $interactive-hover;
-$primary-button-focus-background-color = $interactive-hover;
-
-$primary-button-border-color = $interactive;
-$primary-button-hover-border-color = $interactive-hover;
-$primary-button-focus-border-color = $brand-01;
-
-$primary-button-text-color = $ui-00;
-$primary-button-hover-text-color = $ui-00;
-$primary-button-focus-text-color = $ui-00;
-
-$secondary-button-background-color = $ui-00;
-$secondary-button-hover-background-color = $ui-02;
-$secondary-button-focus-background-color = $ui-02;
-
-$secondary-button-border-color = $ui-00;
-$secondary-button-hover-border-color = $ui-03;
-$secondary-button-focus-border-color = $ui-04;
-
-$secondary-button-text-color = $interactive;
-$secondary-button-hover-text-color = $interactive;
-$secondary-button-focus-text-color = $interactive;
-
-// CHECKBOXES
-
-// checkbox structure
-$checkbox-size = 18px;
-
-// checkbox colors
-$checkbox-text-color = $text-01;
-$checkbox-hover-shadow-color = $interactive-shadow-hover;
-
-$checkbox-unselected-border-color = $ui-04;
-$checkbox-unselected-hover-border-color = $ui-04;
-$checkbox-unselected-focus-border-color = $success;
-
-$checkbox-unselected-background-color = $ui-00;
-$checkbox-unselected-hover-background-color = $ui-00;
-$checkbox-unselected-focus-background-color = $ui-00;
-
-$checkbox-selected-border-color = $brand-01;
-$checkbox-selected-hover-border-color = $interactive;
-$checkbox-selected-focus-border-color = $success;
-
-$checkbox-selected-background-color = $brand-01;
-$checkbox-selected-hover-background-color = $interactive;
-$checkbox-selected-focus-background-color = $interactive;
