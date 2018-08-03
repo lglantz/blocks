@@ -11,11 +11,11 @@ const ProgressDots = (props) => {
   const name = props.name || Math.random();
 
   return (
-    <div className="progress-dots">
+    <div className="blx-progress-dots">
       {
         steps.map(step => (
           <label
-            className="progress-dot-container"
+            className="blx-progress-dot-container"
             key={step}
           >
             <input
@@ -25,7 +25,7 @@ const ProgressDots = (props) => {
               checked={step === props.currentStepIdx}
               onChange={props.onClick}
             />
-            <span className="progress-dot" />
+            <span className="blx-progress-dot" />
           </label>
         ))
       }
