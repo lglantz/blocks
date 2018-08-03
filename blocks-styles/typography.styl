@@ -1,8 +1,5 @@
-button {
-  font-weight: $normal-weight;
-}
-
-p, label {
+// define some text mixins
+blxBaseText() {
   font-weight: $normal-weight;
   font-size: $base-font-size;
   line-height: 28px;
@@ -10,7 +7,7 @@ p, label {
   color: $text-01;
 }
 
-a, .link {
+blxLink() {
   font-size: $base-font-size;
   line-height: 20px;
   color: $information;
@@ -39,49 +36,82 @@ a, .link {
   }
 }
 
-h1 {
+blxH() {
   font-weight: $medium-weight;
+  color: $text-01;
+}
+
+blxH1() {
+  blxH()
   font-size: 96px;
   line-height: 123px;
-  color: $text-01;
+}
+
+blxH2() {
+  blxH()
+  font-size: 60px;
+  line-height: 77px;
+}
+
+blxH3() {
+  blxH()
+  font-size: 48px;
+  line-height: 67px;
+}
+
+blxH4() {
+  blxH()
+  font-size: 34px;
+  line-height: 43px;
+}
+
+blxH5() {
+  blxH()
+  font-size: 24px;
+  line-height: 31px;
+}
+
+blxH6() {
+  blxH()
+  font-size: 20px;
+  line-height: 26px;
+}
+
+// use those mixins to define our base text styles
+
+p, label {
+  blxBaseText()
+}
+
+a, .blx-link {
+  blxLink()
+}
+
+h1 {
+  blxH1()
 }
 
 h2 {
-  font-weight: $medium-weight;
-  font-size: 60px;
-  line-height: 77px;
-  color: $text-01;
+  blxH2()
 }
 
 h3 {
-  font-weight: $medium-weight;
-  font-size: 48px;
-  line-height: 67px;
-  color: $text-01;
+  blxH3()
 }
 
 h4 {
-  font-weight: $medium-weight;
-  font-size: 34px;
-  line-height: 43px;
-  color: $text-01;
+  blxH4()
 }
 
 h5 {
-  font-weight: $medium-weight;
-  font-size: 24px;
-  line-height: 31px;
-  color: $text-01;
+  blxH5()
 }
 
 h6 {
-  font-weight: $medium-weight;
-  font-size: 20px;
-  line-height: 26px;
-  color: $text-01;
+  blxH6()
 }
 
-.subtitle {
+.blx-subtitle {
   font-weight: $medium-weight;
   font-size: 16px;
   line-height: 24px;
@@ -93,21 +123,21 @@ h6 {
   }
 }
 
-.subtitle-small {
+.blx-subtitle-small {
   font-weight: $medium-weight;
   font-size: 14px;
   line-height: 18px;
   color: $text-01;
 }
 
-.ui-text {
+.blx-ui-text {
   font-weight: $normal-weight;
   font-size: 14px;
   line-height: 18px;
   color: $text-01;
 }
 
-.body-caps {
+.blx-body-caps {
   font-weight: $medium-weight;
   font-size: 14px;
   line-height: 19px;
@@ -116,14 +146,14 @@ h6 {
   color: $text-01;
 }
 
-.caption {
+.blx-caption {
   font-weight: $normal-weight;
   font-size: 12px;
   line-height: 16px;
   color: $text-01;
 }
 
-.overline {
+.blx-overline {
   font-weight: $medium-weight;
   font-size: 10px;
   line-height: 16px;
@@ -131,23 +161,15 @@ h6 {
   text-transform: uppercase;
 }
 
-.capitalize {
+.blx-capitalize {
   text-transform: uppercase;
 }
 
-.brand-name {
-  font-weight: $bold-weight;
-}
-
-.brand-name-by {
-  font-weight: $medium-weight;
-}
-
-.interactive {
+.blx-interactive {
   color: $interactive;
 }
 
-.inactive {
+.blx-inactive {
   color: $text-02;
 }
 
@@ -165,4 +187,12 @@ h6 {
 
 .information {
   color: $information;
+}
+
+.brand-name {
+  font-weight: $bold-weight;
+}
+
+.brand-name-by {
+  font-weight: $medium-weight;
 }

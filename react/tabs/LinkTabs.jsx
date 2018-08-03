@@ -10,7 +10,7 @@ const LinkTabs = props => (
           key={Math.random()}
         >
           <a
-            className={`blx-tab-item ${idx === props.activeTabIdx ? 'active' : 'inactive'}`}
+            className={`blx-tab-item ${idx === props.activeTabIdx ? 'blx-active' : 'blx-inactive'}`}
             href={tab.href}
           >
             {tab.name}

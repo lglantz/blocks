@@ -10,7 +10,7 @@
 
     {% if section.subsections %}
       {% for subsection in section.subsections %}
-        <p class="body-caps">{{ subsection }}</p>
+        <p class="blx-body-caps">{{ subsection }}</p>
         <ul class="blx-vertical-tabs">
           {% for doc in site.data.navigation %}
             {% if doc.subsection == subsection %}
