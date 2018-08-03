@@ -7,48 +7,48 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 ---
 
 {% capture text_field_example %}
-  <div class="text-field">
+  <div class="blx-text-field">
     <label>Text input label</label>
     <input type="text" placeholder="e.g. Text input" />
   </div>
 {% endcapture %}
 
 {% capture text_field_hover_example %}
-  <div class="text-field">
+  <div class="blx-text-field">
     <label>Text input label</label>
     <input type="text" placeholder="e.g. Text input" class="hover" />
   </div>
 {% endcapture %}
 
 {% capture text_field_focus_example %}
-  <div class="text-field">
+  <div class="blx-text-field">
     <label>Text input label</label>
     <input type="text" placeholder="e.g. Text input" class="focus" />
   </div>
 {% endcapture %}
 
 {% capture text_field_disabled_example %}
-  <div class="text-field disabled">
+  <div class="blx-text-field disabled">
     <label>Text input label</label>
     <input type="text" placeholder="Can't touch this" disabled />
   </div>
 {% endcapture %}
 
 {% capture text_field_filled_example %}
-  <div class="text-field">
+  <div class="blx-text-field">
     <label>Text input label</label>
     <input type="text" value="More than a placeholder" />
   </div>
 {% endcapture %}
 
 {% capture text_field_invalid_example %}
-  <div class="text-field">
+  <div class="blx-text-field">
     <div>
       <label>Text input label</label>
-      <span class="invalid-label-marker">*</span>
+      <span class="blx-invalid-text-field-marker">*</span>
     </div>
     <input type="text" class="invalid" value="Wrongggg." />
-    <span class="invalid-label-message">My text is invalid</span>
+    <span class="blx-invalid-text-field-message">My text is invalid</span>
   </div>
 {% endcapture %}
 
@@ -59,11 +59,11 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 {% endcapture %}
 
 {% capture example2 %}
-  <div class="text-field ">
+  <div class="blx-text-field">
     <label>Sample text field with prefix/suffix</label>
-    <div class="text-field-container">
-      <span class="text-field-prefix">$</span>
-      <span class="text-field-suffix">USD</span>
+    <div class="blx-text-field-container">
+      <span class="blx-text-field-prefix">$</span>
+      <span class="blx-text-field-suffix">USD</span>
       <input type="text" placeholder="Text input">
     </div>
   </div>

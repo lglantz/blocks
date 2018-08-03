@@ -1,14 +1,16 @@
-//
-// STRUCTURE
-//
+.blx-text-field-container {
+  position: relative;
+}
 
-.text-field {
+.blx-text-field {
   display: inline-flex;
   flex-direction: column;
 
   label {
     font-size: 16px;
     line-height: 20px;
+    
+    color: $text-01;
   }
 
   input {
@@ -17,59 +19,7 @@
     line-height: 20px;
     border-radius: $base-border-radius;
     padding: 11px 16px 9px 16px;
-  }
-}
-
-.text-field-container {
-  position: relative;
-}
-
-.text-field-label {
-  display: inline-block;
-}
-
-.text-field-prefix, .text-field-suffix {
-  font-size: 16px;
-  line-height: 20px;
-  padding-top: 11px;
-  padding-bottom: 9px;
-}
-
-.text-field-prefix {
-  position: absolute;
-  left: 16px;
-  user-select: none;
-
-  & ~ input {
-    padding-left: 40px;
-  }
-}
-
-.text-field-suffix {
-  position: absolute;
-  right: 8px;
-  user-select: none;
-
-  & ~ input {
-    padding-right: 40px;
-  }
-}
-
-.invalid-label-message {
-  font-size: 12px;
-  line-height: 18px;
-}
-
-//
-// THEME
-//
-
-.text-field {
-  label {
-    color: $text-01;
-  }
-
-  input {
+    
     background-color: $ui-00;
     border: 1px solid $ui-03;
 
@@ -96,16 +46,47 @@
       pointer-events: none;
     }
   }
-}
+  
+  .blx-text-field-label {
+    display: inline-block;
+  }
+  
+  .blx-text-field-prefix, .blx-text-field-suffix {
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 11px;
+    padding-bottom: 9px;
+    
+    color: $text-01;
+  }
 
-.text-field-prefix, .text-field-suffix {
-  color: $text-01;
-}
+  .blx-text-field-prefix {
+    position: absolute;
+    left: 16px;
+    user-select: none;
 
-.invalid-label-marker {
-  color: $error;
-}
+    & ~ input {
+      padding-left: 40px;
+    }
+  }
 
-.invalid-label-message {
-  color: $text-02;
+  .blx-text-field-suffix {
+    position: absolute;
+    right: 8px;
+    user-select: none;
+
+    & ~ input {
+      padding-right: 40px;
+    }
+  }
+  
+  .blx-invalid-text-field-marker {
+    color: $error;
+  }
+
+  .blx-invalid-text-field-message {
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-02;
+  }
 }
