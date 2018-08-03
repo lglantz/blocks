@@ -123,7 +123,7 @@ class SortableList extends React.Component {
               >
                 {child}
                 <span
-                  className="icon icon-drag blx-drag-icon"
+                  className="blx-icon blx-icon-drag"
                   draggable="true"
                 />
               </li>
