@@ -1,16 +1,8 @@
 {
-  "sans-serif-font-family" : {
-    "normal" : "FranklinGothicNormal",
-    "medium" : "FranklinGothicMedium",
-    "bold" : "FranklinGothicBold"
-  },
-
+  "sans-serif-font-family" : "Graphik Web",
   "normal-weight" : "400",
   "medium-weight" : "500",
   "bold-weight" : "700",
-
-
-
 
 
   "interactive-hex" : "#009f6f",
