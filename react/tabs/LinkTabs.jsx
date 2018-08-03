@@ -3,14 +3,14 @@ const PropTypes = require('prop-types');
 
 
 const LinkTabs = props => (
-  <ul className={`${props.isVertical ? 'vertical-tabs' : 'horizontal-tabs'} ${props.isDisabled ? 'disabled' : ''}`}>
+  <ul className={`${props.isVertical ? 'blx-vertical-tabs' : 'blx-horizontal-tabs'} ${props.isDisabled ? 'disabled' : ''}`}>
     {
       props.tabs.map((tab, idx) => (
         <li
           key={Math.random()}
         >
           <a
-            className={`tab-item ${idx === props.activeTabIdx ? 'active' : 'inactive'}`}
+            className={`blx-tab-item ${idx === props.activeTabIdx ? 'active' : 'inactive'}`}
             href={tab.href}
           >
             {tab.name}

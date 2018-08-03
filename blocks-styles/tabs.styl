@@ -1,14 +1,6 @@
-//
-// STRUCTURE
-//
-
-.horizontal-tabs, .vertical-tabs {
+.blx-horizontal-tabs, .blx-vertical-tabs {
   user-select: none;
-  
-  li, label {
-    min-height: 32px;
-    margin: 4px 32px 4px 0;
-  }
+  background-color: transparent;
   
   label {
     input[type="radio"] {
@@ -24,7 +16,8 @@
     pointer-events: none;
   }
   
-  .tab-item {
+  .blx-tab-item {
+    min-height: 32px;
     height: 32px;
     vertical-align: middle;
     
@@ -32,124 +25,96 @@
     font-size: 16px;
     line-height: 24px;
     
+    color: $text-02;
+    border: none;
+    
+    &.inactive {
+      color: $text-02;
+    }
+    
+    &.active {
+      color: $brand-01;
+    }
+    
     &:hover, &.hover {
       cursor: pointer;
       text-decoration: none;
+      color: $interactive;
     }
-  }
-}
-
-.horizontal-tabs {
-  display: inline-flex;
-}
-
-.vertical-tabs {
-  display: block;
-}
-
-.horizontal-tabs .tab-item {
-  padding: 4px 0;
-}
-
-.vertical-tabs .tab-item {
-  display: block;
-  margin-left: -12px;
-  padding: 4px 8px;
-}
-
-//
-// THEME
-//
-
-.horizontal-tabs, .vertical-tabs {
-  background-color: transparent;
-  
-  input[type="radio"] + .tab-item {
-    color: $text-02;
     
-    &.focus {
+    &:focus, &:active, &.focus {
+      outline: none;
       color: $selection;
+      background: transparent;
     }
+  }
+  
+  input[type="radio"]:focus + .blx-tab-item,
+  input[type="radio"]:active + .blx-tab-item {
+    color: $selection;
+  }
+  
+  input[type="radio"]:checked + .blx-tab-item {
+    color: $brand-01;
+  }
+}
+
+.blx-horizontal-tabs {
+  display: inline-flex;
+  
+  .blx-tab-item {
+    margin: 10px 16px;
+    padding: 4px 0;
     
+    border-bottom: 4px solid transparent;
     &:hover, &.hover {
-      color: $text-01;
+      border-bottom: 4px solid $interactive;
+    }
+    &.active {
+      border-bottom: 4px solid $brand-01;
+    }
+    &:focus, &:active, &.focus {
+      border-bottom: 4px solid $selection;
+    }
+    ^[0] > input[type="radio"]:focus,
+    ^[0] > input[type="radio"].focus,
+    ^[0] > input[type="radio"]:active {
+      border-bottom: 4px solid $selection;
     }
   }
   
-  input[type="radio"]:focus + .tab-item,
-  input[type="radio"]:active + .tab-item {
-    color: $selection;
-  }
-  
-  input[type="radio"]:checked + .tab-item {
-    color: $brand-01;
-  }
-}
-
-.tab-item {
-  border: none;
-  
-  &.inactive {
-    color: $text-02;
-  }
-  
-  &.active {
-    color: $brand-01;
-  }
-  
-  &:hover, &.hover {
-    color: $text-01;
-  }
-  
-  &:focus, &:active, &.focus {
-    outline: none;
-    color: $selection;
-    background: transparent;
-  }
-}
-
-.horizontal-tabs .tab-item {
-  border-bottom: 4px solid transparent;
-  &:hover, &.hover {
-    border-bottom: 4px solid $ui-04;
-  }
-  &.active {
-    border-bottom: 4px solid $brand-01;
-  }
-  &:focus, &:active, &.focus {
-    border-bottom: 4px solid $selection;
-  }
-  ^[0] > input[type="radio"]:focus,
-  ^[0] > input[type="radio"]:active {
-    border-bottom: 4px solid $selection;
-  }
-}
-
-.vertical-tabs .tab-item {
-  border-left: 4px solid transparent;
-  &:hover, &.hover {
-    border-left: 4px solid $ui-04;
-  }
-  &.active {
-    border-left: 4px solid $brand-01;
-  }
-  &:focus, &:active, &.focus {
-    border-left: 4px solid $selection;
-  }
-  ^[0] > input[type="radio"]:focus,
-  ^[0] > input[type="radio"]:active {
-    border-left: 4px solid $selection;
-  }
-}
-
-.horizontal-tabs {
-  input[type="radio"]:checked + .tab-item {
+  input[type="radio"]:checked + .blx-tab-item {
     border-bottom: 4px solid $brand-01;
   }
 }
 
-.vertical-tabs {
-  input[type="radio"]:checked + .tab-item {
+.blx-vertical-tabs {
+  display: block;
+  
+  .blx-tab-item {
+    display: block;
+    margin: 8px 0 8px -12px;
+    margin-left: -12px;
+    padding: 4px 8px;
+    
+    border-left: 4px solid transparent;
+    &:hover, &.hover {
+      border-left: 4px solid $interactive;
+    }
+    &.active {
+      border-left: 4px solid $brand-01;
+    }
+    &:focus, &:active, &.focus {
+      border-left: 4px solid $selection;
+    }
+    ^[0] > input[type="radio"]:focus,
+    ^[0] > input[type="radio"].focus,
+    ^[0] > input[type="radio"]:active {
+      border-left: 4px solid $selection;
+    }
+  }
+  
+  input[type="radio"]:checked + .blx-tab-item {
     border-left: 4px solid $brand-01;
   }
 }
