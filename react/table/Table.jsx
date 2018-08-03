@@ -3,13 +3,13 @@ const PropTypes = require('prop-types');
 
 
 const Table = props => (
-  <table className="table">
+  <table className="blx-table">
     <thead>
-      <tr className="table-header-row">
+      <tr className="blx-table-header-row">
         {
           props.headings.map(heading => (
             <th
-              className="table-header-cell"
+              className="blx-table-header-cell"
               key={heading}
             >
               {heading}
@@ -22,7 +22,7 @@ const Table = props => (
       {
         props.entries.map((entry, idx) => (
           <tr
-            className="table-row"
+            className="blx-table-row"
             key={`table-row-${idx}`}
             onClick={() => { props.onClick(entry); }}
           >
@@ -30,7 +30,7 @@ const Table = props => (
               // TODO: this number checking is janky
               props.headings.map(heading => (
                 <td
-                  className={`table-cell ${typeof entry[heading] === 'number' ? 'numeric' : ''}`}
+                  className={`blx-table-cell ${typeof entry[heading] === 'number' ? 'numeric' : ''}`}
                   key={entry[heading]}
                 >
                   {entry[heading]}
