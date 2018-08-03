@@ -30,7 +30,7 @@ const ActionModal = (props) => {
   let buttonBar = null;
   if (confirmButton || cancelButton) {
     buttonBar = (
-      <div className="modal-buttons">
+      <div className="blx-modal-buttons">
         {cancelButton}
         {confirmButton}
       </div>
@@ -40,7 +40,7 @@ const ActionModal = (props) => {
   let actionInfo = null;
   if (props.actionInfo) {
     actionInfo = (
-      <p className="text-emph">{props.actionInfo}</p>
+      <p>{props.actionInfo}</p>
     );
   }
 
@@ -48,7 +48,7 @@ const ActionModal = (props) => {
   if (!props.isHidden) {
     modalContent = (
       <div>
-        <span className="heading-medium">{props.title}</span>
+        <h3>{props.title}</h3>
         <p>{props.message}</p>
         {actionInfo}
         {buttonBar}
