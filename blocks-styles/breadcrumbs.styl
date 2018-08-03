@@ -1,39 +1,28 @@
-//
-// STRUCTURE
-//
-
-.breadcrumbs ul {
+.blx-breadcrumbs ul {
   display: flex;
   padding: 11px 16px 9px 16px;
   list-style-type: none;
   margin: 0;
 }
 
-.breadcrumbs li {
+.blx-breadcrumbs li {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.breadcrumbs li::before {
+.blx-breadcrumbs li::before {
   content: "/";
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.breadcrumbs li:first-child::before {
+.blx-breadcrumbs li:first-child::before {
   content: "";
   padding: 0;
 }
 
-.breadcrumbs a:hover {
+.blx-breadcrumbs a:hover {
   text-decoration: none;
-}
-
-//
-// THEME
-//
-
-.breadcrumbs a:hover {
   color: $information;
 }
