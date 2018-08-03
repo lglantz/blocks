@@ -3,10 +3,10 @@ const PropTypes = require('prop-types');
 
 
 const Checkbox = props => (
-  <label className="checkbox-container">
-    <span className="checkbox-label-text" title={props.text}>
+  <label className="blx-checkbox">
+    <div className="label" title={props.text}>
       {props.text}
-    </span>
+    </div>
     <input
       type="checkbox"
       name={props.name}
