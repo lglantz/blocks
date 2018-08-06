@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 
 
 const LinkTabs = props => (
-  <ul className={`${props.isVertical ? 'blx-vertical-tabs' : 'blx-horizontal-tabs'} ${props.isDisabled ? 'disabled' : ''}`}>
+  <ul className={`${props.isVertical ? 'blx-vertical-tabs' : 'blx-horizontal-tabs'} ${props.isDisabled ? 'blx-disabled' : ''}`}>
     {
       props.tabs.map((tab, idx) => (
         <li

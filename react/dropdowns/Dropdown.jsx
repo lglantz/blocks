@@ -24,7 +24,7 @@ class Dropdown extends React.Component {
     }
     return (
       <button
-        className={`blx-dropdown-trigger ${this.props.isOpen ? 'active' : ''} ${this.props.isDisabled ? 'disabled' : ''}`}
+        className={`blx-dropdown-trigger ${this.props.isOpen ? 'active' : ''} ${this.props.isDisabled ? 'blx-disabled' : ''}`}
         disabled={this.props.isDisabled}
         onClick={this.props.toggle}
       >
@@ -43,7 +43,7 @@ class Dropdown extends React.Component {
             </div>
           )}
           {this.getOptionTrigger() }
-          <ul className={`blx-dropdown-menu ${this.props.isOpen ? '' : 'hidden'}`}>
+          <ul className={`blx-dropdown-menu ${this.props.isOpen ? '' : 'blx-hidden'}`}>
             {
               this.props.options.map(option => {
                 let item = null;

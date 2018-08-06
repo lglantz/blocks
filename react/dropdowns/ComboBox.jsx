@@ -22,7 +22,7 @@ const ComboBox = (props) => {
 
   return (
     <select
-      className={`ComboBox-select ${props.isDisabled ? 'disabled' : ''}`}
+      className={`ComboBox-select ${props.isDisabled ? 'blx-disabled' : ''}`}
       disabled={props.isDisabled}
       value={props.value}
       onChange={props.onChange}

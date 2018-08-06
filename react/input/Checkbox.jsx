@@ -15,7 +15,7 @@ const Checkbox = props => (
       disabled={props.isDisabled}
       onChange={props.onChange}
     />
-    <span className={`blx-checkmark ${props.isDisabled ? 'disabled' : ''}`} />
+    <span className={`blx-checkmark ${props.isDisabled ? 'blx-disabled' : ''}`} />
   </label>
 );
 

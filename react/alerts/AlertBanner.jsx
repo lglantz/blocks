@@ -34,7 +34,7 @@ class AlertBanner extends React.Component {
     }
 
     return (
-      <div className={`blx-alert blx-${this.props.type} ${this.state.hidden ? 'hidden' : ''}`}>
+      <div className={`blx-alert blx-${this.props.type} ${this.state.hidden ? 'blx-hidden' : ''}`}>
         <div className="blx-alert-icon-container">
           <div className="blx-alert-icon-background" />
           <div className="blx-alert-icon" />

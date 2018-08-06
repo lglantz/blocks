@@ -27,15 +27,9 @@
     &:checked ~ .blx-radio-check {
       border: 1px solid $radio-selected-border-color;
       
-      &:hover, &.hover {
+      &:hover, &.blx-hover {
         border: 1px solid $radio-selected-hover-border-color;
         box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
-      }
-      
-      &.disabled {
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
       }
       
       /* Show the checkmark when checked */
@@ -45,7 +39,7 @@
       }
     }
     &:checked {
-      &:focus + span, &.focus + span {
+      &:focus + span, &.blx-focus + span {
         outline: none;
         border: 1px solid $radio-selected-focus-border-color;
         &::before {
@@ -53,7 +47,7 @@
         }
       }
     }
-    &:focus + span, &.focus + span {
+    &:focus + span, &.blx-focus + span {
       outline: none;
       border: 1px solid $radio-unselected-focus-border-color;
       box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
@@ -98,17 +92,12 @@
       background-color: $radio-selected-background-color;
     }
     
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       border: 1px solid $radio-unselected-hover-border-color;
       box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
       &::after {
         background-color: $radio-selected-hover-background-color;
       }
-    }
-
-    &.disabled {
-      opacity: 0.5;
-      pointer-events: none;
     }
   }
 }

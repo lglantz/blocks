@@ -11,7 +11,7 @@
     }
   }
   
-  &.disabled {
+  &.blx-disabled {
     opacity: 0.5;
     pointer-events: none;
   }
@@ -32,13 +32,13 @@
       color: $brand-01;
     }
     
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       cursor: pointer;
       text-decoration: none;
       color: $interactive;
     }
     
-    &:focus, &:active, &.focus {
+    &:focus, &:active, &.blx-focus {
       outline: none;
       color: $selection;
       background: transparent;
@@ -63,18 +63,13 @@
     padding: 4px 0;
     
     border-bottom: 4px solid transparent;
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       border-bottom: 4px solid $interactive;
     }
     &.blx-active {
       border-bottom: 4px solid $brand-01;
     }
-    &:focus, &:active, &.focus {
-      border-bottom: 4px solid $selection;
-    }
-    ^[0] > input[type="radio"]:focus,
-    ^[0] > input[type="radio"].focus,
-    ^[0] > input[type="radio"]:active {
+    &:focus, &:active, &.blx-focus {
       border-bottom: 4px solid $selection;
     }
   }
@@ -94,18 +89,13 @@
     padding: 4px 8px;
     
     border-left: 4px solid transparent;
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       border-left: 4px solid $interactive;
     }
     &.blx-active {
       border-left: 4px solid $brand-01;
     }
-    &:focus, &:active, &.focus {
-      border-left: 4px solid $selection;
-    }
-    ^[0] > input[type="radio"]:focus,
-    ^[0] > input[type="radio"].focus,
-    ^[0] > input[type="radio"]:active {
+    &:focus, &:active, &.blx-focus {
       border-left: 4px solid $selection;
     }
   }

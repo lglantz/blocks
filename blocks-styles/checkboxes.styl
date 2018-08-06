@@ -28,16 +28,10 @@
       background-color: $checkbox-selected-background-color;
       border: 1px solid $checkbox-selected-border-color;
       
-      &:hover, &.hover {
+      &:hover, &.blx-hover {
         background-color: $checkbox-selected-hover-background-color;
         border: 1px solid $checkbox-selected-hover-border-color;
         box-shadow: 0 2px 4px 0 $checkbox-hover-shadow-color;
-      }
-      
-      &.disabled {
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
       }
       
       /* Show the checkmark when checked */
@@ -46,13 +40,13 @@
       }
     }
     &:checked {
-      &:focus + span, &.focus + span {
+      &:focus + span, &.blx-focus + span {
         background-color: $checkbox-selected-focus-background-color;
         outline: none;
         border: 1px solid $checkbox-selected-focus-border-color;
       }
     }
-    &:focus + span, &.focus + span {
+    &:focus + span, &.blx-focus + span {
       outline: none;
       border: 1px solid $checkbox-unselected-focus-border-color;
       box-shadow: 0 2px 4px 0 $checkbox-hover-shadow-color;
@@ -86,15 +80,10 @@
       transform: rotate(45deg);
     }
     
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       background-color: $checkbox-unselected-hover-background-color;
       border: 1px solid $checkbox-unselected-hover-border-color;
       box-shadow: 0 2px 4px 0 $checkbox-hover-shadow-color;
-    }
-
-    &.disabled {
-      opacity: 0.5;
-      pointer-events: none;
     }
   }
 }

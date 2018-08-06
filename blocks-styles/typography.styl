@@ -13,23 +13,23 @@ blxLink() {
   color: $information;
   text-decoration: none;
 
-  &:hover, &.hover, &:focus, &.focus {
+  &:hover, &.blx-hover, &:focus, &.blx-focus {
     cursor: pointer;
     text-decoration: underline;
   }
 
-  &:hover, &.hover {
+  &:hover, &.blx-hover {
     color: $text-01;
   }
 
-  &:focus, &.focus {
+  &:focus, &.blx-focus {
     background-color: $ui-03;
     outline: none;
     text-decoration: none;
     color: $information;
   }
 
-  &.disabled {
+  &.blx-disabled {
     color: $text-01;
     opacity: 0.5;
     pointer-events: none;

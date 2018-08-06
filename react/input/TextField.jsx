@@ -77,7 +77,7 @@ class TextField extends React.Component {
     );
 
     return (
-      <div className={`blx-text-field ${this.props.isDisabled ? 'disabled' : ''}`}>
+      <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
         <div>
           {this.props.label && <label className="blx-text-field-label">{this.props.label}</label>}
           {invalidLabelMarker}

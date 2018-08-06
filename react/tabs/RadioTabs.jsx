@@ -5,7 +5,7 @@ const PropTypes = require('prop-types');
 const RadioTabs = (props) => {
   const name = Math.random().toString();
   return (
-    <div className={`${props.isVertical ? 'blx-vertical-tabs' : 'blx-horizontal-tabs'} ${props.isDisabled ? 'disabled' : ''}`}>
+    <div className={`${props.isVertical ? 'blx-vertical-tabs' : 'blx-horizontal-tabs'} ${props.isDisabled ? 'blx-disabled' : ''}`}>
       {
         props.tabs.map((tab, idx) => (
           <label

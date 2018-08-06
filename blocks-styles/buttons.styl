@@ -13,7 +13,7 @@
 
   box-shadow: 0 2px 4px 0 $button-shadow-color;
   
-  &.small {
+  &.blx-small {
     height: $button-small-height;
     padding: $button-small-top-padding $button-small-side-padding;
     font-size: $button-small-font-size;
@@ -24,52 +24,47 @@
     margin-right: 0;
   }
 
-  &:hover, &.hover {
+  &:hover, &.blx-hover {
     text-decoration: none;
     box-shadow: 0 2px 4px 0 $button-hover-shadow-color;
   }
 
-  &.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  &.primary {
+  &.blx-primary {
     background-color: $primary-button-background-color;
     border: 2px solid $primary-button-border-color;
     color: $primary-button-text-color;
 
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       background-color: $primary-button-hover-background-color;
       border: 2px solid $primary-button-hover-border-color;
       color: $primary-button-hover-text-color;
     }
   }
 
-  &.secondary {
+  &.blx-secondary {
     background-color: $secondary-button-background-color;
     border: 2px solid $secondary-button-border-color;
     color: $secondary-button-text-color;
 
-    &:hover, &.hover {
+    &:hover, &.blx-hover {
       background-color: $secondary-button-hover-background-color;
       border: 2px solid $secondary-button-hover-border-color;
       color: $secondary-button-hover-text-color;
     }
   }
   
-  &:focus, &:active, &.focus {
+  &:focus, &:active, &.blx-focus {
     outline: none;
     text-decoration: none;
     box-shadow: 0 2px 4px 0 $button-hover-shadow-color;
 
-    &.primary {
+    &.blx-primary {
       border: 2px solid $primary-button-focus-border-color;
       background-color: $primary-button-focus-background-color;
       color: $primary-button-focus-text-color;
     }
 
-    &.secondary {
+    &.blx-secondary {
       border: 2px solid $secondary-button-focus-border-color;
       background-color: $secondary-button-focus-background-color;
       color: $secondary-button-focus-text-color;

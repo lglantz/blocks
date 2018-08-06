@@ -26,7 +26,7 @@ definition: An input that allows the user to select a single option from a group
   <label class="blx-radio">
     <div class="blx-radio-label">Selected, Hover</div>
     <input type="radio" name="radio-example-2" checked />
-    <span class="blx-radio-check hover"></span>
+    <span class="blx-radio-check blx-hover"></span>
   </label>
 {% endcapture %}
 
@@ -34,14 +34,14 @@ definition: An input that allows the user to select a single option from a group
   <label class="blx-radio">
     <div class="blx-radio-label">Unselected, Hover</div>
     <input type="radio" name="radio-example-2" />
-    <span class="blx-radio-check hover"></span>
+    <span class="blx-radio-check blx-hover"></span>
   </label>
 {% endcapture %}
 
 {% capture radio_example_focused_checked %}
   <label class="blx-radio">
     <div class="blx-radio-label">Selected, Focused</div>
-    <input class="focus" type="radio" name="radio-example-3" checked />
+    <input class="blx-focus" type="radio" name="radio-example-3" checked />
     <span class="blx-radio-check"></span>
   </label>
 {% endcapture %}
@@ -49,7 +49,7 @@ definition: An input that allows the user to select a single option from a group
 {% capture radio_example_focused_unchecked %}
   <label class="blx-radio">
     <div class="blx-radio-label">Unselected, Focused</div>
-    <input class="focus" type="radio" name="radio-example-3" />
+    <input class="blx-focus" type="radio" name="radio-example-3" />
     <span class="blx-radio-check"></span>
   </label>
 {% endcapture %}
@@ -58,7 +58,7 @@ definition: An input that allows the user to select a single option from a group
   <label class="blx-radio">
     <div class="blx-radio-label">Selected, Disabled</div>
     <input type="radio" name="radio-example-4" checked disabled />
-    <span class="blx-radio-check disabled"></span>
+    <span class="blx-radio-check blx-disabled"></span>
   </label>
 {% endcapture %}
 
@@ -66,7 +66,7 @@ definition: An input that allows the user to select a single option from a group
   <label class="blx-radio">
     <div class="blx-radio-label">Unselected, Disabled</div>
     <input type="radio" name="radio-example-4" disabled />
-    <span class="blx-radio-check disabled"></span>
+    <span class="blx-radio-check blx-disabled"></span>
   </label>
 {% endcapture %}
 
@@ -100,12 +100,12 @@ definition: An input that allows the user to select a single option from a group
         <label class="blx-radio">
           <div class="blx-radio-label">Hover Selected</div>
           <input type="radio" name="radio-hover" checked />
-          <span class="blx-radio-check hover"></span>
+          <span class="blx-radio-check blx-hover"></span>
         </label>
         <label class="blx-radio">
           <div class="blx-radio-label">Hover Unselected</div>
           <input type="radio" name="radio-hover" />
-          <span class="blx-radio-check hover"></span>
+          <span class="blx-radio-check blx-hover"></span>
         </label>
       </div>
     </div>
@@ -113,12 +113,12 @@ definition: An input that allows the user to select a single option from a group
       <div class="doc-state-content">
         <label class="blx-radio">
           <div class="blx-radio-label">Focus Selected</div>
-          <input class="focus" type="radio" name="radio-focus" checked />
+          <input class="blx-focus" type="radio" name="radio-focus" checked />
           <span class="blx-radio-check"></span>
         </label>
         <label class="blx-radio">
           <div class="blx-radio-label">Focus Unselected</div>
-          <input class="focus" type="radio" name="radio-focus" />
+          <input class="blx-focus" type="radio" name="radio-focus" />
           <span class="blx-radio-check"></span>
         </label>
       </div>
@@ -128,12 +128,12 @@ definition: An input that allows the user to select a single option from a group
         <label class="blx-radio">
           <div class="blx-radio-label">Disabled Selected</div>
           <input type="radio" name="radio-disabled" checked disabled/>
-          <span class="blx-radio-check"></span>
+          <span class="blx-radio-check blx-disabled"></span>
         </label>
         <label class="blx-radio">
           <div class="blx-radio-label">Disabled Unselected</div>
           <input type="radio" name="radio-disabled" disabled />
-          <span class="blx-radio-check"></span>
+          <span class="blx-radio-check blx-disabled"></span>
         </label>
       </div>
     </div>

@@ -26,7 +26,7 @@ definition: An input that allows users to select or unselect options.
   <label class="blx-checkbox">
     <div class="blx-label">Selected, Hover</div>
     <input type="checkbox" checked />
-    <span class="blx-checkmark hover"></span>
+    <span class="blx-checkmark blx-hover"></span>
   </label>
 {% endcapture %}
 
@@ -34,14 +34,14 @@ definition: An input that allows users to select or unselect options.
   <label class="blx-checkbox">
     <div class="blx-label">Unselected, Hover</div>
     <input type="checkbox" />
-    <span class="blx-checkmark hover"></span>
+    <span class="blx-checkmark blx-hover"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_focused_checked %}
   <label class="blx-checkbox">
     <div class="blx-label">Selected, Focused</div>
-    <input class="focus" type="checkbox" checked />
+    <input class="blx-focus" type="checkbox" checked />
     <span class="blx-checkmark"></span>
   </label>
 {% endcapture %}
@@ -49,7 +49,7 @@ definition: An input that allows users to select or unselect options.
 {% capture checkbox_example_focused_unchecked %}
   <label class="blx-checkbox">
     <div class="blx-label">Unselected, Focused</div>
-    <input class="focus" type="checkbox" />
+    <input class="blx-focus" type="checkbox" />
     <span class="blx-checkmark"></span>
   </label>
 {% endcapture %}
@@ -58,7 +58,7 @@ definition: An input that allows users to select or unselect options.
   <label class="blx-checkbox">
     <div class="blx-label">Selected, Disabled</div>
     <input type="checkbox" checked disabled />
-    <span class="blx-checkmark disabled"></span>
+    <span class="blx-checkmark blx-disabled"></span>
   </label>
 {% endcapture %}
 
@@ -66,7 +66,7 @@ definition: An input that allows users to select or unselect options.
   <label class="blx-checkbox">
     <div class="blx-label">Unselected, Disabled</div>
     <input type="checkbox" disabled />
-    <span class="blx-checkmark disabled"></span>
+    <span class="blx-checkmark blx-disabled"></span>
   </label>
 {% endcapture %}
 

@@ -14,7 +14,7 @@
         <ul class="blx-vertical-tabs">
           {% for doc in site.data.navigation %}
             {% if doc.subsection == subsection %}
-              <li><a class="blx-tab-item {% if doc.title == page.title%}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+              <li><a class="blx-tab-item {% if doc.title == page.title%}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -23,7 +23,7 @@
       <ul class="blx-vertical-tabs">
         {% for doc in site.data.navigation %}
           {% if doc.section == current_section_title %}
-            <li><a class="blx-tab-item {% if doc.title == page.title%}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+            <li><a class="blx-tab-item {% if doc.title == page.title%}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

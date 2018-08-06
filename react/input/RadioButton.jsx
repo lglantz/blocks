@@ -16,7 +16,7 @@ const RadioButton = props => (
       disabled={props.isDisabled}
       onChange={props.onChange}
     />
-    <span className={`blx-radio-check ${props.isDisabled ? 'disabled' : ''}`} />
+    <span className={`blx-radio-check ${props.isDisabled ? 'blx-disabled' : ''}`} />
   </label>
 );
 

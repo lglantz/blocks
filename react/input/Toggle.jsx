@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 
 
 const Toggle = props => (
-  <div className={`blx-toggle ${props.isDisabled ? 'disabled' : ''}`}>
+  <div className={`blx-toggle ${props.isDisabled ? 'blx-disabled' : ''}`}>
     {
       props.options.map((option, idx) => (
         <label
