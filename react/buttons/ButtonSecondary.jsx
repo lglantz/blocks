@@ -12,15 +12,13 @@ const ButtonSecondary = props => (
 );
 
 ButtonSecondary.propTypes = {
-  text: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  onClick: PropTypes.func
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool
 };
 
 ButtonSecondary.defaultProps = {
-  text: '',
-  isDisabled: false,
-  onClick: () => {}
+  isDisabled: false
 };
 
 module.exports = ButtonSecondary;
