@@ -20,7 +20,7 @@ BasicButton.propTypes = {
 };
 
 BasicButton.defaultProps = {
-  classes: 'primary',
+  classes: 'blx-primary',
   text: '',
   isDisabled: false,
   onClick: () => {}

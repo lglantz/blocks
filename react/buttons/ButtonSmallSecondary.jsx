@@ -7,7 +7,7 @@ const Button = require('./Button.jsx');
 const ButtonPrimary = props => (
   <Button
     {...props}
-    classes="button small secondary"
+    classes="blx-button blx-small blx-secondary"
   />
 );
 
