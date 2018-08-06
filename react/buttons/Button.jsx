@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 
 const BasicButton = props => (
   <button
-    className={`${props.classes} ${props.isDisabled ? 'disabled' : ''}`}
+    className={`blx-button ${props.classes} ${props.isDisabled ? 'blx-disabled' : ''}`}
     onClick={props.onClick}
     disabled={props.isDisabled}
   >
@@ -20,7 +20,7 @@ BasicButton.propTypes = {
 };
 
 BasicButton.defaultProps = {
-  classes: 'button primary',
+  classes: 'primary',
   text: '',
   isDisabled: false,
   onClick: () => {}

@@ -1,161 +1,137 @@
-//
-// STRUCTURE
-//
+.blx-dropdown-wrapper {
+  display: inline-block;
+}
 
-.dropdown {
+.blx-dropdown {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 150px;
-}
-
-.dropdown-wrapper {
-  display: inline-block;
-}
-
-.dropdown-description {
-  display: inline-block;
-  margin: 0;
-}
-
-.dropdown-trigger {
-  position: relative;
-  height: 40px;
-  border-radius: $base-border-radius;
-  font-size: 16px;
-  font-weight: $normal-weight;
-  line-height: 20px;
-  text-align: left;
-  padding: 0 48px 0 16px;
-  margin: 0;
-  cursor: pointer;
-
-  &.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  &::after {
-    position: absolute;
-    top: 10px;
-    right: 16px;
-    content: "";
+  
+  .blx-dropdown-description {
     display: inline-block;
-    vertical-align: middle;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid transparent;
-    mask: url('../svgs/icon-down.svg') no-repeat 50% 50%;
-    transition: transform 300ms;
-  }
-
-  &.active::after {
-    transform: rotate(180deg);
-    transition: transform 300ms;
-  }
-
-  &:hover, &.hover {
-    margin: 0 -1px;
-
-    &::after {
-      top: 9px;
-    }
-  }
-
-  &:focus, &.focus {
     margin: 0;
-
-    &::after {
-      top: 10px;
-    }
   }
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  border-radius: 7px;
-  z-index: 1;
-  margin: 8px 0;
-  padding: 8px 0;
-  list-style-type: none;
-}
-
-.dropdown-item {
-  background: transparent;
-  * {
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 8px 16px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    text-decoration: none;
+  
+  .blx-dropdown-trigger {
+    position: relative;
+    height: 40px;
+    border-radius: $base-border-radius;
     font-size: 16px;
     font-weight: $normal-weight;
     line-height: 20px;
     text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    padding: 0 48px 0 16px;
+    margin: 0;
     cursor: pointer;
+    
+    background-color: $ui-00;
+    border: 1px solid $ui-03;
+    color: $ui-07;
 
-    &:hover, &.hover {
-      text-decoration: none;
+    &.blx-disabled {
+      opacity: 0.5;
+      pointer-events: none;
     }
-  }
-}
 
-//
-// THEME
-//
-
-.dropdown-trigger {
-  background-color: $ui-00;
-  border: 1px solid $ui-03;
-  color: $ui-07;
-
-  &::after {
-    background-color: $brand-01;
-  }
-
-  &:hover, &.hover {
-    border: 2px solid $ui-03;
-  }
-
-  &:focus, &.focus {
-    outline: none;
-    border: 1px solid $success;
-    color: $text-01;
-  }
-}
-
-.dropdown-menu {
-  background-color: $ui-00;
-  border: solid 1px $ui-04;
-  box-shadow: 0 3px 6px 0 $ui-04;
-}
-
-.dropdown-item {
-  * {
-    color: $text-01;
-    &:focus, &.focus, &:active, &.active {
-      outline: none;
-      color: $ui-00;
+    &::after {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      mask: url('../svgs/icon-down.svg') no-repeat 50% 50%;
+      transition: transform 300ms;
       background-color: $brand-01;
     }
+
+    &.active::after {
+      transform: rotate(180deg);
+      transition: transform 300ms;
+    }
+
+    &:hover, &.blx-hover {
+      margin: 0 -1px;
+      border: 2px solid $ui-03;
+
+      &::after {
+        top: 9px;
+      }
+    }
+
+    &:focus, &.blx-focus {
+      margin: 0;
+      outline: none;
+      border: 1px solid $success;
+      color: $text-01;
+
+      &::after {
+        top: 10px;
+      }
+    }
   }
-
-  &:hover, &.hover {
-    background-color: $brand-01;
-    color: $ui-00;
-
+  
+  .blx-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-radius: 7px;
+    z-index: 1;
+    margin: 8px 0;
+    padding: 8px 0;
+    list-style-type: none;
+    
+    background-color: $ui-00;
+    border: solid 1px $ui-04;
+    box-shadow: 0 3px 6px 0 $ui-04;
+  }
+  
+  .blx-dropdown-item {
+    background: transparent;
     * {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 8px 16px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: $normal-weight;
+      line-height: 20px;
+      text-align: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      
+      color: $text-01;
+
+      &:hover, &.blx-hover {
+        text-decoration: none;
+      }
+      
+      &:focus, &.blx-focus, &:active, &.active {
+        outline: none;
+        color: $ui-00;
+        background-color: $brand-01;
+      }
+    }
+    
+    &:hover, &.blx-hover {
+      background-color: $brand-01;
       color: $ui-00;
+
+      * {
+        color: $ui-00;
+      }
     }
   }
 }

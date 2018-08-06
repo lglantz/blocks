@@ -10,20 +10,20 @@
 
     {% if section.subsections %}
       {% for subsection in section.subsections %}
-        <p class="body-caps">{{ subsection }}</p>
-        <ul class="vertical-tabs">
+        <p class="blx-body-caps">{{ subsection }}</p>
+        <ul class="blx-vertical-tabs">
           {% for doc in site.data.navigation %}
             {% if doc.subsection == subsection %}
-              <li><a class="tab-item {% if doc.title == page.title%}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+              <li><a class="blx-tab-item {% if doc.title == page.title%}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>
       {% endfor %}
     {% else %}
-      <ul class="vertical-tabs">
+      <ul class="blx-vertical-tabs">
         {% for doc in site.data.navigation %}
           {% if doc.section == current_section_title %}
-            <li><a class="tab-item {% if doc.title == page.title%}active{% else %}inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
+            <li><a class="blx-tab-item {% if doc.title == page.title%}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

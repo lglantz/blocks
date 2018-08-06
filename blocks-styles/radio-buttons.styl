@@ -1,150 +1,103 @@
-//
-// STRUCTURE
-//
-
-.radio-label-text {
-  font-size: 16px;
-  font-weight: $normal-weight;
-  text-align: left;
-  line-height: 20px;
-}
-
 /* The container */
-.radio-button-container {
+.blx-radio {
   display: block;
   position: relative;
   padding-left: 35px;
+  margin: 9px 0;
   cursor: pointer;
   font-size: 22px;
   user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.radio-button-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* Create a custom radio button */
-.radio-check {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.radio-button-container:hover input ~ .radio-check {
-  // background-color: #ccc;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.radio-check:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.radio-button-container input:checked ~ .radio-check:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.radio-button-container .radio-check:after {
-  top: 4px;
-  left: 4px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-//
-// THEME
-//
-
-.radio-label-text {
-  color: $text-01;
-}
-
-.radio-check {
-  background-color: $ui-00;
-  border: 1px solid $ui-04;
   
-  &:hover, &.hover {
-    background-color: $ui-00;
-    border: 1px solid $ui-04;
-    box-shadow: 0 2px 4px 0 $interactive-shadow;
+  .blx-radio-label {
+    font-size: 16px;
+    font-weight: $normal-weight;
+    text-align: left;
+    line-height: 20px;
+    
+    color: $radio-text-color;
   }
-}
-
-.radio-button-container input:checked ~ .radio-check {
-  background-color: $ui-00;
-  border: 1px solid $brand-01;
   
-  &.hover {
-    border: 1px solid $interactive-hover;
+  /* Hide the browser's default radio button */
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+    /* When the radio button is checked */
+    &:checked ~ .blx-radio-check {
+      border: 1px solid $radio-selected-border-color;
+      
+      &:hover, &.blx-hover {
+        border: 1px solid $radio-selected-hover-border-color;
+        box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+      }
+      
+      /* Show the checkmark when checked */
+      &::after {
+        display: block;
+        
+      }
+    }
+    &:checked {
+      &:focus + span, &.blx-focus + span {
+        outline: none;
+        border: 1px solid $radio-selected-focus-border-color;
+        &::before {
+          display: block;
+        }
+      }
+    }
+    &:focus + span, &.blx-focus + span {
+      outline: none;
+      border: 1px solid $radio-unselected-focus-border-color;
+      box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+    }
   }
-
-  &.disabled {
-    border: 1px solid $ui-07;
-  }
-}
-
-.radio-button-container input:checked:hover ~ .radio-check {
-  border: 1px solid $interactive-hover;
-  box-shadow: 0 2px 4px 0 $interactive-shadow;
   
-  &:after {
-    background-color: $interactive-hover;
+  /* Create a custom radio button */
+  .blx-radio-check {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: $radio-size;
+    width: $radio-size;
+    border-radius: 50%;
+    
+    background-color: $radio-unselected-background-color;
+    border: 1px solid $radio-unselected-border-color;
+    
+    // create double border element (only visible on focus)
+    &::before {
+      display: none;
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: $radio-size;
+      height: $radio-size;
+      border-radius: 50%;
+      border: 1px solid $success;
+    }
+    
+    /* Create the checkmark/indicator (hidden when not checked) */
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $radio-selected-background-color;
+    }
+    
+    &:hover, &.blx-hover {
+      border: 1px solid $radio-unselected-hover-border-color;
+      box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+      &::after {
+        background-color: $radio-selected-hover-background-color;
+      }
+    }
   }
-}
-
-.radio-button-container .radio-check:after {
-  background-color: $brand-01;
-}
-
-.radio-button-container .radio-check.hover:after {
-  background-color: $interactive-hover;
-}
-
-.radio-button-container .radio-check.disabled:after {
-  background-color: $ui-07;
-}
-
-.radio-button-container input[type="radio"]:focus + .radio-check,
-.radio-button-container input[type="radio"].focus + .radio-check {
-  outline: none;
-  border: 1px solid $success;
-  box-shadow: 0 2px 4px 0 $interactive-shadow;
-}
-
-.radio-button-container input[type="radio"]:checked:focus + .radio-check,
-.radio-button-container input[type="radio"]:checked.focus + .radio-check {
-  outline: none;
-  border: 1px solid $interactive-hover;
-  box-shadow: 0 2px 4px 0 $interactive-shadow,
-              0 0 0 1px $success;
-              
-  &:after {
-    background-color: $interactive-hover;
-  }
-}
-
-.radio-button-container input[type="radio"]:disabled + .radio-check {
-  opacity: 0.5;
-  border: 1px solid $ui-04;
-  box-shadow: none;
-  pointer-events: none;
-  
-  &:after {
-    background-color: $brand-01;
-  }
-}
-
-.radio-button-container input[type="radio"]:checked:disabled + .radio-check {
-  border: 1px solid $brand-01;
 }

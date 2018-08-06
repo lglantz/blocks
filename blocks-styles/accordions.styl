@@ -1,17 +1,9 @@
-//
-// STRUCTURE
-//
-.accordion {
-  position: relative;
-  width: 320px;
-}
-
-.accordion-section {
+.blx-accordion-section {
   position: relative;
   width: 100%;
   overflow: hidden;
 
-  input[type=checkbox][name='accordion-tab'] {
+  input[type=checkbox][name='blx-accordion-tab'] {
     position: absolute;
     opacity: 0;
     z-index: -1;
@@ -22,11 +14,13 @@
     }
   }
 
-  .accordion-trigger {
+  .blx-accordion-trigger {
     position: relative;
     display: block;
     padding: 8px 16px;
     cursor: pointer;
+    
+    background-color: $ui-04;
 
     & > p {
       font-weight: $medium-weight;
@@ -53,24 +47,14 @@
   }
 }
 
-.accordion-content {
+.blx-accordion-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s;
-}
-
-//
-// THEME
-//
-
-.accordion-trigger {
-  background-color: $ui-04;
-}
-
-.accordion-content {
+  
   background-color: $ui-03;
 
-  .accordion-trigger {
+  .blx-accordion-trigger {
     background-color: transparent;
   }
 }

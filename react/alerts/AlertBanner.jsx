@@ -27,20 +27,20 @@ class AlertBanner extends React.Component {
     if (this.props.closable) {
       closeIcon = (
         <button
-          className="alert-close"
+          className="blx-icon blx-icon-close"
           onClick={this.onClose}
         />
       );
     }
 
     return (
-      <div className={`alert ${this.props.type} ${this.state.hidden ? 'hidden' : ''}`}>
-        <div className="alert-icon-container">
-          <div className="alert-icon-background" />
-          <div className="alert-icon" />
+      <div className={`blx-alert blx-${this.props.type} ${this.state.hidden ? 'blx-hidden' : ''}`}>
+        <div className="blx-alert-icon-container">
+          <div className="blx-alert-icon-background" />
+          <div className="blx-alert-icon" />
         </div>
-        <div className="alert-text">
-          <span className={`subtitle ${this.props.type}`}>{this.props.title}</span>
+        <div className="blx-alert-text">
+          <span className={`blx-subtitle blx-${this.props.type}`}>{this.props.title}</span>
           <p>{this.props.message}</p>
         </div>
         {closeIcon}

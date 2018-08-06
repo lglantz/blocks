@@ -5,7 +5,7 @@ const Dropdown = require('../dropdowns/Dropdown.jsx');
 
 const TextFieldWithDropdown = (props) => {
   return (
-    <div className={`text-field-with-dropdown ${props.isDisabled ? 'disabled' : ''}`}>
+    <div className={`blx-text-field-with-dropdown ${props.isDisabled ? 'blx-disabled' : ''}`}>
       <TextField {...props.textField}/>
       <Dropdown {...props.dropdown}/>
     </div>

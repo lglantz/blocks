@@ -7,66 +7,66 @@ definition: An input that allows users to select or unselect options.
 ---
 
 {% capture checkbox_example_checked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Selected</span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Selected</div>
     <input type="checkbox" checked />
-    <span class="checkmark"></span>
+    <span class="blx-checkmark"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_unchecked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Unselected</span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Unselected</div>
     <input type="checkbox" />
-    <span class="checkmark"></span>
+    <span class="blx-checkmark"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_hovered_checked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Selected, Hover</span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Selected, Hover</div>
     <input type="checkbox" checked />
-    <span class="checkmark hover"></span>
+    <span class="blx-checkmark blx-hover"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_hovered_unchecked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Unselected, Hover</span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Unselected, Hover</div>
     <input type="checkbox" />
-    <span class="checkmark hover"></span>
+    <span class="blx-checkmark blx-hover"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_focused_checked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Selected, Focused</span>
-    <input class="focus" type="checkbox" checked />
-    <span class="checkmark"></span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Selected, Focused</div>
+    <input class="blx-focus" type="checkbox" checked />
+    <span class="blx-checkmark"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_focused_unchecked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Unselected, Focused</span>
-    <input class="focus" type="checkbox" />
-    <span class="checkmark"></span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Unselected, Focused</div>
+    <input class="blx-focus" type="checkbox" />
+    <span class="blx-checkmark"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_disabled_checked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Selected, Disabled</span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Selected, Disabled</div>
     <input type="checkbox" checked disabled />
-    <span class="checkmark disabled"></span>
+    <span class="blx-checkmark blx-disabled"></span>
   </label>
 {% endcapture %}
 
 {% capture checkbox_example_disabled_unchecked %}
-  <label class="checkbox-container">
-    <span class="checkbox-label-text">Unselected, Disabled</span>
+  <label class="blx-checkbox">
+    <div class="blx-label">Unselected, Disabled</div>
     <input type="checkbox" disabled />
-    <span class="checkmark disabled"></span>
+    <span class="blx-checkmark blx-disabled"></span>
   </label>
 {% endcapture %}
 
@@ -82,7 +82,7 @@ definition: An input that allows users to select or unselect options.
   <h4>States & Behavior</h4>
   <div class="l-flex-vertical">
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
+      <span class="doc-state-title blx-caption">
         Default
       </span>
       <div class="doc-state-content">
@@ -91,7 +91,7 @@ definition: An input that allows users to select or unselect options.
       </div>
     </div>
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
+      <span class="doc-state-title blx-caption">
         Hover
       </span>
       <div class="doc-state-content">
@@ -100,7 +100,7 @@ definition: An input that allows users to select or unselect options.
       </div>
     </div>
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
+      <span class="doc-state-title blx-caption">
         Focus
       </span>
       <div class="doc-state-content">
@@ -109,7 +109,7 @@ definition: An input that allows users to select or unselect options.
       </div>
     </div>
     <div class="l-flex-horizontal">
-      <span class="doc-state-title caption">
+      <span class="doc-state-title blx-caption">
         Disabled
       </span>
       <div class="doc-state-content">

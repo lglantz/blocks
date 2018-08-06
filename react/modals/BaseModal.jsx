@@ -7,26 +7,26 @@ const BaseModal = (props) => {
   let popupOverlay = null;
   if (!props.isHidden) {
     popup = (
-      <div className="modal">
-        <div className="modal-text">
+      <div className="blx-modal">
+        <div>
           {props.children}
         </div>
         <button
-          className="modal-close"
+          className="blx-icon blx-icon-close"
           onClick={props.onClose}
         />
       </div>
     );
     popupOverlay = (
       <div
-        className="modal-overlay"
+        className="blx-modal-overlay"
         onClick={props.onClose}
       />
     );
   }
 
   return (
-    <div className="modal-container">
+    <div>
       {popupOverlay}
       {popup}
     </div>

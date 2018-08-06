@@ -108,27 +108,29 @@ class SortableList extends React.Component {
 
   render() {
     return (
-      <ul
-        className="sortable-list"
-        ref={(el) => { this.listDOM = el; }}
-      >
-        {
-          this.props.children.map((child, idx) => (
-            <li
-              key={Math.random()}
-              className="sortable-list-item"
-              onDragLeave={this.onDragLeave}
-              onDrop={this.onDrop}
-            >
-              {child}
-              <span
-                className="icon icon-drag sortable-list-drag-icon"
-                draggable="true"
-              />
-            </li>
-          ))
-        }
-      </ul>
+      <div>
+        <ul
+          className="blx-sortable-list"
+          ref={(el) => { this.listDOM = el; }}
+        >
+          {
+            this.props.children.map((child, idx) => (
+              <li
+                key={Math.random()}
+                className="blx-sortable-list-item"
+                onDragLeave={this.onDragLeave}
+                onDrop={this.onDrop}
+              >
+                {child}
+                <span
+                  className="blx-icon blx-icon-drag"
+                  draggable="true"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     );
   }
 }

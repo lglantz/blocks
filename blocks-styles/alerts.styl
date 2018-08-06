@@ -1,25 +1,30 @@
-//
-// STRUCTURE
-//
-
-.alert {
+.blx-alert {
   width: 90%;
   display: flex;
   padding: 16px;
   margin: 12px 0;
   border-top: 3px solid;
   border-radius: 0 0 3px 3px;
+  
+  background-color: $ui-02;
+  box-shadow: 0 3px 6px 1px $ui-04;
+  
+  .blx-icon-close {
+    background-color: $ui-07;
+  }
 }
 
-.alert-icon-container {
+.blx-alert-icon-container {
   position: relative;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   flex: 0 0 auto;
+  
+  background-color: $ui-04;
 }
 
-.alert-icon, .alert-icon-background {
+.blx-alert-icon, .blx-alert-icon-background {
   position: absolute;
   top: 6px;
   left: 6px;
@@ -27,86 +32,55 @@
   height: 20px;
 }
 
-.alert-icon-background {
+.blx-alert-icon {
+  background-color: $ui-00;
+}
+
+.blx-alert-icon-background {
   border-radius: 50%;
 }
 
-.alert-text {
+.blx-alert-text {
   padding: 0 16px;
   flex: 1 1 auto;
 }
 
-.alert-close {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  flex: 0 0 auto;
-  border: none;
-  border-radius: 50%;
-  border: 1px solid transparent;
-}
-
-//
-// THEME
-//
-
-.alert {
-  background-color: $ui-02;
-  box-shadow: 0 3px 6px 1px $ui-04;
-}
-
-.alert-icon-container {
-  background-color: $ui-04;
-}
-
-.alert-icon {
-  background-color: $ui-00;
-}
-
-.alert-close {
-  background-color: transparent;
-  background-image: url('../svgs/icon-close.svg');
-  background-repeat: no-repeat;
-  background-size: 12px 12px;
-  background-position: 1px 1px;
-}
-
-.success {
-  .alert-icon-background {
+.blx-success {
+  .blx-alert-icon-background {
     background-color: $success;
   }
 
-  .alert-icon {
+  .blx-alert-icon {
     mask: url('../svgs/icon-check.svg') no-repeat 50% 50%;
   }
 }
 
-.warning {
-  .alert-icon-background {
+.blx-warning {
+  .blx-alert-icon-background {
     background-color: $warning;
   }
 
-  .alert-icon {
+  .blx-alert-icon {
     mask: url('../svgs/icon-warning.svg') no-repeat 50% 50%;
   }
 }
 
-.error {
-  .alert-icon-background {
+.blx-error {
+  .blx-alert-icon-background {
     background-color: $error;
   }
 
-  .alert-icon {
+  .blx-alert-icon {
     mask: url('../svgs/icon-error.svg') no-repeat 50% 50%;
   }
 }
 
-.information {
-  .alert-icon-background {
+.blx-information {
+  .blx-alert-icon-background {
     background-color: $information;
   }
 
-  .alert-icon {
+  .blx-alert-icon {
     mask: url('../svgs/icon-information.svg') no-repeat 50% 50%;
   }
 }

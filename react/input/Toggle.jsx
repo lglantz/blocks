@@ -3,11 +3,11 @@ const PropTypes = require('prop-types');
 
 
 const Toggle = props => (
-  <div className={`toggle ${props.isDisabled ? 'disabled' : ''}`}>
+  <div className={`blx-toggle ${props.isDisabled ? 'blx-disabled' : ''}`}>
     {
       props.options.map((option, idx) => (
         <label
-          className="toggle-container"
+          className="blx-toggle-container"
           key={option.text}
         >
           <input
@@ -18,7 +18,7 @@ const Toggle = props => (
             defaultChecked={option.isChecked}
             disabled={props.isDisabled}
           />
-          <span className="toggle-button-text">
+          <span className="blx-toggle-text">
             {option.text}
           </span>
         </label>

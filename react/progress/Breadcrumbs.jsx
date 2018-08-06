@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 
 
 const Breadcrumbs = props => (
-  <nav className="breadcrumbs">
+  <nav className="blx-breadcrumbs">
     <ul>
       {
         props.breadcrumbs.map(breadcrumb => (

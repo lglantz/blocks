@@ -51,7 +51,7 @@ class Preview extends React.Component {
           <h4>Buttons</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Primary Button
               </span>
               <div className="doc-state-content">
@@ -59,7 +59,7 @@ class Preview extends React.Component {
                   text="Primary button"
                 />
               </div>
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Secondary Button
               </span>
               <div className="doc-state-content">
@@ -69,7 +69,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Primary Button Disabled
               </span>
               <div className="doc-state-content">
@@ -78,7 +78,7 @@ class Preview extends React.Component {
                   isDisabled
                 />
               </div>
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Secondary Button Disabled
               </span>
               <div className="doc-state-content">
@@ -89,7 +89,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Primary Button small
               </span>
               <div className="doc-state-content">
@@ -97,7 +97,7 @@ class Preview extends React.Component {
                   text="Primary button small"
                 />
               </div>
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Secondary Button small
               </span>
               <div className="doc-state-content">
@@ -114,7 +114,7 @@ class Preview extends React.Component {
           <h4>Checkboxes</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Unselected
               </span>
               <div className="doc-state-content">
@@ -122,7 +122,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Selected
               </span>
               <div className="doc-state-content">
@@ -130,7 +130,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Unselected, Disabled
               </span>
               <div className="doc-state-content">
@@ -138,7 +138,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Selected, Disabled
               </span>
               <div className="doc-state-content">
@@ -153,7 +153,7 @@ class Preview extends React.Component {
           <h4>Radio Buttons</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Unselected
               </span>
               <div className="doc-state-content">
@@ -165,7 +165,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Selected
               </span>
               <div className="doc-state-content">
@@ -178,7 +178,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Unselected, Disabled
               </span>
               <div className="doc-state-content">
@@ -191,7 +191,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Selected, Disabled
               </span>
               <div className="doc-state-content">
@@ -212,7 +212,7 @@ class Preview extends React.Component {
           <h4>Text Fields</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Default
               </span>
               <div className="doc-state-content">
@@ -223,7 +223,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Disabled
               </span>
               <div className="doc-state-content">
@@ -235,7 +235,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Idle, Filled
               </span>
               <div className="doc-state-content">
@@ -247,7 +247,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Validation
               </span>
               <div className="doc-state-content">
@@ -261,7 +261,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Prefix/Suffix
               </span>
               <div className="doc-state-content">
@@ -297,7 +297,7 @@ class Preview extends React.Component {
           <h4>Dropdowns</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Default
               </span>
               <div className="doc-state-content">
@@ -314,7 +314,7 @@ class Preview extends React.Component {
               </div>
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title caption">
+              <span className="doc-state-title blx-caption">
                 Disabled
               </span>
               <div className="doc-state-content">
@@ -358,17 +358,17 @@ class Preview extends React.Component {
           <h4>Accordions</h4>
           <div>
             <AccordionSection
-              trigger={<span className="subtitle">Item 1</span>}
+              trigger={<span className="blx-subtitle">Item 1</span>}
             >
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </AccordionSection>
             <AccordionSection
-              trigger={<span className="subtitle">Item 2</span>}
+              trigger={<span className="blx-subtitle">Item 2</span>}
             >
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </AccordionSection>
             <AccordionSection
-              trigger={<span className="subtitle">Item 3</span>}
+              trigger={<span className="blx-subtitle">Item 3</span>}
             >
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </AccordionSection>

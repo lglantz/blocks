@@ -24,22 +24,22 @@ class TextField extends React.Component {
     let invalidLabelMarker = null;
     let invalidLabelMessage = null;
     if (!this.state.isValid) {
-      invalidLabelMarker = <span className="invalid-label-marker">*</span>;
-      invalidLabelMessage = <span className="invalid-label-message">{this.props.invalidErrorMessage}</span>;
+      invalidLabelMarker = <span className="blx-invalid-text-field-marker">*</span>;
+      invalidLabelMessage = <span className="blx-invalid-text-field-message">{this.props.invalidErrorMessage}</span>;
       textFieldClasses += ' invalid';
     }
 
     // prefix element
     let prefixElement = null;
     if (this.props.prefix) {
-      prefixElement = <span className="text-field-prefix">{this.props.prefix}</span>;
+      prefixElement = <span className="blx-text-field-prefix">{this.props.prefix}</span>;
       textFieldClasses += ' text-field-with-prefix';
     }
 
     // suffix element
     let suffixElement = null;
     if (this.props.suffix) {
-      suffixElement = <span className="text-field-suffix">{this.props.suffix}</span>;
+      suffixElement = <span className="blx-text-field-suffix">{this.props.suffix}</span>;
       textFieldClasses += ' text-field-with-suffix';
     }
 
@@ -77,12 +77,12 @@ class TextField extends React.Component {
     );
 
     return (
-      <div className={`text-field ${this.props.isDisabled ? 'disabled' : ''}`}>
+      <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
         <div>
-          {this.props.label && <label className="text-field-label">{this.props.label}</label>}
+          {this.props.label && <label className="blx-text-field-label">{this.props.label}</label>}
           {invalidLabelMarker}
         </div>
-        <div className="text-field-container">
+        <div className="blx-text-field-container">
           {prefixElement}
           {suffixElement}
           {textInputElement}

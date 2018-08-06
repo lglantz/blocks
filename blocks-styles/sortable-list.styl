@@ -1,61 +1,29 @@
-//
-// STRUCTURE
-//
-.sortable-list {
+.blx-sortable-list {
   background: transparent;
   max-width: 320px;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.sortable-list-item {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-
-.sortable-list-section {
-  width: 100%;
-}
-
-.sortable-list-section > .sortable-list-draggable {
-  font-weight: $normal-weight;
-}
-
-.sortable-list-draggable {
-  padding-top: 6px;
-  padding-left: 32px;
-  padding-right: 48px;
-  flex: 1;
-  justify-content: space-between;
-}
-
-.sortable-list-drag-icon {
-  position: absolute;
-  right: 0;
-  margin-top: 8px;
-  margin-right: 24px;
-  cursor: move;
-}
-
-
-//
-// THEME
-//
-.sortable-list-item {
-  &.dragging {
-    background-color: $selection;
+  
+  .blx-sortable-list-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    
+    &.dragging {
+      background-color: $selection;
+    }
+    &.dragover {
+      background-color: $ui-04;
+    }
+    
+    .blx-icon-drag {
+      position: absolute;
+      right: 0;
+      margin-top: 8px;
+      margin-right: 24px;
+      cursor: move;
+      background-color: $ui-07;
+    }
   }
-  &.dragover {
-    background-color: $ui-04;
-  }
-}
-
-.sortable-list-section > .sortable-list-draggable {
-  background-color: $ui-04;
-}
-
-.sortable-list-drag-icon {
-  background-color: $ui-07;
 }

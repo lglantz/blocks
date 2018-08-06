@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 
 function onToggle(e) {
   const section = e.target.parentNode;
-  const panel = section.getElementsByClassName('accordion-content')[0];
+  const panel = section.getElementsByClassName('blx-accordion-content')[0];
   if (panel.style.maxHeight) {
     panel.style.maxHeight = null;
   } else {
@@ -28,11 +28,11 @@ class AccordionSection extends React.Component {
   render() {
     const name = Math.random().toString();
     return (
-      <div className="accordion-section">
-        <input id={name} type="checkbox" name="accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
-        <label htmlFor={name} className="accordion-trigger">{this.props.trigger}</label>
+      <div className="blx-accordion-section">
+        <input id={name} type="checkbox" name="blx-accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
+        <label htmlFor={name} className="blx-accordion-trigger">{this.props.trigger}</label>
         <div
-          className="accordion-content"
+          className="blx-accordion-content"
           ref={content => this.content = content}
         >
           {this.props.children}
