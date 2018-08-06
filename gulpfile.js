@@ -19,25 +19,33 @@ gulp.task('dev:css', ['dev:jsonToStylus'], function () {
     autoprefixer(),
     cssvariables({ preserve: true })
   ];
-  gulp.src('docs/_styl/blocks-docs.styl')
-    .pipe(stylus())
-    .pipe(postcss(plugins))
-    .pipe(gulp.dest('docs/css'));
 
   gulp.src('blocks-styles/_all.styl')
-    .pipe(stylus())
+    .pipe(stylus({
+      'include css': true
+    }))
     .pipe(postcss(plugins))
     .pipe(rename('blocks.css'))
     .pipe(gulp.dest('.'));
+
+  gulp.src('docs/_styl/blocks-docs.styl')
+    .pipe(stylus({
+      'include css': true
+    }))
+    .pipe(postcss(plugins))
+    .pipe(gulp.dest('docs/css'));
+
+  gulp.src('blocks.css')
+    .pipe(gulp.dest('docs/css/'));
 });
 
 gulp.task('watch:css', ['dev:jsonToStylus'], function () {
-  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['dev:css']);
+  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl', 'fonts/fonts.css'], ['dev:css']);
 });
 
 gulp.task('dev:fonts', function() {
-  gulp.src('fonts/*.otf')
-    .pipe(gulp.dest('docs/fonts/'));
+  gulp.src(['fonts/*.eot', 'fonts/*.woff', 'fonts/*.woff2'])
+    .pipe(gulp.dest('docs/css/'));
 });
 
 gulp.task('dev:icons', function() {
