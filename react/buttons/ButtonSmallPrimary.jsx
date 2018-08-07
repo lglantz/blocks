@@ -7,20 +7,18 @@ const Button = require('./Button.jsx');
 const ButtonPrimary = props => (
   <Button
     {...props}
-    classes="button small primary"
+    classes="blx-button blx-small blx-primary"
   />
 );
 
 ButtonPrimary.propTypes = {
-  text: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  onClick: PropTypes.func
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool
 };
 
 ButtonPrimary.defaultProps = {
-  text: '',
-  isDisabled: false,
-  onClick: () => {}
+  isDisabled: false
 };
 
 module.exports = ButtonPrimary;

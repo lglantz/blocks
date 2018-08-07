@@ -18,7 +18,7 @@ class TextField extends React.Component {
 
   render() {
     // text input element itself
-    let textFieldClasses = 'text-field-input';
+    let textFieldClasses = '';
 
     // red asterisk if the value is invalid
     let invalidLabelMarker = null;
@@ -26,28 +26,25 @@ class TextField extends React.Component {
     if (!this.state.isValid) {
       invalidLabelMarker = <span className="blx-invalid-text-field-marker">*</span>;
       invalidLabelMessage = <span className="blx-invalid-text-field-message">{this.props.invalidErrorMessage}</span>;
-      textFieldClasses += ' invalid';
+      textFieldClasses += ' blx-invalid';
     }
 
     // prefix element
     let prefixElement = null;
     if (this.props.prefix) {
       prefixElement = <span className="blx-text-field-prefix">{this.props.prefix}</span>;
-      textFieldClasses += ' text-field-with-prefix';
     }
 
     // suffix element
     let suffixElement = null;
     if (this.props.suffix) {
       suffixElement = <span className="blx-text-field-suffix">{this.props.suffix}</span>;
-      textFieldClasses += ' text-field-with-suffix';
     }
 
     const textInputElement = (
       <input
         type={this.props.type}
         name={this.props.name}
-        className={textFieldClasses}
         value={this.props.value}
         placeholder={this.props.placeholder}
         disabled={this.props.isDisabled}

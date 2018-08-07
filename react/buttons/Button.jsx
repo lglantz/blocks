@@ -13,17 +13,15 @@ const BasicButton = props => (
 );
 
 BasicButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
   classes: PropTypes.string,
-  text: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  onClick: PropTypes.func
+  isDisabled: PropTypes.bool
 };
 
 BasicButton.defaultProps = {
-  classes: 'primary',
-  text: '',
-  isDisabled: false,
-  onClick: () => {}
+  classes: 'blx-primary',
+  isDisabled: false
 };
 
 module.exports = BasicButton;
