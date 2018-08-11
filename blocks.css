@@ -575,8 +575,10 @@ h6 {
   color: var(--information, #6f6bf8);
 }
 .blx-button {
+  display: inline-block;
   margin: 0;
   height: 40px;
+  line-height: 40px;
   padding: 0 16px;
   text-decoration: none;
   border-radius: 7px;

@@ -2,24 +2,31 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const Button = require('./Button.jsx');
+const LinkButton = require('./LinkButton.jsx');
 
 
-const ButtonPrimary = props => (
-  <Button
-    {...props}
-    classes="blx-button blx-small blx-secondary"
-  />
-);
+function ButtonSmallSecondary(props) {
+  const Component = props.href ? LinkButton : Button;
+  return (
+   <Component
+      {...props}
+      classes="blx-small blx-secondary"
+    />
+  );
+}
 
-ButtonPrimary.propTypes = {
+ButtonSmallSecondary.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  href: PropTypes.string,
   isDisabled: PropTypes.bool
 };
 
-ButtonPrimary.defaultProps = {
-  isDisabled: false
+ButtonSmallSecondary.defaultProps = {
+  isDisabled: false,
+  onClick: null,
+  href: ''
 };
 
-module.exports = ButtonPrimary;
+module.exports = ButtonSmallSecondary;
 

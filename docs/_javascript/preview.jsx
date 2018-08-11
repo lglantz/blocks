@@ -34,6 +34,20 @@ const SortableList = BlocksReact.SortableList;
 
 const INVALID_VALUE = 'Wrong';
 
+
+function getPreviewComponent(caption, component) {
+  return [
+    <span className="doc-state-title blx-caption">
+      {caption}
+    </span>,
+
+    <div className="doc-state-content">
+      {component}
+    </div>
+  ]
+}
+
+
 class Preview extends React.Component {
   constructor() {
     super();
@@ -51,60 +65,20 @@ class Preview extends React.Component {
           <h4>Buttons</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Primary Button
-              </span>
-              <div className="doc-state-content">
-                <ButtonPrimary
-                  text="Primary button"
-                />
-              </div>
-              <span className="doc-state-title blx-caption">
-                Secondary Button
-              </span>
-              <div className="doc-state-content">
-                <ButtonSecondary
-                  text="Secondary button"
-                />
-              </div>
+              { getPreviewComponent('Primary Button', <ButtonPrimary text="Primary button" onClick={() => {}} />) }
+              { getPreviewComponent('Secondary Button', <ButtonSecondary text="Secondary button" onClick={() => {}} />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Primary Button Disabled
-              </span>
-              <div className="doc-state-content">
-                <ButtonPrimary
-                  text="Primary button disabled"
-                  isDisabled
-                />
-              </div>
-              <span className="doc-state-title blx-caption">
-                Secondary Button Disabled
-              </span>
-              <div className="doc-state-content">
-                <ButtonSecondary
-                  text="Secondary button disabled"
-                  isDisabled
-                />
-              </div>
+              { getPreviewComponent('Primary Button Disabled', <ButtonPrimary text="Primary button disabled" onClick={() => {}} isDisabled />) }
+              { getPreviewComponent('Secondary Button Disabled', <ButtonSecondary text="Secondary button disabled" onClick={() => {}} isDisabled />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Primary Button small
-              </span>
-              <div className="doc-state-content">
-                <ButtonSmallPrimary
-                  text="Primary button small"
-                />
-              </div>
-              <span className="doc-state-title blx-caption">
-                Secondary Button small
-              </span>
-              <div className="doc-state-content">
-                <ButtonSmallSecondary
-                  text="Secondary button small"
-                />
-              </div>
+              { getPreviewComponent('Primary Button Small', <ButtonSmallPrimary text="Primary button small" onClick={() => {}} />) }
+              { getPreviewComponent('Secondary Button Small', <ButtonSmallSecondary text="Secondary button small" onClick={() => {}} />) }
+            </div>
+            <div className="l-flex-horizontal">
+              { getPreviewComponent('Link Button Primary, External', <ButtonPrimary text="Go to Google" href="https://www.google.com" isExternal />) }
+              { getPreviewComponent('Link Button Secondary, Internal', <ButtonSecondary text="Go to Blocks" href="/" />) }
             </div>
           </div>
         </div>
@@ -114,36 +88,16 @@ class Preview extends React.Component {
           <h4>Checkboxes</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Unselected
-              </span>
-              <div className="doc-state-content">
-                <Checkbox text="Unselected" />
-              </div>
+              { getPreviewComponent('Unselected', <Checkbox text="Unselected" />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Selected
-              </span>
-              <div className="doc-state-content">
-                <Checkbox text="Selected" isChecked />
-              </div>
+              { getPreviewComponent('Selected', <Checkbox text="Selected" isChecked />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Unselected, Disabled
-              </span>
-              <div className="doc-state-content">
-                <Checkbox text="Unselected, Disabled" isDisabled />
-              </div>
+              { getPreviewComponent('Unselected, Disabled', <Checkbox text="Unselected" isDisabled />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Selected, Disabled
-              </span>
-              <div className="doc-state-content">
-                <Checkbox text="Selected, Disabled" isDisabled isChecked />
-              </div>
+              { getPreviewComponent('Selected, Disabled', <Checkbox text="Selected, Disabled" isDisabled isChecked />) }
             </div>
           </div>
         </div>
@@ -153,56 +107,44 @@ class Preview extends React.Component {
           <h4>Radio Buttons</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Unselected
-              </span>
-              <div className="doc-state-content">
-                <RadioButtonGroup
-                  name="radio-1"
-                  options={['Unselected', 'Unselected 2']}
-                  onChange={() => {}}
-                />
-              </div>
+              { getPreviewComponent('Unselected',
+                  <RadioButtonGroup
+                    name="radio-1"
+                    options={['Unselected', 'Unselected 2']}
+                    onChange={() => {}}
+                  />
+              )}
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Selected
-              </span>
-              <div className="doc-state-content">
-                <RadioButtonGroup
-                  name="radio-2"
-                  options={['Selected', 'Selected 2']}
-                  checkedIndex={0}
-                  onChange={() => {}}
-                />
-              </div>
+              { getPreviewComponent('Selected',
+                  <RadioButtonGroup
+                    name="radio-2"
+                    options={['Selected', 'Selected 2']}
+                    checkedIndex={0}
+                    onChange={() => {}}
+                  />
+              )}
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Unselected, Disabled
-              </span>
-              <div className="doc-state-content">
-                <RadioButtonGroup
-                  name="radio-3"
-                  options={['Unselected, Disabled']}
-                  isDisabled
-                  onChange={() => {}}
-                />
-              </div>
+              { getPreviewComponent('Unselected, Disabled',
+                  <RadioButtonGroup
+                    name="radio-3"
+                    options={['Unselected, Disabled']}
+                    isDisabled
+                    onChange={() => {}}
+                  />
+              ) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Selected, Disabled
-              </span>
-              <div className="doc-state-content">
-                <RadioButtonGroup
-                  name="radio-4"
-                  options={['Selected, Disabled']}
-                  isDisabled
-                  checkedIndex={0}
-                  onChange={() => {}}
-                />
-              </div>
+              { getPreviewComponent('Selected, Disabled',
+                  <RadioButtonGroup
+                    name="radio-4"
+                    options={['Selected, Disabled']}
+                    isDisabled
+                    checkedIndex={0}
+                    onChange={() => {}}
+                  />
+              ) }
             </div>
           </div>
         </div>
@@ -212,82 +154,41 @@ class Preview extends React.Component {
           <h4>Text Fields</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Default
-              </span>
-              <div className="doc-state-content">
-                <TextField
-                  label="Text input label"
-                  placeholder="e.g. Text input"
-                />
-              </div>
+              { getPreviewComponent('Default', <TextField label="Text input label" placeholder="e.g. Text input" />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Disabled
-              </span>
-              <div className="doc-state-content">
-                <TextField
-                  label="Text input label"
-                  placeholder="e.g. Text input"
-                  isDisabled
-                />
-              </div>
+              { getPreviewComponent('Disabled', <TextField label="Text input label" placeholder="e.g. Text input" isDisabled />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Idle, Filled
-              </span>
-              <div className="doc-state-content">
-                <TextField
-                  label="Text input label"
-                  value="More than a placeholder"
-                  onChange={() => {}}
-                />
-              </div>
+              { getPreviewComponent('Idle, Filled', <TextField label="Text input label" value="More than a placeholder" onChange={() => {}} />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Validation
-              </span>
-              <div className="doc-state-content">
-                <TextField
-                  label="Text input label"
-                  isValid={value => { return value !== INVALID_VALUE; }}
-                  invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
-                  value={this.state.invalidInputValue}
-                  onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
-                />
-              </div>
+              { getPreviewComponent('Validation',
+                  <TextField
+                    label="Text input label"
+                    isValid={value => { return value !== INVALID_VALUE; }}
+                    invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
+                    value={this.state.invalidInputValue}
+                    onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
+                  />
+              ) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Prefix/Suffix
-              </span>
-              <div className="doc-state-content">
-                <TextField
-                  label="Text input label"
-                  prefix="$"
-                  suffix="USD"
-                />
-              </div>
+              { getPreviewComponent('Prefix/Suffix', <TextField label="Text input label" prefix="$" suffix="USD" />) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title">
-                Text Field with Dropdown
-              </span>
-              <div className="doc-state-content">
-                <TextFieldWithDropdown
-                  textField={{
-                    label: "Text input label",
-                    placeholder: "100,000"
-                  }}
-                  dropdown={{
-                    options: [{text: 'ft', value: 'ft'}, {text: 'cm', value: 'cm'}, {text: 'm', value: 'm'}],
-                    value: "ft"
-                  }}
-                />
-              </div>
+              { getPreviewComponent('Text Field with Dropdown',
+                  <TextFieldWithDropdown
+                    textField={{
+                      label: "Text input label",
+                      placeholder: "100,000"
+                    }}
+                    dropdown={{
+                      options: [{text: 'ft', value: 'ft'}, {text: 'cm', value: 'cm'}, {text: 'm', value: 'm'}],
+                      value: "ft"
+                    }}
+                  />
+              ) }
             </div>
           </div>
         </div>
@@ -297,39 +198,33 @@ class Preview extends React.Component {
           <h4>Dropdowns</h4>
           <div className="l-flex-vertical">
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Default
-              </span>
-              <div className="doc-state-content">
-                <Dropdown
-                  text="Choose an option"
-                  options={
-                    [
-                      { value: 'option1', text: 'One option' },
-                      { value: 'option2', text: 'Another option' },
-                      { value: 'option3', text: 'Best option' }
-                    ]
-                  }
-                />
-              </div>
+              { getPreviewComponent('Default',
+                  <Dropdown
+                    text="Choose an option"
+                    options={
+                      [
+                        { value: 'option1', text: 'One option' },
+                        { value: 'option2', text: 'Another option' },
+                        { value: 'option3', text: 'Best option' }
+                      ]
+                    }
+                  />
+              ) }
             </div>
             <div className="l-flex-horizontal">
-              <span className="doc-state-title blx-caption">
-                Disabled
-              </span>
-              <div className="doc-state-content">
-                <Dropdown
-                  text="Choose an option"
-                  isDisabled
-                  options={
-                    [
-                      { value: 'option1', text: 'One option' },
-                      { value: 'option2', text: 'Another option' },
-                      { value: 'option3', text: 'Best option' }
-                    ]
-                  }
-                />
-              </div>
+              { getPreviewComponent('Disabled',
+                  <Dropdown
+                    text="Choose an option"
+                    isDisabled
+                    options={
+                      [
+                        { value: 'option1', text: 'One option' },
+                        { value: 'option2', text: 'Another option' },
+                        { value: 'option3', text: 'Best option' }
+                      ]
+                    }
+                  />
+              ) }
             </div>
           </div>
         </div>

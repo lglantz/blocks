@@ -1,6 +1,9 @@
 .blx-button {
+  display: inline-block;
+
   margin: 0;
   height: $button-height;
+  line-height: $button-height;
   padding: $button-top-padding $button-side-padding;
   text-decoration: none;
 
@@ -12,7 +15,7 @@
   text-align: center;
 
   box-shadow: 0 2px 4px 0 $button-shadow-color;
-  
+
   &.blx-small {
     height: $button-small-height;
     padding: $button-small-top-padding $button-small-side-padding;
@@ -52,7 +55,7 @@
       color: $secondary-button-hover-text-color;
     }
   }
-  
+
   &:focus, &:active, &.blx-focus {
     outline: none;
     text-decoration: none;
