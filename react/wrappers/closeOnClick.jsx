@@ -46,6 +46,7 @@ function closeOnClick(WrappedComponent) {
       if (!this.domElement) return;
       if (e.target === this.domElement || this.domElement.contains(e.target)) return;
       this.close();
+      if (this.props.afterCloseOnClick) this.props.afterCloseOnClick(); // anything that needs to happen when the dropdown closes by clicking outside of it
     }
 
     render() {
@@ -65,11 +66,13 @@ function closeOnClick(WrappedComponent) {
   }
 
   ComponentWithCloseOnClick.propTypes = {
-    isOpen: PropTypes.bool
+    isOpen: PropTypes.bool,
+    afterCloseOnClick: PropTypes.func
   };
 
   ComponentWithCloseOnClick.defaultProps = {
-    isOpen: false
+    isOpen: false,
+    afterCloseOnClick: null
   };
 
   return ComponentWithCloseOnClick;
