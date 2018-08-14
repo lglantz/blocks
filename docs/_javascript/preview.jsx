@@ -31,6 +31,7 @@ const LinkTabs = BlocksReact.Tabs.LinkTabs;
 
 const SortableList = BlocksReact.SortableList;
 
+const BaseModal = BlocksReact.Modals.BaseModal;
 
 const INVALID_VALUE = 'Wrong';
 
@@ -53,7 +54,8 @@ class Preview extends React.Component {
     super();
 
     this.state = {
-      invalidInputValue: INVALID_VALUE
+      invalidInputValue: INVALID_VALUE,
+      isBaseModalHidden: true
     };
   }
 
@@ -400,6 +402,25 @@ class Preview extends React.Component {
               <span>Item 6</span>
               <span>Item 7</span>
             </SortableList>
+          </div>
+        </div>
+
+        { /* MODALS */ }
+        <div className="l-flex-vertical doc-section">
+          <h4>Modals</h4>
+          <div>
+            <BaseModal
+              isHidden={this.state.isBaseModalHidden}
+              onClose={() => this.setState(prevState => ({ isBaseModalHidden: !prevState.isBaseModalHidden })) }
+            >
+              <h4>Base Modal</h4>
+              <p>Hello! This is a base modal.</p>
+            </BaseModal>
+
+            <ButtonPrimary
+              text="Open Base Modal"
+              onClick={() => this.setState(prevState => ({ isBaseModalHidden: !prevState.isBaseModalHidden })) }
+            />
           </div>
         </div>
       </div>

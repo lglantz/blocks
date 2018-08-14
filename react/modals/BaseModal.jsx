@@ -3,39 +3,34 @@ const PropTypes = require('prop-types');
 
 
 const BaseModal = (props) => {
-  let popup = null;
-  let popupOverlay = null;
-  if (!props.isHidden) {
-    popup = (
-      <div className="blx-modal">
-        <div>
-          {props.children}
-        </div>
-        <button
-          className="blx-icon blx-icon-close"
-          onClick={props.onClose}
-        />
-      </div>
-    );
-    popupOverlay = (
+  if (props.isHidden) return null;
+
+  return (
+    <div>
       <div
         className="blx-modal-overlay"
         onClick={props.onClose}
       />
-    );
-  }
 
-  return (
-    <div>
-      {popupOverlay}
-      {popup}
+      <div className="blx-modal">
+        <button
+          className="blx-icon blx-icon-close"
+          onClick={props.onClose}
+        />
+
+        <div>
+          {props.children}
+        </div>
+      </div>
+
     </div>
   );
 };
 
 BaseModal.propTypes = {
   isHidden: PropTypes.bool,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  children: PropTypes.node.isRequired
 };
 
 BaseModal.defaultProps = {

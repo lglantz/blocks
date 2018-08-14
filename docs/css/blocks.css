@@ -1146,6 +1146,9 @@ h6 {
   box-shadow: 0 3px 6px 0 #d9e1e0;
   box-shadow: 0 3px 6px 0 var(--ui-04, #d9e1e0);
 }
+.blx-modal .blx-icon-close {
+  float: right;
+}
 .blx-modal .blx-icon-close:focus {
   outline: none;
   border: 1px solid #49a1ff;
