@@ -578,7 +578,6 @@ h6 {
   display: inline-block;
   margin: 0;
   height: 40px;
-  line-height: 40px;
   padding: 0 16px;
   text-decoration: none;
   border-radius: 7px;
@@ -721,6 +720,10 @@ h6 {
   background-color: var(--ui-02, #f5faf8);
   color: #009f6f;
   color: var(--interactive, #009f6f);
+}
+a.blx-button {
+  display: inline-flex;
+  align-items: center;
 }
 .blx-checkbox {
   display: block;
