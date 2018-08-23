@@ -8,9 +8,7 @@ module.exports = {
   },
   Buttons: {
     ButtonPrimary: require('./react/buttons/ButtonPrimary.jsx'),
-    ButtonSecondary: require('./react/buttons/ButtonSecondary.jsx'),
-    ButtonSmallPrimary: require('./react/buttons/ButtonSmallPrimary.jsx'),
-    ButtonSmallSecondary: require('./react/buttons/ButtonSmallSecondary.jsx')
+    ButtonSecondary: require('./react/buttons/ButtonSecondary.jsx')
   },
   Dropdowns: {
     ComboBox: require('./react/dropdowns/ComboBox.jsx'),

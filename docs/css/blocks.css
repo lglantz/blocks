@@ -588,12 +588,6 @@ h6 {
   box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
-.blx-button.blx-small {
-  height: 28px;
-  padding: 0 12px;
-  font-size: 16px;
-  line-height: 1.5;
-}
 .blx-button:last-child {
   margin-right: 0;
 }
