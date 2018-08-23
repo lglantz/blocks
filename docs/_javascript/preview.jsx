@@ -14,47 +14,24 @@ const SortableListPreview = require('./SortableListPreview.jsx');
 const ModalPreview = require('./ModalPreview.jsx');
 
 
-const INVALID_VALUE = 'Wrong';
+const Preview = () => (
+  <div>
+    <ButtonPreview />
+    <CheckboxPreview />
+    <RadioButtonPreview />
+    <TextFieldPreview />
+    <DropdownPreview />
+    <AlertPreview />
 
+    <p>NOTE: The following components are less complete but are included here for preview purposes.</p>
 
-class Preview extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      invalidInputValue: INVALID_VALUE,
-      isBaseModalHidden: true
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <ButtonPreview />
-        <CheckboxPreview />
-        <RadioButtonPreview />
-        <TextFieldPreview
-          invalidInputValue={this.state.invalidInputValue}
-          onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
-        />
-        <DropdownPreview />
-        <AlertPreview />
-
-        <p>NOTE: The following components are less complete but are included here for preview purposes.</p>
-
-        <AccordionPreview />
-        <ProgressPreview />
-        <TabPreview />
-        <SortableListPreview />
-        <ModalPreview
-          isHidden={this.state.isBaseModalHidden}
-          onClose={() => this.setState(prevState => ({ isBaseModalHidden: !prevState.isBaseModalHidden })) }
-          onClick={() => this.setState(prevState => ({ isBaseModalHidden: !prevState.isBaseModalHidden })) }
-        />
-      </div>
-    );
-  }
-}
+    <AccordionPreview />
+    <ProgressPreview />
+    <TabPreview />
+    <SortableListPreview />
+    <ModalPreview />
+  </div>
+);
 
 const rootElement = document.getElementById('root');
 
