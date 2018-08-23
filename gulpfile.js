@@ -79,7 +79,7 @@ gulp.task('dev:jekyll', () => {
 });
 
 gulp.task('dev:react', () => {
-  return gulp.src('react/preview.jsx')
+  return gulp.src(['docs/_javascript/*.jsx', 'react/*.jsx'])
     .pipe(webpack(config))
     .pipe(gulp.dest('docs/lib'));
 });
@@ -107,7 +107,7 @@ gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
 })
 
 gulp.task('watch:react', function () {
-  gulp.watch('react/*', ['dev:react']);
+  gulp.watch(['react/*', 'docs/_javascript/*'], ['dev:react']);
 });
 
 gulp.task('server', [

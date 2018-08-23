@@ -2,7 +2,20 @@ const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: './docs/_javascript/preview.jsx',
+  entry: {
+    accordion: './docs/_javascript/AccordionPreview.jsx',
+    alert: './docs/_javascript/AlertPreview.jsx',
+    button: './docs/_javascript/ButtonPreview.jsx',
+    checkbox: './docs/_javascript/CheckboxPreview.jsx',
+    dropdown: './docs/_javascript/DropdownPreview.jsx',
+    modal: './docs/_javascript/ModalPreview.jsx',
+    progress: './docs/_javascript/ProgressPreview.jsx',
+    radiobutton: './docs/_javascript/RadioButtonPreview.jsx',
+    sortablelist: './docs/_javascript/SortableListPreview.jsx',
+    tab: './docs/_javascript/TabPreview.jsx',
+    textfield: './docs/_javascript/TextFieldPreview.jsx',
+    toggle: './docs/_javascript/TogglePreview.jsx'
+  },
   module: {
     rules: [{
       test: /\.jsx$/,
@@ -16,7 +29,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../docs/lib/'),
-    filename: 'preview.js'
+    filename: '[name].preview.js'
   },
   plugins: [
     new UglifyJSPlugin({
