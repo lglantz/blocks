@@ -7,35 +7,63 @@ definition: Buttons make common actions immediately visible and easy to perform 
 ---
 
 {% capture primary_button_example %}
-  <button class="blx-button blx-primary">Primary Button</button>
+  <button class="blx-button blx-primary"><span>Primary Button</span></button>
 {% endcapture %}
 
 {% capture primary_button_hover_example %}
-  <button class="blx-button blx-primary blx-hover">Primary Button</button>
+  <button class="blx-button blx-primary blx-hover"><span>Primary Button</span></button>
 {% endcapture %}
 
 {% capture primary_button_focus_example %}
-  <button class="blx-button blx-primary blx-focus">Primary Button</button>
+  <button class="blx-button blx-primary blx-focus"><span>Primary Button</span></button>
 {% endcapture %}
 
 {% capture primary_button_disabled_example %}
-  <button class="blx-button blx-primary blx-disabled">Primary Button Disabled</button>
+  <button class="blx-button blx-primary blx-disabled"><span>Primary Button Disabled</span></button>
 {% endcapture %}
 
 {% capture secondary_button_example %}
-  <button class="blx-button blx-secondary">Secondary Button</button>
+  <button class="blx-button blx-secondary"><span>Secondary Button</span></button>
 {% endcapture %}
 
 {% capture secondary_button_hover_example %}
-  <button class="blx-button blx-secondary blx-hover">Secondary Button</button>
+  <button class="blx-button blx-secondary blx-hover"><span>Secondary Button</span></button>
 {% endcapture %}
 
 {% capture secondary_button_focus_example %}
-  <button class="blx-button blx-secondary blx-focus">Secondary Button</button>
+  <button class="blx-button blx-secondary blx-focus"><span>Secondary Button</span></button>
 {% endcapture %}
 
 {% capture secondary_button_disabled_example %}
-  <button class="blx-button blx-secondary blx-disabled">Secondary Button Disabled</button>
+  <button class="blx-button blx-secondary blx-disabled"><span>Secondary Button Disabled</span></button>
+{% endcapture %}
+
+{% capture primary_button_icon_example %}
+  <button class="blx-button blx-primary">
+    <span class="blx-icon blx-icon-plus"></span>
+    <span>Primary Button</span>
+  </button>
+{% endcapture %}
+
+{% capture secondary_button_icon_example %}
+  <button class="blx-button blx-secondary">
+    <span class="blx-icon blx-icon-plus"></span>
+    <span>Secondary Button</span>
+  </button>
+{% endcapture %}
+
+{% capture primary_button_icon_right_example %}
+  <button class="blx-button blx-primary">
+    <span>Primary Button</span>
+    <span class="blx-icon blx-icon-plus"></span>
+  </button>
+{% endcapture %}
+
+{% capture secondary_button_icon_right_example %}
+  <button class="blx-button blx-secondary">
+    <span>Secondary Button</span>
+    <span class="blx-icon blx-icon-plus"></span>
+  </button>
 {% endcapture %}
 
 {% capture example %}
@@ -43,6 +71,10 @@ definition: Buttons make common actions immediately visible and easy to perform 
   {{ primary_button_disabled_example }}
   {{ secondary_button_example }}
   {{ secondary_button_disabled_example }}
+  {{ primary_button_icon_example }}
+  {{ primary_button_icon_right_example }}
+  {{ secondary_button_icon_example }}
+  {{ secondary_button_icon_right_example }}
 {% endcapture %}
 
 <!-- state & behavior section -->
@@ -103,6 +135,22 @@ definition: Buttons make common actions immediately visible and easy to perform 
       </span>
       <div class="doc-state-content">
         {{ secondary_button_disabled_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Primary button with icon
+      </span>
+      <div class="doc-state-content">
+        {{ primary_button_icon_example }}
+        {{ primary_button_icon_right_example }}
+      </div>
+      <span class="doc-state-title blx-caption">
+        Secondary button with icon
+      </span>
+      <div class="doc-state-content">
+        {{ secondary_button_icon_example }}
+        {{ secondary_button_icon_right_example }}
       </div>
     </div>
   </div>

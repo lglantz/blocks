@@ -8,7 +8,9 @@ const BasicButton = props => (
     onClick={props.onClick}
     disabled={props.isDisabled}
   >
-    {props.text}
+    { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
+    <span>{props.text}</span>
+    { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
   </button>
 );
 
@@ -16,12 +18,16 @@ BasicButton.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   classes: PropTypes.string,
-  isDisabled: PropTypes.bool
+  isDisabled: PropTypes.bool,
+  leftIcon: PropTypes.string,
+  rightIcon: PropTypes.string
 };
 
 BasicButton.defaultProps = {
   classes: 'blx-primary',
-  isDisabled: false
+  isDisabled: false,
+  leftIcon: null,
+  rightIcon: null
 };
 
 module.exports = BasicButton;
