@@ -1,8 +1,7 @@
 const React = require('react');
 
-const BlocksReact = require('../../react-index.js');
-const BaseModal = BlocksReact.Modals.BaseModal;
-const ButtonPrimary = BlocksReact.Buttons.ButtonPrimary;
+const BaseModal = require('../../react-index.js').Modals.BaseModal;
+const ButtonPrimary = require('../../react-index.js').Buttons.ButtonPrimary;
 
 const ModalPreview = (props) => (
   <div className="l-flex-vertical doc-section">

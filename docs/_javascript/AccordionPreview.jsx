@@ -1,7 +1,6 @@
 const React = require('react');
 
-const BlocksReact = require('../../react-index.js');
-const AccordionSection = BlocksReact.Accordion;
+const AccordionSection = require('../../react-index.js').Accordion;
 
 const AccordionPreview = () => (
   <div className="l-flex-vertical doc-section">

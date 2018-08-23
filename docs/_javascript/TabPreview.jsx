@@ -2,9 +2,9 @@ const React = require('react');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReact = require('../../react-index.js');
-const RadioTabs = BlocksReact.Tabs.RadioTabs;
-const LinkTabs = BlocksReact.Tabs.LinkTabs;
+const BlocksReactTabs = require('../../react-index.js').Tabs;
+const RadioTabs = BlocksReactTabs.RadioTabs;
+const LinkTabs = BlocksReactTabs.LinkTabs;
 
 const TabPreview = () => (
   <div className="l-flex-vertical doc-section">

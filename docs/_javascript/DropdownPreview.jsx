@@ -2,8 +2,7 @@ const React = require('react');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReact = require('../../react-index.js');
-const Dropdown = BlocksReact.Dropdowns.Dropdown;
+const Dropdown = require('../../react-index.js').Dropdowns.Dropdown;
 
 const DropdownPreview = () => (
   <div className="l-flex-vertical doc-section">

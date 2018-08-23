@@ -1,8 +1,8 @@
 const React = require('react');
 
-const BlocksReact = require('../../react-index.js');
-const Breadcrumbs = BlocksReact.Progress.Breadcrumbs;
-const ProgressDots = BlocksReact.Progress.ProgressDots;
+const BlocksReactProgress = require('../../react-index.js').Progress;
+const Breadcrumbs = BlocksReactProgress.Breadcrumbs;
+const ProgressDots = BlocksReactProgress.ProgressDots;
 
 const ProgressPreview = () => (
   <div className="l-flex-vertical doc-section">

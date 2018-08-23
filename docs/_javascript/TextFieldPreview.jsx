@@ -2,9 +2,9 @@ const React = require('react');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReact = require('../../react-index.js');
-const TextField = BlocksReact.Input.TextField;
-const TextFieldWithDropdown = BlocksReact.Input.TextFieldWithDropdown;
+const BlocksReactInput = require('../../react-index.js').Input;
+const TextField = BlocksReactInput.TextField;
+const TextFieldWithDropdown = BlocksReactInput.TextFieldWithDropdown;
 
 const INVALID_VALUE = 'Wrong';
 

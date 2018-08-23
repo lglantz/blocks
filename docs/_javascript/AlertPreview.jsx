@@ -1,10 +1,10 @@
 const React = require('react');
 
-const BlocksReact = require('../../react-index.js');
-const SuccessAlert = BlocksReact.Alerts.SuccessAlert;
-const InformationalAlert = BlocksReact.Alerts.InformationalAlert;
-const WarningAlert = BlocksReact.Alerts.WarningAlert;
-const ErrorAlert = BlocksReact.Alerts.ErrorAlert;
+const BlocksReactAlerts = require('../../react-index.js').Alerts;
+const SuccessAlert = BlocksReactAlerts.SuccessAlert;
+const InformationalAlert = BlocksReactAlerts.InformationalAlert;
+const WarningAlert = BlocksReactAlerts.WarningAlert;
+const ErrorAlert = BlocksReactAlerts.ErrorAlert;
 
 const AlertPreview = () => (
   <div className="l-flex-vertical doc-section">

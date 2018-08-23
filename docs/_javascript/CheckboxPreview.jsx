@@ -2,8 +2,7 @@ const React = require('react');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReact = require('../../react-index.js');
-const Checkbox = BlocksReact.Input.Checkbox;
+const Checkbox = require('../../react-index.js').Input.Checkbox;
 
 const CheckboxPreview = () => (
   <div className="l-flex-vertical doc-section">

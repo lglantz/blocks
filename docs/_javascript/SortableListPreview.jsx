@@ -2,8 +2,7 @@ const React = require('react');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReact = require('../../react-index.js');
-const SortableList = BlocksReact.SortableList;
+const SortableList = require('../../react-index.js').SortableList;
 
 const SortableListPreview = () => (
   <div className="l-flex-vertical doc-section">

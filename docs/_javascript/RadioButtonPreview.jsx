@@ -2,8 +2,7 @@ const React = require('react');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReact = require('../../react-index.js');
-const RadioButtonGroup = BlocksReact.Input.RadioButtonGroup;
+const RadioButtonGroup = require('../../react-index.js').Input.RadioButtonGroup;
 
 const RadioButtonPreview = () => (
   <div className="l-flex-vertical doc-section">

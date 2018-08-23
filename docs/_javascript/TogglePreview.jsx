@@ -1,7 +1,6 @@
 const React = require('react');
 
-const BlocksReact = require('../../react-index.js');
-const Toggle = BlocksReact.Input.Toggle;
+const Toggle = require('../../react-index.js').Input.Toggle;
 
 const TogglePreview = () => (
   <div className="l-flex-vertical doc-section">
