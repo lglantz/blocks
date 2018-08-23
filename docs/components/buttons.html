@@ -66,6 +66,22 @@ definition: Buttons make common actions immediately visible and easy to perform 
   </button>
 {% endcapture %}
 
+{% capture h_button_group_example %}
+  <div class="blx-h-button-group">
+    <button class="blx-button blx-primary"><span>Primary Button</span></button>
+    <button class="blx-button blx-secondary"><span>Secondary Button</span></button>
+    <button class="blx-button blx-secondary"><span>Secondary Button</span></button>
+  </div>
+{% endcapture %}
+
+{% capture v_button_group_example %}
+  <div class="blx-v-button-group">
+    <button class="blx-button blx-primary"><span>Primary Button</span></button>
+    <button class="blx-button blx-secondary"><span>Secondary Button</span></button>
+    <button class="blx-button blx-secondary"><span>Secondary Button</span></button>
+  </div>
+{% endcapture %}
+
 {% capture example %}
   {{ primary_button_example }}
   {{ primary_button_disabled_example }}
@@ -75,6 +91,8 @@ definition: Buttons make common actions immediately visible and easy to perform 
   {{ primary_button_icon_right_example }}
   {{ secondary_button_icon_example }}
   {{ secondary_button_icon_right_example }}
+  {{ h_button_group_example }}
+  {{ v_button_group_example }}
 {% endcapture %}
 
 <!-- state & behavior section -->
@@ -151,6 +169,28 @@ definition: Buttons make common actions immediately visible and easy to perform 
       <div class="doc-state-content">
         {{ secondary_button_icon_example }}
         {{ secondary_button_icon_right_example }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="l-flex-vertical doc-section">
+  <h4>Sizing & Spacing</h4>
+  <div class="l-flex-vertical">
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Horizontal button group
+      </span>
+      <div class="doc-state-content">
+        {{ h_button_group_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Vertical button group
+      </span>
+      <div class="doc-state-content">
+        {{ v_button_group_example }}
       </div>
     </div>
   </div>

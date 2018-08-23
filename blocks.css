@@ -607,9 +607,6 @@ h6 {
 .blx-button .blx-icon:last-child {
   right: -8px;
 }
-.blx-button:last-child {
-  margin-right: 0;
-}
 .blx-button:hover {
   text-decoration: none;
   box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
@@ -745,6 +742,36 @@ h6 {
 a.blx-button {
   display: inline-flex;
   align-items: center;
+}
+.blx-h-button-group {
+  display: flex;
+  flex-direction: row;
+}
+.blx-h-button-group > * {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.blx-h-button-group > *:first-child {
+  margin-left: 20px;
+}
+.blx-h-button-group > *:last-child {
+  margin-right: 20px;
+}
+.blx-v-button-group {
+  display: flex;
+  flex-direction: column;
+}
+.blx-v-button-group > * {
+  margin-top: 0;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.blx-v-button-group > *:first-child {
+  margin-top: 24px;
+}
+.blx-v-button-group > *:last-child {
+  margin-bottom: 24px;
 }
 .blx-checkbox {
   display: block;

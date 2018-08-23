@@ -38,10 +38,6 @@
     }
   }
 
-  &:last-child {
-    margin-right: 0;
-  }
-
   &:hover, &.blx-hover {
     text-decoration: none;
     box-shadow: 0 2px 4px 0 $button-hover-shadow-color;
@@ -101,4 +97,42 @@
 a.blx-button {
   display: inline-flex;
   align-items: center;
+}
+
+.blx-h-button-group {
+  display: flex;
+  flex-direction: row;
+  
+  & > * {
+    margin-left: 0;
+    margin-right: 10px;
+    
+    &:first-child {
+      margin-left: 20px;
+    }
+    
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+.blx-v-button-group {
+  display: flex;
+  flex-direction: column;
+  
+  & > * {
+    margin-top: 0;
+    margin-bottom: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    &:first-child {
+      margin-top: 24px;
+    }
+    
+    &:last-child {
+      margin-bottom: 24px;
+    }
+  }
 }
