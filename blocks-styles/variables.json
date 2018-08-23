@@ -75,17 +75,11 @@
 
 
   "button-height" : "40px",
-  "button-small-height" : "28px",
 
   "button-top-padding" : "0",
   "button-side-padding" : "16px",
 
-  "button-small-top-padding" : "0",
-  "button-small-side-padding" : "12px",
-
   "button-font-size" : "16px",
-  "button-small-font-size" : "16px",
-
 
   "button-shadow-color" : "$interactive-shadow",
   "button-hover-shadow-color" : "$interactive-shadow-hover",

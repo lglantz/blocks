@@ -22,10 +22,6 @@ definition: Buttons make common actions immediately visible and easy to perform 
   <button class="blx-button blx-primary blx-disabled">Primary Button Disabled</button>
 {% endcapture %}
 
-{% capture primary_button_small_example %}
-  <button class="blx-button blx-small blx-primary">Small Primary Button</button>
-{% endcapture %}
-
 {% capture secondary_button_example %}
   <button class="blx-button blx-secondary">Secondary Button</button>
 {% endcapture %}
@@ -42,17 +38,11 @@ definition: Buttons make common actions immediately visible and easy to perform 
   <button class="blx-button blx-secondary blx-disabled">Secondary Button Disabled</button>
 {% endcapture %}
 
-{% capture secondary_button_small_example %}
-  <button class="blx-button blx-small blx-secondary">Small Secondary Button</button>
-{% endcapture %}
-
 {% capture example %}
   {{ primary_button_example }}
   {{ primary_button_disabled_example }}
-  {{ primary_button_small_example }}
   {{ secondary_button_example }}
   {{ secondary_button_disabled_example }}
-  {{ secondary_button_small_example }}
 {% endcapture %}
 
 <!-- state & behavior section -->
@@ -113,20 +103,6 @@ definition: Buttons make common actions immediately visible and easy to perform 
       </span>
       <div class="doc-state-content">
         {{ secondary_button_disabled_example }}
-      </div>
-    </div>
-    <div class="l-flex-horizontal">
-      <span class="doc-state-title blx-caption">
-        Small button-primary
-      </span>
-      <div class="doc-state-content">
-        {{ primary_button_small_example }}
-      </div>
-      <span class="doc-state-title blx-caption">
-        Small button-secondary
-      </span>
-      <div class="doc-state-content">
-        {{ secondary_button_small_example }}
       </div>
     </div>
   </div>
