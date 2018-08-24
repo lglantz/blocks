@@ -3,9 +3,8 @@ const ReactDOM = require('react-dom');
 
 const getPreviewComponent = require('./getPreviewComponent.jsx');
 
-const BlocksReactButtons = require('../../react-index.js').Buttons;
-const ButtonPrimary = BlocksReactButtons.ButtonPrimary;
-const ButtonSecondary = BlocksReactButtons.ButtonSecondary;
+const ButtonPrimary = require('../../react/buttons/ButtonPrimary.jsx');
+const ButtonSecondary = require('../../react/buttons/ButtonSecondary.jsx');
 
 const ButtonPreview = () => (
   <div className="l-flex-vertical">

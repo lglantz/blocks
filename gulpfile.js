@@ -6,13 +6,19 @@ const stylus = require('gulp-stylus');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
-const webpack = require('webpack-stream');
+const path = require('path');
+
+const watchify = require('watchify');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const uglify = require('gulp-uglify');
 
 const jsonSass = require('gulp-json-sass');
 const jsonStylus = require('gulp-json-stylus');
 const concat = require('gulp-concat');
 
-const config = require('./webpack.config.js');
 
 gulp.task('dev:css', ['dev:jsonToStylus'], function () {
   const plugins = [
@@ -78,10 +84,60 @@ gulp.task('dev:jekyll', () => {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
+const vendors = ['react', 'react-dom', 'react-router-dom'];
+gulp.task('build:vendor', () => {
+  const b = browserify({
+    debug: true
+  });
+
+  // require all libs specified in vendors array
+  vendors.forEach(lib => {
+    b.require(lib);
+  });
+
+  b.bundle()
+  .pipe(source('vendor.js'))
+  .pipe(buffer())
+  .pipe(uglify())
+  .pipe(gulp.dest('./docs/lib/'))
+  ;
+});
+
+const components = [
+  './docs/_javascript/AccordionPreview.jsx',
+  './docs/_javascript/AlertPreview.jsx',
+  './docs/_javascript/ButtonPreview.jsx',
+  './docs/_javascript/CheckboxPreview.jsx',
+  './docs/_javascript/DropdownPreview.jsx',
+  './docs/_javascript/ModalPreview.jsx',
+  './docs/_javascript/ProgressPreview.jsx',
+  './docs/_javascript/RadioButtonPreview.jsx',
+  './docs/_javascript/SortableListPreview.jsx',
+  './docs/_javascript/TabPreview.jsx',
+  './docs/_javascript/TextFieldPreview.jsx',
+  './docs/_javascript/TogglePreview.jsx'
+];
 gulp.task('dev:react', () => {
-  return gulp.src(['docs/_javascript/*.jsx', 'react/*.jsx'])
-    .pipe(webpack(config))
-    .pipe(gulp.dest('docs/lib'));
+  components.forEach((file) => {
+    const b = browserify({
+      entries: file,
+      extensions: ['.jsx'],
+      debug: true,
+      transform: [
+        babelify.configure({
+          presets: ['es2015', 'react']
+        })
+      ]
+    });
+    let outFileName = file.split('/')[3];
+    outFileName = outFileName.substr(0, outFileName.length - 1);
+    return b.external(vendors)
+      .bundle()
+      .pipe(source(outFileName))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest('./docs/lib'));
+  })
 });
 
 gulp.task('dev:jsonToSass', () => {
@@ -114,6 +170,7 @@ gulp.task('server', [
   'dev:fonts',
   'dev:icons',
   'dev:css',
+  'build:vendor',
   'dev:react',
   'dev:jekyll',
   'watch:css',
