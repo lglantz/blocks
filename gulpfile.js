@@ -123,6 +123,9 @@ gulp.task('dev:react', () => {
       entries: file,
       extensions: ['.jsx'],
       debug: true,
+      cache: {},
+      packageCache: {},
+      plugin: [watchify],
       transform: [
         babelify.configure({
           presets: ['es2015', 'react']
@@ -131,12 +134,19 @@ gulp.task('dev:react', () => {
     });
     let outFileName = file.split('/')[3];
     outFileName = outFileName.substr(0, outFileName.length - 1);
-    return b.external(vendors)
-      .bundle()
-      .pipe(source(outFileName))
-      .pipe(buffer())
-      .pipe(uglify())
-      .pipe(gulp.dest('./docs/lib'));
+
+    function bundle() {
+      return b.external(vendors)
+        .bundle()
+        .pipe(source(outFileName))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('./docs/lib'));
+    }
+
+    b.on('update', bundle);
+
+    return bundle();
   })
 });
 
@@ -162,10 +172,6 @@ gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
 
 })
 
-gulp.task('watch:react', function () {
-  gulp.watch(['react/*', 'docs/_javascript/*'], ['dev:react']);
-});
-
 gulp.task('server', [
   'dev:fonts',
   'dev:icons',
@@ -174,7 +180,6 @@ gulp.task('server', [
   'dev:react',
   'dev:jekyll',
   'watch:css',
-  'watch:react',
   'dev:jsonToSass',
   'dev:jsonToStylus'
 ]);
