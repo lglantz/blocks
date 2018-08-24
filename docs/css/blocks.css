@@ -576,20 +576,36 @@ h6 {
 }
 .blx-button {
   display: inline-block;
-  margin: 0;
-  height: 40px;
-  padding: 0 16px;
+  position: relative;
+  margin: 12px 10px;
+  height: 44px;
+  max-width: 480px;
+  min-width: 64px;
+  padding: 7px 18px 9px 18px;
   text-decoration: none;
   border-radius: 7px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
-.blx-button:last-child {
-  margin-right: 0;
+.blx-button .blx-icon {
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+}
+.blx-button .blx-icon:first-child {
+  left: -8px;
+}
+.blx-button .blx-icon:last-child {
+  right: -8px;
 }
 .blx-button:hover {
   text-decoration: none;
@@ -608,6 +624,10 @@ h6 {
   border: 2px solid var(--interactive, #009f6f);
   color: #fff;
   color: var(--ui-00, #fff);
+}
+.blx-button.blx-primary .blx-icon {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
 }
 .blx-button.blx-primary:hover {
   background-color: #008b61;
@@ -633,19 +653,23 @@ h6 {
   color: #009f6f;
   color: var(--interactive, #009f6f);
 }
+.blx-button.blx-secondary .blx-icon {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
 .blx-button.blx-secondary:hover {
   background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  border: 2px solid #edf0ee;
-  border: 2px solid var(--ui-03, #edf0ee);
+  border: 2px solid #f5faf8;
+  border: 2px solid var(--ui-02, #f5faf8);
   color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .blx-button.blx-secondary.blx-hover {
   background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
-  border: 2px solid #edf0ee;
-  border: 2px solid var(--ui-03, #edf0ee);
+  border: 2px solid #f5faf8;
+  border: 2px solid var(--ui-02, #f5faf8);
   color: #009f6f;
   color: var(--interactive, #009f6f);
 }
@@ -668,48 +692,48 @@ h6 {
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-button:focus.blx-primary {
-  border: 2px solid #00b07d;
-  border: 2px solid var(--brand-01, #00b07d);
+  border: 2px solid #49a1ff;
+  border: 2px solid var(--selection, #49a1ff);
   background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .blx-button:active.blx-primary {
-  border: 2px solid #00b07d;
-  border: 2px solid var(--brand-01, #00b07d);
+  border: 2px solid #49a1ff;
+  border: 2px solid var(--selection, #49a1ff);
   background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .blx-button.blx-focus.blx-primary {
-  border: 2px solid #00b07d;
-  border: 2px solid var(--brand-01, #00b07d);
+  border: 2px solid #49a1ff;
+  border: 2px solid var(--selection, #49a1ff);
   background-color: #008b61;
   background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
 }
 .blx-button:focus.blx-secondary {
-  border: 2px solid #d9e1e0;
-  border: 2px solid var(--ui-04, #d9e1e0);
+  border: 2px solid #49a1ff;
+  border: 2px solid var(--selection, #49a1ff);
   background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
   color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .blx-button:active.blx-secondary {
-  border: 2px solid #d9e1e0;
-  border: 2px solid var(--ui-04, #d9e1e0);
+  border: 2px solid #49a1ff;
+  border: 2px solid var(--selection, #49a1ff);
   background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
   color: #009f6f;
   color: var(--interactive, #009f6f);
 }
 .blx-button.blx-focus.blx-secondary {
-  border: 2px solid #d9e1e0;
-  border: 2px solid var(--ui-04, #d9e1e0);
+  border: 2px solid #49a1ff;
+  border: 2px solid var(--selection, #49a1ff);
   background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
   color: #009f6f;
@@ -718,6 +742,36 @@ h6 {
 a.blx-button {
   display: inline-flex;
   align-items: center;
+}
+.blx-h-button-group {
+  display: flex;
+  flex-direction: row;
+}
+.blx-h-button-group > * {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.blx-h-button-group > *:first-child {
+  margin-left: 20px;
+}
+.blx-h-button-group > *:last-child {
+  margin-right: 20px;
+}
+.blx-v-button-group {
+  display: flex;
+  flex-direction: column;
+}
+.blx-v-button-group > * {
+  margin-top: 0;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.blx-v-button-group > *:first-child {
+  margin-top: 24px;
+}
+.blx-v-button-group > *:last-child {
+  margin-bottom: 24px;
 }
 .blx-checkbox {
   display: block;

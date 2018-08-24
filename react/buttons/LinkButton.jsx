@@ -13,7 +13,9 @@ function LinkButton(props) {
         to={props.href}
         disabled={props.isDisabled}
       >
-        {props.text}
+        { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
+        <span>{props.text}</span>
+        { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
       </ReactLink>
     );
   }
@@ -25,7 +27,9 @@ function LinkButton(props) {
       disabled={props.isDisabled}
       target={props.isExternal ? '_blank' : '_self'}
     >
-      {props.text}
+      { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
+      <span>{props.text}</span>
+      { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
     </a>
   );
 }
@@ -36,14 +40,18 @@ LinkButton.propTypes = {
   classes: PropTypes.string,
   isDisabled: PropTypes.bool,
   isExternal: PropTypes.bool,
-  useReactLink: PropTypes.bool
+  useReactLink: PropTypes.bool,
+  leftIcon: PropTypes.string,
+  rightIcon: PropTypes.string
 };
 
 LinkButton.defaultProps = {
   classes: 'blx-primary',
   isDisabled: false,
   isExternal: false,
-  useReactLink: false
+  useReactLink: false,
+  leftIcon: null,
+  rightIcon: null
 };
 
 module.exports = LinkButton;
