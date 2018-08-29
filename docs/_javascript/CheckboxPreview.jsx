@@ -1,9 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const Checkbox = require('../../react-index.js').Input.Checkbox;
+const Checkbox = require('../../react/input/Checkbox.jsx');
 
 const CheckboxPreview = () => (
   <div>

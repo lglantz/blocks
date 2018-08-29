@@ -1,9 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const RadioButtonGroup = require('../../react-index.js').Input.RadioButtonGroup;
+const RadioButtonGroup = require('../../react/input/RadioButtonGroup.jsx');
 
 const RadioButtonPreview = () => (
   <div>

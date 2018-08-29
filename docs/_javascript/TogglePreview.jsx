@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const Toggle = require('../../react-index.js').Input.Toggle;
+const Toggle = require('../../react/input/Toggle.jsx');
 
 const TogglePreview = () => (
   <div>

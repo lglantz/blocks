@@ -1,9 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const Dropdown = require('../../react-index.js').Dropdowns.Dropdown;
+const Dropdown = require('../../react/dropdowns/Dropdown.jsx');
 
 class DropdownPreview extends React.Component {
   constructor(props) {

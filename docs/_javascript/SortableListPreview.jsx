@@ -1,9 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const SortableList = require('../../react-index.js').SortableList;
+const SortableList = require('../../react/lists/SortableList.jsx');
 
 const SortableListPreview = () => (
   <div>

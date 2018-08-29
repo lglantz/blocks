@@ -1,11 +1,10 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const BlocksReactTabs = require('../../react-index.js').Tabs;
-const RadioTabs = BlocksReactTabs.RadioTabs;
-const LinkTabs = BlocksReactTabs.LinkTabs;
+const RadioTabs = require('../../react/tabs/RadioTabs.jsx');
+const LinkTabs = require('../../react/tabs/LinkTabs.jsx');
 
 const TabPreview = () => (
   <div>

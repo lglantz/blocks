@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 const ButtonPrimary = require('../../react/buttons/ButtonPrimary.jsx');
 const ButtonSecondary = require('../../react/buttons/ButtonSecondary.jsx');

@@ -1,11 +1,10 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const getPreviewComponent = require('./getPreviewComponent.jsx');
+const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const BlocksReactInput = require('../../react-index.js').Input;
-const TextField = BlocksReactInput.TextField;
-const TextFieldWithDropdown = BlocksReactInput.TextFieldWithDropdown;
+const TextField = require('../../react/input/TextField.jsx');
+const TextFieldWithDropdown = require('../../react/input/TextFieldWithDropdown.jsx');
 
 const INVALID_VALUE = 'Wrong';
 

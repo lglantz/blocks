@@ -14,59 +14,100 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
+const es = require('event-stream');
+const glob = require('glob');
 
 const jsonSass = require('gulp-json-sass');
 const jsonStylus = require('gulp-json-stylus');
 const concat = require('gulp-concat');
 
 
-gulp.task('dev:css', ['dev:jsonToStylus'], function () {
-  const plugins = [
-    autoprefixer(),
-    cssvariables({ preserve: true })
-  ];
+const cssPlugins = [
+  autoprefixer(),
+  cssvariables({ preserve: true })
+];
 
+// create SASS variables from variables.json
+gulp.task('dev:jsonToSass', () => {
+  return gulp.src('./blocks-styles/variables.json')
+    .pipe(jsonSass({
+      sass: true
+    }))
+    .pipe(gulp.dest('./blocks-styles'))
+});
+
+// create Stylus variables from variables.json
+gulp.task('stylusGeneration', () => {
+  return gulp.src('./blocks-styles/variables.json')
+          .pipe(jsonStylus({ namespace : "$" }))
+          .pipe(concat('variables.styl'))
+          .pipe(gulp.dest('./blocks-styles'));
+});
+
+// concat Stylus variable files into a single file
+gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
+  return gulp.src(['./blocks-styles/variables-base-fonts.styl', './blocks-styles/variables.styl', './blocks-styles/variables-base-root.styl'])
+          .pipe(concat('variables.styl'))
+          .pipe(gulp.dest('./blocks-styles'));
+});
+
+// compile separate Blocks Stylus files into a final CSS output file
+gulp.task('blocksCSSGeneration', () => {
   gulp.src('blocks-styles/_all.styl')
     .pipe(stylus({
       'include css': true
     }))
-    .pipe(postcss(plugins))
+    .pipe(postcss(cssPlugins))
     .pipe(rename('blocks.css'))
     .pipe(gulp.dest('.'));
+});
 
+// compile Blocks documentation Stylus files into a final CSS file for the documentation site
+gulp.task('blocksDocsCSSGeneration', () => {
   gulp.src('docs/_styl/blocks-docs.styl')
     .pipe(stylus({
       'include css': true
     }))
-    .pipe(postcss(plugins))
+    .pipe(postcss(cssPlugins))
     .pipe(gulp.dest('docs/css'));
+});
 
+// rebuild all CSS
+gulp.task('dev:css', ['dev:jsonToStylus', 'blocksCSSGeneration', 'blocksDocsCSSGeneration'], () => {
   gulp.src('blocks.css')
     .pipe(gulp.dest('docs/css/'));
 });
 
+// watch CSS files for changes
 gulp.task('watch:css', ['dev:jsonToStylus'], function () {
   gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl', 'fonts/fonts.css'], ['dev:css']);
 });
 
+// copy fonts into documentation site
 gulp.task('dev:fonts', function() {
   gulp.src(['fonts/*.eot', 'fonts/*.woff', 'fonts/*.woff2'])
     .pipe(gulp.dest('docs/css/'));
 });
 
+// copy SVG icons into documentation site
 gulp.task('dev:icons', function() {
   gulp.src('svgs/icon-*.svg') // TODO: this doesn't handle the CBRE svg
     .pipe(gulp.dest('docs/svgs/'));
 });
 
+const jekyllLogger = (buffer) => {
+  buffer.toString()
+    .split(/\n/)
+    .forEach((message) => gutil.log('Jekyll: ' + message));
+};
+
+// serve Jekyll site
 gulp.task('dev:jekyll', () => {
   const jekyll = child.spawn('jekyll', ['serve',
     '--source',
     'docs',
     '--destination',
     'docs/_site',
-    '--port', // TODO: move to _config.yml file?
-    '8080',
     '--watch',
     '--incremental',
     '--drafts',
@@ -74,17 +115,12 @@ gulp.task('dev:jekyll', () => {
     ''           // baseurl is blocks/ for use with github pages
   ]);
 
-  const jekyllLogger = (buffer) => {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
-  };
-
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
 
-const vendors = ['react', 'react-dom', 'react-router-dom'];
+// build vendor JS bundle
+const vendors = ['react', 'react-dom', 'react-router-dom', 'prop-types'];
 gulp.task('build:vendor', () => {
   const b = browserify({
     debug: true
@@ -99,79 +135,56 @@ gulp.task('build:vendor', () => {
   .pipe(source('vendor.js'))
   .pipe(buffer())
   .pipe(uglify())
-  .pipe(gulp.dest('./docs/lib/'))
+  .pipe(gulp.dest(path.join(__dirname, './docs/lib')))
   ;
 });
 
-const components = [
-  './docs/_javascript/AccordionPreview.jsx',
-  './docs/_javascript/AlertPreview.jsx',
-  './docs/_javascript/ButtonPreview.jsx',
-  './docs/_javascript/CheckboxPreview.jsx',
-  './docs/_javascript/DropdownPreview.jsx',
-  './docs/_javascript/ModalPreview.jsx',
-  './docs/_javascript/ProgressPreview.jsx',
-  './docs/_javascript/RadioButtonPreview.jsx',
-  './docs/_javascript/SortableListPreview.jsx',
-  './docs/_javascript/TabPreview.jsx',
-  './docs/_javascript/TextFieldPreview.jsx',
-  './docs/_javascript/TogglePreview.jsx'
-];
-gulp.task('dev:react', () => {
-  components.forEach((file) => {
-    const b = browserify({
-      entries: file,
-      extensions: ['.jsx'],
-      debug: true,
-      cache: {},
-      packageCache: {},
-      plugin: [watchify],
-      transform: [
-        babelify.configure({
-          presets: ['es2015', 'react']
-        })
-      ]
+// build a separate JS bundle for each React component
+gulp.task('dev:react', (done) => {
+  glob('./docs/_javascript/*.jsx', (err, files) => {
+    if (err) { done(err); }
+    const tasks = files.map((entry) => {
+      return createBundle(entry);
     });
-    let outFileName = file.split('/')[3];
-    outFileName = outFileName.substr(0, outFileName.length - 1);
+    return es.merge(tasks).on('end', done);
+  });
+  
+});
 
-    function bundle() {
-      return b.external(vendors)
-        .bundle()
-        .pipe(source(outFileName))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(gulp.dest('./docs/lib'));
-    }
-
-    b.on('update', bundle);
-
-    return bundle();
+// helper for creating React bundles
+const createBundle = (entry) => {
+  let b = browserify({
+    entries: [entry],
+    extensions: ['.jsx'],
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
+    transform: [
+      babelify.configure({
+        presets: ['es2015', 'react']
+      })
+    ]
   })
-});
+  .plugin(watchify);
 
-gulp.task('dev:jsonToSass', () => {
-  return gulp.src('./blocks-styles/variables.json')
-    .pipe(jsonSass({
-      sass: true
-    }))
-    .pipe(gulp.dest('./blocks-styles'))
-});
+  const bundle = () => {
+    const name = entry.split('/')[3].split('.')[0];
+    return b.external(vendors)
+      .bundle()
+      .pipe(source(`${name}.js`))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
+  }
 
-gulp.task('stylusGeneration', () => {
-  return gulp.src('./blocks-styles/variables.json')
-          .pipe(jsonStylus({ namespace : "$" }))
-          .pipe(concat('variables.styl'))
-          .pipe(gulp.dest('./blocks-styles'));
-});
+  b.on('update', bundle);
+  b.on('log', gutil.log);
 
-gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
-  return gulp.src(['./blocks-styles/variables-base-fonts.styl', './blocks-styles/variables.styl', './blocks-styles/variables-base-root.styl'])
-          .pipe(concat('variables.styl'))
-          .pipe(gulp.dest('./blocks-styles'));
+  return bundle();
+}
 
-})
-
+// build, serve, and watch documentation site
 gulp.task('server', [
   'dev:fonts',
   'dev:icons',
@@ -179,7 +192,6 @@ gulp.task('server', [
   'build:vendor',
   'dev:react',
   'dev:jekyll',
-  'watch:css',
   'dev:jsonToSass',
   'dev:jsonToStylus'
 ]);

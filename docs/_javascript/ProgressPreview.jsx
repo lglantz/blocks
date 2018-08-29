@@ -1,9 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const BlocksReactProgress = require('../../react-index.js').Progress;
-const Breadcrumbs = BlocksReactProgress.Breadcrumbs;
-const ProgressDots = BlocksReactProgress.ProgressDots;
+const Breadcrumbs = require('../../react/progress/Breadcrumbs.jsx');
+const ProgressDots = require('../../react/progress/ProgressDots.jsx');
 
 const ProgressPreview = () => (
   <div>

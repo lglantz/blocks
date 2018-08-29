@@ -1,11 +1,10 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const BlocksReactAlerts = require('../../react-index.js').Alerts;
-const SuccessAlert = BlocksReactAlerts.SuccessAlert;
-const InformationalAlert = BlocksReactAlerts.InformationalAlert;
-const WarningAlert = BlocksReactAlerts.WarningAlert;
-const ErrorAlert = BlocksReactAlerts.ErrorAlert;
+const SuccessAlert = require('../../react/alerts/SuccessAlert.jsx');
+const InformationalAlert = require('../../react/alerts/InformationalAlert.jsx');
+const WarningAlert = require('../../react/alerts/WarningAlert.jsx');
+const ErrorAlert = require('../../react/alerts/ErrorAlert.jsx');
 
 const AlertPreview = () => (
   <div>

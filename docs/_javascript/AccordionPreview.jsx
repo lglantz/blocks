@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom'); 
 
-const AccordionSection = require('../../react-index.js').Accordion;
+const AccordionSection = require('../../react/accordion/AccordionSection.jsx');
 
 const AccordionPreview = () => (
   <div>

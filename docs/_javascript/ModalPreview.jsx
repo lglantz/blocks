@@ -1,8 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const BaseModal = require('../../react-index.js').Modals.BaseModal;
-const ButtonPrimary = require('../../react-index.js').Buttons.ButtonPrimary;
+const BaseModal = require('../../react/modals/BaseModal.jsx');
+const ButtonPrimary = require('../../react/buttons/ButtonPrimary.jsx');
 
 class ModalPreview extends React.Component {
   constructor() {
