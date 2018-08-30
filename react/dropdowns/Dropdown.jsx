@@ -24,7 +24,7 @@ class Dropdown extends React.Component {
     }
     return (
       <button
-        className={`blx-dropdown-trigger ${this.props.isOpen ? 'active' : ''} ${this.props.isDisabled ? 'blx-disabled' : ''}`}
+        className={`blx-dropdown-trigger ${this.props.isOpen ? 'blx-active' : ''} ${this.props.isDisabled ? 'blx-disabled' : ''} ${!this.props.value ? 'blx-dropdown-trigger-placeholder' : ''}`}
         disabled={this.props.isDisabled}
         onClick={this.props.toggle}
       >

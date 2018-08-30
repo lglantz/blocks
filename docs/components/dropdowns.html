@@ -10,7 +10,7 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <p class="blx-dropdown-description">Here is a dropdown</p>
-      <button class="blx-dropdown-trigger active">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-active">
         Choose an option
       </button>
       <ul class="blx-dropdown-menu">
@@ -34,23 +34,9 @@ definition: An input that allows users to make a single selection from a pre-def
 {% capture dropdown_trigger_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
-      <button class="blx-dropdown-trigger">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder">
         Choose an option
       </button>
-      <ul class="blx-dropdown-menu blx-hidden">
-        <li class="blx-dropdown-item">
-          <button>Button option</button>
-        </li>
-        <li class="blx-dropdown-item">
-          <a href="#">Link option</a>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <button>Button option 2</button>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <a href="#">Link option 2</a>
-        </li>
-      </ul>
     </div>
   </div>
 {% endcapture %}
@@ -58,23 +44,9 @@ definition: An input that allows users to make a single selection from a pre-def
 {% capture dropdown_trigger_hover_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
-      <button class="blx-dropdown-trigger blx-hover">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-hover">
         Choose an option
       </button>
-      <ul class="blx-dropdown-menu blx-hidden">
-        <li class="blx-dropdown-item">
-          <button>Button option</button>
-        </li>
-        <li class="blx-dropdown-item">
-          <a href="#">Link option</a>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <button>Button option 2</button>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <a href="#">Link option 2</a>
-        </li>
-      </ul>
     </div>
   </div>
 {% endcapture %}
@@ -82,23 +54,19 @@ definition: An input that allows users to make a single selection from a pre-def
 {% capture dropdown_trigger_focus_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
-      <button class="blx-dropdown-trigger blx-focus">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-focus">
         Choose an option
       </button>
-      <ul class="blx-dropdown-menu blx-hidden">
-        <li class="blx-dropdown-item">
-          <button>Button option</button>
-        </li>
-        <li class="blx-dropdown-item">
-          <a href="#">Link option</a>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <button>Button option 2</button>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <a href="#">Link option 2</a>
-        </li>
-      </ul>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_filled_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        Selected option
+      </button>
     </div>
   </div>
 {% endcapture %}
@@ -106,23 +74,9 @@ definition: An input that allows users to make a single selection from a pre-def
 {% capture dropdown_trigger_disabled_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
-      <button class="blx-dropdown-trigger blx-disabled">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-disabled">
         Choose an option
       </button>
-      <ul class="blx-dropdown-menu blx-hidden">
-        <li class="blx-dropdown-item">
-          <button>Button option</button>
-        </li>
-        <li class="blx-dropdown-item">
-          <a href="#">Link option</a>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <button>Button option 2</button>
-        </li>
-        <li class="blx-dropdown-item blx-disabled">
-          <a href="#">Link option 2</a>
-        </li>
-      </ul>
     </div>
   </div>
 {% endcapture %}
@@ -130,7 +84,7 @@ definition: An input that allows users to make a single selection from a pre-def
 {% capture dropdown_trigger_open_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
-      <button class="blx-dropdown-trigger active">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-active">
         Choose an option
       </button>
       <ul class="blx-dropdown-menu">
@@ -164,6 +118,14 @@ definition: An input that allows users to make a single selection from a pre-def
       </span>
       <div class="doc-state-content">
         {{ dropdown_trigger_open_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Filled
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_filled_example }}
       </div>
     </div>
     <div class="l-flex-horizontal">

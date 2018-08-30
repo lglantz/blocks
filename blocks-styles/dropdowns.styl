@@ -7,12 +7,12 @@
   display: flex;
   flex-direction: column;
   min-width: 150px;
-  
+
   .blx-dropdown-description {
     display: inline-block;
     margin: 0;
   }
-  
+
   .blx-dropdown-trigger {
     position: relative;
     height: 40px;
@@ -24,10 +24,14 @@
     padding: 0 48px 0 16px;
     margin: 0;
     cursor: pointer;
-    
+
     background-color: $ui-00;
     border: 1px solid $ui-03;
-    color: $ui-07;
+    color: $text-01;
+
+    &.blx-dropdown-trigger-placeholder {
+      color: $ui-07;
+    }
 
     &.blx-disabled {
       opacity: 0.5;
@@ -50,7 +54,7 @@
       background-color: $brand-01;
     }
 
-    &.active::after {
+    &.blx-active::after {
       transform: rotate(180deg);
       transition: transform 300ms;
     }
@@ -75,7 +79,7 @@
       }
     }
   }
-  
+
   .blx-dropdown-menu {
     position: absolute;
     top: 100%;
@@ -86,12 +90,12 @@
     margin: 8px 0;
     padding: 8px 0;
     list-style-type: none;
-    
+
     background-color: $ui-00;
     border: solid 1px $ui-04;
     box-shadow: 0 3px 6px 0 $ui-04;
   }
-  
+
   .blx-dropdown-item {
     background: transparent;
     * {
@@ -111,20 +115,20 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       cursor: pointer;
-      
+
       color: $text-01;
 
       &:hover, &.blx-hover {
         text-decoration: none;
       }
-      
-      &:focus, &.blx-focus, &:active, &.active {
+
+      &:focus, &.blx-focus, &:active, &.blx-active {
         outline: none;
         color: $ui-00;
         background-color: $brand-01;
       }
     }
-    
+
     &:hover, &.blx-hover {
       background-color: $brand-01;
       color: $ui-00;

@@ -926,6 +926,10 @@ a.blx-button {
   background-color: var(--ui-00, #fff);
   border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
+.blx-dropdown .blx-dropdown-trigger.blx-dropdown-trigger-placeholder {
   color: #91a49e;
   color: var(--ui-07, #91a49e);
 }
@@ -952,7 +956,7 @@ a.blx-button {
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-dropdown .blx-dropdown-trigger.active::after {
+.blx-dropdown .blx-dropdown-trigger.blx-active::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   transition: -webkit-transform 300ms;
@@ -1058,7 +1062,7 @@ a.blx-button {
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-dropdown .blx-dropdown-item *.active {
+.blx-dropdown .blx-dropdown-item *.blx-active {
   outline: none;
   color: #fff;
   color: var(--ui-00, #fff);
