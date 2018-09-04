@@ -1,12 +1,11 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 
-const BlocksReactProgress = require('../../react-index.js').Progress;
-const Breadcrumbs = BlocksReactProgress.Breadcrumbs;
-const ProgressDots = BlocksReactProgress.ProgressDots;
+const Breadcrumbs = require('../../react/progress/Breadcrumbs.jsx');
+const ProgressDots = require('../../react/progress/ProgressDots.jsx');
 
 const ProgressPreview = () => (
-  <div className="l-flex-vertical doc-section">
-    <h4>Progress</h4>
+  <div>
     <ProgressDots
       name="design-page-progress"
       numSteps={7}
@@ -41,4 +40,5 @@ const ProgressPreview = () => (
   </div>
 );
 
-module.exports = ProgressPreview;
+const rootElement = document.getElementById('react-preview');
+ReactDOM.render(<ProgressPreview />, rootElement);

@@ -1,14 +1,13 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
 
-const BlocksReactAlerts = require('../../react-index.js').Alerts;
-const SuccessAlert = BlocksReactAlerts.SuccessAlert;
-const InformationalAlert = BlocksReactAlerts.InformationalAlert;
-const WarningAlert = BlocksReactAlerts.WarningAlert;
-const ErrorAlert = BlocksReactAlerts.ErrorAlert;
+const SuccessAlert = require('../../react/alerts/SuccessAlert.jsx');
+const InformationalAlert = require('../../react/alerts/InformationalAlert.jsx');
+const WarningAlert = require('../../react/alerts/WarningAlert.jsx');
+const ErrorAlert = require('../../react/alerts/ErrorAlert.jsx');
 
 const AlertPreview = () => (
-  <div className="l-flex-vertical doc-section">
-    <h4>Alerts</h4>
+  <div>
     <SuccessAlert
       message="Additional information or directions go here. Brevity is the soul of wit, however, text may wrap to another line in the off chance that we want the user hooked on phonics."
     />
@@ -24,4 +23,5 @@ const AlertPreview = () => (
   </div>
 );
 
-module.exports = AlertPreview;
+const rootElement = document.getElementById('react-preview');
+ReactDOM.render(<AlertPreview />, rootElement);
