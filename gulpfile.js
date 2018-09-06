@@ -80,13 +80,13 @@ gulp.task('dev:css', ['dev:jsonToStylus', 'blocksCSSGeneration', 'blocksDocsCSSG
 
 // watch CSS files for changes
 gulp.task('watch:css', ['dev:jsonToStylus'], function () {
-  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl', 'fonts/fonts.css'], ['dev:css']);
+  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['dev:css']);
 });
 
 // copy fonts into documentation site
 gulp.task('dev:fonts', function() {
   gulp.src(['fonts/*.eot', 'fonts/*.woff', 'fonts/*.woff2'])
-    .pipe(gulp.dest('docs/css/'));
+    .pipe(gulp.dest('docs/fonts/'));
 });
 
 // copy SVG icons into documentation site
