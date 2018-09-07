@@ -290,7 +290,7 @@ body {
   width: 210px;
   height: 100%;
   overflow-y: auto;
-  padding: 32px 32px;
+  padding: 32px 12px 32px 24px;
   background-color: #f5faf8;
   background-color: var(--ui-02, #f5faf8);
 }
