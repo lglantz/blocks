@@ -747,8 +747,8 @@ a.blx-button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-/* Hide the browser's default checkbox */
 /* Create a custom checkbox */
+/* Hide the browser's default checkbox */
 }
 .blx-checkbox .blx-label {
   font-size: 16px;
@@ -757,66 +757,6 @@ a.blx-button {
   line-height: 20px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
-}
-.blx-checkbox input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-/* When the checkbox is checked */
-}
-.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark {
-  background-color: #00b07d;
-  background-color: var(--brand-01, #00b07d);
-  border: 1px solid #00b07d;
-  border: 1px solid var(--brand-01, #00b07d);
-/* Show the checkmark when checked */
-}
-.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark:hover {
-  background-color: #009f6f;
-  background-color: var(--interactive, #009f6f);
-  border: 1px solid #009f6f;
-  border: 1px solid var(--interactive, #009f6f);
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
-}
-.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark.blx-hover {
-  background-color: #009f6f;
-  background-color: var(--interactive, #009f6f);
-  border: 1px solid #009f6f;
-  border: 1px solid var(--interactive, #009f6f);
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
-}
-.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark::after {
-  display: block;
-}
-.blx-checkbox input[type="checkbox"]:checked:focus + span {
-  background-color: #009f6f;
-  background-color: var(--interactive, #009f6f);
-  outline: none;
-  border: 1px solid #39cf94;
-  border: 1px solid var(--success-hex, #39cf94);
-}
-.blx-checkbox input[type="checkbox"]:checked.blx-focus + span {
-  background-color: #009f6f;
-  background-color: var(--interactive, #009f6f);
-  outline: none;
-  border: 1px solid #39cf94;
-  border: 1px solid var(--success-hex, #39cf94);
-}
-.blx-checkbox input[type="checkbox"]:focus + span {
-  outline: none;
-  border: 1px solid #39cf94;
-  border: 1px solid var(--success-hex, #39cf94);
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
-}
-.blx-checkbox input[type="checkbox"].blx-focus + span {
-  outline: none;
-  border: 1px solid #39cf94;
-  border: 1px solid var(--success-hex, #39cf94);
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-checkbox .blx-checkmark {
   position: absolute;
@@ -858,6 +798,88 @@ a.blx-button {
   background-color: var(--ui-00, #fff);
   border: 1px solid #d9e1e0;
   border: 1px solid var(--ui-04, #d9e1e0);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.blx-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+/* When the checkbox is checked */
+}
+.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark {
+  background-color: #00b07d;
+  background-color: var(--brand-01, #00b07d);
+  border: 1px solid #00b07d;
+  border: 1px solid var(--brand-01, #00b07d);
+/* Show the checkmark when checked */
+}
+.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark:hover {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  border: 1px solid #009f6f;
+  border: 1px solid var(--interactive, #009f6f);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark.blx-hover {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  border: 1px solid #009f6f;
+  border: 1px solid var(--interactive, #009f6f);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.blx-checkbox input[type="checkbox"]:checked ~ .blx-checkmark::after {
+  display: block;
+}
+.blx-checkbox input[type="checkbox"]:checked:focus + .blx-checkmark {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+  outline: none;
+  border: 1px solid #49a1ff;
+  border: 1px solid var(--selection, #49a1ff);
+}
+.blx-checkbox input[type="checkbox"]:checked.blx-focus + .blx-checkmark {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+  outline: none;
+  border: 1px solid #49a1ff;
+  border: 1px solid var(--selection, #49a1ff);
+}
+.blx-checkbox input[type="checkbox"]:checked:focus + .blx-checkmark::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 14px;
+  height: 14px;
+  border-radius: 5px;
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-checkbox input[type="checkbox"]:checked.blx-focus + .blx-checkmark::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 14px;
+  height: 14px;
+  border-radius: 5px;
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-checkbox input[type="checkbox"]:focus + .blx-checkmark {
+  outline: none;
+  border: 1px solid #49a1ff;
+  border: 1px solid var(--selection, #49a1ff);
+  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.blx-checkbox input[type="checkbox"].blx-focus + .blx-checkmark {
+  outline: none;
+  border: 1px solid #49a1ff;
+  border: 1px solid var(--selection, #49a1ff);
   box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
