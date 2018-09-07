@@ -207,9 +207,8 @@ body {
   height: 100%;
 }
 .header {
-  padding: 0 5%;
+  padding: 32px 5% 8px 5%;
   flex: 0 0 auto;
-  height: 32px;
 }
 .blocks-logo {
   display: block;
@@ -231,6 +230,9 @@ body {
 .blocks-heading {
   margin-bottom: 70px;
 }
+.landing-content {
+  padding: 50px 0 40px 0;
+}
 .design-page {
   height: 100%;
   width: 100%;
@@ -247,6 +249,19 @@ body {
 }
 .design-page-container {
   width: 100%;
+}
+.principles-container p {
+  margin: 12px 0;
+}
+.principles-container h5 {
+  margin-top: 32px;
+}
+.principles-container > div {
+  flex: 1 1 33%;
+  margin-right: 5%;
+}
+.principles-container > div:last-child {
+  margin-right: 0;
 }
 .snippet-container {
   overflow: hidden;
@@ -286,6 +301,11 @@ body {
 }
 .left-nav-panel .blx-body-caps {
   margin-top: 16px;
+}
+.left-nav-panel .category-title {
+  padding: 16px 0;
+  border-bottom: 2px solid #d9e1e0;
+  border-bottom: 2px solid var(--ui-04, #d9e1e0);
 }
 .doc-section {
   margin-bottom: 40px;

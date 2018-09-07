@@ -4,9 +4,8 @@ html, body {
 }
 
 .header {
-  padding: 0 5%;
+  padding: 32px 5% 8px 5%;
   flex: 0 0 auto;
-  height: 32px;
 }
 
 .blocks-logo {
@@ -30,6 +29,10 @@ html, body {
   margin-bottom: 70px;
 }
 
+.landing-content {
+  padding: 50px 0 40px 0;
+}
+
 .design-page {
   height: 100%;
   width: 100%;
@@ -49,6 +52,25 @@ html, body {
 
 .design-page-container {
   width: 100%;
+}
+
+.principles-container {
+  p {
+    margin: 12px 0;
+  }
+  
+  h5 {
+    margin-top: 32px;
+  }
+
+  & > div {
+    flex: 1 1 33%;
+    margin-right: 5%;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .snippet-container {
