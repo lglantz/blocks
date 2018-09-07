@@ -91,8 +91,11 @@ gulp.task('dev:fonts', function() {
 
 // copy SVG icons into documentation site
 gulp.task('dev:icons', function() {
-  gulp.src('svgs/icon-*.svg') // TODO: this doesn't handle the CBRE svg
+  gulp.src('svgs/*.svg')
     .pipe(gulp.dest('docs/svgs/'));
+
+  gulp.src('favicon.ico')
+    .pipe(gulp.dest('docs/'));
 });
 
 const jekyllLogger = (buffer) => {
