@@ -894,6 +894,7 @@ a.blx-button {
   display: flex;
   flex-direction: column;
   min-width: 150px;
+  max-width: 300px;
 }
 .blx-dropdown .blx-dropdown-description {
   display: inline-block;
@@ -903,13 +904,16 @@ a.blx-button {
   position: relative;
   height: 40px;
   border-radius: 7px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   text-align: left;
   padding: 0 48px 0 16px;
   margin: 0;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background-color: #fff;
   background-color: var(--ui-00, #fff);
   border: 1px solid #edf0ee;
@@ -999,8 +1003,8 @@ a.blx-button {
   background-color: var(--ui-00, #fff);
   border: solid 1px #d9e1e0;
   border: solid 1px var(--ui-04, #d9e1e0);
-  box-shadow: 0 3px 6px 0 #d9e1e0;
-  box-shadow: 0 3px 6px 0 var(--ui-04, #d9e1e0);
+  box-shadow: 0 3px 6px 0 rgba(0,72,51,0.25);
+  box-shadow: 0 3px 6px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .blx-dropdown .blx-dropdown-item {
   background: transparent;

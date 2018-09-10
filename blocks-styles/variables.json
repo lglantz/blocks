@@ -154,5 +154,4 @@
   "radio-selected-background-color" : "$brand-01",
   "radio-selected-hover-background-color" : "$interactive",
   "radio-selected-focus-background-color" : "$interactive"
-
 }
