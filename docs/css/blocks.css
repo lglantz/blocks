@@ -181,85 +181,55 @@ label {
 a {
   font-size: 16px;
   line-height: 20px;
-  color: #6f6bf8;
-  color: var(--information, #6f6bf8);
-  text-decoration: none;
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
+  cursor: pointer;
 }
 .blx-link {
   font-size: 16px;
   line-height: 20px;
-  color: #6f6bf8;
-  color: var(--information, #6f6bf8);
-  text-decoration: none;
-}
-a:hover,
-.blx-link:hover,
-a.blx-hover,
-.blx-link.blx-hover,
-a:focus,
-.blx-link:focus,
-a.blx-focus,
-.blx-link.blx-focus {
+  color: #009f6f;
+  color: var(--interactive, #009f6f);
   cursor: pointer;
-  text-decoration: underline;
 }
 a:hover {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
+  color: #008b61;
+  color: var(--interactive-hover, #008b61);
 }
 .blx-link:hover {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
+  color: #008b61;
+  color: var(--interactive-hover, #008b61);
 }
 a.blx-hover {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
+  color: #008b61;
+  color: var(--interactive-hover, #008b61);
 }
 .blx-link.blx-hover {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
+  color: #008b61;
+  color: var(--interactive-hover, #008b61);
 }
 a:focus {
-  background-color: #edf0ee;
-  background-color: var(--ui-03, #edf0ee);
   outline: none;
-  text-decoration: none;
-  color: #6f6bf8;
-  color: var(--information, #6f6bf8);
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
 }
 .blx-link:focus {
-  background-color: #edf0ee;
-  background-color: var(--ui-03, #edf0ee);
   outline: none;
-  text-decoration: none;
-  color: #6f6bf8;
-  color: var(--information, #6f6bf8);
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
 }
 a.blx-focus {
-  background-color: #edf0ee;
-  background-color: var(--ui-03, #edf0ee);
   outline: none;
-  text-decoration: none;
-  color: #6f6bf8;
-  color: var(--information, #6f6bf8);
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
 }
 .blx-link.blx-focus {
-  background-color: #edf0ee;
-  background-color: var(--ui-03, #edf0ee);
   outline: none;
-  text-decoration: none;
-  color: #6f6bf8;
-  color: var(--information, #6f6bf8);
+  color: #49a1ff;
+  color: var(--selection, #49a1ff);
 }
-a.blx-disabled {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
-  opacity: 0.5;
-  pointer-events: none;
-}
+a.blx-disabled,
 .blx-link.blx-disabled {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
   opacity: 0.5;
   pointer-events: none;
 }
