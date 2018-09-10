@@ -1,0 +1,71 @@
+.blx-popover-text {
+  margin-right: 16px;
+}
+
+.blx-popover-trigger {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 25px;
+  height: 24px;
+
+  .blx-icon {
+    background-color: $interactive;
+  }
+  &:focus, &.focus {
+    .blx-icon {
+      background-color: $selection;
+    }
+  }
+}
+
+.blx-popover {
+  .blx-dropdown-menu {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: -10px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $ui-04;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: -9px;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 9px solid $ui-00;
+    }
+    
+    &.blx-popover-is-left {
+      left: -12px;
+      
+      &::before {
+        left: 15px;
+      }
+      &::after {
+        left: 16px;
+      }
+    }
+    
+    &.blx-popover-is-right {
+      left: calc(-100% + 38px);
+      
+      &::before {
+        right: 15px;
+      }
+      &::after {
+        right: 16px;
+      }
+    }
+  }
+}

@@ -895,7 +895,7 @@ a.blx-button {
   cursor: pointer;
 }
 .blx-dropdown-wrapper {
-  display: inline-block;
+  display: inline-flex;
 }
 .blx-dropdown {
   position: relative;
@@ -1026,7 +1026,7 @@ a.blx-button {
   background: transparent;
   border: none;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -1089,6 +1089,72 @@ a.blx-button {
   color: #fff;
   color: var(--ui-00, #fff);
 }
+.blx-popover-text {
+  margin-right: 16px;
+}
+.blx-popover-trigger {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 25px;
+  height: 24px;
+}
+.blx-popover-trigger .blx-icon {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-popover-trigger:focus .blx-icon {
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
+}
+.blx-popover-trigger.focus .blx-icon {
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
+}
+.blx-popover .blx-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #d9e1e0;
+  border-bottom: 10px solid var(--ui-04, #d9e1e0);
+}
+.blx-popover .blx-dropdown-menu::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -9px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #fff;
+  border-bottom: 9px solid var(--ui-00, #fff);
+}
+.blx-popover .blx-dropdown-menu.blx-popover-is-left {
+  left: -12px;
+}
+.blx-popover .blx-dropdown-menu.blx-popover-is-left::before {
+  left: 15px;
+}
+.blx-popover .blx-dropdown-menu.blx-popover-is-left::after {
+  left: 16px;
+}
+.blx-popover .blx-dropdown-menu.blx-popover-is-right {
+  left: calc(-100% + 38px);
+}
+.blx-popover .blx-dropdown-menu.blx-popover-is-right::before {
+  right: 15px;
+}
+.blx-popover .blx-dropdown-menu.blx-popover-is-right::after {
+  right: 16px;
+}
 .blx-icon {
   display: inline-block;
   width: 24px;
@@ -1108,12 +1174,12 @@ a.blx-button {
   background-color: #6f6bf8;
   background-color: var(--information, #6f6bf8);
 }
-.blx-icon-down-arrow {
+.blx-icon-down {
   height: 12px;
   -webkit-mask: url("../svgs/icon-down.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-down.svg") no-repeat 50% 50%;
 }
-.blx-icon-up-arrow {
+.blx-icon-up {
   -webkit-mask: url("../svgs/icon-up.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-up.svg") no-repeat 50% 50%;
 }

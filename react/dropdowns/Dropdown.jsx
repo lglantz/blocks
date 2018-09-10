@@ -53,6 +53,7 @@ class Dropdown extends React.Component {
                   item = (
                     <a
                       href={option.href}
+                      disabled={option.disabled}
                     >
                       {option.text}
                     </a>
@@ -60,6 +61,7 @@ class Dropdown extends React.Component {
                 } else {
                   item = (
                     <button
+                      disabled={option.disabled}
                       onClick={() => this.onSelect(option)}
                     >
                       {option.text}
@@ -67,7 +69,7 @@ class Dropdown extends React.Component {
                   );
                 }
                 return (
-                  <li className="blx-dropdown-item" key={option.text}>
+                  <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text}>
                     {item}
                   </li>
                 );
@@ -95,6 +97,7 @@ Dropdown.propTypes = {
       PropTypes.string,
       PropTypes.number
     ]),
+    disabled: PropTypes.bool,
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number

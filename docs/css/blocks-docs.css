@@ -263,6 +263,9 @@ body {
 .principles-container > div:last-child {
   margin-right: 0;
 }
+.tall-content {
+  height: 225px;
+}
 .snippet-container {
   overflow: hidden;
   border-radius: 7px;

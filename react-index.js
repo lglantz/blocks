@@ -12,7 +12,8 @@ module.exports = {
   },
   Dropdowns: {
     ComboBox: require('./react/dropdowns/ComboBox.jsx'),
-    Dropdown: require('./react/dropdowns/Dropdown.jsx')
+    Dropdown: require('./react/dropdowns/Dropdown.jsx'),
+    PopoverMenu: require('./react/dropdowns/PopoverMenu.jsx')
   },
   Input: {
     Checkbox: require('./react/input/Checkbox.jsx'),
