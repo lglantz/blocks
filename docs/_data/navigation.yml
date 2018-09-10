@@ -1,3 +1,23 @@
+- title: Welcome
+  url: /
+  section: Getting Started
+
+# - title: Designers
+#   url: /#
+#   section: Getting Started
+
+# - title: Developers
+#   url: /#
+#   section: Getting Started
+
+# - title: FAQ
+#   url: /#
+#   section: Getting Started
+
+# - title: How to Contribute
+#   url: /#
+#   section: Getting Started
+
 - title: Colors & Shadows
   url: styles/colors
   section: Styles
