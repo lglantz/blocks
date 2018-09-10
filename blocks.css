@@ -525,8 +525,8 @@ h6 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.25);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
+  box-shadow: 0 1px 3px 0 rgba(0,72,51,0.25);
+  box-shadow: 0 1px 3px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .blx-button .blx-icon {
   position: relative;
@@ -542,13 +542,13 @@ h6 {
 }
 .blx-button:hover {
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+  box-shadow: 0 1px 3px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 1px 3px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-button.blx-hover {
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+  box-shadow: 0 1px 3px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 1px 3px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-button.blx-primary {
   background-color: #009f6f;
@@ -609,20 +609,20 @@ h6 {
 .blx-button:focus {
   outline: none;
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+  box-shadow: 0 1px 3px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 1px 3px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-button:active {
   outline: none;
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+  box-shadow: 0 1px 3px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 1px 3px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-button.blx-focus {
   outline: none;
   text-decoration: none;
-  box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
-  box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+  box-shadow: 0 1px 3px 0 rgba(0,72,51,0.35);
+  box-shadow: 0 1px 3px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
 .blx-button:focus.blx-primary {
   border: 2px solid #49a1ff;
@@ -647,6 +647,39 @@ h6 {
   background-color: var(--interactive-hover, #008b61);
   color: #fff;
   color: var(--ui-00, #fff);
+}
+.blx-button:focus.blx-primary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border: 1px solid #fff;
+  border: 1px solid var(--ui-00, #fff);
+}
+.blx-button:active.blx-primary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border: 1px solid #fff;
+  border: 1px solid var(--ui-00, #fff);
+}
+.blx-button.blx-focus.blx-primary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border: 1px solid #fff;
+  border: 1px solid var(--ui-00, #fff);
 }
 .blx-button:focus.blx-secondary {
   border: 2px solid #49a1ff;
