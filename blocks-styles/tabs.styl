@@ -7,13 +7,7 @@
       position: absolute;
       left: -9999px;
       opacity: 0;
-      cursor: pointer;
     }
-  }
-  
-  &.blx-disabled {
-    opacity: 0.5;
-    pointer-events: none;
   }
   
   .blx-tab-item {
@@ -22,65 +16,89 @@
     vertical-align: middle;
     
     font-weight: $medium-weight;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 18px;
+    
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
     
     color: $text-02;
     border: none;
     
-    &.blx-active {
-      color: $brand-01;
-    }
-    
-    &:hover, &.blx-hover {
-      cursor: pointer;
-      text-decoration: none;
+    &:active, &.blx-active {
       color: $interactive;
     }
-    
-    &:focus, &:active, &.blx-focus {
+    &:hover, &.blx-hover {
+      text-decoration: none;
+      color: $interactive-hover;
+    }
+    &:focus, &.blx-focus {
       outline: none;
       color: $selection;
       background: transparent;
     }
   }
   
-  input[type="radio"]:focus + .blx-tab-item,
-  input[type="radio"]:active + .blx-tab-item {
+  input[type="radio"]:checked + .blx-tab-item {
+    color: $interactive;
+  }
+  input[type="radio"]:focus + .blx-tab-item {
     color: $selection;
   }
-  
-  input[type="radio"]:checked + .blx-tab-item {
-    color: $brand-01;
+  input[type="radio"]:hover + .blx-tab-item {
+    color: $interactive-hover;
   }
 }
 
 .blx-horizontal-tabs {
   display: inline-flex;
   
+  input[type="radio"]:checked + .blx-tab-item {
+    border-bottom: 4px solid $interactive;
+  }
+  input[type="radio"]:focus + .blx-tab-item {
+    border-bottom: 4px solid $selection;
+  }
+  input[type="radio"]:hover + .blx-tab-item {
+    border-bottom: 4px solid $interactive-hover;
+  }
+  
   .blx-tab-item {
     margin: 10px 16px;
     padding: 4px 0;
     
     border-bottom: 4px solid transparent;
-    &:hover, &.blx-hover {
+    &:active, &.blx-active {
       border-bottom: 4px solid $interactive;
     }
-    &.blx-active {
-      border-bottom: 4px solid $brand-01;
+    &:hover, &.blx-hover {
+      border-bottom: 4px solid $interactive-hover;
     }
-    &:focus, &:active, &.blx-focus {
+    &:focus, &.blx-focus {
       border-bottom: 4px solid $selection;
     }
   }
   
-  input[type="radio"]:checked + .blx-tab-item {
-    border-bottom: 4px solid $brand-01;
+  &.blx-disabled {
+    .blx-tab-item {
+      border-bottom: 4px solid transparent;
+    }
   }
 }
 
 .blx-vertical-tabs {
   display: block;
+  
+  input[type="radio"]:checked + .blx-tab-item {
+    border-left: 4px solid $interactive;
+  }
+  input[type="radio"]:focus + .blx-tab-item {
+    border-left: 4px solid $selection;
+  }
+  input[type="radio"]:hover + .blx-tab-item {
+    border-left: 4px solid $interactive-hover;
+  }
   
   .blx-tab-item {
     display: block;
@@ -89,18 +107,35 @@
     padding: 4px 8px;
     
     border-left: 4px solid transparent;
-    &:hover, &.blx-hover {
+    &:active, &.blx-active {
       border-left: 4px solid $interactive;
     }
-    &.blx-active {
-      border-left: 4px solid $brand-01;
+    &:hover, &.blx-hover {
+      border-left: 4px solid $interactive-hover;
     }
-    &:focus, &:active, &.blx-focus {
+    &:focus, &.blx-focus {
       border-left: 4px solid $selection;
     }
   }
   
-  input[type="radio"]:checked + .blx-tab-item {
-    border-left: 4px solid $brand-01;
+  &.blx-disabled {
+    .blx-tab-item {
+      border-left: 4px solid transparent;
+    }
+  }
+}
+
+.blx-disabled {
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+  
+  input[type="radio"] {
+    pointer-events: none;
+  }
+  
+  .blx-tab-item {
+    color: $text-02;
+    border-color: transparent;
   }
 }
