@@ -1000,7 +1000,6 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
   width: 100%;
   border-radius: 7px;
   z-index: 1;
@@ -1115,6 +1114,12 @@ a.blx-button {
   background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
+.blx-popover {
+  min-width: auto;
+}
+.blx-popover .blx-dropdown-menu {
+  min-width: 150px;
+}
 .blx-popover .blx-dropdown-menu::before {
   content: "";
   position: absolute;
@@ -1138,7 +1143,7 @@ a.blx-button {
   border-bottom: 9px solid var(--ui-00, #fff);
 }
 .blx-popover .blx-dropdown-menu.blx-popover-is-left {
-  left: -12px;
+  left: -50%;
 }
 .blx-popover .blx-dropdown-menu.blx-popover-is-left::before {
   left: 15px;
@@ -1147,7 +1152,7 @@ a.blx-button {
   left: 16px;
 }
 .blx-popover .blx-dropdown-menu.blx-popover-is-right {
-  left: calc(-100% + 38px);
+  right: -50%;
 }
 .blx-popover .blx-dropdown-menu.blx-popover-is-right::before {
   right: 15px;
