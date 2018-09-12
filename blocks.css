@@ -1187,23 +1187,20 @@ a.blx-button {
           transform: translate(-50%, -50%);
   width: 600px;
   max-height: 90%;
-  padding: 40px;
+  padding: 24px 40px 32px 40px;
   z-index: 1001;
   border-radius: 3px;
   border: solid 1px #d9e1e0;
   border: solid 1px var(--ui-04, #d9e1e0);
   background-color: #fff;
   background-color: var(--ui-00, #fff);
-  box-shadow: 0 3px 6px 0 #d9e1e0;
-  box-shadow: 0 3px 6px 0 var(--ui-04, #d9e1e0);
+  box-shadow: 0 3px 6px 0 rgba(0,72,51,0.25);
+  box-shadow: 0 3px 6px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
 .blx-modal .blx-icon-close {
-  float: right;
-}
-.blx-modal .blx-icon-close:focus {
-  outline: none;
-  border: 1px solid #49a1ff;
-  border: 1px solid var(--selection, #49a1ff);
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 .blx-modal .blx-modal-buttons {
   display: flex;

@@ -5,21 +5,19 @@
   transform: translate(-50%, -50%);
   width: 600px;
   max-height: 90%;
-  padding: 40px;
+  padding: 24px 40px 32px 40px;
   z-index: 1001;
 
   border-radius: 3px;
 
   border: solid 1px $ui-04;
   background-color: $ui-00;
-  box-shadow: 0 3px 6px 0 $ui-04;
+  box-shadow: 0 3px 6px 0 $interactive-shadow;
 
   .blx-icon-close {
-    float: right;
-    &:focus {
-      outline: none;
-      border: 1px solid $selection;
-    }
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 
   .blx-modal-buttons {
