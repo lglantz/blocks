@@ -53,6 +53,11 @@
   section: Components
   subsection: Inputs
 
+- title: Popover Menus
+  url: components/popovers
+  section: Components
+  subsection: Inputs
+
 - title: Radio Buttons
   url: components/radiobuttons
   section: Components
