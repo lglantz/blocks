@@ -117,7 +117,7 @@
 
   "checkbox-unselected-border-color" : "$ui-04",
   "checkbox-unselected-hover-border-color" : "$ui-04",
-  "checkbox-unselected-focus-border-color" : "$success",
+  "checkbox-unselected-focus-border-color" : "$selection",
 
   "checkbox-unselected-background-color" : "$ui-00",
   "checkbox-unselected-hover-background-color" : "$ui-00",
@@ -125,7 +125,7 @@
 
   "checkbox-selected-border-color" : "$brand-01",
   "checkbox-selected-hover-border-color" : "$interactive",
-  "checkbox-selected-focus-border-color" : "$success",
+  "checkbox-selected-focus-border-color" : "$selection",
 
   "checkbox-selected-background-color" : "$brand-01",
   "checkbox-selected-hover-background-color" : "$interactive",
@@ -141,7 +141,7 @@
 
   "radio-unselected-border-color" : "$ui-04",
   "radio-unselected-hover-border-color" : "$ui-04",
-  "radio-unselected-focus-border-color" : "$success",
+  "radio-unselected-focus-border-color" : "$selection",
 
   "radio-unselected-background-color" : "$ui-00",
   "radio-unselected-hover-background-color" : "$ui-00",
@@ -154,5 +154,4 @@
   "radio-selected-background-color" : "$brand-01",
   "radio-selected-hover-background-color" : "$interactive",
   "radio-selected-focus-background-color" : "$interactive"
-
 }

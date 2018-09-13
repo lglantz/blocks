@@ -3,7 +3,7 @@ layout: componentSection
 title: Radio Buttons
 status: Design review
 version: v.0
-definition: An input that allows the user to select a single option from a group.
+definition: Buttons that allow users to make a single selection from a list of similar and/or qualitative options. Use dropdowns instead when the user needs to select from a much longer list of familiar and/or quantitative options.
 ---
 
 {% capture radio_example_checked %}
@@ -31,10 +31,10 @@ definition: An input that allows the user to select a single option from a group
 {% endcapture %}
 
 {% capture radio_example_hovered_unchecked %}
-  <label class="blx-radio">
+  <label class="blx-radio blx-hover">
     <div class="blx-radio-label">Unselected, Hover</div>
     <input type="radio" name="radio-example-2" />
-    <span class="blx-radio-check blx-hover"></span>
+    <span class="blx-radio-check"></span>
   </label>
 {% endcapture %}
 
@@ -55,18 +55,18 @@ definition: An input that allows the user to select a single option from a group
 {% endcapture %}
 
 {% capture radio_example_disabled_checked %}
-  <label class="blx-radio">
+  <label class="blx-radio blx-disabled">
     <div class="blx-radio-label">Selected, Disabled</div>
     <input type="radio" name="radio-example-4" checked disabled />
-    <span class="blx-radio-check blx-disabled"></span>
+    <span class="blx-radio-check"></span>
   </label>
 {% endcapture %}
 
 {% capture radio_example_disabled_unchecked %}
-  <label class="blx-radio">
+  <label class="blx-radio blx-disabled">
     <div class="blx-radio-label">Unselected, Disabled</div>
     <input type="radio" name="radio-example-4" disabled />
-    <span class="blx-radio-check blx-disabled"></span>
+    <span class="blx-radio-check"></span>
   </label>
 {% endcapture %}
 
@@ -102,10 +102,10 @@ definition: An input that allows the user to select a single option from a group
           <input type="radio" name="radio-hover" checked />
           <span class="blx-radio-check blx-hover"></span>
         </label>
-        <label class="blx-radio">
+        <label class="blx-radio blx-hover">
           <div class="blx-radio-label">Hover Unselected</div>
           <input type="radio" name="radio-hover" />
-          <span class="blx-radio-check blx-hover"></span>
+          <span class="blx-radio-check"></span>
         </label>
       </div>
     </div>
@@ -125,15 +125,15 @@ definition: An input that allows the user to select a single option from a group
     </div>
     <div class="l-flex-horizontal">
       <div class="doc-state-content">
-        <label class="blx-radio">
+        <label class="blx-radio blx-disabled">
           <div class="blx-radio-label">Disabled Selected</div>
           <input type="radio" name="radio-disabled" checked disabled/>
-          <span class="blx-radio-check blx-disabled"></span>
+          <span class="blx-radio-check"></span>
         </label>
-        <label class="blx-radio">
+        <label class="blx-radio blx-disabled">
           <div class="blx-radio-label">Disabled Unselected</div>
           <input type="radio" name="radio-disabled" disabled />
-          <span class="blx-radio-check blx-disabled"></span>
+          <span class="blx-radio-check"></span>
         </label>
       </div>
     </div>

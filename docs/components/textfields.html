@@ -8,36 +8,38 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 
 {% capture text_field_example %}
   <div class="blx-text-field">
-    <label>Text input label</label>
-    <input type="text" placeholder="e.g. Text input" />
+    <input type="text" placeholder="Placeholder text" />
+  </div>
+{% endcapture %}
+
+{% capture text_field_label_example %}
+  <div class="blx-text-field">
+    <label>Text input label sample sample long title</label>
+    <input type="text" placeholder="Placeholder text" />
   </div>
 {% endcapture %}
 
 {% capture text_field_hover_example %}
   <div class="blx-text-field">
-    <label>Text input label</label>
-    <input type="text" placeholder="e.g. Text input" class="blx-hover" />
+    <input type="text" placeholder="Placeholder text" class="blx-hover" />
   </div>
 {% endcapture %}
 
 {% capture text_field_focus_example %}
   <div class="blx-text-field">
-    <label>Text input label</label>
-    <input type="text" placeholder="e.g. Text input" class="blx-focus" />
+    <input type="text" placeholder="Placeholder text" class="blx-focus" />
   </div>
 {% endcapture %}
 
 {% capture text_field_disabled_example %}
   <div class="blx-text-field blx-disabled">
-    <label>Text input label</label>
-    <input type="text" placeholder="Can't touch this" disabled />
+    <input type="text" placeholder="Placeholder text" disabled />
   </div>
 {% endcapture %}
 
 {% capture text_field_filled_example %}
   <div class="blx-text-field">
-    <label>Text input label</label>
-    <input type="text" value="More than a placeholder" />
+    <input type="text" value="Text input" />
   </div>
 {% endcapture %}
 
@@ -47,18 +49,28 @@ definition: 'An input for freeform data entry. It supports a number of input typ
       <label>Text input label</label>
       <span class="blx-invalid-text-field-marker">*</span>
     </div>
-    <input type="text" class="invalid" value="Wrongggg." />
-    <span class="blx-invalid-text-field-message">My text is invalid</span>
+    <input type="text" class="blx-invalid" placeholder="e.g. Text input" />
+    <span class="blx-invalid-text-field-message">Required field</span>
   </div>
 {% endcapture %}
 
-{% capture example %}
-  {{ text_field_example }}
-  {{ text_field_disabled_example }}
-  {{ text_field_invalid_example }}
+{% capture text_field_invalid_example2 %}
+  <div class="blx-text-field">
+    <label></label>
+    <input type="text" class="blx-invalid" value="Placeholder text" />
+    <span class="blx-invalid-text-field-message">Error information</span>
+  </div>
+  <div class="blx-text-field">
+    <div>
+      <label>Text input label</label>
+      <span class="blx-invalid-text-field-marker">*</span>
+    </div>
+    <input type="text" class="blx-invalid" placeholder="e.g. Text input" />
+    <span class="blx-invalid-text-field-message">Required field</span>
+  </div>
 {% endcapture %}
 
-{% capture example2 %}
+{% capture text_field_prefix_suffix_example %}
   <div class="blx-text-field">
     <label>Sample text field with prefix/suffix</label>
     <div class="blx-text-field-container">
@@ -67,6 +79,74 @@ definition: 'An input for freeform data entry. It supports a number of input typ
       <input type="text" placeholder="Text input">
     </div>
   </div>
+{% endcapture %}
+
+{% capture text_field_prefix_suffix_example2 %}
+  <div class="blx-text-field blx-disabled">
+    <label>Text input label</label>
+    <div class="blx-text-field-container">
+      <span class="blx-text-field-prefix">$</span>
+      <input type="text" value="100.00" disabled />
+    </div>
+  </div>
+  <div class="blx-text-field">
+    <label>Text input label</label>
+    <div class="blx-text-field-container">
+      <span class="blx-text-field-prefix">$</span>
+      <span class="blx-text-field-suffix">USD</span>
+      <input type="text" value="100.00" />
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture text_field_dropdown_example %}
+  <div class="blx-text-field-with-dropdown">
+    <div class="blx-text-field">
+      <label>Text input label</label>
+      <div class="blx-text-field-container">
+        <input type="text" value="100,000" />
+      </div>
+    </div>
+    <div class="blx-dropdown-wrapper">
+      <div class="blx-dropdown">
+        <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder">
+          ft
+        </button>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture text_field_helper_example %}
+  <div class="blx-text-field">
+    <div class="blx-text-field-container">
+      <input type="text" value="Text input">
+      <span class="blx-text-field-helper">34/150</span>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture text_field_overflow_example %}
+  <div class="blx-text-field">
+    <div class="blx-text-field-container">
+      <input type="text" value="On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin." />
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture text_field_multiline_overflow_example %}
+  <div class="blx-text-field blx-multiline">
+    <div class="blx-text-field-container">
+      <textarea rows="5">On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin.</textarea>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture example %}
+  {{ text_field_example }}
+  {{ text_field_disabled_example }}
+  {{ text_field_invalid_example }}
+  {{ text_field_prefix_suffix_example }}
 {% endcapture %}
 
 <!-- state & behavior section -->
@@ -79,6 +159,22 @@ definition: 'An input for freeform data entry. It supports a number of input typ
       </span>
       <div class="doc-state-content">
         {{ text_field_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Default with text label
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_label_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Filled
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_filled_example }}
       </div>
     </div>
     <div class="l-flex-horizontal">
@@ -105,22 +201,63 @@ definition: 'An input for freeform data entry. It supports a number of input typ
         {{ text_field_disabled_example }}
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Edge cases section -->
+<div class="l-flex-vertical doc-section">
+  <h4>Edge Cases</h4>
+  <div class="l-flex-vertical">
     <div class="l-flex-horizontal">
       <span class="doc-state-title blx-caption">
-        Idle, Filled
+        Prefix or Suffix
       </span>
       <div class="doc-state-content">
-        {{ text_field_filled_example }}
+        {{ text_field_prefix_suffix_example2 }}
       </div>
     </div>
     <div class="l-flex-horizontal">
       <span class="doc-state-title blx-caption">
-        Validation
+        Connected fields
       </span>
       <div class="doc-state-content">
-        {{ text_field_invalid_example }}
+        {{ text_field_dropdown_example }}
       </div>
     </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Error
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_invalid_example2 }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Helper text
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_helper_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Overflow
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_overflow_example }}
+      </div>
+    </div>
+<!--
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Multi-line overflow
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_multiline_overflow_example }}
+      </div>
+    </div>
+-->
   </div>
 </div>
 
@@ -135,5 +272,4 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 <div class="design-page-container">
   <h4>Code Snippets</h4>
   {% include snippet.html content=example %}
-  {% include snippet.html content=example2 %}
 </div>

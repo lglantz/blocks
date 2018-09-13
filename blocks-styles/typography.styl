@@ -10,27 +10,19 @@ blxBaseText() {
 blxLink() {
   font-size: $base-font-size;
   line-height: 20px;
-  color: $information;
-  text-decoration: none;
-
-  &:hover, &.blx-hover, &:focus, &.blx-focus {
-    cursor: pointer;
-    text-decoration: underline;
-  }
+  color: $interactive;
+  cursor: pointer;
 
   &:hover, &.blx-hover {
-    color: $text-01;
+    color: $interactive-hover;
   }
 
   &:focus, &.blx-focus {
-    background-color: $ui-03;
     outline: none;
-    text-decoration: none;
-    color: $information;
+    color: $selection;
   }
 
   &.blx-disabled {
-    color: $text-01;
     opacity: 0.5;
     pointer-events: none;
   }

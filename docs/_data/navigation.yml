@@ -74,6 +74,5 @@
   subsection: Navigation
 
 - title: Tabs
-  url: components/tabs
-  section: Components
-  subsection: Navigation
+  url: patterns/tabs
+  section: Patterns

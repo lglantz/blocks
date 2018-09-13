@@ -21,7 +21,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  box-shadow: 0 2px 4px 0 $button-shadow-color;
+  box-shadow: 0 1px 3px 0 $button-shadow-color;
   
   .blx-icon {
     position: relative;
@@ -40,7 +40,7 @@
 
   &:hover, &.blx-hover {
     text-decoration: none;
-    box-shadow: 0 2px 4px 0 $button-hover-shadow-color;
+    box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
   }
 
   &.blx-primary {
@@ -78,12 +78,23 @@
   &:focus, &:active, &.blx-focus {
     outline: none;
     text-decoration: none;
-    box-shadow: 0 2px 4px 0 $button-hover-shadow-color;
+    box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
 
     &.blx-primary {
       border: 2px solid $primary-button-focus-border-color;
       background-color: $primary-button-focus-background-color;
       color: $primary-button-focus-text-color;
+      
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        border: 1px solid $ui-00;
+      }
     }
 
     &.blx-secondary {

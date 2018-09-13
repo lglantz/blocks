@@ -5,20 +5,36 @@
 .blx-text-field {
   display: inline-flex;
   flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 19px;
+  min-width: 150px;
+  max-width: 484px;
+  width: 300px;
 
   label {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
-
+    margin-bottom: 6px;
     color: $text-01;
   }
-
+  
   input {
     height: 40px;
-    font-size: 16px;
-    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  textarea {
+    resize: none;
+  }
+
+  input, textarea {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
     border-radius: $base-border-radius;
-    padding: 11px 16px 9px 16px;
+    padding: 11px 16px;
 
     background-color: $ui-00;
     border: 1px solid $ui-03;
@@ -79,14 +95,23 @@
       padding-right: 40px;
     }
   }
+  
+  .blx-invalid-text-field-marker,
+  .blx-invalid-text-field-message,
+  .blx-text-field-helper {
+    font-size: 12px;
+    line-height: 16px;
+  }
 
   .blx-invalid-text-field-marker {
-    color: $error;
+    color: $text-01;
   }
 
   .blx-invalid-text-field-message {
-    font-size: 12px;
-    line-height: 18px;
+    color: $error;
+  }
+  
+  .blx-text-field-helper {
     color: $text-02;
   }
 }

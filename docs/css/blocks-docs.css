@@ -325,7 +325,7 @@ body {
   flex: 0 0 150px;
 }
 .doc-state-content {
-  flex: 0 0 250px;
+  flex: 1 0 250px;
 }
 .doc-state-title,
 .doc-state-content {

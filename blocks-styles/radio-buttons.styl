@@ -3,55 +3,18 @@
   display: block;
   position: relative;
   padding-left: 35px;
-  margin: 9px 0;
+  margin: 9px 0 9px 32px;
   cursor: pointer;
   font-size: 22px;
   user-select: none;
   
   .blx-radio-label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: $normal-weight;
     text-align: left;
     line-height: 20px;
     
     color: $radio-text-color;
-  }
-  
-  /* Hide the browser's default radio button */
-  input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    
-    /* When the radio button is checked */
-    &:checked ~ .blx-radio-check {
-      border: 1px solid $radio-selected-border-color;
-      
-      &:hover, &.blx-hover {
-        border: 1px solid $radio-selected-hover-border-color;
-        box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
-      }
-      
-      /* Show the checkmark when checked */
-      &::after {
-        display: block;
-        
-      }
-    }
-    &:checked {
-      &:focus + span, &.blx-focus + span {
-        outline: none;
-        border: 1px solid $radio-selected-focus-border-color;
-        &::before {
-          display: block;
-        }
-      }
-    }
-    &:focus + span, &.blx-focus + span {
-      outline: none;
-      border: 1px solid $radio-unselected-focus-border-color;
-      box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
-    }
   }
   
   /* Create a custom radio button */
@@ -76,7 +39,7 @@
       width: $radio-size;
       height: $radio-size;
       border-radius: 50%;
-      border: 1px solid $success;
+      border: 1px solid $selection;
     }
     
     /* Create the checkmark/indicator (hidden when not checked) */
@@ -91,13 +54,58 @@
       border-radius: 50%;
       background-color: $radio-selected-background-color;
     }
-    
-    &:hover, &.blx-hover {
+  }
+  
+  &:hover, &.blx-hover {
+    .blx-radio-check {
       border: 1px solid $radio-unselected-hover-border-color;
       box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+      
       &::after {
         background-color: $radio-selected-hover-background-color;
       }
     }
+  }
+  
+  /* Hide the browser's default radio button */
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+    /* When the radio button is checked */
+    &:checked ~ .blx-radio-check {
+      border: 1px solid $radio-selected-border-color;
+      
+      &:hover, &.blx-hover {
+        border: 1px solid $radio-selected-hover-border-color;
+        box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+      }
+      
+      /* Show the checkmark when checked */
+      &::after {
+        display: block;
+        
+      }
+    }
+    &:checked {
+      &:focus + .blx-radio-check, &.blx-focus + .blx-radio-check {
+        outline: none;
+        border: 1px solid $radio-selected-focus-border-color;
+        &::before {
+          display: block;
+        }
+      }
+    }
+    &:focus + .blx-radio-check, &.blx-focus + .blx-radio-check {
+      outline: none;
+      border: 1px solid $radio-unselected-focus-border-color;
+      box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+    }
+  }
+  
+  &.blx-disabled {
+    box-shadow: none;
+    cursor: pointer;
   }
 }

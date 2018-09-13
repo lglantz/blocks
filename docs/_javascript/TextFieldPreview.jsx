@@ -31,25 +31,18 @@ class TextFieldPreview extends React.Component {
     return (
       <div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Default', <TextField label="Text input label" placeholder="e.g. Text input" />) }
+          { getPreviewComponent('Default', <TextField placeholder="Text input" />) }
         </div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Disabled', <TextField label="Text input label" placeholder="e.g. Text input" isDisabled />) }
+          { getPreviewComponent('Default with text label', <TextField label="Text input label" placeholder="Text input" />) }
         </div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Idle, Filled', <TextField label="Text input label" value="More than a placeholder" onChange={() => {}} />) }
+          { getPreviewComponent('Filled', <TextField value="Text input" onChange={() => {}} />) }
         </div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Validation',
-              <TextField
-                label="Text input label"
-                isValid={value => { return value !== INVALID_VALUE; }}
-                invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
-                value={this.state.invalidInputValue}
-                onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
-              />
-          ) }
+          { getPreviewComponent('Disabled', <TextField placeholder="Text input" isDisabled />) }
         </div>
+        
         <div className="l-flex-horizontal">
           { getPreviewComponent('Prefix/Suffix', <TextField label="Text input label" prefix="$" suffix="USD" />) }
         </div>
@@ -65,6 +58,18 @@ class TextFieldPreview extends React.Component {
                   value: this.state.unitValue,
                   onChange: this.onChangeUnit
                 }}
+              />
+          ) }
+        </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Validation',
+              <TextField
+                label="Text input label"
+                isValid={value => { return value !== INVALID_VALUE; }}
+                invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
+                value={this.state.invalidInputValue}
+                onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
               />
           ) }
         </div>
