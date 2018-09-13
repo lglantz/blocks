@@ -151,7 +151,7 @@ gulp.task('dev:react', (done) => {
     });
     return es.merge(tasks).on('end', done);
   });
-  
+
 });
 
 // helper for creating React bundles
@@ -162,7 +162,6 @@ const createBundle = (entry) => {
     debug: true,
     cache: {},
     packageCache: {},
-    fullPaths: true,
     transform: [
       babelify.configure({
         presets: ['es2015', 'react']
