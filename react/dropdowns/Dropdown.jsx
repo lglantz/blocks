@@ -6,9 +6,47 @@ const closeOnClick = require('../wrappers/closeOnClick.jsx');
 
 
 class Dropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      onFocusIdx: -1
+    };
+    
+    this.optionsNodes = this.props.options.map(() => null);
+    
+    this.setOptionNode = (element, idx) => {
+      this.optionsNodes[idx] = element;
+    }
+    
+    this.arrowKeyHandler = this.arrowKeyHandler.bind(this);
+  }
+
   onSelect(option) {
     if (this.props.onChange) this.props.onChange(option);
     this.props.close();
+  }
+
+  arrowKeyHandler(e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') e.preventDefault();
+    if (!this.props.isOpen && e.key === 'ArrowDown') this.props.open();
+    if (this.props.isOpen && e.key === 'ArrowDown') {
+      this.setState({ onFocusIdx: Math.min(this.state.onFocusIdx + 1, this.props.options.length - 1) }, () => {
+        this.optionsNodes[this.state.onFocusIdx].focus();
+      });
+    }
+    if (this.props.isOpen && e.key === 'ArrowUp') {
+      this.setState({ onFocusIdx: Math.max(this.state.onFocusIdx - 1, 0) }, () => {
+        this.optionsNodes[this.state.onFocusIdx].focus();
+      });
+    }
+    if (this.props.isOpen && e.key === 'Tab') {
+      e.preventDefault();
+      const onFocusIdx = this.state.onFocusIdx === this.props.options.length - 1 ? 0 : this.state.onFocusIdx + 1;
+      this.setState({ onFocusIdx }, () => {
+        this.optionsNodes[this.state.onFocusIdx].focus();
+      });
+    }
   }
 
   getOptionTrigger() {
@@ -28,6 +66,9 @@ class Dropdown extends React.Component {
         disabled={this.props.isDisabled}
         onClick={this.props.toggle}
         title={content}
+        autoFocus={this.props.autoFocus}
+        onKeyDown={this.arrowKeyHandler}
+        onFocus={() => this.setState({ onFocusIdx: -1 })}
       >
         { content }
       </button>
@@ -43,10 +84,10 @@ class Dropdown extends React.Component {
               <label className="blx-ui-text">{this.props.description}</label>
             </div>
           )}
-          {this.getOptionTrigger() }
+          {this.getOptionTrigger()}
           <ul className={`blx-dropdown-menu ${this.props.isOpen ? '' : 'blx-hidden'}`}>
             {
-              this.props.options.map(option => {
+              this.props.options.map((option, idx) => {
                 let item = null;
                 if (option.element) {
                   item = option.element;
@@ -55,6 +96,7 @@ class Dropdown extends React.Component {
                     <a
                       href={option.href}
                       disabled={option.disabled}
+                      ref={el => this.setOptionNode(el, idx)}
                     >
                       {option.text}
                     </a>
@@ -64,6 +106,12 @@ class Dropdown extends React.Component {
                     <button
                       disabled={option.disabled}
                       onClick={() => this.onSelect(option)}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter') e.preventDefault();
+                        this.arrowKeyHandler(e);
+                      }}
+                      onKeyUp={e => { if (e.key === 'Enter') this.onSelect(option) }}
+                      ref={el => this.setOptionNode(el, idx)}
                     >
                       {option.text}
                     </button>
@@ -108,7 +156,8 @@ Dropdown.propTypes = {
     key: PropTypes.string
   })),
   isDisabled: PropTypes.bool,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  autoFocus: PropTypes.bool
 };
 
 Dropdown.defaultProps = {
@@ -117,7 +166,8 @@ Dropdown.defaultProps = {
   text: 'Choose an option',
   description: '',
   value: null,
-  onChange: () => {}
+  onChange: () => {},
+  autoFocus: false
 };
 
 
