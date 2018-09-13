@@ -8,16 +8,16 @@ const Checkbox = require('../../react/input/Checkbox.jsx');
 const CheckboxPreview = () => (
   <div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Unselected', <Checkbox text="Unselected" />) }
+      { getPreviewComponent('Unselected', <Checkbox>Unselected</Checkbox>) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Selected', <Checkbox text="Selected" isChecked />) }
+      { getPreviewComponent('Selected', <Checkbox isChecked>Selected</Checkbox>) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Unselected, Disabled', <Checkbox text="Unselected" isDisabled />) }
+      { getPreviewComponent('Unselected, Disabled', <Checkbox isDisabled>Unselected</Checkbox>) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Selected, Disabled', <Checkbox text="Selected, Disabled" isDisabled isChecked />) }
+      { getPreviewComponent('Selected, Disabled', <Checkbox isDisabled isChecked>Selected, Disabled</Checkbox>) }
     </div>
   </div>
 );

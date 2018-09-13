@@ -4,8 +4,8 @@ const PropTypes = require('prop-types');
 
 const Checkbox = props => (
   <label className="blx-checkbox">
-    <div className="blx-label" title={props.text}>
-      {props.text}
+    <div className="blx-label">
+      {props.children}
     </div>
     <input
       type="checkbox"
@@ -20,7 +20,6 @@ const Checkbox = props => (
 );
 
 Checkbox.propTypes = {
-  text: PropTypes.string,
   value: PropTypes.string,
   name: PropTypes.string,
   isDisabled: PropTypes.bool,
@@ -29,7 +28,6 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  text: '',
   value: '',
   name: '',
   isDisabled: false,

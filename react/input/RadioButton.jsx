@@ -6,7 +6,6 @@ const RadioButton = props => (
   <label className="blx-radio">
     <div className="blx-radio-label" title={props.text}>
       {props.text}
-      {props.children}
     </div>
     <input
       type="radio"
