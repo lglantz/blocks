@@ -890,6 +890,10 @@ a.blx-button {
   box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
 }
+.blx-checkbox.blx-disabled {
+  box-shadow: none;
+  cursor: pointer;
+}
 .blx-dropdown-wrapper {
   display: inline-block;
 }
@@ -1384,6 +1388,10 @@ a.blx-button {
   border: 1px solid var(--selection, #49a1ff);
   box-shadow: 0 2px 4px 0 rgba(0,72,51,0.35);
   box-shadow: 0 2px 4px 0 var(--interactive-shadow-hover, rgba(0,72,51,0.35));
+}
+.blx-radio.blx-disabled {
+  box-shadow: none;
+  cursor: pointer;
 }
 .blx-sortable-list {
   background: transparent;
