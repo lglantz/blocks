@@ -1017,7 +1017,7 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-item {
   background: transparent;
 }
-.blx-dropdown .blx-dropdown-item * {
+.blx-dropdown .blx-dropdown-item > * {
   display: block;
   width: 100%;
   height: 100%;
@@ -1037,32 +1037,32 @@ a.blx-button {
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
-.blx-dropdown .blx-dropdown-item *:hover,
-.blx-dropdown .blx-dropdown-item *.blx-hover {
+.blx-dropdown .blx-dropdown-item > *:hover,
+.blx-dropdown .blx-dropdown-item > *.blx-hover {
   text-decoration: none;
 }
-.blx-dropdown .blx-dropdown-item *:focus {
+.blx-dropdown .blx-dropdown-item > *:focus {
   outline: none;
   color: #fff;
   color: var(--ui-00, #fff);
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-dropdown .blx-dropdown-item *.blx-focus {
+.blx-dropdown .blx-dropdown-item > *.blx-focus {
   outline: none;
   color: #fff;
   color: var(--ui-00, #fff);
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-dropdown .blx-dropdown-item *:active {
+.blx-dropdown .blx-dropdown-item > *:active {
   outline: none;
   color: #fff;
   color: var(--ui-00, #fff);
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-dropdown .blx-dropdown-item *.blx-active {
+.blx-dropdown .blx-dropdown-item > *.blx-active {
   outline: none;
   color: #fff;
   color: var(--ui-00, #fff);

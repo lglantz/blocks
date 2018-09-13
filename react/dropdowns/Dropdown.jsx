@@ -47,7 +47,9 @@ class Dropdown extends React.Component {
             {
               this.props.options.map(option => {
                 let item = null;
-                if (option.href) {
+                if (option.element) {
+                  item = option.element;
+                } else if (option.href) {
                   item = (
                     <a
                       href={option.href}
@@ -97,7 +99,8 @@ Dropdown.propTypes = {
       PropTypes.string,
       PropTypes.number
     ]),
-    href: PropTypes.string
+    href: PropTypes.string,
+    element: PropTypes.object
   })),
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func
