@@ -2,7 +2,6 @@
   display: inline-block;
   position: relative;
 
-  margin: 12px 10px;
   height: $button-height;
   max-width: 480px;
   min-width: 64px;
@@ -108,6 +107,17 @@
 a.blx-button {
   display: inline-flex;
   align-items: center;
+}
+
+.blx-button-group {
+  & > * {
+    margin-right: 10px;
+    margin-bottom: 12px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .blx-h-button-group {

@@ -514,7 +514,6 @@ h6 {
 .blx-button {
   display: inline-block;
   position: relative;
-  margin: 12px 10px;
   height: 44px;
   max-width: 480px;
   min-width: 64px;
@@ -713,6 +712,13 @@ a.blx-button {
   display: inline-flex;
   align-items: center;
 }
+.blx-button-group > * {
+  margin-right: 10px;
+  margin-bottom: 12px;
+}
+.blx-button-group > *:last-child {
+  margin-right: 0;
+}
 .blx-h-button-group {
   display: flex;
   flex-direction: row;
@@ -747,7 +753,7 @@ a.blx-button {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin: 9px 0 9px 32px;
+  margin: 9px 0;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -1331,7 +1337,7 @@ a.blx-button {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin: 9px 0 9px 32px;
+  margin: 9px 0;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
