@@ -184,6 +184,9 @@ a {
   color: #009f6f;
   color: var(--interactive, #009f6f);
   cursor: pointer;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
 .blx-link {
   font-size: 16px;
@@ -191,6 +194,9 @@ a {
   color: #009f6f;
   color: var(--interactive, #009f6f);
   cursor: pointer;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
 a:hover {
   color: #008b61;
@@ -1493,7 +1499,7 @@ a.blx-button {
   position: relative;
   right: 0;
   margin-top: 8px;
-  margin-right: 24px;
+  margin-right: 16px;
   cursor: move;
   background-color: #91a49e;
   background-color: var(--ui-07, #91a49e);
