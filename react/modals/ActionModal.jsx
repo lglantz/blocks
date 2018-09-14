@@ -30,7 +30,7 @@ const ActionModal = (props) => {
   let buttonBar = null;
   if (confirmButton || cancelButton) {
     buttonBar = (
-      <div className="blx-modal-buttons">
+      <div className="blx-h-button-group blx-modal-buttons">
         {cancelButton}
         {confirmButton}
       </div>
@@ -48,7 +48,7 @@ const ActionModal = (props) => {
   if (!props.isHidden) {
     modalContent = (
       <div>
-        <h3>{props.title}</h3>
+        <h4>{props.title}</h4>
         <p>{props.message}</p>
         {actionInfo}
         {buttonBar}
