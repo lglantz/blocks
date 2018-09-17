@@ -25,7 +25,7 @@ class DropdownPreview extends React.Component {
                     { value: 'option1', text: 'One option' },
                     { value: 'option2', text: 'Another option' },
                     { value: 'option3', text: 'Best option' },
-                    { value: 'option4', element: <div><span className="blx-icon blx-icon-plus" /><span>Custom item</span></div>}
+                    { value: 'option4', element: <div><span className="blx-icon blx-icon-plus" /><span>Custom item</span></div>, key: 'option4' }
                   ]
                 }
               />

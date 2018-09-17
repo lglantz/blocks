@@ -70,7 +70,7 @@ class Dropdown extends React.Component {
                   );
                 }
                 return (
-                  <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text}>
+                  <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text || option.key}>
                     {item}
                   </li>
                 );
@@ -104,7 +104,8 @@ Dropdown.propTypes = {
       PropTypes.number
     ]),
     href: PropTypes.string,
-    element: PropTypes.object
+    element: PropTypes.node,
+    key: PropTypes.string
   })),
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func
