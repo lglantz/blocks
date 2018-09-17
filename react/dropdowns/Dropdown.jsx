@@ -40,7 +40,7 @@ class Dropdown extends React.Component {
         <div className="blx-dropdown">
           {this.props.description && (
             <div>
-              <label className="blx-dropdown-description">{this.props.description}</label>
+              <label className="blx-ui-text">{this.props.description}</label>
             </div>
           )}
           {this.getOptionTrigger() }
