@@ -16,7 +16,14 @@
   .blx-icon {
     background-color: $interactive;
   }
-  &:focus, &.focus {
+  
+  &:hover, &.blx-hover {
+    .blx-icon {
+      background-color: $interactive-hover;
+    }
+  }
+
+  &:focus, &.blx-focus {
     .blx-icon {
       background-color: $selection;
     }
