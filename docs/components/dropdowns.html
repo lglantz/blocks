@@ -71,6 +71,16 @@ definition: An input that allows users to make a single selection from a pre-def
   </div>
 {% endcapture %}
 
+{% capture dropdown_trigger_overflow_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger" title="This is a really long title that will overflow">
+        This is a really long title that will overflow
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
 {% capture dropdown_trigger_disabled_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
@@ -150,6 +160,14 @@ definition: An input that allows users to make a single selection from a pre-def
       </span>
       <div class="doc-state-content">
         {{ dropdown_trigger_disabled_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Overflow
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_overflow_example }}
       </div>
     </div>
   </div>
