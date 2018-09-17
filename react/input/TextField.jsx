@@ -60,8 +60,8 @@ class TextField extends React.Component {
         }}
         onKeyUp={(e) => {
           if (this.props.onKeyUp) this.props.onKeyUp(e);
-          if (e.keyCode === 13) { // ENTER
-            e.target.blur(); // disable blur if you want to keep the focus on this input
+          if (e.key === 'Enter') {
+            e.target.blur();
           }
           // If an invalid message has already appeared via blur,
           // do the user a favor and update validity once they fix it (before another blur)

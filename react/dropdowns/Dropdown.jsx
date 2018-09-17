@@ -15,11 +15,11 @@ class Dropdown extends React.Component {
     
     this.optionsNodes = this.props.options.map(() => null);
     
-    this.setOptionNode = (element, idx) => {
-      this.optionsNodes[idx] = element;
-    }
-    
     this.arrowKeyHandler = this.arrowKeyHandler.bind(this);
+    this.setOptionNode = this.setOptionNode.bind(this);
+    this.moveFocusUsingKey = this.moveFocusUsingKey.bind(this);
+    this.getFocusIndexAfterKeyPress = this.getFocusIndexAfterKeyPress.bind(this);
+    this.focusOption = this.focusOption.bind(this);
   }
 
   onSelect(option) {
@@ -27,26 +27,34 @@ class Dropdown extends React.Component {
     this.props.close();
   }
 
+  setOptionNode(element, idx) {
+    this.optionsNodes[idx] = element;
+  }
+
   arrowKeyHandler(e) {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') e.preventDefault();
-    if (!this.props.isOpen && e.key === 'ArrowDown') this.props.open();
-    if (this.props.isOpen && e.key === 'ArrowDown') {
-      this.setState({ onFocusIdx: Math.min(this.state.onFocusIdx + 1, this.props.options.length - 1) }, () => {
-        this.optionsNodes[this.state.onFocusIdx].focus();
-      });
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Tab') e.preventDefault();
+    if (e.key === 'ArrowDown' && !this.props.isOpen) this.props.open();
+    this.moveFocusUsingKey(e.key);
+  }
+
+  moveFocusUsingKey(keyName) {
+    this.setState({
+      onFocusIdx: this.getFocusIndexAfterKeyPress(keyName)
+    }, () => this.focusOption(this.state.onFocusIdx))
+  }
+
+  getFocusIndexAfterKeyPress(keyName) {
+    if (keyName === 'ArrowDown') return Math.min(this.state.onFocusIdx + 1, this.props.options.length - 1);
+    if (keyName === 'ArrowUp') return Math.max(this.state.onFocusIdx - 1, 0);
+    if (keyName === 'Tab') {
+      const focusIsAtTheEndAndShouldWrapToBeginning = this.state.onFocusIdx === this.props.options.length - 1;
+      if (focusIsAtTheEndAndShouldWrapToBeginning) return 0;
+      else return this.state.onFocusIdx + 1;
     }
-    if (this.props.isOpen && e.key === 'ArrowUp') {
-      this.setState({ onFocusIdx: Math.max(this.state.onFocusIdx - 1, 0) }, () => {
-        this.optionsNodes[this.state.onFocusIdx].focus();
-      });
-    }
-    if (this.props.isOpen && e.key === 'Tab') {
-      e.preventDefault();
-      const onFocusIdx = this.state.onFocusIdx === this.props.options.length - 1 ? 0 : this.state.onFocusIdx + 1;
-      this.setState({ onFocusIdx }, () => {
-        this.optionsNodes[this.state.onFocusIdx].focus();
-      });
-    }
+  }
+
+  focusOption(idx) {
+    this.optionsNodes[idx].focus();
   }
 
   getOptionTrigger() {
