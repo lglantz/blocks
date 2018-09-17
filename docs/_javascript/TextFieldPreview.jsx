@@ -14,6 +14,7 @@ class TextFieldPreview extends React.Component {
     super();
 
     this.state = {
+      conditionalSuffixValue: '',
       invalidInputValue: INVALID_VALUE,
       unitValue: 'ft'
     };
@@ -42,9 +43,21 @@ class TextFieldPreview extends React.Component {
         <div className="l-flex-horizontal">
           { getPreviewComponent('Disabled', <TextField placeholder="Text input" isDisabled />) }
         </div>
-        
+
         <div className="l-flex-horizontal">
           { getPreviewComponent('Prefix/Suffix', <TextField label="Text input label" prefix="$" suffix="USD" />) }
+
+          { getPreviewComponent('Conditional Suffix Icon',
+              <TextField
+                label="Type at least 5 letters"
+                value={this.state.conditionalSuffixValue}
+                onChange={evt => this.setState({ conditionalSuffixValue: evt.target.value })}
+                suffix={
+                  this.state.conditionalSuffixValue.length >= 5 &&
+                    <img src="/svgs/icon-success.svg" alt="" />
+                }
+              />
+          ) }
         </div>
         <div className="l-flex-horizontal">
           { getPreviewComponent('Text Field with Dropdown',

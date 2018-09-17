@@ -96,10 +96,13 @@ TextField.propTypes = {
   value: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  prefix: PropTypes.string,
+  prefix: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]),
   suffix: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.object
+    PropTypes.node
   ]),
   isDisabled: PropTypes.bool,
   isValid: PropTypes.func,
