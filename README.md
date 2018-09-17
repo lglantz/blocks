@@ -54,7 +54,3 @@ gulp server
 ```
 
 You can then navigate to the site at http://localhost:8080
-
-
-### Tips for using in other apps
-- If you are using Blocks styles via `blocks.css`, note that it expects font files to be in the same folder as the css file
