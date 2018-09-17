@@ -915,9 +915,6 @@ a.blx-button {
   flex-direction: column;
   min-width: 150px;
   max-width: 300px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .blx-dropdown .blx-dropdown-description {
   display: inline-block;
