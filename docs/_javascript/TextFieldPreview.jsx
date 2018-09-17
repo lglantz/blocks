@@ -45,11 +45,12 @@ class TextFieldPreview extends React.Component {
         </div>
 
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Prefix/Suffix', <TextField label="Text input label" prefix="$" suffix="USD" />) }
+          { getPreviewComponent('Prefix/Suffix', <TextField label="Text input label" placeholder="Text input" prefix="$" suffix="USD" />) }
 
           { getPreviewComponent('Conditional Suffix Icon',
               <TextField
                 label="Type at least 5 letters"
+                placeholder="Text input"
                 value={this.state.conditionalSuffixValue}
                 onChange={evt => this.setState({ conditionalSuffixValue: evt.target.value })}
                 suffix={

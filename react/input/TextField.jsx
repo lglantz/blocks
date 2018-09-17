@@ -121,7 +121,7 @@ TextField.defaultProps = {
   name: '',
   value: '',
   label: '',
-  placeholder: 'Text input',
+  placeholder: '',
   prefix: null,
   suffix: null,
   isDisabled: false,
