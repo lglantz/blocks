@@ -1121,11 +1121,19 @@ a.blx-button {
   background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
 }
+.blx-popover-trigger:hover .blx-icon {
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+}
+.blx-popover-trigger.blx-hover .blx-icon {
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+}
 .blx-popover-trigger:focus .blx-icon {
   background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
-.blx-popover-trigger.focus .blx-icon {
+.blx-popover-trigger.blx-focus .blx-icon {
   background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
