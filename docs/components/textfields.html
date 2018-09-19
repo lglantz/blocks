@@ -14,7 +14,7 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 
 {% capture text_field_label_example %}
   <div class="blx-text-field">
-    <label>Text input label sample sample long title</label>
+    <label class="blx-ui-text">Text input label sample sample long title</label>
     <input type="text" placeholder="Placeholder text" />
   </div>
 {% endcapture %}
@@ -46,7 +46,7 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 {% capture text_field_invalid_example %}
   <div class="blx-text-field">
     <div>
-      <label>Text input label</label>
+      <label class="blx-ui-text">Text input label</label>
       <span class="blx-invalid-text-field-marker">*</span>
     </div>
     <input type="text" class="blx-invalid" placeholder="e.g. Text input" />
@@ -56,13 +56,13 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 
 {% capture text_field_invalid_example2 %}
   <div class="blx-text-field">
-    <label></label>
+    <label class="blx-ui-text"></label>
     <input type="text" class="blx-invalid" value="Placeholder text" />
     <span class="blx-invalid-text-field-message">Error information</span>
   </div>
   <div class="blx-text-field">
     <div>
-      <label>Text input label</label>
+      <label class="blx-ui-text">Text input label</label>
       <span class="blx-invalid-text-field-marker">*</span>
     </div>
     <input type="text" class="blx-invalid" placeholder="e.g. Text input" />
@@ -72,7 +72,7 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 
 {% capture text_field_prefix_suffix_example %}
   <div class="blx-text-field">
-    <label>Sample text field with prefix/suffix</label>
+    <label class="blx-ui-text">Sample text field with prefix/suffix</label>
     <div class="blx-text-field-container">
       <span class="blx-text-field-prefix">$</span>
       <span class="blx-text-field-suffix">USD</span>
@@ -83,14 +83,14 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 
 {% capture text_field_prefix_suffix_example2 %}
   <div class="blx-text-field blx-disabled">
-    <label>Text input label</label>
+    <label class="blx-ui-text">Text input label</label>
     <div class="blx-text-field-container">
       <span class="blx-text-field-prefix">$</span>
       <input type="text" value="100.00" disabled />
     </div>
   </div>
   <div class="blx-text-field">
-    <label>Text input label</label>
+    <label class="blx-ui-text">Text input label</label>
     <div class="blx-text-field-container">
       <span class="blx-text-field-prefix">$</span>
       <span class="blx-text-field-suffix">USD</span>
@@ -102,7 +102,7 @@ definition: 'An input for freeform data entry. It supports a number of input typ
 {% capture text_field_dropdown_example %}
   <div class="blx-text-field-with-dropdown">
     <div class="blx-text-field">
-      <label>Text input label</label>
+      <label class="blx-ui-text">Text input label</label>
       <div class="blx-text-field-container">
         <input type="text" value="100,000" />
       </div>

@@ -19,10 +19,13 @@
     .blx-icon-drag {
       position: relative;
       right: 0;
-      margin-top: 8px;
-      margin-right: 16px;
+      margin: 8px;
       cursor: move;
-      background-color: $ui-07;
+      background-color: $interactive;
+      
+      &:hover, &.blx-hover {
+        background-color: $interactive-hover;
+      }
     }
   }
 }

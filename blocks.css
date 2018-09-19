@@ -916,10 +916,6 @@ a.blx-button {
   min-width: 150px;
   max-width: 300px;
 }
-.blx-dropdown .blx-dropdown-description {
-  display: inline-block;
-  margin: 0;
-}
 .blx-dropdown .blx-dropdown-trigger {
   position: relative;
   height: 40px;
@@ -1506,11 +1502,18 @@ a.blx-button {
 .blx-sortable-list .blx-sortable-list-item .blx-icon-drag {
   position: relative;
   right: 0;
-  margin-top: 8px;
-  margin-right: 16px;
+  margin: 8px;
   cursor: move;
-  background-color: #91a49e;
-  background-color: var(--ui-07, #91a49e);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-sortable-list .blx-sortable-list-item .blx-icon-drag:hover {
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+}
+.blx-sortable-list .blx-sortable-list-item .blx-icon-drag.blx-hover {
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
 }
 .blx-table {
   margin: 12px 16px;
@@ -1813,11 +1816,7 @@ a.blx-button {
   width: 300px;
 }
 .blx-text-field label {
-  font-size: 14px;
-  line-height: 20px;
   margin-bottom: 6px;
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
 }
 .blx-text-field input {
   height: 40px;
@@ -1914,9 +1913,6 @@ a.blx-button {
 .blx-text-field textarea.blx-disabled {
   opacity: 0.5;
   pointer-events: none;
-}
-.blx-text-field .blx-text-field-label {
-  display: inline-block;
 }
 .blx-text-field .blx-text-field-prefix {
   font-size: 16px;
