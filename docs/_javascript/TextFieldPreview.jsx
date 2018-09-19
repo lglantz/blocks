@@ -18,12 +18,18 @@ class TextFieldPreview extends React.Component {
     super();
 
     this.state = {
-      conditionalSuffixValue: '',
       unitValue: 'ft',
-      date: null,
-      multiline: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin.",
+      defaultExampleValue: '',
+      defaultWithTextLabelValue: '',
+      filledExampleValue: 'Text input',
+      prefixSuffixExampleValue: '',
+      conditionalSuffixValue: '',
+      textFieldDropdownValue: '',
       validityExampleValue: INITIAL_INVALID_VALUE,
-      validityExampleIsValid: isFieldValid(INITIAL_INVALID_VALUE)
+      validityExampleIsValid: isFieldValid(INITIAL_INVALID_VALUE),
+      dateExampleValue: '',
+      iconExampleValue: 'Text input'
+      multilineExampleValue: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin.",
     };
 
     this.onChangeUnit = this.onChangeUnit.bind(this);
@@ -39,20 +45,20 @@ class TextFieldPreview extends React.Component {
     return (
       <div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Default', <TextField placeholder="Text input" />) }
+          { getPreviewComponent('Default', <TextField placeholder="Text input" value={this.state.defaultExampleValue} onChange={(evt) => this.setState({ defaultExampleValue: evt.target.value })} />) }
         </div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Default with text label', <TextField label="Text input label" placeholder="Text input" />) }
+          { getPreviewComponent('Default with text label', <TextField label="Text input label" placeholder="Text input" value={this.state.defaultWithTextLabelValue} onChange={(evt) => this.setState({ defaultWithTextLabelValue: evt.target.value })} />) }
         </div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Filled', <TextField value="Text input" onChange={() => {}} />) }
+          { getPreviewComponent('Filled', <TextField value={this.state.filledExampleValue} onChange={(evt) => this.setState({ filledExampleValue: evt.target.value })} />) }
         </div>
         <div className="l-flex-horizontal">
           { getPreviewComponent('Disabled', <TextField placeholder="Text input" isDisabled />) }
         </div>
 
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Prefix/Suffix', <TextField label="Text input label" placeholder="Text input" prefix="$" suffix="USD" />) }
+          { getPreviewComponent('Prefix/Suffix', <TextField type="number" label="Text input label" placeholder="Text input" prefix="$" suffix="USD" value={this.state.prefixSuffixExampleValue} onChange={(evt) => this.setState({ prefixSuffixExampleValue: evt.target.value })} />) }
 
           { getPreviewComponent('Conditional Suffix Icon',
               <TextField
@@ -72,7 +78,9 @@ class TextFieldPreview extends React.Component {
               <TextFieldWithDropdown
                 textField={{
                   label: "Text input label",
-                  placeholder: "100,000"
+                  placeholder: "100,000",
+                  value: this.state.textFieldDropdownValue,
+                  onChange: (evt) => this.setState({ textFieldDropdownValue: evt.target.value })
                 }}
                 dropdown={{
                   options: [{text: 'ft', value: 'ft'}, {text: 'cm', value: 'cm'}, {text: 'm', value: 'm'}],
@@ -102,8 +110,8 @@ class TextFieldPreview extends React.Component {
           { getPreviewComponent('Date/time picker',
               <TextField
                 type="date"
-                value={this.state.date}
-                onChange={evt => this.setState({ date: evt.target.value })}
+                value={this.state.dateExampleValue}
+                onChange={evt => this.setState({ dateExampleValue: evt.target.value })}
               />
           ) }
         </div>
@@ -111,17 +119,17 @@ class TextFieldPreview extends React.Component {
         <div className="l-flex-horizontal">
           { getPreviewComponent('Icon next to field',
             <TextField
-              value="Text input"
+              value={this.state.iconExampleValue}
               icon={<span className="blx-icon blx-icon-information" />}
-              onChange={() => {}}
+              onChange={(evt) => this.setState({ iconExampleValue: evt.target.value })}
             />) }
         </div>
 
         <div className="l-flex-horizontal">
           { getPreviewComponent('Multiline overflow',
             <TextArea
-              value={this.state.multiline}
-              onChange={evt => this.setState({ multiline: evt.target.value })}
+              value={this.state.multilineExampleValue}
+              onChange={evt => this.setState({ multilineExampleValue: evt.target.value })}
             />) }
         </div>
       </div>
