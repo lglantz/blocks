@@ -13,12 +13,11 @@ class Dropdown extends React.Component {
       onFocusIdx: -1
     };
     
-    this.optionsRefs = this.props.options.map(() => null);
+    this.optionsRefs = [];
 
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
     
-    this.keyHandler = this.keyHandler.bind(this);
     this.setOptionNode = this.setOptionNode.bind(this);
     this.moveFocusUsingKey = this.moveFocusUsingKey.bind(this);
     this.getFocusIndexAfterKeyPress = this.getFocusIndexAfterKeyPress.bind(this);
@@ -31,12 +30,13 @@ class Dropdown extends React.Component {
   }
 
   onKeyDown(e) {
-    if (e.key === 'Enter') e.preventDefault();
-    this.keyHandler(e);
+    if (['ArrowDown', 'ArrowUp', 'Tab', 'Enter', 'Space'].indexOf(e.key) > -1) e.preventDefault()
+    if (e.key === 'ArrowDown' && !this.props.isOpen) this.props.open();
+    this.moveFocusUsingKey(e.key);
   }
 
-  onKeyUp(e) {
-    if (e.key === 'Enter') {
+  onKeyUp(e, option) {
+    if (['Enter', 'Space'].indexOf(e.key) > -1) {
       this.onSelect(option);
     } else if (e.key === 'Escape') {
       this.props.close();
@@ -51,18 +51,13 @@ class Dropdown extends React.Component {
         const child = this.optionsRefs[idx].childNodes[i];
         if (typeof child.focus === 'function') {
           child.addEventListener('keydown', this.onKeyDown);
-          child.addEventListener('keyup', this.onKeyUp);
+          child.addEventListener('keyup', e => this.onKeyUp(e, this.props.options[idx]));
+          child.addEventListener('click', () => this.onSelect(this.props.options[idx]));
           break;
         }
       }
       
     }
-  }
-
-  keyHandler(e) {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Tab') e.preventDefault();
-    if (e.key === 'ArrowDown' && !this.props.isOpen) this.props.open();
-    this.moveFocusUsingKey(e.key);
   }
 
   moveFocusUsingKey(keyName) {
@@ -104,7 +99,11 @@ class Dropdown extends React.Component {
       for (let i = 0; i < this.props.options.length; i++) {
         const option = this.props.options[i];
         if (option.value == this.props.value) {
-          content = option.text;
+          if (option.text) {
+            content = option.text;
+          } else if (option.element) {
+            content = null;
+          }
           break;
         }
       }
@@ -116,7 +115,7 @@ class Dropdown extends React.Component {
         onClick={this.props.toggle}
         title={content}
         autoFocus={this.props.autoFocus}
-        onKeyDown={this.keyHandler}
+        onKeyDown={this.onKeyDown}
         onFocus={() => this.setState({ onFocusIdx: -1 })}
       >
         { content }
@@ -153,7 +152,6 @@ class Dropdown extends React.Component {
                   item = (
                     <button
                       disabled={option.disabled}
-                      onClick={() => this.onSelect(option)}
                     >
                       {option.text}
                     </button>
