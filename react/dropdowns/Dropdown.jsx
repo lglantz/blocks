@@ -13,9 +13,12 @@ class Dropdown extends React.Component {
       onFocusIdx: -1
     };
     
-    this.optionsNodes = this.props.options.map(() => null);
+    this.optionsRefs = this.props.options.map(() => null);
+
+    this.onKeyDown = this.onKeyDown.bind(this);
+    this.onKeyUp = this.onKeyUp.bind(this);
     
-    this.arrowKeyHandler = this.arrowKeyHandler.bind(this);
+    this.keyHandler = this.keyHandler.bind(this);
     this.setOptionNode = this.setOptionNode.bind(this);
     this.moveFocusUsingKey = this.moveFocusUsingKey.bind(this);
     this.getFocusIndexAfterKeyPress = this.getFocusIndexAfterKeyPress.bind(this);
@@ -27,11 +30,36 @@ class Dropdown extends React.Component {
     this.props.close();
   }
 
-  setOptionNode(element, idx) {
-    this.optionsNodes[idx] = element;
+  onKeyDown(e) {
+    if (e.key === 'Enter') e.preventDefault();
+    this.keyHandler(e);
   }
 
-  arrowKeyHandler(e) {
+  onKeyUp(e) {
+    if (e.key === 'Enter') {
+      this.onSelect(option);
+    } else if (e.key === 'Escape') {
+      this.props.close();
+    }
+  }
+
+  setOptionNode(element, idx) {
+    if (element) {
+      this.optionsRefs[idx] = element;
+      // add key listeners to first focusable child element in the menu item
+      for (let i = 0; i < this.optionsRefs[idx].childNodes.length; i++) {
+        const child = this.optionsRefs[idx].childNodes[i];
+        if (typeof child.focus === 'function') {
+          child.addEventListener('keydown', this.onKeyDown);
+          child.addEventListener('keyup', this.onKeyUp);
+          break;
+        }
+      }
+      
+    }
+  }
+
+  keyHandler(e) {
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Tab') e.preventDefault();
     if (e.key === 'ArrowDown' && !this.props.isOpen) this.props.open();
     this.moveFocusUsingKey(e.key);
@@ -49,12 +77,25 @@ class Dropdown extends React.Component {
     if (keyName === 'Tab') {
       const focusIsAtTheEndAndShouldWrapToBeginning = this.state.onFocusIdx === this.props.options.length - 1;
       if (focusIsAtTheEndAndShouldWrapToBeginning) return 0;
-      else return this.state.onFocusIdx + 1;
+      return this.state.onFocusIdx + 1;
     }
+    return this.state.onFocusIdx;
   }
 
   focusOption(idx) {
-    this.optionsNodes[idx].focus();
+    const optionRef = this.optionsRefs[idx];
+    if (optionRef) {
+      // ref is to the li item that contains the dropdown elements
+      // search for a focusable child
+      // (particularly important for custom elements)
+      for (let i = 0; i < optionRef.childNodes.length; i++) {
+        const child = optionRef.childNodes[i];
+        if (typeof child.focus === 'function') {
+          child.focus();
+          break;
+        }
+      }
+    }
   }
 
   getOptionTrigger() {
@@ -75,7 +116,7 @@ class Dropdown extends React.Component {
         onClick={this.props.toggle}
         title={content}
         autoFocus={this.props.autoFocus}
-        onKeyDown={this.arrowKeyHandler}
+        onKeyDown={this.keyHandler}
         onFocus={() => this.setState({ onFocusIdx: -1 })}
       >
         { content }
@@ -104,7 +145,6 @@ class Dropdown extends React.Component {
                     <a
                       href={option.href}
                       disabled={option.disabled}
-                      ref={el => this.setOptionNode(el, idx)}
                     >
                       {option.text}
                     </a>
@@ -114,19 +154,17 @@ class Dropdown extends React.Component {
                     <button
                       disabled={option.disabled}
                       onClick={() => this.onSelect(option)}
-                      onKeyDown={e => {
-                        if (e.key === 'Enter') e.preventDefault();
-                        this.arrowKeyHandler(e);
-                      }}
-                      onKeyUp={e => { if (e.key === 'Enter') this.onSelect(option) }}
-                      ref={el => this.setOptionNode(el, idx)}
                     >
                       {option.text}
                     </button>
                   );
                 }
                 return (
-                  <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text || option.key}>
+                  <li
+                    key={option.text || option.key}
+                    className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`}
+                    ref={el => this.setOptionNode(el, idx)}
+                  >
                     {item}
                   </li>
                 );
