@@ -70,7 +70,7 @@ class TextField extends React.Component {
           }
         }}
         onKeyDown={this.props.onKeyDown}
-        ref={this.props.setRef}
+        ref={this.props.forwardedRef}
       />
     );
 
@@ -115,8 +115,7 @@ TextField.propTypes = {
   onBlur: PropTypes.func,
   autoComplete: PropTypes.string,
   readOnly: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  setRef: PropTypes.func
+  autoFocus: PropTypes.bool
 };
 
 TextField.defaultProps = {
@@ -137,9 +136,10 @@ TextField.defaultProps = {
   onBlur: null,
   autoComplete: '',
   readOnly: false,
-  autoFocus: false,
-  setRef: null
+  autoFocus: false
 };
 
-module.exports = TextField;
+module.exports = React.forwardRef((props, ref) => (
+  <TextField {...props} forwardedRef={ref} />
+));
 
