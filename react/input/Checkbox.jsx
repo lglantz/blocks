@@ -14,6 +14,8 @@ const Checkbox = props => (
       checked={props.isChecked}
       disabled={props.isDisabled}
       onChange={props.onChange}
+      onKeyDown={props.onKeyDown}
+      onKeyUp={props.onKeyUp}
     />
     <span className="blx-checkmark" />
   </label>
@@ -24,7 +26,9 @@ Checkbox.propTypes = {
   name: PropTypes.string,
   isDisabled: PropTypes.bool,
   isChecked: PropTypes.bool,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  onKeyUp: PropTypes.func
 };
 
 Checkbox.defaultProps = {
@@ -32,7 +36,9 @@ Checkbox.defaultProps = {
   name: '',
   isDisabled: false,
   isChecked: false,
-  onChange: () => {}
+  onChange: () => {},
+  onKeyDown: () => {},
+  onKeyUp: () => {}
 };
 
 module.exports = Checkbox;

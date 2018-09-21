@@ -60,7 +60,7 @@ class TextField extends React.Component {
         }}
         onKeyUp={(e) => {
           if (this.props.onKeyUp) this.props.onKeyUp(e);
-          if (e.keyCode === 13) { // ENTER
+          if (e.key === 'Enter') {
             e.target.blur();
           }
           // If an invalid message has already appeared via blur,
@@ -70,6 +70,7 @@ class TextField extends React.Component {
           }
         }}
         onKeyDown={this.props.onKeyDown}
+        ref={this.props.forwardedRef}
       />
     );
 
@@ -113,7 +114,8 @@ TextField.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   autoComplete: PropTypes.string,
-  readOnly: PropTypes.bool
+  readOnly: PropTypes.bool,
+  autoFocus: PropTypes.bool
 };
 
 TextField.defaultProps = {
@@ -133,8 +135,11 @@ TextField.defaultProps = {
   onFocus: null,
   onBlur: null,
   autoComplete: '',
-  readOnly: false
+  readOnly: false,
+  autoFocus: false
 };
 
-module.exports = TextField;
+module.exports = React.forwardRef((props, ref) => (
+  <TextField {...props} forwardedRef={ref} />
+));
 

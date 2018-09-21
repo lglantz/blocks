@@ -5,15 +5,16 @@ const Button = require('./Button.jsx');
 const LinkButton = require('./LinkButton.jsx');
 
 
-function ButtonPrimary(props) {
+const ButtonPrimary = React.forwardRef((props, ref) => {
   const Component = props.href ? LinkButton : Button;
   return (
    <Component
       {...props}
+      ref={ref}
       classes="blx-primary"
     />
   );
-}
+});
 
 ButtonPrimary.propTypes = {
   text: PropTypes.string.isRequired,

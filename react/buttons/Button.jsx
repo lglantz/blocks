@@ -2,11 +2,15 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const BasicButton = props => (
+const BasicButton = React.forwardRef((props, ref) => (
   <button
     className={`blx-button ${props.classes} ${props.isDisabled ? 'blx-disabled' : ''}`}
     onClick={props.onClick}
     disabled={props.isDisabled}
+    autoFocus={props.autoFocus}
+    onKeyDown={props.onKeyDown}
+    onKeyUp={props.onKeyUp}
+    ref={ref}
   >
     { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
     <span>{props.text}</span>
@@ -20,14 +24,20 @@ BasicButton.propTypes = {
   classes: PropTypes.string,
   isDisabled: PropTypes.bool,
   leftIcon: PropTypes.string,
-  rightIcon: PropTypes.string
+  rightIcon: PropTypes.string,
+  autoFocus: PropTypes.bool,
+  onKeyDown: PropTypes.func,
+  onKeyUp: PropTypes.func
 };
 
 BasicButton.defaultProps = {
   classes: 'blx-primary',
   isDisabled: false,
   leftIcon: null,
-  rightIcon: null
+  rightIcon: null,
+  autoFocus: false,
+  onKeyDown: () => {},
+  onKeyUp: () => {}
 };
 
 module.exports = BasicButton;

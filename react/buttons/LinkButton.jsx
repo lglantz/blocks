@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 const ReactLink = require('react-router-dom').Link;
 
 
-function LinkButton(props) {
+const LinkButton = React.forwardRef((props, ref) => {
   const classes = `blx-button ${props.classes} ${props.isDisabled ? 'blx-disabled' : ''}`;
 
   if (props.useReactLink) {
@@ -12,6 +12,7 @@ function LinkButton(props) {
         className={classes}
         to={props.href}
         disabled={props.isDisabled}
+        ref={ref}
       >
         { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
         <span>{props.text}</span>
@@ -26,13 +27,14 @@ function LinkButton(props) {
       href={props.href}
       disabled={props.isDisabled}
       target={props.isExternal ? '_blank' : '_self'}
+      ref={ref}
     >
       { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
       <span>{props.text}</span>
       { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
     </a>
   );
-}
+});
 
 LinkButton.propTypes = {
   text: PropTypes.string.isRequired,
