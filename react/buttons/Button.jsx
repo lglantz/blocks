@@ -16,7 +16,7 @@ const BasicButton = React.forwardRef((props, ref) => (
     <span>{props.text}</span>
     { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
   </button>
-);
+));
 
 BasicButton.propTypes = {
   text: PropTypes.string.isRequired,
