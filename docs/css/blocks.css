@@ -1234,9 +1234,14 @@ a.blx-button {
   -webkit-mask: url("../svgs/icon-close.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-close.svg") no-repeat 50% 50%;
 }
-.blx-icon-more {
-  -webkit-mask: url("../svgs/icon-more.svg") no-repeat 50% 50%;
-          mask: url("../svgs/icon-more.svg") no-repeat 50% 50%;
+.blx-icon-more-horizontal {
+  -webkit-mask: url("../svgs/icon-more-horizontal.svg") no-repeat 50% 50%;
+          mask: url("../svgs/icon-more-horizontal.svg") no-repeat 50% 50%;
+}
+.blx-icon-more-vertical {
+  height: 20px;
+  -webkit-mask: url("../svgs/icon-more-vertical.svg") no-repeat 50% 50%;
+          mask: url("../svgs/icon-more-vertical.svg") no-repeat 50% 50%;
 }
 .loading {
   position: absolute;

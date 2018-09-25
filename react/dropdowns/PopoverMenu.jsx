@@ -13,7 +13,10 @@ const PopoverMenu = props => (
     <div className="blx-dropdown blx-popover">
       <button
         className="blx-popover-trigger"
-        onClick={props.toggle}
+        onClick={(evt) => {
+          evt.preventDefault();
+          props.toggle();
+        }}
       >
         <span className={`blx-icon blx-icon-${props.icon}`} />
       </button>
@@ -73,7 +76,7 @@ PopoverMenu.defaultProps = {
   isOpen: false,
   isLeft: true,
   options: [],
-  icon: 'more'
+  icon: 'more-horizontal'
 };
 
 

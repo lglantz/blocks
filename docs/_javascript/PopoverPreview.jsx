@@ -5,6 +5,26 @@ const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 const PopoverMenu = require('../../react/dropdowns/PopoverMenu.jsx');
 
+const exampleOptions = [
+  {
+    text: 'Action',
+    onClick: () => {}
+  },
+  {
+    text: 'Disabled Action',
+    disabled: true,
+    onClick: () => {}
+  },
+  {
+    text: 'Correct Action',
+    onClick: () => {}
+  },
+  {
+    text: 'Another one',
+    onClick: () => {}
+  }
+];
+
 class PopoverPreview extends React.Component {
   render() {
     return (
@@ -13,50 +33,14 @@ class PopoverPreview extends React.Component {
           { getPreviewComponent('Default',
               <PopoverMenu
                 text="More Actions"
-                options={[
-                  {
-                    text: 'Action',
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Disabled Action',
-                    disabled: true,
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Correct Action',
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Another one',
-                    onClick: () => {}
-                  }
-                ]}
+                options={exampleOptions}
               />
           ) }
           { getPreviewComponent('Default right',
               <PopoverMenu
                 text="More Actions"
                 isLeft={false}
-                options={[
-                  {
-                    text: 'Action',
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Disabled Action',
-                    disabled: true,
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Correct Action',
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Another one',
-                    onClick: () => {}
-                  }
-                ]}
+                options={exampleOptions}
               />
           ) }
         </div>
@@ -66,25 +50,15 @@ class PopoverPreview extends React.Component {
                 text="More Actions"
                 icon="down"
                 isLeft={false}
-                options={[
-                  {
-                    text: 'Action',
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Disabled Action',
-                    disabled: true,
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Correct Action',
-                    onClick: () => {}
-                  },
-                  {
-                    text: 'Another one',
-                    onClick: () => {}
-                  }
-                ]}
+                options={exampleOptions}
+              />
+          ) }
+          { getPreviewComponent('Vertical ellipsis',
+              <PopoverMenu
+                text="More Actions"
+                icon="more-vertical"
+                isLeft={false}
+                options={exampleOptions}
               />
           ) }
         </div>
