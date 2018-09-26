@@ -45,7 +45,7 @@ const PopoverMenu = props => (
               );
             }
             return (
-              <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text}>
+              <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text || option.key}>
                 {item}
               </li>
             );
@@ -62,6 +62,7 @@ PopoverMenu.propTypes = {
   isLeft: PropTypes.bool,
   options: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
+    key: PropTypes.string,
     onClick: PropTypes.func,
     href: PropTypes.string,
     newTab: PropTypes.bool,
