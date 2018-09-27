@@ -71,6 +71,7 @@ class TextField extends React.Component {
         }}
         onKeyDown={this.props.onKeyDown}
         ref={this.props.forwardedRef}
+        autoFocus={this.props.autoFocus}
       />
     );
 
