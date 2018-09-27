@@ -1096,6 +1096,14 @@ a.blx-button {
   color: #fff;
   color: var(--ui-00, #fff);
 }
+.blx-dropdown .blx-dropdown-item:hover .blx-icon {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+}
+.blx-dropdown .blx-dropdown-item.blx-hover .blx-icon {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+}
 .blx-popover-text {
   margin-right: 16px;
 }

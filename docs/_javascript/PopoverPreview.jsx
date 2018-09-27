@@ -20,7 +20,8 @@ const exampleOptions = [
     onClick: () => {}
   },
   {
-    text: 'Another one',
+    element: <span>More than text<span className="blx-icon blx-icon-plus" /></span>,
+    key: 'customItem',
     onClick: () => {}
   }
 ];

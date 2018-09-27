@@ -24,9 +24,7 @@ const PopoverMenu = props => (
         {
           props.options.map((option) => {
             let item = null;
-            if (option.element) {
-              item = option.element;
-            } else if (option.href) {
+            if (option.href) {
               item = (
                 <a
                   href={option.href}
@@ -38,9 +36,12 @@ const PopoverMenu = props => (
             } else {
               item = (
                 <button
-                  onClick={option.onClick}
+                  onClick={(evt) => {
+                    option.onClick(evt);
+                    props.toggle();
+                  }}
                 >
-                  {option.text}
+                  {option.text || option.element}
                 </button>
               );
             }
