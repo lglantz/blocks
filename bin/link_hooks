@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd "$(dirname $0)/.."
+blocks_dir=$(pwd)
+hooks=("pre-commit")
+
+for hook in ${hooks[@]}; do
+  read -p "link $hook hook? [y]/n: " response
+  if [ "$response" == "" ] || [ "$response" == "y" ] || [ "$response" == "Y" ]; then
+    ln -is $blocks_dir/hooks/$hook $blocks_dir/.git/hooks/$hook
+  fi
+done
