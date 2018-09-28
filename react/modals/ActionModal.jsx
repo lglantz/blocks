@@ -7,6 +7,8 @@ const ButtonSecondary = require('../buttons/ButtonSecondary.jsx');
 
 
 const ActionModal = (props) => {
+  if (props.isHidden) return null;
+
   let confirmButton = null;
   if (props.onConfirm && props.confirmText) {
     confirmButton = (
@@ -44,24 +46,17 @@ const ActionModal = (props) => {
     );
   }
 
-  let modalContent = null;
-  if (!props.isHidden) {
-    modalContent = (
+  return (
+    <BaseModal
+      isHidden={props.isHidden}
+      onClose={props.onClose}
+    >
       <div>
         <h4>{props.title}</h4>
         <p>{props.message}</p>
         {actionInfo}
         {buttonBar}
       </div>
-    );
-  }
-
-  return (
-    <BaseModal
-      isHidden={props.isHidden}
-      onClose={props.onClose}
-    >
-      { modalContent }
     </BaseModal>
   );
 };

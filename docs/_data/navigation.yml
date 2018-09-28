@@ -81,3 +81,7 @@
 - title: Tabs
   url: patterns/tabs
   section: Patterns
+
+- title: Modals
+  url: patterns/modals
+  section: Patterns
