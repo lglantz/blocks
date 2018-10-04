@@ -30,7 +30,8 @@ class Dropdown extends React.Component {
   }
 
   onKeyDown(e) {
-    if (['ArrowDown', 'ArrowUp', 'Tab', 'Enter', 'Space'].indexOf(e.key) > -1) e.preventDefault()
+    if (e.key === 'Tab' && this.props.isOpen) this.props.close();
+    if (['ArrowDown', 'ArrowUp', 'Enter', 'Space'].indexOf(e.key) > -1) e.preventDefault()
     if (e.key === 'ArrowDown' && !this.props.isOpen) this.props.open();
     this.moveFocusUsingKey(e.key);
   }
@@ -69,10 +70,9 @@ class Dropdown extends React.Component {
   getFocusIndexAfterKeyPress(keyName) {
     if (keyName === 'ArrowDown') return Math.min(this.state.onFocusIdx + 1, this.props.options.length - 1);
     if (keyName === 'ArrowUp') return Math.max(this.state.onFocusIdx - 1, 0);
-    if (keyName === 'Tab') {
-      const focusIsAtTheEndAndShouldWrapToBeginning = this.state.onFocusIdx === this.props.options.length - 1;
-      if (focusIsAtTheEndAndShouldWrapToBeginning) return 0;
-      return this.state.onFocusIdx + 1;
+    for (let i = 0; i < this.props.options.length; i++) {
+      const option = this.props.options[i];
+      if (option.text && option.text[0].toLowerCase() === keyName) return i;
     }
     return this.state.onFocusIdx;
   }
@@ -108,6 +108,7 @@ class Dropdown extends React.Component {
         }
       }
     }
+
     return (
       <button
         className={`blx-dropdown-trigger ${this.props.isOpen ? 'blx-active' : ''} ${this.props.isDisabled ? 'blx-disabled' : ''} ${!this.props.value ? 'blx-dropdown-trigger-placeholder' : ''}`}
@@ -118,7 +119,10 @@ class Dropdown extends React.Component {
         onKeyDown={this.onKeyDown}
         onFocus={() => this.setState({ onFocusIdx: -1 })}
       >
-        { content }
+        { this.props.icon && 
+          <span className={`blx-icon blx-icon-${this.props.icon}`} />
+        }
+        <span>{ content }</span>
       </button>
     );
   }
@@ -180,6 +184,7 @@ Dropdown.propTypes = {
   toggle: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   text: PropTypes.string,
+  icon: PropTypes.string,
   description: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
@@ -208,6 +213,7 @@ Dropdown.defaultProps = {
   isOpen: false,
   options: [],
   text: 'Choose an option',
+  icon: null,
   description: '',
   value: null,
   onChange: () => {},

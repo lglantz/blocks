@@ -440,6 +440,11 @@ h6 {
   background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
+.blx-alerts-container {
+  postion: absolute;
+  top: 0;
+  left: 0;
+}
 .blx-alert-icon-container {
   position: relative;
   width: 32px;
@@ -917,6 +922,9 @@ a.blx-button {
 .blx-dropdown-wrapper {
   display: inline-flex;
 }
+.blx-dropdown-wrapper + .blx-dropdown-wrapper {
+  margin-top: 30px;
+}
 .blx-dropdown {
   position: relative;
   display: flex;
@@ -944,6 +952,19 @@ a.blx-button {
   border: 1px solid var(--ui-03, #edf0ee);
   color: #2b3836;
   color: var(--text-01, #2b3836);
+  display: flex;
+}
+.blx-dropdown .blx-dropdown-trigger .blx-icon {
+  margin: 12px 10px 12px 0;
+  background-color: #91a49e;
+  background-color: var(--ui-07, #91a49e);
+}
+.blx-dropdown .blx-dropdown-trigger .blx-icon:hover {
+  background-color: #91a49e;
+  background-color: var(--ui-07, #91a49e);
+}
+.blx-dropdown .blx-dropdown-trigger .blx-icon + span {
+  margin: 10px 0;
 }
 .blx-dropdown .blx-dropdown-trigger.blx-dropdown-trigger-placeholder {
   color: #91a49e;
@@ -993,6 +1014,14 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-trigger.blx-hover::after {
   top: 9px;
 }
+.blx-dropdown .blx-dropdown-trigger:hover .blx-icon,
+.blx-dropdown .blx-dropdown-trigger.blx-hover .blx-icon {
+  margin-top: 11px;
+}
+.blx-dropdown .blx-dropdown-trigger:hover .blx-icon + span,
+.blx-dropdown .blx-dropdown-trigger.blx-hover .blx-icon + span {
+  margin-top: 9px;
+}
 .blx-dropdown .blx-dropdown-trigger:focus {
   margin: 0;
   outline: none;
@@ -1012,6 +1041,14 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-trigger:focus::after,
 .blx-dropdown .blx-dropdown-trigger.blx-focus::after {
   top: 10px;
+}
+.blx-dropdown .blx-dropdown-trigger:focus .blx-icon,
+.blx-dropdown .blx-dropdown-trigger.blx-focus .blx-icon {
+  margin-top: 12px;
+}
+.blx-dropdown .blx-dropdown-trigger:focus .blx-icon + span,
+.blx-dropdown .blx-dropdown-trigger.blx-focus .blx-icon + span {
+  margin-top: 10px;
 }
 .blx-dropdown .blx-dropdown-menu {
   position: absolute;

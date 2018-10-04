@@ -91,6 +91,53 @@ definition: An input that allows users to make a single selection from a pre-def
   </div>
 {% endcapture %}
 
+{% capture dropdown_trigger_icon_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-icon blx-icon-plus"></span>
+        <span>Choose an option</span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_multiple_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span>Choose an option</span>
+      </button>
+    </div>
+  </div>
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span>Choose an option</span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_multiple_label_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Dropdown label</p>
+      <button class="blx-dropdown-trigger">
+        Choose an option
+      </button>
+    </div>
+  </div>
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Dropdown label</p>
+      <button class="blx-dropdown-trigger">
+        Choose an option
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
 {% capture dropdown_trigger_open_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
@@ -153,6 +200,12 @@ definition: An input that allows users to make a single selection from a pre-def
       <div class="doc-state-content">
         {{ dropdown_trigger_focus_example }}
       </div>
+      <span class="doc-state-title blx-caption">
+        Multiple
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_multiple_example }}
+      </div>
     </div>
     <div class="l-flex-horizontal">
       <span class="doc-state-title blx-caption">
@@ -161,6 +214,12 @@ definition: An input that allows users to make a single selection from a pre-def
       <div class="doc-state-content">
         {{ dropdown_trigger_disabled_example }}
       </div>
+      <span class="doc-state-title blx-caption">
+        Multiple with labels
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_multiple_label_example }}
+      </div>
     </div>
     <div class="l-flex-horizontal">
       <span class="doc-state-title blx-caption">
@@ -168,6 +227,14 @@ definition: An input that allows users to make a single selection from a pre-def
       </span>
       <div class="doc-state-content">
         {{ dropdown_trigger_overflow_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        With icon
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_icon_example }}
       </div>
     </div>
   </div>

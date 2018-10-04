@@ -46,6 +46,21 @@ class DropdownPreview extends React.Component {
               />
           ) }
         </div>
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('With icon',
+              <Dropdown
+                text="Choose an option"
+                icon="plus"
+                options={
+                  [
+                    { value: 'option1', text: 'One option' },
+                    { value: 'option2', text: 'Another option' },
+                    { value: 'option3', text: 'Best option' }
+                  ]
+                }
+              />
+          ) }
+        </div>
       </div>
     );
   }
