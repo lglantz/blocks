@@ -15,7 +15,7 @@ generated_files=()
 for i in ${edited_files[@]}
 do
   [[ $i == react/*.jsx ]] && edited_react_components+=($i)
-  [[ $i == _javascript/*.jsx ]] && edited_previews+=($i)
+  [[ $i == docs/_javascript/*.jsx ]] && edited_previews+=($i)
   [[ $i == docs/lib/*.js ]] && generated_files+=($i)
 done
 
