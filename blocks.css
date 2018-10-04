@@ -429,8 +429,16 @@ h6 {
   box-shadow: 0 3px 6px 1px var(--ui-04, #d9e1e0);
 }
 .blx-alert .blx-icon-close {
-  background-color: #91a49e;
-  background-color: var(--ui-07, #91a49e);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-alert .blx-icon-close:hover {
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+}
+.blx-alert .blx-icon-close:focus {
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
 }
 .blx-alert-icon-container {
   position: relative;
