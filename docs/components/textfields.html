@@ -43,6 +43,12 @@ definition: 'An input for freeform data entry. It supports a number of input typ
   </div>
 {% endcapture %}
 
+{% capture text_field_date_example %}
+  <div class="blx-text-field">
+    <input type="date" placeholder="Select a date" />
+  </div>
+{% endcapture %}
+
 {% capture text_field_invalid_example %}
   <div class="blx-text-field">
     <div>
@@ -199,6 +205,14 @@ definition: 'An input for freeform data entry. It supports a number of input typ
       </span>
       <div class="doc-state-content">
         {{ text_field_disabled_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Date
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_date_example }}
       </div>
     </div>
   </div>

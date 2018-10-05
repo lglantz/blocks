@@ -16,7 +16,8 @@ class TextFieldPreview extends React.Component {
     this.state = {
       conditionalSuffixValue: '',
       invalidInputValue: INVALID_VALUE,
-      unitValue: 'ft'
+      unitValue: 'ft',
+      date: null
     };
 
     this.onChangeUnit = this.onChangeUnit.bind(this);
@@ -84,6 +85,16 @@ class TextFieldPreview extends React.Component {
                 invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
                 value={this.state.invalidInputValue}
                 onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
+              />
+          ) }
+        </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Date/time picker',
+              <TextField
+                type="date"
+                value={this.state.date}
+                onChange={evt => this.setState({ date: evt.target.value })}
               />
           ) }
         </div>

@@ -1881,6 +1881,34 @@ a.blx-button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: Graphik Web;
+}
+.blx-text-field input[type="date"] {
+  position: relative;
+  width: 166px;
+}
+.blx-text-field input[type="date"]::before,
+.blx-text-field input[type="date"]::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  height: 16px;
+  pointer-events: none;
+}
+.blx-text-field input[type="date"]::before {
+  right: 16px;
+  width: 20px;
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+}
+.blx-text-field input[type="date"]::after {
+  right: 18px;
+  width: 16px;
+  background-repeat: no-repeat;
+  background-color: #d9e1e0;
+  background-color: var(--ui-04, #d9e1e0);
+  -webkit-mask: url("../svgs/icon-calendar.svg") no-repeat 50% 50%;
+          mask: url("../svgs/icon-calendar.svg") no-repeat 50% 50%;
 }
 .blx-text-field textarea {
   resize: none;
