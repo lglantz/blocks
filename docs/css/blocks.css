@@ -1244,9 +1244,11 @@ a.blx-button {
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-icon-info {
+.blx-icon-information {
   background-color: #6f6bf8;
   background-color: var(--information, #6f6bf8);
+  -webkit-mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
+          mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
 }
 .blx-icon-down {
   height: 12px;
@@ -1863,6 +1865,7 @@ a.blx-button {
 }
 .blx-text-field-container {
   position: relative;
+  display: flex;
 }
 .blx-text-field {
   display: inline-flex;
@@ -2016,6 +2019,14 @@ a.blx-button {
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
+.blx-text-field .blx-text-field-icon {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 11px;
+  padding-bottom: 9px;
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
 .blx-text-field .blx-text-field-prefix {
   position: absolute;
   left: 16px;
@@ -2037,6 +2048,9 @@ a.blx-button {
 }
 .blx-text-field .blx-text-field-suffix ~ input {
   padding-right: 40px;
+}
+.blx-text-field .blx-text-field-icon {
+  margin-left: 10px;
 }
 .blx-text-field .blx-invalid-text-field-marker,
 .blx-text-field .blx-invalid-text-field-message,

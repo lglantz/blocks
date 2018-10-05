@@ -1,5 +1,6 @@
 .blx-text-field-container {
   position: relative;
+  display: flex;
 }
 
 .blx-text-field {
@@ -88,7 +89,7 @@
     }
   }
 
-  .blx-text-field-prefix, .blx-text-field-suffix {
+  .blx-text-field-prefix, .blx-text-field-suffix, .blx-text-field-icon {
     font-size: 16px;
     line-height: 20px;
     padding-top: 11px;
@@ -115,6 +116,10 @@
     & ~ input {
       padding-right: 40px;
     }
+  }
+  
+  .blx-text-field-icon {
+    margin-left: 10px;
   }
   
   .blx-invalid-text-field-marker,

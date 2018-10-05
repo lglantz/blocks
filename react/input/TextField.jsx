@@ -41,6 +41,12 @@ class TextField extends React.Component {
       suffixElement = <span className="blx-text-field-suffix">{this.props.suffix}</span>;
     }
 
+    // icon element
+    let iconElement = null;
+    if (this.props.icon) {
+      iconElement = <span className="blx-text-field-icon">{this.props.icon}</span>;
+    }
+
     const textInputElement = (
       <input
         className={textFieldClasses}
@@ -86,6 +92,7 @@ class TextField extends React.Component {
           {prefixElement}
           {suffixElement}
           {textInputElement}
+          {iconElement}
         </div>
         {invalidLabelMessage}
       </div>
@@ -104,6 +111,10 @@ TextField.propTypes = {
     PropTypes.node
   ]),
   suffix: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]),
+  icon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
   ]),
@@ -128,6 +139,7 @@ TextField.defaultProps = {
   placeholder: '',
   prefix: null,
   suffix: null,
+  icon: null,
   isDisabled: false,
   isValid: () => true,
   invalidErrorMessage: '',

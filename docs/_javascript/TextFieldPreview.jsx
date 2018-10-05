@@ -98,6 +98,15 @@ class TextFieldPreview extends React.Component {
               />
           ) }
         </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Icon next to field',
+            <TextField
+              value="Text input"
+              icon={<span className="blx-icon blx-icon-information" />}
+              onChange={() => {}}
+            />) }
+        </div>
       </div>
     );
   }

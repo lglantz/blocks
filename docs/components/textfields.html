@@ -49,6 +49,17 @@ definition: 'An input for freeform data entry. It supports a number of input typ
   </div>
 {% endcapture %}
 
+{% capture text_field_icon_example %}
+  <div class="blx-text-field">
+    <div class="blx-text-field-container">
+      <input type="text" placeholder="Placeholder text" />
+      <span class="blx-text-field-icon">
+        <span class="blx-icon blx-icon-information"></span>
+      </span>
+    </div>
+  </div>
+{% endcapture %}
+
 {% capture text_field_invalid_example %}
   <div class="blx-text-field">
     <div>
@@ -82,7 +93,7 @@ definition: 'An input for freeform data entry. It supports a number of input typ
     <div class="blx-text-field-container">
       <span class="blx-text-field-prefix">$</span>
       <span class="blx-text-field-suffix">USD</span>
-      <input type="text" placeholder="Text input">
+      <input type="text" placeholder="Text input" />
     </div>
   </div>
 {% endcapture %}
@@ -153,6 +164,7 @@ definition: 'An input for freeform data entry. It supports a number of input typ
   {{ text_field_disabled_example }}
   {{ text_field_invalid_example }}
   {{ text_field_prefix_suffix_example }}
+  {{ text_field_icon_example }}
 {% endcapture %}
 
 <!-- state & behavior section -->
@@ -213,6 +225,14 @@ definition: 'An input for freeform data entry. It supports a number of input typ
       </span>
       <div class="doc-state-content">
         {{ text_field_date_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Icon next to field
+      </span>
+      <div class="doc-state-content">
+        {{ text_field_icon_example }}
       </div>
     </div>
   </div>
