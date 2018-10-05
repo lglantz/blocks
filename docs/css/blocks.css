@@ -1915,6 +1915,7 @@ a.blx-button {
 }
 .blx-text-field textarea {
   resize: none;
+  overflow: hidden;
 }
 .blx-text-field input {
   width: 100%;

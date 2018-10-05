@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
+
 class TextField extends React.Component {
   constructor(props) {
     super(props);
@@ -8,12 +9,102 @@ class TextField extends React.Component {
     this.state = {
       isValid: props.isValid(props.value)
     };
+
+    this.textAreaRef = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.props.isMultiline) {
+      this.resizeTextArea();
+    }
   }
 
   updateValidity() {
     this.setState({
       isValid: this.props.isValid(this.props.value)
     });
+  }
+
+  resizeTextArea() {
+    if (!this.textAreaRef) return;
+    this.textAreaRef.current.style.height = '1px';
+    this.textAreaRef.current.style.height = `${this.textAreaRef.current.scrollHeight}px`;
+  }
+
+  getTextField() {
+    return (
+      <input
+        className={textFieldClasses}
+        type={this.props.type}
+        name={this.props.name}
+        value={this.props.value || ''}
+        placeholder={this.props.placeholder}
+        disabled={this.props.isDisabled}
+        autoComplete={this.props.autoComplete}
+        readOnly={this.props.readOnly}
+        onChange={this.props.onChange}
+        onFocus={this.props.onFocus}
+        onBlur={(e) => {
+          this.updateValidity();
+          if (this.props.onBlur) {
+            this.props.onBlur(e);
+          }
+        }}
+        onKeyUp={(e) => {
+          if (this.props.onKeyUp) this.props.onKeyUp(e);
+          if (e.key === 'Enter') {
+            e.target.blur();
+          }
+          // If an invalid message has already appeared via blur,
+          // do the user a favor and update validity once they fix it (before another blur)
+          if (!this.state.isValid) {
+            this.updateValidity();
+          }
+        }}
+        onKeyDown={this.props.onKeyDown}
+        ref={this.props.forwardedRef}
+        autoFocus={this.props.autoFocus}
+      />
+    );
+  }
+
+  getTextArea() {
+    let textAreaRef = null;
+    if (this.props.forwardedRef) {
+      textAreaRef = this.props.forwardedRef;
+    } else {
+      textAreaRef = this.textAreaRef;
+    }
+
+    return (
+      <textarea
+        name={this.props.name}
+        value={this.props.value || ''}
+        placeholder={this.props.placeholder}
+        disabled={this.props.isDisabled}
+        readOnly={this.props.readOnly}
+        onChange={this.props.onChange}
+        onFocus={this.props.onFocus}
+        onBlur={(e) => {
+          this.updateValidity();
+          if (this.props.onBlur) {
+            this.props.onBlur(e);
+          }
+        }}
+        onKeyUp={(e) => {
+          if (this.props.onKeyUp) this.props.onKeyUp(e);
+          this.resizeTextArea();
+          // If an invalid message has already appeared via blur,
+          // do the user a favor and update validity once they fix it (before another blur)
+          if (!this.state.isValid) {
+            this.updateValidity();
+          }
+        }}
+        onKeyDown={this.props.onKeyDown}
+        ref={textAreaRef}
+        autoFocus={this.props.autoFocus}
+      />
+    );
   }
 
   render() {
@@ -47,40 +138,12 @@ class TextField extends React.Component {
       iconElement = <span className="blx-text-field-icon">{this.props.icon}</span>;
     }
 
-    const textInputElement = (
-      <input
-        className={textFieldClasses}
-        type={this.props.type}
-        name={this.props.name}
-        value={this.props.value}
-        placeholder={this.props.placeholder}
-        disabled={this.props.isDisabled}
-        autoComplete={this.props.autoComplete}
-        readOnly={this.props.readOnly}
-        onChange={this.props.onChange}
-        onFocus={this.props.onFocus}
-        onBlur={(e) => {
-          this.updateValidity();
-          if (this.props.onBlur) {
-            this.props.onBlur(e);
-          }
-        }}
-        onKeyUp={(e) => {
-          if (this.props.onKeyUp) this.props.onKeyUp(e);
-          if (e.key === 'Enter') {
-            e.target.blur();
-          }
-          // If an invalid message has already appeared via blur,
-          // do the user a favor and update validity once they fix it (before another blur)
-          if (!this.state.isValid) {
-            this.updateValidity();
-          }
-        }}
-        onKeyDown={this.props.onKeyDown}
-        ref={this.props.forwardedRef}
-        autoFocus={this.props.autoFocus}
-      />
-    );
+    let textInputElement = null;
+    if (this.props.isMultiline) {
+      textInputElement = this.getTextArea();
+    } else {
+      textInputElement = this.getTextField();
+    }
 
     return (
       <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
@@ -119,6 +182,7 @@ TextField.propTypes = {
     PropTypes.node
   ]),
   isDisabled: PropTypes.bool,
+  isMultiline: PropTypes.bool,
   isValid: PropTypes.func,
   invalidErrorMessage: PropTypes.string,
   onChange: PropTypes.func,
@@ -141,6 +205,7 @@ TextField.defaultProps = {
   suffix: null,
   icon: null,
   isDisabled: false,
+  isMultiline: false,
   isValid: () => true,
   invalidErrorMessage: '',
   onChange: null,

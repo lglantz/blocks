@@ -17,7 +17,8 @@ class TextFieldPreview extends React.Component {
       conditionalSuffixValue: '',
       invalidInputValue: INVALID_VALUE,
       unitValue: 'ft',
-      date: null
+      date: null,
+      multiline: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin."
     };
 
     this.onChangeUnit = this.onChangeUnit.bind(this);
@@ -105,6 +106,15 @@ class TextFieldPreview extends React.Component {
               value="Text input"
               icon={<span className="blx-icon blx-icon-information" />}
               onChange={() => {}}
+            />) }
+        </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Multiline overflow',
+            <TextField
+              value={this.state.multiline}
+              isMultiline
+              onChange={evt => this.setState({ multiline: evt.target.value })}
             />) }
         </div>
       </div>
