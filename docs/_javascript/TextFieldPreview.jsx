@@ -4,6 +4,7 @@ const ReactDOM = require('react-dom');
 const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 const TextField = require('../../react/input/TextField.jsx');
+const TextArea = require('../../react/input/TextArea.jsx');
 const TextFieldWithDropdown = require('../../react/input/TextFieldWithDropdown.jsx');
 
 const INVALID_VALUE = 'Wrong';
@@ -111,9 +112,8 @@ class TextFieldPreview extends React.Component {
 
         <div className="l-flex-horizontal">
           { getPreviewComponent('Multiline overflow',
-            <TextField
+            <TextArea
               value={this.state.multiline}
-              isMultiline
               onChange={evt => this.setState({ multiline: evt.target.value })}
             />) }
         </div>
