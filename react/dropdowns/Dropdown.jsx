@@ -122,7 +122,7 @@ class Dropdown extends React.Component {
         { this.props.icon && 
           <span className={`blx-icon blx-icon-${this.props.icon}`} />
         }
-        <span>{ content }</span>
+        <span className={`blx-dropdown-text`}>{ content }</span>
       </button>
     );
   }

@@ -958,6 +958,11 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-trigger .blx-icon + span {
   margin: 10px 0;
 }
+.blx-dropdown .blx-dropdown-trigger .blx-dropdown-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .blx-dropdown .blx-dropdown-trigger.blx-dropdown-trigger-placeholder {
   color: #91a49e;
   color: var(--ui-07, #91a49e);
