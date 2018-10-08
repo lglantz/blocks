@@ -65,8 +65,6 @@ class DropdownPreview extends React.Component {
           { getPreviewComponent('Overflow',
               <Dropdown
                 text="This is a really long title that will overflow"
-                value={this.state.currentValue}
-                onChange={evt => this.setState({ currentValue: evt.value })}
                 options={
                   [
                     { value: 'option1', text: 'One option' },
