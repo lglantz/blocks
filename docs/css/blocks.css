@@ -1905,8 +1905,8 @@ a.blx-button {
   right: 18px;
   width: 16px;
   background-repeat: no-repeat;
-  background-color: #d9e1e0;
-  background-color: var(--ui-04, #d9e1e0);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
   -webkit-mask: url("../svgs/icon-calendar.svg") no-repeat 50% 50%;
           mask: url("../svgs/icon-calendar.svg") no-repeat 50% 50%;
 }
