@@ -54,14 +54,6 @@ class TextField extends React.Component {
     );
   }
 
-  getTextArea() {
-    let textAreaRef = null;
-    if (this.props.forwardedRef) {
-      textAreaRef = this.props.forwardedRef;
-    } else {
-      textAreaRef = this.textAreaRef;
-    }
-
   render() {
     // text input element itself
     let textFieldClasses = '';
