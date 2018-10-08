@@ -43,6 +43,7 @@ class TextField extends React.Component {
 
     const textInputElement = (
       <input
+        className={textFieldClasses}
         type={this.props.type}
         name={this.props.name}
         value={this.props.value}
