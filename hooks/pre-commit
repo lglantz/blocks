@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# pre-commit hook to verify that generated files have been added
+# if React component files were changed
+#
+# Currently not very smart - will not catch cases where you added
+# some generated files but missed others.
+
+edited_files=($(git diff-index --cached HEAD | awk '{print $6}'))
+
+edited_react_components=()
+edited_previews=()
+generated_files=()
+
+for i in ${edited_files[@]}
+do
+  [[ $i == react/*.jsx ]] && edited_react_components+=($i)
+  [[ $i == docs/_javascript/*.jsx ]] && edited_previews+=($i)
+  [[ $i == docs/lib/*.js ]] && generated_files+=($i)
+done
+
+did_edit_react=${#edited_react_components[@]}
+did_edit_previews=${#edited_previews[@]}
+did_generate_files=${#generated_files[@]}
+
+if ([ $did_edit_react -gt 0 ] || [ $did_edit_previews -gt 0 ]) && [ $did_generate_files == 0 ]
+then
+  echo -e "\033[1;92mBLOCKS\033[0m Warning: You may not have included all necessary generated files."
+  echo "=== Please run 'gulp server' and add to your commit any additional files it produces."
+  echo "=== Try again with -n to bypass this pre-commit hook."
+  exit 1
+fi
+
+exit 0
