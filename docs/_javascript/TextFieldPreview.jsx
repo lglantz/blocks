@@ -4,6 +4,7 @@ const ReactDOM = require('react-dom');
 const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 const TextField = require('../../react/input/TextField.jsx');
+const TextArea = require('../../react/input/TextArea.jsx');
 const TextFieldWithDropdown = require('../../react/input/TextFieldWithDropdown.jsx');
 
 const INVALID_VALUE = 'Wrong';
@@ -16,7 +17,9 @@ class TextFieldPreview extends React.Component {
     this.state = {
       conditionalSuffixValue: '',
       invalidInputValue: INVALID_VALUE,
-      unitValue: 'ft'
+      unitValue: 'ft',
+      date: null,
+      multiline: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin."
     };
 
     this.onChangeUnit = this.onChangeUnit.bind(this);
@@ -86,6 +89,33 @@ class TextFieldPreview extends React.Component {
                 onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
               />
           ) }
+        </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Date/time picker',
+              <TextField
+                type="date"
+                value={this.state.date}
+                onChange={evt => this.setState({ date: evt.target.value })}
+              />
+          ) }
+        </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Icon next to field',
+            <TextField
+              value="Text input"
+              icon={<span className="blx-icon blx-icon-information" />}
+              onChange={() => {}}
+            />) }
+        </div>
+
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Multiline overflow',
+            <TextArea
+              value={this.state.multiline}
+              onChange={evt => this.setState({ multiline: evt.target.value })}
+            />) }
         </div>
       </div>
     );

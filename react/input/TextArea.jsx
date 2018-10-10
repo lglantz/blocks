@@ -2,13 +2,21 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-class TextField extends React.Component {
+class TextArea extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       isValid: props.isValid(props.value)
     };
+
+    this.textAreaRef = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.props.isMultiline) {
+      this.resizeTextArea();
+    }
   }
 
   updateValidity() {
@@ -17,16 +25,22 @@ class TextField extends React.Component {
     });
   }
 
-  getTextField() {
+  // resize the text area to fit only the height of its content
+  resizeTextArea() {
+    if (!this.textAreaRef) return;
+    // set height to 1px so scrollHeight will be total height of content
+    this.textAreaRef.current.style.height = '1px';
+    // reset to be correct height
+    this.textAreaRef.current.style.height = `${this.textAreaRef.current.scrollHeight}px`;
+  }
+
+  getTextArea() {
     return (
-      <input
-        className={textFieldClasses}
-        type={this.props.type}
+      <textarea
         name={this.props.name}
         value={this.props.value || ''}
         placeholder={this.props.placeholder}
         disabled={this.props.isDisabled}
-        autoComplete={this.props.autoComplete}
         readOnly={this.props.readOnly}
         onChange={this.props.onChange}
         onFocus={this.props.onFocus}
@@ -38,9 +52,7 @@ class TextField extends React.Component {
         }}
         onKeyUp={(e) => {
           if (this.props.onKeyUp) this.props.onKeyUp(e);
-          if (e.key === 'Enter') {
-            e.target.blur();
-          }
+          this.resizeTextArea();
           // If an invalid message has already appeared via blur,
           // do the user a favor and update validity once they fix it (before another blur)
           if (!this.state.isValid) {
@@ -48,7 +60,7 @@ class TextField extends React.Component {
           }
         }}
         onKeyDown={this.props.onKeyDown}
-        ref={this.props.forwardedRef}
+        ref={this.textAreaRef}
         autoFocus={this.props.autoFocus}
       />
     );
@@ -67,26 +79,6 @@ class TextField extends React.Component {
       textFieldClasses += ' blx-invalid';
     }
 
-    // prefix element
-    let prefixElement = null;
-    if (this.props.prefix) {
-      prefixElement = <span className="blx-text-field-prefix">{this.props.prefix}</span>;
-    }
-
-    // suffix element
-    let suffixElement = null;
-    if (this.props.suffix) {
-      suffixElement = <span className="blx-text-field-suffix">{this.props.suffix}</span>;
-    }
-
-    // icon element
-    let iconElement = null;
-    if (this.props.icon) {
-      iconElement = <span className="blx-text-field-icon">{this.props.icon}</span>;
-    }
-
-    const textInputElement = this.getTextField();
-
     return (
       <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
         <div>
@@ -94,10 +86,7 @@ class TextField extends React.Component {
           {invalidLabelMarker}
         </div>
         <div className="blx-text-field-container">
-          {prefixElement}
-          {suffixElement}
-          {textInputElement}
-          {iconElement}
+          {this.getTextArea()}
         </div>
         {invalidLabelMessage}
       </div>
@@ -105,25 +94,14 @@ class TextField extends React.Component {
   }
 }
 
-TextField.propTypes = {
+TextArea.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  prefix: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
-  suffix: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
   isDisabled: PropTypes.bool,
+  isMultiline: PropTypes.bool,
   isValid: PropTypes.func,
   invalidErrorMessage: PropTypes.string,
   onChange: PropTypes.func,
@@ -131,21 +109,18 @@ TextField.propTypes = {
   onKeyDown: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  autoComplete: PropTypes.string,
   readOnly: PropTypes.bool,
   autoFocus: PropTypes.bool
 };
 
-TextField.defaultProps = {
+TextArea.defaultProps = {
   type: 'text',
   name: '',
   value: '',
   label: '',
   placeholder: '',
-  prefix: null,
-  suffix: null,
-  icon: null,
   isDisabled: false,
+  isMultiline: false,
   isValid: () => true,
   invalidErrorMessage: '',
   onChange: null,
@@ -153,12 +128,9 @@ TextField.defaultProps = {
   onKeyDown: null,
   onFocus: null,
   onBlur: null,
-  autoComplete: '',
   readOnly: false,
   autoFocus: false
 };
 
-module.exports = React.forwardRef((props, ref) => (
-  <TextField {...props} forwardedRef={ref} />
-));
+module.exports = TextArea;
 

@@ -46,6 +46,36 @@ class DropdownPreview extends React.Component {
               />
           ) }
         </div>
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('With icon',
+              <Dropdown
+                text="Choose an option"
+                icon="plus"
+                options={
+                  [
+                    { value: 'option1', text: 'One option' },
+                    { value: 'option2', text: 'Another option' },
+                    { value: 'option3', text: 'Best option' }
+                  ]
+                }
+              />
+          ) }
+        </div>
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Overflow',
+              <Dropdown
+                text="This is a really long title that will overflow"
+                options={
+                  [
+                    { value: 'option1', text: 'One option' },
+                    { value: 'option2', text: 'Another option', href: '#' },
+                    { value: 'option3', text: 'Best option' },
+                    { value: 'option4', element: <button><span className="blx-icon blx-icon-plus"/>Custom element</button>, key: 'option4' }
+                  ]
+                }
+              />
+          ) }
+        </div>
       </div>
     );
   }

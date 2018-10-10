@@ -1,6 +1,6 @@
 # blocks
 
-CBRE Building Blocks design system repository
+CBRE Blocks design system repository
 
 ## Getting started
 

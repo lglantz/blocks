@@ -14,14 +14,55 @@ class Dropdown extends React.Component {
     };
     
     this.optionsRefs = [];
+    for (let i = 0; i < this.props.options.length; i++) {
+      this.optionsRefs[i] = React.createRef();
+    }
 
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
+
+    this.getClickHandler = this.getClickHandler.bind(this);
+    this.getKeyUpHandler = this.getKeyUpHandler.bind(this);
     
-    this.setOptionNode = this.setOptionNode.bind(this);
     this.moveFocusUsingKey = this.moveFocusUsingKey.bind(this);
     this.getFocusIndexAfterKeyPress = this.getFocusIndexAfterKeyPress.bind(this);
     this.focusOption = this.focusOption.bind(this);
+  }
+
+  componentDidMount() {
+    for (let i = 0; i < this.optionsRefs.length; i++) {
+      const optionRef = this.optionsRefs[i].current;
+      for (let j = 0; j < optionRef.childNodes.length; j++) {
+        const child = optionRef.childNodes[j];
+        if (typeof child.focus === 'function') {
+          child.addEventListener('keydown', this.onKeyDown);
+          child.addEventListener('keyup', this.getKeyUpHandler(this.props.options[i]));
+          child.addEventListener('click', this.getClickHandler(this.props.options[i]));
+          break;
+        }
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    for (let i = 0; i < this.optionsRefs.length; i++) {
+      const optionRef = this.optionsRefs[i].current;
+      for (let j = 0; j < optionRef.childNodes.length; j++) {
+        const child = optionRef.childNodes[j];
+        if (typeof child.focus === 'function') {
+          child.removeEventListener('keydown', this.onKeyDown);
+          child.removeEventListener('keyup', this.getKeyUpHandler(this.props.options[i]));
+          child.removeEventListener('click', this.getClickHandler(this.props.options[i]));
+          break;
+        }
+      }
+    }
+  }
+
+  getClickHandler(option) {
+    return () => {
+      this.onSelect(option);
+    };
   }
 
   onSelect(option) {
@@ -30,33 +71,28 @@ class Dropdown extends React.Component {
   }
 
   onKeyDown(e) {
-    if (['ArrowDown', 'ArrowUp', 'Tab', 'Enter', 'Space'].indexOf(e.key) > -1) e.preventDefault()
-    if (e.key === 'ArrowDown' && !this.props.isOpen) this.props.open();
-    this.moveFocusUsingKey(e.key);
-  }
-
-  onKeyUp(e, option) {
-    if (['Enter', 'Space'].indexOf(e.key) > -1) {
-      this.onSelect(option);
-    } else if (e.key === 'Escape') {
+    if (e.key === 'Tab' && this.props.isOpen) {
       this.props.close();
+    } else if (['ArrowDown', ' '].indexOf(e.key) > -1 && !this.props.isOpen) {
+      e.preventDefault();
+      this.props.open();
+    } else {
+      if (['ArrowDown', 'ArrowUp', 'Enter', ' '].indexOf(e.key) > -1) e.preventDefault();
+      this.moveFocusUsingKey(e.key);
     }
   }
 
-  setOptionNode(element, idx) {
-    if (element) {
-      this.optionsRefs[idx] = element;
-      // add key listeners to first focusable child element in the menu item
-      for (let i = 0; i < this.optionsRefs[idx].childNodes.length; i++) {
-        const child = this.optionsRefs[idx].childNodes[i];
-        if (typeof child.focus === 'function') {
-          child.addEventListener('keydown', this.onKeyDown);
-          child.addEventListener('keyup', e => this.onKeyUp(e, this.props.options[idx]));
-          child.addEventListener('click', () => this.onSelect(this.props.options[idx]));
-          break;
-        }
-      }
-      
+  getKeyUpHandler(option) {
+    return (e) => {
+      this.onKeyUp(e, option);
+    };
+  }
+
+  onKeyUp(e, option) {
+    if (['Enter', ' '].indexOf(e.key) > -1) {
+      this.onSelect(option);
+    } else if (e.key === 'Escape') {
+      this.props.close();
     }
   }
 
@@ -69,16 +105,16 @@ class Dropdown extends React.Component {
   getFocusIndexAfterKeyPress(keyName) {
     if (keyName === 'ArrowDown') return Math.min(this.state.onFocusIdx + 1, this.props.options.length - 1);
     if (keyName === 'ArrowUp') return Math.max(this.state.onFocusIdx - 1, 0);
-    if (keyName === 'Tab') {
-      const focusIsAtTheEndAndShouldWrapToBeginning = this.state.onFocusIdx === this.props.options.length - 1;
-      if (focusIsAtTheEndAndShouldWrapToBeginning) return 0;
-      return this.state.onFocusIdx + 1;
+    for (let i = 0; i < this.props.options.length; i++) {
+      const option = this.props.options[i];
+      if (option.text && option.text[0].toLowerCase() === keyName) return i;
     }
     return this.state.onFocusIdx;
   }
 
   focusOption(idx) {
-    const optionRef = this.optionsRefs[idx];
+    if (idx < 0) return;
+    const optionRef = this.optionsRefs[idx].current;
     if (optionRef) {
       // ref is to the li item that contains the dropdown elements
       // search for a focusable child
@@ -108,6 +144,7 @@ class Dropdown extends React.Component {
         }
       }
     }
+
     return (
       <button
         className={`blx-dropdown-trigger ${this.props.isOpen ? 'blx-active' : ''} ${this.props.isDisabled ? 'blx-disabled' : ''} ${!this.props.value ? 'blx-dropdown-trigger-placeholder' : ''}`}
@@ -118,7 +155,10 @@ class Dropdown extends React.Component {
         onKeyDown={this.onKeyDown}
         onFocus={() => this.setState({ onFocusIdx: -1 })}
       >
-        { content }
+        { this.props.icon && 
+          <span className={`blx-icon blx-icon-${this.props.icon}`} />
+        }
+        <span className={`blx-dropdown-text`}>{ content }</span>
       </button>
     );
   }
@@ -161,7 +201,7 @@ class Dropdown extends React.Component {
                   <li
                     key={option.text || option.key}
                     className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`}
-                    ref={el => this.setOptionNode(el, idx)}
+                    ref={this.optionsRefs[idx]}
                   >
                     {item}
                   </li>
@@ -180,6 +220,7 @@ Dropdown.propTypes = {
   toggle: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   text: PropTypes.string,
+  icon: PropTypes.string,
   description: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
@@ -208,6 +249,7 @@ Dropdown.defaultProps = {
   isOpen: false,
   options: [],
   text: 'Choose an option',
+  icon: null,
   description: '',
   value: null,
   onChange: () => {},

@@ -1,5 +1,6 @@
 .blx-text-field-container {
   position: relative;
+  display: flex;
 }
 
 .blx-text-field {
@@ -20,10 +21,39 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: $sans-serif-font-family;
+  }
+  
+  input[type="date"] {
+    position: relative;
+    width: 166px;
+    
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 12px;
+      height: 16px;
+      pointer-events: none;
+    }
+    
+    &::before {
+      right: 16px;
+      width: 20px;
+      background-color: $ui-00;
+    }
+    
+    &::after {
+      right: 18px;
+      width: 16px;
+      background-repeat: no-repeat;
+      background-color: $interactive;
+      mask: url('../svgs/icon-calendar.svg') no-repeat 50% 50%;
+    }
   }
   
   textarea {
     resize: none;
+    overflow: hidden;
   }
 
   input, textarea {
@@ -60,7 +90,7 @@
     }
   }
 
-  .blx-text-field-prefix, .blx-text-field-suffix {
+  .blx-text-field-prefix, .blx-text-field-suffix, .blx-text-field-icon {
     font-size: 16px;
     line-height: 20px;
     padding-top: 11px;
@@ -87,6 +117,10 @@
     & ~ input {
       padding-right: 40px;
     }
+  }
+  
+  .blx-text-field-icon {
+    margin-left: 10px;
   }
   
   .blx-invalid-text-field-marker,

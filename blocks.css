@@ -429,8 +429,16 @@ h6 {
   box-shadow: 0 3px 6px 1px var(--ui-04, #d9e1e0);
 }
 .blx-alert .blx-icon-close {
-  background-color: #91a49e;
-  background-color: var(--ui-07, #91a49e);
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-alert .blx-icon-close:hover {
+  background-color: #008b61;
+  background-color: var(--interactive-hover, #008b61);
+}
+.blx-alert .blx-icon-close:focus {
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
 }
 .blx-alert-icon-container {
   position: relative;
@@ -936,6 +944,24 @@ a.blx-button {
   border: 1px solid var(--ui-03, #edf0ee);
   color: #2b3836;
   color: var(--text-01, #2b3836);
+  display: flex;
+}
+.blx-dropdown .blx-dropdown-trigger .blx-icon {
+  margin: 12px 10px 12px 0;
+  background-color: #91a49e;
+  background-color: var(--ui-07, #91a49e);
+}
+.blx-dropdown .blx-dropdown-trigger .blx-icon:hover {
+  background-color: #91a49e;
+  background-color: var(--ui-07, #91a49e);
+}
+.blx-dropdown .blx-dropdown-trigger .blx-icon + span {
+  margin: 10px 0;
+}
+.blx-dropdown .blx-dropdown-trigger .blx-dropdown-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .blx-dropdown .blx-dropdown-trigger.blx-dropdown-trigger-placeholder {
   color: #91a49e;
@@ -985,6 +1011,14 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-trigger.blx-hover::after {
   top: 9px;
 }
+.blx-dropdown .blx-dropdown-trigger:hover .blx-icon,
+.blx-dropdown .blx-dropdown-trigger.blx-hover .blx-icon {
+  margin-top: 11px;
+}
+.blx-dropdown .blx-dropdown-trigger:hover .blx-icon + span,
+.blx-dropdown .blx-dropdown-trigger.blx-hover .blx-icon + span {
+  margin-top: 9px;
+}
 .blx-dropdown .blx-dropdown-trigger:focus {
   margin: 0;
   outline: none;
@@ -1004,6 +1038,14 @@ a.blx-button {
 .blx-dropdown .blx-dropdown-trigger:focus::after,
 .blx-dropdown .blx-dropdown-trigger.blx-focus::after {
   top: 10px;
+}
+.blx-dropdown .blx-dropdown-trigger:focus .blx-icon,
+.blx-dropdown .blx-dropdown-trigger.blx-focus .blx-icon {
+  margin-top: 12px;
+}
+.blx-dropdown .blx-dropdown-trigger:focus .blx-icon + span,
+.blx-dropdown .blx-dropdown-trigger.blx-focus .blx-icon + span {
+  margin-top: 10px;
 }
 .blx-dropdown .blx-dropdown-menu {
   position: absolute;
@@ -1199,9 +1241,11 @@ a.blx-button {
   background-color: #00b07d;
   background-color: var(--brand-01, #00b07d);
 }
-.blx-icon-info {
+.blx-icon-information {
   background-color: #6f6bf8;
   background-color: var(--information, #6f6bf8);
+  -webkit-mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
+          mask: url("../svgs/icon-information.svg") no-repeat 50% 50%;
 }
 .blx-icon-down {
   height: 12px;
@@ -1818,6 +1862,7 @@ a.blx-button {
 }
 .blx-text-field-container {
   position: relative;
+  display: flex;
 }
 .blx-text-field {
   display: inline-flex;
@@ -1836,9 +1881,38 @@ a.blx-button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: Graphik Web;
+}
+.blx-text-field input[type="date"] {
+  position: relative;
+  width: 166px;
+}
+.blx-text-field input[type="date"]::before,
+.blx-text-field input[type="date"]::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  height: 16px;
+  pointer-events: none;
+}
+.blx-text-field input[type="date"]::before {
+  right: 16px;
+  width: 20px;
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+}
+.blx-text-field input[type="date"]::after {
+  right: 18px;
+  width: 16px;
+  background-repeat: no-repeat;
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+  -webkit-mask: url("../svgs/icon-calendar.svg") no-repeat 50% 50%;
+          mask: url("../svgs/icon-calendar.svg") no-repeat 50% 50%;
 }
 .blx-text-field textarea {
   resize: none;
+  overflow: hidden;
 }
 .blx-text-field input {
   width: 100%;
@@ -1943,6 +2017,14 @@ a.blx-button {
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
+.blx-text-field .blx-text-field-icon {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 11px;
+  padding-bottom: 9px;
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
 .blx-text-field .blx-text-field-prefix {
   position: absolute;
   left: 16px;
@@ -1964,6 +2046,9 @@ a.blx-button {
 }
 .blx-text-field .blx-text-field-suffix ~ input {
   padding-right: 40px;
+}
+.blx-text-field .blx-text-field-icon {
+  margin-left: 10px;
 }
 .blx-text-field .blx-invalid-text-field-marker,
 .blx-text-field .blx-invalid-text-field-message,

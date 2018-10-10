@@ -11,7 +11,9 @@ definition: An input that allows users to make a single selection from a pre-def
     <div class="blx-dropdown">
       <p class="blx-ui-text">Here is a dropdown</p>
       <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-active">
-        Choose an option
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
       </button>
       <ul class="blx-dropdown-menu">
         <li class="blx-dropdown-item">
@@ -35,7 +37,9 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder">
-        Choose an option
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
       </button>
     </div>
   </div>
@@ -45,7 +49,9 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-hover">
-        Choose an option
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
       </button>
     </div>
   </div>
@@ -55,7 +61,9 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-focus">
-        Choose an option
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
       </button>
     </div>
   </div>
@@ -65,7 +73,9 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger">
-        Selected option
+        <span class="blx-dropdown-text">
+          Selected option
+        </span>
       </button>
     </div>
   </div>
@@ -75,7 +85,9 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger" title="This is a really long title that will overflow">
-        This is a really long title that will overflow
+        <span class="blx-dropdown-text">
+          This is a really long title that will overflow
+        </span>
       </button>
     </div>
   </div>
@@ -85,7 +97,66 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-disabled">
-        Choose an option
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_icon_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-icon blx-icon-plus"></span>
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_multiple_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_multiple_label_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Dropdown label</p>
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Dropdown label</p>
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
       </button>
     </div>
   </div>
@@ -95,7 +166,9 @@ definition: An input that allows users to make a single selection from a pre-def
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
       <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-active">
-        Choose an option
+        <span class="blx-dropdown-text">
+          Choose an option
+        </span>
       </button>
       <ul class="blx-dropdown-menu">
         <li class="blx-dropdown-item">
@@ -115,6 +188,7 @@ definition: An input that allows users to make a single selection from a pre-def
 <!-- state & behavior section -->
 <div class="l-flex-vertical doc-section">
   <h4>States & Behavior</h4>
+  <p>*Dropdowns require JavaScript to work properly - for working examples, see the "React Components" section below.</p>
   <div class="l-flex-vertical">
     <div class="l-flex-horizontal">
       <span class="doc-state-title blx-caption">
@@ -168,6 +242,14 @@ definition: An input that allows users to make a single selection from a pre-def
       </span>
       <div class="doc-state-content">
         {{ dropdown_trigger_overflow_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        With icon
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_icon_example }}
       </div>
     </div>
   </div>
