@@ -718,41 +718,41 @@ a.blx-button {
   display: inline-flex;
   align-items: center;
 }
-.blx-button-group > * {
+.blx-button-group .blx-button {
   margin-right: 10px;
   margin-bottom: 12px;
 }
-.blx-button-group > *:last-child {
+.blx-button-group .blx-button:last-child {
   margin-right: 0;
 }
 .blx-h-button-group {
   display: flex;
   flex-direction: row;
 }
-.blx-h-button-group > * {
+.blx-h-button-group .blx-button {
   margin-left: 0;
   margin-right: 10px;
 }
-.blx-h-button-group > *:first-child {
+.blx-h-button-group .blx-button:first-child {
   margin-left: 20px;
 }
-.blx-h-button-group > *:last-child {
+.blx-h-button-group .blx-button:last-child {
   margin-right: 20px;
 }
 .blx-v-button-group {
   display: flex;
   flex-direction: column;
 }
-.blx-v-button-group > * {
+.blx-v-button-group .blx-button {
   margin-top: 0;
   margin-bottom: 12px;
   margin-left: 10px;
   margin-right: 10px;
 }
-.blx-v-button-group > *:first-child {
+.blx-v-button-group .blx-button:first-child {
   margin-top: 24px;
 }
-.blx-v-button-group > *:last-child {
+.blx-v-button-group .blx-button:last-child {
   margin-bottom: 24px;
 }
 .blx-checkbox {
