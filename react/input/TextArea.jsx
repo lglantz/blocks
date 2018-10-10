@@ -25,9 +25,12 @@ class TextArea extends React.Component {
     });
   }
 
+  // resize the text area to fit only the height of its content
   resizeTextArea() {
     if (!this.textAreaRef) return;
+    // set height to 1px so scrollHeight will be total height of content
     this.textAreaRef.current.style.height = '1px';
+    // reset to be correct height
     this.textAreaRef.current.style.height = `${this.textAreaRef.current.scrollHeight}px`;
   }
 
