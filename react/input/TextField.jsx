@@ -17,43 +17,6 @@ class TextField extends React.Component {
     });
   }
 
-  getTextField() {
-    return (
-      <input
-        className={textFieldClasses}
-        type={this.props.type}
-        name={this.props.name}
-        value={this.props.value || ''}
-        placeholder={this.props.placeholder}
-        disabled={this.props.isDisabled}
-        autoComplete={this.props.autoComplete}
-        readOnly={this.props.readOnly}
-        onChange={this.props.onChange}
-        onFocus={this.props.onFocus}
-        onBlur={(e) => {
-          this.updateValidity();
-          if (this.props.onBlur) {
-            this.props.onBlur(e);
-          }
-        }}
-        onKeyUp={(e) => {
-          if (this.props.onKeyUp) this.props.onKeyUp(e);
-          if (e.key === 'Enter') {
-            e.target.blur();
-          }
-          // If an invalid message has already appeared via blur,
-          // do the user a favor and update validity once they fix it (before another blur)
-          if (!this.state.isValid) {
-            this.updateValidity();
-          }
-        }}
-        onKeyDown={this.props.onKeyDown}
-        ref={this.props.forwardedRef}
-        autoFocus={this.props.autoFocus}
-      />
-    );
-  }
-
   render() {
     // text input element itself
     let textFieldClasses = '';
@@ -85,8 +48,6 @@ class TextField extends React.Component {
       iconElement = <span className="blx-text-field-icon">{this.props.icon}</span>;
     }
 
-    const textInputElement = this.getTextField();
-
     return (
       <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
         <div>
@@ -96,7 +57,38 @@ class TextField extends React.Component {
         <div className="blx-text-field-container">
           {prefixElement}
           {suffixElement}
-          {textInputElement}
+          <input
+            className={textFieldClasses}
+            type={this.props.type}
+            name={this.props.name}
+            value={this.props.value || ''}
+            placeholder={this.props.placeholder}
+            disabled={this.props.isDisabled}
+            autoComplete={this.props.autoComplete}
+            readOnly={this.props.readOnly}
+            onChange={this.props.onChange}
+            onFocus={this.props.onFocus}
+            onBlur={(e) => {
+              this.updateValidity();
+              if (this.props.onBlur) {
+                this.props.onBlur(e);
+              }
+            }}
+            onKeyUp={(e) => {
+              if (this.props.onKeyUp) this.props.onKeyUp(e);
+              if (e.key === 'Enter') {
+                e.target.blur();
+              }
+              // If an invalid message has already appeared via blur,
+              // do the user a favor and update validity once they fix it (before another blur)
+              if (!this.state.isValid) {
+                this.updateValidity();
+              }
+            }}
+            onKeyDown={this.props.onKeyDown}
+            ref={this.props.forwardedRef}
+            autoFocus={this.props.autoFocus}
+          />
           {iconElement}
         </div>
         {invalidLabelMessage}
