@@ -2,99 +2,71 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-class TextField extends React.Component {
-  constructor(props) {
-    super(props);
+const TextField = (props) => {
+  // text input element itself
+  let textFieldClasses = '';
 
-    this.state = {
-      isValid: props.isValid(props.value)
-    };
+  // red asterisk if the value is invalid
+  let invalidLabelMarker = null;
+  let invalidLabelMessage = null;
+  if (!props.isValid) {
+    invalidLabelMarker = <span className="blx-invalid-text-field-marker">*</span>;
+    invalidLabelMessage = <span className="blx-invalid-text-field-message">{props.invalidErrorMessage}</span>;
+    textFieldClasses += ' blx-invalid';
   }
 
-  updateValidity() {
-    this.setState({
-      isValid: this.props.isValid(this.props.value)
-    });
+  // prefix element
+  let prefixElement = null;
+  if (props.prefix) {
+    prefixElement = <span className="blx-text-field-prefix">{props.prefix}</span>;
   }
 
-  render() {
-    // text input element itself
-    let textFieldClasses = '';
+  // suffix element
+  let suffixElement = null;
+  if (props.suffix) {
+    suffixElement = <span className="blx-text-field-suffix">{props.suffix}</span>;
+  }
 
-    // red asterisk if the value is invalid
-    let invalidLabelMarker = null;
-    let invalidLabelMessage = null;
-    if (!this.state.isValid) {
-      invalidLabelMarker = <span className="blx-invalid-text-field-marker">*</span>;
-      invalidLabelMessage = <span className="blx-invalid-text-field-message">{this.props.invalidErrorMessage}</span>;
-      textFieldClasses += ' blx-invalid';
-    }
+  // icon element
+  let iconElement = null;
+  if (props.icon) {
+    iconElement = <span className="blx-text-field-icon">{props.icon}</span>;
+  }
 
-    // prefix element
-    let prefixElement = null;
-    if (this.props.prefix) {
-      prefixElement = <span className="blx-text-field-prefix">{this.props.prefix}</span>;
-    }
-
-    // suffix element
-    let suffixElement = null;
-    if (this.props.suffix) {
-      suffixElement = <span className="blx-text-field-suffix">{this.props.suffix}</span>;
-    }
-
-    // icon element
-    let iconElement = null;
-    if (this.props.icon) {
-      iconElement = <span className="blx-text-field-icon">{this.props.icon}</span>;
-    }
-
-    return (
-      <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
-        <div>
-          {this.props.label && <label className="blx-ui-text">{this.props.label}</label>}
-          {invalidLabelMarker}
-        </div>
-        <div className="blx-text-field-container">
-          {prefixElement}
-          {suffixElement}
-          <input
-            className={textFieldClasses}
-            type={this.props.type}
-            name={this.props.name}
-            value={this.props.value || ''}
-            placeholder={this.props.placeholder}
-            disabled={this.props.isDisabled}
-            autoComplete={this.props.autoComplete}
-            readOnly={this.props.readOnly}
-            onChange={this.props.onChange}
-            onFocus={this.props.onFocus}
-            onBlur={(e) => {
-              this.updateValidity();
-              if (this.props.onBlur) {
-                this.props.onBlur(e);
-              }
-            }}
-            onKeyUp={(e) => {
-              if (this.props.onKeyUp) this.props.onKeyUp(e);
-              if (e.key === 'Enter') {
-                e.target.blur();
-              }
-              // If an invalid message has already appeared via blur,
-              // do the user a favor and update validity once they fix it (before another blur)
-              if (!this.state.isValid) {
-                this.updateValidity();
-              }
-            }}
-            onKeyDown={this.props.onKeyDown}
-            ref={this.props.forwardedRef}
-            autoFocus={this.props.autoFocus}
-          />
-          {iconElement}
-        </div>
-        {invalidLabelMessage}
+  return (
+    <div className={`blx-text-field ${props.isDisabled ? 'blx-disabled' : ''}`}>
+      <div>
+        {props.label && <label className="blx-ui-text">{props.label}</label>}
+        {invalidLabelMarker}
       </div>
-    );
-  }
+      <div className="blx-text-field-container">
+        {prefixElement}
+        {suffixElement}
+        <input
+          className={textFieldClasses}
+          type={props.type}
+          name={props.name}
+          value={props.value}
+          placeholder={props.placeholder}
+          disabled={props.isDisabled}
+          autoComplete={props.autoComplete}
+          readOnly={props.readOnly}
+          onChange={props.onChange}
+          onFocus={props.onFocus}
+          onBlur={props.onBlur}
+          onKeyUp={(e) => {
+            if (props.onKeyUp) props.onKeyUp(e);
+            if (e.key === 'Enter') e.target.blur();
+          }}
+          onKeyDown={props.onKeyDown}
+          ref={props.forwardedRef}
+          autoFocus={props.autoFocus}
+        />
+        {iconElement}
+      </div>
+      {invalidLabelMessage}
+    </div>
+  );
 }
 
 TextField.propTypes = {
@@ -116,7 +88,7 @@ TextField.propTypes = {
     PropTypes.node
   ]),
   isDisabled: PropTypes.bool,
-  isValid: PropTypes.func,
+  isValid: PropTypes.bool,
   invalidErrorMessage: PropTypes.string,
   onChange: PropTypes.func,
   onKeyUp: PropTypes.func,
@@ -138,7 +110,7 @@ TextField.defaultProps = {
   suffix: null,
   icon: null,
   isDisabled: false,
-  isValid: () => true,
+  isValid: true,
   invalidErrorMessage: '',
   onChange: null,
   onKeyUp: null,

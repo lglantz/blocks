@@ -9,6 +9,9 @@ const TextFieldWithDropdown = require('../../react/input/TextFieldWithDropdown.j
 
 const INVALID_VALUE = 'Wrong';
 
+function isFieldValid(value) {
+  return value !== INVALID_VALUE;
+}
 
 class TextFieldPreview extends React.Component {
   constructor() {
@@ -16,10 +19,11 @@ class TextFieldPreview extends React.Component {
 
     this.state = {
       conditionalSuffixValue: '',
-      invalidInputValue: INVALID_VALUE,
       unitValue: 'ft',
       date: null,
-      multiline: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin."
+      multiline: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin.",
+      validityExampleValue: INVALID_VALUE,
+      validityExampleIsValid: isFieldValid(INVALID_VALUE)
     };
 
     this.onChangeUnit = this.onChangeUnit.bind(this);
@@ -83,10 +87,13 @@ class TextFieldPreview extends React.Component {
           { getPreviewComponent('Validation',
               <TextField
                 label="Text input label"
-                isValid={value => { return value !== INVALID_VALUE; }}
+                isValid={this.state.validityExampleIsValid}
                 invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
-                value={this.state.invalidInputValue}
-                onChange={evt => this.setState({ invalidInputValue: evt.target.value })}
+                value={this.state.validityExampleValue}
+                onChange={evt => this.setState({
+                  validityExampleValue: evt.target.value,
+                  validityExampleIsValid: isFieldValid(evt.target.value)
+                })}
               />
           ) }
         </div>
