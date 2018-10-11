@@ -6,23 +6,16 @@ CBRE Blocks design system repository
 
 ### Using Blocks
 
-If you just want to use Blocks, you can copy the blocks.css file along with the fonts/ and svgs/ folders.
+If you just want to use Blocks styles, you can copy the blocks.css file along with the fonts/ and svgs/ folders.
 
-Blocks can be included in your project as a subrepo by running
+To include Blocks as a node module, add the following to your `package.json`:
 ```
-git subrepo clone https://github.com/floored/blocks.git /path/to/blocks
-```
-in the base folder of your project. So, for example, for DataVis, we included Blocks by running:
-```
-git subrepo clone https://github.com/floored/blocks.git /lib/blocks
+"blocks": "https://github.com/floored/blocks#lastCommitHashYouWant"
 ```
 
-Note that the folder you are putting Blocks into must already exist in git.
-
-If you want to use the included React components, they can be included by pointing to the react-index, ex:
+If you are using React components, you can access them by pointing to the react-index, ex:
 ```
-const BlocksInput = require('../../../lib/blocks/react-index').Input;
-const Checkbox = BlocksInput.Checkbox;
+const Checkbox = require('blocks/react-index').Input.Checkbox;
 ```
 
 ### Developing Blocks
