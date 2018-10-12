@@ -10,7 +10,6 @@ const TextField = (props) => {
   let invalidLabelMarker = null;
   let invalidLabelMessage = null;
   if (!props.isValid) {
-    invalidLabelMarker = <span className="blx-invalid-text-field-marker">*</span>;
     invalidLabelMessage = <span className="blx-invalid-text-field-message">{props.invalidErrorMessage}</span>;
     textFieldClasses += ' blx-invalid';
   }

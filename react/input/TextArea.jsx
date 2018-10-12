@@ -74,7 +74,6 @@ class TextArea extends React.Component {
     let invalidLabelMarker = null;
     let invalidLabelMessage = null;
     if (!this.state.isValid) {
-      invalidLabelMarker = <span className="blx-invalid-text-field-marker">*</span>;
       invalidLabelMessage = <span className="blx-invalid-text-field-message">{this.props.invalidErrorMessage}</span>;
       textFieldClasses += ' blx-invalid';
     }
