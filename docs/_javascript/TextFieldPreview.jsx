@@ -7,10 +7,10 @@ const TextField = require('../../react/input/TextField.jsx');
 const TextArea = require('../../react/input/TextArea.jsx');
 const TextFieldWithDropdown = require('../../react/input/TextFieldWithDropdown.jsx');
 
-const INVALID_VALUE = 'Wrong';
-
+const INITIAL_INVALID_VALUE = '';
+const VALID_VALUE_MIN_LENTH = 5;
 function isFieldValid(value) {
-  return value !== INVALID_VALUE;
+  return value.length >= VALID_VALUE_MIN_LENTH;
 }
 
 class TextFieldPreview extends React.Component {
@@ -22,8 +22,8 @@ class TextFieldPreview extends React.Component {
       unitValue: 'ft',
       date: null,
       multiline: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin.",
-      validityExampleValue: INVALID_VALUE,
-      validityExampleIsValid: isFieldValid(INVALID_VALUE)
+      validityExampleValue: INITIAL_INVALID_VALUE,
+      validityExampleIsValid: isFieldValid(INITIAL_INVALID_VALUE)
     };
 
     this.onChangeUnit = this.onChangeUnit.bind(this);
@@ -88,7 +88,7 @@ class TextFieldPreview extends React.Component {
               <TextField
                 label="Text input label"
                 isValid={this.state.validityExampleIsValid}
-                invalidErrorMessage={`This text is invalid. Enter any value other than ${INVALID_VALUE} to make it valid.`}
+                invalidErrorMessage={`This text is invalid. Enter a value with at least ${VALID_VALUE_MIN_LENTH.toString()} characters to make it valid.`}
                 value={this.state.validityExampleValue}
                 onChange={evt => this.setState({
                   validityExampleValue: evt.target.value,

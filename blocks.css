@@ -1936,14 +1936,6 @@ a.blx-button {
   border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
 }
-.blx-text-field input.blx-invalid {
-  border: 1px solid #ec4f07;
-  border: 1px solid var(--error, #ec4f07);
-}
-.blx-text-field textarea.blx-invalid {
-  border: 1px solid #ec4f07;
-  border: 1px solid var(--error, #ec4f07);
-}
 .blx-text-field input:hover {
   border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
@@ -1987,6 +1979,14 @@ a.blx-button {
   outline: none;
   border: 1px solid #39cf94;
   border: 1px solid var(--success-hex, #39cf94);
+}
+.blx-text-field input.blx-invalid {
+  border: 1px solid #ec4f07;
+  border: 1px solid var(--error, #ec4f07);
+}
+.blx-text-field textarea.blx-invalid {
+  border: 1px solid #ec4f07;
+  border: 1px solid var(--error, #ec4f07);
 }
 .blx-text-field input:-moz-read-only,
 .blx-text-field textarea:-moz-read-only {
