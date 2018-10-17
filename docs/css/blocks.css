@@ -2050,15 +2050,10 @@ a.blx-button {
 .blx-text-field .blx-text-field-icon {
   margin-left: 10px;
 }
-.blx-text-field .blx-invalid-text-field-marker,
 .blx-text-field .blx-invalid-text-field-message,
 .blx-text-field .blx-text-field-helper {
   font-size: 12px;
   line-height: 16px;
-}
-.blx-text-field .blx-invalid-text-field-marker {
-  color: #2b3836;
-  color: var(--text-01, #2b3836);
 }
 .blx-text-field .blx-invalid-text-field-message {
   color: #ec4f07;

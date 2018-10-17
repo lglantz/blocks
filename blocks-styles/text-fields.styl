@@ -15,7 +15,7 @@
   label {
     margin-bottom: 6px;
   }
-  
+
   input {
     height: 40px;
     white-space: nowrap;
@@ -23,11 +23,11 @@
     text-overflow: ellipsis;
     font-family: $sans-serif-font-family;
   }
-  
+
   input[type="date"] {
     position: relative;
     width: 166px;
-    
+
     &::before, &::after {
       content: "";
       position: absolute;
@@ -35,13 +35,13 @@
       height: 16px;
       pointer-events: none;
     }
-    
+
     &::before {
       right: 16px;
       width: 20px;
       background-color: $ui-00;
     }
-    
+
     &::after {
       right: 18px;
       width: 16px;
@@ -50,7 +50,7 @@
       mask: url('../svgs/icon-calendar.svg') no-repeat 50% 50%;
     }
   }
-  
+
   textarea {
     resize: none;
     overflow: hidden;
@@ -118,26 +118,21 @@
       padding-right: 40px;
     }
   }
-  
+
   .blx-text-field-icon {
     margin-left: 10px;
   }
-  
-  .blx-invalid-text-field-marker,
+
   .blx-invalid-text-field-message,
   .blx-text-field-helper {
     font-size: 12px;
     line-height: 16px;
   }
 
-  .blx-invalid-text-field-marker {
-    color: $text-01;
-  }
-
   .blx-invalid-text-field-message {
     color: $error;
   }
-  
+
   .blx-text-field-helper {
     color: $text-02;
   }
