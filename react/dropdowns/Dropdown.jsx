@@ -1,71 +1,33 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const ReactDOM = require('react-dom');
 
+const DropdownItem = require('./DropdownItem.jsx');
 const closeOnClick = require('../wrappers/closeOnClick.jsx');
 
 
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       onFocusIdx: -1
     };
-    
+
     this.optionsRefs = [];
     for (let i = 0; i < this.props.options.length; i++) {
       this.optionsRefs[i] = React.createRef();
     }
 
+    this.onSelect = this.onSelect.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
 
-    this.getClickHandler = this.getClickHandler.bind(this);
-    this.getKeyUpHandler = this.getKeyUpHandler.bind(this);
-    
     this.moveFocusUsingKey = this.moveFocusUsingKey.bind(this);
     this.getFocusIndexAfterKeyPress = this.getFocusIndexAfterKeyPress.bind(this);
     this.focusOption = this.focusOption.bind(this);
   }
 
-  componentDidMount() {
-    for (let i = 0; i < this.optionsRefs.length; i++) {
-      const optionRef = this.optionsRefs[i].current;
-      for (let j = 0; j < optionRef.childNodes.length; j++) {
-        const child = optionRef.childNodes[j];
-        if (typeof child.focus === 'function') {
-          child.addEventListener('keydown', this.onKeyDown);
-          child.addEventListener('keyup', this.getKeyUpHandler(this.props.options[i]));
-          child.addEventListener('click', this.getClickHandler(this.props.options[i]));
-          break;
-        }
-      }
-    }
-  }
-
-  componentWillUnmount() {
-    for (let i = 0; i < this.optionsRefs.length; i++) {
-      const optionRef = this.optionsRefs[i].current;
-      for (let j = 0; j < optionRef.childNodes.length; j++) {
-        const child = optionRef.childNodes[j];
-        if (typeof child.focus === 'function') {
-          child.removeEventListener('keydown', this.onKeyDown);
-          child.removeEventListener('keyup', this.getKeyUpHandler(this.props.options[i]));
-          child.removeEventListener('click', this.getClickHandler(this.props.options[i]));
-          break;
-        }
-      }
-    }
-  }
-
-  getClickHandler(option) {
-    return () => {
-      this.onSelect(option);
-    };
-  }
-
-  onSelect(option) {
+  onSelect(e, option) {
     if (this.props.onChange) this.props.onChange(option);
     this.props.close();
   }
@@ -82,15 +44,9 @@ class Dropdown extends React.Component {
     }
   }
 
-  getKeyUpHandler(option) {
-    return (e) => {
-      this.onKeyUp(e, option);
-    };
-  }
-
   onKeyUp(e, option) {
     if (['Enter', ' '].indexOf(e.key) > -1) {
-      this.onSelect(option);
+      this.onSelect(e, option);
     } else if (e.key === 'Escape') {
       this.props.close();
     }
@@ -129,25 +85,42 @@ class Dropdown extends React.Component {
     }
   }
 
-  getOptionTrigger() {
+  getTrigger() {
+    let triggerButtonContent = null;
     let content = this.props.text;
-    if (this.props.value) {
-      for (let i = 0; i < this.props.options.length; i++) {
-        const option = this.props.options[i];
-        if (option.value == this.props.value) {
-          if (option.text) {
-            content = option.text;
-          } else if (option.element) {
-            content = null;
+    let triggerClassNames = '';
+    if (this.props.isPopover) {
+      triggerClassNames += 'blx-popover-trigger';
+      triggerButtonContent = (
+        <span className={`blx-icon blx-icon-${this.props.popoverIcon}`} />
+      );
+    } else {
+      triggerClassNames += 'blx-dropdown-trigger';
+      if (this.props.isOpen) triggerClassNames += ' blx-active';
+      if (this.props.isDisabled) triggerClassNames += ' blx-disabled';
+      if (this.props.value) triggerClassNames += ' blx-dropdown-trigger-placeholder';
+
+      if (this.props.value) {
+        for (let i = 0; i < this.props.options.length; i++) {
+          const option = this.props.options[i];
+          if (option.value == this.props.value) {
+            if (option.text) {
+              content = option.text;
+            } else if (option.element) {
+              content = null;
+            }
+            break;
           }
-          break;
         }
       }
+      triggerButtonContent = (
+        <span className={`blx-dropdown-text`}>{ content }</span>
+      );
     }
 
     return (
       <button
-        className={`blx-dropdown-trigger ${this.props.isOpen ? 'blx-active' : ''} ${this.props.isDisabled ? 'blx-disabled' : ''} ${!this.props.value ? 'blx-dropdown-trigger-placeholder' : ''}`}
+        className={triggerClassNames}
         disabled={this.props.isDisabled}
         onClick={this.props.toggle}
         title={content}
@@ -158,55 +131,57 @@ class Dropdown extends React.Component {
         { this.props.icon && 
           <span className={`blx-icon blx-icon-${this.props.icon}`} />
         }
-        <span className={`blx-dropdown-text`}>{ content }</span>
+        {triggerButtonContent}
       </button>
     );
   }
 
+  getDropdownDescription() {
+    if (this.props.description) {
+      return (
+        <div>
+          <label className="blx-ui-text">{this.props.description}</label>
+        </div>
+      );
+    }
+  }
+
+  getPopoverText() {
+    if (this.props.isPopover) {
+      return (
+        <span className="blx-subtitle blx-popover-text">{this.props.text}</span>
+      );
+    }
+  }
+
   render() {
+    let menuClasses = 'blx-dropdown-menu';
+    if (!this.props.isOpen) menuClasses += ' blx-hidden';
+    if (this.props.isPopover) {
+      if (this.props.isLeft) {
+        menuClasses += ' blx-popover-is-left';
+      } else {
+        menuClasses += ' blx-popover-is-right';
+      }
+    }
     return (
       <div className="blx-dropdown-wrapper">
-        <div className="blx-dropdown">
-          {this.props.description && (
-            <div>
-              <label className="blx-ui-text">{this.props.description}</label>
-            </div>
-          )}
-          {this.getOptionTrigger()}
-          <ul className={`blx-dropdown-menu ${this.props.isOpen ? '' : 'blx-hidden'}`}>
+        {this.getPopoverText()}
+        <div className={`blx-dropdown ${this.props.isPopover ? 'blx-popover': ''}`}>
+          {this.getDropdownDescription()}
+          {this.getTrigger()}
+          <ul className={menuClasses}>
             {
-              this.props.options.map((option, idx) => {
-                let item = null;
-                if (option.element) {
-                  item = option.element;
-                } else if (option.href) {
-                  item = (
-                    <a
-                      href={option.href}
-                      disabled={option.disabled}
-                    >
-                      {option.text}
-                    </a>
-                  );
-                } else {
-                  item = (
-                    <button
-                      disabled={option.disabled}
-                    >
-                      {option.text}
-                    </button>
-                  );
-                }
-                return (
-                  <li
-                    key={option.text || option.key}
-                    className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`}
-                    ref={this.optionsRefs[idx]}
-                  >
-                    {item}
-                  </li>
-                );
-              })
+              this.props.options.map((option, idx) => (
+                <DropdownItem
+                  key={option.text || option.key}
+                  option={option}
+                  ref={this.optionsRefs[idx]}
+                  onKeyDown={this.onKeyDown}
+                  onKeyUp={this.onKeyUp}
+                  onSelect={this.onSelect}
+                />
+              ))
             }
           </ul>
         </div>
@@ -217,10 +192,13 @@ class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
   isOpen: PropTypes.bool,
+  isLeft: PropTypes.bool,
+  isPopover: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   text: PropTypes.string,
   icon: PropTypes.string,
+  popoverIcon: PropTypes.string,
   description: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
@@ -247,9 +225,12 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   isOpen: false,
+  isLeft: null,
+  isPopover: false,
   options: [],
   text: 'Choose an option',
   icon: null,
+  popoverIcon: 'more-horizontal',
   description: '',
   value: null,
   onChange: () => {},
