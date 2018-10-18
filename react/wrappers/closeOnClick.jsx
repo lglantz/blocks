@@ -13,24 +13,20 @@ function closeOnClick(WrappedComponent) {
       this.toggle = this.toggle.bind(this);
       this.closeOnClick = this.closeOnClick.bind(this);
     }
-
-    componentDidMount() {
-      document.body.addEventListener('click', this.closeOnClick);
-    }
-
-    componentWillUnmount() {
-      document.body.removeEventListener('click', this.closeOnClick);
-    }
-
+    
     open() {
       this.setState({
         isOpen: true
+      }, () => {
+        document.body.addEventListener('click', this.closeOnClick);
       });
     }
 
     close() {
       this.setState({
         isOpen: false
+      }, () => {
+        document.body.removeEventListener('click', this.closeOnClick);
       });
     }
 
