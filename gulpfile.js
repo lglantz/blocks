@@ -82,7 +82,7 @@ gulp.task('build:css', ['build:sassVariables', 'bundle:stylusVariables', 'build:
 });
 
 // watch CSS files for changes
-gulp.task('watch:css', () => {
+gulp.task('watch:css', ['build:css'], () => {
   gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['build:css']);
 });
 
