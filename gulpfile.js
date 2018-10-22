@@ -214,18 +214,13 @@ gulp.task('clean', () => {
   ]);
 });
 
-gulp.task('build:assets', [
-  'build:fonts',
-  'build:icons',
-  'build:css',
-  'bundle:vendor'
-]);
-
 // build, serve, and watch documentation site
 gulp.task('server', [
-  'build:assets',
+  'build:fonts',
+  'build:icons',
+  'watch:css',
+  'bundle:vendor',
   'watch:react',
-  'watch:css'
 ], () => {
   const jekyll = child.spawn('jekyll', ['serve',
     '--source',
@@ -237,14 +232,16 @@ gulp.task('server', [
     '--drafts'
   ]);
 
-
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
 
 // build documentation site
 gulp.task('build', [
-  'build:assets',
+  'build:fonts',
+  'build:icons',
+  'build:css',
+  'bundle:vendor',
   'bundle:react'
 ], () => {
   const jekyll = child.spawn('jekyll', ['build', 
@@ -258,25 +255,6 @@ gulp.task('build', [
   jekyll.stderr.on('data', jekyllLogger);
 
   jekyll.on('exit', () => {
-    console.log('done building');
-    console.log('site files: ');
-    const dir = 'docs/_site/';
-    const siteFiles = walkSync(dir, []);
-    siteFiles.forEach((file) => {
-      console.log(file);
-    });
+    console.log('site build complete');
   });
 });
-
-const walkSync = (dir, fileList) => {
-  const files = fs.readdirSync(dir);
-  fileList = fileList || [];
-  files.forEach((file) => {
-    if (fs.statSync(dir + file).isDirectory()) {
-      fileList = walkSync(dir + file + '/', fileList);
-    } else {
-      fileList.push(dir + file);
-    }
-  });
-  return fileList
-};
