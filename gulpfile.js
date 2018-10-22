@@ -28,7 +28,7 @@ const cssPlugins = [
 ];
 
 // create SASS variables from variables.json
-gulp.task('dev:jsonToSass', () => {
+gulp.task('build:sassVariables', () => {
   return gulp.src('./blocks-styles/variables.json')
     .pipe(jsonSass({
       sass: true
@@ -37,7 +37,7 @@ gulp.task('dev:jsonToSass', () => {
 });
 
 // create Stylus variables from variables.json
-gulp.task('stylusGeneration', () => {
+gulp.task('build:stylus', () => {
   return gulp.src('./blocks-styles/variables.json')
           .pipe(jsonStylus({ namespace : "$" }))
           .pipe(concat('variables.styl'))
@@ -45,14 +45,14 @@ gulp.task('stylusGeneration', () => {
 });
 
 // concat Stylus variable files into a single file
-gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
+gulp.task('build:stylusVariables', ['build:stylus'], () => {
   return gulp.src(['./blocks-styles/variables-base-fonts.styl', './blocks-styles/variables.styl', './blocks-styles/variables-base-root.styl'])
           .pipe(concat('variables.styl'))
           .pipe(gulp.dest('./blocks-styles'));
 });
 
 // compile separate Blocks Stylus files into a final CSS output file
-gulp.task('blocksCSSGeneration', () => {
+gulp.task('build:blocksCSS', () => {
   gulp.src('blocks-styles/_all.styl')
     .pipe(stylus({
       'include css': true
@@ -63,7 +63,7 @@ gulp.task('blocksCSSGeneration', () => {
 });
 
 // compile Blocks documentation Stylus files into a final CSS file for the documentation site
-gulp.task('blocksDocsCSSGeneration', () => {
+gulp.task('build:blocksDocsCSS', () => {
   gulp.src('docs/_styl/blocks-docs.styl')
     .pipe(stylus({
       'include css': true
@@ -73,24 +73,24 @@ gulp.task('blocksDocsCSSGeneration', () => {
 });
 
 // rebuild all CSS
-gulp.task('dev:css', ['dev:jsonToStylus', 'blocksCSSGeneration', 'blocksDocsCSSGeneration'], () => {
+gulp.task('build:css', ['build:stylusVariables', 'build:sassVariables', 'build:blocksCSS', 'build:blocksDocsCSS'], () => {
   gulp.src('blocks.css')
     .pipe(gulp.dest('docs/css/'));
 });
 
 // watch CSS files for changes
-gulp.task('watch:css', ['dev:jsonToStylus'], function () {
-  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['dev:css']);
+gulp.task('watch:css', ['build:stylusVariables'], function () {
+  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['build:css']);
 });
 
 // copy fonts into documentation site
-gulp.task('dev:fonts', function() {
+gulp.task('build:fonts', function() {
   gulp.src(['fonts/*.eot', 'fonts/*.woff', 'fonts/*.woff2'])
     .pipe(gulp.dest('docs/fonts/'));
 });
 
 // copy SVG icons into documentation site
-gulp.task('dev:icons', function() {
+gulp.task('build:icons', function() {
   gulp.src('svgs/*.svg')
     .pipe(gulp.dest('docs/svgs/'));
 
@@ -105,7 +105,7 @@ const jekyllLogger = (buffer) => {
 };
 
 // serve Jekyll site
-gulp.task('dev:jekyll', () => {
+gulp.task('serve:jekyll', () => {
   const jekyll = child.spawn('jekyll', ['serve',
     '--source',
     'docs',
@@ -116,6 +116,19 @@ gulp.task('dev:jekyll', () => {
     '--drafts',
     '--baseurl', // allow access of docs on localhost normally - when deployed,
     ''           // baseurl is blocks/ for use with github pages
+  ]);
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
+
+// build Jekyll site
+gulp.task('build:jekyll', () => {
+  const jekyll = child.spawn('jekyll', ['build',
+    '--source',
+    'docs',
+    '--destination',
+    'docs/_site'
   ]);
 
   jekyll.stdout.on('data', jekyllLogger);
@@ -143,7 +156,7 @@ gulp.task('build:vendor', () => {
 });
 
 // build a separate JS bundle for each React component
-gulp.task('dev:react', (done) => {
+gulp.task('build:react', (done) => {
   glob('./docs/_javascript/*.jsx', (err, files) => {
     if (err) { done(err); }
     const tasks = files.map((entry) => {
@@ -188,12 +201,21 @@ const createBundle = (entry) => {
 
 // build, serve, and watch documentation site
 gulp.task('server', [
-  'dev:fonts',
-  'dev:icons',
-  'dev:css',
+  'build:fonts',
+  'build:icons',
+  'build:css',
   'build:vendor',
-  'dev:react',
-  'dev:jekyll',
-  'dev:jsonToSass',
-  'dev:jsonToStylus'
+  'build:react',
+  'watch:css',
+  'serve:jekyll'
+]);
+
+// build, serve, and watch documentation site
+gulp.task('build', [
+  'build:fonts',
+  'build:icons',
+  'build:css',
+  'build:vendor',
+  'build:react',
+  'build:jekyll'
 ]);
