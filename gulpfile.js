@@ -7,6 +7,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
 const path = require('path');
+const del = require('del');
 
 const watchify = require('watchify');
 const browserify = require('browserify');
@@ -79,18 +80,18 @@ gulp.task('build:css', ['build:stylusVariables', 'build:sassVariables', 'build:b
 });
 
 // watch CSS files for changes
-gulp.task('watch:css', ['build:stylusVariables', 'build:sassVariables'], function () {
+gulp.task('watch:css', ['build:stylusVariables', 'build:sassVariables'], () => {
   gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['build:css']);
 });
 
 // copy fonts into documentation site
-gulp.task('build:fonts', function() {
+gulp.task('build:fonts', () => {
   gulp.src(['fonts/*.eot', 'fonts/*.woff', 'fonts/*.woff2'])
     .pipe(gulp.dest('docs/fonts/'));
 });
 
 // copy SVG icons into documentation site
-gulp.task('build:icons', function() {
+gulp.task('build:icons', () => {
   gulp.src('svgs/*.svg')
     .pipe(gulp.dest('docs/svgs/'));
 
@@ -113,7 +114,8 @@ gulp.task('serve:jekyll', () => {
     'docs/_site',
     '--watch',
     '--incremental',
-    '--drafts'
+    '--drafts',
+    '--baseurl'
   ]);
 
 
@@ -231,12 +233,26 @@ const createAndUpdateBundle = (entry) => {
   return bundle();
 }
 
-// build, serve, and watch documentation site
-gulp.task('server', [
+gulp.task('clean', () => {
+  return del([
+    'docs/_site',
+    'docs/css',
+    'docs/fonts',
+    'docs/lib',
+    'docs/svgs'
+  ]);
+});
+
+gulp.task('build:assets', [
   'build:fonts',
   'build:icons',
   'build:css',
-  'bundle:vendor',
+  'bundle:vendor'
+]);
+
+// build, serve, and watch documentation site
+gulp.task('server', [
+  'build:assets',
   'watch:react',
   'watch:css',
   'serve:jekyll'
@@ -244,10 +260,7 @@ gulp.task('server', [
 
 // build documentation site
 gulp.task('build', [
-  'build:fonts',
-  'build:icons',
-  'build:css',
-  'bundle:vendor',
+  'build:assets',
   'bundle:react',
   'build:jekyll'
 ]);

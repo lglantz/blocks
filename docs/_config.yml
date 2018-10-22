@@ -3,3 +3,4 @@ destination: _site
 exclude: ['_javascript', 'vendor']
 port: 8080
 permalink: pretty
+baseurl: /
