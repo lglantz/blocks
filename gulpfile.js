@@ -79,7 +79,7 @@ gulp.task('build:css', ['build:stylusVariables', 'build:sassVariables', 'build:b
 });
 
 // watch CSS files for changes
-gulp.task('watch:css', ['build:stylusVariables'], function () {
+gulp.task('watch:css', ['build:stylusVariables', 'build:sassVariables'], function () {
   gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['build:css']);
 });
 
@@ -113,18 +113,17 @@ gulp.task('serve:jekyll', () => {
     'docs/_site',
     '--watch',
     '--incremental',
-    '--drafts',
-    '--baseurl', // allow access of docs on localhost normally - when deployed,
-    ''           // baseurl is blocks/ for use with github pages
+    '--drafts'
   ]);
+
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
 
 // build Jekyll site
-gulp.task('build:jekyll', () => {
-  const jekyll = child.spawn('jekyll', ['build',
+gulp.task('build:jekyll', (done) => {
+  const jekyll = child.spawn('jekyll', ['build', 
     '--source',
     'docs',
     '--destination',
@@ -137,9 +136,9 @@ gulp.task('build:jekyll', () => {
 
 // build vendor JS bundle
 const vendors = ['react', 'react-dom', 'react-router-dom', 'prop-types'];
-gulp.task('build:vendor', () => {
+gulp.task('bundle:vendor', () => {
   const b = browserify({
-    debug: true
+    debug: false
   });
 
   // require all libs specified in vendors array
@@ -147,28 +146,63 @@ gulp.task('build:vendor', () => {
     b.require(lib);
   });
 
-  b.bundle()
-  .pipe(source('vendor.js'))
-  .pipe(buffer())
-  .pipe(uglify())
-  .pipe(gulp.dest(path.join(__dirname, './docs/lib')))
-  ;
+  return b.bundle()
+    .pipe(source('vendor.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
 });
 
 // build a separate JS bundle for each React component
-gulp.task('build:react', (done) => {
-  glob('./docs/_javascript/*.jsx', (err, files) => {
-    if (err) { done(err); }
+gulp.task('bundle:react', (done) => {
+  return glob('./docs/_javascript/*.jsx', (err, files) => {
+    if (err) { return done(err); }
     const tasks = files.map((entry) => {
       return createBundle(entry);
     });
     return es.merge(tasks).on('end', done);
   });
+});
 
+// build and watch a separate JS bundle for each React component
+gulp.task('watch:react', (done) => {
+  return glob('./docs/_javascript/*.jsx', (err, files) => {
+    if (err) { return done(err); }
+    const tasks = files.map((entry) => {
+      return createAndUpdateBundle(entry);
+    });
+    return es.merge(tasks).on('end', done);
+  });
 });
 
 // helper for creating React bundles
 const createBundle = (entry) => {
+  let b = browserify({
+    entries: [entry],
+    extensions: ['.jsx'],
+    debug: false,
+    cache: {},
+    packageCache: {},
+    transform: [
+      babelify.configure({
+        presets: ['es2015', 'react']
+      })
+    ]
+  });
+
+  b.on('log', gutil.log);
+
+  const name = entry.split('/')[3].split('.')[0];
+  return b.external(vendors)
+    .bundle()
+    .pipe(source(`${name}.js`))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
+};
+
+// helper for creating and updating React bundles
+const createAndUpdateBundle = (entry) => {
   let b = browserify({
     entries: [entry],
     extensions: ['.jsx'],
@@ -180,8 +214,7 @@ const createBundle = (entry) => {
         presets: ['es2015', 'react']
       })
     ]
-  })
-  .plugin(watchify);
+  }).plugin(watchify);
 
   const bundle = () => {
     const name = entry.split('/')[3].split('.')[0];
@@ -189,7 +222,6 @@ const createBundle = (entry) => {
       .bundle()
       .pipe(source(`${name}.js`))
       .pipe(buffer())
-      .pipe(uglify())
       .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
   }
 
@@ -204,18 +236,18 @@ gulp.task('server', [
   'build:fonts',
   'build:icons',
   'build:css',
-  'build:vendor',
-  'build:react',
+  'bundle:vendor',
+  'watch:react',
   'watch:css',
   'serve:jekyll'
 ]);
 
-// build, serve, and watch documentation site
+// build documentation site
 gulp.task('build', [
   'build:fonts',
   'build:icons',
   'build:css',
-  'build:vendor',
-  'build:react',
+  'bundle:vendor',
+  'bundle:react',
   'build:jekyll'
 ]);
