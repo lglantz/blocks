@@ -22,6 +22,8 @@ const jsonSass = require('gulp-json-sass');
 const jsonStylus = require('gulp-json-stylus');
 const concat = require('gulp-concat');
 
+const fs = require('fs');
+
 
 const cssPlugins = [
   autoprefixer(),
@@ -38,7 +40,7 @@ gulp.task('build:sassVariables', () => {
 });
 
 // create Stylus variables from variables.json
-gulp.task('build:stylus', () => {
+gulp.task('build:stylusVariables', () => {
   return gulp.src('./blocks-styles/variables.json')
           .pipe(jsonStylus({ namespace : "$" }))
           .pipe(concat('variables.styl'))
@@ -46,7 +48,7 @@ gulp.task('build:stylus', () => {
 });
 
 // concat Stylus variable files into a single file
-gulp.task('build:stylusVariables', ['build:stylus'], () => {
+gulp.task('bundle:stylusVariables', ['build:stylusVariables'], () => {
   return gulp.src(['./blocks-styles/variables-base-fonts.styl', './blocks-styles/variables.styl', './blocks-styles/variables-base-root.styl'])
           .pipe(concat('variables.styl'))
           .pipe(gulp.dest('./blocks-styles'));
@@ -74,13 +76,13 @@ gulp.task('build:blocksDocsCSS', () => {
 });
 
 // rebuild all CSS
-gulp.task('build:css', ['build:stylusVariables', 'build:sassVariables', 'build:blocksCSS', 'build:blocksDocsCSS'], () => {
+gulp.task('build:css', ['build:sassVariables', 'bundle:stylusVariables', 'build:blocksCSS', 'build:blocksDocsCSS'], () => {
   gulp.src('blocks.css')
     .pipe(gulp.dest('docs/css/'));
 });
 
 // watch CSS files for changes
-gulp.task('watch:css', ['build:stylusVariables', 'build:sassVariables'], () => {
+gulp.task('watch:css', () => {
   gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['build:css']);
 });
 
@@ -97,43 +99,6 @@ gulp.task('build:icons', () => {
 
   gulp.src('favicon.ico')
     .pipe(gulp.dest('docs/'));
-});
-
-const jekyllLogger = (buffer) => {
-  buffer.toString()
-    .split(/\n/)
-    .forEach((message) => gutil.log('Jekyll: ' + message));
-};
-
-// serve Jekyll site
-gulp.task('serve:jekyll', () => {
-  const jekyll = child.spawn('jekyll', ['serve',
-    '--source',
-    'docs',
-    '--destination',
-    'docs/_site',
-    '--watch',
-    '--incremental',
-    '--drafts',
-    '--baseurl'
-  ]);
-
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-});
-
-// build Jekyll site
-gulp.task('build:jekyll', (done) => {
-  const jekyll = child.spawn('jekyll', ['build', 
-    '--source',
-    'docs',
-    '--destination',
-    'docs/_site'
-  ]);
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
 });
 
 // build vendor JS bundle
@@ -233,6 +198,12 @@ const createAndUpdateBundle = (entry) => {
   return bundle();
 }
 
+const jekyllLogger = (buffer) => {
+  buffer.toString()
+    .split(/\n/)
+    .forEach((message) => gutil.log('Jekyll: ' + message));
+};
+
 gulp.task('clean', () => {
   return del([
     'docs/_site',
@@ -254,13 +225,58 @@ gulp.task('build:assets', [
 gulp.task('server', [
   'build:assets',
   'watch:react',
-  'watch:css',
-  'serve:jekyll'
-]);
+  'watch:css'
+], () => {
+  const jekyll = child.spawn('jekyll', ['serve',
+    '--source',
+    'docs',
+    '--destination',
+    'docs/_site',
+    '--watch',
+    '--incremental',
+    '--drafts'
+  ]);
+
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
 
 // build documentation site
 gulp.task('build', [
   'build:assets',
-  'bundle:react',
-  'build:jekyll'
-]);
+  'bundle:react'
+], () => {
+  const jekyll = child.spawn('jekyll', ['build', 
+    '--source',
+    'docs',
+    '--destination',
+    'docs/_site'
+  ]);
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+
+  jekyll.on('exit', () => {
+    console.log('done building');
+    console.log('site files: ');
+    const dir = 'docs/_site/';
+    const siteFiles = walkSync(dir, []);
+    siteFiles.forEach((file) => {
+      console.log(file);
+    });
+  });
+});
+
+const walkSync = (dir, fileList) => {
+  const files = fs.readdirSync(dir);
+  fileList = fileList || [];
+  files.forEach((file) => {
+    if (fs.statSync(dir + file).isDirectory()) {
+      fileList = walkSync(dir + file + '/', fileList);
+    } else {
+      fileList.push(dir + file);
+    }
+  });
+  return fileList
+};
