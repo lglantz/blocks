@@ -47,12 +47,3 @@ gulp server
 ```
 
 You can then navigate to the site at http://localhost:8080.
-
-### Contributing to Blocks
-
-The Blocks documentation site runs on GitHub pages and is generated with Jekyll. In order to make this work, we have to commit some generated JavaScript files (in particular, any changes in `react/` or `docs/_javascript` should result in an update to the built `*Preview.js` files in `docs/lib`). These are really easy to forget! There is now a pre-commit hook you can set up which will remind you if you have made changes in `react/` or `docs/_javascript` and are not committing `docs/lib/*.js` files as well. To set it up, just run
-
-```
-./bin/link_hooks
-```
-and say `y` at the prompt!
