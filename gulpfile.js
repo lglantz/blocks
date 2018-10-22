@@ -7,6 +7,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
 const path = require('path');
+const del = require('del');
 
 const watchify = require('watchify');
 const browserify = require('browserify');
@@ -21,6 +22,8 @@ const jsonSass = require('gulp-json-sass');
 const jsonStylus = require('gulp-json-stylus');
 const concat = require('gulp-concat');
 
+const fs = require('fs');
+
 
 const cssPlugins = [
   autoprefixer(),
@@ -28,7 +31,7 @@ const cssPlugins = [
 ];
 
 // create SASS variables from variables.json
-gulp.task('dev:jsonToSass', () => {
+gulp.task('build:sassVariables', () => {
   return gulp.src('./blocks-styles/variables.json')
     .pipe(jsonSass({
       sass: true
@@ -37,7 +40,7 @@ gulp.task('dev:jsonToSass', () => {
 });
 
 // create Stylus variables from variables.json
-gulp.task('stylusGeneration', () => {
+gulp.task('build:stylusVariables', () => {
   return gulp.src('./blocks-styles/variables.json')
           .pipe(jsonStylus({ namespace : "$" }))
           .pipe(concat('variables.styl'))
@@ -45,14 +48,14 @@ gulp.task('stylusGeneration', () => {
 });
 
 // concat Stylus variable files into a single file
-gulp.task('dev:jsonToStylus', ['stylusGeneration'], () => {
+gulp.task('bundle:stylusVariables', ['build:stylusVariables'], () => {
   return gulp.src(['./blocks-styles/variables-base-fonts.styl', './blocks-styles/variables.styl', './blocks-styles/variables-base-root.styl'])
           .pipe(concat('variables.styl'))
           .pipe(gulp.dest('./blocks-styles'));
 });
 
 // compile separate Blocks Stylus files into a final CSS output file
-gulp.task('blocksCSSGeneration', () => {
+gulp.task('build:blocksCSS', () => {
   gulp.src('blocks-styles/_all.styl')
     .pipe(stylus({
       'include css': true
@@ -63,7 +66,7 @@ gulp.task('blocksCSSGeneration', () => {
 });
 
 // compile Blocks documentation Stylus files into a final CSS file for the documentation site
-gulp.task('blocksDocsCSSGeneration', () => {
+gulp.task('build:blocksDocsCSS', () => {
   gulp.src('docs/_styl/blocks-docs.styl')
     .pipe(stylus({
       'include css': true
@@ -73,24 +76,24 @@ gulp.task('blocksDocsCSSGeneration', () => {
 });
 
 // rebuild all CSS
-gulp.task('dev:css', ['dev:jsonToStylus', 'blocksCSSGeneration', 'blocksDocsCSSGeneration'], () => {
+gulp.task('build:css', ['build:sassVariables', 'bundle:stylusVariables', 'build:blocksCSS', 'build:blocksDocsCSS'], () => {
   gulp.src('blocks.css')
     .pipe(gulp.dest('docs/css/'));
 });
 
 // watch CSS files for changes
-gulp.task('watch:css', ['dev:jsonToStylus'], function () {
-  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['dev:css']);
+gulp.task('watch:css', () => {
+  gulp.watch(['docs/_styl/*.styl', 'blocks-styles/*.styl'], ['build:css']);
 });
 
 // copy fonts into documentation site
-gulp.task('dev:fonts', function() {
+gulp.task('build:fonts', () => {
   gulp.src(['fonts/*.eot', 'fonts/*.woff', 'fonts/*.woff2'])
     .pipe(gulp.dest('docs/fonts/'));
 });
 
 // copy SVG icons into documentation site
-gulp.task('dev:icons', function() {
+gulp.task('build:icons', () => {
   gulp.src('svgs/*.svg')
     .pipe(gulp.dest('docs/svgs/'));
 
@@ -98,35 +101,11 @@ gulp.task('dev:icons', function() {
     .pipe(gulp.dest('docs/'));
 });
 
-const jekyllLogger = (buffer) => {
-  buffer.toString()
-    .split(/\n/)
-    .forEach((message) => gutil.log('Jekyll: ' + message));
-};
-
-// serve Jekyll site
-gulp.task('dev:jekyll', () => {
-  const jekyll = child.spawn('jekyll', ['serve',
-    '--source',
-    'docs',
-    '--destination',
-    'docs/_site',
-    '--watch',
-    '--incremental',
-    '--drafts',
-    '--baseurl', // allow access of docs on localhost normally - when deployed,
-    ''           // baseurl is blocks/ for use with github pages
-  ]);
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-});
-
 // build vendor JS bundle
 const vendors = ['react', 'react-dom', 'react-router-dom', 'prop-types'];
-gulp.task('build:vendor', () => {
+gulp.task('bundle:vendor', () => {
   const b = browserify({
-    debug: true
+    debug: false
   });
 
   // require all libs specified in vendors array
@@ -134,28 +113,63 @@ gulp.task('build:vendor', () => {
     b.require(lib);
   });
 
-  b.bundle()
-  .pipe(source('vendor.js'))
-  .pipe(buffer())
-  .pipe(uglify())
-  .pipe(gulp.dest(path.join(__dirname, './docs/lib')))
-  ;
+  return b.bundle()
+    .pipe(source('vendor.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
 });
 
 // build a separate JS bundle for each React component
-gulp.task('dev:react', (done) => {
-  glob('./docs/_javascript/*.jsx', (err, files) => {
-    if (err) { done(err); }
+gulp.task('bundle:react', (done) => {
+  return glob('./docs/_javascript/*.jsx', (err, files) => {
+    if (err) { return done(err); }
     const tasks = files.map((entry) => {
       return createBundle(entry);
     });
     return es.merge(tasks).on('end', done);
   });
+});
 
+// build and watch a separate JS bundle for each React component
+gulp.task('watch:react', (done) => {
+  return glob('./docs/_javascript/*.jsx', (err, files) => {
+    if (err) { return done(err); }
+    const tasks = files.map((entry) => {
+      return createAndUpdateBundle(entry);
+    });
+    return es.merge(tasks).on('end', done);
+  });
 });
 
 // helper for creating React bundles
 const createBundle = (entry) => {
+  let b = browserify({
+    entries: [entry],
+    extensions: ['.jsx'],
+    debug: false,
+    cache: {},
+    packageCache: {},
+    transform: [
+      babelify.configure({
+        presets: ['es2015', 'react']
+      })
+    ]
+  });
+
+  b.on('log', gutil.log);
+
+  const name = entry.split('/')[3].split('.')[0];
+  return b.external(vendors)
+    .bundle()
+    .pipe(source(`${name}.js`))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
+};
+
+// helper for creating and updating React bundles
+const createAndUpdateBundle = (entry) => {
   let b = browserify({
     entries: [entry],
     extensions: ['.jsx'],
@@ -167,8 +181,7 @@ const createBundle = (entry) => {
         presets: ['es2015', 'react']
       })
     ]
-  })
-  .plugin(watchify);
+  }).plugin(watchify);
 
   const bundle = () => {
     const name = entry.split('/')[3].split('.')[0];
@@ -176,7 +189,6 @@ const createBundle = (entry) => {
       .bundle()
       .pipe(source(`${name}.js`))
       .pipe(buffer())
-      .pipe(uglify())
       .pipe(gulp.dest(path.join(__dirname, './docs/lib')));
   }
 
@@ -186,14 +198,63 @@ const createBundle = (entry) => {
   return bundle();
 }
 
+const jekyllLogger = (buffer) => {
+  buffer.toString()
+    .split(/\n/)
+    .forEach((message) => gutil.log('Jekyll: ' + message));
+};
+
+gulp.task('clean', () => {
+  return del([
+    'docs/_site',
+    'docs/css',
+    'docs/fonts',
+    'docs/lib',
+    'docs/svgs'
+  ]);
+});
+
 // build, serve, and watch documentation site
 gulp.task('server', [
-  'dev:fonts',
-  'dev:icons',
-  'dev:css',
-  'build:vendor',
-  'dev:react',
-  'dev:jekyll',
-  'dev:jsonToSass',
-  'dev:jsonToStylus'
-]);
+  'build:fonts',
+  'build:icons',
+  'watch:css',
+  'bundle:vendor',
+  'watch:react',
+], () => {
+  const jekyll = child.spawn('jekyll', ['serve',
+    '--source',
+    'docs',
+    '--destination',
+    'docs/_site',
+    '--watch',
+    '--incremental',
+    '--drafts'
+  ]);
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
+
+// build documentation site
+gulp.task('build', [
+  'build:fonts',
+  'build:icons',
+  'build:css',
+  'bundle:vendor',
+  'bundle:react'
+], () => {
+  const jekyll = child.spawn('jekyll', ['build', 
+    '--source',
+    'docs',
+    '--destination',
+    'docs/_site'
+  ]);
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+
+  jekyll.on('exit', () => {
+    console.log('site build complete');
+  });
+});

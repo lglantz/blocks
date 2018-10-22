@@ -1,3 +1,9 @@
-/docs/_site/
+/.bundle/
 /docs/.jekyll-metadata
+/docs/_site/
+/docs/css/
+/docs/fonts/
+/docs/lib/
+/docs/svgs/
+/docs/vendor/
 /node_modules/
