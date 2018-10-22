@@ -1,6 +1,5 @@
-source: docs
-destination: docs/_site
-exclude: ['docs/_javascript']
+source: .
+destination: _site
+exclude: ['_javascript', 'vendor']
 port: 8080
 permalink: pretty
-baseurl: /blocks
