@@ -39,6 +39,7 @@ module.exports = {
     LinkTabs: require('./react/tabs/LinkTabs.jsx')
   },
   wrappers: {
-    closeOnClick: require('./react/wrappers/closeOnClick.jsx')
+    closeOnClick: require('./react/wrappers/closeOnClick.jsx'),
+    keyControlledMenu: require('./react/wrappers/keyControlledMenu.jsx')
   }
 };
