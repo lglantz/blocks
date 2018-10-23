@@ -22,8 +22,6 @@ const jsonSass = require('gulp-json-sass');
 const jsonStylus = require('gulp-json-stylus');
 const concat = require('gulp-concat');
 
-const fs = require('fs');
-
 
 const cssPlugins = [
   autoprefixer(),

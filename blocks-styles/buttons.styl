@@ -1,11 +1,11 @@
 .blx-button {
-  display: inline-block;
+  display: flex;
   position: relative;
 
   height: $button-height;
   max-width: 480px;
-  min-width: 64px;
-  padding: 7px 18px 9px 18px; // specified padding - 2px to account for border
+  min-width: 44px;
+  padding: 8px 18px; // specified padding - 2px to account for border
   text-decoration: none;
 
   border-radius: $base-border-radius;
@@ -14,7 +14,7 @@
   font-size: $button-font-size;
   font-weight: $medium-weight;
   text-align: center;
-  line-height: 24px;
+  line-height: 20px;
   
   overflow: hidden;
   white-space: nowrap;
@@ -24,7 +24,7 @@
   
   .blx-icon {
     position: relative;
-    top: 4px;
+    top: 0;
     width: 20px;
     height: 20px;
     
@@ -36,70 +36,158 @@
       right: -8px;
     }
   }
+  
+  &:focus, &.blx-focus {
+    outline: none;
+    text-decoration: none;
+    box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
+  }
 
   &:hover, &.blx-hover {
     text-decoration: none;
     box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
   }
+}
 
-  &.blx-primary {
-    background-color: $primary-button-background-color;
-    border: 2px solid $primary-button-border-color;
-    color: $primary-button-text-color;
+.blx-icon-button {
+  width: $button-height;
+}
+
+.blx-primary {
+  background-color: $primary-button-background-color;
+  border: 2px solid $primary-button-border-color;
+  color: $primary-button-text-color;
+  
+  .blx-icon {
+    background-color: $primary-button-text-color;
+  }
+  
+  &:focus, &.blx-focus {
+    border: 2px solid $primary-button-focus-border-color;
+    background-color: $primary-button-focus-background-color;
+    color: $primary-button-focus-text-color;
     
-    .blx-icon {
-      background-color: $primary-button-text-color;
-    }
-
-    &:hover, &.blx-hover {
-      background-color: $primary-button-hover-background-color;
-      border: 2px solid $primary-button-hover-border-color;
-      color: $primary-button-hover-text-color;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border: 1px solid $ui-00;
     }
   }
-
-  &.blx-secondary {
-    background-color: $secondary-button-background-color;
-    border: 2px solid $secondary-button-border-color;
-    color: $secondary-button-text-color;
+  
+  &:hover, &.blx-hover {
+    background-color: $primary-button-hover-background-color;
+    border: 2px solid $primary-button-hover-border-color;
+    color: $primary-button-hover-text-color;
     
-    .blx-icon {
-      background-color: $secondary-button-text-color;
-    }
-
-    &:hover, &.blx-hover {
-      background-color: $secondary-button-hover-background-color;
-      border: 2px solid $secondary-button-hover-border-color;
-      color: $secondary-button-hover-text-color;
+    &::before {
+      content: none;
     }
   }
-
-  &:focus, &:active, &.blx-focus {
-    outline: none;
-    text-decoration: none;
-    box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
-
-    &.blx-primary {
-      border: 2px solid $primary-button-focus-border-color;
-      background-color: $primary-button-focus-background-color;
-      color: $primary-button-focus-text-color;
-      
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        border-radius: 5px;
-        width: calc(100% - 2px);
-        height: calc(100% - 2px);
-        border: 1px solid $ui-00;
-      }
+  
+  &:active, &.blx-active {
+    background-color: $primary-button-active-background-color;
+    border: 2px solid $primary-button-active-border-color;
+    color: $primary-button-active-text-color;
+    &::before {
+      content: none;
     }
+  }
+}
 
-    &.blx-secondary {
-      border: 2px solid $secondary-button-focus-border-color;
-      background-color: $secondary-button-focus-background-color;
-      color: $secondary-button-focus-text-color;
+.blx-secondary {
+  background-color: $secondary-button-background-color;
+  border: 2px solid $secondary-button-border-color;
+  color: $secondary-button-text-color;
+  
+  .blx-icon {
+    background-color: $secondary-button-text-color;
+  }
+  
+  &:focus, &.blx-focus {
+    border: 2px solid $secondary-button-focus-border-color;
+    background-color: $secondary-button-focus-background-color;
+    color: $secondary-button-focus-text-color;
+  }
+  
+  &:hover, &.blx-hover {
+    background-color: $secondary-button-hover-background-color;
+    border: 2px solid $secondary-button-hover-border-color;
+    color: $secondary-button-hover-text-color;
+    
+    &::before {
+      content: none;
+    }
+  }
+  
+  &:active, &.blx-active {
+    background-color: $secondary-button-active-background-color;
+    border: 2px solid $secondary-button-active-border-color;
+    color: $secondary-button-active-text-color;
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.blx-danger {
+  background-color: $danger-button-background-color;
+  border: 2px solid $danger-button-border-color;
+  color: $danger-button-text-color;
+  
+  .blx-icon {
+    background-color: $danger-button-text-color;
+  }
+  
+  &:focus, &.blx-focus {
+    border: 2px solid $danger-button-focus-border-color;
+    background-color: $danger-button-focus-background-color;
+    color: $danger-button-focus-text-color;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border: 1px solid $ui-00;
+    }
+    
+    .blx-icon {
+      background-color: $danger-button-hover-text-color;
+    }
+  }
+  
+  &:hover, &.blx-hover {
+    background-color: $danger-button-hover-background-color;
+    border: 2px solid $danger-button-hover-border-color;
+    color: $danger-button-hover-text-color;
+    
+    &::before {
+      content: none;
+    }
+    
+    .blx-icon {
+      background-color: $danger-button-hover-text-color;
+    }
+  }
+  
+  &:active, &.blx-active {
+    background-color: $danger-button-active-background-color;
+    border: 2px solid $danger-button-active-border-color;
+    color: $danger-button-active-text-color;
+    &::before {
+      content: none;
+    }
+    
+    .blx-icon {
+      background-color: $danger-button-hover-text-color;
     }
   }
 }
