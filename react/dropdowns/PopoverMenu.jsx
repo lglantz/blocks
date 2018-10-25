@@ -1,85 +1,94 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const ReactDOM = require('react-dom');
 
+const DropdownItem = require('./DropdownItem.jsx');
 const closeOnClick = require('../wrappers/closeOnClick.jsx');
+const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
 
-const PopoverMenu = props => (
-  <div className="blx-dropdown-wrapper">
-    {
-      props.text && <span className="blx-subtitle blx-popover-text">{props.text}</span>
-    }
-    <div className="blx-dropdown blx-popover">
-      <button
-        className="blx-popover-trigger"
-        onClick={(evt) => {
-          evt.preventDefault();
-          props.toggle();
-        }}
-      >
-        <span className={`blx-icon blx-icon-${props.icon}`} />
-      </button>
-      <ul className={`blx-dropdown-menu ${props.isOpen ? '' : 'blx-hidden'} ${props.isLeft ? 'blx-popover-is-left' : 'blx-popover-is-right'}`}>
-        {
-          props.options.map((option) => {
-            let item = null;
-            if (option.href) {
-              item = (
-                <a
-                  href={option.href}
-                  target={option.newTab ? '_blank' : null}
-                >
-                  {option.text}
-                </a>
-              );
-            } else {
-              item = (
-                <button
-                  onClick={(evt) => {
-                    option.onClick(evt);
-                    props.toggle();
-                  }}
-                >
-                  {option.text || option.element}
-                </button>
-              );
-            }
-            return (
-              <li className={`blx-dropdown-item ${option.disabled ? 'blx-disabled' : ''}`} key={option.text || option.key}>
-                {item}
-              </li>
-            );
-          })
-        }
-      </ul>
+const PopoverMenu = (props) => {
+  let menuClasses = 'blx-dropdown-menu';
+  if (!props.isOpen) menuClasses += ' blx-hidden';
+  if (props.isLeft) {
+    menuClasses += ' blx-popover-is-left';
+  } else {
+    menuClasses += ' blx-popover-is-right';
+  }
+  return (
+    <div className="blx-dropdown-wrapper">
+      { props.text && 
+          <span className="blx-subtitle blx-popover-text">{props.text}</span>
+      }
+      <div className="blx-dropdown blx-popover">
+        <button
+          className="blx-popover-trigger"
+          disabled={props.isDisabled}
+          onClick={props.toggle}
+          title={props.text}
+          autoFocus={props.autoFocus}
+          onKeyDown={props.onKeyDown}
+          onFocus={props.onTriggerFocus}
+        >
+          <span className={`blx-icon blx-icon-${props.icon}`} />
+        </button>
+        <ul className={menuClasses}>
+          {
+            props.options.map((option, idx) => (
+              <DropdownItem
+                key={option.text || option.key}
+                option={option}
+                ref={props.optionsRefs[idx]}
+                onKeyDown={props.onKeyDown}
+                onKeyUp={props.onKeyUp}
+                onSelect={props.onSelect}
+              />
+            ))
+          }
+        </ul>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 PopoverMenu.propTypes = {
-  text: PropTypes.string,
   isOpen: PropTypes.bool,
   isLeft: PropTypes.bool,
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string,
-    key: PropTypes.string,
-    onClick: PropTypes.func,
-    href: PropTypes.string,
-    newTab: PropTypes.bool,
-    element: PropTypes.object
-  })),
   toggle: PropTypes.func.isRequired,
-  icon: PropTypes.string
+  text: PropTypes.string,
+  icon: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  options: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    disabled: PropTypes.bool,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    href: PropTypes.string,
+    element: PropTypes.node,
+    key: PropTypes.string
+  })),
+  isDisabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  autoFocus: PropTypes.bool
 };
 
 PopoverMenu.defaultProps = {
-  text: null,
   isOpen: false,
-  isLeft: true,
+  isLeft: null,
   options: [],
-  icon: 'more-horizontal'
+  text: null,
+  icon: 'more-horizontal',
+  value: null,
+  onChange: () => {},
+  autoFocus: false
 };
 
 
-module.exports = closeOnClick(PopoverMenu);
+module.exports = closeOnClick(keyControlledMenu(PopoverMenu));
