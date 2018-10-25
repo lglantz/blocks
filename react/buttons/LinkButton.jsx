@@ -4,7 +4,7 @@ const ReactLink = require('react-router-dom').Link;
 
 
 const LinkButton = React.forwardRef((props, ref) => {
-  const classes = `blx-button ${props.classes} ${props.isDisabled ? 'blx-disabled' : ''}`;
+  const classes = `blx-button ${props.classes} ${props.iconName ? 'blx-icon-button' : ''} ${props.isDisabled ? 'blx-disabled' : ''}`;
 
   if (props.useReactLink) {
     return (
@@ -15,7 +15,8 @@ const LinkButton = React.forwardRef((props, ref) => {
         ref={ref}
       >
         { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
-        <span>{props.text}</span>
+        { props.text && <span>{props.text}</span> }
+        { props.iconName && <span className={`blx-icon blx-icon-${props.iconName}`} /> }
         { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
       </ReactLink>
     );
@@ -30,30 +31,34 @@ const LinkButton = React.forwardRef((props, ref) => {
       ref={ref}
     >
       { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
-      <span>{props.text}</span>
+      { props.text && <span>{props.text}</span> }
+      { props.iconName && <span className={`blx-icon blx-icon-${props.iconName}`} /> }
       { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
     </a>
   );
 });
 
 LinkButton.propTypes = {
-  text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
+  text: PropTypes.string,
   classes: PropTypes.string,
   isDisabled: PropTypes.bool,
   isExternal: PropTypes.bool,
   useReactLink: PropTypes.bool,
   leftIcon: PropTypes.string,
-  rightIcon: PropTypes.string
+  rightIcon: PropTypes.string,
+  iconName: PropTypes.string
 };
 
 LinkButton.defaultProps = {
+  text: '',
   classes: 'blx-primary',
   isDisabled: false,
   isExternal: false,
   useReactLink: false,
   leftIcon: null,
-  rightIcon: null
+  rightIcon: null,
+  iconName: null
 };
 
 module.exports = LinkButton;

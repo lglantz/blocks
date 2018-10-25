@@ -2,19 +2,22 @@ $sans-serif-font-family: Graphik Web
 $normal-weight: 400
 $medium-weight: 500
 $bold-weight: 700
+$white: #ffffff
 $interactive-hex: #009f6f
 $interactive-hover-hex: #008b61
+$interactive-active-hex: #00704f
 $interactive-shadow-hex: rgba(0, 72, 51, 0.25)
 $interactive-shadow-hover-hex: rgba(0, 72, 51, 0.35)
 $brand-01-hex: #00b07d
-$ui-00-hex: #ffffff
+$ui-00-hex: #fdfefd
 $ui-01-hex: #f6f8f8
 $ui-02-hex: #f5faf8
 $ui-03-hex: #edf0ee
 $ui-04-hex: #d9e1e0
-$ui-05-hex: #bdc7c3
-$ui-06-hex: #aab7b2
-$ui-07-hex: #91a49e
+$ui-05-hex: #ced4d2
+$ui-06-hex: #bdc7c3
+$ui-07-hex: #aab7b2
+$ui-08-hex: #91a49e
 $text-01-hex: #2b3836
 $text-02-hex: #7c8c88
 $success-hex: #39cf94
@@ -22,8 +25,13 @@ $information-hex: #6f6bf8
 $warning-hex: #fdb100
 $error-hex: #ec4f07
 $selection-hex: #49a1ff
+$danger-hex: #e66740
+$danger-active-hex: #ba3c13
+$secondary-hover-hex: #f5faf8
+$secondary-active-hex: #d5f0e5
 $interactive: var(--interactive, $interactive-hex)
 $interactive-hover: var(--interactive-hover, $interactive-hover-hex)
+$interactive-active: var(--interactive-active, $interactive-active-hex)
 $interactive-shadow: var(--interactive-shadow, $interactive-shadow-hex)
 $interactive-shadow-hover: var(--interactive-shadow-hover, $interactive-shadow-hover-hex)
 $brand-01: var(--brand-01, $brand-01-hex)
@@ -35,6 +43,7 @@ $ui-04: var(--ui-04, $ui-04-hex)
 $ui-05: var(--ui-05, $ui-05-hex)
 $ui-06: var(--ui-06, $ui-06-hex)
 $ui-07: var(--ui-07, $ui-07-hex)
+$ui-08: var(--ui-08, $ui-08-hex)
 $text-01: var(--text-01, $text-01-hex)
 $text-02: var(--text-02, $text-02-hex)
 $success: var(--success-hex, $success-hex)
@@ -42,6 +51,10 @@ $information: var(--information, $information-hex)
 $warning: var(--warning, $warning-hex)
 $error: var(--error, $error-hex)
 $selection: var(--selection, $selection-hex)
+$danger: var(--danger-hex, $danger-hex)
+$danger-active: var(--danger-active-hex, $danger-active-hex)
+$secondary-hover: var(--secondary-hover-hex, $secondary-hover-hex)
+$secondary-active: var(--secondary-active-hex, $secondary-active-hex)
 $base-font-size: 16px
 $base-border-radius: 7px
 $button-height: 44px
@@ -52,21 +65,39 @@ $button-focus-shadow-color: $interactive-shadow-hover
 $primary-button-background-color: $interactive
 $primary-button-hover-background-color: $interactive-hover
 $primary-button-focus-background-color: $interactive-hover
+$primary-button-active-background-color: $interactive-active
 $primary-button-border-color: $interactive
 $primary-button-hover-border-color: $interactive-hover
 $primary-button-focus-border-color: $selection
+$primary-button-active-border-color: $interactive-active
 $primary-button-text-color: $ui-00
 $primary-button-hover-text-color: $ui-00
 $primary-button-focus-text-color: $ui-00
+$primary-button-active-text-color: $ui-00
 $secondary-button-background-color: $ui-00
-$secondary-button-hover-background-color: $ui-02
-$secondary-button-focus-background-color: $ui-02
+$secondary-button-hover-background-color: $secondary-hover
+$secondary-button-focus-background-color: $secondary-hover
+$secondary-button-active-background-color: $secondary-active
 $secondary-button-border-color: $ui-00
 $secondary-button-hover-border-color: $ui-02
 $secondary-button-focus-border-color: $selection
+$secondary-button-active-border-color: $secondary-active
 $secondary-button-text-color: $interactive
 $secondary-button-hover-text-color: $interactive
 $secondary-button-focus-text-color: $interactive
+$secondary-button-active-text-color: $interactive
+$danger-button-background-color: $ui-00
+$danger-button-hover-background-color: $danger
+$danger-button-focus-background-color: $danger
+$danger-button-active-background-color: $danger-active
+$danger-button-border-color: $danger
+$danger-button-hover-border-color: $danger
+$danger-button-focus-border-color: $selection
+$danger-button-active-border-color: $danger-active
+$danger-button-text-color: $danger
+$danger-button-hover-text-color: $ui-00
+$danger-button-focus-text-color: $ui-00
+$danger-button-active-text-color: $ui-00
 $checkbox-size: 18px
 $checkbox-text-color: $text-01
 $checkbox-hover-shadow-color: $interactive-shadow-hover
@@ -76,11 +107,11 @@ $checkbox-unselected-focus-border-color: $selection
 $checkbox-unselected-background-color: $ui-00
 $checkbox-unselected-hover-background-color: $ui-00
 $checkbox-unselected-focus-background-color: $ui-00
-$checkbox-selected-border-color: $brand-01
-$checkbox-selected-hover-border-color: $interactive
+$checkbox-selected-border-color: $interactive
+$checkbox-selected-hover-border-color: $interactive-hover
 $checkbox-selected-focus-border-color: $selection
-$checkbox-selected-background-color: $brand-01
-$checkbox-selected-hover-background-color: $interactive
+$checkbox-selected-background-color: $interactive
+$checkbox-selected-hover-background-color: $interactive-hover
 $checkbox-selected-focus-background-color: $interactive
 $radio-size: 18px
 $radio-text-color: $text-01
@@ -91,9 +122,9 @@ $radio-unselected-focus-border-color: $selection
 $radio-unselected-background-color: $ui-00
 $radio-unselected-hover-background-color: $ui-00
 $radio-unselected-focus-background-color: $ui-00
-$radio-selected-border-color: $brand-01
+$radio-selected-border-color: $interactive
 $radio-selected-hover-border-color: $interactive
-$radio-selected-focus-border-color: $interactive
-$radio-selected-background-color: $brand-01
-$radio-selected-hover-background-color: $interactive
+$radio-selected-focus-border-color: $selection
+$radio-selected-background-color: $interactive
+$radio-selected-hover-background-color: $interactive-hover
 $radio-selected-focus-background-color: $interactive

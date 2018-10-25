@@ -29,19 +29,6 @@
     background-color: $radio-unselected-background-color;
     border: 1px solid $radio-unselected-border-color;
     
-    // create double border element (only visible on focus)
-    &::before {
-      display: none;
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      width: $radio-size;
-      height: $radio-size;
-      border-radius: 50%;
-      border: 1px solid $selection;
-    }
-    
     /* Create the checkmark/indicator (hidden when not checked) */
     &::after {
       display: none;
@@ -56,17 +43,6 @@
     }
   }
   
-  &:hover, &.blx-hover {
-    .blx-radio-check {
-      border: 1px solid $radio-unselected-hover-border-color;
-      box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
-      
-      &::after {
-        background-color: $radio-selected-hover-background-color;
-      }
-    }
-  }
-  
   /* Hide the browser's default radio button */
   input[type="radio"] {
     position: absolute;
@@ -77,11 +53,6 @@
     &:checked ~ .blx-radio-check {
       border: 1px solid $radio-selected-border-color;
       
-      &:hover, &.blx-hover {
-        border: 1px solid $radio-selected-hover-border-color;
-        box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
-      }
-      
       /* Show the checkmark when checked */
       &::after {
         display: block;
@@ -91,7 +62,8 @@
     &:checked {
       &:focus + .blx-radio-check, &.blx-focus + .blx-radio-check {
         outline: none;
-        border: 1px solid $radio-selected-focus-border-color;
+        border: 1px solid $radio-selected-border-color;
+        box-shadow: 0 0 0 1px $radio-selected-focus-border-color;
         &::before {
           display: block;
         }
@@ -100,7 +72,24 @@
     &:focus + .blx-radio-check, &.blx-focus + .blx-radio-check {
       outline: none;
       border: 1px solid $radio-unselected-focus-border-color;
-      box-shadow: 0 2px 4px 0 $radio-hover-shadow-color;
+    }
+  }
+  
+  &:hover, &.blx-hover {
+    input[type="radio"] ~ .blx-radio-check {
+      background-color: $radio-unselected-hover-background-color;
+      border: 2px solid $radio-unselected-hover-border-color;
+      box-shadow: none;
+    }
+    
+    input[type="radio"]:checked ~ .blx-radio-check {
+      background-color: $radio-unselected-background-color;
+      border: 1px solid $radio-selected-hover-border-color;
+      box-shadow: none;
+      
+      &::after {
+        background-color: $radio-selected-hover-background-color;
+      }
     }
   }
   

@@ -33,6 +33,10 @@ html, body {
   padding: 50px 0 40px 0;
 }
 
+.default-spacing {
+  margin: 24px 0;
+}
+
 .design-page {
   height: 100%;
   width: 100%;
@@ -148,44 +152,30 @@ html, body {
 }
 
 .doc-state-content {
-  flex: 1 0 250px;
+  flex: 1 0 150px;
 }
 
 .doc-state-title, .doc-state-content {
-  margin-right: 24px;
-  margin-bottom: 40px;
+  margin: 24px 24px 24px 0;
 }
 
 .color-card {
   display: inline-block;
   margin: 0 32px 32px 0;
-  min-width: 128px;
-  width:128px;
-  max-width:128px;
   box-sizing: border-box;
   
   .color-card-background {
-    width: 128px;
-    height: 80px;
-    display: table;
+    width: 150px;
+    height: 90px;
+    border: 1px solid #686f6d;
   }
   
   .color-card-title {
-    width: 128px;
-    height: 32px;
-    display: table;
-    border: 1px solid $text-02;
-    color: $text-02;
-  }
-  
-  .color-card-name, .color-card-value {
-    width: 128px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-  }
-  
-  .color-card-value {
+    width: 150px;
+    height: 60px;
+    padding: 8px;
+    border: 1px solid #686f6d;
+    border-width: 0 1px 1px 1px;
     color: $text-02;
   }
 }

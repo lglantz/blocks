@@ -7,21 +7,28 @@ definition: Rules about the relative usage of colors.
 ---
 
 <div class="l-flex-vertical doc-section">
-  <h4>Interactive Colors & Shadows</h4>
+  <h6>Interactive Colors & Shadows</h6>
   <div class="l-flex-horizontal">
-    <span class="doc-definition-title">Usage</span>
-    <span class="doc-definition-value">Only use to indicate which interface elements are actionable.</span>
+    <p>Only use to indicate which interface elements are actionable.</p>
   </div>
   <div>
     {% include color_card.html name='interactive' value='#009F6F' %}
     {% include color_card.html name='interactive-hover' value='#008B61' %}
-    {% include color_card.html name='interactive-shadow' value='rgba(0, 72, 51, 0.25)' %}
+    {% include color_card.html name='interactive-active' value='#00704F' %}
+    {% include color_card.html name='interactive-shadow' value='rgba(0, 72, 51, 0.25)' opacity='25%' displayValue='#004833' %}
+  </div>
+  <div>
+    {% include color_card.html name='danger' value='#E66740' %}
+    {% include color_card.html name='danger-active' value='#BA3C13' %}
+  </div>
+  <div>
+    {% include color_card.html name='secondary-hover' value='#F5FAF8' %}
+    {% include color_card.html name='secondary-active' value='#D5F0E5' %}
   </div>
 
-  <h4>Supportive Colors</h4>
+  <h6>Supportive Colors</h6>
   <div class="l-flex-horizontal">
-    <span class="doc-definition-title">Usage</span>
-    <span class="doc-definition-value">Use to draw attention to a state or change in the application.</span>
+    <p>Use to draw attention to a state or change in the application.</p>
   </div>
   <div>
     {% include color_card.html name='success' value='#39CF94' %}
@@ -31,47 +38,31 @@ definition: Rules about the relative usage of colors.
     {% include color_card.html name='selection' value='#49A1FF' %}
   </div>
 
-  <h4>Non-interactive colors</h4>
+  <h6>Non-interactive colors</h6>
   <div class="l-flex-horizontal">
-    <span class="doc-definition-title">Usage</span>
-    <span class="doc-definition-value">Use for non-interactive text and background interface elements.</span>
+    <p>Use for non-interactive text and background interface elements.</p>
   </div>
   <div>
-    {% include color_card.html name='text-01' value='#2B3836' textColor='#d9e1e0' %}
+    {% include color_card.html name='text-01' value='#2B3836' %}
     {% include color_card.html name='text-02' value='#7C8C88' %}
   </div>
   <div>
-    {% include color_card.html name='ui-00' value='#FFFFFF' %}
-    {% include color_card.html name='ui-01' value='#f6f8f8' %}
-    {% include color_card.html name='ui-02' value='#f5faf8' %}
-    {% include color_card.html name='ui-03' value='#edf0ee' %}
-    {% include color_card.html name='ui-04' value='#d9e1e0' %}
-    {% include color_card.html name='ui-05' value='#bdc7c3' %}
-    {% include color_card.html name='ui-06' value='#aab7b2' %}
-    {% include color_card.html name='ui-07' value='#91a49e' %}
+    {% include color_card.html name='ui-00' value='#FDFEFD' %}
+    {% include color_card.html name='ui-01' value='#F6F8F8' %}
+    {% include color_card.html name='ui-02' value='#F5FAF8' %}
+    {% include color_card.html name='ui-03' value='#EDF0EE' %}
+    {% include color_card.html name='ui-04' value='#D9E1E0' %}
+    {% include color_card.html name='ui-05' value='#CED4D2' %}
+    {% include color_card.html name='ui-06' value='#BDC7C3' %}
+    {% include color_card.html name='ui-07' value='#AAB7B2' %}
+    {% include color_card.html name='ui-08' value='#91A49E' %}
   </div>
 
-  <h4>Brand Colors</h4>
+  <h6>Brand Colors</h6>
   <div class="l-flex-horizontal">
-    <span class="doc-definition-title">Usage</span>
-    <span class="doc-definition-value">Use sparingly for emphasis, large headings, and to grab attention.</span>
+    <p>Use sparingly for emphasis, large headings, and to grab attention.</p>
   </div>
   <div>
     {% include color_card.html name='brand-01' value='#00b07d' %}
   </div>
 
-  <!--
-  <h4>Map Colors</h4>
-  <div class="l-flex-horizontal">
-    <span class="doc-definition-title">Usage</span>
-    <span class="doc-definition-value">For map gradients.</span>
-  </div>
-  <div>
-    {% include color_card.html name='map-01' value='#D3F2DC' %}
-    {% include color_card.html name='map-02' value='#7FD4A5' %}
-    {% include color_card.html name='map-03' value='#24B377' %}
-    {% include color_card.html name='map-04' value='#0F915F' %}
-    {% include color_card.html name='map-05' value='#006141' %}
-  </div>
-</div>
--->

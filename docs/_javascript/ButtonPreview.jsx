@@ -5,6 +5,7 @@ const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 const ButtonPrimary = require('../../react/buttons/ButtonPrimary.jsx');
 const ButtonSecondary = require('../../react/buttons/ButtonSecondary.jsx');
+const ButtonDanger = require('../../react/buttons/ButtonDanger.jsx');
 
 const ButtonPreview = () => (
   <div className="l-flex-vertical">
@@ -27,6 +28,13 @@ const ButtonPreview = () => (
     <div className="l-flex-horizontal">
       { getPreviewComponent('Primary Button with icon', <ButtonPrimary text="Primary button" onClick={() => {}} rightIcon="plus" />) }
       { getPreviewComponent('Secondary Button with icon', <ButtonSecondary text="Secondary button" onClick={() => {}} rightIcon="plus" />) }
+    </div>
+    <div className="l-flex-horizontal">
+      { getPreviewComponent('Primary icon button', <ButtonPrimary onClick={() => {}} iconName="plus" />) }
+      { getPreviewComponent('Secondary icon button', <ButtonSecondary onClick={() => {}} iconName="plus" />) }
+    </div>
+    <div className="l-flex-horizontal">
+      { getPreviewComponent('Danger button', <ButtonDanger text="Danger button" onClick={() => {}} />)}
     </div>
   </div>
 );
