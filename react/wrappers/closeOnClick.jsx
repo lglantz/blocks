@@ -13,7 +13,7 @@ function closeOnClick(WrappedComponent) {
       this.toggle = this.toggle.bind(this);
       this.closeOnClick = this.closeOnClick.bind(this);
     }
-    
+
     open() {
       this.setState({
         isOpen: true
@@ -30,7 +30,8 @@ function closeOnClick(WrappedComponent) {
       });
     }
 
-    toggle() {
+    toggle(e) {
+      e.preventDefault();
       if (this.state.isOpen) {
         this.close();
       } else {

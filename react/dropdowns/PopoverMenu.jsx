@@ -16,7 +16,7 @@ const PopoverMenu = (props) => {
   }
   return (
     <div className="blx-dropdown-wrapper">
-      { props.text && 
+      { props.text &&
           <span className="blx-subtitle blx-popover-text">{props.text}</span>
       }
       <div className="blx-dropdown blx-popover">
