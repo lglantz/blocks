@@ -22,7 +22,11 @@ function keyControlledMenu(WrappedComponent) {
     }
 
     onSelect(e, option) {
-      if (this.props.onChange) this.props.onChange(option);
+      if (option.onClick) {
+        option.onClick(e);
+      } else if (this.props.onChange) {
+        this.props.onChange(option);
+      }
       this.props.close();
     }
 
