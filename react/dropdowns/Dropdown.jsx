@@ -16,7 +16,7 @@ const DropdownMenu = (props) => {
   if (props.value) {
     for (let i = 0; i < props.options.length; i++) {
       const option = props.options[i];
-      if (option.value == props.value) {
+      if (option.value === props.value) {
         if (option.text) {
           content = option.text;
         } else if (option.element) {
@@ -40,7 +40,7 @@ const DropdownMenu = (props) => {
       { props.icon && 
         <span className={`blx-icon blx-icon-${props.icon}`} />
       }
-      <span className={`blx-dropdown-text`}>{ content }</span>
+      <span className="blx-dropdown-text">{ content }</span>
     </button>
   );
 

@@ -8,7 +8,11 @@ const Dropdown = require('../../react/dropdowns/Dropdown.jsx');
 class DropdownPreview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentValue : '' };
+    this.state = {
+      value1 : '',
+      value2: '',
+      value3: ''
+    };
   }
 
   render() {
@@ -18,8 +22,8 @@ class DropdownPreview extends React.Component {
           { getPreviewComponent('Default',
               <Dropdown
                 text="Choose an option"
-                value={this.state.currentValue}
-                onChange={evt => this.setState({ currentValue: evt.value })}
+                value={this.state.value1}
+                onChange={evt => this.setState({ value1: evt.value })}
                 options={
                   [
                     { value: 'option1', text: 'One option' },
@@ -51,6 +55,8 @@ class DropdownPreview extends React.Component {
               <Dropdown
                 text="Choose an option"
                 icon="plus"
+                value={this.state.value2}
+                onChange={evt => this.setState({ value2: evt.value })}
                 options={
                   [
                     { value: 'option1', text: 'One option' },
@@ -65,6 +71,8 @@ class DropdownPreview extends React.Component {
           { getPreviewComponent('Overflow',
               <Dropdown
                 text="This is a really long title that will overflow"
+                value={this.state.value3}
+                onChange={evt => this.setState({ value3: evt.value })}
                 options={
                   [
                     { value: 'option1', text: 'One option' },
