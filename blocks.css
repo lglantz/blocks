@@ -135,6 +135,28 @@ th {
   font-style: normal;
   font-stretch: normal;
 }
+:root {
+  --interactive: #009f6f;
+  --interactive-hover: #008b61;
+  --interactive-shadow: rgba(0,72,51,0.25);
+  --interactive-shadow-hover: rgba(0,72,51,0.35);
+  --brand-01: #00b07d;
+  --ui-00: #fff;
+  --ui-01: #f6f8f8;
+  --ui-02: #f5faf8;
+  --ui-03: #edf0ee;
+  --ui-04: #d9e1e0;
+  --ui-05: #bdc7c3;
+  --ui-06: #aab7b2;
+  --ui-07: #91a49e;
+  --text-01: #2b3836;
+  --text-02: #7c8c88;
+  --success: #39cf94;
+  --information: #6f6bf8;
+  --warning: #fdb100;
+  --error: #ec4f07;
+  --selection: #49a1ff;
+}
 html,
 body {
   font-family: Graphik Web;
@@ -1033,26 +1055,6 @@ a.blx-button {
 .blx-dropdown-item {
   background: transparent;
 }
-.blx-dropdown-item:hover {
-  background-color: #009f6f;
-  background-color: var(--interactive, #009f6f);
-  color: #fff;
-  color: var(--ui-00, #fff);
-}
-.blx-dropdown-item.blx-hover {
-  background-color: #009f6f;
-  background-color: var(--interactive, #009f6f);
-  color: #fff;
-  color: var(--ui-00, #fff);
-}
-.blx-dropdown-item:hover .blx-icon {
-  background-color: #fff;
-  background-color: var(--ui-00, #fff);
-}
-.blx-dropdown-item.blx-hover .blx-icon {
-  background-color: #fff;
-  background-color: var(--ui-00, #fff);
-}
 .blx-dropdown-item a {
   display: flex;
   width: 100%;
@@ -1149,25 +1151,41 @@ a.blx-button {
   background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
 }
-.blx-dropdown-item a:hover {
+.blx-dropdown-item:hover {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-dropdown-item.blx-hover {
+  background-color: #009f6f;
+  background-color: var(--interactive, #009f6f);
+}
+.blx-dropdown-item:hover a {
   text-decoration: none;
   color: #fff;
   color: var(--ui-00, #fff);
 }
-.blx-dropdown-item button:hover {
+.blx-dropdown-item.blx-hover a {
   text-decoration: none;
   color: #fff;
   color: var(--ui-00, #fff);
 }
-.blx-dropdown-item a.blx-hover {
+.blx-dropdown-item:hover button {
   text-decoration: none;
   color: #fff;
   color: var(--ui-00, #fff);
 }
-.blx-dropdown-item button.blx-hover {
+.blx-dropdown-item.blx-hover button {
   text-decoration: none;
   color: #fff;
   color: var(--ui-00, #fff);
+}
+.blx-dropdown-item:hover .blx-icon {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
+}
+.blx-dropdown-item.blx-hover .blx-icon {
+  background-color: #fff;
+  background-color: var(--ui-00, #fff);
 }
 .blx-popover-text {
   margin-right: 16px;

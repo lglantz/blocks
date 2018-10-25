@@ -122,15 +122,6 @@
 .blx-dropdown-item {
   background: transparent;
   
-  &:hover, &.blx-hover {
-    background-color: $interactive;
-    color: $ui-00;
-
-    .blx-icon {
-      background-color: $ui-00
-    }
-  }
-  
   a, button {
     display: flex;
     width: 100%;
@@ -155,10 +146,17 @@
       color: $ui-00;
       background-color: $interactive;
     }
-    
-    &:hover, &.blx-hover {
+  }
+  
+  &:hover, &.blx-hover {
+    background-color: $interactive
+    a, button {
       text-decoration: none;
       color: $ui-00;
+    }
+
+    .blx-icon {
+      background-color: $ui-00
     }
   }
 }

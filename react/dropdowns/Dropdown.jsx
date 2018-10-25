@@ -17,11 +17,7 @@ const DropdownMenu = (props) => {
     for (let i = 0; i < props.options.length; i++) {
       const option = props.options[i];
       if (option.value === props.value) {
-        if (option.text) {
-          content = option.text;
-        } else if (option.element) {
-          content = null;
-        }
+        content = option.text;
         break;
       }
     }
@@ -56,7 +52,7 @@ const DropdownMenu = (props) => {
             </div>
         }
         { trigger }
-        <ul className={`blx-dropdown-menu ${props.isOpen ? '' : 'blx-hidden'}`}>
+        <ul className={menuClasses}>
           {
             props.options.map((option, idx) => (
               <DropdownItem

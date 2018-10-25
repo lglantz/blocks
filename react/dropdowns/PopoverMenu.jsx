@@ -29,7 +29,7 @@ const PopoverMenu = (props) => {
           onKeyDown={props.onKeyDown}
           onFocus={props.onTriggerFocus}
         >
-          <span className={`blx-icon blx-icon-${props.popoverIcon}`} />
+          <span className={`blx-icon blx-icon-${props.icon}`} />
         </button>
         <ul className={menuClasses}>
           {
@@ -55,7 +55,7 @@ PopoverMenu.propTypes = {
   isLeft: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
-  popoverIcon: PropTypes.string,
+  icon: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -84,7 +84,7 @@ PopoverMenu.defaultProps = {
   isLeft: null,
   options: [],
   text: null,
-  popoverIcon: 'more-horizontal',
+  icon: 'more-horizontal',
   value: null,
   onChange: () => {},
   autoFocus: false
