@@ -6,19 +6,30 @@ function keyControlledMenu(WrappedComponent) {
     constructor(props) {
       super(props);
 
-      this.state = {
-        onFocusIdx: -1
-      };
-
-      this.optionsRefs = [];
+      const optionsRefs = [];
       for (let i = 0; i < this.props.options.length; i++) {
-        this.optionsRefs[i] = React.createRef();
+        optionsRefs[i] = React.createRef();
       }
+
+      this.state = {
+        onFocusIdx: -1,
+        optionsRefs
+      };
 
       this.onSelect = this.onSelect.bind(this);
       this.onKeyDown = this.onKeyDown.bind(this);
       this.onKeyUp = this.onKeyUp.bind(this);
       this.onTriggerFocus = this.onTriggerFocus.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+      if (prevProps.options !== this.props.options) {
+        const optionsRefs = [];
+        for (let i = 0; i < this.props.options.length; i++) {
+          optionsRefs[i] = React.createRef();
+        }
+        this.setState({ optionsRefs });
+      }
     }
 
     onSelect(e, option) {
@@ -74,7 +85,7 @@ function keyControlledMenu(WrappedComponent) {
 
     focusOption(idx) {
       if (idx < 0) return;
-      const optionRef = this.optionsRefs[idx].current;
+      const optionRef = this.state.optionsRefs[idx].current;
       if (optionRef) {
         // ref is to the li item that contains the dropdown elements
         // search for a focusable child
@@ -93,7 +104,7 @@ function keyControlledMenu(WrappedComponent) {
       return (
         <WrappedComponent
           {...this.props}
-          optionsRefs={this.optionsRefs}
+          optionsRefs={this.state.optionsRefs}
           onKeyDown={this.onKeyDown}
           onKeyUp={this.onKeyUp}
           onSelect={this.onSelect}
