@@ -2030,7 +2030,6 @@ a.blx-button {
 .blx-text-field input[type="date"]::after {
   content: "";
   position: absolute;
-  top: 12px;
   height: 16px;
   pointer-events: none;
 }
