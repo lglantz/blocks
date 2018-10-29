@@ -29,6 +29,7 @@ class DropdownItem extends React.Component {
         href={this.props.option.href}
         target={this.props.option.newTab ? '_blank' : null}
         disabled={this.props.option.disabled}
+        title={this.props.option.text}
         onKeyDown={this.onKeyDown}
         onKeyUp={this.onKeyUp}
         onClick={this.onSelect}
@@ -42,6 +43,7 @@ class DropdownItem extends React.Component {
     return (
       <button
         disabled={this.props.option.disabled}
+        title={this.props.option.text}
         onKeyDown={this.onKeyDown}
         onKeyUp={this.onKeyUp}
         onClick={this.onSelect}

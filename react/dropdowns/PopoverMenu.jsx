@@ -31,20 +31,22 @@ const PopoverMenu = (props) => {
         >
           <span className={`blx-icon blx-icon-${props.icon}`} />
         </button>
-        <ul className={menuClasses}>
-          {
-            props.options.map((option, idx) => (
-              <DropdownItem
-                key={option.text || option.key}
-                option={option}
-                ref={props.optionsRefs[idx]}
-                onKeyDown={props.onKeyDown}
-                onKeyUp={props.onKeyUp}
-                onSelect={props.onSelect}
-              />
-            ))
-          }
-        </ul>
+        <div className={menuClasses}>
+          <ul className="blx-dropdown-list">
+            {
+              props.options.map((option, idx) => (
+                <DropdownItem
+                  key={option.text || option.key}
+                  option={option}
+                  ref={props.optionsRefs[idx]}
+                  onKeyDown={props.onKeyDown}
+                  onKeyUp={props.onKeyUp}
+                  onSelect={props.onSelect}
+                />
+              ))
+            }
+          </ul>
+        </div>
       </div>
     </div>
   );

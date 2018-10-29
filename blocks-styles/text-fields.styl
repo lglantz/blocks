@@ -22,11 +22,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: $sans-serif-font-family;
+    
+    &::placeholder {
+      blxUIPlaceholder();
+    }
   }
 
   input[type="date"] {
     position: relative;
-    width: 166px;
+    width: 176px;
 
     &::before, &::after {
       content: "";

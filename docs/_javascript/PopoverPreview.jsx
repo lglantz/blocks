@@ -11,7 +11,7 @@ const exampleOptions = [
     onClick: () => {}
   },
   {
-    text: 'Disabled Action',
+    text: 'Long Named Disabled Action',
     disabled: true,
     onClick: () => {}
   },
@@ -22,6 +22,14 @@ const exampleOptions = [
   {
     element: <span>More than text<span className="blx-icon blx-icon-plus" /></span>,
     key: 'customItem',
+    onClick: () => {}
+  },
+  {
+    text: 'Another Action',
+    onClick: () => {}
+  },
+  {
+    text: 'One More Action',
     onClick: () => {}
   }
 ];
