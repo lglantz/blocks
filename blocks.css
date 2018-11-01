@@ -159,7 +159,6 @@ th {
   --error: #ec4f07;
   --selection: #49a1ff;
   --error: #ec4f07;
-  --error-hover: $error-hover-hex;
   --secondary-hover: #f5faf8;
   --secondary-active: #d5f0e5;
 }

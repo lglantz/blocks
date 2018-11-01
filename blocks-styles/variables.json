@@ -31,6 +31,7 @@
   "information-hex" : "#6f6bf8",
   "warning-hex" : "#fdb100",
   "error-hex" : "#ec4f07",
+
   "selection-hex" : "#49a1ff",
 
   "danger-hex" : "#e66740",
