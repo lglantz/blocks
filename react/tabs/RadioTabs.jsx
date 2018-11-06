@@ -13,6 +13,7 @@ const RadioTabs = (props) => {
             <input
               type="radio"
               name={tab}
+              value={tab}
               checked={idx === props.activeTabIdx}
               disabled={props.isDisabled}
               onChange={props.onChange}
