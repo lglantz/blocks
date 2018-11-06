@@ -3,7 +3,6 @@ const PropTypes = require('prop-types');
 
 
 const RadioTabs = (props) => {
-  const name = Math.random().toString();
   return (
     <div className={`${props.isVertical ? 'blx-vertical-tabs' : 'blx-horizontal-tabs'} ${props.isDisabled ? 'blx-disabled' : ''}`}>
       {
@@ -13,9 +12,8 @@ const RadioTabs = (props) => {
           >
             <input
               type="radio"
-              value={tab}
-              name={name}
-              defaultChecked={idx === props.activeTabIdx}
+              name={tab}
+              checked={idx === props.activeTabIdx}
               disabled={props.isDisabled}
               onChange={props.onChange}
             />
