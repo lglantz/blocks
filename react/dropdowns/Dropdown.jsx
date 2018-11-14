@@ -8,12 +8,13 @@ const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 const DropdownMenu = (props) => {
   let content = props.text;
   let triggerClassNames = 'blx-dropdown-trigger';
+  let triggerContentClassNames = 'blx-dropdown-placeholder';
 
   if (props.isOpen) triggerClassNames += ' blx-active';
   if (props.isDisabled) triggerClassNames += ' blx-disabled';
-  if (props.value) triggerClassNames += ' blx-dropdown-trigger-placeholder';
 
   if (props.value) {
+    triggerContentClassNames = 'blx-dropdown-text';
     for (let i = 0; i < props.options.length; i++) {
       const option = props.options[i];
       if (option.value === props.value) {
@@ -36,7 +37,7 @@ const DropdownMenu = (props) => {
       { props.icon && 
         <span className={`blx-icon blx-icon-${props.icon}`} />
       }
-      <span className="blx-dropdown-text">{ content }</span>
+      <span className={triggerContentClassNames}>{ content }</span>
     </button>
   );
 
@@ -52,20 +53,22 @@ const DropdownMenu = (props) => {
             </div>
         }
         { trigger }
-        <ul className={menuClasses}>
-          {
-            props.options.map((option, idx) => (
-              <DropdownItem
-                key={option.text || option.key}
-                option={option}
-                ref={props.optionsRefs[idx]}
-                onKeyDown={props.onKeyDown}
-                onKeyUp={props.onKeyUp}
-                onSelect={props.onSelect}
-              />
-            ))
-          }
-        </ul>
+        <div className={menuClasses}>
+          <ul className="blx-dropdown-list">
+            {
+              props.options.map((option, idx) => (
+                <DropdownItem
+                  key={option.text || option.key}
+                  option={option}
+                  ref={props.optionsRefs[idx]}
+                  onKeyDown={props.onKeyDown}
+                  onKeyUp={props.onKeyUp}
+                  onSelect={props.onSelect}
+                />
+              ))
+            }
+          </ul>
+        </div>
       </div>
     </div>
   );

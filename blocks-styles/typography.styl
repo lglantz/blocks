@@ -72,6 +72,18 @@ blxH6() {
   line-height: 26px;
 }
 
+blxUIText() {
+  font-weight: $normal-weight;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text-01;
+}
+
+blxUIPlaceholder() {
+  blxUIText();
+  color: $ui-07;
+}
+
 // use those mixins to define our base text styles
 
 p, label {
@@ -126,10 +138,7 @@ h6 {
 }
 
 .blx-ui-text {
-  font-weight: $normal-weight;
-  font-size: 14px;
-  line-height: 18px;
-  color: $text-01;
+  blxUIText();
 }
 
 .blx-body-caps {

@@ -29,7 +29,9 @@ class DropdownPreview extends React.Component {
                     { value: 'option1', text: 'One option' },
                     { value: 'option2', text: 'Another option', href: '#' },
                     { value: 'option3', text: 'Best option' },
-                    { value: 'option4', element: <div><span className="blx-icon blx-icon-plus"/>Custom element</div>, key: 'option4' }
+                    { value: 'option4', element: <div><span className="blx-icon blx-icon-plus"/>Custom element</div>, key: 'option4' },
+                    { value: 'option5', text: 'Different option' },
+                    { value: 'option6', text: 'Longer named option that should overflow' }
                   ]
                 }
               />

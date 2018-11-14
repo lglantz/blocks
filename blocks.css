@@ -1042,10 +1042,6 @@ a.blx-button {
   position: relative;
   height: 40px;
   border-radius: 7px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  text-align: left;
   padding: 0 48px 0 16px;
   margin: 0;
   cursor: pointer;
@@ -1056,8 +1052,13 @@ a.blx-button {
   background-color: var(--ui-00, #fdfefd);
   border: 1px solid #edf0ee;
   border: 1px solid var(--ui-03, #edf0ee);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
+  color: #aab7b2;
+  color: var(--ui-07, #aab7b2);
 }
 .blx-dropdown-trigger::after {
   position: absolute;
@@ -1144,10 +1145,19 @@ a.blx-button {
 .blx-dropdown-trigger .blx-icon + span {
   margin: 10px 0;
 }
-.blx-dropdown-text {
+.blx-dropdown-text,
+.blx-dropdown-placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.blx-dropdown-text {
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+}
+.blx-dropdown-placeholder {
+  color: #aab7b2;
+  color: var(--ui-07, #aab7b2);
 }
 .blx-dropdown-menu {
   position: absolute;
@@ -1165,13 +1175,17 @@ a.blx-button {
   box-shadow: 0 3px 6px 0 rgba(0,72,51,0.25);
   box-shadow: 0 3px 6px 0 var(--interactive-shadow, rgba(0,72,51,0.25));
 }
+.blx-dropdown-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
 .blx-dropdown-item {
   background: transparent;
 }
 .blx-dropdown-item a {
-  display: flex;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 40px;
   padding: 8px 16px;
   cursor: pointer;
   background: transparent;
@@ -1189,9 +1203,9 @@ a.blx-button {
   color: var(--text-01, #2b3836);
 }
 .blx-dropdown-item button {
-  display: flex;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 40px;
   padding: 8px 16px;
   cursor: pointer;
   background: transparent;
@@ -1338,7 +1352,7 @@ a.blx-button {
   min-width: auto;
 }
 .blx-popover .blx-dropdown-menu {
-  min-width: 150px;
+  min-width: 124px;
 }
 .blx-popover .blx-dropdown-menu::before {
   content: "";
@@ -2021,9 +2035,45 @@ a.blx-button {
   text-overflow: ellipsis;
   font-family: Graphik Web;
 }
+.blx-text-field input::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+  color: #aab7b2;
+  color: var(--ui-07, #aab7b2);
+}
+.blx-text-field input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+  color: #aab7b2;
+  color: var(--ui-07, #aab7b2);
+}
+.blx-text-field input::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+  color: #aab7b2;
+  color: var(--ui-07, #aab7b2);
+}
+.blx-text-field input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2b3836;
+  color: var(--text-01, #2b3836);
+  color: #aab7b2;
+  color: var(--ui-07, #aab7b2);
+}
 .blx-text-field input[type="date"] {
   position: relative;
-  width: 166px;
+  width: 176px;
 }
 .blx-text-field input[type="date"]::before,
 .blx-text-field input[type="date"]::after {
