@@ -28,7 +28,7 @@ class TextFieldPreview extends React.Component {
       validityExampleValue: INITIAL_INVALID_VALUE,
       validityExampleIsValid: isFieldValid(INITIAL_INVALID_VALUE),
       dateExampleValue: '',
-      iconExampleValue: 'Text input'
+      iconExampleValue: 'Text input',
       multilineExampleValue: "On the eighty-fifth day of his unlucky streak, Santiago takes his skiff into the Gulf Stream, sets his lines and, by noon, has his bait taken by a big fish that he is sure is a marlin.",
     };
 
@@ -38,7 +38,7 @@ class TextFieldPreview extends React.Component {
   onChangeUnit(option) {
     this.setState({
       unitValue: option.value
-    })
+    });
   }
 
   render() {
