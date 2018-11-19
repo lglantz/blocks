@@ -6,7 +6,7 @@ const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 const SortableList = require('../../react/lists/SortableList.jsx');
 
 const SortableListPreview = () => (
-  <div>
+  <div className='sortable-list-preview'>
     <SortableList>
       <span>Item 1</span>
       <span>Item 2</span>
