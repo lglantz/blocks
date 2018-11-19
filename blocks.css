@@ -1699,14 +1699,21 @@ a.blx-button {
   position: relative;
   display: flex;
   justify-content: space-between;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 2px 0 2px 0;
 }
-.blx-sortable-list .blx-sortable-list-item.dragging {
+.blx-sortable-list .blx-sortable-list-item.blx-dragging {
   background-color: #49a1ff;
   background-color: var(--selection, #49a1ff);
 }
-.blx-sortable-list .blx-sortable-list-item.dragover {
-  background-color: #d9e1e0;
-  background-color: var(--ui-04, #d9e1e0);
+.blx-sortable-list .blx-sortable-list-item.blx-dragover-top {
+  border-top: 2px solid #91a49e;
+  border-top: 2px solid var(--ui-08, #91a49e);
+}
+.blx-sortable-list .blx-sortable-list-item.blx-dragover-bottom {
+  border-bottom: 2px solid #91a49e;
+  border-bottom: 2px solid var(--ui-08, #91a49e);
 }
 .blx-sortable-list .blx-sortable-list-item .blx-icon-drag {
   position: relative;
