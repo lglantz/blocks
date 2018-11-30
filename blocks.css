@@ -326,9 +326,7 @@ h6 {
   margin-top: 12px;
   margin-bottom: 6px;
 }
-.blx-subtitle.dark-bg {
-  background-color: #2b3836;
-  background-color: var(--text-01, #2b3836);
+.blx-subtitle.light {
   color: #fdfefd;
   color: var(--ui-00, #fdfefd);
 }
