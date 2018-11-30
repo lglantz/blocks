@@ -2,9 +2,10 @@
 blxBaseText() {
   font-weight: $normal-weight;
   font-size: $base-font-size;
-  line-height: 28px;
+  line-height: 24px;
   text-align: left;
   color: $text-01;
+  margin-bottom: 12px;
 }
 
 blxLink() {
@@ -32,51 +33,80 @@ blxLink() {
 }
 
 blxH() {
-  font-weight: $medium-weight;
+  font-weight: $bold-weight;
   color: $text-01;
+}
+
+blxHXL() {
+  blxH()
+  font-size: 96px;
+  line-height: 96px;
+  letter-spacing: -0.3rem;
+  margin-top: 108px;
+  margin-bottom: 36px;
 }
 
 blxH1() {
   blxH()
-  font-size: 96px;
-  line-height: 123px;
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: -0.25rem;
+  margin-top: 108px;
+  margin-bottom: 36px;
 }
 
 blxH2() {
   blxH()
-  font-size: 60px;
-  line-height: 77px;
+  font-size: 39px;
+  line-height: 42px;
+  letter-spacing: -0.01rem;
+  margin-top: 42px;
+  margin-bottom: 24px;
 }
 
 blxH3() {
   blxH()
-  font-size: 48px;
-  line-height: 67px;
+  font-size: 23px;
+  line-height: 24px;
+  letter-spacing: -0.005rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
 blxH4() {
   blxH()
-  font-size: 34px;
-  line-height: 43px;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.175rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
 blxH5() {
   blxH()
-  font-size: 24px;
-  line-height: 31px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 
 blxH6() {
   blxH()
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.05rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 blxUIText() {
   font-weight: $normal-weight;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 14px;
   color: $text-01;
+  margin-bottom: 6px;
 }
 
 blxUIPlaceholder() {
@@ -92,6 +122,10 @@ p, label {
 
 a, .blx-link {
   blxLink()
+}
+
+h1.blx-XL {
+  blxHXL()
 }
 
 h1 {
@@ -121,8 +155,10 @@ h6 {
 .blx-subtitle {
   font-weight: $medium-weight;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 18px;
   color: $text-01;
+  margin-top: 12px;
+  margin-bottom: 6px;
   
   &.dark-bg {
     background-color: $text-01;
@@ -135,6 +171,8 @@ h6 {
   font-size: 14px;
   line-height: 18px;
   color: $text-01;
+  letter-spacing: 0.005rem;
+  margin-top: 18px;
 }
 
 .blx-ui-text {
@@ -142,27 +180,31 @@ h6 {
 }
 
 .blx-body-caps {
-  font-weight: $medium-weight;
+  font-weight: $normal-weight;
   font-size: 14px;
-  line-height: 19px;
-  letter-spacing: 0.7px;
+  line-height: 24px;
   text-transform: uppercase;
   color: $text-01;
+  margin-bottom: 12px;
 }
 
 .blx-caption {
   font-weight: $normal-weight;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
   color: $text-01;
+  letter-spacing: 0.05rem;
+  margin-bottom: 6px;
 }
 
 .blx-overline {
   font-weight: $medium-weight;
-  font-size: 10px;
-  line-height: 16px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  line-height: 18px;
   text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 
 .blx-capitalize {
