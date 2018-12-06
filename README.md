@@ -8,9 +8,9 @@ CBRE Blocks design system repository
 
 If you just want to use Blocks styles, you can copy the blocks.css file along with the fonts/ and svgs/ folders.
 
-To include Blocks as a node module, add the following to your `package.json`:
+To include Blocks as a node module, add the following to your `package.json`, ending in whichever [version tag](https://github.com/floored/blocks/tags) you want:
 ```
-"blocks": "https://github.com/floored/blocks#lastCommitHashYouWant"
+"blocks": "https://github.com/floored/blocks#vX.X.X"
 ```
 
 If you are using React components, you can access them by pointing to the react-index, ex:

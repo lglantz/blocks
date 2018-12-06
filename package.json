@@ -1,6 +1,6 @@
 {
   "name": "blocks",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "cbre build design system",
   "main": "index.js",
   "scripts": {
