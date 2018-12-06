@@ -56,38 +56,39 @@
     &::after {
       top: 10px;
     }
-    
+
     .blx-icon {
       margin-top: 12px;
-      
+
       & + span {
         margin-top: 10px;
       }
     }
   }
-  
+
   &:hover, &.blx-hover {
-    margin: 0 -1px;
+    margin-left: -1px;
+    margin-right: -1px;
     border: 2px solid $ui-03;
 
     &::after {
       top: 9px;
     }
-    
+
     .blx-icon {
       margin-top: 11px;
-      
+
       & + span {
         margin-top: 9px;
       }
     }
   }
-  
+
   .blx-icon {
     margin: 12px 10px 12px 0;
     background-color: $ui-07;
     pointer-events: none;
-    
+
     & + span {
       margin: 10px 0;
     }
@@ -130,7 +131,7 @@
 
 .blx-dropdown-item {
   background: transparent;
-  
+
   a, button {
     display: block;
     width: 100%;
@@ -156,7 +157,7 @@
       background-color: $interactive;
     }
   }
-  
+
   &:hover, &.blx-hover {
     background-color: $interactive
     a, button {

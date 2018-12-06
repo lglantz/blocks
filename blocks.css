@@ -1154,12 +1154,14 @@ a.blx-button {
   margin-top: 10px;
 }
 .blx-dropdown-trigger:hover {
-  margin: 0 -1px;
+  margin-left: -1px;
+  margin-right: -1px;
   border: 2px solid #edf0ee;
   border: 2px solid var(--ui-03, #edf0ee);
 }
 .blx-dropdown-trigger.blx-hover {
-  margin: 0 -1px;
+  margin-left: -1px;
+  margin-right: -1px;
   border: 2px solid #edf0ee;
   border: 2px solid var(--ui-03, #edf0ee);
 }
