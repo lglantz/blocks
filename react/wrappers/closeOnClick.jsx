@@ -31,6 +31,7 @@ function closeOnClick(WrappedComponent) {
     }
 
     toggle(e) {
+      e.stopPropagation();
       e.preventDefault();
       if (this.state.isOpen) {
         this.close();
