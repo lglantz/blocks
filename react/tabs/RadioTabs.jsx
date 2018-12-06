@@ -16,7 +16,7 @@ const RadioTabs = (props) => {
               value={tab}
               checked={idx === props.activeTabIdx}
               disabled={props.isDisabled}
-              onChange={props.onChange}
+              onChange={evt => props.onChange(evt, idx)}
             />
             <span className="blx-tab-item">
               {tab}
@@ -37,7 +37,7 @@ RadioTabs.propTypes = {
 };
 
 RadioTabs.defaultProps = {
-  activeTabIdx: 0,
+  activeTabIdx: null,
   isDisabled: false,
   isVertical: false
 };

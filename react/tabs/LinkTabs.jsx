@@ -32,7 +32,7 @@ LinkTabs.propTypes = {
 };
 
 LinkTabs.defaultProps = {
-  activeTabIdx: 0,
+  activeTabIdx: null,
   isDisabled: false,
   isVertical: false
 };
