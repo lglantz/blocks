@@ -1177,6 +1177,10 @@ a.blx-button {
 .blx-dropdown-trigger.blx-hover .blx-icon + span {
   margin-top: 9px;
 }
+.blx-dropdown-trigger.blx-invalid {
+  border: 1px solid #ec4f07;
+  border: 1px solid var(--error, #ec4f07);
+}
 .blx-dropdown-trigger .blx-icon {
   margin: 12px 10px 12px 0;
   background-color: #aab7b2;

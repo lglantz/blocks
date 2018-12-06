@@ -12,6 +12,7 @@ const DropdownMenu = (props) => {
 
   if (props.isOpen) triggerClassNames += ' blx-active';
   if (props.isDisabled) triggerClassNames += ' blx-disabled';
+  if (!props.isValid) triggerClassNames += ' blx-invalid';
 
   if (props.value) {
     triggerContentClassNames = 'blx-dropdown-text';
@@ -34,7 +35,7 @@ const DropdownMenu = (props) => {
       onKeyDown={props.onKeyDown}
       onFocus={props.onTriggerFocus}
     >
-      { props.icon && 
+      { props.icon &&
         <span className={`blx-icon blx-icon-${props.icon}`} />
       }
       <span className={triggerContentClassNames}>{ content }</span>
@@ -47,7 +48,7 @@ const DropdownMenu = (props) => {
   return (
     <div className="blx-dropdown-wrapper">
       <div className="blx-dropdown">
-        { props.description && 
+        { props.description &&
             <div>
               <label className="blx-ui-text">{props.description}</label>
             </div>
@@ -100,7 +101,8 @@ DropdownMenu.propTypes = {
   })),
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func,
-  autoFocus: PropTypes.bool
+  autoFocus: PropTypes.bool,
+  isValid: PropTypes.bool
 };
 
 DropdownMenu.defaultProps = {
@@ -111,7 +113,8 @@ DropdownMenu.defaultProps = {
   description: '',
   value: null,
   onChange: () => {},
-  autoFocus: false
+  autoFocus: false,
+  isValid: true
 };
 
 

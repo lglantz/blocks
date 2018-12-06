@@ -91,6 +91,18 @@ definition: An input that allows users to make a single selection from a pre-def
   </div>
 {% endcapture %}
 
+{% capture dropdown_trigger_invalid_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-invalid">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
 {% capture dropdown_trigger_multiple_example %}
   <div class="blx-dropdown-wrapper">
     <div class="blx-dropdown">
@@ -265,6 +277,14 @@ definition: An input that allows users to make a single selection from a pre-def
       </span>
       <div class="doc-state-content">
         {{ dropdown_trigger_icon_example }}
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <span class="doc-state-title blx-caption">
+        Invalid
+      </span>
+      <div class="doc-state-content">
+        {{ dropdown_trigger_invalid_example }}
       </div>
     </div>
   </div>
