@@ -1,9 +1,15 @@
-.blx-popover-text {
-  margin-right: 16px;
+.blx-popover-wrapper {
+  display: inline-flex;
+  align-items: center;
+
+  .blx-subtitle {
+    margin: 0 16px 0 0;
+  }
 }
 
 .blx-popover-trigger {
   border: none;
+  display: flex;
   outline: none;
   padding: 0;
   margin: 0;
@@ -16,7 +22,7 @@
   .blx-icon {
     background-color: $interactive;
   }
-  
+
   &:hover, &.blx-hover {
     .blx-icon {
       background-color: $interactive-hover;
@@ -54,10 +60,10 @@
       border-right: 9px solid transparent;
       border-bottom: 9px solid $ui-00;
     }
-    
+
     &.blx-popover-is-left {
       left: -50%;
-      
+
       &::before {
         left: 15px;
       }
@@ -65,10 +71,10 @@
         left: 16px;
       }
     }
-    
+
     &.blx-popover-is-right {
       right: -50%;
-      
+
       &::before {
         right: 15px;
       }

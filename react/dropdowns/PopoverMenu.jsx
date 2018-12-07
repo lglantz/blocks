@@ -15,9 +15,9 @@ const PopoverMenu = (props) => {
     menuClasses += ' blx-popover-is-right';
   }
   return (
-    <div className="blx-dropdown-wrapper">
+    <div className="blx-popover-wrapper">
       { props.text &&
-          <span className="blx-subtitle blx-popover-text">{props.text}</span>
+          <span className="blx-subtitle">{props.text}</span>
       }
       <div className="blx-dropdown blx-popover">
         <button

@@ -71,6 +71,14 @@ class PopoverPreview extends React.Component {
               />
           ) }
         </div>
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Default, icon only',
+              <PopoverMenu
+                isLeft={false}
+                options={exampleOptions}
+              />
+          ) }
+        </div>
       </div>
     );
   }

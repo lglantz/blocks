@@ -1359,11 +1359,16 @@ a.blx-button {
   background-color: #fdfefd;
   background-color: var(--ui-00, #fdfefd);
 }
-.blx-popover-text {
-  margin-right: 16px;
+.blx-popover-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+.blx-popover-wrapper .blx-subtitle {
+  margin: 0 16px 0 0;
 }
 .blx-popover-trigger {
   border: none;
+  display: flex;
   outline: none;
   padding: 0;
   margin: 0;

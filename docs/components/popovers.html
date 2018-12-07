@@ -7,8 +7,8 @@ definition: An inline dropdown menu used to show the user relevant information o
 ---
 
 {% capture popover_left_example %}
-  <div class="blx-dropdown-wrapper">
-    <span class="blx-subtitle blx-popover-text">More Actions</span>
+  <div class="blx-popover-wrapper">
+    <span class="blx-subtitle">More Actions</span>
     <div class="blx-dropdown blx-popover">
       <button class="blx-popover-trigger">
         <span class="blx-icon blx-icon-more-horizontal"></span>
@@ -34,8 +34,8 @@ definition: An inline dropdown menu used to show the user relevant information o
 {% endcapture %}
 
 {% capture popover_right_example %}
-  <div class="blx-dropdown-wrapper">
-    <span class="blx-subtitle blx-popover-text">More Actions</span>
+  <div class="blx-popover-wrapper">
+    <span class="blx-subtitle">More Actions</span>
     <div class="blx-dropdown blx-popover">
       <button class="blx-popover-trigger">
         <span class="blx-icon blx-icon-more-horizontal"></span>
@@ -60,9 +60,36 @@ definition: An inline dropdown menu used to show the user relevant information o
   </div>
 {% endcapture %}
 
+{% capture popover_no_text_example %}
+  <div class="blx-popover-wrapper">
+    <div class="blx-dropdown blx-popover">
+      <button class="blx-popover-trigger">
+        <span class="blx-icon blx-icon-more-horizontal"></span>
+      </button>
+      <div class="blx-dropdown-menu blx-popover-is-right">
+        <ul class="blx-dropdown-list">
+          <li class="blx-dropdown-item ">
+            <button>Action</button>
+          </li>
+          <li class="blx-dropdown-item blx-disabled">
+            <button>Disabled Action</button>
+          </li>
+          <li class="blx-dropdown-item blx-hover">
+            <button>Correct Action</button>
+          </li>
+          <li class="blx-dropdown-item ">
+            <button>Another one</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+
 {% capture popover_arrow_closed_example %}
-  <div class="blx-dropdown-wrapper">
-    <span class="blx-subtitle blx-popover-text">More Actions</span>
+  <div class="blx-popover-wrapper">
+    <span class="blx-subtitle">More Actions</span>
     <div class="blx-dropdown blx-popover">
       <button class="blx-popover-trigger">
         <span class="blx-icon blx-icon-down"></span>
@@ -72,8 +99,34 @@ definition: An inline dropdown menu used to show the user relevant information o
 {% endcapture %}
 
 {% capture popover_arrow_open_example %}
-  <div class="blx-dropdown-wrapper">
-    <span class="blx-subtitle blx-popover-text">More Actions</span>
+  <div class="blx-popover-wrapper">
+    <span class="blx-subtitle">More Actions</span>
+    <div class="blx-dropdown blx-popover">
+      <button class="blx-popover-trigger">
+        <span class="blx-icon blx-icon-down"></span>
+      </button>
+      <div class="blx-dropdown-menu blx-popover-is-right">
+        <ul class="blx-dropdown-list">
+          <li class="blx-dropdown-item ">
+            <button>Action</button>
+          </li>
+          <li class="blx-dropdown-item blx-disabled">
+            <button>Disabled Action</button>
+          </li>
+          <li class="blx-dropdown-item blx-hover">
+            <button>Correct Action</button>
+          </li>
+          <li class="blx-dropdown-item ">
+            <button>Another one</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture popover_no_text_arrow_open_example %}
+  <div class="blx-popover-wrapper">
     <div class="blx-dropdown blx-popover">
       <button class="blx-popover-trigger">
         <span class="blx-icon blx-icon-down"></span>
@@ -117,6 +170,9 @@ definition: An inline dropdown menu used to show the user relevant information o
       <div class="doc-state-content">
         {{ popover_right_example }}
       </div>
+      <div class="doc-state-content">
+        {{ popover_no_text_example }}
+      </div>
     </div>
     <div class="l-flex-horizontal tall-content">
       <span class="doc-state-title blx-caption">
@@ -128,6 +184,10 @@ definition: An inline dropdown menu used to show the user relevant information o
       <div class="doc-state-content">
         {{ popover_arrow_open_example }}
       </div>
+      <div class="doc-state-content">
+        {{ popover_no_text_arrow_open_example }}
+      </div>
+
     </div>
   </div>
 </div>
