@@ -6,55 +6,52 @@ const closeOnClick = require('../wrappers/closeOnClick.jsx');
 const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
 const DropdownMenu = (props) => {
-  let content = props.text;
+  let triggerContent = props.text;
   let triggerClassNames = 'blx-dropdown-trigger';
-  let triggerContentClassNames = 'blx-dropdown-placeholder';
 
   if (props.isOpen) triggerClassNames += ' blx-active';
   if (props.isDisabled) triggerClassNames += ' blx-disabled';
   if (!props.isValid) triggerClassNames += ' blx-invalid';
 
   if (props.value) {
-    triggerContentClassNames = 'blx-dropdown-text';
     for (let i = 0; i < props.options.length; i++) {
       const option = props.options[i];
       if (option.value === props.value) {
-        content = option.text;
+        triggerContent = option.text;
         break;
       }
     }
   }
 
-  const trigger = (
-    <button
-      className={triggerClassNames}
-      disabled={props.isDisabled}
-      onClick={props.toggle}
-      title={content}
-      autoFocus={props.autoFocus}
-      onKeyDown={props.onKeyDown}
-      onFocus={props.onTriggerFocus}
-    >
-      { props.icon &&
-        <span className={`blx-icon blx-icon-${props.icon}`} />
-      }
-      <span className={triggerContentClassNames}>{ content }</span>
-    </button>
-  );
-
-  let menuClasses = 'blx-dropdown-menu';
-  if (!props.isOpen) menuClasses += ' blx-hidden';
-
   return (
     <div className="blx-dropdown-wrapper">
       <div className="blx-dropdown">
+
+        {/* DESCRIPTION */}
         { props.description &&
             <div>
               <label className="blx-ui-text">{props.description}</label>
             </div>
         }
-        { trigger }
-        <div className={menuClasses}>
+
+        {/* TRIGGER */}
+        <button
+          className={triggerClassNames}
+          disabled={props.isDisabled}
+          onClick={props.toggle}
+          title={triggerContent}
+          autoFocus={props.autoFocus}
+          onKeyDown={props.onKeyDown}
+          onFocus={props.onTriggerFocus}
+        >
+          { props.icon && <span className={`blx-icon blx-icon-${props.icon}`} /> }
+          <span className={props.value ? 'blx-dropdown-text' : 'blx-dropdown-placeholder'}>
+            { triggerContent }
+          </span>
+        </button>
+
+        {/* DROPDOWN MENU */}
+        <div className={`blx-dropdown-menu ${props.isOpen ? '' : 'blx-hidden'}`}>
           <ul className="blx-dropdown-list">
             {
               props.options.map((option, idx) => (
@@ -70,6 +67,9 @@ const DropdownMenu = (props) => {
             }
           </ul>
         </div>
+
+        {/* INVALID MESSAGE */}
+        { !props.isValid && !props.isOpen && <span className="blx-invalid-input-message">{props.invalidErrorMessage}</span> }
       </div>
     </div>
   );

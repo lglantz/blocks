@@ -9,7 +9,7 @@
     opacity: 0.5;
     pointer-events: none;
   }
-  
+
   .blx-toggle-container {
     position: relative;
 
@@ -18,19 +18,19 @@
       left: -9999px;
       opacity: 0;
       cursor: pointer;
-      
+
       &:checked ~ .blx-toggle-text {
         border: 1px solid $brand-01;
         background-color: $brand-01;
         color: $ui-00;
       }
-      
+
       &:focus ~ .blx-toggle-text {
         background-color: $selection;
         color: $ui-00;
       }
     }
-    
+
     .blx-toggle-text {
       padding: 10px 30px;
       cursor: pointer;
@@ -42,7 +42,7 @@
         color: $ui-00;
       }
     }
-    
+
     &:first-of-type .blx-toggle-text {
       border-radius: $base-border-radius 0 0 $base-border-radius;
       border-right: none;

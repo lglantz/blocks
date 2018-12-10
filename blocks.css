@@ -374,6 +374,14 @@ h6 {
   margin-top: 12px;
   margin-bottom: 6px;
 }
+.blx-invalid-input-message {
+  color: #ec4f07;
+  color: var(--error, #ec4f07);
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  top: 100%;
+}
 .blx-capitalize {
   text-transform: uppercase;
 }
@@ -1081,7 +1089,6 @@ a.blx-button {
   height: 40px;
   border-radius: 7px;
   padding: 0 48px 0 16px;
-  margin: 0;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
@@ -1098,6 +1105,7 @@ a.blx-button {
   margin-bottom: 6px;
   color: #aab7b2;
   color: var(--ui-07, #aab7b2);
+  margin: 0;
 }
 .blx-dropdown-trigger::after {
   position: absolute;
@@ -1154,28 +1162,16 @@ a.blx-button {
   margin-top: 10px;
 }
 .blx-dropdown-trigger:hover {
-  margin-left: -1px;
-  margin-right: -1px;
-  border: 2px solid #edf0ee;
-  border: 2px solid var(--ui-03, #edf0ee);
+  border: 1px solid #edf0ee;
+  border: 1px solid var(--ui-03, #edf0ee);
+  box-shadow: 0 0 0 1px #edf0ee;
+  box-shadow: 0 0 0 1px var(--ui-03, #edf0ee);
 }
 .blx-dropdown-trigger.blx-hover {
-  margin-left: -1px;
-  margin-right: -1px;
-  border: 2px solid #edf0ee;
-  border: 2px solid var(--ui-03, #edf0ee);
-}
-.blx-dropdown-trigger:hover::after,
-.blx-dropdown-trigger.blx-hover::after {
-  top: 9px;
-}
-.blx-dropdown-trigger:hover .blx-icon,
-.blx-dropdown-trigger.blx-hover .blx-icon {
-  margin-top: 11px;
-}
-.blx-dropdown-trigger:hover .blx-icon + span,
-.blx-dropdown-trigger.blx-hover .blx-icon + span {
-  margin-top: 9px;
+  border: 1px solid #edf0ee;
+  border: 1px solid var(--ui-03, #edf0ee);
+  box-shadow: 0 0 0 1px #edf0ee;
+  box-shadow: 0 0 0 1px var(--ui-03, #edf0ee);
 }
 .blx-dropdown-trigger.blx-invalid {
   border: 1px solid #ec4f07;
@@ -2075,6 +2071,7 @@ a.blx-button {
 }
 .blx-text-field {
   display: inline-flex;
+  position: relative;
   flex-direction: column;
   margin-right: 20px;
   margin-bottom: 19px;
@@ -2298,18 +2295,11 @@ a.blx-button {
 .blx-text-field .blx-text-field-icon {
   margin-left: 10px;
 }
-.blx-text-field .blx-invalid-text-field-message,
-.blx-text-field .blx-text-field-helper {
-  font-size: 12px;
-  line-height: 16px;
-}
-.blx-text-field .blx-invalid-text-field-message {
-  color: #ec4f07;
-  color: var(--error, #ec4f07);
-}
 .blx-text-field .blx-text-field-helper {
   color: #7c8c88;
   color: var(--text-02, #7c8c88);
+  font-size: 12px;
+  line-height: 16px;
 }
 .blx-text-field-with-dropdown {
   display: flex;
