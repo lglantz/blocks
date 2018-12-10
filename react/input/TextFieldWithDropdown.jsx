@@ -22,7 +22,7 @@ TextFieldWithDropdown.propTypes = {
     placeholder: PropTypes.string,
     invalidErrorMessage: PropTypes.string,
     value: PropTypes.string,
-    isValid: PropTypes.func
+    isValid: PropTypes.bool
   }),
   dropdown: PropTypes.shape({
     text: PropTypes.string,
@@ -56,7 +56,7 @@ TextFieldWithDropdown.defaultProps = {
     placeholder: 'Text input',
     invalidErrorMessage: '',
     value: '',
-    isValid: () => (true)
+    isValid: true
   },
   dropdown: {
     text: 'Choose an option',
