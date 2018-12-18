@@ -55,10 +55,7 @@ const TextField = (props) => {
           onChange={props.onChange}
           onFocus={props.onFocus}
           onBlur={props.onBlur}
-          onKeyUp={(e) => {
-            if (props.onKeyUp) props.onKeyUp(e);
-            if (e.key === 'Enter') e.target.blur();
-          }}
+          onKeyUp={props.onKeyUp}
           onKeyDown={props.onKeyDown}
           ref={props.forwardedRef}
           autoFocus={props.autoFocus}
