@@ -26,20 +26,22 @@ class TextArea extends React.Component {
     // text input element itself
     let textFieldClasses = '';
 
-    // red asterisk if the value is invalid
-    let invalidLabelMarker = null;
+    // invalid message and class
     let invalidLabelMessage = null;
     if (!this.props.isValid) {
       invalidLabelMessage = <span className="blx-invalid-input-message">{this.props.invalidErrorMessage}</span>;
       textFieldClasses += ' blx-invalid';
     }
 
+    // label
+    let labelElement = null;
+    if (this.props.label) {
+      labelElement = <label className="blx-ui-text">{this.props.label}</label>;
+    }
+
     return (
       <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
-        <div>
-          {this.props.label && <label className="blx-ui-text">{this.props.label}</label>}
-          {invalidLabelMarker}
-        </div>
+        {labelElement}
         <div className="blx-text-field-container">
           <textarea
             className={textFieldClasses}

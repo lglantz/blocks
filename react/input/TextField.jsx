@@ -6,8 +6,13 @@ const TextField = (props) => {
   // text input element itself
   let textFieldClasses = '';
 
-  // red asterisk if the value is invalid
-  let invalidLabelMarker = null;
+  // label element
+  let labelElement = null;
+  if (props.label) {
+    labelElement = <label className="blx-ui-text">{props.label}</label>;
+  }
+
+  // invalid message and class
   let invalidLabelMessage = null;
   if (!props.isValid) {
     invalidLabelMessage = <span className="blx-invalid-input-message">{props.invalidErrorMessage}</span>;
@@ -34,10 +39,7 @@ const TextField = (props) => {
 
   return (
     <div className={`blx-text-field ${props.isDisabled ? 'blx-disabled' : ''}`}>
-      <div>
-        {props.label && <label className="blx-ui-text">{props.label}</label>}
-        {invalidLabelMarker}
-      </div>
+      {labelElement}
       <div className="blx-text-field-container">
         {prefixElement}
         {suffixElement}
