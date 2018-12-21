@@ -984,6 +984,7 @@ a.blx-button {
 }
 .blx-checkbox .blx-checkmark::after {
   display: none;
+  box-sizing: content-box;
   content: "";
   position: absolute;
   left: 5px;
