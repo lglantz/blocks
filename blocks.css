@@ -1400,7 +1400,9 @@ a.blx-button {
   min-width: auto;
 }
 .blx-popover .blx-dropdown-menu {
-  min-width: 124px;
+  min-width: 136px;
+  max-width: 330px;
+  width: auto;
 }
 .blx-popover .blx-dropdown-menu::before {
   content: "";
