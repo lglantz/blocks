@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 
 
 const RadioButton = props => (
-  <label className={`blx-radio ${props.isDisabled ? 'blx-disabled' : ''}`}>
+  <label className={`blx-radio ${props.isDisabled ? 'blx-disabled' : ''} ${props.isValid ? '' : 'blx-invalid'}`}>
     <div className="blx-radio-label" title={props.text}>
       {props.text}
     </div>
@@ -25,7 +25,8 @@ RadioButton.propTypes = {
   text: PropTypes.string,
   value: PropTypes.string,
   isDisabled: PropTypes.bool,
-  isChecked: PropTypes.bool
+  isChecked: PropTypes.bool,
+  isValid: PropTypes.bool
 };
 
 RadioButton.defaultProps = {

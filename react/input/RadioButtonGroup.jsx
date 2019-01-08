@@ -16,6 +16,7 @@ const RadioButtonGroup = props => (
           isDisabled={props.isDisabled}
           onChange={props.onChange}
           isChecked={idx === props.checkedIndex}
+          isValid={props.isValid}
         />
       ))
     }
@@ -27,13 +28,15 @@ RadioButtonGroup.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
   isDisabled: PropTypes.bool,
-  checkedIndex: PropTypes.number
+  checkedIndex: PropTypes.number,
+  isValid: PropTypes.bool
 };
 
 RadioButtonGroup.defaultProps = {
   options: [],
   isDisabled: false,
-  checkedIndex: -1
+  checkedIndex: -1,
+  isValid: true
 };
 
 module.exports = RadioButtonGroup;
