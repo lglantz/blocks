@@ -186,8 +186,9 @@ label {
   margin-bottom: 12px;
 }
 a {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
   color: #009f6f;
   color: var(--interactive, #009f6f);
   cursor: pointer;
@@ -196,8 +197,9 @@ a {
   text-align: left;
 }
 .blx-link {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
   color: #009f6f;
   color: var(--interactive, #009f6f);
   cursor: pointer;
@@ -223,27 +225,31 @@ a.blx-hover {
 }
 a:focus {
   outline: none;
-  color: #49a1ff;
-  color: var(--selection, #49a1ff);
+  color: #fff;
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
 }
 .blx-link:focus {
   outline: none;
-  color: #49a1ff;
-  color: var(--selection, #49a1ff);
+  color: #fff;
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
 }
 a.blx-focus {
   outline: none;
-  color: #49a1ff;
-  color: var(--selection, #49a1ff);
+  color: #fff;
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
 }
 .blx-link.blx-focus {
   outline: none;
-  color: #49a1ff;
-  color: var(--selection, #49a1ff);
+  color: #fff;
+  background-color: #49a1ff;
+  background-color: var(--selection, #49a1ff);
 }
 a.blx-disabled,
 .blx-link.blx-disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   pointer-events: none;
 }
 h1.blx-XL {

@@ -9,8 +9,9 @@ blxBaseText() {
 }
 
 blxLink() {
-  font-size: $base-font-size;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: $normal-weight;
   color: $interactive;
   cursor: pointer;
   background: transparent;
@@ -23,11 +24,12 @@ blxLink() {
 
   &:focus, &.blx-focus {
     outline: none;
-    color: $selection;
+    color: $white;
+    background-color: $selection;
   }
 
   &.blx-disabled {
-    opacity: 0.5;
+    opacity: 0.3;
     pointer-events: none;
   }
 }
