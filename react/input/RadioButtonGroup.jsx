@@ -9,14 +9,14 @@ const RadioButtonGroup = props => (
     {
       props.options.map((option, idx) => (
         <RadioButton
-          key={option}
+          key={option.text}
           name={props.name}
-          text={option}
-          value={option}
+          text={option.text}
+          value={option.text}
           isDisabled={props.isDisabled}
           onChange={props.onChange}
           isChecked={idx === props.checkedIndex}
-          isValid={props.isValid}
+          isValid={option.isValid === false ? option.isValid : props.isValid}
         />
       ))
     }

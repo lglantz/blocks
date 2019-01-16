@@ -20,7 +20,10 @@ class RadioButtonPreview extends React.Component {
           { getPreviewComponent('Unselected',
               <RadioButtonGroup
                 name="radio-1"
-                options={['Unselected', 'Unselected 2']}
+                options={[
+                  { text: 'Unselected' },
+                  { text: 'Unselected 2'}
+                ]}
                 onChange={() => {}}
               />
           )}
@@ -29,7 +32,10 @@ class RadioButtonPreview extends React.Component {
           { getPreviewComponent('Selected',
               <RadioButtonGroup
                 name="radio-2"
-                options={['Selected', 'Selected 2']}
+                options={[
+                  { text: 'Selected'},
+                  { text:'Selected 2'}
+                ]}
                 checkedIndex={0}
                 onChange={() => {}}
               />
@@ -39,7 +45,11 @@ class RadioButtonPreview extends React.Component {
           { getPreviewComponent('Disabled',
               <RadioButtonGroup
                 name="radio-3"
-                options={['Selected, Disabled','Unselected, Disabled']}
+                options={[
+                  { text: 'Selected, Disabled' },
+                  { text: 'Unselected, Disabled'}
+                ]}
+                isValid={this.state.isValid}
                 isDisabled
                 checkedIndex={0}
                 onChange={() => {}}
@@ -47,10 +57,26 @@ class RadioButtonPreview extends React.Component {
           ) }
         </div>
         <div className="l-flex-horizontal">
-          { getPreviewComponent('Invalid',
+          { getPreviewComponent('Sinlge invalid radio button',
               <RadioButtonGroup
                 name="radio-4"
-                options={['Selected, Invalid', 'Unselected, Invalid']}
+                options={[
+                  { text: 'Selected, Valid', isValid: true },
+                  { text: 'Unselected, Invalid', isValid: false }
+                ]}
+                checkedIndex={0}
+                onChange={() => {}}
+              />
+          ) }
+        </div>
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('Invalid radio button group',
+              <RadioButtonGroup
+                name="radio-5"
+                options={[
+                  { text: 'Selected, Invalid'},
+                  { text: 'Unselected, Invalid'}
+                ]}
                 checkedIndex={0}
                 isValid={false}
                 onChange={() => {}}
