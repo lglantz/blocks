@@ -28,7 +28,7 @@ RadioButtonGroup.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
   isDisabled: PropTypes.bool,
-  checkedIndex: PropTypes.number,
+  checkedIndex: PropTypes.number
 };
 
 RadioButtonGroup.defaultProps = {

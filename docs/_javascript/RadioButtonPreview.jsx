@@ -47,7 +47,7 @@ const RadioButtonPreview = () => (
       ) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Sinlge invalid radio button',
+      { getPreviewComponent('Invalid',
           <RadioButtonGroup
             name="radio-4"
             options={[
