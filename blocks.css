@@ -1617,9 +1617,6 @@ a.blx-button {
   background-color: var(--selection, #49a1ff);
 }
 .blx-radio {
-  background-color: #f6f8f8;
-  background-color: var(--ui-01, #f6f8f8);
-  width: 220px;
   display: block;
   position: relative;
   padding: 9px 0 9px 62px;
@@ -1658,10 +1655,10 @@ a.blx-button {
   display: none;
   content: "";
   position: absolute;
-  top: 3.65px;
-  left: 3.85px;
-  width: 7.1px;
-  height: 7.1px;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: #009f6f;
   background-color: var(--interactive, #009f6f);
