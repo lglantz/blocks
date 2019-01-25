@@ -1,0 +1,71 @@
+{% capture success_example %}
+  <div class="blx-alert blx-success">
+    <div class="blx-alert-icon-container">
+      <div class="blx-alert-icon-background"></div>
+      <div class="blx-alert-icon"></div>
+    </div>
+    <div class="blx-alert-text">
+      <span class="blx-subtitle blx-success">Success Alert</span>
+      <p>
+        Additional information or directions go here. Brevity is the soul of wit, however, text may wrap to another line in the off chance that we want the user hooked on phonics.
+      </p>
+    </div>
+    <button class="blx-icon blx-icon-close"></button>
+  </div>
+{% endcapture %}
+
+{% capture info_example %}
+  <div class="blx-alert blx-information">
+    <div class="blx-alert-icon-container">
+      <div class="blx-alert-icon-background"></div>
+      <div class="blx-alert-icon"></div>
+    </div>
+    <div class="blx-alert-text">
+      <span class="blx-subtitle blx-information">Informational Alert</span>
+      <p>
+        Additional information or directions go here. We may decide this particular information is very important and remove the option to close it. If users can’t get rid of it, maybe they’ll read it.
+      </p>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture warning_example %}
+  <div class="blx-alert blx-warning">
+    <div class="blx-alert-icon-container">
+      <div class="blx-alert-icon-background"></div>
+      <div class="blx-alert-icon"></div>
+    </div>
+    <div class="blx-alert-text">
+      <span class="blx-subtitle blx-warning">Warning Alert</span>
+      <p>
+        An explanation of the warning goes here.
+      </p>
+    </div>
+    <button class="blx-icon blx-icon-close"></button>
+  </div>
+{% endcapture %}
+
+{% capture error_example %}
+  <div class="blx-alert blx-error">
+    <div class="blx-alert-icon-container">
+      <div class="blx-alert-icon-background"></div>
+      <div class="blx-alert-icon"></div>
+    </div>
+    <div class="blx-alert-text">
+      <span class="blx-subtitle blx-error">Error Alert</span>
+      <p>
+        An explanation of the error goes here. This should be the scariest looking banner — but not too scary. Maybe we’ll choose to add a button on this banner.
+      </p>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture example %}
+  {{ success_example }}
+  {{ info_example }}
+  {{ warning_example }}
+  {{ error_example }}
+{% endcapture %}
+
+<p>Banners communicate one of the following states: success, information, warning, or error.  </p>
+{{ example }}

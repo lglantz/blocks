@@ -1,0 +1,279 @@
+{% capture dropdown_trigger_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_hover_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-hover">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_focus_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-focus">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_filled_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-text">
+          Selected option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_overflow_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger" title="This is a really long title that will overflow">
+        <span class="blx-dropdown-placeholder">
+          This is a really long title that will overflow
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_disabled_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-disabled">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_icon_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-icon blx-icon-plus"></span>
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_invalid_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-invalid">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_multiple_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_multiple_label_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Dropdown label</p>
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Dropdown label</p>
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture dropdown_trigger_open_example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-active">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+      <div class="blx-dropdown-menu">
+        <ul class="blx-dropdown-list">
+          <li class="blx-dropdown-item">
+            <button>One option</button>
+          </li>
+          <li class="blx-dropdown-item blx-disabled">
+            <a href="#">Disabled option</a>
+          </li>
+          <li class="blx-dropdown-item blx-hover">
+            <button>Best option</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+{% capture example %}
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Here is a dropdown</p>
+      <button class="blx-dropdown-trigger blx-dropdown-trigger-placeholder blx-active">
+        <span class="blx-dropdown-placeholder">
+          Choose an option
+        </span>
+      </button>
+      <div class="blx-dropdown-menu">
+        <ul class="blx-dropdown-list">
+          <li class="blx-dropdown-item">
+            <button>Button option</button>
+          </li>
+          <li class="blx-dropdown-item">
+            <a href="#">Link option</a>
+          </li>
+          <li class="blx-dropdown-item blx-disabled">
+            <button>Button option 2</button>
+          </li>
+          <li class="blx-dropdown-item blx-disabled">
+            <a href="#">Link option 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="blx-dropdown-wrapper">
+    <div class="blx-dropdown">
+      <p class="blx-ui-text">Filled example</p>
+      <button class="blx-dropdown-trigger">
+        <span class="blx-dropdown-text">
+          Selected option
+        </span>
+      </button>
+    </div>
+  </div>
+{% endcapture %}
+
+<p>*Dropdowns require JavaScript to work properly - for working examples, see the "React Components" section below.</p>
+<div class="l-flex-vertical">
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Default
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_example }}
+    </div>
+    <span class="doc-state-title blx-caption">
+      Open
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_open_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Filled
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_filled_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Hover
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_hover_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Focus
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_focus_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Disabled
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_disabled_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Overflow
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_overflow_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      With icon
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_icon_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Invalid
+    </span>
+    <div class="doc-state-content">
+      {{ dropdown_trigger_invalid_example }}
+    </div>
+  </div>
+</div>

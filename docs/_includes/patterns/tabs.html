@@ -1,0 +1,117 @@
+{% capture example1 %}
+  <div class="blx-horizontal-tabs">
+    <label>
+      <input type="radio" name="horizontal-tab-example" checked>
+      <span class="blx-tab-item">Tab 1</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="blx-tab-item">Tab 2</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="blx-tab-item">Tab 3</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="blx-tab-item">Tab 4</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture example2 %}
+  <div class="blx-vertical-tabs">
+    <label>
+      <input type="radio" name="vertical-tab-example" checked>
+      <span class="blx-tab-item">Tab 1</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="blx-tab-item">Tab 2</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="blx-tab-item">Tab 3</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="blx-tab-item">Tab 4</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture example %}
+  {{ example1 }}
+  {{ example2 }}
+{% endcapture %}
+
+<div class="l-flex-vertical">
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Default
+    </span>
+    <div class="doc-state-content">
+      <div class="blx-horizontal-tabs">
+        <label>
+          <input type="radio" name="horizontal-tab-example-2" checked>
+          <span class="blx-tab-item">Tab 1</span>
+        </label>
+        <label>
+          <input type="radio" name="horizontal-tab-example-2">
+          <span class="blx-tab-item">Tab 2</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Hover
+    </span>
+    <div class="doc-state-content">
+      <div class="blx-horizontal-tabs">
+        <label>
+          <input type="radio" name="horizontal-tab-example-3" checked>
+          <span class="blx-tab-item">Tab 1</span>
+        </label>
+        <label>
+          <input type="radio" name="horizontal-tab-example-3">
+          <span class="blx-tab-item blx-hover">Tab 2</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Focus
+    </span>
+    <div class="doc-state-content">
+      <div class="blx-horizontal-tabs">
+        <label>
+          <input type="radio" name="horizontal-tab-example-4" checked>
+          <span class="blx-tab-item">Tab 1</span>
+        </label>
+        <label>
+          <input type="radio" name="horizontal-tab-example-4">
+          <span class="blx-tab-item blx-focus">Tab 2</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Disabled
+    </span>
+    <div class="doc-state-content">
+      <div class="blx-horizontal-tabs blx-disabled">
+        <label>
+          <input type="radio" name="horizontal-tab-example-5" checked disabled>
+          <span class="blx-tab-item">Tab 1</span>
+        </label>
+        <label>
+          <input type="radio" name="horizontal-tab-example-5" disabled>
+          <span class="blx-tab-item">Tab 2</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

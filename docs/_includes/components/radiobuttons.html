@@ -1,0 +1,158 @@
+{% capture radio_example_checked %}
+  <label class="blx-radio">
+    <div class="blx-radio-label">Selected</div>
+    <input type="radio" name="radio-example" checked />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_unchecked %}
+  <label class="blx-radio">
+    <div class="blx-radio-label">Unselected</div>
+    <input type="radio" name="radio-example" />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_hovered_checked %}
+  <label class="blx-radio blx-hover">
+    <div class="blx-radio-label">Selected, Hover</div>
+    <input type="radio" name="radio-example-2" checked />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_hovered_unchecked %}
+  <label class="blx-radio blx-hover">
+    <div class="blx-radio-label">Unselected, Hover</div>
+    <input type="radio" name="radio-example-2" />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_focused_checked %}
+  <label class="blx-radio">
+    <div class="blx-radio-label">Selected, Focused</div>
+    <input class="blx-focus" type="radio" name="radio-example-3" checked />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_focused_unchecked %}
+  <label class="blx-radio">
+    <div class="blx-radio-label">Unselected, Focused</div>
+    <input class="blx-focus" type="radio" name="radio-example-3" />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_disabled_checked %}
+  <label class="blx-radio blx-disabled">
+    <div class="blx-radio-label">Selected, Disabled</div>
+    <input type="radio" name="radio-example-4" checked disabled />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture radio_example_disabled_unchecked %}
+  <label class="blx-radio blx-disabled">
+    <div class="blx-radio-label">Unselected, Disabled</div>
+    <input type="radio" name="radio-example-4" disabled />
+    <span class="blx-radio-check"></span>
+  </label>
+{% endcapture %}
+
+{% capture example %}
+  {{ radio_example_checked }}
+  {{ radio_example_unchecked }}
+  {{ radio_example_disabled_checked }}
+  {{ radio_example_disabled_unchecked }}
+{% endcapture %}
+
+<div class="l-flex-vertical">
+  <div class="l-flex-horizontal">
+    <div class="doc-state-content">
+      <label class="blx-radio">
+        <div class="blx-radio-label">Default Selected</div>
+        <input type="radio" name="radio-default" checked />
+        <span class="blx-radio-check"></span>
+      </label>
+      <label class="blx-radio">
+        <div class="blx-radio-label">Default Unselected</div>
+        <input type="radio" name="radio-default" />
+        <span class="blx-radio-check"></span>
+      </label>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <div class="doc-state-content">
+      <label class="blx-radio">
+        <div class="blx-radio-label">Active Selected</div>
+        <input class="blx-active" type="radio" name="radio-active" checked />
+        <span class="blx-radio-check"></span>
+      </label>
+      <label class="blx-radio">
+        <div class="blx-radio-label">Active Unselected</div>
+        <input class="blx-active" type="radio" name="radio-active" />
+        <span class="blx-radio-check"></span>
+      </label>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <div class="doc-state-content">
+      <label class="blx-radio blx-hover">
+        <div class="blx-radio-label">Hover Selected</div>
+        <input type="radio" name="radio-hover" checked />
+        <span class="blx-radio-check"></span>
+      </label>
+      <label class="blx-radio blx-hover">
+        <div class="blx-radio-label">Hover Unselected</div>
+        <input type="radio" name="radio-hover" />
+        <span class="blx-radio-check"></span>
+      </label>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <div class="doc-state-content">
+      <label class="blx-radio">
+        <div class="blx-radio-label">Focus Selected</div>
+        <input class="blx-focus" type="radio" name="radio-focus" checked />
+        <span class="blx-radio-check"></span>
+      </label>
+      <label class="blx-radio">
+        <div class="blx-radio-label">Focus Unselected</div>
+        <input class="blx-focus" type="radio" name="radio-focus" />
+        <span class="blx-radio-check"></span>
+      </label>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <div class="doc-state-content">
+      <label class="blx-radio blx-disabled">
+        <div class="blx-radio-label">Disabled Selected</div>
+        <input type="radio" name="radio-disabled" checked disabled/>
+        <span class="blx-radio-check"></span>
+      </label>
+      <label class="blx-radio blx-disabled">
+        <div class="blx-radio-label">Disabled Unselected</div>
+        <input type="radio" name="radio-disabled" disabled />
+        <span class="blx-radio-check"></span>
+      </label>
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <div class="doc-state-content">
+      <label class="blx-radio blx-invalid">
+        <div class="blx-radio-label">Error Selected</div>
+        <input type="radio" name="radio-error" checked />
+        <span class="blx-radio-check"></span>
+      </label>
+      <label class="blx-radio blx-invalid">
+        <div class="blx-radio-label">Error Unselected</div>
+        <input type="radio" name="radio-error" />
+        <span class="blx-radio-check"></span>
+      </label>
+    </div>
+  </div>
+</div>
+

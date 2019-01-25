@@ -13,7 +13,9 @@ html, body {
   width: 31px;
   height: 40px;
   mask: url('../svgs/blocks-logomark.svg') no-repeat;
-  background-color: $text-01;
+  background-color: $brand-01;
+  cursor: pointer;
+  margin-bottom: 24px;
 }
 
 .blocks-title {
@@ -25,12 +27,46 @@ html, body {
   top: 4px;
 }
 
-.blocks-heading {
-  margin-bottom: 70px;
+.blocks-hero {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../svgs/block-pattern.svg');
+  
+  h1 {
+    margin: 0;
+  }
 }
 
-.landing-content {
-  padding: 50px 0 40px 0;
+.blocks-equation {
+  flex: 1 1 33%;
+  margin-right: 3%;
+  
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.principle-list {
+  list-style-type: square;
+  
+  li {
+    padding: 6px 0;
+  }
+  
+  ul {
+    padding: 12px 0;
+    li:before {
+      content: "-";
+    }
+  }
+}
+
+.principle-insight-box {
+  background-color: $ui-02;
+  padding: 24px;
 }
 
 .default-spacing {
@@ -45,9 +81,12 @@ html, body {
   flex-direction: column;
 }
 
+.design-page-header {
+  padding: 0 5%;
+}
+
 .design-page-content {
   overflow-y: auto;
-  padding: 0 5%;
 }
 
 .design-page-section {
@@ -108,10 +147,10 @@ html, body {
 }
 
 .left-nav-panel {
-  width: 210px;
+  width: 265px;
   height: 100%;
   overflow-y: auto;
-  padding: 32px 12px 32px 24px
+  padding: 24px
   background-color: $ui-02;
   
   ul {
@@ -128,15 +167,79 @@ html, body {
     padding: 16px 0;
     border-bottom: 2px solid $ui-04;
   }
+  
+  .page-subsections a {
+    display: block;
+    text-decoration: none;
+    color: $text-02;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 6px 0;
+    
+    &:hover {
+      color: $interactive-hover;
+    }
+    
+    &:active, &:focus {
+      background: transparent;
+      color: $interactive;
+      text-decoration: underline;
+    }
+  }
+}
+
+.section-menu {
+  overflow: hidden;
+  .blx-vertical-tabs {
+    margin-left: 28px;
+  }
+}
+
+.nav-section-button {
+  display: block;
+  position: relative;
+  user-select: none;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.nav-section-trigger {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.nav-section-trigger ~ ul {
+  display: none;
+}
+
+.nav-section-trigger:checked ~ ul {
+  display: block
+}
+
+.nav-section-trigger:checked ~ .nav-section-button {
+  .blx-icon {
+    transform: rotate(180deg);
+  }
 }
 
 .doc-section {
-  margin-bottom: 40px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 40px;
   border-bottom: solid 1px $ui-04;
 }
 
 .doc-section > div {
-  margin: 40px 0 16px 0;
+  margin: 16px 0;
 }
 
 .doc-definition-title {

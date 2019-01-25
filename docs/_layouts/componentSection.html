@@ -2,26 +2,41 @@
 layout: default
 ---
 
+<div class="design-page-header">
+  <h1>{{ page.title }}</h1>
+  <p class="blx-ui-text">{{ content }}</p>
+</div>
+
 <section class="design-page-section">
-  <!-- top component definition section-->
-  <div class="l-flex-vertical doc-section">
-    <h3>{{ page.title }}</h3>
-    <div class="l-flex-horizontal">
-      <span class="doc-definition-title blx-subtitle-small">Definition</span>
-      <span class="doc-definition-value">{{ page.definition }}</span>
+  {% if page.examples %}
+    {% capture example_link %}{{page.examples}}.html{% endcapture %}
+    <div class="l-flex-vertical doc-section">
+      <h3 id="Examples">Examples & Guidelines</h3>
+      {% include {{example_link}} %}
     </div>
-    <div class="l-flex-horizontal">
-      <span class="doc-definition-title blx-subtitle-small">Usage</span>
-      <span class="doc-definition-value">{{ page.usage }}</span>
+  {% endif %}
+
+  {% if page.edgecases %}
+    {% capture edgecase_link %}edgecases/{{page.edgecases}}.html{% endcapture %}
+    <div class="l-flex-vertical doc-section">
+      <h3 id="EdgeCases">Edge Cases</h3>
+      {% include {{edgecase_link}} page=page %}
     </div>
-    <div class="l-flex-horizontal">
-      <span class="doc-definition-title blx-subtitle-small">Status</span>
-      <span class="doc-definition-value">{{ page.status }}</span>
+  {% endif %}
+
+  {% if page.react %}
+    {% capture react_link %}lib/{{page.react}}.js{% endcapture %}
+    <div class="l-flex-vertical doc-section">
+      <h3 id="React">React Examples</h3>
+      <div id="react-preview"></div>
+      <script src="{{ react_link | relative_url }}"></script>
     </div>
-    <div class="l-flex-horizontal">
-      <span class="doc-definition-title blx-subtitle-small">Blocks Version</span>
-      <span class="doc-definition-value">{{ page.version }}</span>
+  {% endif %}
+
+  {% if page.examples %}
+    <div class="l-flex-vertical doc-section">
+      <h3 id="HTMLSnippets">HTML Code Snippets</h3>
+      {% include snippet.html content=example %}
     </div>
-  </div>
-  {{ content }}
+  {% endif %}
 </section>

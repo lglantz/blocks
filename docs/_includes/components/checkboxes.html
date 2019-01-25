@@ -1,0 +1,109 @@
+{% capture checkbox_example_checked %}
+  <label class="blx-checkbox">
+    <div class="blx-label">Selected</div>
+    <input type="checkbox" checked />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_unchecked %}
+  <label class="blx-checkbox">
+    <div class="blx-label">Unselected</div>
+    <input type="checkbox" />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_hovered_checked %}
+  <label class="blx-checkbox blx-hover">
+    <div class="blx-label">Selected, Hover</div>
+    <input type="checkbox" checked />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_hovered_unchecked %}
+  <label class="blx-checkbox blx-hover">
+    <div class="blx-label">Unselected, Hover</div>
+    <input type="checkbox" />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_focused_checked %}
+  <label class="blx-checkbox">
+    <div class="blx-label">Selected, Focused</div>
+    <input class="blx-focus" type="checkbox" checked />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_focused_unchecked %}
+  <label class="blx-checkbox">
+    <div class="blx-label">Unselected, Focused</div>
+    <input class="blx-focus" type="checkbox" />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_disabled_checked %}
+  <label class="blx-checkbox blx-disabled">
+    <div class="blx-label">Selected, Disabled</div>
+    <input type="checkbox" checked disabled />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_disabled_unchecked %}
+  <label class="blx-checkbox blx-disabled">
+    <div class="blx-label">Unselected, Disabled</div>
+    <input type="checkbox" disabled />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture example %}
+  {{ checkbox_example_checked }}
+  {{ checkbox_example_unchecked }}
+  {{ checkbox_example_disabled_checked }}
+  {{ checkbox_example_disabled_unchecked }}
+{% endcapture %}
+
+<div class="l-flex-vertical">
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Default
+    </span>
+    <div class="doc-state-content">
+      {{ checkbox_example_unchecked }}
+      {{ checkbox_example_checked }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Hover
+    </span>
+    <div class="doc-state-content">
+      {{ checkbox_example_hovered_unchecked }}
+      {{ checkbox_example_hovered_checked }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Focus
+    </span>
+    <div class="doc-state-content">
+      {{ checkbox_example_focused_unchecked }}
+      {{ checkbox_example_focused_checked }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-caption">
+      Disabled
+    </span>
+    <div class="doc-state-content">
+      {{ checkbox_example_disabled_unchecked }}
+      {{ checkbox_example_disabled_checked }}
+    </div>
+  </div>
+</div>
