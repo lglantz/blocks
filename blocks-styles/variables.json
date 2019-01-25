@@ -168,12 +168,13 @@
 
 
 
-  "radio-size" : "18px",
+  "radio-size" : "16px",
 
   "radio-text-color" : "$text-01",
   "radio-hover-shadow-color" : "$interactive-shadow-hover",
 
   "radio-unselected-border-color" : "$ui-04",
+  "radio-unselected-active-border-color" : "$ui-06",
   "radio-unselected-hover-border-color" : "$ui-04",
   "radio-unselected-focus-border-color" : "$selection",
 

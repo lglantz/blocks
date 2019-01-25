@@ -97,6 +97,20 @@ definition: Buttons that allow users to make a single selection from a list of s
     </div>
     <div class="l-flex-horizontal">
       <div class="doc-state-content">
+        <label class="blx-radio">
+          <div class="blx-radio-label">Active Selected</div>
+          <input class="blx-active" type="radio" name="radio-active" checked />
+          <span class="blx-radio-check"></span>
+        </label>
+        <label class="blx-radio">
+          <div class="blx-radio-label">Active Unselected</div>
+          <input class="blx-active" type="radio" name="radio-active" />
+          <span class="blx-radio-check"></span>
+        </label>
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <div class="doc-state-content">
         <label class="blx-radio blx-hover">
           <div class="blx-radio-label">Hover Selected</div>
           <input type="radio" name="radio-hover" checked />
@@ -133,6 +147,20 @@ definition: Buttons that allow users to make a single selection from a list of s
         <label class="blx-radio blx-disabled">
           <div class="blx-radio-label">Disabled Unselected</div>
           <input type="radio" name="radio-disabled" disabled />
+          <span class="blx-radio-check"></span>
+        </label>
+      </div>
+    </div>
+    <div class="l-flex-horizontal">
+      <div class="doc-state-content">
+        <label class="blx-radio blx-invalid">
+          <div class="blx-radio-label">Error Selected</div>
+          <input type="radio" name="radio-error" checked />
+          <span class="blx-radio-check"></span>
+        </label>
+        <label class="blx-radio blx-invalid">
+          <div class="blx-radio-label">Error Unselected</div>
+          <input type="radio" name="radio-error" />
           <span class="blx-radio-check"></span>
         </label>
       </div>

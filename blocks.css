@@ -1619,8 +1619,8 @@ a.blx-button {
 .blx-radio {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin: 9px 0;
+  padding: 9px 0 9px 62px;
+  margin: 0;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -1634,16 +1634,16 @@ a.blx-button {
   font-size: 14px;
   font-weight: 400;
   text-align: left;
-  line-height: 20px;
+  line-height: 16px;
   color: #2b3836;
   color: var(--text-01, #2b3836);
 }
 .blx-radio .blx-radio-check {
   position: absolute;
-  top: 2px;
-  left: 0;
-  height: 18px;
-  width: 18px;
+  top: 9px;
+  left: 32px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background-color: #fdfefd;
   background-color: var(--ui-00, #fdfefd);
@@ -1655,8 +1655,8 @@ a.blx-button {
   display: none;
   content: "";
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 3px;
+  left: 3px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -1695,6 +1695,16 @@ a.blx-button {
 .blx-radio input[type="radio"]:checked.blx-focus + .blx-radio-check::before {
   display: block;
 }
+.blx-radio input[type="radio"]:checked:active + .blx-radio-check {
+  border: 1px solid #009f6f;
+  border: 1px solid var(--interactive, #009f6f);
+  box-shadow: none;
+}
+.blx-radio input[type="radio"]:checked.blx-active + .blx-radio-check {
+  border: 1px solid #009f6f;
+  border: 1px solid var(--interactive, #009f6f);
+  box-shadow: none;
+}
 .blx-radio input[type="radio"]:focus + .blx-radio-check {
   outline: none;
   border: 1px solid #49a1ff;
@@ -1705,18 +1715,32 @@ a.blx-button {
   border: 1px solid #49a1ff;
   border: 1px solid var(--selection, #49a1ff);
 }
+.blx-radio input[type="radio"]:active + .blx-radio-check {
+  background-color: #fdfefd;
+  background-color: var(--ui-00, #fdfefd);
+  border: 1px solid #bdc7c3;
+  border: 1px solid var(--ui-06, #bdc7c3);
+  box-shadow: none;
+}
+.blx-radio input[type="radio"].blx-active + .blx-radio-check {
+  background-color: #fdfefd;
+  background-color: var(--ui-00, #fdfefd);
+  border: 1px solid #bdc7c3;
+  border: 1px solid var(--ui-06, #bdc7c3);
+  box-shadow: none;
+}
 .blx-radio:hover input[type="radio"] ~ .blx-radio-check {
   background-color: #fdfefd;
   background-color: var(--ui-00, #fdfefd);
-  border: 2px solid #d9e1e0;
-  border: 2px solid var(--ui-04, #d9e1e0);
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--ui-04, #d9e1e0);
   box-shadow: none;
 }
 .blx-radio.blx-hover input[type="radio"] ~ .blx-radio-check {
   background-color: #fdfefd;
   background-color: var(--ui-00, #fdfefd);
-  border: 2px solid #d9e1e0;
-  border: 2px solid var(--ui-04, #d9e1e0);
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--ui-04, #d9e1e0);
   box-shadow: none;
 }
 .blx-radio:hover input[type="radio"]:checked ~ .blx-radio-check {
@@ -1744,6 +1768,28 @@ a.blx-button {
 .blx-radio.blx-disabled {
   box-shadow: none;
   cursor: pointer;
+}
+.blx-radio.blx-invalid input[type="radio"] ~ .blx-radio-check {
+  background-color: #fdfefd;
+  background-color: var(--ui-00, #fdfefd);
+  border: 1px solid #ec4f07;
+  border: 1px solid var(--error, #ec4f07);
+  box-shadow: none;
+}
+.blx-radio.blx-invalid input[type="radio"]:hover ~ .blx-radio-check {
+  background-color: #fdfefd;
+  background-color: var(--ui-00, #fdfefd);
+  border: 1px solid #ec4f07;
+  border: 1px solid var(--error, #ec4f07);
+  box-shadow: none;
+}
+.blx-radio.blx-invalid input[type="radio"] ~ .blx-radio-check::after {
+  background-color: #ec4f07;
+  background-color: var(--error, #ec4f07);
+}
+.blx-radio.blx-invalid input[type="radio"]:hover ~ .blx-radio-check::after {
+  background-color: #ec4f07;
+  background-color: var(--error, #ec4f07);
 }
 .blx-sortable-list {
   background: transparent;

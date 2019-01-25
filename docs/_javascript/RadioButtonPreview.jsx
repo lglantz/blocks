@@ -11,7 +11,10 @@ const RadioButtonPreview = () => (
       { getPreviewComponent('Unselected',
           <RadioButtonGroup
             name="radio-1"
-            options={['Unselected', 'Unselected 2']}
+            options={[
+              { text: 'Unselected' },
+              { text: 'Unselected 2'}
+            ]}
             onChange={() => {}}
           />
       )}
@@ -20,28 +23,37 @@ const RadioButtonPreview = () => (
       { getPreviewComponent('Selected',
           <RadioButtonGroup
             name="radio-2"
-            options={['Selected', 'Selected 2']}
+            options={[
+              { text: 'Selected'},
+              { text:'Selected 2'}
+            ]}
             checkedIndex={0}
             onChange={() => {}}
           />
       )}
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Unselected, Disabled',
+      { getPreviewComponent('Disabled',
           <RadioButtonGroup
             name="radio-3"
-            options={['Unselected, Disabled']}
+            options={[
+              { text: 'Selected, Disabled' },
+              { text: 'Unselected, Disabled'}
+            ]}
             isDisabled
+            checkedIndex={0}
             onChange={() => {}}
           />
       ) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Selected, Disabled',
+      { getPreviewComponent('Invalid',
           <RadioButtonGroup
             name="radio-4"
-            options={['Selected, Disabled']}
-            isDisabled
+            options={[
+              { text: 'Selected, Invalid', isValid: false },
+              { text: 'Unselected, Invalid', isValid: false }
+            ]}
             checkedIndex={0}
             onChange={() => {}}
           />

@@ -2,8 +2,8 @@
 .blx-radio {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin: 9px 0;
+  padding: 9px 0 9px 62px;
+  margin: 0;
   cursor: pointer;
   font-size: 22px;
   user-select: none;
@@ -12,16 +12,15 @@
     font-size: 14px;
     font-weight: $normal-weight;
     text-align: left;
-    line-height: 20px;
-    
+    line-height: 16px;
     color: $radio-text-color;
   }
   
   /* Create a custom radio button */
   .blx-radio-check {
     position: absolute;
-    top: 2px;
-    left: 0;
+    top: 9px;
+    left: 32px;
     height: $radio-size;
     width: $radio-size;
     border-radius: 50%;
@@ -34,8 +33,8 @@
       display: none;
       content: "";
       position: absolute;
-      top: 4px;
-      left: 4px;
+      top: 3px;
+      left: 3px;
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -68,17 +67,26 @@
           display: block;
         }
       }
+      &:active + .blx-radio-check, &.blx-active + .blx-radio-check {
+        border: 1px solid $radio-selected-border-color;
+        box-shadow: none;
+      }
     }
     &:focus + .blx-radio-check, &.blx-focus + .blx-radio-check {
       outline: none;
       border: 1px solid $radio-unselected-focus-border-color;
+    }
+    &:active + .blx-radio-check, &.blx-active + .blx-radio-check {
+      background-color: $radio-unselected-background-color;
+      border: 1px solid $radio-unselected-active-border-color;
+      box-shadow: none;
     }
   }
   
   &:hover, &.blx-hover {
     input[type="radio"] ~ .blx-radio-check {
       background-color: $radio-unselected-hover-background-color;
-      border: 2px solid $radio-unselected-hover-border-color;
+      border: 1px solid $radio-unselected-hover-border-color;
       box-shadow: none;
     }
     
@@ -96,5 +104,17 @@
   &.blx-disabled {
     box-shadow: none;
     cursor: pointer;
+  }
+
+  &.blx-invalid {
+    input[type="radio"] ~ .blx-radio-check, input[type="radio"]:hover ~ .blx-radio-check {
+      background-color: $radio-unselected-background-color;
+      border: 1px solid $error;
+      box-shadow: none;
+
+      &::after {
+        background-color: $error;
+      }
+    }
   }
 }
