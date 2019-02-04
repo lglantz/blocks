@@ -1,0 +1,75 @@
+.left-nav-panel {
+  width: 265px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px
+  background-color: $light-00;
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .page-subsections a {
+    display: block;
+    text-decoration: none;
+    color: $dark-02;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 6px 0;
+    
+    &:hover {
+      color: $primary-01;
+    }
+    
+    &:active, &:focus {
+      background: transparent;
+      color: $primary-00;
+      text-decoration: underline;
+    }
+  }
+}
+
+.section-menu {
+  overflow: hidden;
+  .blx-vertical-tabs {
+    margin-left: 28px;
+  }
+}
+
+.nav-section-button {
+  display: block;
+  position: relative;
+  user-select: none;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.nav-section-trigger {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.nav-section-trigger ~ ul {
+  display: none;
+}
+
+.nav-section-trigger:checked ~ ul {
+  display: block
+}
+
+.nav-section-trigger:checked ~ .nav-section-button {
+  .blx-icon {
+    transform: rotate(180deg);
+  }
+}

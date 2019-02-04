@@ -1,7 +1,6 @@
 // checkbox specific variables
 $checkbox-size = 18px;
 
-$checkbox-text-color = $dark-00;
 $checkbox-check-color = $secondary-00;
 
 $checkbox-unselected-border = 1px solid $light-01;
@@ -27,16 +26,10 @@ $checkbox-selected-focus-background-color = $primary-00;
   padding-left: 35px;
   margin: 9px 0;
   cursor: pointer;
-  font-size: 22px;
   user-select: none;
-
+  
   .blx-label {
-    font-size: 14px;
-    font-weight: $normal-weight;
-    text-align: left;
-    line-height: 20px;
-
-    color: $checkbox-text-color;
+    line-height: ($checkbox-size + 4px);
   }
 
   // custom checkmark

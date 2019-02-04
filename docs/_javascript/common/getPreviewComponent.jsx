@@ -1,7 +1,7 @@
 const React = require('react');
 
 const getPreviewComponent = (caption, component) => ([
-  <span className="doc-state-title blx-caption" key={caption}>
+  <span className="doc-state-title blx-ui-small" key={caption}>
     {caption}
   </span>,
 

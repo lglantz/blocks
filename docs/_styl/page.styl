@@ -3,76 +3,6 @@ html, body {
   height: 100%;
 }
 
-.header {
-  padding: 32px 5% 8px 5%;
-  flex: 0 0 auto;
-}
-
-.blocks-logo {
-  display: block;
-  width: 31px;
-  height: 40px;
-  mask: url('../svgs/blocks-logomark.svg') no-repeat;
-  background-color: $primary-00;
-  cursor: pointer;
-  margin-bottom: 24px;
-}
-
-.blocks-title {
-  font-size: 36px;
-  line-height: 25px;
-  font-weight: $bold-weight;
-  margin-left: 16px;
-  position: relative;
-  top: 4px;
-}
-
-.blocks-hero {
-  width: 100%;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('../svgs/block-pattern.svg');
-  
-  h1 {
-    margin: 0;
-  }
-}
-
-.blocks-equation {
-  flex: 1 1 33%;
-  margin-right: 3%;
-  
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.principle-list {
-  list-style-type: square;
-  
-  li {
-    padding: 6px 0;
-  }
-  
-  ul {
-    padding: 12px 0;
-    li:before {
-      content: "-";
-    }
-  }
-}
-
-.principle-insight-box {
-  background-color: $light-00;
-  padding: 24px;
-}
-
-.default-spacing {
-  margin: 24px 0;
-}
-
 .design-page {
   height: 100%;
   width: 100%;
@@ -93,31 +23,54 @@ html, body {
   margin-top: 32px;
 }
 
-.design-page-container {
-  width: 100%;
+.tall-content {
+  height: 225px;
 }
 
-.principles-container {
-  p {
-    margin: 12px 0;
-  }
-  
-  h5 {
-    margin-top: 32px;
-  }
+.doc-section {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 40px;
+  border-bottom: solid 1px $light-01;
+}
 
-  & > div {
-    flex: 1 1 33%;
-    margin-right: 5%;
-    
+.doc-subsection {
+  margin: 0 0 24px 0;
+}
+
+.doc-definition-title {
+  flex: 0 0 150px;
+}
+
+.doc-definition-value {
+  flex: 1;
+}
+
+.doc-state-title {
+  flex: 0 0 150px;
+}
+
+.doc-state-content {
+  flex: 1 0 150px;
+}
+
+.doc-state-title, .doc-state-content {
+  margin: 24px 24px 24px 0;
+}
+
+.text-section-inline {
+  margin-bottom: 24px;
+  
+  .blx-light {
+    background-color: $dark-00;
+  }
+  span {
+    display: inline-block;
+    margin-right: 24px;
     &:last-child {
       margin-right: 0;
     }
   }
-}
-
-.tall-content {
-  height: 225px;
 }
 
 .snippet-container {
@@ -146,143 +99,6 @@ html, body {
   }
 }
 
-.left-nav-panel {
-  width: 265px;
-  height: 100%;
-  overflow-y: auto;
-  padding: 24px
-  background-color: $light-00;
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .blx-body-caps {
-    margin-top: 16px;
-  }
-  
-  .category-title {
-    padding: 16px 0;
-    border-bottom: 2px solid $light-01;
-  }
-  
-  .page-subsections a {
-    display: block;
-    text-decoration: none;
-    color: $dark-02;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 6px 0;
-    
-    &:hover {
-      color: $primary-01;
-    }
-    
-    &:active, &:focus {
-      background: transparent;
-      color: $primary-00;
-      text-decoration: underline;
-    }
-  }
-}
-
-.section-menu {
-  overflow: hidden;
-  .blx-vertical-tabs {
-    margin-left: 28px;
-  }
-}
-
-.nav-section-button {
-  display: block;
-  position: relative;
-  user-select: none;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 500;
-  background: transparent;
-  border: none;
-  margin: 0;
-  padding: 12px 0;
-  cursor: pointer;
-}
-
-.nav-section-trigger {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.nav-section-trigger ~ ul {
-  display: none;
-}
-
-.nav-section-trigger:checked ~ ul {
-  display: block
-}
-
-.nav-section-trigger:checked ~ .nav-section-button {
-  .blx-icon {
-    transform: rotate(180deg);
-  }
-}
-
-.doc-section {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 40px;
-  border-bottom: solid 1px $light-01;
-}
-
-.doc-section > div {
-  margin: 16px 0;
-}
-
-.doc-definition-title {
-  flex: 0 0 150px;
-}
-
-.doc-definition-value {
-  flex: 1;
-}
-
-.doc-state-title {
-  flex: 0 0 150px;
-}
-
-.doc-state-content {
-  flex: 1 0 150px;
-}
-
-.doc-state-title, .doc-state-content {
-  margin: 24px 24px 24px 0;
-}
-
-.color-card {
-  display: inline-block;
-  margin: 0 32px 32px 0;
-  box-sizing: border-box;
-  
-  .color-card-background {
-    width: 150px;
-    height: 90px;
-    border: 1px solid #686f6d;
-  }
-  
-  .color-card-title {
-    width: 150px;
-    height: 60px;
-    padding: 8px;
-    border: 1px solid #686f6d;
-    border-width: 0 1px 1px 1px;
-    color: $dark-02;
-  }
-}
-
 .sortable-list-preview {
   width: 300px;
   
@@ -292,14 +108,5 @@ html, body {
   
   .blx-sortable-list-item {
     padding: 8px 16px;
-  }
-}
-
-.color-grid {
-  display: flex;
-  align-items: flex-start;
-  
-  & > div {
-    flex: 1 1 25%;
   }
 }

@@ -115,9 +115,7 @@ $dropdown-item-focus-background-color = $primary-00;
 }
 
 .blx-dropdown-text, .blx-dropdown-placeholder {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  blxTruncateText();
 }
 
 .blx-dropdown-text {
@@ -164,9 +162,7 @@ $dropdown-item-focus-background-color = $primary-00;
     font-weight: $normal-weight;
     line-height: 20px;
     text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    blxTruncateText();
     cursor: pointer;
     color: $dropdown-item-default-text-color;
 

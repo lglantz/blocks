@@ -1,22 +1,92 @@
 // define some text mixins
-blxBaseText() {
-  font-weight: $normal-weight;
-  font-size: $base-font-size;
-  line-height: 24px;
-  text-align: left;
+blxH() {
+  font-weight: $bold-weight;
   color: $dark-00;
+}
+
+blxHXL() {
+  blxH()
+  font-size: 96px;
+  line-height: 96px;
+  letter-spacing: -3.25px;
+  margin-top: 108px;
+  margin-bottom: 36px;
+}
+
+blxH1() {
+  blxH()
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: -2px;
+  margin-top: 108px;
+  margin-bottom: 36px;
+}
+
+blxH2() {
+  blxH()
+  font-size: 39px;
+  line-height: 42px;
+  letter-spacing: -0.081px;
+  margin-top: 42px;
+  margin-bottom: 24px;
+}
+
+blxH3() {
+  blxH()
+  font-size: 23px;
+  line-height: 24px;
+  letter-spacing: -0.005px;
+  margin-top: 24px;
   margin-bottom: 12px;
 }
 
-blxLink() {
+blxH4() {
+  blxH()
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.17px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+blxH5() {
+  font-weight: $medium-weight;
+  color: $dark-00;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+blxH5Interactive() {
+  blxH5();
+  color: $primary-00;
+}
+
+blxH5Light() {
+  blxH5();
+  color: $secondary-00;
+}
+
+blxUIDefaultText() {
+  font-weight: $normal-weight;
   font-size: 14px;
   line-height: 18px;
-  font-weight: $normal-weight;
+  letter-spacing: 0;
+  color: $dark-00;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+blxLink() {
+  blxUIDefaultText();
   color: $primary-00;
   cursor: pointer;
   background: transparent;
   border: none;
   text-align: left;
+  text-decoration: underline;
 
   &:hover, &.blx-hover {
     color: $primary-01;
@@ -34,91 +104,52 @@ blxLink() {
   }
 }
 
-blxH() {
-  font-weight: $bold-weight;
+blxUIPlaceholder() {
+  blxUIDefaultText();
+  color: $light-02;
+}
+
+blxUICaps() {
+  font-weight: $normal-weight;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
   color: $dark-00;
-}
-
-blxHXL() {
-  blxH()
-  font-size: 96px;
-  line-height: 96px;
-  letter-spacing: -0.3rem;
-  margin-top: 108px;
-  margin-bottom: 36px;
-}
-
-blxH1() {
-  blxH()
-  font-size: 65px;
-  line-height: 72px;
-  letter-spacing: -0.25rem;
-  margin-top: 108px;
-  margin-bottom: 36px;
-}
-
-blxH2() {
-  blxH()
-  font-size: 39px;
-  line-height: 42px;
-  letter-spacing: -0.01rem;
-  margin-top: 42px;
-  margin-bottom: 24px;
-}
-
-blxH3() {
-  blxH()
-  font-size: 23px;
-  line-height: 24px;
-  letter-spacing: -0.005rem;
-  margin-top: 24px;
+  margin-top: 0;
   margin-bottom: 12px;
 }
 
-blxH4() {
-  blxH()
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.175rem;
-  margin-top: 24px;
-  margin-bottom: 12px;
-}
-
-blxH5() {
-  blxH()
-  font-size: 16px;
+blxUISmall() {
+  font-weight: $normal-weight;
+  font-size: 12px;
   line-height: 18px;
-  letter-spacing: 0.05rem;
+  color: $dark-00;
+  letter-spacing: 0.15px;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+blxUISmallCaps() {
+  font-weight: $medium-weight;
+  font-size: 11px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.65px;
   margin-top: 12px;
   margin-bottom: 6px;
 }
 
-blxH6() {
-  blxH()
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-blxUIText() {
-  font-weight: $normal-weight;
-  font-size: 14px;
-  line-height: 14px;
-  color: $dark-00;
-  margin-bottom: 6px;
-}
-
-blxUIPlaceholder() {
-  blxUIText();
-  color: $light-02;
+blxTruncateText() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 // use those mixins to define our base text styles
 
-p, label {
-  blxBaseText()
+p, label, .blx-p, .blx-label {
+  blxUIDefaultText()
 }
 
 a, .blx-link {
@@ -129,90 +160,40 @@ h1.blx-XL {
   blxHXL()
 }
 
-h1 {
+h1, .blx-h1 {
   blxH1()
 }
 
-h2 {
+h2, .blx-h2 {
   blxH2()
 }
 
-h3 {
+h3, .blx-h3, {
   blxH3()
 }
 
-h4 {
+h4, .blx-h4 {
   blxH4()
 }
 
-h5 {
+h5, .blx-h5 {
   blxH5()
-}
-
-h6 {
-  blxH6()
-}
-
-.blx-subtitle {
-  font-weight: $medium-weight;
-  font-size: 16px;
-  line-height: 18px;
-  color: $dark-00;
-  margin-top: 12px;
-  margin-bottom: 6px;
-
-  &.light {
-    color: $secondary-00;
-  }
-}
-
-.blx-subtitle-small {
-  font-weight: $medium-weight;
-  font-size: 14px;
-  line-height: 18px;
-  color: $dark-00;
-  letter-spacing: 0.005rem;
-  margin-top: 18px;
 }
 
 .blx-ui-text {
   blxUIText();
 }
 
-.blx-body-caps {
-  font-weight: $normal-weight;
-  font-size: 14px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: $dark-00;
-  margin-bottom: 12px;
+.blx-ui-caps { // .blx-body-caps
+  blxUICaps()
 }
 
-.blx-caption {
-  font-weight: $normal-weight;
-  font-size: 12px;
-  line-height: 18px;
-  color: $dark-00;
-  letter-spacing: 0.05rem;
-  margin-bottom: 6px;
+.blx-ui-small { // .blx-caption
+  blxUISmall()
 }
 
-.blx-overline {
-  font-weight: $medium-weight;
-  font-size: 11px;
-  line-height: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-top: 12px;
-  margin-bottom: 6px;
-}
-
-.blx-invalid-input-message {
-  color: $danger-00;
-  font-size: 12px;
-  line-height: 16px;
-  position: absolute;
-  top: 100%
+.blx-ui-small-caps { // .blx-overline
+  blxUISmallCaps()
 }
 
 .blx-capitalize {
@@ -223,8 +204,12 @@ h6 {
   color: $primary-00;
 }
 
-.blx-inactive {
+.blx-inactive, .blx-unselected, .blx-placeholder {
   color: $dark-02;
+}
+
+.blx-light {
+  color: $secondary-00;
 }
 
 .blx-success {
@@ -241,4 +226,12 @@ h6 {
 
 .blx-information {
   color: $information;
+}
+
+.blx-invalid-input-message {
+  color: $danger-00;
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  top: 100%
 }

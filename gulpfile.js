@@ -65,11 +65,12 @@ gulp.task('build:blocksCSS', () => {
 
 // compile Blocks documentation Stylus files into a final CSS file for the documentation site
 gulp.task('build:blocksDocsCSS', () => {
-  gulp.src('docs/_styl/blocks-docs.styl')
+  gulp.src('docs/_styl/_all.styl')
     .pipe(stylus({
       'include css': true
     }))
     .pipe(postcss(cssPlugins))
+    .pipe(rename('blocks-docs.css'))
     .pipe(gulp.dest('docs/css'));
 });
 

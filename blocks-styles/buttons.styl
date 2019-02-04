@@ -1,6 +1,5 @@
 // button specific variables
 $button-height = 44px;
-$button-font-size = 16px;
 
 $button-primary-background-color = $primary-00;
 $button-primary-hover-background-color = $primary-01;
@@ -63,14 +62,8 @@ $button-danger-active-text-color = $secondary-00;
   border-radius: $base-border-radius;
   cursor: pointer;
 
-  font-size: $button-font-size;
-  font-weight: $medium-weight;
+  blxH5();
   text-align: center;
-  line-height: 20px;
-  
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 
   box-shadow: $default-box-shadow;
   
@@ -96,6 +89,10 @@ $button-danger-active-text-color = $secondary-00;
 
   &:hover, &.blx-hover {
     text-decoration: none;
+  }
+  
+  span {
+    blxTruncateText();
   }
 }
 

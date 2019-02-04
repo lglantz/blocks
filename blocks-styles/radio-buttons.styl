@@ -1,8 +1,6 @@
 // radio button specific variables
 $radio-size = 16px;
 
-$radio-text-color = $dark-00;
-
 $radio-unselected-default-border = 1px solid $light-01;
 $radio-unselected-active-border = 1px solid $light-02;
 $radio-unselected-hover-border = 1px solid $light-02;
@@ -30,15 +28,10 @@ $radio-selected-error-background-color = $danger-00;
   padding: 9px 0 9px 62px;
   margin: 0;
   cursor: pointer;
-  font-size: 22px;
   user-select: none;
   
-  .blx-radio-label {
-    font-size: 14px;
-    font-weight: $normal-weight;
-    text-align: left;
-    line-height: 16px;
-    color: $radio-text-color;
+  .blx-label {
+    line-height: ($radio-size + 2px);
   }
   
   // custom radio button

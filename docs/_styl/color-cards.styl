@@ -1,0 +1,29 @@
+.color-card {
+  display: inline-block;
+  margin: 0 32px 32px 0;
+  box-sizing: border-box;
+  
+  .color-card-background {
+    width: 150px;
+    height: 90px;
+    border: 1px solid #686f6d;
+  }
+  
+  .color-card-title {
+    width: 150px;
+    height: 60px;
+    padding: 8px;
+    border: 1px solid #686f6d;
+    border-width: 0 1px 1px 1px;
+    color: $dark-02;
+  }
+}
+
+.color-grid {
+  display: flex;
+  align-items: flex-start;
+  
+  & > div {
+    flex: 1 1 25%;
+  }
+}

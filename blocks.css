@@ -162,50 +162,79 @@ th {
   --brand-00: #a2ffbb;
   --brand-01: #0f4;
 }
-html,
-body {
-  font-family: Graphik Web;
-  font-weight: 400;
-}
 p {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: left;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 label {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: left;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.blx-p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.blx-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 a {
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  font-weight: 400;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  margin-top: 0;
+  margin-bottom: 6px;
   color: #009f6f;
   color: var(--primary-00, #009f6f);
   cursor: pointer;
   background: transparent;
   border: none;
   text-align: left;
+  text-decoration: underline;
 }
 .blx-link {
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  font-weight: 400;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  margin-top: 0;
+  margin-bottom: 6px;
   color: #009f6f;
   color: var(--primary-00, #009f6f);
   cursor: pointer;
   background: transparent;
   border: none;
   text-align: left;
+  text-decoration: underline;
 }
 a:hover {
   color: #008b61;
@@ -258,7 +287,7 @@ h1.blx-XL {
   color: var(--dark-00, #2b3836);
   font-size: 96px;
   line-height: 96px;
-  letter-spacing: -0.3rem;
+  letter-spacing: -3.25px;
   margin-top: 108px;
   margin-bottom: 36px;
 }
@@ -268,7 +297,17 @@ h1 {
   color: var(--dark-00, #2b3836);
   font-size: 65px;
   line-height: 72px;
-  letter-spacing: -0.25rem;
+  letter-spacing: -2px;
+  margin-top: 108px;
+  margin-bottom: 36px;
+}
+.blx-h1 {
+  font-weight: 700;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  font-size: 65px;
+  line-height: 72px;
+  letter-spacing: -2px;
   margin-top: 108px;
   margin-bottom: 36px;
 }
@@ -278,7 +317,17 @@ h2 {
   color: var(--dark-00, #2b3836);
   font-size: 39px;
   line-height: 42px;
-  letter-spacing: -0.01rem;
+  letter-spacing: -0.081px;
+  margin-top: 42px;
+  margin-bottom: 24px;
+}
+.blx-h2 {
+  font-weight: 700;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  font-size: 39px;
+  line-height: 42px;
+  letter-spacing: -0.081px;
   margin-top: 42px;
   margin-bottom: 24px;
 }
@@ -288,7 +337,17 @@ h3 {
   color: var(--dark-00, #2b3836);
   font-size: 23px;
   line-height: 24px;
-  letter-spacing: -0.005rem;
+  letter-spacing: -0.005px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.blx-h3 {
+  font-weight: 700;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  font-size: 23px;
+  line-height: 24px;
+  letter-spacing: -0.005px;
   margin-top: 24px;
   margin-bottom: 12px;
 }
@@ -297,95 +356,70 @@ h4 {
   color: #2b3836;
   color: var(--dark-00, #2b3836);
   font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.175rem;
-  margin-top: 24px;
-  margin-bottom: 12px;
+  line-height: 18px;
+  letter-spacing: 0.17px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+.blx-h4 {
+  font-weight: 700;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.17px;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 h5 {
-  font-weight: 700;
+  font-weight: 500;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
   font-size: 16px;
   line-height: 18px;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0;
   margin-top: 12px;
   margin-bottom: 6px;
 }
-h6 {
-  font-weight: 700;
+.blx-h5 {
+  font-weight: 500;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.05rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.blx-subtitle {
-  font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  color: #2b3836;
-  color: var(--dark-00, #2b3836);
+  letter-spacing: 0;
   margin-top: 12px;
   margin-bottom: 6px;
 }
-.blx-subtitle.light {
-  color: #fff;
-  color: var(--secondary-00, #fff);
-}
-.blx-subtitle-small {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #2b3836;
-  color: var(--dark-00, #2b3836);
-  letter-spacing: 0.005rem;
-  margin-top: 18px;
-}
-.blx-ui-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  color: #2b3836;
-  color: var(--dark-00, #2b3836);
-  margin-bottom: 6px;
-}
-.blx-body-caps {
+.blx-ui-caps {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   text-transform: uppercase;
+  letter-spacing: 0.8px;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+  margin-top: 0;
   margin-bottom: 12px;
 }
-.blx-caption {
+.blx-ui-small {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.15px;
+  margin-top: 0;
   margin-bottom: 6px;
 }
-.blx-overline {
+.blx-ui-small-caps {
   font-weight: 500;
   font-size: 11px;
   line-height: 18px;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 1.65px;
   margin-top: 12px;
   margin-bottom: 6px;
-}
-.blx-invalid-input-message {
-  color: #eb5534;
-  color: var(--danger-00, $danger-00-00-hex);
-  font-size: 12px;
-  line-height: 16px;
-  position: absolute;
-  top: 100%;
 }
 .blx-capitalize {
   text-transform: uppercase;
@@ -398,6 +432,18 @@ h6 {
   color: #7c8c88;
   color: var(--dark-02, #7c8c88);
 }
+.blx-unselected {
+  color: #7c8c88;
+  color: var(--dark-02, #7c8c88);
+}
+.blx-placeholder {
+  color: #7c8c88;
+  color: var(--dark-02, #7c8c88);
+}
+.blx-light {
+  color: #fff;
+  color: var(--secondary-00, #fff);
+}
 .blx-success {
   color: #39cf94;
   color: var(--success, #39cf94);
@@ -408,11 +454,37 @@ h6 {
 }
 .blx-error {
   color: #eb5534;
-  color: var(--danger-00, $danger-00-00-hex);
+  color: var(--danger-00, #eb5534);
 }
 .blx-information {
   color: #6f6bf8;
   color: var(--information, #6f6bf8);
+}
+.blx-invalid-input-message {
+  color: #eb5534;
+  color: var(--danger-00, #eb5534);
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  top: 100%;
+}
+html {
+  font-family: Graphik Web;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+}
+body {
+  font-family: Graphik Web;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
 }
 .blx-accordion-section {
   position: relative;
@@ -484,6 +556,10 @@ h6 {
   box-shadow: 0 1px 2px 0 rgba(170,183,178,0.6);
   box-shadow: 0 1px 2px 0 var(--shadow, rgba(170,183,178,0.6));
 }
+.blx-alert .blx-alert-title {
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
 .blx-alert .blx-icon-close {
   background-color: #009f6f;
   background-color: var(--primary-00, #009f6f);
@@ -542,7 +618,7 @@ h6 {
 }
 .blx-error .blx-alert-icon-background {
   background-color: #eb5534;
-  background-color: var(--danger-00, $danger-00-00-hex);
+  background-color: var(--danger-00, #eb5534);
 }
 .blx-error .blx-alert-icon {
   -webkit-mask: url("../svgs/icon-error.svg") no-repeat 50% 50%;
@@ -591,13 +667,15 @@ h6 {
   text-decoration: none;
   border-radius: 7px;
   cursor: pointer;
-  font-size: 16px;
   font-weight: 500;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0;
+  margin-top: 12px;
+  margin-bottom: 6px;
   text-align: center;
-  line-height: 20px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   box-shadow: 0 1px 2px 0 rgba(170,183,178,0.6);
   box-shadow: 0 1px 2px 0 var(--shadow, rgba(170,183,178,0.6));
 }
@@ -621,6 +699,11 @@ h6 {
 .blx-button:hover,
 .blx-button.blx-hover {
   text-decoration: none;
+}
+.blx-button span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .blx-icon-button {
   width: 44px;
@@ -785,9 +868,9 @@ h6 {
 }
 .blx-danger {
   background-color: #eb5534;
-  background-color: var(--danger-00, $danger-00-00-hex);
+  background-color: var(--danger-00, #eb5534);
   border: 2px solid #eb5534;
-  border: 2px solid var(--danger-00, $danger-00-00-hex);
+  border: 2px solid var(--danger-00, #eb5534);
   color: #fff;
   color: var(--secondary-00, #fff);
 }
@@ -799,7 +882,7 @@ h6 {
   border: 2px solid #49a1ff;
   border: 2px solid var(--focus, #49a1ff);
   background-color: #db5030;
-  background-color: var(--danger-01, $danger-00-01-hex);
+  background-color: var(--danger-01, #db5030);
   color: #fff;
   color: var(--secondary-00, #fff);
 }
@@ -807,7 +890,7 @@ h6 {
   border: 2px solid #49a1ff;
   border: 2px solid var(--focus, #49a1ff);
   background-color: #db5030;
-  background-color: var(--danger-01, $danger-00-01-hex);
+  background-color: var(--danger-01, #db5030);
   color: #fff;
   color: var(--secondary-00, #fff);
 }
@@ -843,17 +926,17 @@ h6 {
 }
 .blx-danger:hover {
   background-color: #db5030;
-  background-color: var(--danger-01, $danger-00-01-hex);
+  background-color: var(--danger-01, #db5030);
   border: 2px solid #db5030;
-  border: 2px solid var(--danger-01, $danger-00-01-hex);
+  border: 2px solid var(--danger-01, #db5030);
   color: #fff;
   color: var(--secondary-00, #fff);
 }
 .blx-danger.blx-hover {
   background-color: #db5030;
-  background-color: var(--danger-01, $danger-00-01-hex);
+  background-color: var(--danger-01, #db5030);
   border: 2px solid #db5030;
-  border: 2px solid var(--danger-01, $danger-00-01-hex);
+  border: 2px solid var(--danger-01, #db5030);
   color: #fff;
   color: var(--secondary-00, #fff);
 }
@@ -944,19 +1027,13 @@ a.blx-button {
   padding-left: 35px;
   margin: 9px 0;
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 .blx-checkbox .blx-label {
-  font-size: 14px;
-  font-weight: 400;
-  text-align: left;
-  line-height: 20px;
-  color: #2b3836;
-  color: var(--dark-00, #2b3836);
+  line-height: 22px;
 }
 .blx-checkbox .blx-checkmark {
   position: absolute;
@@ -1119,9 +1196,11 @@ a.blx-button {
   border: 1px solid var(--light-01, #d9e1e0);
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+  margin-top: 0;
   margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
@@ -1199,7 +1278,7 @@ a.blx-button {
 }
 .blx-dropdown-trigger.blx-invalid {
   border: 1px solid #eb5534;
-  border: 1px solid var(--danger-00, $danger-00-00-hex);
+  border: 1px solid var(--danger-00, #eb5534);
 }
 .blx-dropdown-trigger .blx-icon {
   margin: 12px 10px 12px 0;
@@ -1260,8 +1339,8 @@ a.blx-button {
   font-weight: 400;
   line-height: 20px;
   text-align: left;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
   color: #2b3836;
@@ -1280,8 +1359,8 @@ a.blx-button {
   font-weight: 400;
   line-height: 20px;
   text-align: left;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
   color: #2b3836;
@@ -1383,7 +1462,7 @@ a.blx-button {
   display: inline-flex;
   align-items: center;
 }
-.blx-popover-wrapper .blx-subtitle {
+.blx-popover-wrapper .blx-h5 {
   margin: 0 16px 0 0;
 }
 .blx-popover-trigger {
@@ -1606,19 +1685,13 @@ a.blx-button {
   padding: 9px 0 9px 62px;
   margin: 0;
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-.blx-radio .blx-radio-label {
-  font-size: 14px;
-  font-weight: 400;
-  text-align: left;
-  line-height: 16px;
-  color: #2b3836;
-  color: var(--dark-00, #2b3836);
+.blx-radio .blx-label {
+  line-height: 18px;
 }
 .blx-radio .blx-radio-check {
   position: absolute;
@@ -1740,21 +1813,21 @@ a.blx-button {
   background-color: #fff;
   background-color: var(--secondary-00, #fff);
   border: 1px solid #eb5534;
-  border: 1px solid var(--danger-00, $danger-00-00-hex);
+  border: 1px solid var(--danger-00, #eb5534);
 }
 .blx-radio.blx-invalid input[type="radio"]:hover ~ .blx-radio-check {
   background-color: #fff;
   background-color: var(--secondary-00, #fff);
   border: 1px solid #eb5534;
-  border: 1px solid var(--danger-00, $danger-00-00-hex);
+  border: 1px solid var(--danger-00, #eb5534);
 }
 .blx-radio.blx-invalid input[type="radio"] ~ .blx-radio-check::after {
   background-color: #eb5534;
-  background-color: var(--danger-00, $danger-00-00-hex);
+  background-color: var(--danger-00, #eb5534);
 }
 .blx-radio.blx-invalid input[type="radio"]:hover ~ .blx-radio-check::after {
   background-color: #eb5534;
-  background-color: var(--danger-00, $danger-00-00-hex);
+  background-color: var(--danger-00, #eb5534);
 }
 .blx-sortable-list {
   background: transparent;
@@ -2108,14 +2181,15 @@ a.blx-button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: Graphik Web;
 }
 .blx-text-field input::-webkit-input-placeholder {
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+  margin-top: 0;
   margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
@@ -2123,9 +2197,11 @@ a.blx-button {
 .blx-text-field input:-ms-input-placeholder {
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+  margin-top: 0;
   margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
@@ -2133,9 +2209,11 @@ a.blx-button {
 .blx-text-field input::-ms-input-placeholder {
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+  margin-top: 0;
   margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
@@ -2143,9 +2221,11 @@ a.blx-button {
 .blx-text-field input::placeholder {
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+  margin-top: 0;
   margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
@@ -2182,10 +2262,14 @@ a.blx-button {
 }
 .blx-text-field input {
   width: 100%;
-  font-size: 14px;
-  line-height: 18px;
   border-radius: 7px;
   padding: 11px 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
   background-color: #fff;
   background-color: var(--secondary-00, #fff);
   border: 1px solid #d9e1e0;
@@ -2193,10 +2277,14 @@ a.blx-button {
 }
 .blx-text-field textarea {
   width: 100%;
-  font-size: 14px;
-  line-height: 18px;
   border-radius: 7px;
   padding: 11px 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
   background-color: #fff;
   background-color: var(--secondary-00, #fff);
   border: 1px solid #d9e1e0;
@@ -2240,11 +2328,11 @@ a.blx-button {
 }
 .blx-text-field input.blx-invalid {
   border: 1px solid #eb5534;
-  border: 1px solid var(--danger-00, $danger-00-00-hex);
+  border: 1px solid var(--danger-00, #eb5534);
 }
 .blx-text-field textarea.blx-invalid {
   border: 1px solid #eb5534;
-  border: 1px solid var(--danger-00, $danger-00-00-hex);
+  border: 1px solid var(--danger-00, #eb5534);
 }
 .blx-text-field input:-moz-read-only,
 .blx-text-field textarea:-moz-read-only {
@@ -2454,9 +2542,4 @@ a.blx-button {
   opacity: 0.35;
   pointer-events: none;
   cursor: default;
-}
-.blx-truncate-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
