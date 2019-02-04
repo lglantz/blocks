@@ -1,4 +1,26 @@
-/* The container */
+// checkbox specific variables
+$checkbox-size = 18px;
+
+$checkbox-text-color = $dark-00;
+$checkbox-check-color = $secondary-00;
+
+$checkbox-unselected-border = 1px solid $light-01;
+$checkbox-unselected-hover-border = 1px solid $light-01;
+$checkbox-unselected-focus-border = 2px solid $focus;
+
+$checkbox-unselected-background-color = $secondary-00;
+$checkbox-unselected-hover-background-color = $secondary-00;
+$checkbox-unselected-focus-background-color = $secondary-00;
+
+$checkbox-selected-border = 1px solid $primary-00;
+$checkbox-selected-hover-border = 1px solid $primary-01;
+$checkbox-selected-focus-border = 2px solid $focus;
+
+$checkbox-selected-background-color = $primary-00;
+$checkbox-selected-hover-background-color = $primary-01;
+$checkbox-selected-focus-background-color = $primary-00;
+
+// checkbox styles
 .blx-checkbox {
   display: block;
   position: relative;
@@ -17,83 +39,104 @@
     color: $checkbox-text-color;
   }
 
-  /* Create a custom checkbox */
+  // custom checkmark
   .blx-checkmark {
     position: absolute;
     top: -2px;
     left: 0;
-    height: $checkbox-size;
-    width: $checkbox-size;
+    height: ($checkbox-size + 2px); // plus 2 pixels to account for borders
+    width: ($checkbox-size + 2px);
     border-radius: $base-border-radius;
     margin: 3px 0;
 
     background-color: $checkbox-unselected-background-color;
-    border: 1px solid $checkbox-unselected-border-color;
+    border: $checkbox-unselected-border;
 
-    /* Create the checkmark/indicator (hidden when not checked) */
+    // the actual check (hidden when not checked)
     &::after {
       display: none;
       box-sizing: content-box;
       content: "";
       position: absolute;
-      left: 5px;
-      top: 2px;
+      left: 6px;
+      top: 6px;
       width: 3px;
       height: 8px;
-      border: solid white;
+      border: solid $checkbox-check-color;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
   }
 
-  /* Hide the browser's default checkbox */
+  // hide the default checkbox
   input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 
-    /* When the checkbox is checked */
+    // show the checkmark when the checkbox is checked
     &:checked ~ .blx-checkmark {
       background-color: $checkbox-selected-background-color;
-      border: 1px solid $checkbox-selected-border-color;
+      border: $checkbox-selected-border;
 
-      /* Show the checkmark when checked */
       &::after {
         display: block;
-        left: 5px;
-        top: 2px;
+        left: 6px;
+        top: 3px;
       }
     }
     &:checked {
       &:focus + .blx-checkmark, &.blx-focus + .blx-checkmark {
         background-color: $checkbox-selected-focus-background-color;
-        outline: none;
-        border: 1px solid $ui-00;
-        box-shadow: 0 0 0 2px $checkbox-selected-focus-border-color;
       }
     }
     &:focus + .blx-checkmark, &.blx-focus + .blx-checkmark {
       outline: none;
-      border: 1px solid $checkbox-unselected-focus-border-color;
+      border: $checkbox-unselected-focus-border;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        border: 1px solid $secondary-00;
+      }
+      &::after {
+        left: 5px;
+        top: 2px;
+      }
     }
   }
 
   &:hover, &.blx-hover {
     input[type="checkbox"] ~ .blx-checkmark {
       background-color: $checkbox-unselected-hover-background-color;
-      border: 2px solid $checkbox-unselected-hover-border-color;
-      box-shadow: none;
+      border: $checkbox-unselected-hover-border;
+      &::before {
+        display: none;
+      }
+      &::after {
+        left: 6px;
+        top: 3px;
+      }
     }
 
     input[type="checkbox"]:checked ~ .blx-checkmark {
       background-color: $checkbox-selected-hover-background-color;
-      border: 1px solid $checkbox-selected-hover-border-color;
-      box-shadow: none;
+      border: $checkbox-selected-hover-border;
+      &::before {
+        display: none;
+      }
+      &::after {
+        left: 6px;
+        top: 3px;
+      }
     }
   }
 
   &.blx-disabled {
-    box-shadow: none;
     cursor: pointer;
   }
 }

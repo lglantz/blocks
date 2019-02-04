@@ -2,164 +2,94 @@ $sans-serif-font-family = Graphik Web
 $normal-weight = 400
 $medium-weight = 500
 $bold-weight = 700
-$white = #ffffff
-$interactive-hex = #009f6f
-$interactive-hover-hex = #008b61
-$interactive-active-hex = #00704f
-$interactive-shadow-hex = rgba(0, 72, 51, 0.25)
-$interactive-shadow-hover-hex = rgba(0, 72, 51, 0.35)
-$brand-01-hex = #00b07d
-$ui-00-hex = #fdfefd
-$ui-01-hex = #f6f8f8
-$ui-02-hex = #f5faf8
-$ui-03-hex = #edf0ee
-$ui-04-hex = #d9e1e0
-$ui-05-hex = #ced4d2
-$ui-06-hex = #bdc7c3
-$ui-07-hex = #aab7b2
-$ui-08-hex = #91a49e
-$text-01-hex = #2b3836
-$text-02-hex = #7c8c88
-$success-hex = #39cf94
-$information-hex = #6f6bf8
-$warning-hex = #fdb100
-$error-hex = #ec4f07
-$selection-hex = #49a1ff
-$danger-hex = #e66740
-$danger-active-hex = #ba3c13
-$secondary-hover-hex = #f5faf8
-$secondary-active-hex = #d5f0e5
-$interactive = var(--interactive, $interactive-hex)
-$interactive-hover = var(--interactive-hover, $interactive-hover-hex)
-$interactive-active = var(--interactive-active, $interactive-active-hex)
-$interactive-shadow = var(--interactive-shadow, $interactive-shadow-hex)
-$interactive-shadow-hover = var(--interactive-shadow-hover, $interactive-shadow-hover-hex)
-$brand-01 = var(--brand-01, $brand-01-hex)
-$ui-00 = var(--ui-00, $ui-00-hex)
-$ui-01 = var(--ui-01, $ui-01-hex)
-$ui-02 = var(--ui-02, $ui-02-hex)
-$ui-03 = var(--ui-03, $ui-03-hex)
-$ui-04 = var(--ui-04, $ui-04-hex)
-$ui-05 = var(--ui-05, $ui-05-hex)
-$ui-06 = var(--ui-06, $ui-06-hex)
-$ui-07 = var(--ui-07, $ui-07-hex)
-$ui-08 = var(--ui-08, $ui-08-hex)
-$text-01 = var(--text-01, $text-01-hex)
-$text-02 = var(--text-02, $text-02-hex)
-$success = var(--success-hex, $success-hex)
-$information = var(--information, $information-hex)
-$warning = var(--warning, $warning-hex)
-$error = var(--error, $error-hex)
-$selection = var(--selection, $selection-hex)
-$danger = var(--danger-hex, $danger-hex)
-$danger-active = var(--danger-active-hex, $danger-active-hex)
-$secondary-hover = var(--secondary-hover-hex, $secondary-hover-hex)
-$secondary-active = var(--secondary-active-hex, $secondary-active-hex)
 $base-font-size = 16px
 $base-border-radius = 7px
-$button-height = 44px
-$button-font-size = 16px
-$button-shadow-color = $interactive-shadow
-$button-hover-shadow-color = $interactive-shadow-hover
-$button-focus-shadow-color = $interactive-shadow-hover
-$primary-button-background-color = $interactive
-$primary-button-hover-background-color = $interactive-hover
-$primary-button-focus-background-color = $interactive-hover
-$primary-button-active-background-color = $interactive-active
-$primary-button-border-color = $interactive
-$primary-button-hover-border-color = $interactive-hover
-$primary-button-focus-border-color = $selection
-$primary-button-active-border-color = $interactive-active
-$primary-button-text-color = $ui-00
-$primary-button-hover-text-color = $ui-00
-$primary-button-focus-text-color = $ui-00
-$primary-button-active-text-color = $ui-00
-$secondary-button-background-color = $ui-00
-$secondary-button-hover-background-color = $secondary-hover
-$secondary-button-focus-background-color = $secondary-hover
-$secondary-button-active-background-color = $secondary-active
-$secondary-button-border-color = $ui-00
-$secondary-button-hover-border-color = $ui-02
-$secondary-button-focus-border-color = $selection
-$secondary-button-active-border-color = $secondary-active
-$secondary-button-text-color = $interactive
-$secondary-button-hover-text-color = $interactive
-$secondary-button-focus-text-color = $interactive
-$secondary-button-active-text-color = $interactive
-$danger-button-background-color = $ui-00
-$danger-button-hover-background-color = $danger
-$danger-button-focus-background-color = $danger
-$danger-button-active-background-color = $danger-active
-$danger-button-border-color = $danger
-$danger-button-hover-border-color = $danger
-$danger-button-focus-border-color = $selection
-$danger-button-active-border-color = $danger-active
-$danger-button-text-color = $danger
-$danger-button-hover-text-color = $ui-00
-$danger-button-focus-text-color = $ui-00
-$danger-button-active-text-color = $ui-00
-$checkbox-size = 18px
-$checkbox-text-color = $text-01
-$checkbox-hover-shadow-color = $interactive-shadow-hover
-$checkbox-unselected-border-color = $ui-04
-$checkbox-unselected-hover-border-color = $ui-04
-$checkbox-unselected-focus-border-color = $selection
-$checkbox-unselected-background-color = $ui-00
-$checkbox-unselected-hover-background-color = $ui-00
-$checkbox-unselected-focus-background-color = $ui-00
-$checkbox-selected-border-color = $interactive
-$checkbox-selected-hover-border-color = $interactive-hover
-$checkbox-selected-focus-border-color = $selection
-$checkbox-selected-background-color = $interactive
-$checkbox-selected-hover-background-color = $interactive-hover
-$checkbox-selected-focus-background-color = $interactive
-$radio-size = 16px
-$radio-text-color = $text-01
-$radio-hover-shadow-color = $interactive-shadow-hover
-$radio-unselected-border-color = $ui-04
-$radio-unselected-active-border-color = $ui-06
-$radio-unselected-hover-border-color = $ui-04
-$radio-unselected-focus-border-color = $selection
-$radio-unselected-background-color = $ui-00
-$radio-unselected-hover-background-color = $ui-00
-$radio-unselected-focus-background-color = $ui-00
-$radio-selected-border-color = $interactive
-$radio-selected-hover-border-color = $interactive
-$radio-selected-focus-border-color = $selection
-$radio-selected-background-color = $interactive
-$radio-selected-hover-background-color = $interactive-hover
-$radio-selected-focus-background-color = $interactive
+$default-box-shadow = 0 1px 2px 0 $shadow
+$white = #ffffff
+$focus-hex = #49a1ff
+$primary-00-hex = #009f6f
+$primary-01-hex = #008b61
+$primary-02-hex = #00704f
+$primary-03-hex = rgba(0, 159, 111, 0.35)
+$secondary-00-hex = #ffffff
+$secondary-01-hex = #ecf5f1
+$secondary-02-hex = #d5f0e5
+$shadow-hex = rgba(170, 183, 178, 0.6)
+$light-00-hex = #f6f8f6
+$light-01-hex = #d9e1e0
+$light-02-hex = #aab7b2
+$dark-00-hex = #2b3836
+$dark-01-hex = #505958
+$dark-02-hex = #7c8c88
+$dark-03-hex = rgba(43, 56, 54, 0.35)
+$danger-00-hex = #eb5534
+$danger-01-hex = #db5030
+$danger-02-hex = #ad4626
+$danger-03-hex = rgba(235, 85, 52, 0.35)
+$warning-hex = #fdb100
+$success-hex = #39cf94
+$information-hex = #6f6bf8
+$brand-00-hex = #a2ffbb
+$brand-01-hex = #00ff44
+$focus = var(--focus, $focus-hex)
+$primary-00 = var(--primary-00, $primary-00-hex)
+$primary-01 = var(--primary-01, $primary-01-hex)
+$primary-02 = var(--primary-02, $primary-02-hex)
+$primary-03 = var(--primary-03, $primary-03-hex)
+$secondary-00 = var(--secondary-00, $secondary-00-hex)
+$secondary-01 = var(--secondary-01, $secondary-01-hex)
+$secondary-02 = var(--secondary-02, $secondary-02-hex)
+$shadow = var(--shadow, $shadow-hex)
+$light-00 = var(--light-00, $light-00-hex)
+$light-01 = var(--light-01, $light-01-hex)
+$light-02 = var(--light-02, $light-02-hex)
+$dark-00 = var(--dark-00, $dark-00-hex)
+$dark-01 = var(--dark-01, $dark-01-hex)
+$dark-02 = var(--dark-02, $dark-02-hex)
+$dark-03 = var(--dark-03, $dark-03-hex)
+$danger-00 = var(--danger-00, $danger-00-00-hex)
+$danger-01 = var(--danger-01, $danger-00-01-hex)
+$danger-02 = var(--danger-02, $danger-02-hex)
+$danger-03 = var(--danger-03, $danger-00-03-hex)
+$warning = var(--warning, $warning-hex)
+$success = var(--success, $success-hex)
+$information = var(--information, $information-hex)
+$brand-00 = var(--brand-00, $brand-00-hex)
+$brand-01 = var(--brand-01, $brand-01-hex)
 
 :root {
-  --interactive: $interactive-hex;
-  --interactive-hover: $interactive-hover-hex;
-  --interactive-active: $interactive-active-hex;
-  --interactive-shadow: $interactive-shadow-hex;
-  --interactive-shadow-hover: $interactive-shadow-hover-hex;
+  --focus: $focus-hex;
+  
+  --primary-00: $primary-00-hex;
+  --primary-01: $primary-01-hex;
+  --primary-02: $primary-02-hex;
+  --primary-03: $primary-03-hex;
 
-  --brand-01: $brand-01-hex;
+  --secondary-00: $secondary-00-hex;
+  --secondary-01: $secondary-01-hex;
+  --secondary-02: $secondary-02-hex;
+  
+  --shadow: $shadow-hex;
+  
+  --light-00: $light-00-hex;
+  --light-01: $light-01-hex;
+  --light-02: $light-02-hex;
+  
+  --dark-00: $dark-00-hex;
+  --dark-01: $dark-01-hex;
+  --dark-02: $dark-02-hex;
+  --dark-03: $dark-03-hex;
 
-  --ui-00: $ui-00-hex;
-  --ui-01: $ui-01-hex;
-  --ui-02: $ui-02-hex;
-  --ui-03: $ui-03-hex;
-  --ui-04: $ui-04-hex;
-  --ui-05: $ui-05-hex;
-  --ui-06: $ui-06-hex;
-  --ui-07: $ui-07-hex;
-  --ui-08: $ui-08-hex;
-
-  --text-01: $text-01-hex;
-  --text-02: $text-02-hex;
-
+  --danger-00: $danger-00-hex;
+  --danger-01: $danger-01-hex;
+  --danger-02: $danger-02-hex;
+  --danger-03: $danger-03-hex;
+  
+  --warning: $warning-hex;
   --success: $success-hex;
   --information: $information-hex;
-  --warning: $warning-hex;
-  --error: $error-hex;
-  --selection: $selection-hex;
-
-  --error: $error-hex;
-  --secondary-hover: $secondary-hover-hex;
-  --secondary-active: $secondary-active-hex;
+  
+  --brand-00: $brand-00-hex;
+  --brand-01: $brand-01-hex;
 }
 

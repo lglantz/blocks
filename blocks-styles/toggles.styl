@@ -1,3 +1,19 @@
+// toggle specific variables
+$toggle-default-text-color = $dark-02;
+$toggle-active-text-color = $secondary-00;
+
+$toggle-default-background-color = $secondary-00;
+$toggle-active-background-color = $primary-00;
+$toggle-hover-background-color = $primary-01;
+$toggle-focus-background-color = $primary-01;
+
+$toggle-default-border = 1px solid $light-01;
+$toggle-active-border = 1px solid $toggle-active-background-color;
+$toggle-hover-border = 1px solid $toggle-hover-background-color;
+$toggle-focus-border = 2px solid $focus;
+$toggle-focus-inner-border = 1px solid $secondary-00;
+
+// toggle styles
 .blx-toggle {
   display: inline-flex;
   height: 40px;
@@ -12,6 +28,15 @@
 
   .blx-toggle-container {
     position: relative;
+    
+    .blx-toggle-text {
+      position: relative;
+      padding: 10px 30px;
+      cursor: pointer;
+      border: $toggle-default-border;
+      background-color: $toggle-default-background-color;
+      box-shadow: $default-box-shadow;
+    }
 
     input {
       position: absolute;
@@ -20,38 +45,51 @@
       cursor: pointer;
 
       &:checked ~ .blx-toggle-text {
-        border: 1px solid $brand-01;
-        background-color: $brand-01;
-        color: $ui-00;
+        background-color: $toggle-active-background-color;
+        border: $toggle-active-border;
+        color: $toggle-active-text-color;
       }
-
-      &:focus ~ .blx-toggle-text {
-        background-color: $selection;
-        color: $ui-00;
+      
+      &:focus ~ .blx-toggle-text, &.blx-focus ~ .blx-toggle-text {
+        background-color: $toggle-focus-background-color;
+        border: $toggle-focus-border;
+        color: $toggle-active-text-color;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: calc(100% - 2px);
+          height: calc(100% - 2px);
+          border: $toggle-focus-inner-border;
+        }
       }
-    }
-
-    .blx-toggle-text {
-      padding: 10px 30px;
-      cursor: pointer;
-      border: 1px solid $ui-07;
-      background-color: $ui-00;
-
-      &:hover {
-        background-color: $selection;
-        color: $ui-00;
+      
+      &:hover ~ .blx-toggle-text, &.blx-hover ~ .blx-toggle-text {
+        background-color: $toggle-hover-background-color;
+        border: $toggle-hover-border;
+        color: $toggle-active-text-color;
+        box-shadow: none;
+        &::after {
+          display: none;
+        }
       }
     }
 
     &:first-of-type .blx-toggle-text {
       border-radius: $base-border-radius 0 0 $base-border-radius;
-      border-right: none;
+      border-right: 1px solid transparent;
+      &::after {
+        border-radius: $base-border-radius 0 0 $base-border-radius;
+      }
     }
 
     &:last-of-type .blx-toggle-text {
       border-radius: 0 $base-border-radius $base-border-radius 0;
-      border-left: none;
+      border-left: 1px solid transparent;
+      &::after {
+        border-radius: 0 $base-border-radius $base-border-radius 0;
+      }
     }
-
   }
 }

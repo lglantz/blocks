@@ -1,3 +1,30 @@
+// dropdown specific variables
+$dropdown-icon-color = $primary-00;
+
+$dropdown-default-text-color = $dark-02;
+$dropdown-focus-text-color = $dark-00;
+$dropdown-filled-text-color = $dark-00;
+
+$dropdown-default-background-color = $secondary-00;
+$dropdown-hover-background-color = $secondary-00;
+$dropdown-focus-background-color = $secondary-00;
+$dropdown-active-background-color = $secondary-00;
+
+$dropdown-default-border = 1px solid $light-01;
+$dropdown-active-border = 1px solid $light-02;
+$dropdown-hover-border = 1px solid $light-02;
+$dropdown-focus-border = 1px solid $focus;
+$dropdown-error-border = 1px solid $danger-00;
+
+$dropdown-item-default-text-color = $dark-00;
+$dropdown-item-hover-text-color = $secondary-00;
+$dropdown-item-focus-text-color = $secondary-00;
+
+$dropdown-item-default-background-color = transparent;
+$dropdown-item-hover-background-color = $primary-00;
+$dropdown-item-focus-background-color = $primary-00;
+
+// dropdown styles
 .blx-dropdown-wrapper {
   display: inline-flex;
 }
@@ -21,8 +48,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background-color: $ui-00;
-  border: 1px solid $ui-03;
+  background-color: $dropdown-default-background-color;
+  border: $dropdown-default-border;
   blxUIPlaceholder();
   margin: 0;
 
@@ -39,7 +66,7 @@
     border: 1px solid transparent;
     mask: url('../svgs/icon-down.svg') no-repeat 50% 50%;
     transition: transform 300ms;
-    background-color: $interactive;
+    background-color: $dropdown-icon-color;
   }
 
   &.blx-active::after {
@@ -50,8 +77,9 @@
   &:focus, &.blx-focus {
     margin: 0;
     outline: none;
-    border: 1px solid $selection;
-    color: $text-01;
+    background-color: $dropdown-focus-background-color;
+    border: $dropdown-focus-border;
+    color: $dropdown-focus-text-color;
 
     &::after {
       top: 10px;
@@ -67,17 +95,17 @@
   }
 
   &:hover, &.blx-hover {
-    border: 1px solid $ui-03;
-    box-shadow: 0 0 0 1px $ui-03;
+    background-color: $dropdown-hover-background-color;
+    border: $dropdown-hover-border;
   }
 
   &.blx-invalid {
-    border: 1px solid $error;
+    border: $dropdown-error-border;
   }
 
   .blx-icon {
     margin: 12px 10px 12px 0;
-    background-color: $ui-07;
+    background-color: $light-02;
     pointer-events: none;
 
     & + span {
@@ -93,26 +121,26 @@
 }
 
 .blx-dropdown-text {
-  color: $text-01;
+  color: $dropdown-filled-text-color;
 }
 
 .blx-dropdown-placeholder {
-  color: $ui-07;
+  color: $dropdown-default-text-color;
 }
 
 .blx-dropdown-menu {
   position: absolute;
   top: 100%;
   width: 100%;
-  border-radius: 7px;
+  border-radius: $base-border-radius;
   z-index: 1;
   margin: 8px 0;
   padding: 8px 0;
   list-style-type: none;
 
-  background-color: $ui-00;
-  border: solid 1px $ui-04;
-  box-shadow: 0 3px 6px 0 $interactive-shadow;
+  background-color: $dropdown-default-background-color;
+  border: $dropdown-default-border;
+  box-shadow: $default-box-shadow;
 }
 
 .blx-dropdown-list {
@@ -121,7 +149,7 @@
 }
 
 .blx-dropdown-item {
-  background: transparent;
+  background: $dropdown-item-default-background-color;
 
   a, button {
     display: block;
@@ -140,24 +168,24 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     cursor: pointer;
-    color: $text-01;
+    color: $dropdown-item-default-text-color;
 
     &:focus, &.blx-focus, &:active, &.blx-active {
       outline: none;
-      color: $ui-00;
-      background-color: $interactive;
+      color: $dropdown-item-focus-text-color;
+      background-color: $dropdown-item-focus-background-color;
     }
   }
 
   &:hover, &.blx-hover {
-    background-color: $interactive
+    background-color: $dropdown-item-hover-background-color;
     a, button {
       text-decoration: none;
-      color: $ui-00;
+      color: $dropdown-item-hover-text-color;
     }
 
     .blx-icon {
-      background-color: $ui-00
+      background-color: $dropdown-item-hover-text-color;
     }
   }
 }

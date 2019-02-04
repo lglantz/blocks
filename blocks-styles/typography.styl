@@ -4,7 +4,7 @@ blxBaseText() {
   font-size: $base-font-size;
   line-height: 24px;
   text-align: left;
-  color: $text-01;
+  color: $dark-00;
   margin-bottom: 12px;
 }
 
@@ -12,20 +12,20 @@ blxLink() {
   font-size: 14px;
   line-height: 18px;
   font-weight: $normal-weight;
-  color: $interactive;
+  color: $primary-00;
   cursor: pointer;
   background: transparent;
   border: none;
   text-align: left;
 
   &:hover, &.blx-hover {
-    color: $interactive-hover;
+    color: $primary-01;
   }
 
   &:focus, &.blx-focus {
     outline: none;
     color: $white;
-    background-color: $selection;
+    background-color: $focus;
   }
 
   &.blx-disabled {
@@ -36,7 +36,7 @@ blxLink() {
 
 blxH() {
   font-weight: $bold-weight;
-  color: $text-01;
+  color: $dark-00;
 }
 
 blxHXL() {
@@ -106,13 +106,13 @@ blxUIText() {
   font-weight: $normal-weight;
   font-size: 14px;
   line-height: 14px;
-  color: $text-01;
+  color: $dark-00;
   margin-bottom: 6px;
 }
 
 blxUIPlaceholder() {
   blxUIText();
-  color: $ui-07;
+  color: $light-02;
 }
 
 // use those mixins to define our base text styles
@@ -157,12 +157,12 @@ h6 {
   font-weight: $medium-weight;
   font-size: 16px;
   line-height: 18px;
-  color: $text-01;
+  color: $dark-00;
   margin-top: 12px;
   margin-bottom: 6px;
 
   &.light {
-    color: $ui-00;
+    color: $secondary-00;
   }
 }
 
@@ -170,7 +170,7 @@ h6 {
   font-weight: $medium-weight;
   font-size: 14px;
   line-height: 18px;
-  color: $text-01;
+  color: $dark-00;
   letter-spacing: 0.005rem;
   margin-top: 18px;
 }
@@ -184,7 +184,7 @@ h6 {
   font-size: 14px;
   line-height: 24px;
   text-transform: uppercase;
-  color: $text-01;
+  color: $dark-00;
   margin-bottom: 12px;
 }
 
@@ -192,7 +192,7 @@ h6 {
   font-weight: $normal-weight;
   font-size: 12px;
   line-height: 18px;
-  color: $text-01;
+  color: $dark-00;
   letter-spacing: 0.05rem;
   margin-bottom: 6px;
 }
@@ -208,7 +208,7 @@ h6 {
 }
 
 .blx-invalid-input-message {
-  color: $error;
+  color: $danger-00;
   font-size: 12px;
   line-height: 16px;
   position: absolute;
@@ -220,11 +220,11 @@ h6 {
 }
 
 .blx-interactive {
-  color: $interactive;
+  color: $primary-00;
 }
 
 .blx-inactive {
-  color: $text-02;
+  color: $dark-02;
 }
 
 .blx-success {
@@ -236,7 +236,7 @@ h6 {
 }
 
 .blx-error {
-  color: $error;
+  color: $danger-00;
 }
 
 .blx-information {

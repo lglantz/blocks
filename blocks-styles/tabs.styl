@@ -1,3 +1,14 @@
+// tab specific variables
+$tab-default-color = $primary-00;
+$tab-hover-color = $primary-01;
+$tab-focus-color = $focus;
+
+$tab-default-border = 4px solid $tab-default-color;
+$tab-hover-border = 4px solid $tab-hover-color;
+$tab-focus-border = 4px solid $tab-focus-color;
+$tab-inactive-border = 4px solid transparent;
+
+// tab styles
 .blx-horizontal-tabs, .blx-vertical-tabs {
   user-select: none;
   background-color: transparent;
@@ -23,31 +34,31 @@
     text-decoration: none;
     background-color: transparent;
     
-    color: $text-02;
+    color: $dark-02;
     border: none;
     
     &:active, &.blx-active {
-      color: $interactive;
+      color: $tab-default-color;
     }
     &:hover, &.blx-hover {
       text-decoration: none;
-      color: $interactive-hover;
+      color: $tab-hover-color;
     }
     &:focus, &.blx-focus {
       outline: none;
-      color: $selection;
+      color: $tab-focus-color;
       background: transparent;
     }
   }
   
   input[type="radio"]:checked + .blx-tab-item {
-    color: $interactive;
+    color: $tab-default-color;
   }
   input[type="radio"]:focus + .blx-tab-item {
-    color: $selection;
+    color: $tab-focus-color;
   }
   input[type="radio"]:hover + .blx-tab-item {
-    color: $interactive-hover;
+    color: $tab-hover-color;
   }
 }
 
@@ -55,34 +66,34 @@
   display: inline-flex;
   
   input[type="radio"]:checked + .blx-tab-item {
-    border-bottom: 4px solid $interactive;
+    border-bottom: $tab-default-border;
   }
   input[type="radio"]:focus + .blx-tab-item {
-    border-bottom: 4px solid $selection;
+    border-bottom: $tab-focus-border;
   }
   input[type="radio"]:hover + .blx-tab-item {
-    border-bottom: 4px solid $interactive-hover;
+    border-bottom: $tab-hover-border;
   }
   
   .blx-tab-item {
     margin: 10px 16px;
     padding: 4px 0;
     
-    border-bottom: 4px solid transparent;
+    border-bottom: $tab-inactive-border;
     &:active, &.blx-active {
-      border-bottom: 4px solid $interactive;
+      border-bottom: $tab-default-border;
     }
     &:hover, &.blx-hover {
-      border-bottom: 4px solid $interactive-hover;
+      border-bottom: $tab-hover-border;
     }
     &:focus, &.blx-focus {
-      border-bottom: 4px solid $selection;
+      border-bottom: $tab-focus-border;
     }
   }
   
   &.blx-disabled {
     .blx-tab-item {
-      border-bottom: 4px solid transparent;
+      border-bottom: $tab-inactive-border;
     }
   }
 }
@@ -91,13 +102,13 @@
   display: block;
   
   input[type="radio"]:checked + .blx-tab-item {
-    border-left: 4px solid $interactive;
+    border-left: $tab-default-border;
   }
   input[type="radio"]:focus + .blx-tab-item {
-    border-left: 4px solid $selection;
+    border-left: $tab-focus-border;
   }
   input[type="radio"]:hover + .blx-tab-item {
-    border-left: 4px solid $interactive-hover;
+    border-left: $tab-hover-border;
   }
   
   .blx-tab-item {
@@ -106,21 +117,21 @@
     margin-left: -12px;
     padding: 4px 8px;
     
-    border-left: 4px solid transparent;
+    border-left: $tab-inactive-border;
     &:active, &.blx-active {
-      border-left: 4px solid $interactive;
+      border-left: $tab-default-border;
     }
     &:hover, &.blx-hover {
-      border-left: 4px solid $interactive-hover;
+      border-left: $tab-hover-border;
     }
     &:focus, &.blx-focus {
-      border-left: 4px solid $selection;
+      border-left: $tab-focus-border;
     }
   }
   
   &.blx-disabled {
     .blx-tab-item {
-      border-left: 4px solid transparent;
+      border-left: $tab-inactive-border;
     }
   }
 }
@@ -135,7 +146,7 @@
   }
   
   .blx-tab-item {
-    color: $text-02;
+    color: $dark-02;
     border-color: transparent;
   }
 }

@@ -1,3 +1,55 @@
+// button specific variables
+$button-height = 44px;
+$button-font-size = 16px;
+
+$button-primary-background-color = $primary-00;
+$button-primary-hover-background-color = $primary-01;
+$button-primary-focus-background-color = $primary-01;
+$button-primary-active-background-color = $primary-02;
+
+$button-primary-default-border = 2px solid $primary-00;
+$button-primary-hover-border = 2px solid $primary-01;
+$button-primary-focus-border = 2px solid $focus;
+$button-primary-focus-inner-border = 1px solid $secondary-00;
+$button-primary-active-border = 2px solid $primary-02;
+
+$button-primary-text-color = $secondary-00;
+$button-primary-hover-text-color = $secondary-00;
+$button-primary-focus-text-color = $secondary-00;
+$button-primary-active-text-color = $secondary-00;
+
+$button-secondary-background-color = $secondary-00;
+$button-secondary-hover-background-color = $secondary-01;
+$button-secondary-focus-background-color = $secondary-01;
+$button-secondary-active-background-color = $secondary-02;
+
+$button-secondary-default-border = 2px solid $secondary-00;
+$button-secondary-hover-border = 2px solid $secondary-01;
+$button-secondary-focus-border = 2px solid $focus;
+$button-secondary-active-border = 2px solid $secondary-02;
+
+$button-secondary-text-color = $primary-00;
+$button-secondary-hover-text-color = $primary-00;
+$button-secondary-focus-text-color = $primary-00;
+$button-secondary-active-text-color = $primary-00;
+
+$button-danger-background-color = $danger-00;
+$button-danger-hover-background-color = $danger-01;
+$button-danger-focus-background-color = $danger-01;
+$button-danger-active-background-color = $danger-02;
+
+$button-danger-default-border = 2px solid $danger-00;
+$button-danger-hover-border = 2px solid $danger-01;
+$button-danger-focus-border = 2px solid $focus;
+$button-danger-focus-inner-border = 1px solid $secondary-00;
+$button-danger-active-border = 2px solid $danger-02;
+
+$button-danger-text-color = $secondary-00;
+$button-danger-hover-text-color = $secondary-00;
+$button-danger-focus-text-color = $secondary-00;
+$button-danger-active-text-color = $secondary-00;
+
+// button styles
 .blx-button {
   display: flex;
   position: relative;
@@ -20,7 +72,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  box-shadow: 0 1px 3px 0 $button-shadow-color;
+  box-shadow: $default-box-shadow;
   
   .blx-icon {
     position: relative;
@@ -40,12 +92,10 @@
   &:focus, &.blx-focus {
     outline: none;
     text-decoration: none;
-    box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
   }
 
   &:hover, &.blx-hover {
     text-decoration: none;
-    box-shadow: 0 1px 3px 0 $button-hover-shadow-color;
   }
 }
 
@@ -54,18 +104,18 @@
 }
 
 .blx-primary {
-  background-color: $primary-button-background-color;
-  border: 2px solid $primary-button-border-color;
-  color: $primary-button-text-color;
+  background-color: $button-primary-background-color;
+  border: $button-primary-default-border;
+  color: $button-primary-text-color;
   
   .blx-icon {
-    background-color: $primary-button-text-color;
+    background-color: $button-primary-text-color;
   }
   
   &:focus, &.blx-focus {
-    border: 2px solid $primary-button-focus-border-color;
-    background-color: $primary-button-focus-background-color;
-    color: $primary-button-focus-text-color;
+    border: $button-primary-focus-border;
+    background-color: $button-primary-focus-background-color;
+    color: $button-primary-focus-text-color;
     
     &::before {
       content: "";
@@ -75,14 +125,14 @@
       border-radius: 5px;
       width: calc(100% - 2px);
       height: calc(100% - 2px);
-      border: 1px solid $ui-00;
+      border: $button-primary-focus-inner-border;
     }
   }
   
   &:hover, &.blx-hover {
-    background-color: $primary-button-hover-background-color;
-    border: 2px solid $primary-button-hover-border-color;
-    color: $primary-button-hover-text-color;
+    background-color: $button-primary-hover-background-color;
+    border: $button-primary-hover-border;
+    color: $button-primary-hover-text-color;
     
     &::before {
       content: none;
@@ -90,9 +140,9 @@
   }
   
   &:active, &.blx-active {
-    background-color: $primary-button-active-background-color;
-    border: 2px solid $primary-button-active-border-color;
-    color: $primary-button-active-text-color;
+    background-color: $button-primary-active-background-color;
+    border: $button-primary-active-border;
+    color: $button-primary-active-text-color;
     &::before {
       content: none;
     }
@@ -100,24 +150,24 @@
 }
 
 .blx-secondary {
-  background-color: $secondary-button-background-color;
-  border: 2px solid $secondary-button-border-color;
-  color: $secondary-button-text-color;
+  background-color: $button-secondary-background-color;
+  border: $button-secondary-default-border;
+  color: $button-secondary-text-color;
   
   .blx-icon {
-    background-color: $secondary-button-text-color;
+    background-color: $button-secondary-text-color;
   }
   
   &:focus, &.blx-focus {
-    border: 2px solid $secondary-button-focus-border-color;
-    background-color: $secondary-button-focus-background-color;
-    color: $secondary-button-focus-text-color;
+    border: $button-secondary-focus-border;
+    background-color: $button-secondary-focus-background-color;
+    color: $button-secondary-focus-text-color;
   }
   
   &:hover, &.blx-hover {
-    background-color: $secondary-button-hover-background-color;
-    border: 2px solid $secondary-button-hover-border-color;
-    color: $secondary-button-hover-text-color;
+    background-color: $button-secondary-hover-background-color;
+    border: $button-secondary-hover-border;
+    color: $button-secondary-hover-text-color;
     
     &::before {
       content: none;
@@ -125,9 +175,9 @@
   }
   
   &:active, &.blx-active {
-    background-color: $secondary-button-active-background-color;
-    border: 2px solid $secondary-button-active-border-color;
-    color: $secondary-button-active-text-color;
+    background-color: $button-secondary-active-background-color;
+    border: $button-secondary-active-border;
+    color: $button-secondary-active-text-color;
     &::before {
       content: none;
     }
@@ -135,18 +185,18 @@
 }
 
 .blx-danger {
-  background-color: $danger-button-background-color;
-  border: 2px solid $danger-button-border-color;
-  color: $danger-button-text-color;
+  background-color: $button-danger-background-color;
+  border: $button-danger-default-border;
+  color: $button-danger-text-color;
   
   .blx-icon {
-    background-color: $danger-button-text-color;
+    background-color: $button-danger-text-color;
   }
   
   &:focus, &.blx-focus {
-    border: 2px solid $danger-button-focus-border-color;
-    background-color: $danger-button-focus-background-color;
-    color: $danger-button-focus-text-color;
+    border: $button-danger-focus-border;
+    background-color: $button-danger-focus-background-color;
+    color: $button-danger-focus-text-color;
     
     &::before {
       content: "";
@@ -156,38 +206,38 @@
       border-radius: 5px;
       width: calc(100% - 2px);
       height: calc(100% - 2px);
-      border: 1px solid $ui-00;
+      border: $button-danger-focus-inner-border
     }
     
     .blx-icon {
-      background-color: $danger-button-hover-text-color;
+      background-color: $button-danger-hover-text-color;
     }
   }
   
   &:hover, &.blx-hover {
-    background-color: $danger-button-hover-background-color;
-    border: 2px solid $danger-button-hover-border-color;
-    color: $danger-button-hover-text-color;
+    background-color: $button-danger-hover-background-color;
+    border: $button-danger-hover-border;
+    color: $button-danger-hover-text-color;
     
     &::before {
       content: none;
     }
     
     .blx-icon {
-      background-color: $danger-button-hover-text-color;
+      background-color: $button-danger-hover-text-color;
     }
   }
   
   &:active, &.blx-active {
-    background-color: $danger-button-active-background-color;
-    border: 2px solid $danger-button-active-border-color;
-    color: $danger-button-active-text-color;
+    background-color: $button-danger-active-background-color;
+    border: $button-danger-active-border;
+    color: $button-danger-active-text-color;
     &::before {
       content: none;
     }
     
     .blx-icon {
-      background-color: $danger-button-hover-text-color;
+      background-color: $button-danger-hover-text-color;
     }
   }
 }
