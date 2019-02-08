@@ -12,6 +12,8 @@ function closeOnClick(WrappedComponent) {
       this.close = this.close.bind(this);
       this.toggle = this.toggle.bind(this);
       this.closeOnClick = this.closeOnClick.bind(this);
+
+      this.ref = React.createRef();
     }
 
     open() {
@@ -41,24 +43,23 @@ function closeOnClick(WrappedComponent) {
     }
 
     closeOnClick(e) {
-      if (!this.domElement) return;
-      if (e.target === this.domElement || this.domElement.contains(e.target)) return;
+      if (!this.ref.current) return;
+      if (e.target === this.ref.current || this.ref.current.contains(e.target)) return;
       this.close();
       if (this.props.afterCloseOnClick) this.props.afterCloseOnClick(); // anything that needs to happen when the dropdown closes by clicking outside of it
     }
 
     render() {
       return (
-        <div ref={(node) => { this.domElement = node; }}>
-          <WrappedComponent
-            {...this.props}
-            {...this.state}
-            isOpen={this.state.isOpen}
-            toggle={this.toggle}
-            open={this.open}
-            close={this.close}
-          />
-        </div>
+        <WrappedComponent
+          {...this.props}
+          {...this.state}
+          forwardedRef={this.ref}
+          isOpen={this.state.isOpen}
+          toggle={this.toggle}
+          open={this.open}
+          close={this.close}
+        />
       );
     }
   }

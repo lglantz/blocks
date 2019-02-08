@@ -24,7 +24,7 @@ const DropdownMenu = (props) => {
   }
 
   return (
-    <div className="blx-dropdown-wrapper">
+    <div className="blx-dropdown-wrapper" ref={props.forwardedRef}>
       <div className="blx-dropdown">
 
         {/* DESCRIPTION */}
@@ -102,7 +102,8 @@ DropdownMenu.propTypes = {
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func,
   autoFocus: PropTypes.bool,
-  isValid: PropTypes.bool
+  isValid: PropTypes.bool,
+  forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
 };
 
 DropdownMenu.defaultProps = {

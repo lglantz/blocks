@@ -28,7 +28,7 @@ const Toggle = props => (
 );
 
 Toggle.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
     value: PropTypes.string,
@@ -38,7 +38,6 @@ Toggle.propTypes = {
 };
 
 Toggle.defaultProps = {
-  name: '',
   options: [],
   isDisabled: false
 };
