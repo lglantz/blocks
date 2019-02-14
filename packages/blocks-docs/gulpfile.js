@@ -65,7 +65,7 @@ gulp.task('build:icons', () => {
 });
 
 // build vendor JS bundle
-const vendors = ['react', 'react-dom', 'react-router-dom', 'prop-types', 'blocks-react'];
+const vendors = ['react', 'react-dom', 'react-router-dom', 'prop-types', 'blocks-react', 'mithril', 'blocks-mithril'];
 gulp.task('bundle:vendor', () => {
   const b = browserify({
     debug: false
@@ -88,7 +88,7 @@ gulp.task('bundle:react', (done) => {
   return glob('./_javascript/*.jsx', (err, files) => {
     if (err) { return done(err); }
     const tasks = files.map((entry) => {
-      return createBundle(entry);
+      return createBundle(entry, 'react');
     });
     return es.merge(tasks).on('end', done);
   });
@@ -99,14 +99,54 @@ gulp.task('watch:react', (done) => {
   return glob('./_javascript/*.jsx', (err, files) => {
     if (err) { return done(err); }
     const tasks = files.map((entry) => {
-      return createAndUpdateBundle(entry);
+      return createAndUpdateBundle(entry, 'react');
     });
     return es.merge(tasks).on('end', done);
   });
 });
 
+// build a separate JS bundle for each mithril component
+gulp.task('bundle:mithril', (done) => {
+  return glob('./_javascript/mithril/*.jsx', (err, files) => {
+    if (err) { return done(err); }
+    const tasks = files.map((entry) => {
+      return createBundle(entry, 'mithril');
+    });
+    return es.merge(tasks).on('end', done);
+  });
+});
+
+// build and watch a separate JS bundle for each mithril component
+gulp.task('watch:mithril', (done) => {
+  return glob('./_javascript/mithril/*.jsx', (err, files) => {
+    if (err) { return done(err); }
+    const tasks = files.map((entry) => {
+      return createAndUpdateBundle(entry, 'mithril');
+    });
+    return es.merge(tasks).on('end', done);
+  });
+});
+
+const getBabelConfig = (framework) => ({
+  presets: (framework === 'react') ? ['es2015', 'react'] : ['es2015'],
+  plugins: (framework === 'mithril') ? [
+    ["transform-react-jsx", {
+      pragma: "m"
+    }]
+  ] : []
+});
+
+const getBundleDest = (framework) => (framework === 'react') ? './lib' : './lib/mithril';
+
+const getBundleName = (entry) => {
+  const splitPath = entry.split('/');
+  const filename = splitPath[splitPath.length - 1];
+  const name = filename.split('.')[0];
+  return name;
+};
+
 // helper for creating React bundles
-const createBundle = (entry) => {
+const createBundle = (entry, framework) => {
   let b = browserify({
     entries: [entry],
     extensions: ['.jsx'],
@@ -114,25 +154,23 @@ const createBundle = (entry) => {
     cache: {},
     packageCache: {},
     transform: [
-      babelify.configure({
-        presets: ['es2015', 'react']
-      })
+      babelify.configure(getBabelConfig(framework))
     ]
   });
 
   b.on('log', gutil.log);
 
-  const name = entry.split('/')[2].split('.')[0];
+  const name = getBundleName(entry);
   return b.external(vendors)
     .bundle()
     .pipe(source(`${name}.js`))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest(path.join(__dirname, './lib')));
+    .pipe(gulp.dest(path.join(__dirname, getBundleDest(framework))));
 };
 
 // helper for creating and updating React bundles
-const createAndUpdateBundle = (entry) => {
+const createAndUpdateBundle = (entry, framework) => {
   let b = browserify({
     entries: [entry],
     extensions: ['.jsx'],
@@ -140,19 +178,17 @@ const createAndUpdateBundle = (entry) => {
     cache: {},
     packageCache: {},
     transform: [
-      babelify.configure({
-        presets: ['es2015', 'react']
-      })
+      babelify.configure(getBabelConfig(framework))
     ]
   }).plugin(watchify);
 
   const bundle = () => {
-    const name = entry.split('/')[2].split('.')[0];
+    const name = getBundleName(entry);
     return b.external(vendors)
       .bundle()
       .pipe(source(`${name}.js`))
       .pipe(buffer())
-      .pipe(gulp.dest(path.join(__dirname, './lib')));
+      .pipe(gulp.dest(path.join(__dirname, getBundleDest(framework))));
   }
 
   b.on('update', bundle);
@@ -184,6 +220,7 @@ gulp.task('server', [
   'watch:css',
   'bundle:vendor',
   'watch:react',
+  'watch:mithril'
 ], () => {
   const jekyll = child.spawn('jekyll', ['serve',
     '--source',
@@ -205,7 +242,8 @@ gulp.task('build', [
   'build:icons',
   'build:css',
   'bundle:vendor',
-  'bundle:react'
+  'bundle:react',
+  'bundle:mithril'
 ], () => {
   const jekyll = child.spawn('jekyll', ['build',
     '--source',

@@ -33,6 +33,15 @@ layout: default
     </div>
   {% endif %}
 
+  {% if page.mithril %}
+    {% capture mithril_link %}lib/{{page.mithril}}.js{% endcapture %}
+    <div class="l-flex-vertical doc-section">
+      <h3 id="mithril">Mithril Examples</h3>
+      <div id="mithril-preview"></div>
+      <script src="{{ mithril_link | relative_url }}"></script>
+    </div>
+  {% endif %}
+
   {% if page.examples %}
     <div class="l-flex-vertical doc-section">
       <h3 id="HTMLSnippets">HTML Code Snippets</h3>

@@ -19,6 +19,8 @@
   "dependencies": {
     "blocks-base": "0.1.1",
     "blocks-react": "0.1.1",
+    "blocks-mithril": "0.1.1",
+    "mithril": "^1.1.6",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
