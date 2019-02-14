@@ -6,13 +6,13 @@ var m = require('mithril');
 
 var Button = require('./Button.js');
 
-var ButtonPrimary = {
+var ButtonSecondary = {
   view: function view(vnode) {
     var props = vnode.attrs;
     return m(Button, _extends({}, props, {
-      classes: 'blx-primary'
+      classes: 'blx-secondary'
     }));
   }
 };
 
-module.exports = ButtonPrimary;
+module.exports = ButtonSecondary;

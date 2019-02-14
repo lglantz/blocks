@@ -2,17 +2,17 @@ const m = require('mithril');
 
 const Button = require('./Button.jsx');
 
-const ButtonPrimary = {
+const ButtonDanger = {
   view: (vnode) => {
     const props = vnode.attrs;
     return (
      <Button
         {...props}
-        classes="blx-primary"
+        classes="blx-danger"
       />
     );
   }
 };
 
-module.exports = ButtonPrimary;
+module.exports = ButtonDanger;
 
