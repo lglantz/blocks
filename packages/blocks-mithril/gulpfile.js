@@ -4,15 +4,7 @@ const replace = require('gulp-string-replace');
 
 const compileDir = (dir) => {
   return gulp.src(`./${dir}/*.jsx`)
-    .pipe(babel({
-        // presets: ['es2015'],
-        // plugins:[
-        //   "transform-react-jsx", {
-        //     "pragma": "m",
-        //     "pragmaFrag": "div"
-        //   }
-        // ]
-    }))
+    .pipe(babel()) // config specified in .babelrc
     .pipe(replace(/\.jsx/g, '.js', { logs: { enabled: false } }))
     .pipe(gulp.dest(`./dist/${dir}`))  
 }
