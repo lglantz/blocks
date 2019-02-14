@@ -9,4 +9,5 @@
 /node_modules/
 /packages/blocks-base/node_modules
 /packages/blocks-react/node_modules
+/packages/blocks-mithril/node_modules
 /packages/blocks-docs/node_modules
