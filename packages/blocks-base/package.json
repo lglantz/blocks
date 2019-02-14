@@ -1,0 +1,31 @@
+{
+  "name": "blocks-base",
+  "version": "0.1.1",
+  "description": "cbre build design system styles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floored/blocks.git"
+  },
+  "author": "emma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/floored/blocks/issues"
+  },
+  "homepage": "https://github.com/floored/blocks#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^8.3.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-json-sass": "0.0.2",
+    "gulp-json-stylus": "^0.1.2",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.7.0",
+    "postcss-css-variables": "^0.8.1"
+  }
+}

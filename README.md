@@ -20,13 +20,28 @@ const Checkbox = require('blocks/react-index').Input.Checkbox;
 
 ### Developing Blocks
 
-If you want to view the Blocks docs or develop Blocks, you'll want to download [Jekyll](https://jekyllrb.com/).
-
-For those that also work on Build or Plans, you may need to update RVM and your Ruby version (this is currently using Ruby 2.4.3).
-
-Once you've updated Ruby, be sure you're using the new version:
+Install lerna (the tool we use to manage multiple packages):
 ```
-rvm use ruby-2.4.3
+npm install -g lerna
+```
+
+Use lerna to install package dependencies and interdependencies:
+```
+lerna bootstrap
+```
+
+To build the `blocks-base` or `blocks-react` packages, navigate to the module in `/packages` and run:
+```
+gulp build
+```
+
+To build the `blocks-docs` (or documentation) package, navigate to the module in `/packages` and follow these instructions:
+
+You'll want to download [Jekyll](https://jekyllrb.com/).
+
+Use ruby v2.4.4 (you might need to install this first):
+```
+rvm use ruby-2.4.4
 ```
 
 Install [Bundler](https://bundler.io/):
@@ -39,16 +54,12 @@ Install from the bundle (this will give you Jekyll):
 bundle install
 ```
 
-You'll also need to install some node modules
-
-```
-npm install
-```
-
 Run the documentation site with
 
 ```
 gulp server
 ```
+
+Note: if you update the `blocks-base` or `blocks-react` packages and want those local changes reflected locally - you'll need to run `gulp build` for each of those packages
 
 You can navigate to the documentation site at http://localhost:8080.

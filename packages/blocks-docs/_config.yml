@@ -1,0 +1,18 @@
+source: .
+destination: _site
+exclude: ['_javascript', 'vendor', 'node_modules', 'package*', 'gulpfiles.js', 'Gemfile*']
+port: 8080
+permalink: pretty
+collections:
+  styles:
+    output: true
+    permalink: /styles/:path/
+  components:
+    output: true
+    permalink: /components/:path/
+  patterns:
+    output: true
+    permalink: /patterns/:path/
+  help:
+    output: true
+    permalink: /help/:path/
