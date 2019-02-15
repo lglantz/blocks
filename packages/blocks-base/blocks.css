@@ -2498,6 +2498,7 @@ a.blx-button {
   color: var(--secondary-00, #fff);
 }
 .blx-toggle .blx-toggle-container input:focus ~ .blx-toggle-text {
+  padding: 10px 29px;
   background-color: #008b61;
   background-color: var(--primary-01, #008b61);
   border: 2px solid #49a1ff;
@@ -2506,6 +2507,7 @@ a.blx-button {
   color: var(--secondary-00, #fff);
 }
 .blx-toggle .blx-toggle-container input.blx-focus ~ .blx-toggle-text {
+  padding: 10px 29px;
   background-color: #008b61;
   background-color: var(--primary-01, #008b61);
   border: 2px solid #49a1ff;
@@ -2534,6 +2536,7 @@ a.blx-button {
   border: 1px solid var(--secondary-00, #fff);
 }
 .blx-toggle .blx-toggle-container input:hover ~ .blx-toggle-text {
+  padding: 10px 30px;
   background-color: #008b61;
   background-color: var(--primary-01, #008b61);
   border: 1px solid #008b61;
@@ -2543,6 +2546,7 @@ a.blx-button {
   box-shadow: none;
 }
 .blx-toggle .blx-toggle-container input.blx-hover ~ .blx-toggle-text {
+  padding: 10px 30px;
   background-color: #008b61;
   background-color: var(--primary-01, #008b61);
   border: 1px solid #008b61;
@@ -2553,6 +2557,30 @@ a.blx-button {
 }
 .blx-toggle .blx-toggle-container input:hover ~ .blx-toggle-text::after,
 .blx-toggle .blx-toggle-container input.blx-hover ~ .blx-toggle-text::after {
+  display: none;
+}
+.blx-toggle .blx-toggle-container input:active ~ .blx-toggle-text {
+  padding: 10px 30px;
+  background-color: #00704f;
+  background-color: var(--primary-02, #00704f);
+  border: 1px solid #00704f;
+  border: 1px solid var(--primary-02, #00704f);
+  color: #fff;
+  color: var(--secondary-00, #fff);
+  box-shadow: none;
+}
+.blx-toggle .blx-toggle-container input.blx-active ~ .blx-toggle-text {
+  padding: 10px 30px;
+  background-color: #00704f;
+  background-color: var(--primary-02, #00704f);
+  border: 1px solid #00704f;
+  border: 1px solid var(--primary-02, #00704f);
+  color: #fff;
+  color: var(--secondary-00, #fff);
+  box-shadow: none;
+}
+.blx-toggle .blx-toggle-container input:active ~ .blx-toggle-text::after,
+.blx-toggle .blx-toggle-container input.blx-active ~ .blx-toggle-text::after {
   display: none;
 }
 .blx-toggle .blx-toggle-container:first-of-type .blx-toggle-text {

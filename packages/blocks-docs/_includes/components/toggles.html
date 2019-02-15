@@ -1,31 +1,159 @@
-{% capture example %}
+{% capture toggle_example_default %}
   <div class="blx-toggle">
     <label class="blx-toggle-container">
-      <input class="blx-focus" type="radio" name="toggle-example" checked />
+      <input type="radio" name="toggle-example-default" checked />
       <span class="blx-toggle-text">Option 1</span>
     </label>
     <label class="blx-toggle-container">
-      <input type="radio" name="toggle-example" />
+      <input type="radio" name="toggle-example-default" />
       <span class="blx-toggle-text">Option 2</span>
     </label>
     <label class="blx-toggle-container">
-      <input type="radio" name="toggle-example" />
-      <span class="blx-toggle-text">Option 3</span>
-    </label>
-  </div>
-
-  <div class="blx-toggle blx-disabled">
-    <label class="blx-toggle-container">
-      <input type="radio" name="toggle-example-2" checked disabled />
-      <span class="blx-toggle-text">Option 1</span>
-    </label>
-    <label class="blx-toggle-container">
-      <input type="radio" name="toggle-example-2" disabled />
-      <span class="blx-toggle-text">Option 2</span>
-    </label>
-    <label class="blx-toggle-container">
-      <input type="radio" name="toggle-example-2" disabled />
+      <input type="radio" name="toggle-example-default" />
       <span class="blx-toggle-text">Option 3</span>
     </label>
   </div>
 {% endcapture %}
+
+{% capture toggle_example_hovered %}
+  <div class="blx-toggle">
+    <label class="blx-toggle-container">
+      <input class="blx-hover" type="radio" name="toggle-example-hovered" checked />
+      <span class="blx-toggle-text">Option 1</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-hovered" />
+      <span class="blx-toggle-text">Option 2</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-hovered" />
+      <span class="blx-toggle-text">Option 3</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture toggle_example_active %}
+  <div class="blx-toggle">
+    <label class="blx-toggle-container">
+      <input class="blx-active" type="radio" name="toggle-example-active" checked />
+      <span class="blx-toggle-text">Option 1</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-active" />
+      <span class="blx-toggle-text">Option 2</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-active" />
+      <span class="blx-toggle-text">Option 3</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture toggle_example_focused %}
+  <div class="blx-toggle">
+    <label class="blx-toggle-container">
+      <input class="blx-focus" type="radio" name="toggle-example-focused" checked />
+      <span class="blx-toggle-text">Option 1</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-focused" />
+      <span class="blx-toggle-text">Option 2</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-focused" />
+      <span class="blx-toggle-text">Option 3</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture toggle_example_disabled %}
+  <div class="blx-toggle blx-disabled">
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-disabled" checked disabled />
+      <span class="blx-toggle-text">Option 1</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-disabled" disabled />
+      <span class="blx-toggle-text">Option 2</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-disabled" disabled />
+      <span class="blx-toggle-text">Option 3</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture example %}
+  <!-- don't use captures because radio buttons group based on name -->
+  <div class="blx-toggle">
+    <label class="blx-toggle-container">
+      <input class="blx-focus" type="radio" name="toggle-example-focused-2" checked />
+      <span class="blx-toggle-text">Option 1</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-focused-2" />
+      <span class="blx-toggle-text">Option 2</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-focused-2" />
+      <span class="blx-toggle-text">Option 3</span>
+    </label>
+  </div>
+  <div class="blx-toggle blx-disabled">
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-disabled-2" checked disabled />
+      <span class="blx-toggle-text">Option 1</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-disabled-2" disabled />
+      <span class="blx-toggle-text">Option 2</span>
+    </label>
+    <label class="blx-toggle-container">
+      <input type="radio" name="toggle-example-disabled-2" disabled />
+      <span class="blx-toggle-text">Option 3</span>
+    </label>
+  </div>
+{% endcapture %}
+
+<div class="l-flex-vertical">
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-ui-small">
+      Default
+    </span>
+    <div class="doc-state-content">
+      {{ toggle_example_default }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-ui-small">
+      Hover
+    </span>
+    <div class="doc-state-content">
+      {{ toggle_example_hovered }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-ui-small">
+      Active
+    </span>
+    <div class="doc-state-content">
+      {{ toggle_example_active }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-ui-small">
+      Focus
+    </span>
+    <div class="doc-state-content">
+      {{ toggle_example_focused }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-ui-small">
+      Disabled
+    </span>
+    <div class="doc-state-content">
+      {{ toggle_example_disabled }}
+    </div>
+  </div>
+</div>
