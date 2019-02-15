@@ -4,19 +4,23 @@ $checkbox-size = 18px;
 $checkbox-check-color = $secondary-00;
 
 $checkbox-unselected-border = 1px solid $light-01;
-$checkbox-unselected-hover-border = 1px solid $light-01;
+$checkbox-unselected-hover-border = 1px solid $light-02;
+$checkbox-unselected-active-border = 1px solid $light-02;
 $checkbox-unselected-focus-border = 2px solid $focus;
 
 $checkbox-unselected-background-color = $secondary-00;
-$checkbox-unselected-hover-background-color = $secondary-00;
-$checkbox-unselected-focus-background-color = $secondary-00;
+$checkbox-unselected-hover-background-color = $secondary-01;
+$checkbox-unselected-active-background-color = $secondary-02;
+$checkbox-unselected-focus-background-color = $secondary-01;
 
 $checkbox-selected-border = 1px solid $primary-00;
 $checkbox-selected-hover-border = 1px solid $primary-01;
+$checkbox-selected-active-border = 1px solid $primary-02;
 $checkbox-selected-focus-border = 2px solid $focus;
 
 $checkbox-selected-background-color = $primary-00;
 $checkbox-selected-hover-background-color = $primary-01;
+$checkbox-selected-active-background-color = $primary-02;
 $checkbox-selected-focus-background-color = $primary-00;
 
 // checkbox styles
@@ -27,7 +31,7 @@ $checkbox-selected-focus-background-color = $primary-00;
   margin: 9px 0;
   cursor: pointer;
   user-select: none;
-  
+
   .blx-label {
     line-height: ($checkbox-size + 4px);
   }
@@ -86,6 +90,7 @@ $checkbox-selected-focus-background-color = $primary-00;
     &:focus + .blx-checkmark, &.blx-focus + .blx-checkmark {
       outline: none;
       border: $checkbox-unselected-focus-border;
+      background-color: $checkbox-unselected-focus-background-color;
       &::before {
         content: "";
         position: absolute;
@@ -119,6 +124,32 @@ $checkbox-selected-focus-background-color = $primary-00;
     input[type="checkbox"]:checked ~ .blx-checkmark {
       background-color: $checkbox-selected-hover-background-color;
       border: $checkbox-selected-hover-border;
+      &::before {
+        display: none;
+      }
+      &::after {
+        left: 6px;
+        top: 3px;
+      }
+    }
+  }
+
+  &:active, &.blx-active {
+    input[type="checkbox"] ~ .blx-checkmark {
+      background-color: $checkbox-unselected-active-background-color;
+      border: $checkbox-unselected-active-border;
+      &::before {
+        display: none;
+      }
+      &::after {
+        left: 6px;
+        top: 3px;
+      }
+    }
+
+    input[type="checkbox"]:checked ~ .blx-checkmark {
+      background-color: $checkbox-selected-active-background-color;
+      border: $checkbox-selected-active-border;
       &::before {
         display: none;
       }

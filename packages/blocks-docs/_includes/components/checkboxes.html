@@ -30,6 +30,22 @@
   </label>
 {% endcapture %}
 
+{% capture checkbox_example_active_checked %}
+  <label class="blx-checkbox blx-active">
+    <div class="blx-label">Selected, Active</div>
+    <input type="checkbox" checked />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
+{% capture checkbox_example_active_unchecked %}
+  <label class="blx-checkbox blx-active">
+    <div class="blx-label">Unselected, Active</div>
+    <input type="checkbox" />
+    <span class="blx-checkmark"></span>
+  </label>
+{% endcapture %}
+
 {% capture checkbox_example_focused_checked %}
   <label class="blx-checkbox">
     <div class="blx-label">Selected, Focused</div>
@@ -86,6 +102,15 @@
     <div class="doc-state-content">
       {{ checkbox_example_hovered_unchecked }}
       {{ checkbox_example_hovered_checked }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal">
+    <span class="doc-state-title blx-ui-small">
+      Active
+    </span>
+    <div class="doc-state-content">
+      {{ checkbox_example_active_unchecked }}
+      {{ checkbox_example_active_checked }}
     </div>
   </div>
   <div class="l-flex-horizontal">
