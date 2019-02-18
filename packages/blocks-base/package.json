@@ -1,6 +1,6 @@
 {
   "name": "blocks-base",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "description": "cbre build design system styles",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
     "url": "https://github.com/floored/blocks/issues"
   },
   "homepage": "https://github.com/floored/blocks#readme",
-  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^8.3.0",
     "gulp": "^3.9.1",

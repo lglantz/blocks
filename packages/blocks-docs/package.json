@@ -1,6 +1,6 @@
 {
   "name": "blocks-docs",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "description": "cbre build design system documentation",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/floored/blocks#readme",
   "dependencies": {
-    "blocks-base": "0.1.1",
-    "blocks-react": "0.1.1",
+    "blocks-base": "^0.1.2-alpha.0",
+    "blocks-react": "^0.1.2-alpha.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
