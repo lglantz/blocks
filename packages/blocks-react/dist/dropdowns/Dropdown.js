@@ -27,7 +27,7 @@ var DropdownMenu = function DropdownMenu(props) {
 
   return React.createElement(
     'div',
-    { className: 'blx-dropdown-wrapper' },
+    { className: 'blx-dropdown-wrapper', ref: props.forwardedRef },
     React.createElement(
       'div',
       { className: 'blx-dropdown' },
@@ -103,7 +103,8 @@ DropdownMenu.propTypes = {
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func,
   autoFocus: PropTypes.bool,
-  isValid: PropTypes.bool
+  isValid: PropTypes.bool,
+  forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
 };
 
 DropdownMenu.defaultProps = {

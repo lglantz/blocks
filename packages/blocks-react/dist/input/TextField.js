@@ -84,7 +84,10 @@ var TextField = function TextField(props) {
         onKeyUp: props.onKeyUp,
         onKeyDown: props.onKeyDown,
         ref: props.forwardedRef,
-        autoFocus: props.autoFocus
+        autoFocus: props.autoFocus,
+        min: props.min,
+        max: props.max,
+        step: props.step
       }),
       iconElement
     ),
@@ -111,7 +114,10 @@ TextField.propTypes = {
   onBlur: PropTypes.func,
   autoComplete: PropTypes.string,
   readOnly: PropTypes.bool,
-  autoFocus: PropTypes.bool
+  autoFocus: PropTypes.bool,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  step: PropTypes.number
 };
 
 TextField.defaultProps = {
@@ -133,7 +139,10 @@ TextField.defaultProps = {
   onBlur: null,
   autoComplete: '',
   readOnly: false,
-  autoFocus: false
+  autoFocus: false,
+  min: null,
+  max: null,
+  step: 1
 };
 
 module.exports = React.forwardRef(function (props, ref) {

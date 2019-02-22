@@ -15,7 +15,7 @@ var RadioTabs = function RadioTabs(props) {
         },
         React.createElement('input', {
           type: 'radio',
-          name: tab,
+          name: props.name,
           value: tab,
           checked: idx === props.activeTabIdx,
           disabled: props.isDisabled,
@@ -37,6 +37,7 @@ RadioTabs.propTypes = {
   tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
   onChange: PropTypes.func.isRequired,
   activeTabIdx: PropTypes.number,
+  name: PropTypes.string.isRequired, // needs to be unique for each tab group
   isDisabled: PropTypes.bool,
   isVertical: PropTypes.bool
 };

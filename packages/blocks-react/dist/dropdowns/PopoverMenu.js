@@ -17,7 +17,7 @@ var PopoverMenu = function PopoverMenu(props) {
   }
   return React.createElement(
     'div',
-    { className: 'blx-popover-wrapper' },
+    { className: 'blx-popover-wrapper', ref: props.forwardedRef },
     props.text && React.createElement(
       'span',
       { className: 'blx-h5' },
@@ -78,7 +78,8 @@ PopoverMenu.propTypes = {
   })),
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func,
-  autoFocus: PropTypes.bool
+  autoFocus: PropTypes.bool,
+  forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
 };
 
 PopoverMenu.defaultProps = {
