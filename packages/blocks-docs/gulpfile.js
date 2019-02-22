@@ -40,7 +40,7 @@ gulp.task('build:blocksDocsCSS', () => {
 
 // rebuild all CSS
 gulp.task('build:css', ['build:blocksDocsCSS'], () => {
-  gulp.src('node_modules/blocks-base/blocks.css')
+  gulp.src('node_modules/blocks-base/dist/blocks.css')
     .pipe(gulp.dest('css/'));
 });
 

@@ -46,7 +46,7 @@ gulp.task('build:blocksCSS', () => {
     }))
     .pipe(postcss(cssPlugins))
     .pipe(rename('blocks.css'))
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest('./dist'));
 });
 
 
