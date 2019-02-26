@@ -22,6 +22,7 @@ class TabPreview extends React.Component {
       <div>
         { getPreviewComponent('Horizontal',
             <RadioTabs
+              name="horizontal-tabs"
               tabs={
                 [
                   'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
@@ -33,6 +34,7 @@ class TabPreview extends React.Component {
         ) }
         { getPreviewComponent('Horizontal disabled',
             <RadioTabs
+              name="horizontal-disabled-tabs"
               tabs={
                 [
                   'Disabled Tab 1', 'Disabled Tab 2', 'Disabled Tab 3', 'Disabled Tab 4'
@@ -45,6 +47,7 @@ class TabPreview extends React.Component {
         ) }
         { getPreviewComponent('Link Tabs',
             <LinkTabs
+              name="link-tabs"
               tabs={
                 [
                   { name: 'Tab 1', href: '#' },
@@ -57,6 +60,7 @@ class TabPreview extends React.Component {
         ) }
         { getPreviewComponent('Vertical',
             <RadioTabs
+              name="vertical-tabs"
               tabs={
                 [
                   'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
