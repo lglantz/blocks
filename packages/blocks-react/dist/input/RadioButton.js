@@ -38,7 +38,8 @@ RadioButton.defaultProps = {
   text: '',
   value: '',
   isDisabled: false,
-  isChecked: false
+  isChecked: false,
+  isValid: true
 };
 
 module.exports = RadioButton;
