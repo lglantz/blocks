@@ -550,7 +550,7 @@ body {
   padding: 16px;
   margin: 12px 0;
   border-top: 3px solid;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 7px 7px;
   background-color: #fff;
   background-color: var(--secondary-00, #fff);
   box-shadow: 0 1px 2px 0 rgba(170,183,178,0.6);
@@ -563,6 +563,7 @@ body {
 .blx-alert .blx-icon-close {
   background-color: #009f6f;
   background-color: var(--primary-00, #009f6f);
+  width: 16px;
 }
 .blx-alert .blx-icon-close:hover {
   background-color: #008b61;
