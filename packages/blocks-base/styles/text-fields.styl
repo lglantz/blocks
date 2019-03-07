@@ -5,13 +5,14 @@ $text-field-date-icon-color = $primary-00;
 
 $text-field-text-color = $dark-00;
 $text-field-prefix-suffix-color = $dark-00;
-$text-field-helper-text-color = $dark-02;
 
 $text-field-default-border = 1px solid $light-01;
 $text-field-active-border = 1px solid $light-02;
 $text-field-hover-border = 1px solid $light-02;
 $text-field-focus-border = 1px solid $focus;
 $text-field-error-border = 1px solid $danger-00;
+
+$header-text-field-invis-border = 1px solid transparent;
 
 // text field styles
 .blx-text-field-container {
@@ -141,10 +142,26 @@ $text-field-error-border = 1px solid $danger-00;
   .blx-text-field-icon {
     margin-left: 10px;
   }
+}
 
-  .blx-text-field-helper {
-    color: $text-field-helper-text-color;
-    font-size: 12px;
-    line-height: 16px;
+.blx-header-text-field {
+  input, textarea {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+
+    background-color: inherit;
+    border: $header-text-field-invis-border;
+
+    &:hover, &.blx-hover {
+      border: $text-field-default-border;
+    }
+
+    &:focus, &.blx-focus {
+      border: $text-field-default-border;
+      background-color: $text-field-background-color;
+    }
   }
 }

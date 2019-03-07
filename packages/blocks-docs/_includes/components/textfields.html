@@ -124,7 +124,7 @@
   <div class="blx-text-field">
     <div class="blx-text-field-container">
       <input type="text" value="Text input">
-      <span class="blx-text-field-helper">34/150</span>
+      <span class="blx-input-helper-message">34/150</span>
     </div>
   </div>
 {% endcapture %}
@@ -144,6 +144,13 @@
     </div>
   </div>
 {% endcapture %}
+
+{% capture header_text_field_example %}
+  <div class="blx-text-field blx-header-text-field">
+    <input type="text" value="Text input">
+  </div>
+{% endcapture %}
+
 
 {% capture example %}
   {{ text_field_example }}
@@ -273,6 +280,14 @@
     </span>
     <div class="doc-state-content">
       {{ text_field_multiline_example }}
+    </div>
+  </div>
+  <div class="l-flex-horizontal" style="background-color: var(--light-00, #f6f8f6); font-size: 20px; font-weight: 400;">
+    <span class="doc-state-title blx-ui-small">
+      Header text field
+    </span>
+    <div class="doc-state-content">
+      {{ header_text_field_example }}
     </div>
   </div>
 </div>

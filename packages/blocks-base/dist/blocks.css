@@ -468,6 +468,20 @@ h5 {
   position: absolute;
   top: 100%;
 }
+.blx-input-helper-message {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  letter-spacing: 0.15px;
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: #aab7b2;
+  color: var(--light-02, #aab7b2);
+  position: absolute;
+  top: 100%;
+}
 html {
   font-family: Graphik Web;
   font-weight: 400;
@@ -2431,11 +2445,55 @@ a.blx-button {
 .blx-text-field .blx-text-field-icon {
   margin-left: 10px;
 }
-.blx-text-field .blx-text-field-helper {
-  color: #7c8c88;
-  color: var(--dark-02, #7c8c88);
-  font-size: 12px;
-  line-height: 16px;
+.blx-header-text-field input,
+.blx-header-text-field textarea {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid transparent;
+}
+.blx-header-text-field input:hover {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+}
+.blx-header-text-field textarea:hover {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+}
+.blx-header-text-field input.blx-hover {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+}
+.blx-header-text-field textarea.blx-hover {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+}
+.blx-header-text-field input:focus {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+  background-color: #fff;
+  background-color: var(--secondary-00, #fff);
+}
+.blx-header-text-field textarea:focus {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+  background-color: #fff;
+  background-color: var(--secondary-00, #fff);
+}
+.blx-header-text-field input.blx-focus {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+  background-color: #fff;
+  background-color: var(--secondary-00, #fff);
+}
+.blx-header-text-field textarea.blx-focus {
+  border: 1px solid #d9e1e0;
+  border: 1px solid var(--light-01, #d9e1e0);
+  background-color: #fff;
+  background-color: var(--secondary-00, #fff);
 }
 .blx-text-field-with-dropdown {
   display: flex;
