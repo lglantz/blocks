@@ -3,74 +3,154 @@ const ReactDOM = require('react-dom');
 
 const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
-const RadioTabs = require('blocks-react').Tabs.RadioTabs;
-const LinkTabs = require('blocks-react').Tabs.LinkTabs;
+const Tabs = require('blocks-react').Tabs.Tabs;
+const RadioTabItem = require('blocks-react').Tabs.RadioTabItem;
+const RadioSubTabItem = require('blocks-react').Tabs.RadioSubTabItem;
+const LinkTabItem = require('blocks-react').Tabs.LinkTabItem;
+const LinkSubTabItem = require('blocks-react').Tabs.LinkSubTabItem;
+
+const Accordion = require('blocks-react').Accordion;
+
+var FOUR_RANGE = [0,1,2,3];
 
 class TabPreview extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeTabHorizontal: null,
-      activeTabVertical: null
+      activeTabHorizontal: 0,
+      activeTabVertical: 0,
+      activeNestedTab: 0,
+      activeNestedSubTab: 0
     };
   }
-
 
   render() {
     return(
       <div>
         { getPreviewComponent('Horizontal',
-            <RadioTabs
-              name="horizontal-tabs"
-              tabs={
-                [
-                  'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
-                ]
+            <Tabs>
+              {
+                FOUR_RANGE.map(i => (
+                  <RadioTabItem
+                    name="horizontal-tabs"
+                    key={`horizontal-tabs-${i}`}
+                    isChecked={i === this.state.activeTabHorizontal}
+                    onChange={(evt) => this.setState({ activeTabHorizontal: i })}
+                    text={`Tab ${i + 1}`}
+                  />
+                ))
               }
-              activeTabIdx={this.state.activeTabHorizontal}
-              onChange={(evt, idx) => this.setState({ activeTabHorizontal: idx })}
-            />
+            </Tabs>
         ) }
         { getPreviewComponent('Horizontal disabled',
-            <RadioTabs
-              name="horizontal-disabled-tabs"
-              tabs={
-                [
-                  'Disabled Tab 1', 'Disabled Tab 2', 'Disabled Tab 3', 'Disabled Tab 4'
-                ]
+            <Tabs>
+              {
+                FOUR_RANGE.map(i => (
+                  <RadioTabItem
+                    name="horizontal-disabled-tabs"
+                    key={`horizontal-disabled-tabs-${i}`}
+                    isChecked={i === 0}
+                    onChange={() => {}}
+                    text={`Disabled Tab ${i + 1}`}
+                  />
+                ))
               }
-              isDisabled
-              activeTabIdx={0}
-              onChange={() => {}}
-            />
+            </Tabs>
         ) }
         { getPreviewComponent('Link Tabs',
-            <LinkTabs
-              name="link-tabs"
-              tabs={
-                [
-                  { name: 'Tab 1', href: '#' },
-                  { name: 'Tab 2', href: '#' },
-                  { name: 'Tab 3', href: '#' },
-                  { name: 'Tab 4', href: '#' }
-                ]
+            <Tabs>
+              {
+                FOUR_RANGE.map(i => (
+                  <LinkTabItem
+                    name="link-tabs"
+                    key={`link-tabs-${i}`}
+                    isActive={i === 1}
+                    href="#"
+                    text={`Link Tab ${i + 1}`}
+                  />
+                ))
               }
-            />
+            </Tabs>
         ) }
         { getPreviewComponent('Vertical',
-            <RadioTabs
-              name="vertical-tabs"
-              tabs={
-                [
-                  'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'
-                ]
+            <Tabs isVertical>
+              {
+                FOUR_RANGE.map(i => (
+                  <RadioTabItem
+                    name="vertical-tabs"
+                    key={`vertical-tabs-${i}`}
+                    isChecked={i === this.state.activeTabVertical}
+                    onChange={(evt) => this.setState({ activeTabVertical: i })}
+                    text={`Tab ${i + 1}`}
+                  />
+                ))
               }
-              isVertical
-              activeTabIdx={this.state.activeTabVertical}
-              onChange={(evt, idx) => this.setState({ activeTabVertical: idx })}
-            />
+            </Tabs>
         ) }
+        { getPreviewComponent('Nested tabs',
+            <div style={{ display: 'inline-block' }}>
+              <Accordion
+                trigger={<span className="blx-h5">Grandparent</span>}
+                open
+              >
+                <Tabs isVertical>
+                  {
+                    FOUR_RANGE.map(i => (
+                      <RadioTabItem
+                        name="vertical-tabs-nested"
+                        key={`vertical-tabs-nested-${i}`}
+                        isChecked={i === this.state.activeNestedTab}
+                        onChange={(evt) => this.setState({ activeNestedTab: i })}
+                        text={`Parent ${i + 1}`}
+                      >
+                        {
+                          FOUR_RANGE.map(j => (
+                            <RadioSubTabItem
+                              name="vertical-subtabs-nested"
+                              key={`vertical-subtabs-nested-${j}`}
+                              isVisible={i === this.state.activeNestedTab}
+                              isChecked={i === this.state.activeNestedTab && j === this.state.activeNestedSubTab}
+                              onChange={(evt) => this.setState({ activeNestedSubTab: j })}
+                              text={`Child ${j + 1}`}
+                            />
+                          ))
+                        }
+                      </RadioTabItem>
+                    ))
+                  }
+                </Tabs>
+              </Accordion>
+              <Accordion
+                trigger={<span className="blx-h5">Grandparent 2</span>}
+              >
+                <Tabs isVertical>
+                  {
+                    FOUR_RANGE.map(i => (
+                      <LinkTabItem
+                        key={`vertical-link-tabs-nested-${i}`}
+                        isActive={i === 1}
+                        href="#"
+                        text={`Parent ${i + 1}`}
+                      >
+                        {
+                          FOUR_RANGE.map(j => (
+                            <LinkSubTabItem
+                              key={`vertical-link-subtabs-nested-${j}`}
+                              isVisible={i === 1}
+                              isActive={j === 3}
+                              href="#"
+                              text={`Child ${j + 1}`}
+                            />
+                          ))
+                        }
+                      </LinkTabItem>
+                    ))
+                  }
+                </Tabs>
+              </Accordion>
+            </div>
+        )}
       </div>
   )};
 }

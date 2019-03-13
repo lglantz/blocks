@@ -36,8 +36,11 @@ module.exports = {
   SortableList: require('./dist/lists/SortableList.js'),
   Table: require('./dist/table/Table.js'),
   Tabs: {
-    RadioTabs: require('./dist/tabs/RadioTabs.js'),
-    LinkTabs: require('./dist/tabs/LinkTabs.js')
+    Tabs: require('./dist/tabs/Tabs.js'),
+    RadioTabItem: require('./dist/tabs/RadioTabItem.js'),
+    RadioSubTabItem: require('./dist/tabs/RadioSubTabItem.js'),
+    LinkTabItem: require('./dist/tabs/LinkTabItem.js'),
+    LinkSubTabItem: require('./dist/tabs/LinkSubTabItem.js')
   },
   wrappers: {
     closeOnClick: require('./dist/wrappers/closeOnClick.js'),

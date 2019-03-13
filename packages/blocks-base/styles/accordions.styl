@@ -1,60 +1,75 @@
 .blx-accordion-section {
   position: relative;
-  width: 100%;
   overflow: hidden;
+  padding: 2px;
+}
 
-  input[type=checkbox][name='blx-accordion-tab'] {
+.blx-accordion-trigger {
+  position: relative;
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  padding-left: 48px;
+  padding-right: 16px;
+  cursor: pointer;
+  
+  background-color: transparent;
+
+  font-weight: $medium-weight;
+  
+  &::before {
     position: absolute;
-    opacity: 0;
-    z-index: -1;
-
-    &:checked + label::before {
-      transform: rotate(90deg);
-      transform-origin: center;
-    }
-  }
-
-  .blx-accordion-trigger {
-    position: relative;
+    left: 0;
+    top: 0;
     display: block;
-    padding: 8px 16px;
-    cursor: pointer;
-    
-    background-color: $light-01;
-
-    & > p {
-      font-weight: $medium-weight;
-    }
-
-    &::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      display: block;
-      width: 16px;
-      height: 16px;
-      padding: 12px 16px;
-      transition: all 0.25s;
-      content: "";
-      background-image: url('../svgs/icon-forward.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    & > * {
-      margin: 0 0 0 32px;
-    }
+    width: 16px;
+    height: 16px;
+    padding: 16px;
+    transition: all 0.25s;
+    content: "";
+    background-image: url('../svgs/icon-forward.svg');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
 .blx-accordion-content {
   max-height: 0;
+  display: none;
   overflow: hidden;
   transition: max-height 0.25s;
   
-  background-color: $light-01;
+  background-color: transparent;
+}
 
-  .blx-accordion-trigger {
-    background-color: transparent;
+input[type=checkbox][name='blx-accordion-tab'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  
+  &:focus + .blx-accordion-trigger,
+  &.blx-focus + .blx-accordion-trigger {
+    outline: 1px solid $focus;
+    color: $dark-00;
+  }
+  
+  &:active + .blx-accordion-trigger,
+  &.blx-active + .blx-accordion-trigger {
+    color: $primary-00;
+  }
+  
+  &:hover + .blx-accordion-trigger,
+  &.blx-hover + .blx-accordion-trigger {
+    color: $primary-01;
+  }
+
+  &:checked + .blx-accordion-trigger::before {
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+  
+  &:checked ~ .blx-accordion-content {
+    display: block;
+    padding: 2px;
   }
 }

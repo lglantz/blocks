@@ -6,7 +6,9 @@ const getPreviewComponent = (caption, component) => ([
   </span>,
 
   <div className="doc-state-content" key={`${caption}-component`}>
+    <div>
     {component}
+    </div>
   </div>
 ]);
 

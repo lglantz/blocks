@@ -7,75 +7,128 @@
   <nav>
     <ul>
       <li class="section-menu">
-        <input type="checkbox" id="stylesmenu" class="nav-section-trigger" checked="checked">
-        <label class="nav-section-button" for="stylesmenu">
-          <span class="blx-icon blx-icon-up"></span>
-          Styles
-        </label>
-        <ul class="blx-vertical-tabs">
-          {% for doc in site.styles %}
-            <li>
-              <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="blx-accordion-section">
+          <input type="checkbox" name="blx-accordion-tab" id="stylesmenu" class="nav-section-trigger" checked="checked">
+          <label class="blx-accordion-trigger" for="stylesmenu">
+            <span>Styles</span>
+          </label>
+          <div class="blx-accordion-content">
+            <ul class="blx-vertical-tabs">
+              {% for doc in site.styles %}
+                <li>
+                  <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
       </li>
 
       <li class="section-menu">
-        <input type="checkbox" id="componentsmenu" class="nav-section-trigger" checked="checked">
-        <label class="nav-section-button" for="componentsmenu">
-          <span class="blx-icon blx-icon-up"></span>
-          Components
-        </label>
-        <ul class="blx-vertical-tabs">
-          {% for doc in site.components %}
-            <li>
-              <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
-              {% if doc.title == page.title %}
-                <div class="page-subsections">
-                  <a href="#Examples">Examples & Guidelines</a>
-                  <!--<a href="#EdgeCases">Edge Cases</a>-->
-                  {% if doc.react %}
-                    <a href="#React">React Components</a>
+        <div class="blx-accordion-section">
+          <input type="checkbox" name="blx-accordion-tab" id="componentsmenu" checked="checked">
+          <label class="blx-accordion-trigger" for="componentsmenu">
+            <span>Components</span>
+          </label>
+          <div class="blx-accordion-content">
+            <ul class="blx-vertical-tabs">
+              {% for doc in site.components %}
+                <li>
+                  <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+                  {% if doc.title == page.title %}
+                    <div>
+                      <a class="blx-sub-tab" href="#Examples">Examples & Guidelines</a>
+                      <!--<a href="#EdgeCases">Edge Cases</a>-->
+                      {% if doc.react %}
+                        <a class="blx-sub-tab" href="#React">React Components</a>
+                      {% endif %}
+                      <a class="blx-sub-tab" href="#HTMLSnippets">HTML Code Snippets</a>
+                    </div>
                   {% endif %}
-                  <a href="#HTMLSnippets">HTML Code Snippets</a>
-                </div>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
       </li>
 
       <li class="section-menu">
-        <input type="checkbox" id="patternsmenu" class="nav-section-trigger" checked="checked">
-        <label class="nav-section-button" for="patternsmenu">
-          <span class="blx-icon blx-icon-up"></span>
-          Patterns
-        </label>
-        <ul class="blx-vertical-tabs">
-          {% for doc in site.patterns %}
-            <li>
-              <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="blx-accordion-section">
+          <input type="checkbox" name="blx-accordion-tab" id="patternsmenu" class="nav-section-trigger" checked="checked">
+          <label class="blx-accordion-trigger" for="patternsmenu">
+            <span>Patterns</span>
+          </label>
+          <div class="blx-accordion-content">
+            <ul class="blx-vertical-tabs">
+              {% for doc in site.patterns %}
+                <li>
+                  <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+                  {% if doc.title == page.title %}
+                    <div>
+                      <a class="blx-sub-tab" href="#Examples">Examples & Guidelines</a>
+                      <!--<a href="#EdgeCases">Edge Cases</a>-->
+                      {% if doc.react %}
+                        <a class="blx-sub-tab" href="#React">React Components</a>
+                      {% endif %}
+                      <a class="blx-sub-tab" href="#HTMLSnippets">HTML Code Snippets</a>
+                    </div>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
       </li>
 
       <li class="section-menu">
-        <input type="checkbox" id="helpmenu" class="nav-section-trigger" checked="checked">
-        <label class="nav-section-button" for="helpmenu">
-          <span class="blx-icon blx-icon-up"></span>
-          Help
-        </label>
-        <ul class="blx-vertical-tabs">
-          {% for doc in site.help %}
-            <li>
-              <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="blx-accordion-section">
+          <input type="checkbox" name="blx-accordion-tab" id="helpmenu" class="nav-section-trigger" checked="checked">
+          <label class="blx-accordion-trigger" for="helpmenu">
+            <span>Help</span>
+          </label>
+          <div class="blx-accordion-content">
+            <ul class="blx-vertical-tabs">
+              {% for doc in site.help %}
+                <li>
+                  <a class="blx-tab-item {% if doc.title == page.title %}blx-active{% else %}blx-inactive{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
       </li>
 
     </ul>
   </nav>
 </div>
+<script>
+  var stylesMenu = document.getElementById('stylesmenu');
+  var componentsMenu = document.getElementById('componentsmenu');
+  var patternsMenu = document.getElementById('patternsmenu');
+  var helpMenu = document.getElementById('helpmenu');
+
+  var navMenu = [
+    stylesMenu,
+    componentsMenu,
+    patternsMenu,
+    helpMenu
+  ];
+
+  function updateHeight(el) {
+    var panel = el.parentNode.getElementsByClassName('blx-accordion-content')[0];
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    } 
+  }
+
+  for (var i = 0; i < navMenu.length; i++) {
+    if (navMenu[i].checked) {
+      updateHeight(navMenu[i]);
+    }
+    navMenu[i].addEventListener('click', function() {
+      updateHeight(this);
+    });
+  }
+</script>
