@@ -27,12 +27,8 @@ const DropdownMenu = (props) => {
     <div className="blx-dropdown-wrapper" ref={props.forwardedRef}>
       <div className="blx-dropdown">
 
-        {/* DESCRIPTION */}
-        { props.description &&
-            <div>
-              <label className="blx-ui-text">{props.description}</label>
-            </div>
-        }
+        {/* LABEL */}
+        { props.label && <label className="blx-ui-text">{props.label}</label> }
 
         {/* TRIGGER */}
         <button
@@ -80,7 +76,7 @@ DropdownMenu.propTypes = {
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
   icon: PropTypes.string,
-  description: PropTypes.string,
+  label: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -100,7 +96,7 @@ DropdownMenu.propTypes = {
     key: PropTypes.string
   })),
   isDisabled: PropTypes.bool,
-  onChange: PropTypes.func,
+  onSelect: PropTypes.func,
   autoFocus: PropTypes.bool,
   isValid: PropTypes.bool,
   forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
@@ -111,9 +107,9 @@ DropdownMenu.defaultProps = {
   options: [],
   text: 'Choose an option',
   icon: null,
-  description: '',
+  label: '',
   value: null,
-  onChange: () => {},
+  onSelect: () => {},
   autoFocus: false,
   isValid: true
 };

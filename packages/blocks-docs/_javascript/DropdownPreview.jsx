@@ -12,7 +12,8 @@ class DropdownPreview extends React.Component {
       value1 : '',
       value2: '',
       value3: '',
-      value4: ''
+      value4: '',
+      value5: ''
     };
   }
 
@@ -106,6 +107,25 @@ class DropdownPreview extends React.Component {
               />
           ) }
         </div>
+        <div className="l-flex-horizontal">
+          { getPreviewComponent('With label',
+              <Dropdown
+                text="Placeholder"
+                label="Label"
+                value={this.state.value5}
+                onChange={evt => this.setState({ value5: evt.value })}
+                options={
+                  [
+                    { value: 'option1', text: 'One option' },
+                    { value: 'option2', text: 'Another option', href: '#' },
+                    { value: 'option3', text: 'Best option' },
+                    { value: 'option4', element: <div><span className="blx-icon blx-icon-plus"/>Custom element</div>, key: 'option4' }
+                  ]
+                }
+              />
+          ) }
+        </div>
+
       </div>
     );
   }

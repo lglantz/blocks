@@ -31,14 +31,10 @@ var DropdownMenu = function DropdownMenu(props) {
     React.createElement(
       'div',
       { className: 'blx-dropdown' },
-      props.description && React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'label',
-          { className: 'blx-ui-text' },
-          props.description
-        )
+      props.label && React.createElement(
+        'label',
+        { className: 'blx-ui-text' },
+        props.label
       ),
       React.createElement(
         'button',
@@ -90,7 +86,7 @@ DropdownMenu.propTypes = {
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
   icon: PropTypes.string,
-  description: PropTypes.string,
+  label: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   options: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -101,7 +97,7 @@ DropdownMenu.propTypes = {
     key: PropTypes.string
   })),
   isDisabled: PropTypes.bool,
-  onChange: PropTypes.func,
+  onSelect: PropTypes.func,
   autoFocus: PropTypes.bool,
   isValid: PropTypes.bool,
   forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
@@ -112,9 +108,9 @@ DropdownMenu.defaultProps = {
   options: [],
   text: 'Choose an option',
   icon: null,
-  description: '',
+  label: '',
   value: null,
-  onChange: function onChange() {},
+  onSelect: function onSelect() {},
   autoFocus: false,
   isValid: true
 };
