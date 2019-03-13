@@ -1385,6 +1385,7 @@ a.blx-button {
   overflow-y: auto;
 }
 .blx-dropdown-item {
+  position: relative;
   background: transparent;
 }
 .blx-dropdown-item a {
@@ -1429,95 +1430,123 @@ a.blx-button {
 }
 .blx-dropdown-item a:focus {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item button:focus {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item a.blx-focus {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item button.blx-focus {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item a:active {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item button:active {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item a.blx-active {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
 }
 .blx-dropdown-item button.blx-active {
   outline: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+  background-color: #d5f0e5;
+  background-color: var(--secondary-02, #d5f0e5);
+}
+.blx-dropdown-item.blx-selected a,
+.blx-dropdown-item.blx-selected button {
+  padding-left: 36px;
+}
+.blx-dropdown-item.blx-selected a::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  margin-left: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #009f6f;
+  background-color: var(--primary-00, #009f6f);
+}
+.blx-dropdown-item.blx-selected button::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  margin-left: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   background-color: #009f6f;
   background-color: var(--primary-00, #009f6f);
 }
 .blx-dropdown-item:hover {
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  background-color: #ecf5f1;
+  background-color: var(--secondary-01, #ecf5f1);
 }
 .blx-dropdown-item.blx-hover {
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
+  background-color: #ecf5f1;
+  background-color: var(--secondary-01, #ecf5f1);
 }
 .blx-dropdown-item:hover a {
   text-decoration: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
 }
 .blx-dropdown-item.blx-hover a {
   text-decoration: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
 }
 .blx-dropdown-item:hover button {
   text-decoration: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
 }
 .blx-dropdown-item.blx-hover button {
   text-decoration: none;
-  color: #fff;
-  color: var(--secondary-00, #fff);
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
 }
 .blx-dropdown-item:hover .blx-icon {
-  background-color: #fff;
-  background-color: var(--secondary-00, #fff);
+  background-color: #2b3836;
+  background-color: var(--dark-00, #2b3836);
 }
 .blx-dropdown-item.blx-hover .blx-icon {
-  background-color: #fff;
-  background-color: var(--secondary-00, #fff);
+  background-color: #2b3836;
+  background-color: var(--dark-00, #2b3836);
 }
 .blx-popover-wrapper {
   display: inline-flex;

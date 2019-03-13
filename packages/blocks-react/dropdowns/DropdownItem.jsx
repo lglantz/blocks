@@ -61,9 +61,10 @@ class DropdownItem extends React.Component {
     } else {
       item = this.getButtonItem();
     }
+    console.log(this.props.isSelected);
     return (
       <li
-        className={`blx-dropdown-item ${this.props.option.disabled ? 'blx-disabled' : ''}`}
+        className={`blx-dropdown-item ${this.props.option.disabled ? 'blx-disabled' : ''} ${this.props.isSelected ? 'blx-selected' : ''}`}
         ref={this.props.forwardedRef}
       >
         {item}
@@ -87,12 +88,14 @@ DropdownItem.propTypes = {
     element: PropTypes.node,
     key: PropTypes.string
   }).isRequired,
+  isSelected: PropTypes.bool,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   onSelect: PropTypes.func
 };
 
 DropdownItem.defaultProps = {
+  isSelected: false,
   onKeyDown: () => {},
   onKeyUp: () => {},
   onSelect: () => {}
