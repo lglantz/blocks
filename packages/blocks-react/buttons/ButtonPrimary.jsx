@@ -11,22 +11,19 @@ const ButtonPrimary = React.forwardRef((props, ref) => {
    <Component
       {...props}
       ref={ref}
-      classes="blx-primary"
+      className={`blx-primary ${props.className}`}
     />
   );
 });
 
 ButtonPrimary.propTypes = {
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  href: PropTypes.string,
-  isDisabled: PropTypes.bool
+  className: PropTypes.string,
+  style: PropTypes.object
 };
 
 ButtonPrimary.defaultProps = {
-  isDisabled: false,
-  onClick: null,
-  href: ''
+  className: '',
+  style: null
 };
 
 module.exports = ButtonPrimary;

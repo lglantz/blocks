@@ -12,21 +12,18 @@ var ButtonSecondary = React.forwardRef(function (props, ref) {
   var Component = props.href ? LinkButton : Button;
   return React.createElement(Component, _extends({}, props, {
     ref: ref,
-    classes: 'blx-secondary'
+    className: 'blx-secondary ' + props.className
   }));
 });
 
 ButtonSecondary.propTypes = {
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  href: PropTypes.string,
-  isDisabled: PropTypes.bool
+  className: PropTypes.string,
+  style: PropTypes.object
 };
 
 ButtonSecondary.defaultProps = {
-  isDisabled: false,
-  onClick: null,
-  href: ''
+  className: '',
+  style: null
 };
 
 module.exports = ButtonSecondary;

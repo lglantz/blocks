@@ -6,7 +6,10 @@ var PropTypes = require('prop-types');
 var RadioTabItem = function RadioTabItem(props) {
   return React.createElement(
     'li',
-    null,
+    {
+      style: props.style,
+      className: props.className
+    },
     React.createElement(
       'label',
       null,
@@ -29,6 +32,8 @@ var RadioTabItem = function RadioTabItem(props) {
 };
 
 RadioTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired, // needs to be unique for each tab group
   value: PropTypes.string,
   text: PropTypes.string.isRequired,
@@ -38,6 +43,8 @@ RadioTabItem.propTypes = {
 };
 
 RadioTabItem.defaultProps = {
+  className: '',
+  style: null,
   value: '',
   isChecked: false,
   isDisabled: false

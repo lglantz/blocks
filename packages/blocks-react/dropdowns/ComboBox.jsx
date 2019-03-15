@@ -22,7 +22,8 @@ const ComboBox = (props) => {
 
   return (
     <select
-      className={`${props.isDisabled ? 'blx-disabled' : ''}`}
+      style={props.style}
+      className={`${props.isDisabled ? 'blx-disabled' : ''} ${props.className}`}
       disabled={props.isDisabled}
       value={props.value}
       onChange={props.onChange}
@@ -33,6 +34,8 @@ const ComboBox = (props) => {
 };
 
 ComboBox.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string,
     text: PropTypes.string
@@ -44,6 +47,8 @@ ComboBox.propTypes = {
 };
 
 ComboBox.defaultProps = {
+  className: '',
+  style: null,
   options: [],
   isDisabled: false,
   value: '',

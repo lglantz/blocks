@@ -5,7 +5,10 @@ const RadioButton = require('./RadioButton.jsx');
 
 
 const RadioButtonGroup = props => (
-  <div>
+  <div
+    style={props.style}
+    className={props.className}
+  >
     {
       props.options.map((option, idx) => (
         <RadioButton
@@ -24,6 +27,8 @@ const RadioButtonGroup = props => (
 );
 
 RadioButtonGroup.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
@@ -32,6 +37,8 @@ RadioButtonGroup.propTypes = {
 };
 
 RadioButtonGroup.defaultProps = {
+  className: '',
+  style: null,
   options: [],
   isDisabled: false,
   checkedIndex: -1

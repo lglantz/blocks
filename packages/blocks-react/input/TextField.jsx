@@ -37,8 +37,15 @@ const TextField = (props) => {
     iconElement = <span className="blx-text-field-icon">{props.icon}</span>;
   }
 
+  // root level classes
+  let classes = 'blx-text-field ';
+  if (props.isDisabled) classes += 'blx-disabled ';
+
   return (
-    <div className={`blx-text-field ${props.isDisabled ? 'blx-disabled' : ''}`}>
+    <div
+      style={props.style}
+      className={`${classes} ${props.className}`}
+    >
       {labelElement}
       <div className="blx-text-field-container">
         {prefixElement}
@@ -71,6 +78,8 @@ const TextField = (props) => {
 }
 
 TextField.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   type: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -105,6 +114,8 @@ TextField.propTypes = {
 };
 
 TextField.defaultProps = {
+  className: '',
+  style: null,
   type: 'text',
   name: '',
   value: '',

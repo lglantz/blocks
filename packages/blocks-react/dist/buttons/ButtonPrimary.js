@@ -12,21 +12,18 @@ var ButtonPrimary = React.forwardRef(function (props, ref) {
   var Component = props.href ? LinkButton : Button;
   return React.createElement(Component, _extends({}, props, {
     ref: ref,
-    classes: 'blx-primary'
+    className: 'blx-primary ' + props.className
   }));
 });
 
 ButtonPrimary.propTypes = {
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  href: PropTypes.string,
-  isDisabled: PropTypes.bool
+  className: PropTypes.string,
+  style: PropTypes.object
 };
 
 ButtonPrimary.defaultProps = {
-  isDisabled: false,
-  onClick: null,
-  href: ''
+  className: '',
+  style: null
 };
 
 module.exports = ButtonPrimary;

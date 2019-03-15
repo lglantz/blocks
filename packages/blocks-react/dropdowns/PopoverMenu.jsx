@@ -15,7 +15,11 @@ const PopoverMenu = (props) => {
     menuClasses += ' blx-popover-is-right';
   }
   return (
-    <div className="blx-popover-wrapper" ref={props.forwardedRef}>
+    <div
+      style={props.style}
+      className={`blx-popover-wrapper ${props.className}`}
+      ref={props.forwardedRef}
+    >
       { props.text &&
           <span className="blx-h5">{props.text}</span>
       }
@@ -53,6 +57,8 @@ const PopoverMenu = (props) => {
 };
 
 PopoverMenu.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   isOpen: PropTypes.bool,
   isLeft: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
@@ -83,6 +89,8 @@ PopoverMenu.propTypes = {
 };
 
 PopoverMenu.defaultProps = {
+  className: '',
+  style: null,
   isOpen: false,
   isLeft: null,
   options: [],

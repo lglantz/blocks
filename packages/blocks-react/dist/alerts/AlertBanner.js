@@ -48,9 +48,15 @@ var AlertBanner = function (_React$Component) {
         });
       }
 
+      var classes = 'blx-alert ';
+      if (this.state.hidden) classes += 'blx-hidden ';
+
       return React.createElement(
         'div',
-        { className: 'blx-alert blx-' + this.props.type + ' ' + (this.state.hidden ? 'blx-hidden' : '') },
+        {
+          style: this.props.style,
+          className: classes + ' ' + this.props.className
+        },
         React.createElement(
           'div',
           { className: 'blx-alert-icon-container' },
@@ -80,7 +86,8 @@ var AlertBanner = function (_React$Component) {
 }(React.Component);
 
 AlertBanner.propTypes = {
-  type: PropTypes.string, // "success", "warning", "error", or "information" TODO: enum eventually?
+  className: PropTypes.string,
+  style: PropTypes.object,
   title: PropTypes.string,
   message: PropTypes.string,
   closable: PropTypes.bool,
@@ -88,7 +95,8 @@ AlertBanner.propTypes = {
 };
 
 AlertBanner.defaultProps = {
-  type: '',
+  className: '',
+  style: null,
   title: '',
   message: '',
   closable: false,

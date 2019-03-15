@@ -4,13 +4,18 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var BasicButton = React.forwardRef(function (props, ref) {
+  var classes = 'blx-button ';
+  if (props.iconName) classes += 'blx-icon-button ';
+  if (props.isDisabled) classes += 'blx-disabled ';
+
   return React.createElement(
     'button',
     {
-      className: 'blx-button ' + props.classes + ' ' + (props.iconName ? 'blx-icon-button' : '') + ' ' + (props.isDisabled ? 'blx-disabled' : ''),
-      onClick: props.onClick,
+      style: props.style,
+      className: classes + ' ' + props.className,
       disabled: props.isDisabled,
       autoFocus: props.autoFocus,
+      onClick: props.onClick,
       onKeyDown: props.onKeyDown,
       onKeyUp: props.onKeyUp,
       ref: ref
@@ -27,9 +32,10 @@ var BasicButton = React.forwardRef(function (props, ref) {
 });
 
 BasicButton.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string,
-  classes: PropTypes.string,
   isDisabled: PropTypes.bool,
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
@@ -40,8 +46,9 @@ BasicButton.propTypes = {
 };
 
 BasicButton.defaultProps = {
+  className: 'blx-primary',
+  style: null,
   text: '',
-  classes: 'blx-primary',
   isDisabled: false,
   leftIcon: null,
   rightIcon: null,

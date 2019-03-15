@@ -13,7 +13,10 @@ var ProgressDots = function ProgressDots(props) {
 
   return React.createElement(
     'div',
-    { className: 'blx-progress-dots' },
+    {
+      style: props.style,
+      className: 'blx-progress-dots ' + props.className
+    },
     steps.map(function (step) {
       return React.createElement(
         'label',
@@ -35,6 +38,8 @@ var ProgressDots = function ProgressDots(props) {
 };
 
 ProgressDots.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string,
   numSteps: PropTypes.number,
   currentStepIdx: PropTypes.number,
@@ -42,6 +47,8 @@ ProgressDots.propTypes = {
 };
 
 ProgressDots.defaultProps = {
+  className: '',
+  style: null,
   name: '',
   numSteps: 0,
   currentStepIdx: 0,

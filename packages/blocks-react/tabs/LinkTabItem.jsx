@@ -9,10 +9,20 @@ const LinkTabItem = (props) => {
     <ReactLink className={classes} to={props.href}>{props.text}</ReactLink> :
     <a className={classes} href={props.href}>{props.text}</a>;
 
-  return <li>{ link }{ props.children }</li>;
+  return (
+    <li
+      style={props.style}
+      className={props.className}
+    >
+      { link }
+      { props.children }
+    </li>
+  );
 };
 
 LinkTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
@@ -22,6 +32,8 @@ LinkTabItem.propTypes = {
 };
 
 LinkTabItem.defaultProps = {
+  className: '',
+  style: null,
   isActive: false,
   isDisabled: false,
   useReactLink: false

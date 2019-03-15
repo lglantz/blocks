@@ -167,31 +167,28 @@ var SortableList = function (_React$Component) {
       var _this2 = this;
 
       return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'ul',
-          {
-            className: 'blx-sortable-list',
-            ref: this.listDOM
-          },
-          this.props.children.map(function (child, idx) {
-            return React.createElement(
-              'li',
-              {
-                key: Math.random(),
-                className: 'blx-sortable-list-item',
-                onDragLeave: _this2.onDragLeave,
-                onDrop: _this2.onDrop
-              },
-              child,
-              React.createElement('span', {
-                className: 'blx-icon blx-icon-drag',
-                draggable: 'true'
-              })
-            );
-          })
-        )
+        'ul',
+        {
+          style: this.props.style,
+          className: 'blx-sortable-list ' + this.props.className,
+          ref: this.listDOM
+        },
+        this.props.children.map(function (child, idx) {
+          return React.createElement(
+            'li',
+            {
+              key: Math.random(),
+              className: 'blx-sortable-list-item',
+              onDragLeave: _this2.onDragLeave,
+              onDrop: _this2.onDrop
+            },
+            child,
+            React.createElement('span', {
+              className: 'blx-icon blx-icon-drag',
+              draggable: 'true'
+            })
+          );
+        })
       );
     }
   }]);
@@ -200,10 +197,14 @@ var SortableList = function (_React$Component) {
 }(React.Component);
 
 SortableList.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   onDrop: PropTypes.func
 };
 
 SortableList.defaultProps = {
+  className: '',
+  style: null,
   onDrop: function onDrop() {}
 };
 

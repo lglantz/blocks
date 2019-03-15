@@ -4,8 +4,13 @@ const TextField = require('./TextField.jsx');
 const Dropdown = require('../dropdowns/Dropdown.jsx');
 
 const TextFieldWithDropdown = (props) => {
+  let classes = 'blx-text-field-with-dropdown ';
+  if (props.isDisabled) classes += 'blx-disabled ';
   return (
-    <div className={`blx-text-field-with-dropdown ${props.isDisabled ? 'blx-disabled' : ''}`}>
+    <div
+      style={props.style}
+      className={`${classes} ${props.className}`}
+    >
       <TextField {...props.textField}/>
       <Dropdown {...props.dropdown}/>
     </div>
@@ -13,6 +18,8 @@ const TextFieldWithDropdown = (props) => {
 }
 
 TextFieldWithDropdown.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   isDisabled: PropTypes.bool,
   textField: PropTypes.shape({
     label: PropTypes.string,
@@ -47,6 +54,8 @@ TextFieldWithDropdown.propTypes = {
 };
 
 TextFieldWithDropdown.defaultProps = {
+  className: '',
+  style: null,
   isDisabled: false,
   textField: {
     label: null,

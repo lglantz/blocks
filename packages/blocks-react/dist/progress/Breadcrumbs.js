@@ -6,7 +6,10 @@ var PropTypes = require('prop-types');
 var Breadcrumbs = function Breadcrumbs(props) {
   return React.createElement(
     'nav',
-    { className: 'blx-breadcrumbs' },
+    {
+      style: props.style,
+      className: 'blx-breadcrumbs ' + props.className
+    },
     React.createElement(
       'ul',
       null,
@@ -29,6 +32,8 @@ var Breadcrumbs = function Breadcrumbs(props) {
 };
 
 Breadcrumbs.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   breadcrumbs: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
     href: PropTypes.string
@@ -36,6 +41,8 @@ Breadcrumbs.propTypes = {
 };
 
 Breadcrumbs.defaultProps = {
+  className: '',
+  style: null,
   breadcrumbs: []
 };
 

@@ -84,10 +84,15 @@ var DropdownItem = function (_React$Component) {
       } else {
         item = this.getButtonItem();
       }
+
+      var classes = 'blx-dropdown-item ';
+      if (this.props.option.disabled) classes += 'blx-disabled ';
+
       return React.createElement(
         'li',
         {
-          className: 'blx-dropdown-item ' + (this.props.option.disabled ? 'blx-disabled' : ''),
+          style: this.props.style,
+          className: classes + ' ' + this.props.className,
           ref: this.props.forwardedRef
         },
         item
@@ -99,6 +104,8 @@ var DropdownItem = function (_React$Component) {
 }(React.Component);
 
 DropdownItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   option: PropTypes.shape({
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     disabled: PropTypes.bool,
@@ -113,6 +120,8 @@ DropdownItem.propTypes = {
 };
 
 DropdownItem.defaultProps = {
+  className: '',
+  style: null,
   onKeyDown: function onKeyDown() {},
   onKeyUp: function onKeyUp() {},
   onSelect: function onSelect() {}

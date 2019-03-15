@@ -4,7 +4,10 @@ const PropTypes = require('prop-types');
 
 const RadioTabItem = (props) => {
   return (
-    <li>
+    <li
+      style={props.style}
+      className={props.className}
+    >
       <label>
         <input
           type="radio"
@@ -24,6 +27,8 @@ const RadioTabItem = (props) => {
 }
 
 RadioTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired, // needs to be unique for each tab group
   value: PropTypes.string,
   text: PropTypes.string.isRequired,
@@ -33,6 +38,8 @@ RadioTabItem.propTypes = {
 };
 
 RadioTabItem.defaultProps = {
+  className: '',
+  style: null,
   value: '',
   isChecked: false,
   isDisabled: false

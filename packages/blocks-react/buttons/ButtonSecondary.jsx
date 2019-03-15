@@ -11,22 +11,19 @@ const ButtonSecondary = React.forwardRef((props, ref) => {
    <Component
       {...props}
       ref={ref}
-      classes="blx-secondary"
+      className={`blx-secondary ${props.className}`}
     />
   );
 });
 
 ButtonSecondary.propTypes = {
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  href: PropTypes.string,
-  isDisabled: PropTypes.bool
+  className: PropTypes.string,
+  style: PropTypes.object
 };
 
 ButtonSecondary.defaultProps = {
-  isDisabled: false,
-  onClick: null,
-  href: ''
+  className: '',
+  style: null
 };
 
 module.exports = ButtonSecondary;

@@ -135,38 +135,41 @@ class SortableList extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul
-          className="blx-sortable-list"
-          ref={this.listDOM}
-        >
-          {
-            this.props.children.map((child, idx) => (
-              <li
-                key={Math.random()}
-                className="blx-sortable-list-item"
-                onDragLeave={this.onDragLeave}
-                onDrop={this.onDrop}
-              >
-                {child}
-                <span
-                  className="blx-icon blx-icon-drag"
-                  draggable="true"
-                />
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <ul
+        style={this.props.style}
+        className={`blx-sortable-list ${this.props.className}`}
+        ref={this.listDOM}
+      >
+        {
+          this.props.children.map((child, idx) => (
+            <li
+              key={Math.random()}
+              className="blx-sortable-list-item"
+              onDragLeave={this.onDragLeave}
+              onDrop={this.onDrop}
+            >
+              {child}
+              <span
+                className="blx-icon blx-icon-drag"
+                draggable="true"
+              />
+            </li>
+          ))
+        }
+      </ul>
     );
   }
 }
 
 SortableList.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   onDrop: PropTypes.func
 };
 
 SortableList.defaultProps = {
+  className: '',
+  style: null,
   onDrop: () => {}
 };
 

@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom');
 
 const BaseModal = require('blocks-react').Modals.BaseModal;
 const ActionModal = require('blocks-react').Modals.ActionModal;
-const ButtonPrimary = require('blocks-react').Button.ButtonPrimary;
+const ButtonPrimary = require('blocks-react').Buttons.ButtonPrimary;
 const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 

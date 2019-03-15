@@ -8,10 +8,20 @@ const LinkSubTabItem = (props) => {
     <ReactLink className={classes} to={props.href}>{props.text}</ReactLink> :
     <a className={classes} href={props.href}>{props.text}</a>;
 
-  return <div>{ link }{ props.children }</div>;
+  return (
+    <div
+      style={props.style}
+      className={props.className}
+    >
+      { link }
+      { props.children }
+    </div>
+  );
 }
 
 LinkSubTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   text: PropTypes.string.isRequired,
   isVisible: PropTypes.bool,
   isActive: PropTypes.bool,
@@ -19,6 +29,8 @@ LinkSubTabItem.propTypes = {
 };
 
 LinkSubTabItem.defaultProps = {
+  className: '',
+  style: null,
   isVisible: true,
   isActive: false,
   isDisabled: false

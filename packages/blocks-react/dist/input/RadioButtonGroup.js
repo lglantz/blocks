@@ -8,7 +8,10 @@ var RadioButton = require('./RadioButton.js');
 var RadioButtonGroup = function RadioButtonGroup(props) {
   return React.createElement(
     'div',
-    null,
+    {
+      style: props.style,
+      className: props.className
+    },
     props.options.map(function (option, idx) {
       return React.createElement(RadioButton, {
         key: option.text,
@@ -25,6 +28,8 @@ var RadioButtonGroup = function RadioButtonGroup(props) {
 };
 
 RadioButtonGroup.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
@@ -33,6 +38,8 @@ RadioButtonGroup.propTypes = {
 };
 
 RadioButtonGroup.defaultProps = {
+  className: '',
+  style: null,
   options: [],
   isDisabled: false,
   checkedIndex: -1

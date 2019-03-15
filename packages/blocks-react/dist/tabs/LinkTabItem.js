@@ -18,13 +18,18 @@ var LinkTabItem = function LinkTabItem(props) {
 
   return React.createElement(
     'li',
-    null,
+    {
+      style: props.style,
+      className: props.className
+    },
     link,
     props.children
   );
 };
 
 LinkTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
@@ -34,6 +39,8 @@ LinkTabItem.propTypes = {
 };
 
 LinkTabItem.defaultProps = {
+  className: '',
+  style: null,
   isActive: false,
   isDisabled: false,
   useReactLink: false

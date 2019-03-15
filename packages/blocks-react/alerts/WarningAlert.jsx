@@ -5,7 +5,8 @@ const AlertBanner = require('./AlertBanner.jsx');
 
 const WarningAlert = props => (
   <AlertBanner
-    type="warning"
+    style={props.style}
+    className={`blx-warning ${props.className}`}
     title={props.title}
     message={props.message}
     closable
@@ -13,11 +14,15 @@ const WarningAlert = props => (
 );
 
 WarningAlert.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   title: PropTypes.string,
   message: PropTypes.string
 };
 
 WarningAlert.defaultProps = {
+  className: '',
+  style: null,
   title: 'Warning',
   message: ''
 };

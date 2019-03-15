@@ -48,6 +48,8 @@ const ActionModal = (props) => {
 
   return (
     <BaseModal
+      style={props.style}
+      className={props.className}
       isHidden={props.isHidden}
       onClose={props.onClose}
     >
@@ -62,6 +64,8 @@ const ActionModal = (props) => {
 };
 
 ActionModal.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   isHidden: PropTypes.bool,
   title: PropTypes.string,
   message: PropTypes.string,
@@ -74,6 +78,8 @@ ActionModal.propTypes = {
 };
 
 ActionModal.defaultProps = {
+  className: '',
+  style: null,
   isHidden: true,
   title: '',
   message: '',

@@ -3,7 +3,10 @@ const PropTypes = require('prop-types');
 
 
 const Table = props => (
-  <table className="blx-table">
+  <table
+    style={props.style}
+    className={`blx-table ${props.className}`}
+  >
     <thead>
       <tr className="blx-table-header-row">
         {
@@ -45,12 +48,16 @@ const Table = props => (
 );
 
 Table.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   headings: PropTypes.arrayOf(PropTypes.string),
   entries: PropTypes.array,
   onClick: PropTypes.func
 };
 
 Table.defaultProps = {
+  className: '',
+  style: null,
   headings: [],
   entries: [],
   onClick: () => {}

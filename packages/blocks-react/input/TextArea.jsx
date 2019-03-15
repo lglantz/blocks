@@ -39,8 +39,14 @@ class TextArea extends React.Component {
       labelElement = <label className="blx-ui-text">{this.props.label}</label>;
     }
 
+    let classes = 'blx-text-field ';
+    if (this.props.isDisabled) classes += 'blx-disabled ';
+
     return (
-      <div className={`blx-text-field ${this.props.isDisabled ? 'blx-disabled' : ''}`}>
+      <div
+        style={this.props.style}
+        className={`${classes} ${this.props.className}`}
+      >
         {labelElement}
         <div className="blx-text-field-container">
           <textarea
@@ -69,6 +75,8 @@ class TextArea extends React.Component {
 }
 
 TextArea.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   type: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -87,6 +95,8 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
+  className: '',
+  style: null,
   type: 'text',
   name: '',
   value: '',

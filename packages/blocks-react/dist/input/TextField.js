@@ -60,9 +60,16 @@ var TextField = function TextField(props) {
     );
   }
 
+  // root level classes
+  var classes = 'blx-text-field ';
+  if (props.isDisabled) classes += 'blx-disabled ';
+
   return React.createElement(
     'div',
-    { className: 'blx-text-field ' + (props.isDisabled ? 'blx-disabled' : '') },
+    {
+      style: props.style,
+      className: classes + ' ' + props.className
+    },
     labelElement,
     React.createElement(
       'div',
@@ -96,6 +103,8 @@ var TextField = function TextField(props) {
 };
 
 TextField.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   type: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -121,6 +130,8 @@ TextField.propTypes = {
 };
 
 TextField.defaultProps = {
+  className: '',
+  style: null,
   type: 'text',
   name: '',
   value: '',

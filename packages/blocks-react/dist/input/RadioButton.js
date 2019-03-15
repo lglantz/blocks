@@ -4,9 +4,16 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var RadioButton = function RadioButton(props) {
+  var classes = 'blx-radio ';
+  if (props.isDisabled) classes += 'blx-disabled ';
+  if (!props.isValid) classes += 'blx-invalid ';
+
   return React.createElement(
     'label',
-    { className: 'blx-radio ' + (props.isDisabled ? 'blx-disabled' : '') + ' ' + (props.isValid ? '' : 'blx-invalid') },
+    {
+      style: props.style,
+      className: classes + ' ' + props.className
+    },
     React.createElement(
       'div',
       { className: 'blx-radio-label', title: props.text },
@@ -25,6 +32,8 @@ var RadioButton = function RadioButton(props) {
 };
 
 RadioButton.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   text: PropTypes.string,
@@ -35,6 +44,8 @@ RadioButton.propTypes = {
 };
 
 RadioButton.defaultProps = {
+  className: '',
+  style: null,
   text: '',
   value: '',
   isDisabled: false,

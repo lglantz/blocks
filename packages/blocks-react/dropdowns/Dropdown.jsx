@@ -24,7 +24,11 @@ const DropdownMenu = (props) => {
   }
 
   return (
-    <div className="blx-dropdown-wrapper" ref={props.forwardedRef}>
+    <div
+      style={props.style}
+      className={`blx-dropdown-wrapper ${props.className}`}
+      ref={props.forwardedRef}
+    >
       <div className="blx-dropdown">
 
         {/* LABEL */}
@@ -72,6 +76,8 @@ const DropdownMenu = (props) => {
 };
 
 DropdownMenu.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   isOpen: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
@@ -103,6 +109,8 @@ DropdownMenu.propTypes = {
 };
 
 DropdownMenu.defaultProps = {
+  className: '',
+  style: null,
   isOpen: false,
   options: [],
   text: 'Choose an option',

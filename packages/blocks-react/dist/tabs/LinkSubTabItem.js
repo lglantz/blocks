@@ -17,13 +17,18 @@ var LinkSubTabItem = function LinkSubTabItem(props) {
 
   return React.createElement(
     'div',
-    null,
+    {
+      style: props.style,
+      className: props.className
+    },
     link,
     props.children
   );
 };
 
 LinkSubTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   text: PropTypes.string.isRequired,
   isVisible: PropTypes.bool,
   isActive: PropTypes.bool,
@@ -31,6 +36,8 @@ LinkSubTabItem.propTypes = {
 };
 
 LinkSubTabItem.defaultProps = {
+  className: '',
+  style: null,
   isVisible: true,
   isActive: false,
   isDisabled: false

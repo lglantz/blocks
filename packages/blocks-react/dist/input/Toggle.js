@@ -4,9 +4,14 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var Toggle = function Toggle(props) {
+  var classes = 'blx-toggle ';
+  if (props.isDisabled) classes += 'blx-disabled ';
   return React.createElement(
     'div',
-    { className: 'blx-toggle ' + (props.isDisabled ? 'blx-disabled' : '') },
+    {
+      style: props.style,
+      className: classes + ' ' + props.className
+    },
     props.options.map(function (option, idx) {
       return React.createElement(
         'label',
@@ -34,6 +39,8 @@ var Toggle = function Toggle(props) {
 };
 
 Toggle.propTypes = {
+  style: PropTypes.object,
+  className: PropTypes.object,
   name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({

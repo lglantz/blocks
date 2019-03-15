@@ -5,13 +5,16 @@ var PropTypes = require('prop-types');
 var ReactLink = require('react-router-dom').Link;
 
 var LinkButton = React.forwardRef(function (props, ref) {
-  var classes = 'blx-button ' + props.classes + ' ' + (props.iconName ? 'blx-icon-button' : '') + ' ' + (props.isDisabled ? 'blx-disabled' : '');
+  var classes = 'blx-button ';
+  if (props.iconName) classes += 'blx-icon-button ';
+  if (props.isDisabled) classes += 'blx-disabled ';
 
   if (props.useReactLink) {
     return React.createElement(
       ReactLink,
       {
-        className: classes,
+        style: props.style,
+        className: classes + ' ' + props.className,
         to: props.href,
         disabled: props.isDisabled,
         ref: ref
@@ -30,7 +33,8 @@ var LinkButton = React.forwardRef(function (props, ref) {
   return React.createElement(
     'a',
     {
-      className: classes,
+      style: props.style,
+      className: classes + ' ' + props.className,
       href: props.href,
       disabled: props.isDisabled,
       target: props.isExternal ? '_blank' : '_self',
@@ -48,9 +52,10 @@ var LinkButton = React.forwardRef(function (props, ref) {
 });
 
 LinkButton.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   href: PropTypes.string.isRequired,
   text: PropTypes.string,
-  classes: PropTypes.string,
   isDisabled: PropTypes.bool,
   isExternal: PropTypes.bool,
   useReactLink: PropTypes.bool,
@@ -60,8 +65,9 @@ LinkButton.propTypes = {
 };
 
 LinkButton.defaultProps = {
+  className: 'blx-primary',
+  style: null,
   text: '',
-  classes: 'blx-primary',
   isDisabled: false,
   isExternal: false,
   useReactLink: false,

@@ -11,7 +11,10 @@ const ProgressDots = (props) => {
   const name = props.name || Math.random();
 
   return (
-    <div className="blx-progress-dots">
+    <div
+      style={props.style}
+      className={`blx-progress-dots ${props.className}`}
+    >
       {
         steps.map(step => (
           <label
@@ -35,6 +38,8 @@ const ProgressDots = (props) => {
 
 
 ProgressDots.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string,
   numSteps: PropTypes.number,
   currentStepIdx: PropTypes.number,
@@ -42,6 +47,8 @@ ProgressDots.propTypes = {
 };
 
 ProgressDots.defaultProps = {
+  className: '',
+  style: null,
   name: '',
   numSteps: 0,
   currentStepIdx: 0,

@@ -69,9 +69,15 @@ var TextArea = function (_React$Component) {
         );
       }
 
+      var classes = 'blx-text-field ';
+      if (this.props.isDisabled) classes += 'blx-disabled ';
+
       return React.createElement(
         'div',
-        { className: 'blx-text-field ' + (this.props.isDisabled ? 'blx-disabled' : '') },
+        {
+          style: this.props.style,
+          className: classes + ' ' + this.props.className
+        },
         labelElement,
         React.createElement(
           'div',
@@ -104,6 +110,8 @@ var TextArea = function (_React$Component) {
 }(React.Component);
 
 TextArea.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   type: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -122,6 +130,8 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
+  className: '',
+  style: null,
   type: 'text',
   name: '',
   value: '',

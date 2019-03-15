@@ -8,7 +8,10 @@ var BaseModal = function BaseModal(props) {
 
   return React.createElement(
     'div',
-    null,
+    {
+      style: props.style,
+      className: props.className
+    },
     React.createElement('div', {
       className: 'blx-modal-overlay',
       onClick: props.onClose
@@ -30,12 +33,16 @@ var BaseModal = function BaseModal(props) {
 };
 
 BaseModal.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   isHidden: PropTypes.bool,
   onClose: PropTypes.func,
   children: PropTypes.node.isRequired
 };
 
 BaseModal.defaultProps = {
+  className: '',
+  style: null,
   isHidden: true,
   onClose: function onClose() {}
 };

@@ -52,7 +52,10 @@ var AccordionSection = function (_React$Component) {
       var name = Math.random().toString();
       return React.createElement(
         'div',
-        { className: 'blx-accordion-section' },
+        {
+          style: this.props.style,
+          className: 'blx-accordion-section ' + this.props.className
+        },
         React.createElement('input', { id: name, type: 'checkbox', name: 'blx-accordion-tab', defaultChecked: this.props.open, onChange: this.props.onToggle }),
         React.createElement(
           'label',
@@ -77,12 +80,16 @@ var AccordionSection = function (_React$Component) {
 }(React.Component);
 
 AccordionSection.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   open: PropTypes.bool,
   trigger: PropTypes.object.isRequired,
   onToggle: PropTypes.func
 };
 
 AccordionSection.defaultProps = {
+  className: '',
+  style: null,
   open: false,
   onToggle: onToggle
 };

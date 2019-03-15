@@ -4,9 +4,14 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var Checkbox = function Checkbox(props) {
+  var classes = 'blx-checkbox ';
+  if (props.isDisabled) classes += 'blx-disabled ';
   return React.createElement(
     'label',
-    { className: 'blx-checkbox ' + (props.isDisabled ? 'blx-disabled' : '') },
+    {
+      style: props.style,
+      className: classes + ' ' + props.className
+    },
     React.createElement(
       'div',
       { className: 'blx-label' },
@@ -27,6 +32,8 @@ var Checkbox = function Checkbox(props) {
 };
 
 Checkbox.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   value: PropTypes.string,
   name: PropTypes.string,
   isDisabled: PropTypes.bool,
@@ -37,6 +44,8 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
+  className: '',
+  style: null,
   value: '',
   name: '',
   isDisabled: false,

@@ -6,15 +6,22 @@ var TextField = require('./TextField.js');
 var Dropdown = require('../dropdowns/Dropdown.js');
 
 var TextFieldWithDropdown = function TextFieldWithDropdown(props) {
+  var classes = 'blx-text-field-with-dropdown ';
+  if (props.isDisabled) classes += 'blx-disabled ';
   return React.createElement(
     'div',
-    { className: 'blx-text-field-with-dropdown ' + (props.isDisabled ? 'blx-disabled' : '') },
+    {
+      style: props.style,
+      className: classes + ' ' + props.className
+    },
     React.createElement(TextField, props.textField),
     React.createElement(Dropdown, props.dropdown)
   );
 };
 
 TextFieldWithDropdown.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   isDisabled: PropTypes.bool,
   textField: PropTypes.shape({
     label: PropTypes.string,
@@ -40,6 +47,8 @@ TextFieldWithDropdown.propTypes = {
 };
 
 TextFieldWithDropdown.defaultProps = {
+  className: '',
+  style: null,
   isDisabled: false,
   textField: {
     label: null,

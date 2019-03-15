@@ -26,7 +26,8 @@ var ComboBox = function ComboBox(props) {
   return React.createElement(
     'select',
     {
-      className: '' + (props.isDisabled ? 'blx-disabled' : ''),
+      style: props.style,
+      className: (props.isDisabled ? 'blx-disabled' : '') + ' ' + props.className,
       disabled: props.isDisabled,
       value: props.value,
       onChange: props.onChange
@@ -36,6 +37,8 @@ var ComboBox = function ComboBox(props) {
 };
 
 ComboBox.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string,
     text: PropTypes.string
@@ -47,6 +50,8 @@ ComboBox.propTypes = {
 };
 
 ComboBox.defaultProps = {
+  className: '',
+  style: null,
   options: [],
   isDisabled: false,
   value: '',

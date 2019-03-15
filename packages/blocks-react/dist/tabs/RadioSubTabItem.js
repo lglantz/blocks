@@ -4,9 +4,15 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var RadioSubTabItem = function RadioSubTabItem(props) {
+  var classes = '';
+  if (!props.isVisible) classes += 'blx-hidden ';
+
   return React.createElement(
     'label',
-    { className: props.isVisible ? '' : 'blx-hidden' },
+    {
+      style: props.style,
+      className: classes + ' ' + props.className
+    },
     React.createElement('input', {
       type: 'radio',
       name: props.name,
@@ -25,6 +31,8 @@ var RadioSubTabItem = function RadioSubTabItem(props) {
 };
 
 RadioSubTabItem.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   name: PropTypes.string.isRequired, // needs to be unique for each tab group
   value: PropTypes.string,
   text: PropTypes.string.isRequired,
@@ -35,6 +43,8 @@ RadioSubTabItem.propTypes = {
 };
 
 RadioSubTabItem.defaultProps = {
+  className: '',
+  style: null,
   value: '',
   isVisible: true,
   isChecked: false,

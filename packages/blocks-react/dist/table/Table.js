@@ -6,7 +6,10 @@ var PropTypes = require('prop-types');
 var Table = function Table(props) {
   return React.createElement(
     'table',
-    { className: 'blx-table' },
+    {
+      style: props.style,
+      className: 'blx-table ' + props.className
+    },
     React.createElement(
       'thead',
       null,
@@ -57,12 +60,16 @@ var Table = function Table(props) {
 };
 
 Table.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   headings: PropTypes.arrayOf(PropTypes.string),
   entries: PropTypes.array,
   onClick: PropTypes.func
 };
 
 Table.defaultProps = {
+  className: '',
+  style: null,
   headings: [],
   entries: [],
   onClick: function onClick() {}

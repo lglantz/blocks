@@ -3,7 +3,10 @@ const PropTypes = require('prop-types');
 
 
 const Breadcrumbs = props => (
-  <nav className="blx-breadcrumbs">
+  <nav
+    style={props.style}
+    className={`blx-breadcrumbs ${props.className}`}
+  >
     <ul>
       {
         props.breadcrumbs.map(breadcrumb => (
@@ -22,6 +25,8 @@ const Breadcrumbs = props => (
 );
 
 Breadcrumbs.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   breadcrumbs: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
     href: PropTypes.string
@@ -29,6 +34,8 @@ Breadcrumbs.propTypes = {
 };
 
 Breadcrumbs.defaultProps = {
+  className: '',
+  style: null,
   breadcrumbs: []
 };
 

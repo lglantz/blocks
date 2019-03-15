@@ -7,7 +7,8 @@ var AlertBanner = require('./AlertBanner.js');
 
 var SuccessAlert = function SuccessAlert(props) {
   return React.createElement(AlertBanner, {
-    type: 'success',
+    style: props.style,
+    className: 'blx-success ' + props.className,
     title: props.title,
     message: props.message,
     closable: true,
@@ -16,12 +17,16 @@ var SuccessAlert = function SuccessAlert(props) {
 };
 
 SuccessAlert.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
   title: PropTypes.string,
   message: PropTypes.string,
   onClose: PropTypes.func
 };
 
 SuccessAlert.defaultProps = {
+  className: '',
+  style: null,
   title: 'Success',
   message: '',
   onClose: null
