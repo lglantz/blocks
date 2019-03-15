@@ -169,8 +169,6 @@ p {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
 }
 label {
   font-weight: 400;
@@ -179,8 +177,6 @@ label {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
 }
 .blx-p {
   font-weight: 400;
@@ -189,8 +185,6 @@ label {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
 }
 .blx-label {
   font-weight: 400;
@@ -199,6 +193,11 @@ label {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+}
+p.blx-with-margin,
+label.blx-with-margin,
+.blx-p.blx-with-margin,
+.blx-label.blx-with-margin {
   margin-top: 0;
   margin-bottom: 6px;
 }
@@ -209,8 +208,6 @@ a {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #009f6f;
   color: var(--primary-00, #009f6f);
   cursor: pointer;
@@ -226,8 +223,6 @@ a {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #009f6f;
   color: var(--primary-00, #009f6f);
   cursor: pointer;
@@ -281,6 +276,11 @@ a.blx-disabled,
   opacity: 0.3;
   pointer-events: none;
 }
+a.blx-with-margin,
+.blx-link.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
 h1.blx-XL {
   font-weight: 700;
   color: #2b3836;
@@ -288,6 +288,8 @@ h1.blx-XL {
   font-size: 96px;
   line-height: 96px;
   letter-spacing: -3.25px;
+}
+h1.blx-XL.blx-with-margin {
   margin-top: 108px;
   margin-bottom: 36px;
 }
@@ -298,8 +300,6 @@ h1 {
   font-size: 65px;
   line-height: 72px;
   letter-spacing: -2px;
-  margin-top: 108px;
-  margin-bottom: 36px;
 }
 .blx-h1 {
   font-weight: 700;
@@ -308,6 +308,9 @@ h1 {
   font-size: 65px;
   line-height: 72px;
   letter-spacing: -2px;
+}
+h1.blx-with-margin,
+.blx-h1.blx-with-margin {
   margin-top: 108px;
   margin-bottom: 36px;
 }
@@ -318,8 +321,6 @@ h2 {
   font-size: 39px;
   line-height: 42px;
   letter-spacing: -0.081px;
-  margin-top: 42px;
-  margin-bottom: 24px;
 }
 .blx-h2 {
   font-weight: 700;
@@ -328,6 +329,9 @@ h2 {
   font-size: 39px;
   line-height: 42px;
   letter-spacing: -0.081px;
+}
+h2.blx-with-margin,
+.blx-h2.blx-with-margin {
   margin-top: 42px;
   margin-bottom: 24px;
 }
@@ -338,8 +342,6 @@ h3 {
   font-size: 23px;
   line-height: 24px;
   letter-spacing: -0.005px;
-  margin-top: 24px;
-  margin-bottom: 12px;
 }
 .blx-h3 {
   font-weight: 700;
@@ -348,6 +350,9 @@ h3 {
   font-size: 23px;
   line-height: 24px;
   letter-spacing: -0.005px;
+}
+h3.blx-with-margin,
+.blx-h3.blx-with-margin {
   margin-top: 24px;
   margin-bottom: 12px;
 }
@@ -358,8 +363,6 @@ h4 {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0.17px;
-  margin-top: 12px;
-  margin-bottom: 6px;
 }
 .blx-h4 {
   font-weight: 700;
@@ -368,6 +371,9 @@ h4 {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0.17px;
+}
+h4.blx-with-margin,
+.blx-h4.blx-with-margin {
   margin-top: 12px;
   margin-bottom: 6px;
 }
@@ -378,8 +384,6 @@ h5 {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0;
-  margin-top: 12px;
-  margin-bottom: 6px;
 }
 .blx-h5 {
   font-weight: 500;
@@ -388,7 +392,22 @@ h5 {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0;
+}
+h5.blx-with-margin,
+.blx-h5.blx-with-margin {
   margin-top: 12px;
+  margin-bottom: 6px;
+}
+.blx-ui-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+}
+.blx-ui-text.blx-with-margin {
+  margin-top: 0;
   margin-bottom: 6px;
 }
 .blx-ui-caps {
@@ -399,6 +418,8 @@ h5 {
   letter-spacing: 0.8px;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
+}
+.blx-ui-caps.blx-with-margin {
   margin-top: 0;
   margin-bottom: 12px;
 }
@@ -409,6 +430,8 @@ h5 {
   color: #2b3836;
   color: var(--dark-00, #2b3836);
   letter-spacing: 0.15px;
+}
+.blx-ui-small.blx-with-margin {
   margin-top: 0;
   margin-bottom: 6px;
 }
@@ -418,6 +441,8 @@ h5 {
   line-height: 18px;
   text-transform: uppercase;
   letter-spacing: 1.65px;
+}
+.blx-ui-small-caps.blx-with-margin {
   margin-top: 12px;
   margin-bottom: 6px;
 }
@@ -465,8 +490,6 @@ h5 {
   color: var(--danger-00, #eb5534);
   font-size: 12px;
   line-height: 16px;
-  position: absolute;
-  top: 100%;
 }
 .blx-input-helper-message {
   font-weight: 400;
@@ -475,12 +498,8 @@ h5 {
   color: #2b3836;
   color: var(--dark-00, #2b3836);
   letter-spacing: 0.15px;
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
-  position: absolute;
-  top: 100%;
 }
 html {
   font-family: Graphik Web;
@@ -588,7 +607,6 @@ input[type=checkbox][name='blx-accordion-tab']:checked ~ .blx-accordion-content 
   max-height: 222px;
   display: flex;
   padding: 16px;
-  margin: 12px 0;
   border-top: 3px solid;
   border-radius: 0 0 7px 7px;
   background-color: #fff;
@@ -704,6 +722,7 @@ input[type=checkbox][name='blx-accordion-tab']:checked ~ .blx-accordion-content 
   height: 44px;
   max-width: 480px;
   min-width: 44px;
+  margin: 0;
   padding: 8px 18px;
   text-decoration: none;
   border-radius: 7px;
@@ -714,11 +733,12 @@ input[type=checkbox][name='blx-accordion-tab']:checked ~ .blx-accordion-content 
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0;
-  margin-top: 12px;
-  margin-bottom: 6px;
   text-align: center;
   box-shadow: 0 1px 2px 0 rgba(170,183,178,0.6);
   box-shadow: 0 1px 2px 0 var(--shadow, rgba(170,183,178,0.6));
+}
+.blx-button.blx-with-margin {
+  margin: 12px;
 }
 .blx-button .blx-icon {
   position: relative;
@@ -1065,23 +1085,25 @@ a.blx-button {
 .blx-checkbox {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin: 9px 0;
+  padding-left: 34px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
+.blx-checkbox .blx-with-margin {
+  margin: 8px 0;
+}
 .blx-checkbox .blx-label {
-  line-height: 22px;
+  line-height: 20px;
 }
 .blx-checkbox .blx-checkmark {
   position: absolute;
   top: -2px;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   border-radius: 7px;
   margin: 3px 0;
   background-color: #fff;
@@ -1097,7 +1119,7 @@ a.blx-button {
   left: 6px;
   top: 6px;
   width: 3px;
-  height: 8px;
+  height: 7px;
   border: solid #fff;
   border: solid var(--secondary-00, #fff);
   border-width: 0 2px 2px 0;
@@ -1287,11 +1309,13 @@ a.blx-button {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
   margin: 0;
+}
+.blx-dropdown-trigger.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 .blx-dropdown-trigger::after {
   position: absolute;
@@ -1798,7 +1822,7 @@ a.blx-button {
 .blx-radio {
   display: block;
   position: relative;
-  padding: 9px 0 9px 62px;
+  padding-left: 34px;
   margin: 0;
   cursor: pointer;
   -webkit-user-select: none;
@@ -1806,13 +1830,16 @@ a.blx-button {
       -ms-user-select: none;
           user-select: none;
 }
+.blx-radio .blx-with-margin {
+  margin: 9px 0;
+}
 .blx-radio .blx-label {
   line-height: 18px;
 }
 .blx-radio .blx-radio-check {
   position: absolute;
-  top: 9px;
-  left: 32px;
+  top: 1px;
+  left: 1px;
   height: 16px;
   width: 16px;
   border-radius: 50%;
@@ -2300,11 +2327,13 @@ input[type="radio"]:hover + .blx-sub-tab {
   display: inline-flex;
   position: relative;
   flex-direction: column;
-  margin-right: 20px;
-  margin-bottom: 19px;
   min-width: 150px;
   max-width: 484px;
   width: 300px;
+}
+.blx-text-field.blx-with-margin {
+  margin-right: 24px;
+  margin-bottom: 40px;
 }
 .blx-text-field label {
   margin-bottom: 6px;
@@ -2322,8 +2351,6 @@ input[type="radio"]:hover + .blx-sub-tab {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
 }
@@ -2334,8 +2361,6 @@ input[type="radio"]:hover + .blx-sub-tab {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
 }
@@ -2346,10 +2371,20 @@ input[type="radio"]:hover + .blx-sub-tab {
   letter-spacing: 0;
   color: #2b3836;
   color: var(--dark-00, #2b3836);
-  margin-top: 0;
-  margin-bottom: 6px;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
+}
+.blx-text-field input::-webkit-input-placeholder.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.blx-text-field input::-ms-input-placeholder.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.blx-text-field input::placeholder.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 .blx-text-field input[type="date"] {
   position: relative;
@@ -2594,6 +2629,8 @@ input[type="radio"]:hover + .blx-sub-tab {
   height: 40px;
   font-size: 14px;
   line-height: 40px;
+}
+.blx-toggle.blx-with-margin {
   margin: 12px 16px;
 }
 .blx-toggle.blx-disabled {

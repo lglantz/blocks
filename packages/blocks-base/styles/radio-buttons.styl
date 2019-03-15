@@ -25,10 +25,14 @@ $radio-selected-error-background-color = $danger-00;
 .blx-radio {
   display: block;
   position: relative;
-  padding: 9px 0 9px 62px;
+  padding-left: 34px;
   margin: 0;
   cursor: pointer;
   user-select: none;
+  
+  .blx-with-margin {
+    margin: 9px 0;
+  }
   
   .blx-label {
     line-height: ($radio-size + 2px);
@@ -37,8 +41,8 @@ $radio-selected-error-background-color = $danger-00;
   // custom radio button
   .blx-radio-check {
     position: absolute;
-    top: 9px;
-    left: 32px;
+    top: 1px;
+    left: 1px;
     height: $radio-size;
     width: $radio-size;
     border-radius: 50%;

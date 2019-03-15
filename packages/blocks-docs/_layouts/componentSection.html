@@ -3,15 +3,15 @@ layout: default
 ---
 
 <div class="design-page-header">
-  <h1>{{ page.title }}</h1>
-  <p class="blx-ui-text">{{ content }}</p>
+  <h1 class="blx-with-margin">{{ page.title }}</h1>
+  <p class="blx-ui-text blx-with-margin">{{ content }}</p>
 </div>
 
 <section class="design-page-section">
   {% if page.examples %}
     {% capture example_link %}{{page.examples}}.html{% endcapture %}
     <div class="l-flex-vertical doc-section">
-      <h3 id="Examples">Examples & Guidelines</h3>
+      <h3 id="Examples" class="blx-with-margin">Examples & Guidelines</h3>
       {% include {{example_link}} %}
     </div>
   {% endif %}
@@ -19,7 +19,7 @@ layout: default
   {% if page.edgecases %}
     {% capture edgecase_link %}edgecases/{{page.edgecases}}.html{% endcapture %}
     <div class="l-flex-vertical doc-section">
-      <h3 id="EdgeCases">Edge Cases</h3>
+      <h3 id="EdgeCases" class="blx-with-margin">Edge Cases</h3>
       {% include {{edgecase_link}} page=page %}
     </div>
   {% endif %}
@@ -27,7 +27,7 @@ layout: default
   {% if page.react %}
     {% capture react_link %}lib/{{page.react}}.js{% endcapture %}
     <div class="l-flex-vertical doc-section">
-      <h3 id="React">React Examples</h3>
+      <h3 id="React" class="blx-with-margin">React Examples</h3>
       <div id="react-preview"></div>
       <script src="{{ react_link | relative_url }}"></script>
     </div>
@@ -35,7 +35,7 @@ layout: default
 
   {% if page.examples %}
     <div class="l-flex-vertical doc-section">
-      <h3 id="HTMLSnippets">HTML Code Snippets</h3>
+      <h3 id="HTMLSnippets" class="blx-with-margin">HTML Code Snippets</h3>
       {% include snippet.html content=example %}
     </div>
   {% endif %}

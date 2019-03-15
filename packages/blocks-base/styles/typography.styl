@@ -9,8 +9,6 @@ blxHXL() {
   font-size: 96px;
   line-height: 96px;
   letter-spacing: -3.25px;
-  margin-top: 108px;
-  margin-bottom: 36px;
 }
 
 blxH1() {
@@ -18,8 +16,6 @@ blxH1() {
   font-size: 65px;
   line-height: 72px;
   letter-spacing: -2px;
-  margin-top: 108px;
-  margin-bottom: 36px;
 }
 
 blxH2() {
@@ -27,8 +23,6 @@ blxH2() {
   font-size: 39px;
   line-height: 42px;
   letter-spacing: -0.081px;
-  margin-top: 42px;
-  margin-bottom: 24px;
 }
 
 blxH3() {
@@ -36,8 +30,6 @@ blxH3() {
   font-size: 23px;
   line-height: 24px;
   letter-spacing: -0.005px;
-  margin-top: 24px;
-  margin-bottom: 12px;
 }
 
 blxH4() {
@@ -45,8 +37,6 @@ blxH4() {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0.17px;
-  margin-top: 12px;
-  margin-bottom: 6px;
 }
 
 blxH5() {
@@ -55,8 +45,6 @@ blxH5() {
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0;
-  margin-top: 12px;
-  margin-bottom: 6px;
 }
 
 blxH5Interactive() {
@@ -75,8 +63,6 @@ blxUIDefaultText() {
   line-height: 18px;
   letter-spacing: 0;
   color: $dark-00;
-  margin-top: 0;
-  margin-bottom: 6px;
 }
 
 blxLink() {
@@ -107,6 +93,11 @@ blxLink() {
 blxUIPlaceholder() {
   blxUIDefaultText();
   color: $light-02;
+  
+  &.blx-with-margin {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
 }
 
 blxUICaps() {
@@ -116,8 +107,6 @@ blxUICaps() {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: $dark-00;
-  margin-top: 0;
-  margin-bottom: 12px;
 }
 
 blxUISmall() {
@@ -126,8 +115,6 @@ blxUISmall() {
   line-height: 18px;
   color: $dark-00;
   letter-spacing: 0.15px;
-  margin-top: 0;
-  margin-bottom: 6px;
 }
 
 blxUISmallCaps() {
@@ -136,8 +123,7 @@ blxUISmallCaps() {
   line-height: 18px;
   text-transform: uppercase;
   letter-spacing: 1.65px;
-  margin-top: 12px;
-  margin-bottom: 6px;
+  
 }
 
 blxTruncateText() {
@@ -150,50 +136,110 @@ blxTruncateText() {
 
 p, label, .blx-p, .blx-label {
   blxUIDefaultText()
+  
+  &.blx-with-margin {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
 }
 
 a, .blx-link {
   blxLink()
+  
+  &.blx-with-margin {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
 }
 
 h1.blx-XL {
   blxHXL()
+  
+  &.blx-with-margin {
+    margin-top: 108px;
+    margin-bottom: 36px;
+  }
 }
 
 h1, .blx-h1 {
   blxH1()
+  
+  &.blx-with-margin {
+    margin-top: 108px;
+    margin-bottom: 36px;
+  }
 }
 
 h2, .blx-h2 {
   blxH2()
+  
+  &.blx-with-margin {
+    margin-top: 42px;
+    margin-bottom: 24px;
+  }
 }
 
 h3, .blx-h3, {
   blxH3()
+  
+  &.blx-with-margin {
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
 }
 
 h4, .blx-h4 {
   blxH4()
+  
+  &.blx-with-margin {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
 }
 
 h5, .blx-h5 {
   blxH5()
+  
+  &.blx-with-margin {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
 }
 
 .blx-ui-text {
-  blxUIText();
+  blxUIDefaultText();
+  
+  &.blx-with-margin {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
 }
 
 .blx-ui-caps { // .blx-body-caps
   blxUICaps()
+  
+  &.blx-with-margin {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
 }
 
 .blx-ui-small { // .blx-caption
   blxUISmall()
+  
+  &.blx-with-margin {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
 }
 
 .blx-ui-small-caps { // .blx-overline
   blxUISmallCaps()
+  
+  &.blx-with-margin {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
 }
 
 .blx-capitalize {
@@ -232,14 +278,10 @@ h5, .blx-h5 {
   color: $danger-00;
   font-size: 12px;
   line-height: 16px;
-  position: absolute;
-  top: 100%
 }
 
 .blx-input-helper-message {
   blxUISmall()
   color: $light-02;
-  position: absolute;
-  top: 100%;
 }
 

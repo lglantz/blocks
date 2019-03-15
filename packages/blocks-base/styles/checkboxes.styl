@@ -27,13 +27,16 @@ $checkbox-selected-focus-background-color = $primary-00;
 .blx-checkbox {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin: 9px 0;
+  padding-left: 34px;
   cursor: pointer;
   user-select: none;
+  
+  .blx-with-margin {
+    margin: 8px 0;
+  }
 
   .blx-label {
-    line-height: ($checkbox-size + 4px);
+    line-height: ($checkbox-size + 2px);
   }
 
   // custom checkmark
@@ -41,8 +44,8 @@ $checkbox-selected-focus-background-color = $primary-00;
     position: absolute;
     top: -2px;
     left: 0;
-    height: ($checkbox-size + 2px); // plus 2 pixels to account for borders
-    width: ($checkbox-size + 2px);
+    height: $checkbox-size;
+    width: $checkbox-size;
     border-radius: $base-border-radius;
     margin: 3px 0;
 
@@ -58,7 +61,7 @@ $checkbox-selected-focus-background-color = $primary-00;
       left: 6px;
       top: 6px;
       width: 3px;
-      height: 8px;
+      height: 7px;
       border: solid $checkbox-check-color;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);

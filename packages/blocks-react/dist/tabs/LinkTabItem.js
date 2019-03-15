@@ -30,7 +30,6 @@ var LinkTabItem = function LinkTabItem(props) {
 LinkTabItem.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   isActive: PropTypes.bool,

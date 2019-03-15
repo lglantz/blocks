@@ -32,7 +32,7 @@ RadioButtonGroup.propTypes = {
   style: PropTypes.object,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string),
+  options: PropTypes.arrayOf(PropTypes.object),
   isDisabled: PropTypes.bool,
   checkedIndex: PropTypes.number
 };
