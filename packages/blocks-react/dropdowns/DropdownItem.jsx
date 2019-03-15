@@ -64,7 +64,8 @@ class DropdownItem extends React.Component {
 
     let classes = 'blx-dropdown-item ';
     if (this.props.option.disabled) classes += 'blx-disabled ';
-    
+    if (this.props.isSelected) classes += 'blx-selected ';
+
     return (
       <li
         style={this.props.style}
@@ -94,6 +95,7 @@ DropdownItem.propTypes = {
     element: PropTypes.node,
     key: PropTypes.string
   }).isRequired,
+  isSelected: PropTypes.bool,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   onSelect: PropTypes.func
@@ -102,6 +104,7 @@ DropdownItem.propTypes = {
 DropdownItem.defaultProps = {
   className: '',
   style: null,
+  isSelected: false,
   onKeyDown: () => {},
   onKeyUp: () => {},
   onSelect: () => {}

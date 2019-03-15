@@ -69,6 +69,7 @@ var DropdownMenu = function DropdownMenu(props) {
               key: option.text || option.key,
               option: option,
               ref: props.optionsRefs[idx],
+              isSelected: props.value === option.value,
               onKeyDown: props.onKeyDown,
               onKeyUp: props.onKeyUp,
               onSelect: props.onSelect

@@ -17,12 +17,12 @@ $dropdown-focus-border = 1px solid $focus;
 $dropdown-error-border = 1px solid $danger-00;
 
 $dropdown-item-default-text-color = $dark-00;
-$dropdown-item-hover-text-color = $secondary-00;
-$dropdown-item-focus-text-color = $secondary-00;
+$dropdown-item-hover-text-color = $dark-00;
+$dropdown-item-focus-text-color = $dark-00;
 
 $dropdown-item-default-background-color = transparent;
-$dropdown-item-hover-background-color = $primary-00;
-$dropdown-item-focus-background-color = $primary-00;
+$dropdown-item-hover-background-color = $secondary-01;
+$dropdown-item-focus-background-color = $secondary-01;
 
 // dropdown styles
 .blx-dropdown-wrapper {
@@ -147,6 +147,7 @@ $dropdown-item-focus-background-color = $primary-00;
 }
 
 .blx-dropdown-item {
+  position: relative;
   background: $dropdown-item-default-background-color;
 
   a, button {
@@ -170,6 +171,23 @@ $dropdown-item-focus-background-color = $primary-00;
       outline: none;
       color: $dropdown-item-focus-text-color;
       background-color: $dropdown-item-focus-background-color;
+    }
+  }
+  
+  &.blx-selected {
+    a, button {
+      padding-left: 36px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        margin-left: 16px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $primary-00;
+      }
     }
   }
 
