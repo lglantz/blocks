@@ -19,8 +19,9 @@ var Toggle = function Toggle(props) {
           id: 'toggle-option-' + idx,
           name: props.name,
           value: option.value,
-          defaultChecked: option.isChecked,
-          disabled: props.isDisabled
+          defaultChecked: option.value === props.value,
+          disabled: props.isDisabled,
+          onChange: props.onChange
         }),
         React.createElement(
           'span',
@@ -34,16 +35,16 @@ var Toggle = function Toggle(props) {
 
 Toggle.propTypes = {
   name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string,
-    value: PropTypes.string,
-    isChecked: PropTypes.bool
-  })),
+    text: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+  })).isRequired,
+  onChange: PropTypes.func.isRequired,
   isDisabled: PropTypes.bool
 };
 
 Toggle.defaultProps = {
-  options: [],
   isDisabled: false
 };
 
