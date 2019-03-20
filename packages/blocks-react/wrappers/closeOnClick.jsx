@@ -24,12 +24,13 @@ function closeOnClick(WrappedComponent) {
       });
     }
 
-    close() {
+    close(e) {
       this.setState({
         isOpen: false
       }, () => {
         document.body.removeEventListener('click', this.closeOnClick);
       });
+      e.stopPropagation();
     }
 
     toggle(e) {
@@ -45,7 +46,7 @@ function closeOnClick(WrappedComponent) {
     closeOnClick(e) {
       if (!this.ref.current) return;
       if (e.target === this.ref.current || this.ref.current.contains(e.target)) return;
-      this.close();
+      this.close(e);
       if (this.props.afterCloseOnClick) this.props.afterCloseOnClick(); // anything that needs to happen when the dropdown closes by clicking outside of it
     }
 

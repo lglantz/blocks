@@ -46,7 +46,7 @@ function closeOnClick(WrappedComponent) {
       }
     }, {
       key: 'close',
-      value: function close() {
+      value: function close(e) {
         var _this3 = this;
 
         this.setState({
@@ -54,6 +54,7 @@ function closeOnClick(WrappedComponent) {
         }, function () {
           document.body.removeEventListener('click', _this3.closeOnClick);
         });
+        e.stopPropagation();
       }
     }, {
       key: 'toggle',
@@ -71,7 +72,7 @@ function closeOnClick(WrappedComponent) {
       value: function closeOnClick(e) {
         if (!this.ref.current) return;
         if (e.target === this.ref.current || this.ref.current.contains(e.target)) return;
-        this.close();
+        this.close(e);
         if (this.props.afterCloseOnClick) this.props.afterCloseOnClick(); // anything that needs to happen when the dropdown closes by clicking outside of it
       }
     }, {
