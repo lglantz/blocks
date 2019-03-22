@@ -38,7 +38,7 @@ function keyControlledMenu(WrappedComponent) {
       } else if (this.props.onChange) {
         this.props.onChange(option);
       }
-      this.props.close();
+      this.props.close(e);
     }
 
     onKeyDown(e) {

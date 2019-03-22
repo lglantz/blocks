@@ -62,7 +62,7 @@ function closeOnClick(WrappedComponent) {
         e.stopPropagation();
         e.preventDefault();
         if (this.state.isOpen) {
-          this.close();
+          this.close(e);
         } else {
           this.open();
         }
