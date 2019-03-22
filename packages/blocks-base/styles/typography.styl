@@ -1,7 +1,6 @@
 // define some text mixins
 blxH() {
   font-weight: $bold-weight;
-  color: $dark-00;
 }
 
 blxHXL() {
@@ -41,7 +40,6 @@ blxH4() {
 
 blxH5() {
   font-weight: $medium-weight;
-  color: $dark-00;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0;
@@ -62,7 +60,6 @@ blxUIDefaultText() {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0;
-  color: $dark-00;
 }
 
 blxLink() {
@@ -73,6 +70,7 @@ blxLink() {
   border: none;
   text-align: left;
   text-decoration: underline;
+  padding: 0;
 
   &:hover, &.blx-hover {
     color: $primary-01;
@@ -106,14 +104,12 @@ blxUICaps() {
   line-height: 24px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: $dark-00;
 }
 
 blxUISmall() {
   font-weight: $normal-weight;
   font-size: 12px;
   line-height: 18px;
-  color: $dark-00;
   letter-spacing: 0.15px;
 }
 
@@ -256,6 +252,10 @@ h5, .blx-h5 {
 
 .blx-light {
   color: $secondary-00;
+}
+
+.blx-dark {
+  color: $dark-00;
 }
 
 .blx-success {

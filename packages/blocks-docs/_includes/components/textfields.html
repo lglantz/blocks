@@ -151,16 +151,17 @@
   </div>
 {% endcapture %}
 
-
-{% capture example %}
-  {{ text_field_example }}
-  {{ text_field_disabled_example }}
-  {{ text_field_invalid_example }}
-  {{ text_field_prefix_suffix_example }}
-  {{ text_field_icon_example }}
-  {{ text_field_multiline_example }}
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=text_field_example %}
+  {% include snippet.html content=text_field_disabled_example %}
+  {% include snippet.html content=text_field_invalid_example %}
+  {% include snippet.html content=text_field_prefix_suffix_example %}
+  {% include snippet.html content=text_field_icon_example %}
+  {% include snippet.html content=text_field_multiline_example %}
 {% endcapture %}
 
+<!-- EXAMPLES CONTENT -->
 <p class="blx-with-margin">*Some text field functions require JavaScript to work properly - for working examples, see the "React Components" section below.</p>
 <div class="l-flex-vertical">
   <div class="l-flex-horizontal">

@@ -1,4 +1,4 @@
-{% capture example %}
+{% capture table_example %}
   <table class="blx-table">
     <thead>
       <tr class="blx-table-header-row">
@@ -42,4 +42,10 @@
   </table>
 {% endcapture %}
 
-{{ example }}
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=table_example %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
+{{ table_example }}

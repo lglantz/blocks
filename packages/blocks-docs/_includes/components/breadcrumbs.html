@@ -1,4 +1,4 @@
-{% capture example %}
+{% capture breadcrumb_example %}
   <nav class="blx-breadcrumbs">
     <ul>
       <li><a title="Breadcrumb 1" href="#">Breadcrumb 1</a></li>
@@ -8,3 +8,11 @@
     </ul>
   </nav>
 {% endcapture %}
+
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=breadcrumb_example %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
+{{ breadcrumb_example }}

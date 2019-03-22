@@ -22,6 +22,7 @@ const components = [
   'progress',
   'table',
   'tabs',
+  'tooltips',
   'wrappers'
 ];
 

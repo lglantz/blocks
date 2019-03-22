@@ -1,8 +1,10 @@
 <div class="l-flex-horizontal snippet-container">
-  <div class="l-half-screen">
-    {{ include.content }}
+  <div class="l-half-screen snippet-left {% if include.dark %}blx-dark-bg{% endif %}">
+    <div>
+      {{ include.content }}
+    </div>
   </div>
-  <div class="l-half-screen">
+  <div class="l-half-screen snippet-right">
     {% highlight html %}
       {{ include.content }}
     {% endhighlight %}

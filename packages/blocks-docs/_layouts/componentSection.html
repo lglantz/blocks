@@ -36,7 +36,7 @@ layout: default
   {% if page.examples %}
     <div class="l-flex-vertical doc-section">
       <h3 id="HTMLSnippets" class="blx-with-margin">HTML Code Snippets</h3>
-      {% include snippet.html content=example %}
+      {{ snippets }}
     </div>
   {% endif %}
 </section>

@@ -83,8 +83,8 @@
   </div>
 {% endcapture %}
 
-{% capture example %}
-  <!-- don't use captures because radio buttons group based on name -->
+<!-- don't use captures because radio buttons group based on name -->
+{% capture toggle_example_default_2 %}
   <div class="blx-toggle">
     <label class="blx-toggle-container">
       <input class="blx-focus" type="radio" name="toggle-example-focused-2" checked />
@@ -99,6 +99,9 @@
       <span class="blx-toggle-text">Option 3</span>
     </label>
   </div>
+{% endcapture %}
+
+{% capture toggle_example_disabled_2 %}
   <div class="blx-toggle blx-disabled">
     <label class="blx-toggle-container">
       <input type="radio" name="toggle-example-disabled-2" checked disabled />
@@ -115,6 +118,13 @@
   </div>
 {% endcapture %}
 
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=toggle_example_default_2 %}
+  {% include snippet.html content=toggle_example_disabled_2 %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
 <div class="l-flex-vertical">
   <div class="l-flex-horizontal">
     <span class="doc-state-title blx-h5">

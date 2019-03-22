@@ -68,7 +68,7 @@ var AlertBanner = function (_React$Component) {
           { className: 'blx-alert-text' },
           React.createElement(
             'h4',
-            { className: 'blx-alert-title blx-' + this.props.type },
+            { className: 'blx-alert-title' },
             this.props.title
           ),
           React.createElement(

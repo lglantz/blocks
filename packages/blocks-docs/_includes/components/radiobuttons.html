@@ -62,13 +62,23 @@
   </label>
 {% endcapture %}
 
-{% capture example %}
+{% capture radio_example_default %}
   {{ radio_example_checked }}
   {{ radio_example_unchecked }}
+{% endcapture %}
+
+{% capture radio_example_disabled %}
   {{ radio_example_disabled_checked }}
   {{ radio_example_disabled_unchecked }}
 {% endcapture %}
 
+<!-- HTML CODE SNIPPETS -->
+ {% capture snippets %}
+  {% include snippet.html content=radio_example_default %}
+  {% include snippet.html content=radio_example_disabled %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
 <div class="l-flex-vertical">
   <div class="l-flex-horizontal">
     <h5 class="doc-state-title"></h5>
@@ -190,4 +200,3 @@
     </div>
   </div>
 </div>
-

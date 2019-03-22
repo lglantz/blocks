@@ -60,12 +60,17 @@
   </div>
 {% endcapture %}
 
-{% capture example %}
-  {{ success_example }}
-  {{ info_example }}
-  {{ warning_example }}
-  {{ error_example }}
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=success_example %}
+  {% include snippet.html content=info_example %}
+  {% include snippet.html content=warning_example %}
+  {% include snippet.html content=error_example %}
 {% endcapture %}
 
+<!-- EXAMPLES CONTENT -->
 <p class="blx-with-margin">Banners communicate one of the following states: success, information, warning, or error.  </p>
-{{ example }}
+<div>{{ success_example }}</div>
+<div>{{ info_example }}</div>
+<div>{{ warning_example }}</div>
+<div>{{ error_example }}</div>

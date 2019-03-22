@@ -88,5 +88,7 @@
   "brand": {
     "00": "var(--brand-00, $brand-00-hex)",
     "01": "var(--brand-01, $brand-01-hex)"
-  }
+  },
+
+  "base-font-color": "$dark-00"
 }

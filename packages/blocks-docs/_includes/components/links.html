@@ -14,13 +14,17 @@
   <a class="blx-disabled" href="#">Link</a>
 {% endcapture %}
 
-{% capture example %}
-  {{ link_example }}
-  {{ link_hover_example }}
-  {{ link_focus_example }}
-  {{ link_disabled_example }}
+{% capture link_button_example %}
+  <button class="blx-link">Link</button>
 {% endcapture %}
 
+<!-- HTML CODE SNIPPETS -->
+ {% capture snippets %}
+  {% include snippet.html content=link_example %}
+  {% include snippet.html content=link_button_example %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
 <div class="l-flex-vertical">
   <div class="l-flex-horizontal">
     <span class="doc-state-title blx-h5">

@@ -78,13 +78,23 @@
   </label>
 {% endcapture %}
 
-{% capture example %}
+{% capture checkbox_example_default %}
   {{ checkbox_example_checked }}
   {{ checkbox_example_unchecked }}
+{% endcapture %}
+
+{% capture checkbox_example_disabled %}
   {{ checkbox_example_disabled_checked }}
   {{ checkbox_example_disabled_unchecked }}
 {% endcapture %}
 
+<!-- HTML CODE SNIPPETS -->
+ {% capture snippets %}
+  {% include snippet.html content=checkbox_example_default %}
+  {% include snippet.html content=checkbox_example_disabled %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
 <div class="l-flex-vertical">
   <div class="l-flex-horizontal">
     <h5 class="doc-state-title"></h5>

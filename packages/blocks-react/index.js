@@ -42,6 +42,7 @@ module.exports = {
     LinkTabItem: require('./dist/tabs/LinkTabItem.js'),
     LinkSubTabItem: require('./dist/tabs/LinkSubTabItem.js')
   },
+  Tooltip: require('./dist/tooltips/Tooltip.js'),
   wrappers: {
     closeOnClick: require('./dist/wrappers/closeOnClick.js'),
     keyControlledMenu: require('./dist/wrappers/keyControlledMenu.js')

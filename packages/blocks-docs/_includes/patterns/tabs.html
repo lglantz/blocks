@@ -1,50 +1,3 @@
-{% capture example1 %}
-  <div class="blx-horizontal-tabs">
-    <label>
-      <input type="radio" name="horizontal-tab-example" checked>
-      <span class="blx-tab-item">Tab 1</span>
-    </label>
-    <label>
-      <input type="radio" name="horizontal-tab-example">
-      <span class="blx-tab-item">Tab 2</span>
-    </label>
-    <label>
-      <input type="radio" name="horizontal-tab-example">
-      <span class="blx-tab-item">Tab 3</span>
-    </label>
-    <label>
-      <input type="radio" name="horizontal-tab-example">
-      <span class="blx-tab-item">Tab 4</span>
-    </label>
-  </div>
-{% endcapture %}
-
-{% capture example2 %}
-  <div class="blx-vertical-tabs">
-    <label>
-      <input type="radio" name="vertical-tab-example" checked>
-      <span class="blx-tab-item">Tab 1</span>
-    </label>
-    <label>
-      <input type="radio" name="vertical-tab-example">
-      <span class="blx-tab-item">Tab 2</span>
-    </label>
-    <label>
-      <input type="radio" name="vertical-tab-example">
-      <span class="blx-tab-item">Tab 3</span>
-    </label>
-    <label>
-      <input type="radio" name="vertical-tab-example">
-      <span class="blx-tab-item">Tab 4</span>
-    </label>
-  </div>
-{% endcapture %}
-
-{% capture example %}
-  {{ example1 }}
-  {{ example2 }}
-{% endcapture %}
-
 <!-- HORIZONTAL TAB EXAMPLES -->
 {% capture default_horizontal_tab %}
   <div class="blx-horizontal-tabs">
@@ -216,6 +169,63 @@
   <a class="blx-sub-tab blx-disabled" href="#" disabled>Subtab</a>
 {% endcapture %}
 
+{% capture tab_horizontal_example %}
+  <div class="blx-horizontal-tabs">
+    <label>
+      <input type="radio" name="horizontal-tab-example" checked>
+      <span class="blx-tab-item">Tab 1</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="blx-tab-item">Tab 2</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="blx-tab-item">Tab 3</span>
+    </label>
+    <label>
+      <input type="radio" name="horizontal-tab-example">
+      <span class="blx-tab-item">Tab 4</span>
+    </label>
+  </div>
+{% endcapture %}
+
+{% capture tab_vertical_example %}
+  <div class="blx-vertical-tabs">
+    <label>
+      <input type="radio" name="vertical-tab-example" checked>
+      <span class="blx-tab-item">Tab 1</span>
+      <label>
+        <input type="radio" name="vertical-subtab-example" checked>
+        <span class="blx-sub-tab">Child 1</span>
+      </label>
+      <label>
+        <input type="radio" name="vertical-subtab-example">
+        <span class="blx-sub-tab">Child 2</span>
+      </label>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="blx-tab-item">Tab 2</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="blx-tab-item">Tab 3</span>
+    </label>
+    <label>
+      <input type="radio" name="vertical-tab-example">
+      <span class="blx-tab-item">Tab 4</span>
+    </label>
+  </div>
+{% endcapture %}
+
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=tab_horizontal_example %}
+  {% include snippet.html content=tab_vertical_example %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
 <div>
   <!-- header row -->
   <div class="doc-example-row">

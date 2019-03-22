@@ -1,4 +1,4 @@
-{% capture example %}
+{% capture progress_dots_example %}
   <div class="blx-progress-dots">
     <label class="blx-progress-dot-container">
       <input type="radio" name="progress-dots-example" checked />
@@ -18,3 +18,11 @@
     </label>
   </div>
 {% endcapture %}
+
+<!-- HTML CODE SNIPPETS -->
+{% capture snippets %}
+  {% include snippet.html content=progress_dots_example %}
+{% endcapture %}
+
+<!-- EXAMPLES CONTENT -->
+{{ progress_dots_example }}
