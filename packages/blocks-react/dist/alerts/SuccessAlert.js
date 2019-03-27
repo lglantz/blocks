@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var PropTypes = require('prop-types');
 
@@ -7,31 +9,22 @@ var AlertBanner = require('./AlertBanner.js');
 var SuccessIcon = require('../icons/SuccessIcon.js');
 
 var SuccessAlert = function SuccessAlert(props) {
-  return React.createElement(AlertBanner, {
-    style: props.style,
+  return React.createElement(AlertBanner, _extends({}, props, {
     className: 'blx-success ' + props.className,
-    title: props.title,
-    icon: React.createElement(SuccessIcon, { className: 'blx-alert-icon' }),
-    message: props.message,
-    closable: true,
-    onClose: props.onClose
-  });
+    icon: React.createElement(SuccessIcon, { className: 'blx-alert-icon' })
+  }));
 };
 
 SuccessAlert.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   title: PropTypes.string,
-  message: PropTypes.string,
-  onClose: PropTypes.func
+  closable: PropTypes.bool
 };
 
 SuccessAlert.defaultProps = {
   className: '',
-  style: null,
   title: 'Success',
-  message: '',
-  onClose: null
+  closable: true
 };
 
 module.exports = SuccessAlert;

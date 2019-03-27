@@ -6,26 +6,22 @@ const InformationIcon = require('../icons/InformationIcon.jsx');
 
 const InformationalAlert = props => (
   <AlertBanner
-    style={props.style}
+    {...props}
     className={`blx-information ${props.className}`}
-    title={props.title}
     icon={<InformationIcon className="blx-alert-icon" />}
-    message={props.message}
   />
 );
 
 InformationalAlert.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   title: PropTypes.string,
-  message: PropTypes.string
+  closable: PropTypes.bool
 };
 
 InformationalAlert.defaultProps = {
   className: '',
-  style: null,
   title: 'Information',
-  message: ''
+  closable: false
 };
 
 module.exports = InformationalAlert;

@@ -14,12 +14,14 @@ const ErrorAlert = props => (
 
 ErrorAlert.propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.node
+  title: PropTypes.string,
+  closable: PropTypes.bool
 };
 
 ErrorAlert.defaultProps = {
   className: '',
-  icon: null
+  title: 'Error',
+  closable: false
 };
 
 module.exports = ErrorAlert;

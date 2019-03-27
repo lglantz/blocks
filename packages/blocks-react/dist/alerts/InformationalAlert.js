@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var PropTypes = require('prop-types');
 
@@ -7,27 +9,22 @@ var AlertBanner = require('./AlertBanner.js');
 var InformationIcon = require('../icons/InformationIcon.js');
 
 var InformationalAlert = function InformationalAlert(props) {
-  return React.createElement(AlertBanner, {
-    style: props.style,
+  return React.createElement(AlertBanner, _extends({}, props, {
     className: 'blx-information ' + props.className,
-    title: props.title,
-    icon: React.createElement(InformationIcon, { className: 'blx-alert-icon' }),
-    message: props.message
-  });
+    icon: React.createElement(InformationIcon, { className: 'blx-alert-icon' })
+  }));
 };
 
 InformationalAlert.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   title: PropTypes.string,
-  message: PropTypes.string
+  closable: PropTypes.bool
 };
 
 InformationalAlert.defaultProps = {
   className: '',
-  style: null,
   title: 'Information',
-  message: ''
+  closable: false
 };
 
 module.exports = InformationalAlert;
