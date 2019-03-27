@@ -93,10 +93,7 @@ TextField.propTypes = {
     PropTypes.string,
     PropTypes.node
   ]),
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
+  icon: PropTypes.node,
   isDisabled: PropTypes.bool,
   isValid: PropTypes.bool,
   invalidErrorMessage: PropTypes.string,

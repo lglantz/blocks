@@ -1,3 +1,5 @@
+$accordion-icon-spin-duration = 200ms;
+
 .blx-accordion-section {
   position: relative;
   overflow: hidden;
@@ -6,31 +8,20 @@
 
 .blx-accordion-trigger {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   height: 48px;
   line-height: 48px;
-  padding-left: 48px;
-  padding-right: 16px;
+  padding: 0 16px;
   cursor: pointer;
-  
   background-color: transparent;
-
   font-weight: $medium-weight;
-  
-  &::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 16px;
-    height: 16px;
-    padding: 16px;
-    transition: all 0.25s;
-    content: "";
-    background-image: url('../svgs/icon-forward.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+    
+    .blx-accordion-arrow {
+      margin-right: 12px;
+      transform: rotate(0deg);
+      transition: transform $accordion-icon-spin-duration;
+    }
 }
 
 .blx-accordion-content {
@@ -63,9 +54,10 @@ input[type=checkbox][name='blx-accordion-tab'] {
     color: $primary-01;
   }
 
-  &:checked + .blx-accordion-trigger::before {
+  &:checked + .blx-accordion-trigger .blx-accordion-arrow {
     transform: rotate(90deg);
     transform-origin: center;
+    transition: transform $accordion-icon-spin-duration;
   }
   
   &:checked ~ .blx-accordion-content {

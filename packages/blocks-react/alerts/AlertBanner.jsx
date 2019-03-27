@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
+const CloseIcon = require('../icons/CloseIcon.jsx');
 
 class AlertBanner extends React.Component {
   constructor(props) {
@@ -23,16 +24,6 @@ class AlertBanner extends React.Component {
   }
 
   render() {
-    let closeIcon = null;
-    if (this.props.closable) {
-      closeIcon = (
-        <button
-          className="blx-icon blx-icon-close"
-          onClick={this.onClose}
-        />
-      );
-    }
-
     let classes = 'blx-alert ';
     if (this.state.hidden) classes += 'blx-hidden ';
 
@@ -42,14 +33,20 @@ class AlertBanner extends React.Component {
         className={`${classes} ${this.props.className}`}
       >
         <div className="blx-alert-icon-container">
-          <div className="blx-alert-icon-background" />
-          <div className="blx-alert-icon" />
+          <span className="blx-alert-icon-background" />
+          { this.props.icon }
         </div>
         <div className="blx-alert-text">
-          <h4 className="blx-alert-title">{this.props.title}</h4>
+          <h4 className="blx-with-margin">
+            {this.props.title}
+          </h4>
           <p>{this.props.message}</p>
         </div>
-        {closeIcon}
+        { this.props.closable && 
+          <button className="blx-alert-close" onClick={this.onClose}>
+            <CloseIcon />
+          </button>
+        }
       </div>
     );
   }
@@ -59,6 +56,7 @@ AlertBanner.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   title: PropTypes.string,
+  icon: PropTypes.node,
   message: PropTypes.string,
   closable: PropTypes.bool,
   onClose: PropTypes.func
@@ -68,6 +66,7 @@ AlertBanner.defaultProps = {
   className: '',
   style: null,
   title: '',
+  icon: null,
   message: '',
   closable: false,
   onClose: null

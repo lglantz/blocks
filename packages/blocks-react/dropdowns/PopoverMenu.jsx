@@ -2,6 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const DropdownItem = require('./DropdownItem.jsx');
+const MoreIcon = require('../icons/MoreIcon.jsx');
 const closeOnClick = require('../wrappers/closeOnClick.jsx');
 const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
@@ -33,7 +34,7 @@ const PopoverMenu = (props) => {
           onKeyDown={props.onKeyDown}
           onFocus={props.onTriggerFocus}
         >
-          <span className={`blx-icon blx-icon-${props.icon}`} />
+          { props.icon }
         </button>
         <div className={menuClasses}>
           <ul className="blx-dropdown-list">
@@ -63,7 +64,7 @@ PopoverMenu.propTypes = {
   isLeft: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.node,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -95,7 +96,7 @@ PopoverMenu.defaultProps = {
   isLeft: null,
   options: [],
   text: null,
-  icon: 'more-horizontal',
+  icon: <MoreIcon />,
   value: null,
   onChange: () => {},
   autoFocus: false

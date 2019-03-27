@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 
 const BasicButton = React.forwardRef((props, ref) => {
   let classes = 'blx-button ';
-  if (props.iconName) classes += 'blx-icon-button ';
+  if (props.icon) classes += 'blx-icon-button ';
   if (props.isDisabled) classes += 'blx-disabled ';
   
   return (
@@ -18,10 +18,10 @@ const BasicButton = React.forwardRef((props, ref) => {
       onKeyUp={props.onKeyUp}
       ref={ref}
     >
-      { props.leftIcon && <span className={`blx-icon blx-icon-${props.leftIcon}`} /> }
+      { props.leftIcon }
       { props.text && <span>{props.text}</span> }
-      { props.iconName && <span className={`blx-icon blx-icon-${props.iconName}`} /> }
-      { props.rightIcon && <span className={`blx-icon blx-icon-${props.rightIcon}`} /> }
+      { props.icon }
+      { props.rightIcon }
     </button>
   );
 });
@@ -32,9 +32,9 @@ BasicButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string,
   isDisabled: PropTypes.bool,
-  leftIcon: PropTypes.string,
-  rightIcon: PropTypes.string,
-  iconName: PropTypes.string,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  icon: PropTypes.node,
   autoFocus: PropTypes.bool,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func
@@ -47,7 +47,7 @@ BasicButton.defaultProps = {
   isDisabled: false,
   leftIcon: null,
   rightIcon: null,
-  iconName: null,
+  icon: null,
   autoFocus: false,
   onKeyDown: () => {},
   onKeyUp: () => {}

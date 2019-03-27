@@ -2,6 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const DropdownItem = require('./DropdownItem.jsx');
+const DownIcon = require('../icons/DownIcon.jsx');
 const closeOnClick = require('../wrappers/closeOnClick.jsx');
 const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
@@ -44,10 +45,11 @@ const DropdownMenu = (props) => {
           onKeyDown={props.onKeyDown}
           onFocus={props.onTriggerFocus}
         >
-          { props.icon && <span className={`blx-icon blx-icon-${props.icon}`} /> }
+          { props.icon }
           <span className={props.value ? 'blx-dropdown-text' : 'blx-dropdown-placeholder'}>
             { triggerContent }
           </span>
+          <DownIcon className="blx-dropdown-arrow" />
         </button>
 
         {/* DROPDOWN MENU */}
@@ -82,7 +84,7 @@ DropdownMenu.propTypes = {
   isOpen: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.node,
   label: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,

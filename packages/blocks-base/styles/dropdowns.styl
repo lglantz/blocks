@@ -24,6 +24,8 @@ $dropdown-item-default-background-color = transparent;
 $dropdown-item-hover-background-color = $secondary-01;
 $dropdown-item-focus-background-color = $secondary-01;
 
+$dropdown-icon-spin-duration = 200ms;
+
 // dropdown styles
 .blx-dropdown-wrapper {
   display: inline-flex;
@@ -38,40 +40,43 @@ $dropdown-item-focus-background-color = $secondary-01;
 }
 
 .blx-dropdown-trigger {
-  display: flex;
-  align-items: center;
   position: relative;
+  display: flex;
   height: 40px;
+  padding: 0 16px;
   border-radius: $base-border-radius;
-  padding: 0 48px 0 16px;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background-color: $dropdown-default-background-color;
   border: $dropdown-default-border;
-  blxUIPlaceholder();
+  background-color: $dropdown-default-background-color;
   margin: 0;
-
-  &::after {
-    position: absolute;
-    top: 10px;
-    right: 16px;
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid transparent;
-    mask: url('../svgs/icon-down.svg') no-repeat 50% 50%;
-    transition: transform 300ms;
-    background-color: $dropdown-icon-color;
+  cursor: pointer;
+  
+  .blx-dropdown-arrow {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    border: none;
+    background-color: transparent;
+    background-image: url('../svgs/icon-down.svg');
+    transform: rotate(0deg);
+    transition: transform $dropdown-icon-spin-duration;
+  }
+  
+  span {
+    blxUIPlaceholder();
+    blxTruncateText();
+    
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
+    
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
-  &.blx-active::after {
+  &.blx-active .blx-dropdown-arrow {
     transform: rotate(180deg);
-    transition: transform 300ms;
+    transition: transform $dropdown-icon-spin-duration;
   }
 
   &:focus, &.blx-focus {
@@ -80,18 +85,6 @@ $dropdown-item-focus-background-color = $secondary-01;
     background-color: $dropdown-focus-background-color;
     border: $dropdown-focus-border;
     color: $dropdown-focus-text-color;
-
-    &::after {
-      top: 10px;
-    }
-
-    .blx-icon {
-      margin-top: 12px;
-
-      & + span {
-        margin-top: 10px;
-      }
-    }
   }
 
   &:hover, &.blx-hover {
@@ -101,16 +94,6 @@ $dropdown-item-focus-background-color = $secondary-01;
 
   &.blx-invalid {
     border: $dropdown-error-border;
-  }
-
-  .blx-icon {
-    margin: 12px 10px 12px 0;
-    background-color: $light-02;
-    pointer-events: none;
-
-    & + span {
-      margin: 10px 0;
-    }
   }
 }
 
@@ -196,10 +179,6 @@ $dropdown-item-focus-background-color = $secondary-01;
     a, button {
       text-decoration: none;
       color: $dropdown-item-hover-text-color;
-    }
-
-    .blx-icon {
-      background-color: $dropdown-item-hover-text-color;
     }
   }
 }

@@ -4,6 +4,9 @@ const ReactDOM = require('react-dom');
 const getPreviewComponent = require('./common/getPreviewComponent.jsx');
 
 const PopoverMenu = require('blocks-react').Dropdowns.PopoverMenu;
+const DownIcon = require('blocks-react').Icons.DownIcon;
+const MoreIcon = require('blocks-react').Icons.MoreIcon;
+const MoreVerticalIcon = require('blocks-react').Icons.MoreVerticalIcon;
 
 const exampleOptions = [
   {
@@ -17,11 +20,6 @@ const exampleOptions = [
   },
   {
     text: 'Correct Action',
-    onClick: () => {}
-  },
-  {
-    element: <span>More than text<span className="blx-icon blx-icon-plus" /></span>,
-    key: 'customItem',
     onClick: () => {}
   },
   {
@@ -57,7 +55,7 @@ class PopoverPreview extends React.Component {
           { getPreviewComponent('Arrow icon',
               <PopoverMenu
                 text="More Actions"
-                icon="down"
+                icon={<DownIcon />}
                 isLeft={false}
                 options={exampleOptions}
               />
@@ -65,7 +63,7 @@ class PopoverPreview extends React.Component {
           { getPreviewComponent('Vertical ellipsis',
               <PopoverMenu
                 text="More Actions"
-                icon="more-vertical"
+                icon={<MoreVerticalIcon />}
                 isLeft={false}
                 options={exampleOptions}
               />

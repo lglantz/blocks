@@ -7,6 +7,8 @@ layout: default
   <p class="blx-ui-text blx-with-margin">{{ content }}</p>
 </div>
 
+{% include icon_svgs.html %}
+
 <section class="design-page-section">
   {% if page.examples %}
     {% capture example_link %}{{page.examples}}.html{% endcapture %}

@@ -4,12 +4,14 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var AlertBanner = require('./AlertBanner.js');
+var InformationIcon = require('../icons/InformationIcon.js');
 
 var InformationalAlert = function InformationalAlert(props) {
   return React.createElement(AlertBanner, {
     style: props.style,
     className: 'blx-information ' + props.className,
     title: props.title,
+    icon: React.createElement(InformationIcon, { className: 'blx-alert-icon' }),
     message: props.message
   });
 };

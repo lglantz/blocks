@@ -7,6 +7,8 @@ const ButtonPrimary = require('blocks-react').Buttons.ButtonPrimary;
 const ButtonSecondary = require('blocks-react').Buttons.ButtonSecondary;
 const ButtonDanger = require('blocks-react').Buttons.ButtonDanger;
 
+const AddIcon = require('blocks-react').Icons.AddIcon;
+
 const ButtonPreview = () => (
   <div className="l-flex-vertical">
     <div className="l-flex-horizontal">
@@ -22,16 +24,16 @@ const ButtonPreview = () => (
       { getPreviewComponent('Link Button Secondary, Internal', <ButtonSecondary text="Go to Blocks" href="/" />) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Primary Button with icon', <ButtonPrimary text="Primary button" onClick={() => {}} leftIcon="plus" />) }
-      { getPreviewComponent('Secondary Button with icon', <ButtonSecondary text="Secondary button" onClick={() => {}} leftIcon="plus" />) }
+      { getPreviewComponent('Primary Button with icon', <ButtonPrimary text="Primary button" onClick={() => {}} leftIcon={<AddIcon />} />) }
+      { getPreviewComponent('Secondary Button with icon', <ButtonSecondary text="Secondary button" onClick={() => {}} leftIcon={<AddIcon />} />) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Primary Button with icon', <ButtonPrimary text="Primary button" onClick={() => {}} rightIcon="plus" />) }
-      { getPreviewComponent('Secondary Button with icon', <ButtonSecondary text="Secondary button" onClick={() => {}} rightIcon="plus" />) }
+      { getPreviewComponent('Primary Button with icon', <ButtonPrimary text="Primary button" onClick={() => {}} rightIcon={<AddIcon />} />) }
+      { getPreviewComponent('Secondary Button with icon', <ButtonSecondary text="Secondary button" onClick={() => {}} rightIcon={<AddIcon />} />) }
     </div>
     <div className="l-flex-horizontal">
-      { getPreviewComponent('Primary icon button', <ButtonPrimary onClick={() => {}} iconName="plus" />) }
-      { getPreviewComponent('Secondary icon button', <ButtonSecondary onClick={() => {}} iconName="plus" />) }
+      { getPreviewComponent('Primary icon button', <ButtonPrimary onClick={() => {}} icon={<AddIcon />} />) }
+      { getPreviewComponent('Secondary icon button', <ButtonSecondary onClick={() => {}} icon={<AddIcon />} />) }
     </div>
     <div className="l-flex-horizontal">
       { getPreviewComponent('Danger button', <ButtonDanger text="Danger button" onClick={() => {}} />)}

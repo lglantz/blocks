@@ -11,6 +11,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var PropTypes = require('prop-types');
 
+var NextIcon = require('../icons/NextIcon.js');
+
 function onToggle(e) {
   var section = e.target.parentNode;
   var panel = section.getElementsByClassName('blx-accordion-content')[0];
@@ -49,17 +51,17 @@ var AccordionSection = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var name = Math.random().toString();
       return React.createElement(
         'div',
         {
           style: this.props.style,
           className: 'blx-accordion-section ' + this.props.className
         },
-        React.createElement('input', { id: name, type: 'checkbox', name: 'blx-accordion-tab', defaultChecked: this.props.open, onChange: this.props.onToggle }),
+        React.createElement('input', { id: this.props.id, type: 'checkbox', name: 'blx-accordion-tab', defaultChecked: this.props.open, onChange: this.props.onToggle }),
         React.createElement(
           'label',
-          { htmlFor: name, className: 'blx-accordion-trigger' },
+          { htmlFor: this.props.id, className: 'blx-accordion-trigger' },
+          React.createElement(NextIcon, { className: 'blx-accordion-arrow' }),
           this.props.trigger
         ),
         React.createElement(
@@ -82,6 +84,7 @@ var AccordionSection = function (_React$Component) {
 AccordionSection.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
+  id: PropTypes.string.isRequired,
   open: PropTypes.bool,
   trigger: PropTypes.object.isRequired,
   onToggle: PropTypes.func

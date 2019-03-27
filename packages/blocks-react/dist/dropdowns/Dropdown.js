@@ -4,6 +4,7 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var DropdownItem = require('./DropdownItem.js');
+var DownIcon = require('../icons/DownIcon.js');
 var closeOnClick = require('../wrappers/closeOnClick.js');
 var keyControlledMenu = require('../wrappers/keyControlledMenu.js');
 
@@ -51,12 +52,13 @@ var DropdownMenu = function DropdownMenu(props) {
           onKeyDown: props.onKeyDown,
           onFocus: props.onTriggerFocus
         },
-        props.icon && React.createElement('span', { className: 'blx-icon blx-icon-' + props.icon }),
+        props.icon,
         React.createElement(
           'span',
           { className: props.value ? 'blx-dropdown-text' : 'blx-dropdown-placeholder' },
           triggerContent
-        )
+        ),
+        React.createElement(DownIcon, { className: 'blx-dropdown-arrow' })
       ),
       React.createElement(
         'div',
@@ -92,7 +94,7 @@ DropdownMenu.propTypes = {
   isOpen: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.node,
   label: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   options: PropTypes.arrayOf(PropTypes.shape({

@@ -1,105 +1,74 @@
 .blx-alert {
+  position: relative;
   min-width: 392px;
   max-width: 762px;
   width: 90%;
   min-height: 80px;
   max-height: 222px;
   display: flex;
-  padding: 16px;
   border-top: 3px solid;
   border-radius: 0 0 $base-border-radius $base-border-radius;
 
   background-color: $secondary-00;
   box-shadow: $default-box-shadow;
-  
-  .blx-alert-title {
-    margin-top: 4px;
-    margin-bottom: 18px;
-  }
-
-  .blx-icon-close {
-    background-color: $primary-00;
-    width: 16px;
-
-    &:hover {
-      background-color: $primary-01;
-    }
-    &:focus {
-      background-color: $focus;
-    }
-  }
 }
 
 .blx-alert-icon-container {
   position: relative;
+  flex: 0 0 auto;
+  margin: 12px 16px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  flex: 0 0 auto;
-
   background-color: $light-01;
-}
-
-.blx-alert-icon, .blx-alert-icon-background {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 20px;
-  height: 20px;
-}
-
-.blx-alert-icon {
-  background-color: $secondary-00;
-}
-
-.blx-alert-icon-background {
-  border-radius: 50%;
+  
+  .blx-alert-icon-background, .blx-alert-icon {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    border-radius: 50%;
+  }
+  
+  .blx-alert-icon-background {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .blx-alert-icon {
+    fill: $secondary-00;
+  }
 }
 
 .blx-alert-text {
-  padding: 0 16px;
-  flex: 1 1 auto;
+  padding: 12px 32px 24px 0;
+  
   p {
     color: $base-font-color;
   }
 }
 
-.blx-success {
-  .blx-alert-icon-background {
-    background-color: $success;
-  }
-
-  .blx-alert-icon {
-    mask: url('../svgs/icon-check.svg') no-repeat 50% 50%;
-  }
+.blx-success .blx-alert-icon-background {
+  background-color: $success;
 }
 
-.blx-warning {
-  .blx-alert-icon-background {
-    background-color: $warning;
-  }
-
-  .blx-alert-icon {
-    mask: url('../svgs/icon-warning.svg') no-repeat 50% 50%;
-  }
+.blx-warning .blx-alert-icon-background {
+  background-color: $warning;
 }
 
-.blx-error {
-  .blx-alert-icon-background {
-    background-color: $danger-00;
-  }
-
-  .blx-alert-icon {
-    mask: url('../svgs/icon-error.svg') no-repeat 50% 50%;
-  }
+.blx-information .blx-alert-icon-background {
+  background-color: $information;
 }
 
-.blx-information {
-  .blx-alert-icon-background {
-    background-color: $information;
-  }
+.blx-error .blx-alert-icon-background {
+  background-color: $danger-00;
+}
 
-  .blx-alert-icon {
-    mask: url('../svgs/icon-information.svg') no-repeat 50% 50%;
-  }
+.blx-alert-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

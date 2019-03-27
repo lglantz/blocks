@@ -91,6 +91,7 @@ class TabPreview extends React.Component {
         { getPreviewComponent('Nested tabs',
             <div style={{ display: 'inline-block' }}>
               <Accordion
+                id="blx_ex_grandparent_1"
                 trigger={<span className="blx-h5">Grandparent</span>}
                 open
               >
@@ -122,6 +123,7 @@ class TabPreview extends React.Component {
                 </Tabs>
               </Accordion>
               <Accordion
+                id="blx_ex_grandparent_2"
                 trigger={<span className="blx-h5">Grandparent 2</span>}
               >
                 <Tabs isVertical>

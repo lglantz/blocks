@@ -11,6 +11,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var PropTypes = require('prop-types');
 
+var CloseIcon = require('../icons/CloseIcon.js');
+
 var AlertBanner = function (_React$Component) {
   _inherits(AlertBanner, _React$Component);
 
@@ -40,14 +42,6 @@ var AlertBanner = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var closeIcon = null;
-      if (this.props.closable) {
-        closeIcon = React.createElement('button', {
-          className: 'blx-icon blx-icon-close',
-          onClick: this.onClose
-        });
-      }
-
       var classes = 'blx-alert ';
       if (this.state.hidden) classes += 'blx-hidden ';
 
@@ -60,15 +54,15 @@ var AlertBanner = function (_React$Component) {
         React.createElement(
           'div',
           { className: 'blx-alert-icon-container' },
-          React.createElement('div', { className: 'blx-alert-icon-background' }),
-          React.createElement('div', { className: 'blx-alert-icon' })
+          React.createElement('span', { className: 'blx-alert-icon-background' }),
+          this.props.icon
         ),
         React.createElement(
           'div',
           { className: 'blx-alert-text' },
           React.createElement(
             'h4',
-            { className: 'blx-alert-title' },
+            { className: 'blx-with-margin' },
             this.props.title
           ),
           React.createElement(
@@ -77,7 +71,11 @@ var AlertBanner = function (_React$Component) {
             this.props.message
           )
         ),
-        closeIcon
+        this.props.closable && React.createElement(
+          'button',
+          { className: 'blx-alert-close', onClick: this.onClose },
+          React.createElement(CloseIcon, null)
+        )
       );
     }
   }]);
@@ -89,6 +87,7 @@ AlertBanner.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   title: PropTypes.string,
+  icon: PropTypes.node,
   message: PropTypes.string,
   closable: PropTypes.bool,
   onClose: PropTypes.func
@@ -98,6 +97,7 @@ AlertBanner.defaultProps = {
   className: '',
   style: null,
   title: '',
+  icon: null,
   message: '',
   closable: false,
   onClose: null

@@ -2,12 +2,14 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const AlertBanner = require('./AlertBanner.jsx');
+const SuccessIcon = require('../icons/SuccessIcon.jsx');
 
 const SuccessAlert = props => (
   <AlertBanner
     style={props.style}
     className={`blx-success ${props.className}`}
     title={props.title}
+    icon={<SuccessIcon className="blx-alert-icon" />}
     message={props.message}
     closable
     onClose={props.onClose}

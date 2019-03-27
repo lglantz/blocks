@@ -6,7 +6,7 @@ var ReactLink = require('react-router-dom').Link;
 
 var LinkButton = React.forwardRef(function (props, ref) {
   var classes = 'blx-button ';
-  if (props.iconName) classes += 'blx-icon-button ';
+  if (props.icon) classes += 'blx-icon-button ';
   if (props.isDisabled) classes += 'blx-disabled ';
 
   if (props.useReactLink) {
@@ -19,14 +19,14 @@ var LinkButton = React.forwardRef(function (props, ref) {
         disabled: props.isDisabled,
         ref: ref
       },
-      props.leftIcon && React.createElement('span', { className: 'blx-icon blx-icon-' + props.leftIcon }),
+      props.leftIcon,
       props.text && React.createElement(
         'span',
         null,
         props.text
       ),
-      props.iconName && React.createElement('span', { className: 'blx-icon blx-icon-' + props.iconName }),
-      props.rightIcon && React.createElement('span', { className: 'blx-icon blx-icon-' + props.rightIcon })
+      props.icon,
+      props.rightIcon
     );
   }
 
@@ -40,14 +40,14 @@ var LinkButton = React.forwardRef(function (props, ref) {
       target: props.isExternal ? '_blank' : '_self',
       ref: ref
     },
-    props.leftIcon && React.createElement('span', { className: 'blx-icon blx-icon-' + props.leftIcon }),
+    props.leftIcon,
     props.text && React.createElement(
       'span',
       null,
       props.text
     ),
-    props.iconName && React.createElement('span', { className: 'blx-icon blx-icon-' + props.iconName }),
-    props.rightIcon && React.createElement('span', { className: 'blx-icon blx-icon-' + props.rightIcon })
+    props.icon,
+    props.rightIcon
   );
 });
 
@@ -59,9 +59,9 @@ LinkButton.propTypes = {
   isDisabled: PropTypes.bool,
   isExternal: PropTypes.bool,
   useReactLink: PropTypes.bool,
-  leftIcon: PropTypes.string,
-  rightIcon: PropTypes.string,
-  iconName: PropTypes.string
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  icon: PropTypes.node
 };
 
 LinkButton.defaultProps = {
@@ -73,7 +73,7 @@ LinkButton.defaultProps = {
   useReactLink: false,
   leftIcon: null,
   rightIcon: null,
-  iconName: null
+  icon: null
 };
 
 module.exports = LinkButton;

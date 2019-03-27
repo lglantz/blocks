@@ -50,8 +50,8 @@ $button-danger-active-text-color = $secondary-00;
 
 // button styles
 .blx-button {
-  display: flex;
   position: relative;
+  display: flex;
 
   height: $button-height;
   max-width: 480px;
@@ -64,6 +64,7 @@ $button-danger-active-text-color = $secondary-00;
   cursor: pointer;
 
   blxH5();
+  line-height: 20px;
   text-align: center;
 
   box-shadow: $default-box-shadow;
@@ -71,22 +72,7 @@ $button-danger-active-text-color = $secondary-00;
   &.blx-with-margin {
     margin: 12px;
   }
-  
-  .blx-icon {
-    position: relative;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    
-    &:first-child {
-      left: -8px;
-    }
-    
-    &:last-child {
-      right: -8px;
-    }
-  }
-  
+
   &:focus, &.blx-focus {
     outline: none;
     text-decoration: none;
@@ -98,11 +84,20 @@ $button-danger-active-text-color = $secondary-00;
   
   span {
     blxTruncateText();
+    
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
+    
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 }
 
 .blx-icon-button {
   width: $button-height;
+  padding: 11px;
 }
 
 .blx-primary {
@@ -110,8 +105,8 @@ $button-danger-active-text-color = $secondary-00;
   border: $button-primary-default-border;
   color: $button-primary-text-color;
   
-  .blx-icon {
-    background-color: $button-primary-text-color;
+  svg {
+    fill: $button-primary-text-color;
   }
   
   &:focus, &.blx-focus {
@@ -156,8 +151,8 @@ $button-danger-active-text-color = $secondary-00;
   border: $button-secondary-default-border;
   color: $button-secondary-text-color;
   
-  .blx-icon {
-    background-color: $button-secondary-text-color;
+  svg {
+    fill: $button-secondary-text-color;
   }
   
   &:focus, &.blx-focus {
@@ -191,8 +186,8 @@ $button-danger-active-text-color = $secondary-00;
   border: $button-danger-default-border;
   color: $button-danger-text-color;
   
-  .blx-icon {
-    background-color: $button-danger-text-color;
+  svg {
+    fill: $button-danger-text-color;
   }
   
   &:focus, &.blx-focus {
@@ -211,8 +206,8 @@ $button-danger-active-text-color = $secondary-00;
       border: $button-danger-focus-inner-border
     }
     
-    .blx-icon {
-      background-color: $button-danger-hover-text-color;
+    svg {
+      fill: $button-danger-hover-text-color;
     }
   }
   
@@ -225,8 +220,8 @@ $button-danger-active-text-color = $secondary-00;
       content: none;
     }
     
-    .blx-icon {
-      background-color: $button-danger-hover-text-color;
+    svg {
+      fill: $button-danger-hover-text-color;
     }
   }
   
@@ -238,8 +233,8 @@ $button-danger-active-text-color = $secondary-00;
       content: none;
     }
     
-    .blx-icon {
-      background-color: $button-danger-hover-text-color;
+    svg {
+      fill: $button-danger-hover-text-color;
     }
   }
 }

@@ -112,7 +112,7 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
   prefix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  icon: PropTypes.node,
   isDisabled: PropTypes.bool,
   isValid: PropTypes.bool,
   invalidErrorMessage: PropTypes.string,

@@ -4,12 +4,14 @@ var React = require('react');
 var PropTypes = require('prop-types');
 
 var AlertBanner = require('./AlertBanner.js');
+var SuccessIcon = require('../icons/SuccessIcon.js');
 
 var SuccessAlert = function SuccessAlert(props) {
   return React.createElement(AlertBanner, {
     style: props.style,
     className: 'blx-success ' + props.className,
     title: props.title,
+    icon: React.createElement(SuccessIcon, { className: 'blx-alert-icon' }),
     message: props.message,
     closable: true,
     onClose: props.onClose

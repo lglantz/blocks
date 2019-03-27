@@ -16,6 +16,7 @@ const components = [
   'alerts',
   'buttons',
   'dropdowns',
+  'icons',
   'input',
   'lists',
   'modals',

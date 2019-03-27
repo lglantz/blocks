@@ -1,6 +1,8 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
+const NextIcon = require('../icons/NextIcon.jsx');
+
 
 function onToggle(e) {
   const section = e.target.parentNode;
@@ -26,14 +28,16 @@ class AccordionSection extends React.Component {
   }
 
   render() {
-    const name = Math.random().toString();
     return (
       <div
         style={this.props.style}
         className={`blx-accordion-section ${this.props.className}`}
       >
-        <input id={name} type="checkbox" name="blx-accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
-        <label htmlFor={name} className="blx-accordion-trigger">{this.props.trigger}</label>
+        <input id={this.props.id} type="checkbox" name="blx-accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
+        <label htmlFor={this.props.id} className="blx-accordion-trigger">
+          <NextIcon className="blx-accordion-arrow" />
+          {this.props.trigger}
+        </label>
         <div
           className="blx-accordion-content"
           ref={content => this.content = content}
@@ -48,6 +52,7 @@ class AccordionSection extends React.Component {
 AccordionSection.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
+  id: PropTypes.string.isRequired,
   open: PropTypes.bool,
   trigger: PropTypes.object.isRequired,
   onToggle: PropTypes.func

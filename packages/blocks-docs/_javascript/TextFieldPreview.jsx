@@ -7,6 +7,8 @@ const TextField = require('blocks-react').Input.TextField;
 const TextArea = require('blocks-react').Input.TextArea;
 const TextFieldWithDropdown = require('blocks-react').Input.TextFieldWithDropdown;
 
+const AddIcon = require('blocks-react').Icons.AddIcon;
+
 const INITIAL_INVALID_VALUE = '';
 const VALID_VALUE_MIN_LENTH = 5;
 function isFieldValid(value) {
@@ -120,7 +122,7 @@ class TextFieldPreview extends React.Component {
           { getPreviewComponent('Icon next to field',
             <TextField
               value={this.state.iconExampleValue}
-              icon={<span className="blx-icon blx-icon-information" />}
+              icon={<AddIcon />}
               onChange={(evt) => this.setState({ iconExampleValue: evt.target.value })}
             />) }
         </div>

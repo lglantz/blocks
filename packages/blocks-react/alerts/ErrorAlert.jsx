@@ -2,28 +2,24 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const AlertBanner = require('./AlertBanner.jsx');
+const ErrorIcon = require('../icons/ErrorIcon.jsx');
 
 const ErrorAlert = props => (
   <AlertBanner
-    style={props.style}
+    {...props}
     className={`blx-error ${props.className}`}
-    title={props.title}
-    message={props.message}
+    icon={<ErrorIcon className="blx-alert-icon" />}
   />
 );
 
 ErrorAlert.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
-  title: PropTypes.string,
-  message: PropTypes.string
+  icon: PropTypes.node
 };
 
 ErrorAlert.defaultProps = {
   className: '',
-  style: null,
-  title: 'Error',
-  message: ''
+  icon: null
 };
 
 module.exports = ErrorAlert;
