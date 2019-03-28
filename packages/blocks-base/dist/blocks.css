@@ -1843,16 +1843,6 @@ a.blx-button {
   right: 0;
   margin: 8px;
   cursor: move;
-  background-color: #009f6f;
-  background-color: var(--primary-00, #009f6f);
-}
-.blx-sortable-list .blx-sortable-list-item .blx-icon-drag:hover {
-  background-color: #008b61;
-  background-color: var(--primary-01, #008b61);
-}
-.blx-sortable-list .blx-sortable-list-item .blx-icon-drag.blx-hover {
-  background-color: #008b61;
-  background-color: var(--primary-01, #008b61);
 }
 .blx-table {
   margin: 12px 16px;
