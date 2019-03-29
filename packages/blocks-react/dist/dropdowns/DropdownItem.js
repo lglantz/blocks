@@ -57,7 +57,7 @@ var DropdownItem = function (_React$Component) {
           onKeyUp: this.onKeyUp,
           onClick: this.onSelect
         },
-        this.props.option.text
+        this.props.option.text || this.props.option.element
       );
     }
   }, {

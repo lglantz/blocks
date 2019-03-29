@@ -1183,9 +1183,14 @@ a.blx-button {
   min-width: 150px;
   max-width: 300px;
 }
+.blx-dropdown label {
+  margin-bottom: 6px;
+}
 .blx-dropdown-trigger {
   position: relative;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 40px;
   padding: 0 16px;
   border-radius: 7px;
@@ -1209,26 +1214,48 @@ a.blx-button {
   transition: transform 200ms;
   transition: transform 200ms, -webkit-transform 200ms;
 }
-.blx-dropdown-trigger span {
+.blx-dropdown-trigger .blx-dropdown-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0;
   color: #aab7b2;
   color: var(--light-02, #aab7b2);
+}
+.blx-dropdown-trigger .blx-dropdown-placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #aab7b2;
+  color: var(--light-02, #aab7b2);
 }
-.blx-dropdown-trigger span.blx-with-margin {
+.blx-dropdown-trigger .blx-dropdown-text.blx-with-margin,
+.blx-dropdown-trigger .blx-dropdown-placeholder.blx-with-margin {
   margin-top: 0;
   margin-bottom: 6px;
 }
-.blx-dropdown-trigger span:not(:first-child) {
+.blx-dropdown-trigger .blx-dropdown-text:not(:first-child),
+.blx-dropdown-trigger .blx-dropdown-placeholder:not(:first-child) {
   margin-left: 12px;
 }
-.blx-dropdown-trigger span:not(:last-child) {
+.blx-dropdown-trigger .blx-dropdown-text:not(:last-child),
+.blx-dropdown-trigger .blx-dropdown-placeholder:not(:last-child) {
   margin-right: 12px;
+}
+.blx-dropdown-trigger .blx-dropdown-text {
+  color: #2b3836;
+  color: var(--dark-00, #2b3836);
+}
+.blx-dropdown-trigger .blx-dropdown-placeholder {
+  color: #7c8c88;
+  color: var(--dark-02, #7c8c88);
 }
 .blx-dropdown-trigger.blx-active .blx-dropdown-arrow {
   -webkit-transform: rotate(180deg);
@@ -1272,20 +1299,6 @@ a.blx-button {
 .blx-dropdown-trigger.blx-invalid {
   border: 1px solid #eb5534;
   border: 1px solid var(--danger-00, #eb5534);
-}
-.blx-dropdown-text,
-.blx-dropdown-placeholder {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.blx-dropdown-text {
-  color: #2b3836;
-  color: var(--dark-00, #2b3836);
-}
-.blx-dropdown-placeholder {
-  color: #7c8c88;
-  color: var(--dark-02, #7c8c88);
 }
 .blx-dropdown-menu {
   position: absolute;
