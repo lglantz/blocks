@@ -11,7 +11,7 @@ const Icon = (props) => {
       viewBox="0 0 20 20"
       fill={props.fill}
       className={props.className}
-      stype={props.style}
+      style={props.style}
     >
       {props.children}
     </svg>
