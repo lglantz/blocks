@@ -19,7 +19,7 @@ var BaseModal = function BaseModal(props) {
     React.createElement(
       'div',
       { className: 'blx-modal' },
-      React.createElement('button', {
+      props.isClosable && React.createElement('button', {
         className: 'blx-icon blx-icon-close',
         onClick: props.onClose
       }),
@@ -36,15 +36,18 @@ BaseModal.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   isHidden: PropTypes.bool,
+  isClosable: PropTypes.bool,
   onClose: PropTypes.func,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 };
 
 BaseModal.defaultProps = {
   className: '',
   style: null,
   isHidden: true,
-  onClose: function onClose() {}
+  isClosable: false,
+  onClose: function onClose() {},
+  children: null
 };
 
 module.exports = BaseModal;

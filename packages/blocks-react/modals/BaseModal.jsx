@@ -14,15 +14,17 @@ const BaseModal = (props) => {
         className="blx-modal-overlay"
         onClick={props.onClose}
       />
-
       <div className="blx-modal">
-        <button
-          className="blx-icon blx-icon-close"
-          onClick={props.onClose}
-        />
-
+        {
+          props.isClosable && (
+            <button
+              className="blx-icon blx-icon-close"
+              onClick={props.onClose}
+            />
+          )
+        }
         <div>
-          {props.children}
+          { props.children }
         </div>
       </div>
 
@@ -34,15 +36,18 @@ BaseModal.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   isHidden: PropTypes.bool,
+  isClosable: PropTypes.bool,
   onClose: PropTypes.func,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 };
 
 BaseModal.defaultProps = {
   className: '',
   style: null,
   isHidden: true,
-  onClose: () => {}
+  isClosable: true,
+  onClose: () => {},
+  children: null
 };
 
 module.exports = BaseModal;
