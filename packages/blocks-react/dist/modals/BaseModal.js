@@ -45,7 +45,7 @@ BaseModal.defaultProps = {
   className: '',
   style: null,
   isHidden: true,
-  isClosable: false,
+  isClosable: true,
   onClose: function onClose() {},
   children: null
 };
