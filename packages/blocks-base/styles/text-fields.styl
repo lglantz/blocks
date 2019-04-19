@@ -27,7 +27,7 @@ $header-text-field-invis-border = 1px solid transparent;
   min-width: 150px;
   max-width: 484px;
   width: 300px;
-  
+
   &.blx-with-margin {
     margin-right: 24px;
     margin-bottom: 40px;
@@ -75,6 +75,10 @@ $header-text-field-invis-border = 1px solid transparent;
   textarea {
     resize: none;
     overflow: hidden;
+
+    &::placeholder {
+      blxUIPlaceholder();
+    }
   }
 
   input, textarea {

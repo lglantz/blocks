@@ -2251,6 +2251,42 @@ input[type="radio"]:hover + .blx-sub-tab {
   resize: none;
   overflow: hidden;
 }
+.blx-text-field textarea::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #aab7b2;
+  color: var(--light-02, #aab7b2);
+}
+.blx-text-field textarea::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #aab7b2;
+  color: var(--light-02, #aab7b2);
+}
+.blx-text-field textarea::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #aab7b2;
+  color: var(--light-02, #aab7b2);
+}
+.blx-text-field textarea::-webkit-input-placeholder.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.blx-text-field textarea::-ms-input-placeholder.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.blx-text-field textarea::placeholder.blx-with-margin {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
 .blx-text-field input {
   width: 100%;
   border-radius: 7px;
