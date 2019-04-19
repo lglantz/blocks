@@ -31,10 +31,10 @@ const Table = props => (
           >
             {
               // TODO: this number checking is janky
-              props.headings.map(heading => (
+              props.headings.map((heading, headingIdx) => (
                 <td
                   className={`blx-table-cell ${typeof entry[heading] === 'number' ? 'numeric' : ''}`}
-                  key={entry[heading]}
+                  key={`${props.tableName}-row-${idx}-column-${headingIdx}`}
                 >
                   {entry[heading]}
                 </td>
@@ -48,6 +48,7 @@ const Table = props => (
 );
 
 Table.propTypes = {
+  tableName: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
   headings: PropTypes.arrayOf(PropTypes.string),
@@ -56,6 +57,7 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
+  tableName: 'table',
   className: '',
   style: null,
   headings: [],
