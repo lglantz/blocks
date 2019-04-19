@@ -18,7 +18,7 @@ const DropdownMenu = (props) => {
     for (let i = 0; i < props.options.length; i++) {
       const option = props.options[i];
       if (option.value === props.value) {
-        triggerContent = option.text;
+        triggerContent = option.text || option.triggerContent || option.element;
         break;
       }
     }
@@ -100,6 +100,7 @@ DropdownMenu.propTypes = {
       PropTypes.string,
       PropTypes.number
     ]),
+    triggerContent: PropTypes.string,
     href: PropTypes.string,
     element: PropTypes.node,
     key: PropTypes.string
@@ -120,6 +121,7 @@ DropdownMenu.defaultProps = {
   icon: null,
   label: '',
   value: null,
+  triggerContent: null,
   onSelect: () => {},
   autoFocus: false,
   isValid: true
