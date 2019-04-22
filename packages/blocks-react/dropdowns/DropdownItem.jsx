@@ -12,7 +12,6 @@ class DropdownItem extends React.Component {
   }
 
   onClick(e) {
-    e.preventDefault();
     e.stopPropagation();
     this.props.onSelect(e, this.props.option);
   }
