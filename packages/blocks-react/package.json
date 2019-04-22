@@ -1,6 +1,6 @@
 {
   "name": "blocks-react",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "cbre build design system react components",
   "main": "index.js",
   "scripts": {
