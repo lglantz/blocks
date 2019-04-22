@@ -30,7 +30,6 @@ var DropdownItem = function (_React$Component) {
   _createClass(DropdownItem, [{
     key: 'onClick',
     value: function onClick(e) {
-      e.preventDefault();
       e.stopPropagation();
       this.props.onSelect(e, this.props.option);
     }
