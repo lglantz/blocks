@@ -141,7 +141,7 @@ class SortableList extends React.Component {
         ref={this.listDOM}
       >
         {
-          this.props.children.map((child, idx) => (
+          React.Children.map(this.props.children, child => (
             <li
               key={Math.random()}
               className="blx-sortable-list-item"

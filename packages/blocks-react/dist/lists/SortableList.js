@@ -173,7 +173,7 @@ var SortableList = function (_React$Component) {
           className: 'blx-sortable-list ' + this.props.className,
           ref: this.listDOM
         },
-        this.props.children.map(function (child, idx) {
+        React.Children.map(this.props.children, function (child) {
           return React.createElement(
             'li',
             {
