@@ -170,7 +170,7 @@ SortableList.propTypes = {
 SortableList.defaultProps = {
   className: '',
   style: null,
-  onDrop: () => { }
+  onDrop: () => {}
 };
 
 module.exports = SortableList;
