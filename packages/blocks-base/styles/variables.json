@@ -24,6 +24,7 @@
   "secondary-00-hex": "#ffffff",
   "secondary-01-hex": "#ecf5f1",
   "secondary-02-hex": "#d5f0e5",
+  "secondary-03-hex": "rgba(255, 255, 255, 0.35)",
   
   "light-00-hex": "#f6f8f6",
   "light-01-hex": "#d9e1e0",
@@ -58,7 +59,8 @@
   "secondary": {
     "00": "var(--secondary-00, $secondary-00-hex)",
     "01": "var(--secondary-01, $secondary-01-hex)",
-    "02": "var(--secondary-02, $secondary-02-hex)"
+    "02": "var(--secondary-02, $secondary-02-hex)",
+    "03": "var(--secondary-03, $secondary-03-hex)"
   },
 
   "light": {

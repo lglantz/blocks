@@ -1,119 +1,126 @@
-<div class="color-grid">
-  <div>
-    <h3 class="blx-with-margin">00</h3>
-    <p>Common uses:</p>
-    <ul>
-      <li>Default</li>
-      <li>Normal</li>
-    </ul>
+<div class="color-container">
+  <div class="color-grid color-grid-bg">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  <div>
-    <h3 class="blx-with-margin">01</h3>
-    <p>Common uses:</p>
-    <ul>
-      <li>Hover</li>
-    </ul>
+  <div class="color-grid">
+    <div>
+      <h3>00</h3>
+      <p>Common uses:</p>
+      <ul>
+        <li>Default</li>
+        <li>Normal</li>
+      </ul>
+    </div>
+    <div>
+      <h3>01</h3>
+      <p>Common uses:</p>
+      <ul>
+        <li>Hover</li>
+      </ul>
+    </div>
+    <div>
+      <h3>02</h3>
+      <p>Common uses:</p>
+      <ul>
+        <li>Active</li>
+      </ul>
+    </div>
+    <div>
+      <h3>03</h3>
+      <p>Common uses:</p>
+      <ul>
+        <li>Disabled</li>
+        <li>Shadow</li>
+      </ul>
+    </div>
   </div>
-  <div>
-    <h3 class="blx-with-margin">02</h3>
-    <p>Common uses:</p>
-    <ul>
-      <li>Active</li>
-    </ul>
+
+  <h3 class="blx-with-margin">Action Colors</h3>
+  <div class="l-flex-horizontal">
+    <p class="blx-with-margin">Only use to indicate which interface elements are actionable.</p>
   </div>
-  <div>
-    <h3 class="blx-with-margin">03</h3>
-    <p>Common uses:</p>
-    <ul>
-      <li>Disabled</li>
-      <li>Shadow</li>
-    </ul>
+  <div class="color-grid">
+    {% include color_card.html name='Focus' value='#49A1FF' %}
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Primary-00' value='#009F6F' %}
+    {% include color_card.html name='Primary-01' value='#008B61' %}
+    {% include color_card.html name='Primary-02' value='#00704F' %}
+    {% include color_card.html name='Primary-03' value='rgba(0, 159, 111, 0.35)' opacity='35%' displayValue='#009f6f' %}
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Secondary-00' value='#FFFFFF' %}
+    {% include color_card.html name='Secondary-01' value='#ECF5F1' %}
+    {% include color_card.html name='Secondary-02' value='#D5F0E5' %}
+    {% include color_card.html name='Secondary-03' value='rgba(255, 255, 255, 0.35)' opacity='35%' displayValue='#ffffff' %}
+  </div>
+
+  <h3 class="blx-with-margin">UI Colors</h3>
+  <div class="l-flex-horizontal">
+    <p class="blx-with-margin">Use for non-interactive text and background interface elements.</p>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Shadow' value='rgba(170, 183, 178, 0.6)' opacity='60%' displayValue='#AAB7B2' %}
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Light-00' value='#F6F8F6' %}
+    {% include color_card.html name='Light-01' value='#D9E1E0' %}
+    {% include color_card.html name='Light-02' value='#AAB7B2' %}
+    <div></div>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Dark-00' value='#2B3836' %}
+    {% include color_card.html name='Dark-01' value='#505958' %}
+    {% include color_card.html name='Dark-02' value='#7C8C88' %}
+    {% include color_card.html name='Dark-03' value='rgba(43, 56, 54, 0.35)' opacity='35%' displayValue='#2B3836' %}
+  </div>
+
+  <h3 class="blx-with-margin">Support Colors</h3>
+  <div class="l-flex-horizontal">
+    <p class="blx-with-margin">Use to draw attention to a state or change in the application.</p>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Danger-00' value='#EB5534' %}
+    {% include color_card.html name='Danger-01' value='#DB5030' %}
+    {% include color_card.html name='Danger-02' value='#AD4626' %}
+    {% include color_card.html name='Danger-03' value='rgba(235, 85, 52, 0.35)' opacity='35%' displayValue='#EB5534' %}
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Warning' value='#FDB100' %}
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Success' value='#39CF94' %}
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Information' value='#6F6BF8' %}
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <h3 class="blx-with-margin">Brand Colors</h3>
+  <div class="l-flex-horizontal">
+    <p class="blx-with-margin">Use sparingly for emphasis, large headings, and to grab attention.</p>
+  </div>
+  <div class="color-grid">
+    {% include color_card.html name='Brand-00' value='#A2FFBB' %}
+    {% include color_card.html name='Brand-01' value='#00FF44' %}
+    <div></div>
+    <div></div>
   </div>
 </div>
-
-<h3 class="blx-with-margin">Action Colors</h3>
-<div class="l-flex-horizontal">
-  <p class="blx-with-margin">Only use to indicate which interface elements are actionable.</p>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Focus' value='#49A1FF' %}
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Primary-00' value='#009F6F' %}
-  {% include color_card.html name='Primary-01' value='#008B61' %}
-  {% include color_card.html name='Primary-02' value='#00704F' %}
-  {% include color_card.html name='Primary-03' value='rgba(0, 159, 111, 0.35)' opacity='35%' displayValue='#009f6f' %}
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Secondary-00' value='#FFFFFF' %}
-  {% include color_card.html name='Secondary-01' value='#ECF5F1' %}
-  {% include color_card.html name='Secondary-02' value='#D5F0E5' %}
-  <div></div>
-</div>
-
-<h3 class="blx-with-margin">UI Colors</h3>
-<div class="l-flex-horizontal">
-  <p class="blx-with-margin">Use for non-interactive text and background interface elements.</p>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Shadow' value='rgba(170, 183, 178, 0.6)' opacity='60%' displayValue='#AAB7B2' %}
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Light-00' value='#F6F8F6' %}
-  {% include color_card.html name='Light-01' value='#D9E1E0' %}
-  {% include color_card.html name='Light-02' value='#AAB7B2' %}
-  <div></div>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Dark-00' value='#2B3836' %}
-  {% include color_card.html name='Dark-01' value='#505958' %}
-  {% include color_card.html name='Dark-02' value='#7C8C88' %}
-  {% include color_card.html name='Dark-03' value='rgba(43, 56, 54, 0.35)' opacity='35%' displayValue='#2B3836' %}
-</div>
-
-<h3 class="blx-with-margin">Support Colors</h3>
-<div class="l-flex-horizontal">
-  <p class="blx-with-margin">Use to draw attention to a state or change in the application.</p>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Danger-00' value='#EB5534' %}
-  {% include color_card.html name='Danger-01' value='#DB5030' %}
-  {% include color_card.html name='Danger-02' value='#AD4626' %}
-  {% include color_card.html name='Danger-03' value='rgba(235, 85, 52, 0.35)' opacity='35%' displayValue='#EB5534' %}
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Warning' value='#FDB100' %}
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Success' value='#39CF94' %}
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Information' value='#6F6BF8' %}
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
-<h3 class="blx-with-margin">Brand Colors</h3>
-<div class="l-flex-horizontal">
-  <p class="blx-with-margin">Use sparingly for emphasis, large headings, and to grab attention.</p>
-</div>
-<div class="color-grid">
-  {% include color_card.html name='Brand-00' value='#A2FFBB' %}
-  {% include color_card.html name='Brand-01' value='#00FF44' %}
-  <div></div>
-  <div></div>
-</div>
-
