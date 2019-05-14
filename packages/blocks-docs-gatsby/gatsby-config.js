@@ -1,9 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: `Blocks by CBRE Build`,
-    description: `CBRE Build's Blocks design system.`,
-    author: `@cbrebuild_nyc`,
-  },
   plugins: [
     `gatsby-plugin-stylus`,
     `gatsby-plugin-react-helmet`,
