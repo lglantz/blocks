@@ -6,6 +6,7 @@
 /packages/blocks-docs/lib/
 /packages/blocks-docs/svgs/
 /packages/blocks-docs/vendor/
+/packages/blocks-docs-gatsby/.cache
 /node_modules/
 /packages/blocks-base/node_modules
 /packages/blocks-react/node_modules

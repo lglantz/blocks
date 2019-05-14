@@ -1,0 +1,60 @@
+.color-card {
+  display: inline-block;
+  margin: 0 32px 32px 0;
+  box-sizing: border-box;
+  
+  .color-card-background {
+    width: 150px;
+    height: 90px;
+    border: 1px solid #686f6d;
+  }
+  
+  .color-card-title {
+    background-color: $secondary-00;
+    width: 150px;
+    height: 60px;
+    padding: 8px;
+    border: 1px solid #686f6d;
+    border-width: 0 1px 1px 1px;
+  }
+}
+
+.color-grid {
+  display: flex;
+  align-items: flex-start;
+  
+  & > div {
+    flex: 1 1 25%;
+    padding: 24px;
+  }
+  
+  h3 { 
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+}
+
+.color-container {
+  position: relative;
+  
+  .blx-with-margin {
+    margin-left: 24px;
+  }
+}
+
+.color-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  
+  & > div {
+    height: 100%;
+  }
+  
+  & > div:nth-child(odd) {
+    background-color: $light-00;
+  }
+}
