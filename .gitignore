@@ -1,15 +1,6 @@
-/packages/blocks-docs/.bundle/
-/packages/blocks-docs/.jekyll-metadata
-/packages/blocks-docs/_site/
-/packages/blocks-docs/css/
-/packages/blocks-docs/fonts/
-/packages/blocks-docs/lib/
-/packages/blocks-docs/svgs/
-/packages/blocks-docs/vendor/
-/packages/blocks-docs-gatsby/.cache
-/packages/blocks-docs-gatsby/public
+/packages/blocks-docs/.cache
+/packages/blocks-docs/public
 /node_modules/
 /packages/blocks-base/node_modules
 /packages/blocks-react/node_modules
 /packages/blocks-docs/node_modules
-/packages/blocks-docs-gatsby/node_modules
