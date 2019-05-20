@@ -35,31 +35,13 @@ To build the `blocks-base` or `blocks-react` packages, navigate to the module in
 gulp build
 ```
 
-To build the `blocks-docs` (or documentation) package, navigate to the module in `/packages` and follow these instructions:
-
-You'll want to download [Jekyll](https://jekyllrb.com/).
-
-Use ruby v2.4.4 (you might need to install this first):
-```
-rvm use ruby-2.4.4
-```
-
-Install [Bundler](https://bundler.io/):
-```
-gem install bundler
-```
-
-Install from the bundle (this will give you Jekyll):
-```
-bundle install
-```
-
-Run the documentation site with
+To build the `blocks-docs` (or documentation) package, navigate to the module in `/packages` and run:
 
 ```
-gulp server
+gatsby develop
 ```
+If this is your first time trying to build the site, you might also have to run `npm install` before `gatsby develop` to be sure you have GatsbyJS.
 
-Note: if you update the `blocks-base` or `blocks-react` packages and want those local changes reflected locally - you'll need to run `gulp build` for each of those packages
+Note: if you update the `blocks-base` or `blocks-react` packages and want those local changes reflected locally - you'll need to rerun `gatsby develop` to pick them up.
 
-You can navigate to the documentation site at http://localhost:8080.
+You can navigate to the documentation site at http://localhost:8000.

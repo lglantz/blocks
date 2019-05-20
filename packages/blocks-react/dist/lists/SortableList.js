@@ -10,7 +10,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = require('react');
 var PropTypes = require('prop-types');
-var ReactDOM = require('react-dom');
 
 function isBefore(a, b) {
   if (a.parentNode == b.parentNode) {

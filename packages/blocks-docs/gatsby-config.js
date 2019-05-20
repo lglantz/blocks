@@ -41,8 +41,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `blocks-docs`,
+        short_name: `blocks`,
         start_url: `/`,
         background_color: `#009f6f`,
         theme_color: `#009f6f`,

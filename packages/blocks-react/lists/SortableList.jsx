@@ -1,6 +1,5 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const ReactDOM = require('react-dom');
 
 function isBefore(a, b) {
   if (a.parentNode == b.parentNode) {

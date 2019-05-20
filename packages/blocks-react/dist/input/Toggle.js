@@ -6,11 +6,12 @@ var PropTypes = require('prop-types');
 var Toggle = function Toggle(props) {
   var classes = 'blx-toggle ';
   if (props.isDisabled) classes += 'blx-disabled ';
+  if (props.className) classes += props.className;
   return React.createElement(
     'div',
     {
       style: props.style,
-      className: classes + ' ' + props.className
+      className: classes
     },
     props.options.map(function (option, idx) {
       return React.createElement(
