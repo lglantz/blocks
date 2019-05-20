@@ -23,7 +23,7 @@ const BaseModal = (props) => {
             />
           )
         }
-        <div>
+        <div className="blx-modal-content">
           { props.children }
         </div>
       </div>

@@ -14,6 +14,8 @@ $modal-overlay-background-color = $light-02;
   padding: 24px 40px 32px 40px;
   z-index: 1001;
 
+  display: flex;
+
   border-radius: 3px;
 
   border: $modal-default-border;
@@ -42,4 +44,10 @@ $modal-overlay-background-color = $light-02;
   z-index: 1000;
 
   background-color: $modal-overlay-background-color;
+}
+
+.blx-modal-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }

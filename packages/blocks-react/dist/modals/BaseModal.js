@@ -25,7 +25,7 @@ var BaseModal = function BaseModal(props) {
       }),
       React.createElement(
         'div',
-        null,
+        { className: 'blx-modal-content' },
         props.children
       )
     )

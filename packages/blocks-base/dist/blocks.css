@@ -1609,6 +1609,7 @@ a.blx-button {
   max-height: 90%;
   padding: 24px 40px 32px 40px;
   z-index: 1001;
+  display: flex;
   border-radius: 3px;
   border: 1px solid #d9e1e0;
   border: 1px solid var(--light-01, #d9e1e0);
@@ -1636,6 +1637,11 @@ a.blx-button {
   z-index: 1000;
   background-color: #aab7b2;
   background-color: var(--light-02, #aab7b2);
+}
+.blx-modal-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .blx-progress-dots {
   display: flex;
