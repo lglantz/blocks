@@ -5,6 +5,15 @@ var PropTypes = require('prop-types');
 
 var LinkSubTabItem = function LinkSubTabItem(props) {
   var classes = 'blx-sub-tab ' + (props.isActive ? 'blx-active' : '') + ' ' + (props.isVisible ? '' : 'blx-hidden') + ' ' + (props.isDisabled ? 'blx-disabled' : '');
+  var link = props.useReactLink ? React.createElement(
+    ReactLink,
+    { className: classes, to: props.href },
+    props.text
+  ) : React.createElement(
+    'a',
+    { className: classes, href: props.href },
+    props.text
+  );
 
   return React.createElement(
     'div',
@@ -12,11 +21,7 @@ var LinkSubTabItem = function LinkSubTabItem(props) {
       style: props.style,
       className: props.className
     },
-    React.createElement(
-      'a',
-      { className: classes, href: props.href },
-      props.text
-    ),
+    link,
     props.children
   );
 };
