@@ -2,6 +2,7 @@
 
 var React = require('react');
 var PropTypes = require('prop-types');
+var ReactLink = require('react-router-dom').Link;
 
 var LinkSubTabItem = function LinkSubTabItem(props) {
   var classes = 'blx-sub-tab ' + (props.isActive ? 'blx-active' : '') + ' ' + (props.isVisible ? '' : 'blx-hidden') + ' ' + (props.isDisabled ? 'blx-disabled' : '');
