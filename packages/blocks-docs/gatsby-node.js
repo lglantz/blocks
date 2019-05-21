@@ -7,7 +7,7 @@
 const execSync = require('child_process').execSync;
 
 exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
-  if (stage !== 'develop' && stage !== 'build-javascript') return;
+  if (stage !== 'develop') return;
 
   console.log('blocks-base: building...');
   const buildBase = execSync('cd ../blocks-base; gulp build', {stdio: 'inherit'});
