@@ -85,8 +85,10 @@ PopoverMenu.propTypes = {
   })),
   isDisabled: PropTypes.bool,
   onChange: PropTypes.func,
-  autoFocus: PropTypes.bool,
-  forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
+  autoFocus: PropTypes.bool
+  // FIXME: PropTypes.instanceOf(Element) breaks under server side rendering b/c Element is not in context
+  // See: https://github.com/facebook/prop-types/issues/240#issuecomment-455222878
+  // forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
 };
 
 PopoverMenu.defaultProps = {
