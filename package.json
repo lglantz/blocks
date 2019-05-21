@@ -7,5 +7,12 @@
   },
   "devDependencies": {
     "lerna": "^3.10.7"
+  },
+  "scripts": {
+    "build:base": "cd packages/blocks-base; gulp build",
+    "build:docs": "cd packages/blocks-docs; gatsby build",
+    "build:react": "cd packages/blocks-react; gulp build",
+    "dev:docs": "cd packages/blocks-docs; gatsby develop",
+    "run:docs": "cd packages/blocks-docs; gatsby build; gatsby serve"
   }
 }
