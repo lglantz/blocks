@@ -1,0 +1,92 @@
+{
+  "navigation": [
+    {
+      "name": "Styles",
+      "subsections": [
+        {
+          "name": "Colors & Shadows",
+          "href": "/styles/colors"
+        },
+        {
+          "name": "Icons",
+          "href": "/styles/icons"
+        },
+        {
+          "name": "Type",
+          "href": "/styles/type"
+        }
+      ]
+    },
+    {
+      "name": "Components",
+      "subsections": [
+        {
+          "name": "Alerts",
+          "href": "/components/alerts"
+        },
+        {
+          "name": "Buttons",
+          "href": "/components/buttons"
+        },
+        {
+          "name": "Checkboxes",
+          "href": "/components/checkboxes"
+        },
+        {
+          "name": "Dropdowns",
+          "href": "/components/dropdowns"
+        },
+        {
+          "name": "Links",
+          "href": "/components/links"
+        },
+        {
+          "name": "Popovers",
+          "href": "/components/popovers"
+        },
+        {
+          "name": "Radio Buttons",
+          "href": "/components/radiobuttons"
+        },
+        {
+          "name": "Text Fields",
+          "href": "/components/textfields"
+        },
+        {
+          "name": "Toggles",
+          "href": "/components/toggles"
+        },
+        {
+          "name": "Tooltips",
+          "href": "/components/tooltips"
+        }
+      ]
+    },
+    {
+      "name": "Patterns",
+      "subsections": [
+        {
+          "name": "Modals",
+          "href": "/patterns/modals"
+        },
+        {
+          "name": "Tabs",
+          "href": "/patterns/tabs"
+        }
+      ]
+    },
+    {
+      "name": "Help",
+      "subsections": [
+        {
+          "name": "New Block Flowchart",
+          "href": "/help/newblock"
+        },
+        {
+          "name": "Writing guidelines",
+          "href": "/help/writing"
+        }
+      ]
+    }
+  ]
+}

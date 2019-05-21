@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const ReactLink = require('react-router-dom').Link;
 
 
 const LinkSubTabItem = (props) => {
@@ -7,7 +8,7 @@ const LinkSubTabItem = (props) => {
   const link = props.useReactLink ?
     <ReactLink className={classes} to={props.href}>{props.text}</ReactLink> :
     <a className={classes} href={props.href}>{props.text}</a>;
-
+    
   return (
     <div
       style={props.style}

@@ -2501,7 +2501,6 @@ input[type="radio"]:hover + .blx-sub-tab {
   border-radius: 0 7px 7px 0;
 }
 .blx-toggle {
-  display: inline-flex;
   height: 40px;
   font-size: 14px;
   line-height: 40px;

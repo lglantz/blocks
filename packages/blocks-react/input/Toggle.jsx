@@ -5,10 +5,11 @@ const PropTypes = require('prop-types');
 const Toggle = (props) => {
   let classes = 'blx-toggle ';
   if (props.isDisabled) classes += 'blx-disabled ';
+  if (props.className) classes += props.className;
   return (
     <div
       style={props.style}
-      className={`${classes} ${props.className}`}
+      className={classes}
     >
       {
         props.options.map((option, idx) => (

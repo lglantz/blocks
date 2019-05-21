@@ -9,24 +9,28 @@
 edited_files=($(git diff-index --cached HEAD | awk '{print $6}'))
 
 edited_react_components=()
-edited_previews=()
-generated_files=()
+generated_react_files=()
+
+edited_styles=()
+did_generate_styles=false
 
 for i in ${edited_files[@]}
 do
-  [[ $i == react/*.jsx ]] && edited_react_components+=($i)
-  [[ $i == docs/_javascript/*.jsx ]] && edited_previews+=($i)
-  [[ $i == docs/lib/*.js ]] && generated_files+=($i)
+  [[ $i == packages/blocks-react/*/*.jsx ]] && edited_react_components+=($i)
+  [[ $i == packages/blocks-react/dist/*/*.js ]] && generated_react_files+=($i)
+  [[ $i == packages/blocks-base/styles/* ]] && edited_styles+=($i)
+  [[ $i == packages/blocks-base/dist/blocks.css ]] && did_generate_styles=true
 done
 
 did_edit_react=${#edited_react_components[@]}
-did_edit_previews=${#edited_previews[@]}
-did_generate_files=${#generated_files[@]}
+did_generate_react=${#generated_react_files[@]}
+did_edit_styles=${#edited_styles[@]}
 
-if ([ $did_edit_react -gt 0 ] || [ $did_edit_previews -gt 0 ]) && [ $did_generate_files == 0 ]
+if [ "$did_generate_react" != "$did_edit_react" ] ||
+   ([ $did_edit_styles -gt 0 ] && [ "$did_generate_styles" = false ])
 then
   echo -e "\033[1;92mBLOCKS\033[0m Warning: You may not have included all necessary generated files."
-  echo "=== Please run 'gulp server' and add to your commit any additional files it produces."
+  echo "=== Please run 'gulp build' and add to your commit any additional files it produces."
   echo "=== Try again with -n to bypass this pre-commit hook."
   exit 1
 fi
