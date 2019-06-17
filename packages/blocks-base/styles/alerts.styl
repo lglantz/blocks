@@ -16,34 +16,39 @@
 .blx-alert-icon-container {
   position: relative;
   flex: 0 0 auto;
-  margin: 12px 16px;
+  margin: 16px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   background-color: $light-01;
-  
+
   .blx-alert-icon-background, .blx-alert-icon {
     position: absolute;
     top: 6px;
     left: 6px;
     border-radius: 50%;
   }
-  
+
   .blx-alert-icon-background {
     width: 20px;
     height: 20px;
   }
-  
+
   .blx-alert-icon {
     fill: $secondary-00;
   }
 }
 
 .blx-alert-text {
-  padding: 12px 32px 24px 0;
-  
+  padding: 24px 32px 24px 0;
+
+  h4 + p {
+    margin-top: 18px;
+  }
+
   p {
     color: $base-font-color;
+    margin-bottom: 18px;
   }
 }
 
@@ -71,4 +76,9 @@
   border: none;
   padding: 0;
   cursor: pointer;
+
+  svg:hover {
+    fill: $primary-01
+  }
+
 }

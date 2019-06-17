@@ -62,7 +62,7 @@ var AlertBanner = function (_React$Component) {
           { className: 'blx-alert-text' },
           React.createElement(
             'h4',
-            { className: 'blx-with-margin' },
+            null,
             this.props.title
           ),
           React.createElement(
