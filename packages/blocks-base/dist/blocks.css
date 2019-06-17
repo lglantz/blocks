@@ -620,6 +620,7 @@ input[type=checkbox][name='blx-accordion-tab']:checked ~ .blx-accordion-content 
 .blx-button {
   position: relative;
   display: flex;
+  justify-content: center;
   height: 44px;
   max-width: 480px;
   min-width: 44px;
