@@ -28,7 +28,7 @@ var Tooltip = function Tooltip(props) {
       { className: messageClasses },
       props.title && React.createElement(
         'h5',
-        null,
+        { className: 'blx-tooltip-titled-message-title' },
         props.title
       ),
       React.createElement(

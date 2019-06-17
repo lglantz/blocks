@@ -19,7 +19,7 @@ const Tooltip = (props) => {
         {props.trigger}
       </button>
       <div className={messageClasses}>
-        { props.title && <h5>{props.title}</h5> }
+        { props.title && <h5 className="blx-tooltip-titled-message-title">{props.title}</h5> }
         <p>
           {props.text}
         </p>

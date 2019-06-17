@@ -25,7 +25,6 @@ const TooltipBasicExample = () => (
     <Tooltip
       position="right"
       lightBg
-      title="Right tooltip"
       text="Right tooltip right tooltip right tooltip"
       trigger={<HelpIcon />}
     />

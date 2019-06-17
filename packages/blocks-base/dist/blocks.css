@@ -2644,6 +2644,7 @@ input[type="radio"]:hover + .blx-sub-tab {
 .blx-tooltip {
   position: relative;
   display: inline-block;
+  text-align: left;
 }
 .blx-tooltip .blx-tooltip-message,
 .blx-tooltip .blx-tooltip-titled-message {
@@ -2682,13 +2683,14 @@ input[type="radio"]:hover + .blx-sub-tab {
   max-width: 265px;
   min-height: 37px;
   max-height: 108px;
-  text-align: center;
 }
 .blx-tooltip-titled-message {
   width: 265px;
   min-height: 60px;
   max-height: 150px;
-  text-align: left;
+}
+.blx-tooltip-titled-message-title {
+  padding-bottom: 8px;
 }
 .blx-tooltip-bottom {
   top: 100%;
