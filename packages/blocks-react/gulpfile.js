@@ -5,7 +5,10 @@ const replace = require('gulp-string-replace');
 const compileDir = (dir) => {
   return gulp.src(`./${dir}/*.jsx`)
     .pipe(babel({
-        presets: ['es2015', 'react']
+        presets: ['es2015', 'react'],
+        plugins: [
+          "transform-object-rest-spread"
+        ]
     }))
     .pipe(replace(/\.jsx/g, '.js', { logs: { enabled: false } }))
     .pipe(gulp.dest(`./dist/${dir}`))  
