@@ -3,11 +3,14 @@ const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const stylus = require('stylus');
 const fs = require('fs');
+const path = require('path');
 const through = require('through2');
 const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
 
+const SOURCE_DIR = path.join(__dirname, 'styles');
+const OUTPUT_DIR = path.join(__dirname, 'dist');
 
 const cssPlugins = [
   autoprefixer(),
@@ -24,7 +27,10 @@ function buildSassVariableLine(key, value) {
 
 function buildStyleVariablesFromJson(cb) {
   const variableJson = require('./styles/variables.json');
-  
+
+  const stylusFilename = 'variables.styl';
+  const sassFilename = 'variables.sass';
+
   let outputStylus = '';
   let outputSass = '';
 
@@ -49,10 +55,20 @@ function buildStyleVariablesFromJson(cb) {
     }
   }
 
-  fs.writeFile('./styles/variables.styl', outputStylus, function(err) {
-    if (err) return cb(err);
-    fs.writeFile('./styles/variables.sass', outputSass, cb);
-  });
+  // write Sass & Stylus variable files, copy them to dist/
+  const stylusOutPath = path.join(SOURCE_DIR, stylusFilename);
+  const sassOutPath = path.join(SOURCE_DIR, sassFilename);
+  fs.writeFileSync(stylusOutPath, outputStylus);
+  fs.writeFileSync(sassOutPath, outputSass);
+
+  if (!fs.existsSync(OUTPUT_DIR)){
+      fs.mkdirSync(OUTPUT_DIR);
+  }
+
+  fs.copyFileSync(stylusOutPath, path.join(OUTPUT_DIR, stylusFilename));
+  fs.copyFileSync(sassOutPath, path.join(OUTPUT_DIR, sassFilename));
+
+  cb();
 }
 
 function renderStylus(options) {
@@ -83,7 +99,7 @@ function buildBlocksCSS() {
     }))
     .pipe(postcss(cssPlugins))
     .pipe(rename('blocks.css'))
-    .pipe(dest('./dist'));
+    .pipe(dest(OUTPUT_DIR));
 }
 
 exports.build = series(
