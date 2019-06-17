@@ -6,7 +6,7 @@ const BasicButton = React.forwardRef((props, ref) => {
   let classes = 'blx-button ';
   if (props.icon) classes += 'blx-icon-button ';
   if (props.isDisabled) classes += 'blx-disabled ';
-  
+
   return (
     <button
       style={props.style}
@@ -16,6 +16,7 @@ const BasicButton = React.forwardRef((props, ref) => {
       onClick={props.onClick}
       onKeyDown={props.onKeyDown}
       onKeyUp={props.onKeyUp}
+      type={props.type}
       ref={ref}
     >
       { props.leftIcon }
@@ -29,7 +30,8 @@ const BasicButton = React.forwardRef((props, ref) => {
 BasicButton.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  onClick: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
   text: PropTypes.string,
   isDisabled: PropTypes.bool,
   leftIcon: PropTypes.node,
@@ -43,12 +45,14 @@ BasicButton.propTypes = {
 BasicButton.defaultProps = {
   className: 'blx-primary',
   style: null,
+  type: '', // for "submit" in forms
   text: '',
   isDisabled: false,
   leftIcon: null,
   rightIcon: null,
   icon: null,
   autoFocus: false,
+  onClick: () => {},
   onKeyDown: () => {},
   onKeyUp: () => {}
 };
