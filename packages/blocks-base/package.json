@@ -18,13 +18,13 @@
   "homepage": "https://github.com/floored/blocks#readme",
   "devDependencies": {
     "autoprefixer": "^8.3.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-json-sass": "0.0.2",
-    "gulp-json-stylus": "^0.1.2",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-stylus": "^2.7.0",
-    "postcss-css-variables": "^0.8.1"
-  }
+    "postcss-css-variables": "^0.8.1",
+    "stylus": "^0.54.5",
+    "through2": "^3.0.1"
+  },
+  "dependencies": {}
 }
