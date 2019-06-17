@@ -5,7 +5,10 @@ import ReactDOMServer from 'react-dom/server'
 import { find } from 'lodash'
 import formatXml from 'xml-formatter'
 import SyntaxHighlighter from 'react-syntax-highlighter';
+
 import reqUtil from '../js_utils/request'
+
+import './syntax.css';
 
 const { Tabs, RadioTabItem } = require('blocks-react').Tabs;
 

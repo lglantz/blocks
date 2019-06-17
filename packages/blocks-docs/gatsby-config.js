@@ -4,7 +4,12 @@ module.exports = {
     description: `CBRE Build's Blocks design system.`,
   },
   plugins: [
-    `gatsby-plugin-stylus`,
+    {
+      resolve: `gatsby-plugin-stylus`,
+      options: {
+        import: ['~blocks-base/dist/variables.styl']
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
