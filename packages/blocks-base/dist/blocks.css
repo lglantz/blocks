@@ -2669,6 +2669,9 @@ input[type="radio"]:hover + .blx-sub-tab {
   border: 2px solid #49a1ff;
   border: 2px solid var(--focus, #49a1ff);
 }
+.blx-tooltip-trigger::-moz-focus-inner {
+  border: 0;
+}
 .blx-tooltip-message,
 .blx-tooltip-titled-message {
   border-radius: 7px;

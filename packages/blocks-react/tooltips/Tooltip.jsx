@@ -15,7 +15,13 @@ const Tooltip = (props) => {
       className={`blx-tooltip ${props.className}`}
       ref={props.forwardedRef}
     >
-      <button className="blx-tooltip-trigger" onClick={props.toggle}>
+      <button
+        className="blx-tooltip-trigger"
+        onClick={(e) => {
+          e.target.closest('.blx-tooltip-trigger').focus();
+          props.toggle(e);
+        }}
+      >
         {props.trigger}
       </button>
       <div className={messageClasses}>

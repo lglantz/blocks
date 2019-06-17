@@ -20,7 +20,13 @@ var Tooltip = function Tooltip(props) {
     },
     React.createElement(
       'button',
-      { className: 'blx-tooltip-trigger', onClick: props.toggle },
+      {
+        className: 'blx-tooltip-trigger',
+        onClick: function onClick(e) {
+          e.target.closest('.blx-tooltip-trigger').focus();
+          props.toggle(e);
+        }
+      },
       props.trigger
     ),
     React.createElement(
