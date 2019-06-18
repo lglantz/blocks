@@ -1,7 +1,7 @@
 import React from "react"
 
 const { PopoverMenu } = require('blocks-react').Dropdowns;
-const { MoreVerticalIcon } = require('blocks-react').Icons;
+const { MoreVerticalIcon, MoreIcon } = require('blocks-react').Icons;
 
 const exampleOptions = [
   {
@@ -32,6 +32,11 @@ const PopoverIconExample = () => (
     <PopoverMenu
       icon={<MoreVerticalIcon />}
       options={exampleOptions}
+    />
+    <PopoverMenu
+      icon={<MoreIcon />}
+      options={exampleOptions}
+      isDisabled
     />
   </div>
 );

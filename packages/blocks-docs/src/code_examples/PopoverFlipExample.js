@@ -27,13 +27,31 @@ const exampleOptions = [
   }
 ];
 
+const exampleOptions2 = [
+  {
+    text: 'Correct Action',
+    onClick: () => {}
+  },
+  {
+    text: 'Another Action',
+    onClick: () => {}
+  }
+];
+
 const PopoverFlipExample = () => (
   <div>
     <PopoverMenu
       text="Left menu"
       icon={<DownIcon />}
-      isLeft={true}
+      position="left"
       options={exampleOptions}
+      scrollable
+    />
+    <PopoverMenu
+      text="Right menu"
+      icon={<DownIcon />}
+      position="right"
+      options={exampleOptions2}
     />
   </div>
 );

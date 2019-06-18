@@ -15,6 +15,7 @@ class DropdownBasicExample extends React.Component {
     return (
       <Dropdown
         text="Choose an option"
+        scrollable
         value={this.state.selectedValue}
         onChange={evt => this.setState({ selectedValue: evt.value })}
         options={

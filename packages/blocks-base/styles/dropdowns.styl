@@ -28,7 +28,7 @@ $dropdown-icon-spin-duration = 200ms;
 
 // dropdown styles
 .blx-dropdown-wrapper {
-  display: inline-flex;
+  display: block;
 }
 
 .blx-dropdown {
@@ -88,10 +88,18 @@ $dropdown-icon-spin-duration = 200ms;
   .blx-dropdown-placeholder {
     color: $dropdown-default-text-color;
   }
-
-  &.blx-active .blx-dropdown-arrow {
-    transform: rotate(180deg);
-    transition: transform $dropdown-icon-spin-duration;
+  
+  &.blx-active {
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    
+    .blx-dropdown-arrow {
+      transform: rotate(180deg);
+      transition: transform $dropdown-icon-spin-duration;
+    }
+  }
+  
+  &.blx-invalid {
+    border: $dropdown-error-border;
   }
 
   &:focus, &.blx-focus {
@@ -106,35 +114,31 @@ $dropdown-icon-spin-duration = 200ms;
     background-color: $dropdown-hover-background-color;
     border: $dropdown-hover-border;
   }
-
-  &.blx-invalid {
-    border: $dropdown-error-border;
-  }
 }
 
 .blx-dropdown-menu {
   position: absolute;
   top: 100%;
   width: 100%;
-  border-radius: $base-border-radius;
+  border-radius: 0 0 $base-border-radius $base-border-radius;
   z-index: 1;
-  margin: 8px 0;
-  padding: 8px 0;
   list-style-type: none;
+  overflow: hidden;
 
   background-color: $dropdown-default-background-color;
-  border: $dropdown-default-border;
+  border: $dropdown-default-border $dropdown-default-border 0 $dropdown-default-border;
   box-shadow: $default-box-shadow;
 }
 
-.blx-dropdown-list {
-  max-height: 200px;
+.blx-dropdown-list.blx-scrollable {
+  max-height: 140px;
   overflow-y: auto;
 }
 
 .blx-dropdown-item {
   position: relative;
   background: $dropdown-item-default-background-color;
+  overflow: hidden;
 
   a, button {
     display: block;
@@ -157,6 +161,23 @@ $dropdown-icon-spin-duration = 200ms;
       outline: none;
       color: $dropdown-item-focus-text-color;
       background-color: $dropdown-item-focus-background-color;
+    }
+  }
+  
+  &.blx-selected {
+    a, button {
+      padding-left: 36px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        margin-left: 16px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $primary-00;
+      }
     }
   }
 
@@ -184,4 +205,8 @@ $dropdown-icon-spin-duration = 200ms;
       color: $dropdown-item-hover-text-color;
     }
   }
+}
+
+.blx-dropdown-item:last-child {
+  border-radius: 0 0 0 $base-border-radius;
 }

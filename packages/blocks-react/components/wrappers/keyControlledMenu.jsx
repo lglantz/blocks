@@ -43,7 +43,7 @@ function keyControlledMenu(WrappedComponent) {
 
     onKeyDown(e) {
       if (e.key === 'Tab' && this.props.isOpen) {
-        this.props.close();
+        this.props.close(e);
       } else if (['ArrowDown', ' '].indexOf(e.key) > -1 && !this.props.isOpen) {
         e.preventDefault();
         this.props.open();
@@ -57,7 +57,7 @@ function keyControlledMenu(WrappedComponent) {
       if (['Enter', ' '].indexOf(e.key) > -1) {
         this.onSelect(e, option);
       } else if (e.key === 'Escape') {
-        this.props.close();
+        this.props.close(e);
       }
     }
 

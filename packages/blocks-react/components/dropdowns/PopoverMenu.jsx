@@ -8,12 +8,14 @@ const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
 
 const PopoverMenu = (props) => {
-  let menuClasses = 'blx-dropdown-menu';
+  let menuClasses = 'blx-popover-menu';
   if (!props.isOpen) menuClasses += ' blx-hidden';
-  if (props.isLeft) {
+  if (props.position === 'left') {
     menuClasses += ' blx-popover-is-left';
-  } else {
+  } else if (props.position === 'right') {
     menuClasses += ' blx-popover-is-right';
+  } else {
+    menuClasses += ' blx-popover-is-center';
   }
   return (
     <div
@@ -26,7 +28,7 @@ const PopoverMenu = (props) => {
       }
       <div className="blx-dropdown blx-popover">
         <button
-          className="blx-popover-trigger"
+          className={`blx-popover-trigger ${props.isOpen ? 'blx-active' : ''} ${props.isDisabled ? 'blx-disabled' : ''}`}
           disabled={props.isDisabled}
           onClick={props.toggle}
           title={props.text}
@@ -37,20 +39,22 @@ const PopoverMenu = (props) => {
           { props.icon }
         </button>
         <div className={menuClasses}>
-          <ul className="blx-dropdown-list">
-            {
-              props.options.map((option, idx) => (
-                <DropdownItem
-                  key={option.text || option.key}
-                  option={option}
-                  ref={props.optionsRefs[idx]}
-                  onKeyDown={props.onKeyDown}
-                  onKeyUp={props.onKeyUp}
-                  onSelect={props.onSelect}
-                />
-              ))
-            }
-          </ul>
+          <div className="blx-popover-menu-wrapper">
+            <ul className={`blx-dropdown-list ${props.scrollable ? 'blx-scrollable' : ''}`}>
+              {
+                props.options.map((option, idx) => (
+                  <DropdownItem
+                    key={option.text || option.key}
+                    option={option}
+                    ref={props.optionsRefs[idx]}
+                    onKeyDown={props.onKeyDown}
+                    onKeyUp={props.onKeyUp}
+                    onSelect={props.onSelect}
+                  />
+                ))
+              }
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -61,7 +65,8 @@ PopoverMenu.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   isOpen: PropTypes.bool,
-  isLeft: PropTypes.bool,
+  scrollable: PropTypes.bool,
+  position: PropTypes.string, // 'center', 'left', 'right'
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
   icon: PropTypes.node,
@@ -95,7 +100,8 @@ PopoverMenu.defaultProps = {
   className: '',
   style: null,
   isOpen: false,
-  isLeft: null,
+  scrollable: false,
+  position: 'center',
   options: [],
   text: null,
   icon: <MoreIcon />,

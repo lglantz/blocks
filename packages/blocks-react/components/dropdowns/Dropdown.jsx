@@ -33,7 +33,10 @@ const DropdownMenu = (props) => {
       <div className="blx-dropdown">
 
         {/* LABEL */}
-        { props.label && <label className="blx-ui-text">{props.label}</label> }
+        { props.label && <label className={`blx-ui-text ${props.isDisabled ? 'blx-disabled' : ''}`}>
+            {props.label}
+          </label> 
+        }
 
         {/* TRIGGER */}
         <button
@@ -54,7 +57,7 @@ const DropdownMenu = (props) => {
 
         {/* DROPDOWN MENU */}
         <div className={`blx-dropdown-menu ${props.isOpen ? '' : 'blx-hidden'}`}>
-          <ul className="blx-dropdown-list">
+          <ul className={`blx-dropdown-list ${props.scrollable ? 'blx-scrollable' : ''}`}>
             {
               props.options.map((option, idx) => (
                 <DropdownItem
@@ -70,10 +73,9 @@ const DropdownMenu = (props) => {
             }
           </ul>
         </div>
-
-        {/* INVALID MESSAGE */}
-        { !props.isValid && !props.isOpen && <span className="blx-invalid-input-message">{props.invalidErrorMessage}</span> }
       </div>
+      {/* INVALID MESSAGE */}
+      { !props.isValid && <span className="blx-invalid-input-message">{props.invalidErrorMessage}</span> }
     </div>
   );
 };
@@ -82,6 +84,7 @@ DropdownMenu.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   isOpen: PropTypes.bool,
+  scrollable: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
   text: PropTypes.string,
   icon: PropTypes.node,
@@ -109,6 +112,7 @@ DropdownMenu.propTypes = {
   onSelect: PropTypes.func,
   autoFocus: PropTypes.bool,
   isValid: PropTypes.bool,
+  invalidErrorMessage: PropTypes.string,
   // FIXME: PropTypes.instanceOf(Element) breaks under server side rendering b/c Element is not in context
   // See: https://github.com/facebook/prop-types/issues/240#issuecomment-455222878
   // forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
@@ -118,6 +122,7 @@ DropdownMenu.defaultProps = {
   className: '',
   style: null,
   isOpen: false,
+  scrollable: false,
   options: [],
   text: 'Choose an option',
   icon: null,
@@ -126,7 +131,8 @@ DropdownMenu.defaultProps = {
   triggerContent: null,
   onSelect: () => {},
   autoFocus: false,
-  isValid: true
+  isValid: true,
+  invalidErrorMessage: null
 };
 
 
