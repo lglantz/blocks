@@ -8,13 +8,15 @@ const through = require('through2');
 const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
+const cssnano = require('cssnano');
 
 const SOURCE_DIR = path.join(__dirname, 'styles');
 const OUTPUT_DIR = path.join(__dirname, 'dist');
 
 const cssPlugins = [
   autoprefixer(),
-  cssvariables({ preserve: true })
+  cssvariables({ preserve: true }),
+  cssnano()
 ];
 
 function buildStylusVariableLine(key, value) {
