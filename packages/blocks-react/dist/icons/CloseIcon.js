@@ -1,22 +1,2 @@
-'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var React = require('react');
-
-var Icon = require('./Icon.js');
-
-var CloseIcon = function CloseIcon(props) {
-  return React.createElement(
-    Icon,
-    _extends({}, props, {
-      fill: 'var(--primary-00)' // also the default fill, but being specific since the hover color is defined in css
-    }),
-    React.createElement('path', {
-      fillRule: 'nonzero',
-      d: 'M11.414 10l4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414L8.586 10l-4.95-4.95L5.05 3.636 10 8.586l4.95-4.95 1.414 1.414z'
-    })
-  );
-};
-
-module.exports = CloseIcon;
+"use strict";var _extends=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e},React=require("react"),Icon=require("./Icon.js"),CloseIcon=function(e){return React.createElement(Icon,_extends({},e,{fill:"var(--primary-00)"}),React.createElement("path",{fillRule:"nonzero",d:"M11.414 10l4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414L8.586 10l-4.95-4.95L5.05 3.636 10 8.586l4.95-4.95 1.414 1.414z"}))};module.exports=CloseIcon;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL0Nsb3NlSWNvbi5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiSWNvbiIsIkNsb3NlSWNvbiIsInByb3BzIiwiY3JlYXRlRWxlbWVudCIsIl9leHRlbmRzIiwiZmlsbCIsImZpbGxSdWxlIiwiZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI0TEFBTUEsTUFBUUMsUUFBUSxTQUVoQkMsS0FBT0QsUUFBUSxhQUVmRSxVQUFZLFNBQUNDLEdBQ2pCLE9BQ0VKLE1BQUFLLGNBQUNILEtBQURJLFNBQUEsR0FDTUYsRUFETixDQUVFRyxLQUFLLHNCQUVMUCxNQUFBSyxjQUFBLE9BQUEsQ0FDRUcsU0FBUyxVQUNUQyxFQUFFLHNJQU1WQyxPQUFPQyxRQUFVUiIsImZpbGUiOiJpY29ucy9DbG9zZUljb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbmNvbnN0IEljb24gPSByZXF1aXJlKCcuL0ljb24uanN4Jyk7XG5cbmNvbnN0IENsb3NlSWNvbiA9IChwcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxJY29uXG4gICAgICB7Li4ucHJvcHN9XG4gICAgICBmaWxsPVwidmFyKC0tcHJpbWFyeS0wMClcIiAvLyBhbHNvIHRoZSBkZWZhdWx0IGZpbGwsIGJ1dCBiZWluZyBzcGVjaWZpYyBzaW5jZSB0aGUgaG92ZXIgY29sb3IgaXMgZGVmaW5lZCBpbiBjc3NcbiAgICA+XG4gICAgICA8cGF0aFxuICAgICAgICBmaWxsUnVsZT1cIm5vbnplcm9cIlxuICAgICAgICBkPVwiTTExLjQxNCAxMGw0Ljk1IDQuOTUtMS40MTQgMS40MTQtNC45NS00Ljk1LTQuOTUgNC45NS0xLjQxNC0xLjQxNEw4LjU4NiAxMGwtNC45NS00Ljk1TDUuMDUgMy42MzYgMTAgOC41ODZsNC45NS00Ljk1IDEuNDE0IDEuNDE0elwiXG4gICAgICAvPlxuICAgIDwvSWNvbj5cbiAgKTtcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBDbG9zZUljb247XG4iXX0=

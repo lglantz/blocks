@@ -1,18 +1,2 @@
-'use strict';
-
-var React = require('react');
-
-var Icon = require('./Icon.js');
-
-var WarningIcon = function WarningIcon(props) {
-  return React.createElement(
-    Icon,
-    props,
-    React.createElement('path', {
-      d: 'M9 5v2.286L9.5 13h1l.5-5.714V5z'
-    }),
-    React.createElement('circle', { cx: '10', cy: '15', r: '1' })
-  );
-};
-
-module.exports = WarningIcon;
+"use strict";var React=require("react"),Icon=require("./Icon.js"),WarningIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{d:"M9 5v2.286L9.5 13h1l.5-5.714V5z"}),React.createElement("circle",{cx:"10",cy:"15",r:"1"}))};module.exports=WarningIcon;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL1dhcm5pbmdJY29uLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJJY29uIiwiV2FybmluZ0ljb24iLCJwcm9wcyIsImNyZWF0ZUVsZW1lbnQiLCJkIiwiY3giLCJjeSIsInIiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiYUFBQSxJQUFNQSxNQUFRQyxRQUFRLFNBRWhCQyxLQUFPRCxRQUFRLGFBRWZFLFlBQWMsU0FBQ0MsR0FDbkIsT0FDRUosTUFBQUssY0FBQ0gsS0FBU0UsRUFDUkosTUFBQUssY0FBQSxPQUFBLENBQ0VDLEVBQUUsb0NBRUpOLE1BQUFLLGNBQUEsU0FBQSxDQUFRRSxHQUFHLEtBQUtDLEdBQUcsS0FBS0MsRUFBRSxRQUtoQ0MsT0FBT0MsUUFBVVIiLCJmaWxlIjoiaWNvbnMvV2FybmluZ0ljb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbmNvbnN0IEljb24gPSByZXF1aXJlKCcuL0ljb24uanN4Jyk7XG5cbmNvbnN0IFdhcm5pbmdJY29uID0gKHByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPEljb24gey4uLnByb3BzfT5cbiAgICAgIDxwYXRoXG4gICAgICAgIGQ9XCJNOSA1djIuMjg2TDkuNSAxM2gxbC41LTUuNzE0VjV6XCJcbiAgICAgIC8+XG4gICAgICA8Y2lyY2xlIGN4PVwiMTBcIiBjeT1cIjE1XCIgcj1cIjFcIiAvPlxuICAgIDwvSWNvbj5cbiAgKTtcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBXYXJuaW5nSWNvbjtcbiJdfQ==

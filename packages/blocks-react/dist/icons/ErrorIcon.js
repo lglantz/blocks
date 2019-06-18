@@ -1,18 +1,2 @@
-'use strict';
-
-var React = require('react');
-
-var Icon = require('./Icon.js');
-
-var ErrorIcon = function ErrorIcon(props) {
-  return React.createElement(
-    Icon,
-    props,
-    React.createElement('path', {
-      fillRule: 'evenodd',
-      d: 'M10 3c-3.85 0-7 3.15-7 7s3.15 7 7 7 7-3.15 7-7-3.15-7-7-7zm0 12.6c-1.008 0-1.96-.29-2.8-.812l.056-.058 6.72-8.698.112-.232C15.04 6.902 15.6 8.293 15.6 9.801c0 3.19-2.52 5.799-5.6 5.799zm0-11.2c1.008 0 1.96.29 2.8.812v.058l-6.72 8.698-.112.232A5.87 5.87 0 0 1 4.4 10.199C4.4 7.009 6.92 4.4 10 4.4z'
-    })
-  );
-};
-
-module.exports = ErrorIcon;
+"use strict";var React=require("react"),Icon=require("./Icon.js"),ErrorIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{fillRule:"evenodd",d:"M10 3c-3.85 0-7 3.15-7 7s3.15 7 7 7 7-3.15 7-7-3.15-7-7-7zm0 12.6c-1.008 0-1.96-.29-2.8-.812l.056-.058 6.72-8.698.112-.232C15.04 6.902 15.6 8.293 15.6 9.801c0 3.19-2.52 5.799-5.6 5.799zm0-11.2c1.008 0 1.96.29 2.8.812v.058l-6.72 8.698-.112.232A5.87 5.87 0 0 1 4.4 10.199C4.4 7.009 6.92 4.4 10 4.4z"}))};module.exports=ErrorIcon;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL0Vycm9ySWNvbi5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiSWNvbiIsIkVycm9ySWNvbiIsInByb3BzIiwiY3JlYXRlRWxlbWVudCIsImZpbGxSdWxlIiwiZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJhQUFBLElBQU1BLE1BQVFDLFFBQVEsU0FFaEJDLEtBQU9ELFFBQVEsYUFFZkUsVUFBWSxTQUFDQyxHQUNqQixPQUNFSixNQUFBSyxjQUFDSCxLQUFTRSxFQUNSSixNQUFBSyxjQUFBLE9BQUEsQ0FDRUMsU0FBUyxVQUNUQyxFQUFFLCtTQU1WQyxPQUFPQyxRQUFVTiIsImZpbGUiOiJpY29ucy9FcnJvckljb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbmNvbnN0IEljb24gPSByZXF1aXJlKCcuL0ljb24uanN4Jyk7XG5cbmNvbnN0IEVycm9ySWNvbiA9IChwcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxJY29uIHsuLi5wcm9wc30+XG4gICAgICA8cGF0aFxuICAgICAgICBmaWxsUnVsZT1cImV2ZW5vZGRcIlxuICAgICAgICBkPVwiTTEwIDNjLTMuODUgMC03IDMuMTUtNyA3czMuMTUgNyA3IDcgNy0zLjE1IDctNy0zLjE1LTctNy03em0wIDEyLjZjLTEuMDA4IDAtMS45Ni0uMjktMi44LS44MTJsLjA1Ni0uMDU4IDYuNzItOC42OTguMTEyLS4yMzJDMTUuMDQgNi45MDIgMTUuNiA4LjI5MyAxNS42IDkuODAxYzAgMy4xOS0yLjUyIDUuNzk5LTUuNiA1Ljc5OXptMC0xMS4yYzEuMDA4IDAgMS45Ni4yOSAyLjguODEydi4wNThsLTYuNzIgOC42OTgtLjExMi4yMzJBNS44NyA1Ljg3IDAgMCAxIDQuNCAxMC4xOTlDNC40IDcuMDA5IDYuOTIgNC40IDEwIDQuNHpcIlxuICAgICAgLz5cbiAgICA8L0ljb24+XG4gICk7XG59XG5cbm1vZHVsZS5leHBvcnRzID0gRXJyb3JJY29uO1xuIl19
