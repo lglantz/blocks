@@ -16,7 +16,7 @@ did_generate_styles=false
 
 for i in ${edited_files[@]}
 do
-  [[ $i == packages/blocks-react/*/*.jsx ]] && edited_react_components+=($i)
+  [[ $i == packages/blocks-react/components/*/*.jsx ]] && edited_react_components+=($i)
   [[ $i == packages/blocks-react/dist/*/*.js ]] && generated_react_files+=($i)
   [[ $i == packages/blocks-base/styles/* ]] && edited_styles+=($i)
   [[ $i == packages/blocks-base/dist/blocks.css ]] && did_generate_styles=true

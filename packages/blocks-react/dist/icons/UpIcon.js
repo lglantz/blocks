@@ -1,18 +1,2 @@
-'use strict';
-
-var React = require('react');
-
-var Icon = require('./Icon.js');
-
-var UpIcon = function UpIcon(props) {
-  return React.createElement(
-    Icon,
-    props,
-    React.createElement('path', {
-      fillRule: 'nonzero',
-      d: 'M9.986 7.422l-6.37 6.35L2.2 12.36 9.986 4.6l7.814 7.789-1.416 1.411z'
-    })
-  );
-};
-
-module.exports = UpIcon;
+"use strict";var React=require("react"),Icon=require("./Icon.js"),UpIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{fillRule:"nonzero",d:"M9.986 7.422l-6.37 6.35L2.2 12.36 9.986 4.6l7.814 7.789-1.416 1.411z"}))};module.exports=UpIcon;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL1VwSWNvbi5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiSWNvbiIsIlVwSWNvbiIsInByb3BzIiwiY3JlYXRlRWxlbWVudCIsImZpbGxSdWxlIiwiZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJhQUFBLElBQU1BLE1BQVFDLFFBQVEsU0FFaEJDLEtBQU9ELFFBQVEsYUFFZkUsT0FBUyxTQUFDQyxHQUNkLE9BQ0VKLE1BQUFLLGNBQUNILEtBQVNFLEVBQ1JKLE1BQUFLLGNBQUEsT0FBQSxDQUNFQyxTQUFTLFVBQ1RDLEVBQUUsMkVBTVZDLE9BQU9DLFFBQVVOIiwiZmlsZSI6Imljb25zL1VwSWNvbi5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcblxuY29uc3QgSWNvbiA9IHJlcXVpcmUoJy4vSWNvbi5qc3gnKTtcblxuY29uc3QgVXBJY29uID0gKHByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPEljb24gey4uLnByb3BzfT5cbiAgICAgIDxwYXRoXG4gICAgICAgIGZpbGxSdWxlPVwibm9uemVyb1wiXG4gICAgICAgIGQ9XCJNOS45ODYgNy40MjJsLTYuMzcgNi4zNUwyLjIgMTIuMzYgOS45ODYgNC42bDcuODE0IDcuNzg5LTEuNDE2IDEuNDExelwiXG4gICAgICAvPlxuICAgIDwvSWNvbj5cbiAgKTtcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBVcEljb247XG4iXX0=
