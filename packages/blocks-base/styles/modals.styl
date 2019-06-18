@@ -11,7 +11,7 @@ $modal-overlay-background-color = $light-02;
   transform: translate(-50%, -50%);
   width: 600px;
   max-height: 90%;
-  padding: 24px 40px 32px 40px;
+  padding: 24px 40px;
   z-index: 1001;
 
   display: flex;
@@ -22,10 +22,18 @@ $modal-overlay-background-color = $light-02;
   background-color: $modal-background-color;
   box-shadow: $default-box-shadow;
 
-  .blx-icon-close {
+  .blx-modal-close {
     position: absolute;
     top: 16px;
     right: 16px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    svg:hover {
+      fill: $primary-01
+    }
   }
 
   .blx-modal-buttons {
@@ -49,5 +57,15 @@ $modal-overlay-background-color = $light-02;
 .blx-modal-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
   overflow: hidden;
+
+  h4 + p {
+    margin-top: 18px;
+  }
+
+  p {
+    color: $base-font-color;
+    margin-bottom: 18px;
+  }
 }

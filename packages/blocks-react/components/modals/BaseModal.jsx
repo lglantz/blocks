@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const CloseIcon = require('../icons/CloseIcon.jsx');
 
 
 const BaseModal = (props) => {
@@ -17,10 +18,9 @@ const BaseModal = (props) => {
       <div className="blx-modal">
         {
           props.isClosable && (
-            <button
-              className="blx-icon blx-icon-close"
-              onClick={props.onClose}
-            />
+            <button className="blx-modal-close" onClick={props.onClose}>
+              <CloseIcon />
+            </button>
           )
         }
         <div className="blx-modal-content">
