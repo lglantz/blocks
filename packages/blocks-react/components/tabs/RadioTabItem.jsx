@@ -2,25 +2,21 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const RadioTabItem = (props) => {
+const RadioTabItem = ({ style, className, text, children, ...other }) => {
   return (
     <li
-      style={props.style}
-      className={props.className}
+      style={style}
+      className={className}
     >
       <label>
         <input
           type="radio"
-          name={props.name}
-          value={props.value}
-          checked={props.isChecked}
-          disabled={props.isDisabled}
-          onChange={props.onChange}
+          {...other}
         />
         <span className="blx-tab-item">
-          {props.text}
+          {text}
         </span>
-        {props.children}
+        {children}
       </label>
     </li>
   );
@@ -29,20 +25,12 @@ const RadioTabItem = (props) => {
 RadioTabItem.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  name: PropTypes.string.isRequired, // needs to be unique for each tab group
-  value: PropTypes.string,
-  text: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  isChecked: PropTypes.bool,
-  isDisabled: PropTypes.bool
+  text: PropTypes.string.isRequired
 };
 
 RadioTabItem.defaultProps = {
   className: '',
-  style: null,
-  value: '',
-  isChecked: false,
-  isDisabled: false
+  style: null
 };
 
 module.exports = RadioTabItem;

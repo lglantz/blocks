@@ -2,27 +2,23 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const RadioSubTabItem = (props) => {
+const RadioSubTabItem = ({ visible, style, className, text, children, ...other }) => {
   let classes = '';
-  if (!props.isVisible) classes += 'blx-hidden ';
+  if (!visible) classes += 'blx-hidden ';
   
   return (
     <label
-      style={props.style}
-      className={`${classes} ${props.className}`}
+      style={style}
+      className={`${classes} ${className}`}
     >
       <input
         type="radio"
-        name={props.name}
-        value={props.value}
-        checked={props.isChecked}
-        disabled={props.isDisabled}
-        onChange={props.onChange}
+        {...other}
       />
       <span className="blx-sub-tab">
-        {props.text}
+        {text}
       </span>
-      {props.children}
+      {children}
     </label>
   );
 }
@@ -30,22 +26,14 @@ const RadioSubTabItem = (props) => {
 RadioSubTabItem.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  name: PropTypes.string.isRequired, // needs to be unique for each tab group
-  value: PropTypes.string,
   text: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  isVisible: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  isDisabled: PropTypes.bool
+  visible: PropTypes.bool
 };
 
 RadioSubTabItem.defaultProps = {
   className: '',
   style: null,
-  value: '',
-  isVisible: true,
-  isChecked: false,
-  isDisabled: false
+  visible: true
 };
 
 module.exports = RadioSubTabItem;

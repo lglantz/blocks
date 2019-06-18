@@ -4,7 +4,7 @@ const ReactLink = require('react-router-dom').Link;
 
 
 const LinkTabItem = (props) => {
-  const classes = `blx-tab-item ${props.isActive ? 'blx-active' : ''}`;
+  const classes = `blx-tab-item ${props.active ? 'blx-active' : ''}`;
   const link = props.useReactLink ?
     <ReactLink className={classes} to={props.href}>{props.text}</ReactLink> :
     <a className={classes} href={props.href}>{props.text}</a>;
@@ -25,16 +25,14 @@ LinkTabItem.propTypes = {
   style: PropTypes.object,
   text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  isActive: PropTypes.bool,
-  isDisabled: PropTypes.bool,
+  active: PropTypes.bool,
   useReactLink: PropTypes.bool
 };
 
 LinkTabItem.defaultProps = {
   className: '',
   style: null,
-  isActive: false,
-  isDisabled: false,
+  active: false,
   useReactLink: false
 };
 

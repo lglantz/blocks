@@ -3,7 +3,7 @@ import React from "react"
 const { Tabs, LinkTabItem } = require('blocks-react').Tabs;
 
 const TabsVerticalExample = () => (
-  <Tabs isVertical>
+  <Tabs vertical>
     <LinkTabItem
       key="vertical-tabs-1"
       name="vertical-tabs-example"
@@ -14,7 +14,7 @@ const TabsVerticalExample = () => (
       key="vertical-tabs-2"
       name="vertical-tabs-example"
       href="/patterns/tabs"
-      isActive={true}
+      active={true}
       text="Link Tab 2"
     />
     <LinkTabItem

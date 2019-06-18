@@ -4,12 +4,12 @@ const PropTypes = require('prop-types');
 
 const Tabs = (props) => {
   let classes = '';
-  if (props.isVertical) {
+  if (props.vertical) {
     classes += 'blx-vertical-tabs ';
   } else {
     classes += 'blx-horizontal-tabs ';
   }
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (props.disabled) classes += 'blx-disabled ';
 
   return (
     <ul
@@ -24,15 +24,15 @@ const Tabs = (props) => {
 Tabs.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  isDisabled: PropTypes.bool,
-  isVertical: PropTypes.bool
+  disabled: PropTypes.bool,
+  vertical: PropTypes.bool
 };
 
 Tabs.defaultProps = {
   className: '',
   style: null,
-  isDisabled: false,
-  isVertical: false
+  disabled: false,
+  vertical: false
 };
 
 module.exports = Tabs;

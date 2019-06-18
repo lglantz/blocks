@@ -37,7 +37,7 @@ const Navigation = () => (
                 trigger={<h5>{section.name}</h5>}
                 open
               >
-                <Tabs isVertical>
+                <Tabs vertical>
                 {
                   section.subsections.map(subsection => (
                     <li key={subsection.name}>

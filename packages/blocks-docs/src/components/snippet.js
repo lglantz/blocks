@@ -42,7 +42,7 @@ class Snippet extends React.Component {
                 name={`snippet-views-${this.props.name}`}
                 value={view}
                 text={view}
-                isChecked={view === this.state.currentView}
+                checked={view === this.state.currentView}
                 onChange={() => this.setState({ currentView: view })}
               />
             ))

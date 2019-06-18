@@ -17,12 +17,12 @@ class TabsDisabledExample extends React.Component {
 
   render() {
     return (
-      <Tabs isDisabled>
+      <Tabs disabled>
         <RadioTabItem
           key="disabled-tabs-1"
           name="disabled-tabs-example"
           value="tab1"
-          isChecked={this.state.selectedTab === 'tab1'}
+          checked={this.state.selectedTab === 'tab1'}
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 1"
         />
@@ -30,7 +30,7 @@ class TabsDisabledExample extends React.Component {
           key="disabled-tabs-2"
           name="disabled-tabs-example"
           value="tab2"
-          isChecked={this.state.selectedTab === 'tab2'}
+          checked={this.state.selectedTab === 'tab2'}
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 2"
         />
@@ -38,7 +38,7 @@ class TabsDisabledExample extends React.Component {
           key="disabled-tabs-3"
           name="disabled-tabs-example"
           value="tab3"
-          isChecked={this.state.selectedTab === 'tab3'}
+          checked={this.state.selectedTab === 'tab3'}
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 3"
         />
@@ -46,7 +46,7 @@ class TabsDisabledExample extends React.Component {
           key="disabled-tabs-4"
           name="disabled-tabs-example"
           value="tab4"
-          isChecked={this.state.selectedTab === 'tab4'}
+          checked={this.state.selectedTab === 'tab4'}
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 4"
         />
