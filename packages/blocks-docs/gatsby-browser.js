@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-require('./node_modules/blocks-base/dist/blocks.css');
-require('./src/css/_all.styl');
+import "./node_modules/blocks-base/dist/blocks.css";
+import "./src/css/_all.styl";
