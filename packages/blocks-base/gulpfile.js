@@ -55,18 +55,20 @@ function buildStyleVariablesFromJson(cb) {
     }
   }
 
-  // write Sass & Stylus variable files, copy them to dist/
-  const stylusOutPath = path.join(SOURCE_DIR, stylusFilename);
-  const sassOutPath = path.join(SOURCE_DIR, sassFilename);
-  fs.writeFileSync(stylusOutPath, outputStylus);
+  // writeo out variable files
+  if (!fs.existsSync(OUTPUT_DIR)){
+    fs.mkdirSync(OUTPUT_DIR);
+  }
+  const stylusPath = path.join(SOURCE_DIR, stylusFilename);
+  const stylusOutPath = path.join(OUTPUT_DIR, stylusFilename);
+  const sassOutPath = path.join(OUTPUT_DIR, sassFilename);
+
+  // write Sass variable file in dist/
   fs.writeFileSync(sassOutPath, outputSass);
 
-  if (!fs.existsSync(OUTPUT_DIR)){
-      fs.mkdirSync(OUTPUT_DIR);
-  }
-
-  fs.copyFileSync(stylusOutPath, path.join(OUTPUT_DIR, stylusFilename));
-  fs.copyFileSync(sassOutPath, path.join(OUTPUT_DIR, sassFilename));
+  // write Stylus variable file in styles/ and copy to dist/ (need it twice)
+  fs.writeFileSync(stylusPath, outputStylus);
+  fs.copyFileSync(stylusPath, stylusOutPath);
 
   cb();
 }
