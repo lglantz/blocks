@@ -1,7 +1,7 @@
 import React from "react"
 
 const { BaseModal } = require('blocks-react').Modals;
-const { ButtonPrimary } = require('blocks-react').Buttons;
+const { Button } = require('blocks-react').Buttons;
 
 class ModalExample extends React.Component {
   constructor(props) {
@@ -23,10 +23,12 @@ class ModalExample extends React.Component {
           <h4>Base Modal</h4>
           <p>Hello! This is a base modal.</p>
         </BaseModal>
-        <ButtonPrimary
-          text="Open Base Modal"
+        <Button
+          color="primary"
           onClick={() => this.setState(prevState => ({ modalVisible: !prevState.modalVisible }))}
-        />
+        >
+          <span>Open Base Modal</span>
+        </Button>
       </div>
     );
   }

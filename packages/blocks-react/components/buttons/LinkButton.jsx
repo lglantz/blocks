@@ -5,8 +5,7 @@ const ReactLink = require('react-router-dom').Link;
 
 const LinkButton = React.forwardRef((props, ref) => {
   let classes = 'blx-button ';
-  if (props.icon) classes += 'blx-icon-button ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (props.disabled) classes += 'blx-disabled ';
 
   if (props.useReactLink) {
     return (
@@ -14,13 +13,10 @@ const LinkButton = React.forwardRef((props, ref) => {
         style={props.style}
         className={`${classes} ${props.className}`}
         to={props.href}
-        disabled={props.isDisabled}
+        disabled={props.disabled}
         ref={ref}
       >
-        { props.leftIcon }
-        { props.text && <span>{props.text}</span> }
-        { props.icon }
-        { props.rightIcon }
+        { props.children }
       </ReactLink>
     );
   }
@@ -30,14 +26,10 @@ const LinkButton = React.forwardRef((props, ref) => {
       style={props.style}
       className={`${classes} ${props.className}`}
       href={props.href}
-      disabled={props.isDisabled}
       target={props.isExternal ? '_blank' : '_self'}
       ref={ref}
     >
-      { props.leftIcon }
-      { props.text && <span>{props.text}</span> }
-      { props.icon }
-      { props.rightIcon }
+      { props.children }
     </a>
   );
 });
@@ -46,25 +38,17 @@ LinkButton.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   href: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   isExternal: PropTypes.bool,
-  useReactLink: PropTypes.bool,
-  leftIcon: PropTypes.node,
-  rightIcon: PropTypes.node,
-  icon: PropTypes.node
+  useReactLink: PropTypes.bool
 };
 
 LinkButton.defaultProps = {
   className: 'blx-primary',
   style: null,
-  text: '',
-  isDisabled: false,
+  disabled: false,
   isExternal: false,
-  useReactLink: false,
-  leftIcon: null,
-  rightIcon: null,
-  icon: null
+  useReactLink: false
 };
 
 module.exports = LinkButton;

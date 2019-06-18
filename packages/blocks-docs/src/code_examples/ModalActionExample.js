@@ -1,7 +1,7 @@
 import React from "react"
 
 const { ActionModal } = require('blocks-react').Modals;
-const { ButtonPrimary } = require('blocks-react').Buttons;
+const { Button } = require('blocks-react').Buttons;
 
 class ModalActionExample extends React.Component {
   constructor(props) {
@@ -29,10 +29,12 @@ class ModalActionExample extends React.Component {
           cancelText="Cancel"
           onCancel={() => this.closeModal()}
         />
-        <ButtonPrimary
-          text="Open Action Modal"
+        <Button
+          color="primary"
           onClick={() => this.setState(prevState => ({ modalVisible: !prevState.modalVisible }))}
-        />
+        >
+          <span>Open Action Modal</span>
+        </Button>
       </div>
     );
   }
