@@ -1493,7 +1493,7 @@ a.blx-button {
   margin: 0 16px 0 0;
 }
 .blx-popover-trigger {
-  border: none;
+  border: 1px solid #f00;
   display: flex;
   outline: none;
   padding: 0;
