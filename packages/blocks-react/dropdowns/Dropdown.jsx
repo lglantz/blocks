@@ -28,12 +28,8 @@ const DropdownMenu = (props) => {
     <div
       style={props.style}
       className={`blx-dropdown-wrapper ${props.className}`}
-      ref={props.forwardedRef}
     >
       <div className="blx-dropdown">
-
-        {/* LABEL */}
-        { props.label && <label className="blx-ui-text">{props.label}</label> }
 
         {/* TRIGGER */}
         <button

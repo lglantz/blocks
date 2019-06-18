@@ -30,17 +30,11 @@ var DropdownMenu = function DropdownMenu(props) {
     'div',
     {
       style: props.style,
-      className: 'blx-dropdown-wrapper ' + props.className,
-      ref: props.forwardedRef
+      className: 'blx-dropdown-wrapper ' + props.className
     },
     React.createElement(
       'div',
       { className: 'blx-dropdown' },
-      props.label && React.createElement(
-        'label',
-        { className: 'blx-ui-text' },
-        props.label
-      ),
       React.createElement(
         'button',
         {
