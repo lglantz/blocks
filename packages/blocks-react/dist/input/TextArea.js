@@ -1,6 +1,10 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -45,61 +49,61 @@ var TextArea = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var _props = this.props,
+          isValid = _props.isValid,
+          invalidErrorMessage = _props.invalidErrorMessage,
+          label = _props.label,
+          style = _props.style,
+          className = _props.className,
+          _onKeyUp = _props.onKeyUp,
+          other = _objectWithoutProperties(_props, ['isValid', 'invalidErrorMessage', 'label', 'style', 'className', 'onKeyUp']);
       // text input element itself
+
+
       var textFieldClasses = '';
 
       // invalid message and class
       var invalidLabelMessage = null;
-      if (!this.props.isValid) {
+      if (!isValid) {
         invalidLabelMessage = React.createElement(
           'span',
           { className: 'blx-invalid-input-message' },
-          this.props.invalidErrorMessage
+          invalidErrorMessage
         );
         textFieldClasses += ' blx-invalid';
       }
 
       // label
       var labelElement = null;
-      if (this.props.label) {
+      if (label) {
         labelElement = React.createElement(
           'label',
           { className: 'blx-ui-text' },
-          this.props.label
+          label
         );
       }
 
       var classes = 'blx-text-field ';
-      if (this.props.isDisabled) classes += 'blx-disabled ';
+      if (other.disabled) classes += 'blx-disabled ';
 
       return React.createElement(
         'div',
         {
-          style: this.props.style,
-          className: classes + ' ' + this.props.className
+          style: style,
+          className: classes + ' ' + className
         },
         labelElement,
         React.createElement(
           'div',
           { className: 'blx-text-field-container' },
-          React.createElement('textarea', {
+          React.createElement('textarea', _extends({
             className: textFieldClasses,
-            name: this.props.name,
-            value: this.props.value,
-            placeholder: this.props.placeholder,
-            disabled: this.props.isDisabled,
-            readOnly: this.props.readOnly,
-            onChange: this.props.onChange,
-            onFocus: this.props.onFocus,
-            onBlur: this.props.onBlur,
-            onKeyUp: function onKeyUp(e) {
-              if (_this2.props.onKeyUp) _this2.props.onKeyUp(e);
-              _this2.resizeTextArea();
-            },
-            onKeyDown: this.props.onKeyDown,
             ref: this.textAreaRef,
-            autoFocus: this.props.autoFocus
-          })
+            onKeyUp: function onKeyUp(e) {
+              if (_onKeyUp) _onKeyUp(e);
+              _this2.resizeTextArea();
+            }
+          }, other))
         ),
         invalidLabelMessage
       );
@@ -112,41 +116,21 @@ var TextArea = function (_React$Component) {
 TextArea.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
   label: PropTypes.string,
-  placeholder: PropTypes.string,
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   isValid: PropTypes.bool,
   invalidErrorMessage: PropTypes.string,
-  onChange: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  readOnly: PropTypes.bool,
-  autoFocus: PropTypes.bool
+  onKeyUp: PropTypes.func
 };
 
 TextArea.defaultProps = {
   className: '',
   style: null,
-  type: 'text',
-  name: '',
-  value: '',
   label: '',
-  placeholder: '',
-  isDisabled: false,
+  disabled: false,
   isValid: true,
   invalidErrorMessage: '',
-  onChange: null,
-  onKeyUp: null,
-  onKeyDown: null,
-  onFocus: null,
-  onBlur: null,
-  readOnly: false,
-  autoFocus: false
+  onKeyUp: null
 };
 
 module.exports = TextArea;

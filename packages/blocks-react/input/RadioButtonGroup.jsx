@@ -16,9 +16,9 @@ const RadioButtonGroup = props => (
           name={props.name}
           text={option.text}
           value={option.text}
-          isDisabled={props.isDisabled}
+          disabled={props.disabled}
           onChange={props.onChange}
-          isChecked={idx === props.checkedIndex}
+          checked={idx === props.checkedIndex}
           isValid={option.isValid === false ? option.isValid : true}
         />
       ))
@@ -32,7 +32,7 @@ RadioButtonGroup.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.object),
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   checkedIndex: PropTypes.number
 };
 
@@ -40,7 +40,7 @@ RadioButtonGroup.defaultProps = {
   className: '',
   style: null,
   options: [],
-  isDisabled: false,
+  disabled: false,
   checkedIndex: -1
 };
 

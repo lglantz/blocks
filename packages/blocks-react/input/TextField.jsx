@@ -2,49 +2,49 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const TextField = (props) => {
+const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, style, className, forwardedRef, ...other }) => {
   // text input element itself
   let textFieldClasses = '';
 
   // label element
   let labelElement = null;
-  if (props.label) {
-    labelElement = <label className="blx-ui-text">{props.label}</label>;
+  if (label) {
+    labelElement = <label className="blx-ui-text">{label}</label>;
   }
 
   // invalid message and class
   let invalidLabelMessage = null;
-  if (!props.isValid) {
-    invalidLabelMessage = <span className="blx-invalid-input-message">{props.invalidErrorMessage}</span>;
+  if (!isValid) {
+    invalidLabelMessage = <span className="blx-invalid-input-message">{invalidErrorMessage}</span>;
     textFieldClasses += ' blx-invalid';
   }
 
   // prefix element
   let prefixElement = null;
-  if (props.prefix) {
-    prefixElement = <span className="blx-text-field-prefix">{props.prefix}</span>;
+  if (prefix) {
+    prefixElement = <span className="blx-text-field-prefix">{prefix}</span>;
   }
 
   // suffix element
   let suffixElement = null;
-  if (props.suffix) {
-    suffixElement = <span className="blx-text-field-suffix">{props.suffix}</span>;
+  if (suffix) {
+    suffixElement = <span className="blx-text-field-suffix">{suffix}</span>;
   }
 
   // icon element
   let iconElement = null;
-  if (props.icon) {
-    iconElement = <span className="blx-text-field-icon">{props.icon}</span>;
+  if (icon) {
+    iconElement = <span className="blx-text-field-icon">{icon}</span>;
   }
 
   // root level classes
   let classes = 'blx-text-field ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (other.disabled) classes += 'blx-disabled ';
 
   return (
     <div
-      style={props.style}
-      className={`${classes} ${props.className}`}
+      style={style}
+      className={`${classes} ${className}`}
     >
       {labelElement}
       <div className="blx-text-field-container">
@@ -52,23 +52,8 @@ const TextField = (props) => {
         {suffixElement}
         <input
           className={textFieldClasses}
-          type={props.type}
-          name={props.name}
-          value={props.value}
-          placeholder={props.placeholder}
-          disabled={props.isDisabled}
-          autoComplete={props.autoComplete}
-          readOnly={props.readOnly}
-          onChange={props.onChange}
-          onFocus={props.onFocus}
-          onBlur={props.onBlur}
-          onKeyUp={props.onKeyUp}
-          onKeyDown={props.onKeyDown}
-          ref={props.forwardedRef}
-          autoFocus={props.autoFocus}
-          min={props.min}
-          max={props.max}
-          step={props.step}
+          ref={forwardedRef}
+          {...other}
         />
         {iconElement}
       </div>
@@ -80,11 +65,7 @@ const TextField = (props) => {
 TextField.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
   label: PropTypes.string,
-  placeholder: PropTypes.string,
   prefix: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
@@ -94,47 +75,21 @@ TextField.propTypes = {
     PropTypes.node
   ]),
   icon: PropTypes.node,
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   isValid: PropTypes.bool,
-  invalidErrorMessage: PropTypes.string,
-  onChange: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  autoComplete: PropTypes.string,
-  readOnly: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  step: PropTypes.number
+  invalidErrorMessage: PropTypes.string
 };
 
 TextField.defaultProps = {
   className: '',
   style: null,
-  type: 'text',
-  name: '',
-  value: '',
   label: '',
-  placeholder: '',
   prefix: null,
   suffix: null,
   icon: null,
-  isDisabled: false,
+  disabled: false,
   isValid: true,
-  invalidErrorMessage: '',
-  onChange: null,
-  onKeyUp: null,
-  onKeyDown: null,
-  onFocus: null,
-  onBlur: null,
-  autoComplete: '',
-  readOnly: false,
-  autoFocus: false,
-  min: null,
-  max: null,
-  step: 1
+  invalidErrorMessage: ''
 };
 
 module.exports = React.forwardRef((props, ref) => (

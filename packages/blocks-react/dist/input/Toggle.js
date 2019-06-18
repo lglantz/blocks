@@ -1,34 +1,41 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = require('react');
 var PropTypes = require('prop-types');
 
-var Toggle = function Toggle(props) {
+var Toggle = function Toggle(_ref) {
+  var className = _ref.className,
+      style = _ref.style,
+      options = _ref.options,
+      value = _ref.value,
+      other = _objectWithoutProperties(_ref, ['className', 'style', 'options', 'value']);
+
   var classes = 'blx-toggle ';
-  if (props.isDisabled) classes += 'blx-disabled ';
-  if (props.className) classes += props.className;
+  if (other.disabled) classes += 'blx-disabled ';
+  if (className) classes += className;
   return React.createElement(
     'div',
     {
-      style: props.style,
+      style: style,
       className: classes
     },
-    props.options.map(function (option, idx) {
+    options.map(function (option, idx) {
       return React.createElement(
         'label',
         {
           className: 'blx-toggle-container',
           key: option.text
         },
-        React.createElement('input', {
+        React.createElement('input', _extends({
           type: 'radio',
           id: 'toggle-option-' + idx,
-          name: props.name,
           value: option.value,
-          defaultChecked: option.value === props.value,
-          disabled: props.isDisabled,
-          onChange: props.onChange
-        }),
+          defaultChecked: option.value === value
+        }, other)),
         React.createElement(
           'span',
           { className: 'blx-toggle-text' },
@@ -42,18 +49,16 @@ var Toggle = function Toggle(props) {
 Toggle.propTypes = {
   style: PropTypes.object,
   className: PropTypes.object,
-  name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
   })).isRequired,
-  onChange: PropTypes.func.isRequired,
-  isDisabled: PropTypes.bool
+  disabled: PropTypes.bool
 };
 
 Toggle.defaultProps = {
-  isDisabled: false
+  disabled: false
 };
 
 module.exports = Toggle;

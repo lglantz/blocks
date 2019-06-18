@@ -25,30 +25,30 @@ class CheckboxBasicExample extends React.Component {
       <div>
         <Checkbox
           name="basic-checkbox-example"
-          isChecked={this.state.checked1}
+          checked={this.state.checked1}
           onChange={this.checkboxHandler('checked1')}
         >
           Option 1
         </Checkbox>
         <Checkbox
           name="basic-checkbox-example"
-          isChecked={this.state.checked2}
+          checked={this.state.checked2}
           onChange={this.checkboxHandler('checked2')}
         >
           Option 2
         </Checkbox>
         <Checkbox
           name="basic-checkbox-example"
-          isChecked={this.state.checked3}
+          checked={this.state.checked3}
           onChange={this.checkboxHandler('checked3')}
         >
           Option 3
         </Checkbox>
         <Checkbox
           name="basic-checkbox-example"
-          isChecked={this.state.checked4}
+          checked={this.state.checked4}
           onChange={this.checkboxHandler('checked4')}
-          isDisabled
+          disabled
         >
           Option 4
         </Checkbox>

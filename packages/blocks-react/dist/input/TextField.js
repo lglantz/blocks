@@ -2,73 +2,86 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = require('react');
 var PropTypes = require('prop-types');
 
-var TextField = function TextField(props) {
+var TextField = function TextField(_ref) {
+  var label = _ref.label,
+      isValid = _ref.isValid,
+      invalidErrorMessage = _ref.invalidErrorMessage,
+      prefix = _ref.prefix,
+      suffix = _ref.suffix,
+      icon = _ref.icon,
+      style = _ref.style,
+      className = _ref.className,
+      forwardedRef = _ref.forwardedRef,
+      other = _objectWithoutProperties(_ref, ['label', 'isValid', 'invalidErrorMessage', 'prefix', 'suffix', 'icon', 'style', 'className', 'forwardedRef']);
+
   // text input element itself
   var textFieldClasses = '';
 
   // label element
   var labelElement = null;
-  if (props.label) {
+  if (label) {
     labelElement = React.createElement(
       'label',
       { className: 'blx-ui-text' },
-      props.label
+      label
     );
   }
 
   // invalid message and class
   var invalidLabelMessage = null;
-  if (!props.isValid) {
+  if (!isValid) {
     invalidLabelMessage = React.createElement(
       'span',
       { className: 'blx-invalid-input-message' },
-      props.invalidErrorMessage
+      invalidErrorMessage
     );
     textFieldClasses += ' blx-invalid';
   }
 
   // prefix element
   var prefixElement = null;
-  if (props.prefix) {
+  if (prefix) {
     prefixElement = React.createElement(
       'span',
       { className: 'blx-text-field-prefix' },
-      props.prefix
+      prefix
     );
   }
 
   // suffix element
   var suffixElement = null;
-  if (props.suffix) {
+  if (suffix) {
     suffixElement = React.createElement(
       'span',
       { className: 'blx-text-field-suffix' },
-      props.suffix
+      suffix
     );
   }
 
   // icon element
   var iconElement = null;
-  if (props.icon) {
+  if (icon) {
     iconElement = React.createElement(
       'span',
       { className: 'blx-text-field-icon' },
-      props.icon
+      icon
     );
   }
 
   // root level classes
   var classes = 'blx-text-field ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (other.disabled) classes += 'blx-disabled ';
 
   return React.createElement(
     'div',
     {
-      style: props.style,
-      className: classes + ' ' + props.className
+      style: style,
+      className: classes + ' ' + className
     },
     labelElement,
     React.createElement(
@@ -76,26 +89,10 @@ var TextField = function TextField(props) {
       { className: 'blx-text-field-container' },
       prefixElement,
       suffixElement,
-      React.createElement('input', {
+      React.createElement('input', _extends({
         className: textFieldClasses,
-        type: props.type,
-        name: props.name,
-        value: props.value,
-        placeholder: props.placeholder,
-        disabled: props.isDisabled,
-        autoComplete: props.autoComplete,
-        readOnly: props.readOnly,
-        onChange: props.onChange,
-        onFocus: props.onFocus,
-        onBlur: props.onBlur,
-        onKeyUp: props.onKeyUp,
-        onKeyDown: props.onKeyDown,
-        ref: props.forwardedRef,
-        autoFocus: props.autoFocus,
-        min: props.min,
-        max: props.max,
-        step: props.step
-      }),
+        ref: forwardedRef
+      }, other)),
       iconElement
     ),
     invalidLabelMessage
@@ -105,55 +102,25 @@ var TextField = function TextField(props) {
 TextField.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
   label: PropTypes.string,
-  placeholder: PropTypes.string,
   prefix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   icon: PropTypes.node,
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   isValid: PropTypes.bool,
-  invalidErrorMessage: PropTypes.string,
-  onChange: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  autoComplete: PropTypes.string,
-  readOnly: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  step: PropTypes.number
+  invalidErrorMessage: PropTypes.string
 };
 
 TextField.defaultProps = {
   className: '',
   style: null,
-  type: 'text',
-  name: '',
-  value: '',
   label: '',
-  placeholder: '',
   prefix: null,
   suffix: null,
   icon: null,
-  isDisabled: false,
+  disabled: false,
   isValid: true,
-  invalidErrorMessage: '',
-  onChange: null,
-  onKeyUp: null,
-  onKeyDown: null,
-  onFocus: null,
-  onBlur: null,
-  autoComplete: '',
-  readOnly: false,
-  autoFocus: false,
-  min: null,
-  max: null,
-  step: 1
+  invalidErrorMessage: ''
 };
 
 module.exports = React.forwardRef(function (props, ref) {

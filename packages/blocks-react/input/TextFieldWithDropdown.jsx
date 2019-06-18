@@ -5,7 +5,7 @@ const Dropdown = require('../dropdowns/Dropdown.jsx');
 
 const TextFieldWithDropdown = (props) => {
   let classes = 'blx-text-field-with-dropdown ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (props.disabled) classes += 'blx-disabled ';
   return (
     <div
       style={props.style}
@@ -20,7 +20,7 @@ const TextFieldWithDropdown = (props) => {
 TextFieldWithDropdown.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   textField: PropTypes.shape({
     label: PropTypes.string,
     onChange: PropTypes.func,
@@ -56,7 +56,7 @@ TextFieldWithDropdown.propTypes = {
 TextFieldWithDropdown.defaultProps = {
   className: '',
   style: null,
-  isDisabled: false,
+  disabled: false,
   textField: {
     label: null,
     onChange: () => {},

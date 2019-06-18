@@ -1,58 +1,49 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = require('react');
 var PropTypes = require('prop-types');
 
-var Checkbox = function Checkbox(props) {
+var Checkbox = function Checkbox(_ref) {
+  var style = _ref.style,
+      className = _ref.className,
+      children = _ref.children,
+      other = _objectWithoutProperties(_ref, ['style', 'className', 'children']);
+
   var classes = 'blx-checkbox ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (other.disabled) classes += 'blx-disabled ';
+
   return React.createElement(
     'label',
     {
-      style: props.style,
-      className: classes + ' ' + props.className
+      style: style,
+      className: classes + ' ' + className
     },
     React.createElement(
       'div',
       { className: 'blx-label' },
-      props.children
+      children
     ),
-    React.createElement('input', {
-      type: 'checkbox',
-      name: props.name,
-      value: props.value,
-      checked: props.isChecked,
-      disabled: props.isDisabled,
-      onChange: props.onChange,
-      onKeyDown: props.onKeyDown,
-      onKeyUp: props.onKeyUp
-    }),
+    React.createElement('input', _extends({
+      type: 'checkbox'
+    }, other)),
     React.createElement('span', { className: 'blx-checkmark' })
   );
 };
 
 Checkbox.propTypes = {
-  className: PropTypes.string,
   style: PropTypes.object,
-  value: PropTypes.string,
-  name: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  onChange: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onKeyUp: PropTypes.func
+  className: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 Checkbox.defaultProps = {
-  className: '',
   style: null,
-  value: '',
-  name: '',
-  isDisabled: false,
-  isChecked: false,
-  onChange: function onChange() {},
-  onKeyDown: function onKeyDown() {},
-  onKeyUp: function onKeyUp() {}
+  className: '',
+  disabled: false
 };
 
 module.exports = Checkbox;

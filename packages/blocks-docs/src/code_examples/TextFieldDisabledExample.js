@@ -22,7 +22,7 @@ class TextFieldBasicExample extends React.Component {
         placeholder="Text input"
         value={this.state.value}
         icon={<AddIcon />}
-        isDisabled
+        disabled
         onChange={e => this.onChange(e)}
       />
     );

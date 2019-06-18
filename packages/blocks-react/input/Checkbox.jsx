@@ -2,26 +2,21 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const Checkbox = (props) => {
+const Checkbox = ({ style, className, children, ...other }) => {
   let classes = 'blx-checkbox ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  if (other.disabled) classes += 'blx-disabled ';
+
   return (
     <label
-      style={props.style}
-      className={`${classes} ${props.className}`}
+      style={style}
+      className={`${classes} ${className}`}
     >
       <div className="blx-label">
-        {props.children}
+        {children}
       </div>
       <input
         type="checkbox"
-        name={props.name}
-        value={props.value}
-        checked={props.isChecked}
-        disabled={props.isDisabled}
-        onChange={props.onChange}
-        onKeyDown={props.onKeyDown}
-        onKeyUp={props.onKeyUp}
+        {...other}
       />
       <span className="blx-checkmark" />
     </label>
@@ -29,27 +24,15 @@ const Checkbox = (props) => {
 }
 
 Checkbox.propTypes = {
-  className: PropTypes.string,
   style: PropTypes.object,
-  value: PropTypes.string,
-  name: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  onChange: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onKeyUp: PropTypes.func
+  className: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 Checkbox.defaultProps = {
-  className: '',
   style: null,
-  value: '',
-  name: '',
-  isDisabled: false,
-  isChecked: false,
-  onChange: () => {},
-  onKeyDown: () => {},
-  onKeyUp: () => {}
+  className: '',
+  disabled: false
 };
 
 module.exports = Checkbox;

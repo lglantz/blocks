@@ -1,56 +1,59 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = require('react');
 var PropTypes = require('prop-types');
 
-var RadioButton = function RadioButton(props) {
+var RadioButton = function RadioButton(_ref) {
+  var checked = _ref.checked,
+      isValid = _ref.isValid,
+      style = _ref.style,
+      className = _ref.className,
+      text = _ref.text,
+      other = _objectWithoutProperties(_ref, ['checked', 'isValid', 'style', 'className', 'text']);
+
   var classes = 'blx-radio ';
-  if (props.isDisabled) classes += 'blx-disabled ';
-  if (!props.isValid) classes += 'blx-invalid ';
+  if (other.disabled) classes += 'blx-disabled ';
+  if (!isValid) classes += 'blx-invalid ';
 
   return React.createElement(
     'label',
     {
-      style: props.style,
-      className: classes + ' ' + props.className
+      style: style,
+      className: classes + ' ' + className
     },
     React.createElement(
       'div',
-      { className: 'blx-radio-label', title: props.text },
-      props.text
+      { className: 'blx-radio-label', title: text },
+      text
     ),
-    React.createElement('input', {
+    React.createElement('input', _extends({
       type: 'radio',
-      value: props.value,
-      name: props.name,
-      defaultChecked: props.isChecked,
-      disabled: props.isDisabled,
-      onChange: props.onChange
-    }),
+      defaultChecked: checked
+    }, other)),
     React.createElement('span', { className: 'blx-radio-check' })
   );
 };
 
 RadioButton.propTypes = {
-  className: PropTypes.string,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  isValid: PropTypes.bool,
   style: PropTypes.object,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  text: PropTypes.string,
-  value: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  isValid: PropTypes.bool
+  className: PropTypes.string,
+  text: PropTypes.string
 };
 
 RadioButton.defaultProps = {
-  className: '',
+  checked: false,
+  disabled: false,
+  isValid: true,
   style: null,
-  text: '',
-  value: '',
-  isDisabled: false,
-  isChecked: false,
-  isValid: true
+  className: '',
+  text: ''
 };
 
 module.exports = RadioButton;
