@@ -5,6 +5,9 @@ import Helmet from "react-helmet"
 import favicon from '../../favicon.png';
 import Navigation from "./navigation"
 
+import "../css/_all.styl";
+
+
 const Layout = ({ children }) => (
   <div className="l-root">
     <Helmet
