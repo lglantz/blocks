@@ -166,6 +166,7 @@ p,
 label,
 .blx-p,
 .blx-label {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -179,6 +180,7 @@ label.blx-with-margin,
   margin-bottom: 6px;
 }
 a {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -193,6 +195,7 @@ a {
   padding: 0;
 }
 .blx-link {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -257,6 +260,7 @@ a.blx-with-margin,
   margin-bottom: 6px;
 }
 h1.blx-XL {
+  font-family: Graphik Web;
   font-weight: 700;
   font-size: 96px;
   line-height: 96px;
@@ -268,6 +272,7 @@ h1.blx-XL.blx-with-margin {
 }
 h1,
 .blx-h1 {
+  font-family: Graphik Web;
   font-weight: 700;
   font-size: 65px;
   line-height: 72px;
@@ -280,6 +285,7 @@ h1.blx-with-margin,
 }
 h2,
 .blx-h2 {
+  font-family: Graphik Web;
   font-weight: 700;
   font-size: 39px;
   line-height: 42px;
@@ -292,6 +298,7 @@ h2.blx-with-margin,
 }
 h3,
 .blx-h3 {
+  font-family: Graphik Web;
   font-weight: 700;
   font-size: 23px;
   line-height: 24px;
@@ -304,6 +311,7 @@ h3.blx-with-margin,
 }
 h4,
 .blx-h4 {
+  font-family: Graphik Web;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
@@ -316,6 +324,7 @@ h4.blx-with-margin,
 }
 h5,
 .blx-h5 {
+  font-family: Graphik Web;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
@@ -327,6 +336,7 @@ h5.blx-with-margin,
   margin-bottom: 6px;
 }
 .blx-ui-text {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -337,6 +347,7 @@ h5.blx-with-margin,
   margin-bottom: 6px;
 }
 .blx-ui-caps {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -348,6 +359,7 @@ h5.blx-with-margin,
   margin-bottom: 12px;
 }
 .blx-ui-small {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -358,6 +370,7 @@ h5.blx-with-margin,
   margin-bottom: 6px;
 }
 .blx-ui-small-caps {
+  font-family: Graphik Web;
   font-weight: 500;
   font-size: 11px;
   line-height: 18px;
@@ -418,6 +431,7 @@ h5.blx-with-margin,
   line-height: 16px;
 }
 .blx-input-helper-message {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -637,6 +651,7 @@ input[type=checkbox][name='blx-accordion-tab']:checked ~ .blx-accordion-content 
   text-decoration: none;
   border-radius: 7px;
   cursor: pointer;
+  font-family: Graphik Web;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
@@ -1227,6 +1242,7 @@ a.blx-button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -1238,6 +1254,7 @@ a.blx-button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2203,6 +2220,7 @@ input[type="radio"]:hover + .blx-sub-tab {
   text-overflow: ellipsis;
 }
 .blx-text-field input::-webkit-input-placeholder {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2211,6 +2229,7 @@ input[type="radio"]:hover + .blx-sub-tab {
   color: var(--light-02, #aab7b2);
 }
 .blx-text-field input::-ms-input-placeholder {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2219,6 +2238,7 @@ input[type="radio"]:hover + .blx-sub-tab {
   color: var(--light-02, #aab7b2);
 }
 .blx-text-field input::placeholder {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2267,6 +2287,7 @@ input[type="radio"]:hover + .blx-sub-tab {
   overflow: hidden;
 }
 .blx-text-field textarea::-webkit-input-placeholder {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2275,6 +2296,7 @@ input[type="radio"]:hover + .blx-sub-tab {
   color: var(--light-02, #aab7b2);
 }
 .blx-text-field textarea::-ms-input-placeholder {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -2283,6 +2305,7 @@ input[type="radio"]:hover + .blx-sub-tab {
   color: var(--light-02, #aab7b2);
 }
 .blx-text-field textarea::placeholder {
+  font-family: Graphik Web;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
