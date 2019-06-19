@@ -7,6 +7,7 @@ const LinkButton = require('./LinkButton.jsx');
 
 const ButtonPrimary = React.forwardRef((props, ref) => {
   const Component = props.href ? LinkButton : Button;
+
   return (
    <Component
       {...props}

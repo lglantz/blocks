@@ -5,7 +5,7 @@ const Button = require('./Button.jsx');
 const LinkButton = require('./LinkButton.jsx');
 
 
-const ButtonSecondary = React.forwardRef((props, ref) => {
+const ButtonDanger = React.forwardRef((props, ref) => {
   const Component = props.href ? LinkButton : Button;
   return (
    <Component
@@ -16,15 +16,15 @@ const ButtonSecondary = React.forwardRef((props, ref) => {
   );
 });
 
-ButtonSecondary.propTypes = {
+ButtonDanger.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object
 };
 
-ButtonSecondary.defaultProps = {
+ButtonDanger.defaultProps = {
   className: '',
   style: null
 };
 
-module.exports = ButtonSecondary;
+module.exports = ButtonDanger;
 

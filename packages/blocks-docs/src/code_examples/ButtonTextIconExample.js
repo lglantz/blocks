@@ -1,7 +1,7 @@
 import React from "react"
 
-const { ButtonPrimary, ButtonSecondary, ButtonDanger } = require('blocks-react').Buttons;
-const { AddIcon, BackIcon, CloseIcon } = require('blocks-react').Icons;
+const { ButtonPrimary, ButtonSecondary, ButtonDanger, ButtonDark } = require('blocks-react').Buttons;
+const { AddIcon, BackIcon, CloseIcon, ErrorIcon } = require('blocks-react').Icons;
 
 const ButtonTextIconExample = () => (
   <div className="blx-h-button-group">
@@ -16,9 +16,14 @@ const ButtonTextIconExample = () => (
       leftIcon={<BackIcon />}
     />
     <ButtonDanger
+      text="Oh no"
+      onClick={() => {}}
+      rightIcon={<ErrorIcon />}
+    />
+    <ButtonDark
       text="Exit"
       onClick={() => {}}
-      rightIcon={<CloseIcon />}
+      leftIcon={<CloseIcon fill="var(--secondary-00)" />}
     />
   </div>
 );

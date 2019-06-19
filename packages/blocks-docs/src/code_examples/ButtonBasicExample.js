@@ -1,9 +1,13 @@
 import React from "react"
 
-const { ButtonPrimary, ButtonSecondary, ButtonDanger } = require('blocks-react').Buttons;
+const {
+  ButtonPrimary,
+  ButtonSecondary,
+  ButtonDanger,
+  ButtonDark } = require('blocks-react').Buttons;
 
 const ButtonBasicExample = () => (
-  <div className="blx-h-button-group">
+  <div className="blx-v-button-group">
     <ButtonPrimary
       text="Primary Button"
       onClick={() => {}}
@@ -14,6 +18,10 @@ const ButtonBasicExample = () => (
     />
     <ButtonDanger
       text="Danger Button"
+      onClick={() => {}}
+    />
+    <ButtonDark
+      text="Dark Button"
       onClick={() => {}}
     />
   </div>
