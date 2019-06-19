@@ -9,6 +9,7 @@ import ButtonBasicExample from "../../code_examples/ButtonBasicExample"
 import ButtonTextIconExample from "../../code_examples/ButtonTextIconExample"
 import ButtonIconExample from "../../code_examples/ButtonIconExample"
 import ButtonLinkExample from "../../code_examples/ButtonLinkExample"
+import ButtonLoadingExample from "../../code_examples/ButtonLoadingExample"
 
 const ButtonsPage = () => (
   <Layout>
@@ -50,6 +51,21 @@ const ButtonsPage = () => (
       <Snippet
         name="ButtonLinkExample"
         example={<ButtonLinkExample />}
+      />
+
+      <h5 className="blx-with-margin">Loading Buttons</h5>
+      <p className="blx-with-margin">
+        Use loading buttons to combine animated loading indicators with the actions that invoked them.  These buttons can give users immediate feedback when they perform an action or inform users when they will be able to perform an action.
+      </p>
+      <p className="blx-with-margin">
+        Loading buttons are disabled while the page loads or while the invoked action completes. They should indicate loading and success through a spinning (clockwise) loading indicator. 
+      </p>
+      <p className="blx-with-margin">
+        The loaded success indicator should time out after 0.5s. The button text may also change to a success message which times out with the success checkmark. 
+      </p>
+      <Snippet
+        name="ButtonLoadingExample"
+        example={<ButtonLoadingExample />}
       />
 
     </ExampleSection>

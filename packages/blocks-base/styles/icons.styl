@@ -64,3 +64,33 @@
 .blx-icon-help {
   background-image: url('../svgs/icon-information.svg');
 }
+
+.blx-icon-loaded-check {
+  background: url('../svgs/icon-loading-done.svg');
+  background-size: 100% 100%;
+}
+
+.blx-icon-loaded-check-green {
+  background: url('../svgs/icon-loading-done-green.svg');
+  background-size: 100% 100%;
+}
+
+@keyframes blx-loading-spinner-rotate
+  from
+    transform rotate(0deg)
+  to
+    transform rotate(360deg)
+
+.blx-icon-loading-spinner {
+  background: url('../svgs/icon-loading-spinner.svg');
+  background-size: 100% 100%;
+  animation blx-loading-spinner-rotate .55s infinite linear
+  transition opacity 0.2s
+}
+
+.blx-icon-loading-spinner-dark {
+  background: url('../svgs/icon-loading-spinner-dark.svg');
+  background-size: 100% 100%;
+  animation blx-loading-spinner-rotate .55s infinite linear
+  transition opacity 0.2s
+}

@@ -26,3 +26,11 @@
 .blx-scrollable {
   overflow-y: auto;
 }
+
+// for cases where we don't want all children to dim from opacity change
+// color changes will be handled by other classes via, e.g., &.blx-disabled-rgba
+.blx-disabled-rgba {
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+}
