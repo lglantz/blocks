@@ -48,6 +48,22 @@ $button-danger-hover-text-color = $secondary-00;
 $button-danger-focus-text-color = $secondary-00;
 $button-danger-active-text-color = $secondary-00;
 
+$button-dark-background-color = $dark-00;
+$button-dark-hover-background-color = $dark-01;
+$button-dark-focus-background-color = $dark-01;
+$button-dark-active-background-color = $dark-02;
+
+$button-dark-default-border = 2px solid $dark-00;
+$button-dark-hover-border = 2px solid $dark-01;
+$button-dark-focus-border = 2px solid $focus;
+$button-dark-focus-inner-border = 1px solid $secondary-00;
+$button-dark-active-border = 2px solid $dark-02;
+
+$button-dark-text-color = $secondary-00;
+$button-dark-hover-text-color = $secondary-00;
+$button-dark-focus-text-color = $secondary-00;
+$button-dark-active-text-color = $secondary-00;
+
 // button styles
 .blx-button {
   position: relative;
@@ -85,7 +101,8 @@ $button-danger-active-text-color = $secondary-00;
 
   span {
     blxTruncateText();
-
+    line-height: 20px;
+    
     &:not(:first-child) {
       margin-left: 12px;
     }
@@ -240,6 +257,64 @@ $button-danger-active-text-color = $secondary-00;
   }
 }
 
+.blx-dark {
+  background-color: $button-dark-background-color;
+  border: $button-dark-default-border;
+  color: $button-dark-text-color;
+
+
+  .blx-icon {
+    background-color: $button-dark-text-color;
+  }
+
+  &:focus, &.blx-focus {
+    border: $button-dark-focus-border;
+    background-color: $button-dark-focus-background-color;
+    color: $button-dark-focus-text-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border: $button-dark-focus-inner-border
+    }
+
+    .blx-icon {
+      background-color: $button-dark-hover-text-color;
+    }
+  }
+
+  &:hover, &.blx-hover {
+    background-color: $button-dark-hover-background-color;
+    border: $button-dark-hover-border;
+    color: $button-dark-hover-text-color;
+
+    &::before {
+      content: none;
+    }
+
+    .blx-icon {
+      background-color: $button-dark-hover-text-color;
+    }
+  }
+
+  &:active, &.blx-active {
+    background-color: $button-dark-active-background-color;
+    border: $button-dark-active-border;
+    color: $button-dark-active-text-color;
+    &::before {
+      content: none;
+    }
+
+    .blx-icon {
+      background-color: $button-dark-hover-text-color;
+    }
+  }
+}
 a.blx-button {
   display: inline-flex;
   align-items: center;
