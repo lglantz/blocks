@@ -12,7 +12,7 @@
     "build:base": "cd packages/blocks-base; gulp build",
     "build:docs": "cd packages/blocks-docs; gatsby build",
     "build:react": "cd packages/blocks-react; gulp build",
-    "dev:docs": "cd packages/blocks-docs; gatsby develop -o -H 0.0.0.0 -p 8080",
+    "dev:docs": "cd packages/blocks-docs; gatsby develop -H 0.0.0.0 -p 8080",
     "serve:docs": "cd packages/blocks-docs; gatsby build; gatsby serve"
   }
 }
