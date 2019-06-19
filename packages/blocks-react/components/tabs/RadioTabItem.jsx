@@ -1,6 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
+let mouseClicked = false;
 
 const RadioTabItem = ({ style, className, text, children, ...other }) => {
   return (
@@ -12,8 +13,17 @@ const RadioTabItem = ({ style, className, text, children, ...other }) => {
         <input
           type="radio"
           {...other}
+          onFocus={(e) => {
+            if (mouseClicked) {
+              e.target.blur();
+              mouseClicked = false;
+            }
+          }}
         />
-        <span className="blx-tab-item">
+        <span
+          className="blx-tab-item"
+          onMouseUp={() => mouseClicked = true}
+        >
           {text}
         </span>
         {children}
