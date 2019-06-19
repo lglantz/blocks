@@ -1,46 +1,25 @@
 import React from "react"
 
-const { ButtonPrimary, ButtonSecondary, ButtonDanger, ButtonDark } = require('blocks-react').Buttons;
+const { Button } = require('blocks-react').Buttons;
 const { UpIcon, MoreIcon, SuccessIcon, CloseIcon, AddIcon, BackIcon, NextIcon, DownIcon } = require('blocks-react').Icons;
 
 const ButtonIconExample = () => (
   <div className="blx-h-button-group">
-    <ButtonPrimary
-      onClick={() => {}}
-      icon={<SuccessIcon />}
-    />
-    <ButtonSecondary
-      onClick={() => {}}
-      icon={<MoreIcon />}
-    />
-    <ButtonDanger
-      onClick={() => {}}
-      icon={<UpIcon />}
-    />
-    <ButtonDark
-      onClick={() => {}}
-      icon={<CloseIcon fill="var(--secondary-00)" />}
-    />
-    <ButtonPrimary
-      isDisabled
-      onClick={() => {}}
-      icon={<AddIcon />}
-    />
-    <ButtonSecondary
-      isDisabled
-      onClick={() => {}}
-      icon={<BackIcon />}
-    />
-    <ButtonDanger
-      isDisabled
-      onClick={() => {}}
-      icon={<NextIcon />}
-    />
-    <ButtonDark
-      isDisabled
-      onClick={() => {}}
-      icon={<DownIcon fill="var(--secondary-00)" />}
-    />
+    <Button color="primary" type="icon" onClick={() => {}}>
+      <SuccessIcon fill="var(--secondary-00)"/>
+    </Button>
+    <Button color="secondary" type="icon" onClick={() => {}}>
+      <MoreIcon />
+    </Button>
+    <Button color="danger" type="icon" onClick={() => {}}>
+      <UpIcon fill="var(--secondary-00)" />
+    </Button>
+    <Button color="dark" type="icon" onClick={() => {}}>
+      <CloseIcon fill="var(--secondary-00)" />
+    </Button>
+    <Button color="primary" type="icon" disabled={true} onClick={() => {}}>
+      <SuccessIcon fill="var(--secondary-00)" />
+    </Button>
   </div>
 );
 

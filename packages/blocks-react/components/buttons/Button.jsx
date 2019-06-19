@@ -1,46 +1,45 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-const classnames = require('classnames');
 
+const BasicButton = require('./BasicButton.jsx');
+const LinkButton = require('./LinkButton.jsx');
 
-const BasicButton = React.forwardRef((props, ref) => {
-  const { icon, isDisabled, className, leftIcon, text, rightIcon, ...other } = props;
-  const classes = classnames('blx-button', className, {
-    'blx-icon-button': !!icon,
-    'blx-disabled': isDisabled
-  });
-  
+const COLOR_CLASS_MAP = {
+  primary: 'blx-primary',
+  secondary: 'blx-secondary',
+  danger: 'blx-danger',
+  dark: 'blx-dark'
+};
+
+const TYPE_CLASS_MAP = {
+  default: '',
+  icon: 'blx-button-icon'
+};
+
+const Button = React.forwardRef((props, ref) => {
+  const Component = props.href ? LinkButton : BasicButton;
   return (
-    <button
-      className={classes}
+   <Component
+      {...props}
       ref={ref}
-      disabled={isDisabled}
-      {...other}
-    >
-      { leftIcon }
-      { text && <span>{text}</span> }
-      { icon }
-      { rightIcon }
-    </button>
+      className={`${COLOR_CLASS_MAP[props.color]} ${TYPE_CLASS_MAP[props.type]} ${props.className}`}
+    />
   );
 });
 
-BasicButton.propTypes = {
+Button.propTypes = {
   className: PropTypes.string,
-  text: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  leftIcon: PropTypes.node,
-  rightIcon: PropTypes.node,
-  icon: PropTypes.node
+  style: PropTypes.object,
+  color: PropTypes.string,
+  type: PropTypes.string
 };
 
-BasicButton.defaultProps = {
-  className: 'blx-primary',
-  text: '',
-  isDisabled: false,
-  leftIcon: null,
-  rightIcon: null,
-  icon: null
+Button.defaultProps = {
+  className: '',
+  style: null,
+  color: 'primary',
+  type: 'default'
 };
 
-module.exports = BasicButton;
+module.exports = Button;
+

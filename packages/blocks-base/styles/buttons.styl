@@ -68,14 +68,18 @@ $button-dark-active-text-color = $secondary-00;
 .blx-button {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 
   height: $button-height;
   max-width: 480px;
   min-width: 44px;
   margin: 0;
-  padding: 8px 18px; // specified padding - 2px to account for border
+  padding: 10px 18px; // specified padding - 2px to account for border
   text-decoration: none;
+
+  &.blx-button-icon {
+    padding: 10px; // specified padding - 2px to account for border
+  }
 
   border-radius: $base-border-radius;
   cursor: pointer;
@@ -113,19 +117,10 @@ $button-dark-active-text-color = $secondary-00;
   }
 }
 
-.blx-icon-button {
-  width: $button-height;
-  padding: 11px;
-}
-
 .blx-primary {
   background-color: $button-primary-background-color;
   border: $button-primary-default-border;
   color: $button-primary-text-color;
-
-  svg {
-    fill: $button-primary-text-color;
-  }
 
   &:focus, &.blx-focus {
     border: $button-primary-focus-border;
@@ -169,10 +164,6 @@ $button-dark-active-text-color = $secondary-00;
   border: $button-secondary-default-border;
   color: $button-secondary-text-color;
 
-  svg {
-    fill: $button-secondary-text-color;
-  }
-
   &:focus, &.blx-focus {
     border: $button-secondary-focus-border;
     background-color: $button-secondary-focus-background-color;
@@ -204,10 +195,6 @@ $button-dark-active-text-color = $secondary-00;
   border: $button-danger-default-border;
   color: $button-danger-text-color;
 
-  svg {
-    fill: $button-danger-text-color;
-  }
-
   &:focus, &.blx-focus {
     border: $button-danger-focus-border;
     background-color: $button-danger-focus-background-color;
@@ -223,10 +210,6 @@ $button-dark-active-text-color = $secondary-00;
       height: calc(100% - 2px);
       border: $button-danger-focus-inner-border
     }
-
-    svg {
-      fill: $button-danger-hover-text-color;
-    }
   }
 
   &:hover, &.blx-hover {
@@ -237,10 +220,6 @@ $button-dark-active-text-color = $secondary-00;
     &::before {
       content: none;
     }
-
-    svg {
-      fill: $button-danger-hover-text-color;
-    }
   }
 
   &:active, &.blx-active {
@@ -249,10 +228,6 @@ $button-dark-active-text-color = $secondary-00;
     color: $button-danger-active-text-color;
     &::before {
       content: none;
-    }
-
-    svg {
-      fill: $button-danger-hover-text-color;
     }
   }
 }
@@ -355,10 +330,7 @@ a.blx-button {
   flex-direction: column;
 
   .blx-button {
-    margin-top: 0;
-    margin-bottom: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px 12px 10px;
 
     &:first-child {
       margin-top: 24px;

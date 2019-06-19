@@ -1,18 +1,21 @@
 import React from "react"
 
-const { ButtonPrimary, ButtonSecondary } = require('blocks-react').Buttons;
+const { Button } = require('blocks-react').Buttons;
 
 const ButtonLinkExample = () => (
-  <div className="blx-h-button-group">
-    <ButtonPrimary
-      text="Go to Google"
-      href="https://www.google.com"
-      isExternal
-    />
-    <ButtonSecondary
-      text="Go to Blocks"
-      href="/"
-    />
+  <div className="blx-v-button-group">
+    <Button color="primary" isExternal href="https://www.google.com">
+      Go to Google
+    </Button>
+    <Button color="secondary" href="/">
+      Go to Blocks
+    </Button>
+    <Button color="dark" isExternal href="https://www.google.com">
+      Go to Google
+    </Button>
+    <Button color="secondary" disabled={true} href="/">
+      Go to Blocks
+    </Button>
   </div>
 );
 

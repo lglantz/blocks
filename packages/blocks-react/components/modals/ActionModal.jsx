@@ -2,8 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 const BaseModal = require('./BaseModal.jsx');
-const ButtonPrimary = require('../buttons/ButtonPrimary.jsx');
-const ButtonSecondary = require('../buttons/ButtonSecondary.jsx');
+const Button = require('../buttons/Button.jsx');
 
 
 const ActionModal = (props) => {
@@ -12,20 +11,23 @@ const ActionModal = (props) => {
   let confirmButton = null;
   if (props.onConfirm && props.confirmText) {
     confirmButton = (
-      <ButtonPrimary
-        text={props.confirmText}
+      <Button
         onClick={props.onConfirm}
-      />
+      >
+        {props.confirmText}
+      </Button>
     );
   }
 
   let cancelButton = null;
   if (props.onCancel && props.cancelText) {
     cancelButton = (
-      <ButtonSecondary
-        text={props.cancelText}
+      <Button
         onClick={props.onCancel}
-      />
+        color="secondary"
+      >
+        {props.cancelText}
+      </Button>
     );
   }
 
