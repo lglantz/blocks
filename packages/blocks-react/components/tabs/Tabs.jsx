@@ -11,12 +11,18 @@ const Tabs = (props) => {
   }
   if (props.disabled) classes += 'blx-disabled ';
 
+  const children = React.Children.map(props.children, child => (
+    React.cloneElement(child, {
+      tabIndex: props.disabled ? "-1" : undefined
+    })
+  ));
+
   return (
     <ul
       style={props.style}
       className={`${classes} ${props.className}`}
     >
-      {props.children}
+      {children}
     </ul>
   );
 }
