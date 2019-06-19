@@ -106,6 +106,8 @@ $button-dark-active-text-color = $secondary-00;
   span {
     blxTruncateText();
     line-height: 20px;
+    user-select: none;
+    pointer-events: none;
     
     &:not(:first-child) {
       margin-left: 12px;
@@ -122,7 +124,7 @@ $button-dark-active-text-color = $secondary-00;
   border: $button-primary-default-border;
   color: $button-primary-text-color;
   
-  &.blx-disabled-rgba {
+  &.blx-disabled-loading {
     background-color: rgba($primary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
     border: rgba($primary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
     color: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
@@ -170,7 +172,7 @@ $button-dark-active-text-color = $secondary-00;
   border: $button-secondary-default-border;
   color: $button-secondary-text-color;
 
-  &.blx-disabled-rgba {
+  &.blx-disabled-loading {
     background-color: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
     border: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
     color: rgba($primary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
@@ -249,7 +251,7 @@ $button-dark-active-text-color = $secondary-00;
   border: $button-dark-default-border;
   color: $button-dark-text-color;
 
-  &.blx-disabled-rgba {
+  &.blx-disabled-loading {
     background-color: rgba($dark-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
     border: rgba($dark-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
     color: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work

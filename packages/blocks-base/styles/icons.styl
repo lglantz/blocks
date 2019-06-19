@@ -66,12 +66,12 @@
 }
 
 .blx-icon-loaded-check {
-  background: url('../svgs/icon-loading-done.svg');
+  background: url('../svgs/icon-success-secondary.svg');
   background-size: 100% 100%;
 }
 
 .blx-icon-loaded-check-green {
-  background: url('../svgs/icon-loading-done-green.svg');
+  background: url('../svgs/icon-success-primary.svg');
   background-size: 100% 100%;
 }
 
@@ -80,6 +80,12 @@
     transform rotate(0deg)
   to
     transform rotate(360deg)
+    
+.blx-loading-spinner {
+  transform-origin: center;
+  animation: blx-loading-spinner-rotate .55s infinite linear;
+  transition: opacity 0.2s;
+}
 
 .blx-icon-loading-spinner {
   background: url('../svgs/icon-loading-spinner.svg');

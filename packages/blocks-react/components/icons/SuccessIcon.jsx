@@ -1,16 +1,37 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
-const Icon = require('./Icon.jsx');
+const SvgIcon = require('./SvgIcon.jsx');
 
 const SuccessIcon = (props) => {
   return (
-    <Icon {...props}>
-      <path
+    <SvgIcon {...props}>
+      <g
+        fill="none"
         fillRule="nonzero"
-        d="M6.37 9.463L5 10.953l3.648 3.354 5.982-6.99L13.092 6l-4.618 5.397z"
-      />
-    </Icon>
+        transform="translate(-18 -12)"
+      >
+        <path
+          fill={props.bgFill}
+          d="M28 30a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+        />
+        <path
+          fill={props.fill}
+          d="M25.11 21.56l-1.072 1.166 2.854 2.624 4.681-5.47-1.204-1.03-3.613 4.223z"
+        />
+      </g>
+    </SvgIcon>
   );
 }
+
+SuccessIcon.propTypes = {
+  bgFill: PropTypes.string,
+  fill: PropTypes.string
+};
+
+SuccessIcon.defaultProps = {
+  bgFill: 'var(--secondary-00)',
+  fill: 'var(--primary-00)'
+};
 
 module.exports = SuccessIcon;

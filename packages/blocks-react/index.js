@@ -12,17 +12,18 @@ module.exports = {
     PopoverMenu: require('./dist/dropdowns/PopoverMenu.js')
   },
   Icons: {
+    SvgIcon: require('./dist/icons/SvgIcon.js'),
     AddIcon: require('./dist/icons/AddIcon.js'),
     BackIcon: require('./dist/icons/BackIcon.js'),
     CloseIcon: require('./dist/icons/CloseIcon.js'),
     DownIcon: require('./dist/icons/DownIcon.js'),
     ErrorIcon: require('./dist/icons/ErrorIcon.js'),
     HelpIcon: require('./dist/icons/HelpIcon.js'),
-    Icon: require('./dist/icons/Icon.js'),
     InformationIcon: require('./dist/icons/InformationIcon.js'),
     MoreIcon: require('./dist/icons/MoreIcon.js'),
     MoreVerticalIcon: require('./dist/icons/MoreVerticalIcon.js'),
     NextIcon: require('./dist/icons/NextIcon.js'),
+    SpinnerIcon: require('./dist/icons/SpinnerIcon.js'),
     SuccessIcon: require('./dist/icons/SuccessIcon.js'),
     WarningIcon: require('./dist/icons/WarningIcon.js'),
     UpIcon: require('./dist/icons/UpIcon.js')

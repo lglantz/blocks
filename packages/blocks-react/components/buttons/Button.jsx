@@ -18,11 +18,12 @@ const TYPE_CLASS_MAP = {
 
 const Button = React.forwardRef((props, ref) => {
   const Component = props.href ? LinkButton : BasicButton;
+  const { color, type, className, ...other } = props;
   return (
    <Component
-      {...props}
       ref={ref}
-      className={`${COLOR_CLASS_MAP[props.color]} ${TYPE_CLASS_MAP[props.type]} ${props.className}`}
+      className={`${COLOR_CLASS_MAP[color]} ${TYPE_CLASS_MAP[type]} ${className || ''}`}
+      {...other}
     />
   );
 });
@@ -30,8 +31,8 @@ const Button = React.forwardRef((props, ref) => {
 Button.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  color: PropTypes.string,
-  type: PropTypes.string
+  color: PropTypes.oneOf([ 'primary', 'dark', 'secondary', 'danger' ]),
+  type: PropTypes.oneOf([ 'default', 'icon' ])
 };
 
 Button.defaultProps = {
@@ -42,4 +43,3 @@ Button.defaultProps = {
 };
 
 module.exports = Button;
-

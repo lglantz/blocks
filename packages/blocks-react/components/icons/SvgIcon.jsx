@@ -2,14 +2,13 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 
-const Icon = (props) => {
+const SvgIcon = (props) => {
   const { children, ...other } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20px"
       height="20px"
-      viewBox="0 0 20 20"
       {...other}
     >
       {children}
@@ -17,16 +16,18 @@ const Icon = (props) => {
   );
 }
 
-Icon.propTypes = {
+SvgIcon.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  fill: PropTypes.string
+  fill: PropTypes.string,
+  viewBox: PropTypes.string
 };
 
-Icon.defaultProps = {
+SvgIcon.defaultProps = {
   className: '',
   style: null,
-  fill: 'var(--primary-00)'
+  fill: 'var(--primary-00)',
+  viewBox: '0 0 20 20'
 };
 
-module.exports = Icon;
+module.exports = SvgIcon;
