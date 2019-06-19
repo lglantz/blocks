@@ -126,6 +126,12 @@ $button-dark-active-text-color = $secondary-00;
   svg {
     fill: $button-primary-text-color;
   }
+  
+  &.blx-disabled-rgba {
+    background-color: rgba($primary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+    border: rgba($primary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+    color: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+  }
 
   &:focus, &.blx-focus {
     border: $button-primary-focus-border;
@@ -171,6 +177,12 @@ $button-dark-active-text-color = $secondary-00;
 
   svg {
     fill: $button-secondary-text-color;
+  }
+  
+  &.blx-disabled-rgba {
+    background-color: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+    border: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+    color: rgba($primary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
   }
 
   &:focus, &.blx-focus {
@@ -262,6 +274,11 @@ $button-dark-active-text-color = $secondary-00;
   border: $button-dark-default-border;
   color: $button-dark-text-color;
 
+  &.blx-disabled-rgba {
+    background-color: rgba($dark-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+    border: rgba($dark-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+    color: rgba($secondary-00-hex, 0.35); // using a var() in an rgba doesn't seem to work
+  }
 
   .blx-icon {
     background-color: $button-dark-text-color;
@@ -315,6 +332,14 @@ $button-dark-active-text-color = $secondary-00;
     }
   }
 }
+
+.blx-loading-btn {
+  .blx-icon {
+    background-color: transparent;
+    border: 0px;
+  }
+}
+
 a.blx-button {
   display: inline-flex;
   align-items: center;
