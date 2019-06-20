@@ -12,6 +12,7 @@ import TextFieldPrefixSuffixExample from "../../code_examples/TextFieldPrefixSuf
 import TextFieldDateExample from "../../code_examples/TextFieldDateExample"
 import TextFieldDropdownExample from "../../code_examples/TextFieldDropdownExample"
 import TextAreaExample from "../../code_examples/TextAreaExample"
+import TextFieldHelperExample from "../../code_examples/TextFieldHelperExample"
 
 const TextFieldsPage = () => (
   <Layout>
@@ -61,6 +62,12 @@ const TextFieldsPage = () => (
       <Snippet
         name="TextAreaExample"
         example={<TextAreaExample />}
+      />
+
+      <h5 className="blx-with-margin">Helper Text</h5>
+      <Snippet
+        name="TextFieldHelperExample"
+        example={<TextFieldHelperExample />}
       />
     </ExampleSection>
   </Layout>

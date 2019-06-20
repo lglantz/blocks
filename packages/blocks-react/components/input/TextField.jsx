@@ -37,6 +37,12 @@ const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, 
     iconElement = <span className="blx-text-field-icon">{icon}</span>;
   }
 
+  // helper text
+  let helperTextElement = null;
+  if (other.maxLength) {
+    helperTextElement = <span className="blx-text-field-helper-text">{`${other.value.length}/${other.maxLength}`}</span>;
+  }
+
   // root level classes
   let classes = 'blx-text-field ';
   if (other.disabled) classes += 'blx-disabled ';
@@ -58,6 +64,7 @@ const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, 
         {iconElement}
       </div>
       {invalidLabelMessage}
+      {helperTextElement}
     </div>
   );
 }
