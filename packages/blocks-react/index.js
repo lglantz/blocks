@@ -54,9 +54,9 @@ module.exports = {
     LinkSubTabItem: require('./dist/tabs/LinkSubTabItem.js')
   },
   Tooltip: {
-    Tooltip: require('./dist/tooltips/Tooltip.js'),
-    TooltipTrigger: require('./dist/tooltips/TooltipTrigger.js'),
-    TooltipContent: require('./dist/tooltips/TooltipContent.js')
+    Wrapper: require('./dist/tooltips/Tooltip.js'),
+    Trigger: require('./dist/tooltips/TooltipTrigger.js'),
+    Content: require('./dist/tooltips/TooltipContent.js')
   },
   wrappers: {
     closeOnClick: require('./dist/wrappers/closeOnClick.js'),
