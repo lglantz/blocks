@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
 
-const RadioButton = ({ checked, isValid, style, className, text, ...other}) => {
+const RadioButton = ({ checked, isValid, style, className, children, ...other}) => {
   const classes = classnames('blx-radio', className, {
     'blx-disabled': other.disabled,
     'blx-invalid': !isValid
@@ -13,8 +13,8 @@ const RadioButton = ({ checked, isValid, style, className, text, ...other}) => {
       style={style}
       className={classes}
     >
-      <div className="blx-radio-label" title={text}>
-        {text}
+      <div className="blx-label">
+        {children}
       </div>
       <input
         type="radio"
@@ -31,8 +31,7 @@ RadioButton.propTypes = {
   disabled: PropTypes.bool,
   isValid: PropTypes.bool,
   style: PropTypes.object,
-  className: PropTypes.string,
-  text: PropTypes.string
+  className: PropTypes.string
 };
 
 RadioButton.defaultProps = {
@@ -40,8 +39,7 @@ RadioButton.defaultProps = {
   disabled: false,
   isValid: true,
   style: null,
-  className: '',
-  text: '',
+  className: ''
 };
 
 module.exports = RadioButton;

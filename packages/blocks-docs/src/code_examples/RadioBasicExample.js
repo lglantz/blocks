@@ -20,33 +20,37 @@ class RadioBasicExample extends React.Component {
       <div>
         <RadioButton
           name="radio-basic-example"
-          text="Option 1"
           value="option1"
           onChange={e => this.onChange(e)}
           checked={this.state.checkedValue === 'option1'}
-        />
+        >
+          Option 1
+        </RadioButton>
         <RadioButton
           name="radio-basic-example"
-          text="Option 2"
           value="option2"
           onChange={e => this.onChange(e)}
           checked={this.state.checkedValue === 'option2'}
-        />
+        >
+          Option 2
+        </RadioButton>
         <RadioButton
           name="radio-basic-example"
-          text="Option 3"
           value="option3"
           onChange={e => this.onChange(e)}
           checked={this.state.checkedValue === 'option3'}
-        />
+        >
+          Option 3
+        </RadioButton>
         <RadioButton
           name="radio-basic-example"
-          text="Option 4"
           value="option4"
           onChange={e => this.onChange(e)}
           checked={this.state.checkedValue === 'option4'}
           disabled
-        />
+        >
+          Option 4
+        </RadioButton>
       </div>
     );
   }
