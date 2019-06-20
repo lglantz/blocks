@@ -4,61 +4,31 @@ const classnames = require('classnames');
 
 const closeOnClick = require('../wrappers/closeOnClick.jsx');
 
-const Tooltip = (props) => {
-  const messageClasses = classnames(`blx-tooltip-${props.position}`, {
-    'blx-hidden': !props.isOpen,
-    'blx-light-bg': props.lightBg,
-    'blx-dark-bg': !props.lightBg,
-    'blx-tooltip-titled-message': props.title,
-    'blx-tooltip-message': !props.title
-  });
 
+const Tooltip = ({ style, className, forwardedRef, children, ...other }) => {
   return (
     <div
-      style={props.style}
-      className={classnames('blx-tooltip', props.className)}
-      ref={props.forwardedRef}
+      style={style}
+      className={classnames('blx-tooltip', className)}
+      ref={forwardedRef}
     >
-      <button
-        className="blx-tooltip-trigger"
-        onClick={(e) => {
-          e.target.closest('.blx-tooltip-trigger').focus();
-          props.toggle(e);
-        }}
-      >
-        {props.trigger}
-      </button>
-      <div className={messageClasses}>
-        { props.title && <h5 className="blx-tooltip-titled-message-title">{props.title}</h5> }
-        <p>
-          {props.text}
-        </p>
-      </div>
+      {
+        React.Children.map(children, child => (
+          React.cloneElement(child, { ...other }) // to pass closeOnClick props
+        ))
+      }
     </div>
   );
 }
 
 Tooltip.propTypes = {
   style: PropTypes.object,
-  className: PropTypes.string,
-  title: PropTypes.string,
-  toggle: PropTypes.func.isRequired,
-  trigger: PropTypes.object,
-  lightBg: PropTypes.bool,
-  position: PropTypes.string, // 'bottom', 'top', 'right', 'left'
-  text: PropTypes.string,
-  isOpen: PropTypes.bool
+  className: PropTypes.string
 };
 
 Tooltip.defaultProps = {
   style: null,
-  className: '',
-  title: '',
-  trigger: null,
-  lightBg: false,
-  position: 'bottom',
-  text: '',
-  isOpen: false
+  className: ''
 };
 
 module.exports = closeOnClick(Tooltip);
