@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const ReactLink = require('react-router-dom').Link;
 
 
 class DropdownItem extends React.Component {
@@ -25,6 +26,20 @@ class DropdownItem extends React.Component {
   }
 
   getLinkItem() {
+    if (this.props.option.useReactLink) {
+      return (
+        <ReactLink
+          to={this.props.option.href}
+          disabled={this.props.option.disabled}
+          onKeyDown={this.onKeyDown}
+          onKeyUp={this.onKeyUp}
+          onClick={this.onSelect}
+        >
+          {this.props.option.text || this.props.option.element}
+        </ReactLink>
+      );
+    }
+
     return (
       <a
         href={this.props.option.href}
@@ -93,7 +108,8 @@ DropdownItem.propTypes = {
     ]),
     href: PropTypes.string,
     element: PropTypes.node,
-    key: PropTypes.string
+    key: PropTypes.string,
+    useReactLink: PropTypes.bool,
   }).isRequired,
   isSelected: PropTypes.bool,
   onKeyDown: PropTypes.func,
