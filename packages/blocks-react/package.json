@@ -18,6 +18,7 @@
   "homepage": "https://github.com/floored/blocks#readme",
   "dependencies": {
     "blocks-base": "^0.1.15",
+    "classnames": "^2.2.6",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

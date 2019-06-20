@@ -1,18 +1,22 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 const closeOnClick = require('../wrappers/closeOnClick.jsx');
 
 const Tooltip = (props) => {
-  let messageClasses = `blx-tooltip-${props.position} `;
-  messageClasses += props.lightBg ? 'blx-light-bg ' : 'blx-dark-bg ';
-  messageClasses += props.title ? 'blx-tooltip-titled-message ' : 'blx-tooltip-message ';
-  if (!props.isOpen) messageClasses += 'blx-hidden ';
+  const messageClasses = classnames(`blx-tooltip-${props.position}`, {
+    'blx-hidden': !props.isOpen,
+    'blx-light-bg': props.lightBg,
+    'blx-dark-bg': !props.lightBg,
+    'blx-tooltip-titled-message': props.title,
+    'blx-tooltip-message': !props.title
+  });
 
   return (
     <div
       style={props.style}
-      className={`blx-tooltip ${props.className}`}
+      className={classnames('blx-tooltip', props.className)}
       ref={props.forwardedRef}
     >
       <button

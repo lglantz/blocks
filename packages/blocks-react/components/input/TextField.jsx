@@ -1,11 +1,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 
 const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, style, className, forwardedRef, ...other }) => {
-  // text input element itself
-  let textFieldClasses = '';
-
   // label element
   let labelElement = null;
   if (label) {
@@ -16,7 +14,6 @@ const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, 
   let invalidLabelMessage = null;
   if (!isValid) {
     invalidLabelMessage = <span className="blx-invalid-input-message">{invalidErrorMessage}</span>;
-    textFieldClasses += ' blx-invalid';
   }
 
   // prefix element
@@ -44,13 +41,15 @@ const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, 
   }
 
   // root level classes
-  let classes = 'blx-text-field ';
-  if (other.disabled) classes += 'blx-disabled ';
+  const classes = classnames('blx-text-field', className, {
+    'blx-disabled': other.disabled
+  });
+  const textFieldClasses = classnames({'blx-invalid': !isValid});
 
   return (
     <div
       style={style}
-      className={`${classes} ${className}`}
+      className={classes}
     >
       {labelElement}
       <div className="blx-text-field-container">

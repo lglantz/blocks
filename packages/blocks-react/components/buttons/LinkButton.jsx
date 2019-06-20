@@ -1,18 +1,20 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 const ReactLink = require('react-router-dom').Link;
 
 
 const LinkButton = React.forwardRef((props, ref) => {
-  let classes = 'blx-button ';
-  if (props.icon) classes += 'blx-icon-button ';
-  if (props.isDisabled) classes += 'blx-disabled ';
+  const classes = classnames('blx-button', props.className, {
+    'blx-icon-button': !!props.icon,
+    'blx-disabled': props.isDisabled
+  });
 
   if (props.useReactLink) {
     return (
       <ReactLink
         style={props.style}
-        className={`${classes} ${props.className}`}
+        className={classes}
         to={props.href}
         disabled={props.isDisabled}
         ref={ref}
@@ -28,7 +30,7 @@ const LinkButton = React.forwardRef((props, ref) => {
   return (
     <a
       style={props.style}
-      className={`${classes} ${props.className}`}
+      className={classes}
       href={props.href}
       disabled={props.isDisabled}
       target={props.isExternal ? '_blank' : '_self'}

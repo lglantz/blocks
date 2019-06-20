@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 
 class TextArea extends React.Component {
@@ -33,13 +34,11 @@ class TextArea extends React.Component {
       ...other
     } = this.props;
     // text input element itself
-    let textFieldClasses = '';
 
     // invalid message and class
     let invalidLabelMessage = null;
     if (!isValid) {
       invalidLabelMessage = <span className="blx-invalid-input-message">{invalidErrorMessage}</span>;
-      textFieldClasses += ' blx-invalid';
     }
 
     // label
@@ -48,18 +47,20 @@ class TextArea extends React.Component {
       labelElement = <label className="blx-ui-text">{label}</label>;
     }
 
-    let classes = 'blx-text-field ';
-    if (other.disabled) classes += 'blx-disabled ';
+    const classes = classnames('blx-text-field', className, {
+      'blx-disabled': other.disabled
+    });
+    const textAreaClasses = classnames({'blx-invalid': !isValid});
 
     return (
       <div
         style={style}
-        className={`${classes} ${className}`}
+        className={classes}
       >
         {labelElement}
         <div className="blx-text-field-container">
           <textarea
-            className={textFieldClasses}
+            className={textAreaClasses}
             ref={this.textAreaRef}
             onKeyUp={(e) => {
               if (onKeyUp) onKeyUp(e);

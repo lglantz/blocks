@@ -1,16 +1,17 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 
 const RadioButton = ({ checked, isValid, style, className, text, ...other}) => {
-  let classes = 'blx-radio ';
-  if (other.disabled) classes += 'blx-disabled ';
-  if (!isValid) classes += 'blx-invalid ';
-
+  const classes = classnames('blx-radio', className, {
+    'blx-disabled': other.disabled,
+    'blx-invalid': !isValid
+  });
   return (
     <label
       style={style}
-      className={`${classes} ${className}`}
+      className={classes}
     >
       <div className="blx-radio-label" title={text}>
         {text}

@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 const ReactLink = require('react-router-dom').Link;
 
 
@@ -77,14 +78,15 @@ class DropdownItem extends React.Component {
       item = this.getButtonItem();
     }
 
-    let classes = 'blx-dropdown-item ';
-    if (this.props.option.disabled) classes += 'blx-disabled ';
-    if (this.props.isSelected) classes += 'blx-selected ';
+    const classes = classnames('blx-dropdown-item', this.props.className, {
+      'blx-disabled': this.props.option.disabled,
+      'blx-selected': this.props.isSelected
+    })
 
     return (
       <li
         style={this.props.style}
-        className={`${classes} ${this.props.className}`}
+        className={classes}
         ref={this.props.forwardedRef}
       >
         {item}

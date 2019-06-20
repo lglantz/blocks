@@ -1,15 +1,14 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 
 const Tabs = (props) => {
-  let classes = '';
-  if (props.vertical) {
-    classes += 'blx-vertical-tabs ';
-  } else {
-    classes += 'blx-horizontal-tabs ';
-  }
-  if (props.disabled) classes += 'blx-disabled ';
+  const classes = classnames(props.className, {
+    'blx-vertical-tabs': props.vertical,
+    'blx-horizontal-tabs': !props.vertical,
+    'blx-disabled': props.disabled
+  });
 
   const children = React.Children.map(props.children, child => (
     React.cloneElement(child, {
@@ -20,7 +19,7 @@ const Tabs = (props) => {
   return (
     <ul
       style={props.style}
-      className={`${classes} ${props.className}`}
+      className={classes}
     >
       {children}
     </ul>

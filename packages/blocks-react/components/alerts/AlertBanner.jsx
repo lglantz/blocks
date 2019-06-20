@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 const CloseIcon = require('../icons/CloseIcon.jsx');
 
@@ -24,13 +25,13 @@ class AlertBanner extends React.Component {
   }
 
   render() {
-    let classes = 'blx-alert ';
-    if (this.state.hidden) classes += 'blx-hidden ';
-
+    const classes = classnames('blx-alert', this.props.className, {
+      'blx-hidden': this.state.hidden
+    });
     return (
       <div
         style={this.props.style}
-        className={`${classes} ${this.props.className}`}
+        className={classes}
       >
         <div className="blx-alert-icon-container">
           <span className="blx-alert-icon-background" />

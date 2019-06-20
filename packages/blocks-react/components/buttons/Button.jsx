@@ -1,16 +1,18 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 
 const BasicButton = React.forwardRef((props, ref) => {
-  let classes = 'blx-button ';
   const { icon, isDisabled, className, leftIcon, text, rightIcon, ...other } = props;
-  if (icon) classes += 'blx-icon-button ';
-  if (isDisabled) classes += 'blx-disabled ';
+  const classes = classnames('blx-button', className, {
+    'blx-icon-button': !!icon,
+    'blx-disabled': isDisabled
+  });
   
   return (
     <button
-      className={`${classes} ${className}`}
+      className={classes}
       ref={ref}
       disabled={isDisabled}
       {...other}

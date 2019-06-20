@@ -1,15 +1,17 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 
 const Checkbox = ({ style, className, children, ...other }) => {
-  let classes = 'blx-checkbox ';
-  if (other.disabled) classes += 'blx-disabled ';
+  const classes = classnames('blx-checkbox', className, {
+    'blx-disabled': other.disabled
+  });
 
   return (
     <label
       style={style}
-      className={`${classes} ${className}`}
+      className={classes}
     >
       <div className="blx-label">
         {children}

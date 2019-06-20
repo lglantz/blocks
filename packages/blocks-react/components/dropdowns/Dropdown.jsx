@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 const DropdownItem = require('./DropdownItem.jsx');
 const DownIcon = require('../icons/DownIcon.jsx');
@@ -8,11 +9,11 @@ const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
 const DropdownMenu = (props) => {
   let triggerContent = props.text;
-  let triggerClassNames = 'blx-dropdown-trigger';
-
-  if (props.isOpen) triggerClassNames += ' blx-active';
-  if (props.isDisabled) triggerClassNames += ' blx-disabled';
-  if (!props.isValid) triggerClassNames += ' blx-invalid';
+  const triggerClassNames = classnames('blx-dropdown-trigger', {
+    'blx-active': props.isOpen,
+    'blx-disabled': props.isDisabled,
+    'blx-invalid': !props.isValid
+  });
 
   if (props.value) {
     for (let i = 0; i < props.options.length; i++) {
@@ -27,7 +28,7 @@ const DropdownMenu = (props) => {
   return (
     <div
       style={props.style}
-      className={`blx-dropdown-wrapper ${props.className}`}
+      className={classnames('blx-dropdown-wrapper', props.className)}
       ref={props.forwardedRef}
     >
       <div className="blx-dropdown">
@@ -56,8 +57,8 @@ const DropdownMenu = (props) => {
         </button>
 
         {/* DROPDOWN MENU */}
-        <div className={`blx-dropdown-menu ${props.isOpen ? '' : 'blx-hidden'}`}>
-          <ul className={`blx-dropdown-list ${props.scrollable ? 'blx-scrollable' : ''}`}>
+        <div className={classnames('blx-dropdown-menu', {'blx-hidden': !props.isOpen})}>
+          <ul className={classnames('blx-dropdown-list', {'blx-scrollable': props.scrollable})}>
             {
               props.options.map((option, idx) => (
                 <DropdownItem

@@ -1,5 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 const DropdownItem = require('./DropdownItem.jsx');
 const MoreIcon = require('../icons/MoreIcon.jsx');
@@ -8,19 +9,21 @@ const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
 
 
 const PopoverMenu = (props) => {
-  let menuClasses = 'blx-popover-menu';
-  if (!props.isOpen) menuClasses += ' blx-hidden';
-  if (props.position === 'left') {
-    menuClasses += ' blx-popover-is-left';
-  } else if (props.position === 'right') {
-    menuClasses += ' blx-popover-is-right';
-  } else {
-    menuClasses += ' blx-popover-is-center';
-  }
+  const classes = classnames('blx-popover-wrapper', props.className);
+  const triggerClasses = classnames('blx-popover-trigger', {
+    'blx-active': props.isOpen,
+    'blx-disabled': props.isDisabled
+  });
+  const menuClasses = classnames('blx-popover-menu', {
+    'blx-hidden': !props.isOpen,
+    'blx-popover-is-left': props.position === 'left',
+    'blx-popover-is-right': props.position === 'right',
+    'blx-popover-is-center': props.position === 'center'
+  });
   return (
     <div
       style={props.style}
-      className={`blx-popover-wrapper ${props.className}`}
+      className={classes}
       ref={props.forwardedRef}
     >
       { props.text &&
@@ -28,7 +31,7 @@ const PopoverMenu = (props) => {
       }
       <div className="blx-dropdown blx-popover">
         <button
-          className={`blx-popover-trigger ${props.isOpen ? 'blx-active' : ''} ${props.isDisabled ? 'blx-disabled' : ''}`}
+          className={triggerClasses}
           disabled={props.isDisabled}
           onClick={props.toggle}
           title={props.text}

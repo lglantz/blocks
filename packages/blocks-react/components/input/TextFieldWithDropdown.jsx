@@ -1,15 +1,19 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
+
 const TextField = require('./TextField.jsx');
 const Dropdown = require('../dropdowns/Dropdown.jsx');
 
+
 const TextFieldWithDropdown = (props) => {
-  let classes = 'blx-text-field-with-dropdown ';
-  if (props.disabled) classes += 'blx-disabled ';
+  const classes = classnames('blx-text-field-with-dropdown', props.className, {
+    'blx-disabled': props.disabled
+  });
   return (
     <div
       style={props.style}
-      className={`${classes} ${props.className}`}
+      className={classes}
     >
       <TextField {...props.textField}/>
       <Dropdown {...props.dropdown}/>
