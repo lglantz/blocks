@@ -1,7 +1,7 @@
 import React from "react"
 
 const { Button } = require('blocks-react').Buttons;
-const { UpIcon, MoreIcon, SuccessIcon, CloseIcon, AddIcon, BackIcon, NextIcon, DownIcon } = require('blocks-react').Icons;
+const { UpIcon, MoreIcon, SuccessIcon, CloseIcon } = require('blocks-react').Icons;
 
 const ButtonIconExample = () => (
   <div className="blx-h-button-group">

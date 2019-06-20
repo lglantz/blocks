@@ -3,8 +3,33 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
 const CloseIcon = require('../icons/CloseIcon.jsx');
+const SuccessIcon = require('../icons/SuccessIcon.jsx');
+const InformationIcon = require('../icons/InformationIcon.jsx');
+const WarningIcon = require('../icons/WarningIcon.jsx');
+const ErrorIcon = require('../icons/ErrorIcon.jsx');
 
-class AlertBanner extends React.Component {
+
+const TYPE_MAP = {
+  success: {
+    classes: 'blx-success',
+    icon: SuccessIcon
+  },
+  information: {
+    classes: 'blx-information',
+    icon: InformationIcon
+  },
+  warning: {
+    classes: 'blx-warning',
+    icon: WarningIcon
+  },
+  error: {
+    classes: 'blx-error',
+    icon: ErrorIcon
+  }
+};
+
+
+class Alert extends React.Component {
   constructor(props) {
     super(props);
 
@@ -25,9 +50,17 @@ class AlertBanner extends React.Component {
   }
 
   render() {
-    const classes = classnames('blx-alert', this.props.className, {
-      'blx-hidden': this.state.hidden
-    });
+    const classes = classnames(
+      'blx-alert',
+      this.props.className,
+      TYPE_MAP[this.props.type].classes,
+      {
+        'blx-hidden': this.state.hidden
+      }
+    );
+
+    const Icon = TYPE_MAP[this.props.type].icon;
+
     return (
       <div
         style={this.props.style}
@@ -35,7 +68,7 @@ class AlertBanner extends React.Component {
       >
         <div className="blx-alert-icon-container">
           <span className="blx-alert-icon-background" />
-          { this.props.icon }
+          <Icon className="blx-alert-icon" />
         </div>
         <div className="blx-alert-text">
           <h4>
@@ -53,9 +86,10 @@ class AlertBanner extends React.Component {
   }
 }
 
-AlertBanner.propTypes = {
+Alert.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
+  type: PropTypes.string,
   title: PropTypes.string,
   icon: PropTypes.node,
   message: PropTypes.string,
@@ -63,9 +97,10 @@ AlertBanner.propTypes = {
   onClose: PropTypes.func
 };
 
-AlertBanner.defaultProps = {
+Alert.defaultProps = {
   className: '',
   style: null,
+  type: 'success',
   title: '',
   icon: null,
   message: '',
@@ -73,4 +108,4 @@ AlertBanner.defaultProps = {
   onClose: null
 };
 
-module.exports = AlertBanner;
+module.exports = Alert;

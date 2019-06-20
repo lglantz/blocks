@@ -1,10 +1,7 @@
 module.exports = {
   Accordion: require('./dist/accordion/AccordionSection.js'),
   Alerts: {
-    ErrorAlert: require('./dist/alerts/ErrorAlert.js'),
-    InformationalAlert: require('./dist/alerts/InformationalAlert.js'),
-    SuccessAlert: require('./dist/alerts/SuccessAlert.js'),
-    WarningAlert: require('./dist/alerts/WarningAlert.js')
+    Alert: require('./dist/alerts/Alert.js')
   },
   Buttons: {
     Button: require('./dist/buttons/Button.js')
