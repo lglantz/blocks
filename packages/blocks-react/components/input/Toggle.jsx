@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
-const Toggle = ({ className, style, options, value, ...other }) => {
+const Toggle = ({ className, style, value, children, ...other }) => {
   const classes = classnames('blx-toggle', className, {
     'blx-disabled': other.disabled
   });
@@ -12,22 +12,11 @@ const Toggle = ({ className, style, options, value, ...other }) => {
       className={classes}
     >
       {
-        options.map((option, idx) => (
-          <label
-            className="blx-toggle-container"
-            key={option.text}
-          >
-            <input
-              type="radio"
-              id={`toggle-option-${idx}`}
-              value={option.value}
-              defaultChecked={option.value === value}
-              {...other}
-            />
-            <span className="blx-toggle-text">
-              {option.text}
-            </span>
-          </label>
+        React.Children.map(children, child => (
+          React.cloneElement(child, {
+            ...other,
+            selectedValue: value
+          })
         ))
       }
     </div>
@@ -37,18 +26,11 @@ const Toggle = ({ className, style, options, value, ...other }) => {
 Toggle.propTypes = {
   style: PropTypes.object,
   className: PropTypes.object,
+  disabled: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
-  ]).isRequired,
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]).isRequired
-  })).isRequired,
-  disabled: PropTypes.bool
+  ]).isRequired
 };
 
 Toggle.defaultProps = {

@@ -1,6 +1,6 @@
 import React from "react"
 
-const { Toggle } = require('blocks-react').Input;
+const { Toggle, ToggleOption } = require('blocks-react').Input;
 
 class ToggleBasicExample extends React.Component {
   constructor(props) {
@@ -20,13 +20,12 @@ class ToggleBasicExample extends React.Component {
       <Toggle
         name="toggle-basic-example"
         value={this.state.checkedValue}
-        options={[
-          { text: 'Option 1', value: 'option1' },
-          { text: 'Option 2', value: 'option2' },
-          { text: 'Option 3', value: 'option3' }
-        ]}
         onChange={e => this.onChange(e)}
-      />
+      >
+        <ToggleOption value="option1">Option 1</ToggleOption>
+        <ToggleOption value="option2">Option 2</ToggleOption>
+        <ToggleOption value="option3">Option 3</ToggleOption>
+      </Toggle>
     );
   }
 }
