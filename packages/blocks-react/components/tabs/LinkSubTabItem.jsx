@@ -13,7 +13,7 @@ const LinkSubTabItem = (props) => {
   const link = props.useReactLink ?
     <ReactLink className={classes} to={props.href}>{props.text}</ReactLink> :
     <a className={classes} href={props.href}>{props.text}</a>;
-    
+
   return (
     <div
       style={props.style}

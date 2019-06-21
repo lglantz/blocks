@@ -49,10 +49,10 @@ module.exports = {
   Table: require('./dist/table/Table.js'),
   Tabs: {
     Tabs: require('./dist/tabs/Tabs.js'),
-    RadioTabItem: require('./dist/tabs/RadioTabItem.js'),
-    RadioSubTabItem: require('./dist/tabs/RadioSubTabItem.js'),
-    LinkTabItem: require('./dist/tabs/LinkTabItem.js'),
-    LinkSubTabItem: require('./dist/tabs/LinkSubTabItem.js')
+    RadioItem: require('./dist/tabs/RadioTabItem.js'),
+    RatioSubItem: require('./dist/tabs/RadioSubTabItem.js'),
+    LinkItem: require('./dist/tabs/LinkTabItem.js'),
+    LinkSubItem: require('./dist/tabs/LinkSubTabItem.js')
   },
   Tooltip: {
     Wrapper: require('./dist/tooltips/Tooltip.js'),

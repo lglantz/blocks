@@ -7,7 +7,7 @@ import formatXml from 'xml-formatter'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import reqUtil from '../js_utils/request'
 
-const { Tabs, RadioTabItem } = require('blocks-react').Tabs;
+const { Tabs } = require('blocks-react');
 
 
 class Snippet extends React.Component {
@@ -37,7 +37,7 @@ class Snippet extends React.Component {
         <Tabs>
           {
             this.views.map(view => (
-              <RadioTabItem
+              <Tabs.RadioItem
                 key={`${view}-${this.props.name}`}
                 name={`snippet-views-${this.props.name}`}
                 value={view}

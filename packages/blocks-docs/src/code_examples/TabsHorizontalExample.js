@@ -1,6 +1,6 @@
 import React from "react"
 
-const { Tabs, RadioTabItem } = require('blocks-react').Tabs;
+const { Tabs } = require('blocks-react');
 
 class TabsHorizontalExample extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class TabsHorizontalExample extends React.Component {
   render() {
     return (
       <Tabs>
-        <RadioTabItem
+        <Tabs.RadioItem
           key="horizontal-tabs-1"
           name="horizontal-tabs-example"
           value="tab1"
@@ -26,7 +26,7 @@ class TabsHorizontalExample extends React.Component {
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 1"
         />
-        <RadioTabItem
+        <Tabs.RadioItem
           key="horizontal-tabs-2"
           name="horizontal-tabs-example"
           value="tab2"
@@ -34,7 +34,7 @@ class TabsHorizontalExample extends React.Component {
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 2"
         />
-        <RadioTabItem
+        <Tabs.RadioItem
           key="horizontal-tabs-3"
           name="horizontal-tabs-example"
           value="tab3"
@@ -42,7 +42,7 @@ class TabsHorizontalExample extends React.Component {
           onChange={(e) => this.setState({ selectedTab: e.target.value })}
           text="Tab 3"
         />
-        <RadioTabItem
+        <Tabs.RadioItem
           key="horizontal-tabs-4"
           name="horizontal-tabs-example"
           value="tab4"

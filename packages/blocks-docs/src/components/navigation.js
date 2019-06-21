@@ -3,7 +3,7 @@ import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 
 const Accordion = require('blocks-react').Accordion;
-const Tabs = require('blocks-react').Tabs.Tabs;
+const { Tabs } = require('blocks-react');
 
 
 const Navigation = () => (

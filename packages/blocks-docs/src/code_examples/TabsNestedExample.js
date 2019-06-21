@@ -1,6 +1,6 @@
 import React from "react"
 
-const { Tabs, RadioTabItem, RadioSubTabItem, LinkTabItem, LinkSubTabItem } = require('blocks-react').Tabs;
+const { Tabs } = require('blocks-react');
 const { Accordion } = require('blocks-react');
 
 const FOUR_RANGE = [0, 1, 2, 3];
@@ -27,7 +27,7 @@ class TabsNestedExample extends React.Component {
           <Tabs vertical>
             {
               FOUR_RANGE.map(i => (
-                <RadioTabItem
+                <Tabs.RadioItem
                   name="vertical-tabs-nested"
                   key={`vertical-tabs-nested-${i}`}
                   checked={i === this.state.activeNestedTab}
@@ -36,7 +36,7 @@ class TabsNestedExample extends React.Component {
                 >
                   {
                     FOUR_RANGE.map(j => (
-                      <RadioSubTabItem
+                      <Tabs.RadioSubItem
                         name="vertical-subtabs-nested"
                         key={`vertical-subtabs-nested-${j}`}
                         visible={i === this.state.activeNestedTab}
@@ -46,7 +46,7 @@ class TabsNestedExample extends React.Component {
                       />
                     ))
                   }
-                </RadioTabItem>
+                </Tabs.RadioItem>
               ))
             }
           </Tabs>
@@ -58,7 +58,7 @@ class TabsNestedExample extends React.Component {
           <Tabs vertical>
             {
               FOUR_RANGE.map(i => (
-                <LinkTabItem
+                <Tabs.LinkItem
                   key={`vertical-link-tabs-nested-${i}`}
                   active={i === 1}
                   href="#"
@@ -66,7 +66,7 @@ class TabsNestedExample extends React.Component {
                 >
                   {
                     FOUR_RANGE.map(j => (
-                      <LinkSubTabItem
+                      <Tabs.LinkSubItem
                         key={`vertical-link-subtabs-nested-${j}`}
                         visible={i === 1}
                         active={j === 3}
@@ -75,7 +75,7 @@ class TabsNestedExample extends React.Component {
                       />
                     ))
                   }
-                </LinkTabItem>
+                </Tabs.LinkItem>
               ))
             }
           </Tabs>

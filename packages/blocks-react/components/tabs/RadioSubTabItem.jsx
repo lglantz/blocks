@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 const RadioSubTabItem = ({ visible, style, className, text, children, ...other }) => {
   let classes = '';
   if (!visible) classes += 'blx-hidden ';
-  
+
   return (
     <label
       style={style}
