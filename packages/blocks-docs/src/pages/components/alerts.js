@@ -6,6 +6,7 @@ import ExampleSection from "../../components/examples"
 import Snippet from "../../components/snippet"
 
 import AlertExample from "../../code_examples/AlertExample"
+import AlertWithButtonsExample from "../../code_examples/AlertWithButtonsExample"
 
 
 const AlertsPage = () => (
@@ -20,7 +21,13 @@ const AlertsPage = () => (
         Banners communicate one of the following states: success, information, warning, or error.
       </p>
 
-      <h5 className="blx-with-margin">Alerts</h5>
+      <h5 className="blx-with-margin">With buttons</h5>
+      <Snippet
+        name="AlertWithButtonsExample"
+        example={<AlertWithButtonsExample />}
+      />
+
+      <h5 className="blx-with-margin">Without buttons</h5>
       <Snippet
         name="AlertExample"
         example={<AlertExample />}

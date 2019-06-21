@@ -70,17 +70,15 @@ class Alert extends React.Component {
           <span className="blx-alert-icon-background" />
           <Icon className="blx-alert-icon" />
         </div>
-        <div className="blx-alert-text">
-          <h4>
-            {this.props.title}
-          </h4>
-          <p>{this.props.message}</p>
-        </div>
         { this.props.closable &&
           <button className="blx-alert-close" onClick={this.onClose}>
             <CloseIcon />
           </button>
         }
+        <div className="blx-alert-content">
+          <h4>{this.props.title}</h4>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -90,22 +88,20 @@ Alert.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   type: PropTypes.string,
-  title: PropTypes.string,
   icon: PropTypes.node,
-  message: PropTypes.string,
   closable: PropTypes.bool,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  children: PropTypes.node
 };
 
 Alert.defaultProps = {
   className: '',
   style: null,
   type: 'success',
-  title: '',
   icon: null,
-  message: '',
   closable: false,
-  onClose: null
+  onClose: null,
+  children: null
 };
 
 module.exports = Alert;
