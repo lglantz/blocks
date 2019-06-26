@@ -22,7 +22,7 @@ const Tooltip = (props) => {
       <button
         className="blx-tooltip-trigger"
         onClick={(e) => {
-          e.target.closest('.blx-tooltip-trigger').focus();
+          e.currentTarget.focus();
           props.toggle(e);
         }}
       >
