@@ -5,68 +5,65 @@ const ReactLink = require('react-router-dom').Link;
 
 
 const LinkButton = React.forwardRef((props, ref) => {
-  const classes = classnames('blx-button', props.className, {
-    'blx-icon-button': !!props.icon,
-    'blx-disabled': props.isDisabled
+  const { icon, className, leftIcon, text, rightIcon, href, useReactLink, isExternal, ...other } = props;
+  const classes = classnames('blx-button', className, {
+    'blx-icon-button': !!icon,
+    'blx-disabled': other.disabled
   });
 
-  if (props.useReactLink) {
+  if (useReactLink) {
     return (
       <ReactLink
-        style={props.style}
         className={classes}
-        to={props.href}
-        disabled={props.isDisabled}
+        to={href}
         ref={ref}
+        {...other}
       >
-        { props.leftIcon }
-        { props.text && <span>{props.text}</span> }
-        { props.icon }
-        { props.rightIcon }
+        { leftIcon }
+        { text && <span>{text}</span> }
+        { icon }
+        { rightIcon }
       </ReactLink>
     );
   }
 
   return (
     <a
-      style={props.style}
       className={classes}
-      href={props.href}
-      disabled={props.isDisabled}
-      target={props.isExternal ? '_blank' : '_self'}
+      href={href}
+      target={isExternal ? '_blank' : '_self'}
       ref={ref}
+      {...other}
     >
-      { props.leftIcon }
-      { props.text && <span>{props.text}</span> }
-      { props.icon }
-      { props.rightIcon }
+      { leftIcon }
+      { text && <span>{text}</span> }
+      { icon }
+      { rightIcon }
     </a>
   );
 });
 
 LinkButton.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   href: PropTypes.string.isRequired,
   text: PropTypes.string,
-  isDisabled: PropTypes.bool,
   isExternal: PropTypes.bool,
   useReactLink: PropTypes.bool,
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
-  icon: PropTypes.node
+  icon: PropTypes.node,
+  disabled: PropTypes.bool
 };
 
 LinkButton.defaultProps = {
   className: 'blx-primary',
-  style: null,
   text: '',
-  isDisabled: false,
   isExternal: false,
   useReactLink: false,
   leftIcon: null,
   rightIcon: null,
-  icon: null
+  icon: null,
+  disabled: false
 };
 
 module.exports = LinkButton;

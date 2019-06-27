@@ -22,22 +22,22 @@ const ButtonIconExample = () => (
       icon={<CloseIcon fill="var(--secondary-00)" />}
     />
     <ButtonPrimary
-      isDisabled
+      disabled
       onClick={() => {}}
       icon={<AddIcon />}
     />
     <ButtonSecondary
-      isDisabled
+      disabled
       onClick={() => {}}
       icon={<BackIcon />}
     />
     <ButtonDanger
-      isDisabled
+      disabled
       onClick={() => {}}
       icon={<NextIcon />}
     />
     <ButtonDark
-      isDisabled
+      disabled
       onClick={() => {}}
       icon={<DownIcon fill="var(--secondary-00)" />}
     />

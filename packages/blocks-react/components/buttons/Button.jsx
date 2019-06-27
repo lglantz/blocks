@@ -4,17 +4,16 @@ const classnames = require('classnames');
 
 
 const BasicButton = React.forwardRef((props, ref) => {
-  const { icon, isDisabled, className, leftIcon, text, rightIcon, ...other } = props;
+  const { icon, className, leftIcon, text, rightIcon, ...other } = props;
   const classes = classnames('blx-button', className, {
     'blx-icon-button': !!icon,
-    'blx-disabled': isDisabled
+    'blx-disabled': other.disabled
   });
   
   return (
     <button
       className={classes}
       ref={ref}
-      disabled={isDisabled}
       {...other}
     >
       { leftIcon }
@@ -28,19 +27,19 @@ const BasicButton = React.forwardRef((props, ref) => {
 BasicButton.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string,
-  isDisabled: PropTypes.bool,
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
-  icon: PropTypes.node
+  icon: PropTypes.node,
+  disabled: PropTypes.bool
 };
 
 BasicButton.defaultProps = {
   className: 'blx-primary',
   text: '',
-  isDisabled: false,
   leftIcon: null,
   rightIcon: null,
-  icon: null
+  icon: null,
+  disabled: false
 };
 
 module.exports = BasicButton;
