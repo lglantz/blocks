@@ -18,7 +18,9 @@
   "homepage": "https://github.com/floored/blocks#readme",
   "dependencies": {
     "blocks-base": "^0.1.16",
-    "classnames": "^2.2.6",
+    "classnames": "^2.2.6"
+  },
+  "peerDependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -36,6 +38,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-string-replace": "^1.1.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.3.1"
   }
 }
