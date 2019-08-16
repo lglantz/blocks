@@ -18,7 +18,6 @@ const AccordionSection = (props) => {
   const { open } = props;
   const contentRef = React.useRef();
   React.useEffect(() => {
-    console.log('i am using hooks yeaaaa');
     contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
   }, [open]);
 
@@ -41,42 +40,6 @@ const AccordionSection = (props) => {
     </div>
   );
 }
-
-// class AccordionSection extends React.Component {
-//   componentDidMount() {
-//     console.log('hid');
-//     if (this.props.open) {
-//       this.content.style.maxHeight = `${this.content.scrollHeight}px`;
-//     }
-//   }
-
-//   componentDidUpdate() {
-//     if (this.props.open) {
-//       this.content.style.maxHeight = `${this.content.scrollHeight}px`;
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div
-//         style={this.props.style}
-//         className={`blx-accordion-section ${this.props.className}`}
-//       >
-//         <input id={this.props.id} type="checkbox" name="blx-accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
-//         <label htmlFor={this.props.id} className="blx-accordion-trigger">
-//           <NextIcon className="blx-accordion-arrow" />
-//           {this.props.trigger}
-//         </label>
-//         <div
-//           className="blx-accordion-content"
-//           ref={content => this.content = content}
-//         >
-//           {this.props.children}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
 
 AccordionSection.propTypes = {
   className: PropTypes.string,
