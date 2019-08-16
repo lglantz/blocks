@@ -14,40 +14,69 @@ function onToggle(e) {
   }
 }
 
-class AccordionSection extends React.Component {
-  componentDidMount() {
-    if (this.props.open) {
-      this.content.style.maxHeight = `${this.content.scrollHeight}px`;
-    }
-  }
+const AccordionSection = (props) => {
+  const { open } = props;
+  const contentRef = React.useRef();
+  React.useEffect(() => {
+    console.log('i am using hooks yeaaaa');
+    contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
+  }, [open]);
 
-  componentDidUpdate() {
-    if (this.props.open) {
-      this.content.style.maxHeight = `${this.content.scrollHeight}px`;
-    }
-  }
-
-  render() {
-    return (
+  return (
+    <div
+      style={props.style}
+      className={`blx-accordion-section ${props.className}`}
+    >
+      <input id={props.id} type="checkbox" name="blx-accordion-tab" defaultChecked={props.open} onChange={props.onToggle} />
+      <label htmlFor={props.id} className="blx-accordion-trigger">
+        <NextIcon className="blx-accordion-arrow" />
+        {props.trigger}
+      </label>
       <div
-        style={this.props.style}
-        className={`blx-accordion-section ${this.props.className}`}
+        className="blx-accordion-content"
+        ref={contentRef}
       >
-        <input id={this.props.id} type="checkbox" name="blx-accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
-        <label htmlFor={this.props.id} className="blx-accordion-trigger">
-          <NextIcon className="blx-accordion-arrow" />
-          {this.props.trigger}
-        </label>
-        <div
-          className="blx-accordion-content"
-          ref={content => this.content = content}
-        >
-          {this.props.children}
-        </div>
+        {props.children}
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+// class AccordionSection extends React.Component {
+//   componentDidMount() {
+//     console.log('hid');
+//     if (this.props.open) {
+//       this.content.style.maxHeight = `${this.content.scrollHeight}px`;
+//     }
+//   }
+
+//   componentDidUpdate() {
+//     if (this.props.open) {
+//       this.content.style.maxHeight = `${this.content.scrollHeight}px`;
+//     }
+//   }
+
+//   render() {
+//     return (
+//       <div
+//         style={this.props.style}
+//         className={`blx-accordion-section ${this.props.className}`}
+//       >
+//         <input id={this.props.id} type="checkbox" name="blx-accordion-tab" defaultChecked={this.props.open} onChange={this.props.onToggle} />
+//         <label htmlFor={this.props.id} className="blx-accordion-trigger">
+//           <NextIcon className="blx-accordion-arrow" />
+//           {this.props.trigger}
+//         </label>
+//         <div
+//           className="blx-accordion-content"
+//           ref={content => this.content = content}
+//         >
+//           {this.props.children}
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
 AccordionSection.propTypes = {
   className: PropTypes.string,
