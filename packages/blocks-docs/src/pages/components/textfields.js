@@ -6,13 +6,16 @@ import ExampleSection from "../../components/examples"
 import Snippet from "../../components/snippet"
 
 import TextFieldBasicExample from "../../code_examples/TextFieldBasicExample"
+import TextFieldHelperTextExample from "../../code_examples/TextFieldHelperTextExample"
 import TextFieldValidationExample from "../../code_examples/TextFieldValidationExample"
+import TextFieldTooltipExample from "../../code_examples/TextFieldTooltipExample"
 import TextFieldDisabledExample from "../../code_examples/TextFieldDisabledExample"
 import TextFieldPrefixSuffixExample from "../../code_examples/TextFieldPrefixSuffixExample"
 import TextFieldDateExample from "../../code_examples/TextFieldDateExample"
 import TextFieldDropdownExample from "../../code_examples/TextFieldDropdownExample"
 import TextAreaExample from "../../code_examples/TextAreaExample"
-import TextFieldHelperExample from "../../code_examples/TextFieldHelperExample"
+import TextFieldMaxLengthExample from "../../code_examples/TextFieldMaxLengthExample"
+
 
 const TextFieldsPage = () => (
   <Layout>
@@ -28,10 +31,22 @@ const TextFieldsPage = () => (
         example={<TextFieldBasicExample />}
       />
 
+      <h5 className="blx-with-margin">Helper Text</h5>
+      <Snippet
+        name="TextFieldHelperTextExample"
+        example={<TextFieldHelperTextExample />}
+      />
+
       <h5 className="blx-with-margin">Validation</h5>
       <Snippet
         name="TextFieldValidationExample"
         example={<TextFieldValidationExample />}
+      />
+
+      <h5 className="blx-with-margin">Label with tooltip</h5>
+      <Snippet
+        name="TextFieldTooltipExample"
+        example={<TextFieldTooltipExample />}
       />
 
       <h5 className="blx-with-margin">Disabled, with icon</h5>
@@ -64,10 +79,10 @@ const TextFieldsPage = () => (
         example={<TextAreaExample />}
       />
 
-      <h5 className="blx-with-margin">Helper Text</h5>
+      <h5 className="blx-with-margin">Max Length</h5>
       <Snippet
-        name="TextFieldHelperExample"
-        example={<TextFieldHelperExample />}
+        name="TextFieldMaxLengthExample"
+        example={<TextFieldMaxLengthExample />}
       />
     </ExampleSection>
   </Layout>

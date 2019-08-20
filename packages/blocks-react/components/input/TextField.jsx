@@ -3,7 +3,7 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
 
-const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, style, className, forwardedRef, ...other }) => {
+const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, style, className, forwardedRef, helperText, ...other }) => {
   // label element
   let labelElement = null;
   if (label) {
@@ -36,8 +36,11 @@ const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, 
 
   // helper text
   let helperTextElement = null;
+
   if (other.maxLength) {
     helperTextElement = <span className="blx-text-field-helper-text">{`${other.value.length}/${other.maxLength}`}</span>;
+  }else if (helperText) {
+    helperTextElement = <span className="blx-text-field-helper-text">{`${helperText}`}</span>;
   }
 
   // root level classes
@@ -71,7 +74,10 @@ const TextField = ({ label, isValid, invalidErrorMessage, prefix, suffix, icon, 
 TextField.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]),
   prefix: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
@@ -83,7 +89,8 @@ TextField.propTypes = {
   icon: PropTypes.node,
   disabled: PropTypes.bool,
   isValid: PropTypes.bool,
-  invalidErrorMessage: PropTypes.string
+  invalidErrorMessage: PropTypes.string,
+  helperText: PropTypes.string,
 };
 
 TextField.defaultProps = {
@@ -95,7 +102,8 @@ TextField.defaultProps = {
   icon: null,
   disabled: false,
   isValid: true,
-  invalidErrorMessage: ''
+  invalidErrorMessage: '',
+  helperText: null
 };
 
 module.exports = React.forwardRef((props, ref) => (

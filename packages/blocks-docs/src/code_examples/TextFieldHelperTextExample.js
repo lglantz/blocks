@@ -2,7 +2,7 @@ import React from "react"
 
 const { TextField } = require('blocks-react').Input;
 
-class TextFieldHelperExample extends React.Component {
+class TextFieldHelperTextExample extends React.Component {
   constructor(props) {
     super(props);
 
@@ -19,12 +19,12 @@ class TextFieldHelperExample extends React.Component {
     return (
       <TextField
         placeholder="Text input"
+        helperText="Useful help text"
         value={this.state.value}
         onChange={e => this.onChange(e)}
-        maxLength="150"
       />
     );
   }
 }
 
-export default TextFieldHelperExample;
+export default TextFieldHelperTextExample;
