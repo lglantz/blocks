@@ -1,44 +1,68 @@
 import React from "react"
 
-const { PopoverMenu } = require('blocks-react').Dropdowns;
+const { PopoverMenu, PopoverTrigger, DropdownItem } = require('blocks-react').Dropdowns;
 const { MoreVerticalIcon, MoreIcon } = require('blocks-react').Icons;
 
 const exampleOptions = [
   {
-    text: 'Action',
-    onClick: () => {}
+    text: 'Action'
   },
   {
     text: 'Long Named Disabled Action',
-    disabled: true,
-    onClick: () => {}
+    disabled: true
   },
   {
-    text: 'Correct Action',
-    onClick: () => {}
+    text: 'Correct Action'
   },
   {
-    text: 'Another Action',
-    onClick: () => {}
+    text: 'Another Action'
   },
   {
-    text: 'One More Action',
-    onClick: () => {}
+    text: 'One More Action'
   }
 ];
 
-const PopoverIconExample = () => (
-  <div>
+const PopoverIconExample = props => (
+  <React.Fragment>
     <PopoverMenu
-      icon={<MoreVerticalIcon />}
-      options={exampleOptions}
-    />
+      position="left"
+      trigger={
+        <PopoverTrigger>
+          <MoreVerticalIcon />
+        </PopoverTrigger>
+      }
+    >
+      {
+        exampleOptions.map((option, idx) => (
+          <DropdownItem
+            key={option.text}
+            onClick={(e) => { console.log(option.text); }}
+          >
+            { option.text }
+          </DropdownItem>
+        ))
+      }
+    </PopoverMenu>
     <PopoverMenu
-      icon={<MoreIcon />}
-      options={exampleOptions}
-      isDisabled
-    />
-  </div>
+      disabled
+      trigger={
+        <PopoverTrigger>
+          <MoreIcon />
+        </PopoverTrigger>
+      }
+    >
+      {
+        exampleOptions.map((option, idx) => (
+          <DropdownItem
+            key={option.text}
+            onClick={(e) => { console.log(option.text); }}
+          >
+            { option.text }
+          </DropdownItem>
+        ))
+      }
+    </PopoverMenu>
+  </React.Fragment>
 );
 
 export default PopoverIconExample;

@@ -11,7 +11,8 @@ module.exports = {
     Dropdown: require('./dist/dropdowns/Dropdown.js'),
     DropdownItem: require('./dist/dropdowns/DropdownItem.js'),
     DropdownTrigger: require('./dist/dropdowns/DropdownTrigger.js'),
-    PopoverMenu: require('./dist/dropdowns/PopoverMenu.js')
+    PopoverMenu: require('./dist/dropdowns/PopoverMenu.js'),
+    PopoverTrigger: require('./dist/dropdowns/PopoverTrigger.js')
   },
   Icons: {
     AddIcon: require('./dist/icons/AddIcon.js'),
