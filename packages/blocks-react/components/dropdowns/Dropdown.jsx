@@ -2,139 +2,68 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
-const DropdownItem = require('./DropdownItem.jsx');
-const DownIcon = require('../icons/DownIcon.jsx');
-const closeOnClick = require('../wrappers/closeOnClick.jsx');
-const keyControlledMenu = require('../wrappers/keyControlledMenu.jsx');
+const useComponentVisible = require('../hooks/useComponentVisible.jsx');
 
-const DropdownMenu = (props) => {
-  let triggerContent = props.text;
-  const triggerClassNames = classnames('blx-dropdown-trigger', {
-    'blx-active': props.isOpen,
-    'blx-disabled': props.isDisabled,
-    'blx-invalid': !props.isValid
-  });
 
-  if (props.value) {
-    for (let i = 0; i < props.options.length; i++) {
-      const option = props.options[i];
-      if (option.value === props.value) {
-        triggerContent = option.text || option.triggerContent || option.element;
-        break;
-      }
-    }
-  }
-
+const Dropdown = ({
+  className,
+  scrollable,
+  trigger,
+  label,
+  valid,
+  invalidErrorMessage,
+  afterCloseOnClick,
+  children,
+  ...other }) => {
+  const ref = React.useRef(null);
+  const { visible, setVisible } = useComponentVisible({ ref });
   return (
     <div
-      style={props.style}
-      className={classnames('blx-dropdown-wrapper', props.className)}
-      ref={props.forwardedRef}
-    >
-      <div className="blx-dropdown">
-
-        {/* LABEL */}
-        { props.label && <label className={`blx-ui-text ${props.isDisabled ? 'blx-disabled' : ''}`}>
-            {props.label}
-          </label> 
-        }
-
-        {/* TRIGGER */}
-        <button
-          className={triggerClassNames}
-          disabled={props.isDisabled}
-          onClick={props.toggle}
-          title={triggerContent}
-          autoFocus={props.autoFocus}
-          onKeyDown={props.onKeyDown}
-          onFocus={props.onTriggerFocus}
-        >
-          { props.icon }
-          <span className={props.value ? 'blx-dropdown-text' : 'blx-dropdown-placeholder'}>
-            { triggerContent }
-          </span>
-          <DownIcon className="blx-dropdown-arrow" />
-        </button>
-
-        {/* DROPDOWN MENU */}
-        <div className={classnames('blx-dropdown-menu', {'blx-hidden': !props.isOpen})}>
-          <ul className={classnames('blx-dropdown-list', {'blx-scrollable': props.scrollable})}>
-            {
-              props.options.map((option, idx) => (
-                <DropdownItem
-                  key={option.text || option.key}
-                  option={option}
-                  ref={props.optionsRefs[idx]}
-                  isSelected={props.value === option.value}
-                  onKeyDown={props.onKeyDown}
-                  onKeyUp={props.onKeyUp}
-                  onSelect={props.onSelect}
-                />
-              ))
-            }
-          </ul>
-        </div>
+      className={classnames('blx-dropdown-wrapper', className)}
+      ref={ref}
+      {...other}
+    > 
+      { label &&
+          <label className={classnames('blx-ui-text', { 'blx-disabled': other.disabled })}>
+            {label}
+          </label>
+      }
+      { !valid && invalidErrorMessage &&
+          <span className="blx-invalid-input-message">{invalidErrorMessage}</span>
+      }
+      { React.cloneElement(trigger, { visible, setVisible }) }
+      <div className={classnames('blx-dropdown-menu', { 'blx-hidden': !visible })}>
+        <ul className={classnames('blx-dropdown-list', { 'blx-scrollable': scrollable })}>
+          {
+            React.Children.map(children, child => (
+              React.cloneElement(child, { setVisible })
+            ))
+          }
+        </ul>
       </div>
-      {/* INVALID MESSAGE */}
-      { !props.isValid && <span className="blx-invalid-input-message">{props.invalidErrorMessage}</span> }
     </div>
   );
 };
 
-DropdownMenu.propTypes = {
+Dropdown.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
-  isOpen: PropTypes.bool,
   scrollable: PropTypes.bool,
-  toggle: PropTypes.func.isRequired,
-  text: PropTypes.string,
-  icon: PropTypes.node,
   label: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    disabled: PropTypes.bool,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    triggerContent: PropTypes.string,
-    href: PropTypes.string,
-    element: PropTypes.node,
-    key: PropTypes.string
-  })),
-  isDisabled: PropTypes.bool,
-  onSelect: PropTypes.func,
-  autoFocus: PropTypes.bool,
-  isValid: PropTypes.bool,
-  invalidErrorMessage: PropTypes.string,
-  // FIXME: PropTypes.instanceOf(Element) breaks under server side rendering b/c Element is not in context
-  // See: https://github.com/facebook/prop-types/issues/240#issuecomment-455222878
-  // forwardedRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired
+  trigger: PropTypes.node.isRequired,
+  afterCloseOnClick: PropTypes.func,
+  valid: PropTypes.bool,
+  invalidErrorMessage: PropTypes.string
 };
 
-DropdownMenu.defaultProps = {
+Dropdown.defaultProps = {
   className: '',
   style: null,
-  isOpen: false,
   scrollable: false,
-  options: [],
-  text: 'Choose an option',
-  icon: null,
-  label: '',
-  value: null,
-  triggerContent: null,
-  onSelect: () => {},
-  autoFocus: false,
-  isValid: true,
-  invalidErrorMessage: null
+  label: null,
+  afterCloseOnClick: () => {},
+  valid: true,
+  invalidErrorMessage: ''
 };
 
-
-module.exports = closeOnClick(keyControlledMenu(DropdownMenu));
+module.exports = Dropdown;

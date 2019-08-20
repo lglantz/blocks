@@ -9,6 +9,8 @@ module.exports = {
   Dropdowns: {
     ComboBox: require('./dist/dropdowns/ComboBox.js'),
     Dropdown: require('./dist/dropdowns/Dropdown.js'),
+    DropdownItem: require('./dist/dropdowns/DropdownItem.js'),
+    DropdownTrigger: require('./dist/dropdowns/DropdownTrigger.js'),
     PopoverMenu: require('./dist/dropdowns/PopoverMenu.js')
   },
   Icons: {
@@ -58,6 +60,9 @@ module.exports = {
     Wrapper: require('./dist/tooltips/Tooltip.js'),
     Trigger: require('./dist/tooltips/TooltipTrigger.js'),
     Content: require('./dist/tooltips/TooltipContent.js')
+  },
+  hooks: {
+    useComponentVisible: require('./dist/hooks/useComponentVisible.js')
   },
   wrappers: {
     closeOnClick: require('./dist/wrappers/closeOnClick.js'),

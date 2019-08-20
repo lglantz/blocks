@@ -28,6 +28,7 @@ $dropdown-icon-spin-duration = 200ms;
 
 // dropdown styles
 .blx-dropdown-wrapper {
+  position: relative;
   display: block;
 }
 
@@ -55,6 +56,8 @@ $dropdown-icon-spin-duration = 200ms;
   background-color: $dropdown-default-background-color;
   margin: 0;
   cursor: pointer;
+  blxTruncateText();
+  blxUIPlaceholder();
 
   .blx-dropdown-arrow {
     width: 20px;
@@ -69,9 +72,6 @@ $dropdown-icon-spin-duration = 200ms;
 
   .blx-dropdown-text,
   .blx-dropdown-placeholder {
-    blxTruncateText();
-    blxUIPlaceholder();
-
     &:not(:first-child) {
       margin-left: 12px;
     }
@@ -117,6 +117,7 @@ $dropdown-icon-spin-duration = 200ms;
 }
 
 .blx-dropdown-menu {
+  display: block;
   position: absolute;
   top: 100%;
   width: 100%;

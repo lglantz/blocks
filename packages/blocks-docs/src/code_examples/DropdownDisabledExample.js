@@ -1,34 +1,59 @@
 import React from "react"
 
-const { Dropdown } = require('blocks-react').Dropdowns;
+const { Dropdown, DropdownTrigger, DropdownItem } = require('blocks-react').Dropdowns;
 
 class DropdownDisabledExample extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedValue: null
+      selectedIdx: -1
     };
+
+    this.testOptions = [
+      {
+        text: 'One Option'
+      },
+      {
+        text: 'Another option'
+      },
+      {
+        text: 'Best option'
+      },
+      {
+        text: 'Different option'
+      },
+      {
+        text: 'Longer named option that should overflow'
+      }
+    ];
   }
 
   render() {
     return (
       <Dropdown
-        text="Choose an option"
         label="Add something"
-        isDisabled
-        value={this.state.selectedValue}
-        onChange={evt => this.setState({ selectedValue: evt.value })}
-        options={
-          [
-            { value: 'option1', text: 'One option' },
-            { value: 'option2', text: 'Another option', href: '#' },
-            { value: 'option3', text: 'Best option' },
-            { value: 'option5', text: 'Different option' },
-            { value: 'option6', text: 'Longer named option that should overflow' }
-          ]
+        trigger={
+          <DropdownTrigger disabled>
+            { this.state.selectedIdx >= 0 ?
+                this.testOptions[this.state.selectedIdx].text :
+                null
+            }
+          </DropdownTrigger>
         }
-      />
+      >
+        {
+          this.testOptions.map((option, idx) => (
+            <DropdownItem
+              key={option.text}
+              selected={idx === this.state.selectedIdx}
+              onClick={(e) => this.setState({ selectedIdx: idx })}
+            >
+              { option.text }
+            </DropdownItem>
+          ))
+        }
+      </Dropdown>
     );
   }
 }

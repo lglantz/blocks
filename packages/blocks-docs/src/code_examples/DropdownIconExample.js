@@ -1,6 +1,6 @@
 import React from "react"
 
-const { Dropdown } = require('blocks-react').Dropdowns;
+const { Dropdown, DropdownTrigger, DropdownItem } = require('blocks-react').Dropdowns;
 const { AddIcon } = require('blocks-react').Icons;
 
 class DropdownIconExample extends React.Component {
@@ -8,29 +8,56 @@ class DropdownIconExample extends React.Component {
     super(props);
 
     this.state = {
-      selectedValue: null
+      selectedIdx: -1
     };
+
+    this.testOptions = [
+      {
+        text: 'One Option'
+      },
+      {
+        text: 'Another option'
+      },
+      {
+        text: 'Best option'
+      },
+      {
+        text: 'Different option'
+      },
+      {
+        text: 'Longer named option that should overflow'
+      }
+    ];
   }
 
   render() {
     return (
       <Dropdown
-        text="Choose an option"
-        icon={<AddIcon />}
-        value={this.state.selectedValue}
-        isValid={!!this.state.selectedValue}
+        scrollable
+        valid={this.state.selectedIdx > -1}
         invalidErrorMessage="Please pick an option"
-        onChange={evt => this.setState({ selectedValue: evt.value })}
-        options={
-          [
-            { value: 'option1', text: 'One option' },
-            { value: 'option2', text: 'Another option', href: '#' },
-            { value: 'option3', text: 'Best option' },
-            { value: 'option5', text: 'Different option' },
-            { value: 'option6', text: 'Longer named option that should overflow' }
-          ]
+        trigger={
+          <DropdownTrigger>
+            <AddIcon />
+            { this.state.selectedIdx >= 0 ?
+                this.testOptions[this.state.selectedIdx].text :
+                <span>Choose an option</span>
+            }
+          </DropdownTrigger>
         }
-      />
+      >
+        {
+          this.testOptions.map((option, idx) => (
+            <DropdownItem
+              key={option.text}
+              selected={idx === this.state.selectedIdx}
+              onClick={(e) => this.setState({ selectedIdx: idx })}
+            >
+              { option.text }
+            </DropdownItem>
+          ))
+        }
+      </Dropdown>
     );
   }
 }

@@ -1,35 +1,59 @@
 import React from "react"
 
-const { Dropdown } = require('blocks-react').Dropdowns;
+const { Dropdown, DropdownTrigger, DropdownItem } = require('blocks-react').Dropdowns;
 
 class DropdownBasicExample extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedValue: null
+      selectedIdx: -1
     };
+
+    this.testOptions = [
+      {
+        text: 'One Option'
+      },
+      {
+        text: 'Another option'
+      },
+      {
+        text: 'Best option'
+      },
+      {
+        text: 'Different option'
+      },
+      {
+        text: 'Longer named option that should overflow'
+      }
+    ];
   }
 
   render() {
     return (
       <Dropdown
-        text="Choose an option"
         scrollable
-        value={this.state.selectedValue}
-        onChange={evt => this.setState({ selectedValue: evt.value })}
-        options={
-          [
-            { value: 'option1', text: 'One option' },
-            { value: 'option2', text: 'Using regular link', href: '/components/checkboxes' },
-            { value: 'option2', text: 'Using react link', href: '/' },
-            { value: 'option3', text: 'Disabled option', disabled: true },
-            { value: 'option5', text: 'Different option' },
-            { value: 'option6', text: 'Longer named option that should overflow' },
-            { value: 'option7', text: 'Google', newTab: true, href: 'https://www.google.com' }
-          ]
+        trigger={
+          <DropdownTrigger>
+            { this.state.selectedIdx >= 0 ?
+                this.testOptions[this.state.selectedIdx].text :
+                null
+            }
+          </DropdownTrigger>
         }
-      />
+      >
+        {
+          this.testOptions.map((option, idx) => (
+            <DropdownItem
+              key={option.text}
+              selected={idx === this.state.selectedIdx}
+              onClick={(e) => this.setState({ selectedIdx: idx })}
+            >
+              { option.text }
+            </DropdownItem>
+          ))
+        }
+      </Dropdown>
     );
   }
 }
