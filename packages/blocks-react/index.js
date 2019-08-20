@@ -35,7 +35,6 @@ module.exports = {
     RadioButtonGroup: require('./dist/input/RadioButtonGroup.js'),
     TextField: require('./dist/input/TextField.js'),
     TextArea: require('./dist/input/TextArea.js'),
-    TextFieldWithDropdown: require('./dist/input/TextFieldWithDropdown.js'),
     Toggle: require('./dist/input/Toggle.js'),
     ToggleOption: require('./dist/input/ToggleOption.js')
   },
