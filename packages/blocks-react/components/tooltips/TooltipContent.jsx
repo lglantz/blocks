@@ -3,20 +3,20 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
 
-const TooltipContent = (props) => {
-  const messageClasses = classnames(`blx-tooltip-${props.position}`, {
-    'blx-hidden': !props.isOpen,
-    'blx-light-bg': props.lightBg,
-    'blx-dark-bg': !props.lightBg,
-    'blx-tooltip-titled-message': props.title,
-    'blx-tooltip-message': !props.title
+const TooltipContent = ({ title, lightBg, position, visible, setVisible, children, ...other }) => {
+  const messageClasses = classnames(`blx-tooltip-${position}`, {
+    'blx-hidden': !visible,
+    'blx-light-bg': lightBg,
+    'blx-dark-bg': !lightBg,
+    'blx-tooltip-titled-message': title,
+    'blx-tooltip-message': !title
   });
 
   return (
     <div className={messageClasses}>
-      { props.title && <h5 className="blx-tooltip-titled-message-title">{props.title}</h5> }
+      { title && <h5 className="blx-tooltip-titled-message-title">{title}</h5> }
       <p>
-        {props.children}
+        {children}
       </p>
     </div>
   );
@@ -25,16 +25,14 @@ const TooltipContent = (props) => {
 TooltipContent.propTypes = {
   title: PropTypes.string,
   lightBg: PropTypes.bool,
-  position: PropTypes.string, // 'bottom', 'top', 'right', 'left'
-  isOpen: PropTypes.bool
+  position: PropTypes.oneOf(['bottom', 'top', 'right', 'left']),
+  visible: PropTypes.bool.isRequired
 };
 
 TooltipContent.defaultProps = {
   title: '',
   lightBg: false,
-  position: 'bottom',
-  isOpen: false
+  position: 'bottom'
 };
 
 module.exports = TooltipContent;
-

@@ -1,26 +1,23 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-const TooltipTrigger = (props) => {
+const TooltipTrigger = ({ visible, setVisible, children, ...other }) => {
   return (
     <button
       className="blx-tooltip-trigger"
       onClick={(e) => {
         e.target.closest('.blx-tooltip-trigger').focus();
-        props.toggle(e);
+        setVisible(!visible);
       }}
     >
-      {props.children}
+      { children }
     </button>
   );
 }
 
 TooltipTrigger.propTypes = {
-  toggle: PropTypes.func
-};
-
-TooltipTrigger.defaultProps = {
-  toggle: () => {}
+  visible: PropTypes.bool.isRequired,
+  setVisible: PropTypes.func.isRequired
 };
 
 module.exports = TooltipTrigger;

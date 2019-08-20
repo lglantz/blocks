@@ -2,19 +2,21 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
-const closeOnClick = require('../wrappers/closeOnClick.jsx');
+const useComponentVisible = require('../hooks/useComponentVisible');
 
 
-const Tooltip = ({ style, className, forwardedRef, children, ...other }) => {
+const Tooltip = ({ style, className, children, ...other }) => {
+  const ref = React.useRef(null);
+  const { visible, setVisible } = useComponentVisible({ ref });
   return (
     <div
       style={style}
       className={classnames('blx-tooltip', className)}
-      ref={forwardedRef}
+      ref={ref}
     >
       {
         React.Children.map(children, child => (
-          React.cloneElement(child, { ...other }) // to pass closeOnClick props
+          React.cloneElement(child, { visible, setVisible, ...other }) // to pass closeOnClick props
         ))
       }
     </div>
@@ -31,5 +33,5 @@ Tooltip.defaultProps = {
   className: ''
 };
 
-module.exports = closeOnClick(Tooltip);
+module.exports = Tooltip;
 
