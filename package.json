@@ -9,6 +9,7 @@
     "lerna": "^3.16.4"
   },
   "scripts": {
+    "link:react": "npm-link-shared ./packages/blocks-docs/node_modules/ ./packages/blocks-react/node_modules/ . react",
     "build:base": "cd packages/blocks-base; gulp build",
     "build:docs": "cd packages/blocks-docs; gatsby build",
     "build:react": "cd packages/blocks-react; gulp build",
