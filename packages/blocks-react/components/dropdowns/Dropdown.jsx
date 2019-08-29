@@ -3,6 +3,7 @@ const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
 const useComponentVisible = require('../hooks/useComponentVisible.jsx');
+const useKeyControlledMenu = require('../hooks/useKeyControlledMenu.jsx');
 
 
 const Dropdown = ({
@@ -17,6 +18,7 @@ const Dropdown = ({
   ...other }) => {
   const ref = React.useRef(null);
   const { visible, setVisible } = useComponentVisible({ ref });
+  const { focusIdx, setFocusIdx } = useKeyControlledMenu({ ref, visible, setVisible, menuLength: React.Children.toArray(children).length });
   return (
     <div
       className={classnames('blx-dropdown-wrapper', className)}

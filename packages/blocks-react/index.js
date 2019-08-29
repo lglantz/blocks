@@ -62,7 +62,8 @@ module.exports = {
     Content: require('./dist/tooltips/TooltipContent.js')
   },
   hooks: {
-    useComponentVisible: require('./dist/hooks/useComponentVisible.js')
+    useComponentVisible: require('./dist/hooks/useComponentVisible.js'),
+    useKeyControlledMenu: require('./dist/hooks/useKeyControlledMenu.js')
   },
   wrappers: {
     closeOnClick: require('./dist/wrappers/closeOnClick.js'),

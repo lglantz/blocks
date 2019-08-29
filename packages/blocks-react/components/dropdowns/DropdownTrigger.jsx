@@ -4,7 +4,7 @@ const classnames = require('classnames');
 
 const DownIcon = require('../icons/DownIcon.jsx');
 
-const DropdownTrigger = ({ isValid, disabled, children, visible, setVisible, ...other}) => {
+const DropdownTrigger = ({ isValid, disabled, visible, setVisible, children, ...other}) => {
   const classes = classnames('blx-dropdown-trigger', {
     'blx-active': visible,
     'blx-disabled': disabled,

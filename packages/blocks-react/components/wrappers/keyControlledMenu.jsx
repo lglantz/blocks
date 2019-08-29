@@ -19,7 +19,7 @@ function keyControlledMenu(WrappedComponent) {
       this.onSelect = this.onSelect.bind(this);
       this.onKeyDown = this.onKeyDown.bind(this);
       this.onKeyUp = this.onKeyUp.bind(this);
-      this.onTriggerFocus = this.onTriggerFocus.bind(this);
+      this.onFocus = this.onFocus.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -38,13 +38,13 @@ function keyControlledMenu(WrappedComponent) {
       } else if (this.props.onChange) {
         this.props.onChange(option);
       }
-      this.props.close(e);
+      this.props.setVisible(false);
     }
 
     onKeyDown(e) {
-      if (e.key === 'Tab' && this.props.isOpen) {
-        this.props.close(e);
-      } else if (['ArrowDown', ' '].indexOf(e.key) > -1 && !this.props.isOpen) {
+      if (e.key === 'Tab' && this.props.visible) {
+        this.props.setVisible(false);
+      } else if (['ArrowDown', ' '].indexOf(e.key) > -1 && !this.props.visible) {
         e.preventDefault();
         this.props.open();
       } else {
@@ -57,11 +57,11 @@ function keyControlledMenu(WrappedComponent) {
       if (['Enter', ' '].indexOf(e.key) > -1) {
         this.onSelect(e, option);
       } else if (e.key === 'Escape') {
-        this.props.close(e);
+        this.props.setVisible(false);
       }
     }
 
-    onTriggerFocus() {
+    onFocus() {
       this.setState({
         onFocusIdx: -1
       });
@@ -108,15 +108,15 @@ function keyControlledMenu(WrappedComponent) {
           onKeyDown={this.onKeyDown}
           onKeyUp={this.onKeyUp}
           onSelect={this.onSelect}
-          onTriggerFocus={this.onTriggerFocus}
+          onFocus={this.onFocus}
         />
       );
     }
   }
 
   GenericDropdown.propTypes = {
-    isOpen: PropTypes.bool,
-    close: PropTypes.func.isRequired,
+    visible: PropTypes.bool.isRequired,
+    setVisible: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.oneOfType([
         PropTypes.string,
@@ -135,7 +135,6 @@ function keyControlledMenu(WrappedComponent) {
   };
 
   GenericDropdown.defaultProps = {
-    isOpen: false,
     options: [],
     onChange: () => {}
   };
