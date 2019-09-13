@@ -2,7 +2,7 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
-const Toggle = ({ className, style, options, value, ...other }) => {
+const Toggle = ({ className, style, options, value, label, ...other }) => {
   const classes = classnames('blx-toggle', className, {
     'blx-disabled': other.disabled
   });
@@ -10,6 +10,8 @@ const Toggle = ({ className, style, options, value, ...other }) => {
     <div
       style={style}
       className={classes}
+      role="radiogroup"
+      aria-label={label}
     >
       {
         options.map((option, idx) => (
@@ -48,11 +50,13 @@ Toggle.propTypes = {
       PropTypes.number
     ]).isRequired
   })).isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  label: PropTypes.string
 };
 
 Toggle.defaultProps = {
-  disabled: false
+  disabled: false,
+  label: 'toggle'
 };
 
 module.exports = Toggle;
