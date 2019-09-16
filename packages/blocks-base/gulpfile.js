@@ -28,7 +28,7 @@ function buildSassVariableLine(key, value) {
 }
 
 function buildStyleVariablesFromJson(cb) {
-  const variableJson = require('./styles/variables.json');
+  const variableJson = require('./variables.json');
 
   const stylusFilename = 'variables.styl';
   const sassFilename = 'variables.sass';

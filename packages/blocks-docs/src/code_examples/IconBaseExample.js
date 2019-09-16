@@ -4,13 +4,14 @@ const { AddIcon,
         CloseIcon,
         MoreIcon,
         MoreVerticalIcon} = require('blocks-react').Icons;
+const { Colors } = require('blocks-base');
 
 const IconBaseExamples = () => (
   <div>
     <AddIcon />
-    <CloseIcon fill="var(--focus)" />
-    <MoreIcon fill="var(--dark-01)" />
-    <MoreVerticalIcon fill="var(--warning)" />
+    <CloseIcon fill={Colors.FOCUS} />
+    <MoreIcon fill={Colors.DARK_01} />
+    <MoreVerticalIcon fill={Colors.WARNING} />
   </div>
 );
 

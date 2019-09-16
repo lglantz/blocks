@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-
+const Colors = require('blocks-base').Colors;
 
 const Icon = (props) => {
   const { children, ...other } = props;
@@ -26,7 +26,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   className: '',
   style: null,
-  fill: 'var(--primary-00)'
+  fill: Colors.PRIMARY_00
 };
 
 module.exports = Icon;

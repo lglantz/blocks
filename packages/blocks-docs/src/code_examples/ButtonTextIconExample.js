@@ -2,6 +2,7 @@ import React from "react"
 
 const { ButtonPrimary, ButtonSecondary, ButtonDanger, ButtonDark } = require('blocks-react').Buttons;
 const { AddIcon, BackIcon, CloseIcon, ErrorIcon } = require('blocks-react').Icons;
+const { Colors } = require('blocks-base');
 
 const ButtonTextIconExample = () => (
   <div className="blx-h-button-group">
@@ -23,7 +24,7 @@ const ButtonTextIconExample = () => (
     <ButtonDark
       text="Exit"
       onClick={() => {}}
-      leftIcon={<CloseIcon fill="var(--secondary-00)" />}
+      leftIcon={<CloseIcon fill={Colors.SECONDARY_00} />}
     />
   </div>
 );

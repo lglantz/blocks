@@ -2,6 +2,7 @@ import React from "react"
 
 const { ButtonPrimary, ButtonSecondary, ButtonDanger, ButtonDark } = require('blocks-react').Buttons;
 const { UpIcon, MoreIcon, SuccessIcon, CloseIcon, AddIcon, BackIcon, NextIcon, DownIcon } = require('blocks-react').Icons;
+const { Colors } = require('blocks-base');
 
 const ButtonIconExample = () => (
   <div className="blx-h-button-group">
@@ -19,7 +20,7 @@ const ButtonIconExample = () => (
     />
     <ButtonDark
       onClick={() => {}}
-      icon={<CloseIcon fill="var(--secondary-00)" />}
+      icon={<CloseIcon fill={Colors.SECONDARY_00} />}
     />
     <ButtonPrimary
       disabled
@@ -39,7 +40,7 @@ const ButtonIconExample = () => (
     <ButtonDark
       disabled
       onClick={() => {}}
-      icon={<DownIcon fill="var(--secondary-00)" />}
+      icon={<DownIcon fill={Colors.SECONDARY_00} />}
     />
   </div>
 );
