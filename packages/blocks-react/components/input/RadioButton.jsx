@@ -18,7 +18,7 @@ const RadioButton = ({ checked, isValid, style, className, text, ...other}) => {
       </div>
       <input
         type="radio"
-        defaultChecked={checked}
+        checked={checked}
         {...other}
       />
       <span className="blx-radio-check" />

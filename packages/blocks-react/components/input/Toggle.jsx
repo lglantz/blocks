@@ -23,7 +23,7 @@ const Toggle = ({ className, style, options, value, label, ...other }) => {
               type="radio"
               id={`toggle-option-${idx}`}
               value={option.value}
-              defaultChecked={option.value === value}
+              checked={option.value === value}
               {...other}
             />
             <span className="blx-toggle-text">
