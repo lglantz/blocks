@@ -46,7 +46,10 @@ Tooltip.propTypes = {
   trigger: PropTypes.object,
   lightBg: PropTypes.bool,
   position: PropTypes.string, // 'bottom', 'top', 'right', 'left'
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   isOpen: PropTypes.bool
 };
 

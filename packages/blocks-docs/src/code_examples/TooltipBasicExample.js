@@ -28,6 +28,11 @@ const TooltipBasicExample = () => (
       text="Right tooltip right tooltip right tooltip"
       trigger={<HelpIcon />}
     />
+    <Tooltip
+      position="left"
+      text={<span>test with <a href="https://blocks.cbrebuild.com/">link</a></span>}
+      trigger={<HelpIcon />}
+    />
   </div>
 );
 
