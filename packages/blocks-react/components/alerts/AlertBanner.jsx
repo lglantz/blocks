@@ -44,7 +44,7 @@ class AlertBanner extends React.Component {
           <p>{this.props.message}</p>
         </div>
         { this.props.closable &&
-          <button className="blx-alert-close" onClick={this.onClose}>
+          <button className="blx-alert-close" aria-label="close" onClick={this.onClose}>
             <CloseIcon />
           </button>
         }
