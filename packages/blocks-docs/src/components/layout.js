@@ -16,10 +16,11 @@ const Layout = ({ children }) => (
       ]}
       title="Blocks by CBRE Build"
     />
+    <a href="#mainContent" className="skip-link blx-button">Skip to main content</a>
     <div className="l-flex-horizontal l-page">
       <Navigation />
       <div className="design-page">
-        <main className="design-page-content">
+        <main id="mainContent" tabIndex="-1" className="design-page-content">
           { children }
         </main>
       </div>

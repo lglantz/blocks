@@ -24,7 +24,7 @@ const Navigation = () => (
     render={data => (
       <div className="left-nav-panel">
         <div className="blocks-heading">
-          <a href="/">
+          <a href="/" aria-label="Blocks Home">
             <div className="blocks-logo"></div>
           </a>
         </div>
