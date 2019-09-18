@@ -18,7 +18,7 @@ const BaseModal = (props) => {
       <div className="blx-modal">
         {
           props.isClosable && (
-            <button className="blx-modal-close" onClick={props.onClose}>
+            <button className="blx-modal-close" aria-label="close" onClick={props.onClose}>
               <CloseIcon />
             </button>
           )
