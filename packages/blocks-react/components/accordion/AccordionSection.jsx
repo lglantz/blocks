@@ -17,7 +17,7 @@ function onToggle(e) {
 const AccordionSection = (props) => {
   const { open } = props;
   const contentRef = React.useRef();
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
   }, [open]);
 
