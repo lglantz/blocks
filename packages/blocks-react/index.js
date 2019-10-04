@@ -13,7 +13,6 @@ module.exports = {
     ButtonDark: require('./dist/buttons/ButtonDark.js')
   },
   Dropdowns: {
-    ComboBox: require('./dist/dropdowns/ComboBox.js'),
     Dropdown: require('./dist/dropdowns/Dropdown.js'),
     PopoverMenu: require('./dist/dropdowns/PopoverMenu.js')
   },
