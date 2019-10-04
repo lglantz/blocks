@@ -76,6 +76,6 @@ As of React 16.8.x, React community introduced hooks which enable state manageme
 
 If this is your first time cloning or pulling after the introduction of hooks, when you `npm run dev:docs` and try to open dev page, it will complain about duplicate instance of React. This is due to the fact that `blocks-react` and `blocks-docs` each having its own instance of React; when `blocks-docs` references `blocks-react`, it results in two instances of React in a single project. To resolve this, you can `npm i npm-link-shared -g`, then in root `blocks/` directory run the following command. (you need `yarn` installed on your machine, so if you don't already have it, install it before running the command)
 ```
-npm-link-shared ./packages/blocks-docs/node_modules/ ./packages/blocks-react/node_modules/ . react
+npm run link:react
 ```
 This will remove the duplicate instance of React. And hopefully your dev page runs now!
