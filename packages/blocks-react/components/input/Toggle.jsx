@@ -38,7 +38,7 @@ const Toggle = ({ className, style, options, value, label, ...other }) => {
 
 Toggle.propTypes = {
   style: PropTypes.object,
-  className: PropTypes.object,
+  className: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
