@@ -1,5 +1,5 @@
 {
-  "name": "blocks-docs",
+  "name": "@cbrebuild/blocks-docs",
   "version": "0.1.18",
   "description": "cbre build design system documentation",
   "author": "emma",
@@ -12,6 +12,9 @@
     "url": "https://github.com/floored/blocks/issues"
   },
   "homepage": "https://github.com/floored/blocks#readme",
+  "publishConfig": {
+      "access": "restricted"
+  },
   "dependencies": {
     "blocks-base": "^0.1.17",
     "blocks-react": "^0.1.18",

@@ -1,5 +1,5 @@
 {
-  "name": "blocks-react",
+  "name": "@cbrebuild/blocks-react",
   "version": "0.1.18",
   "description": "cbre build design system react components",
   "main": "index.js",
@@ -16,6 +16,9 @@
     "url": "https://github.com/floored/blocks/issues"
   },
   "homepage": "https://github.com/floored/blocks#readme",
+  "publishConfig": {
+      "access": "restricted"
+  },
   "dependencies": {
     "blocks-base": "^0.1.17",
     "classnames": "^2.2.6"
