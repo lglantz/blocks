@@ -1,6 +1,6 @@
 {
   "name": "@cbrebuild/blocks-base",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "cbre build design system styles",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/floored/blocks#readme",
   "publishConfig": {
-      "access": "restricted"
+    "access": "restricted"
   },
   "devDependencies": {
     "autoprefixer": "^8.3.0",
