@@ -1,18 +1,43 @@
 const React = require('react');
 const PropTypes = require('prop-types');
+const classnames = require('classnames');
 
 const BaseModal = require('./BaseModal.jsx');
 const ButtonPrimary = require('../buttons/ButtonPrimary.jsx');
 const ButtonSecondary = require('../buttons/ButtonSecondary.jsx');
+const ButtonDanger = require('../buttons/ButtonDanger.jsx');
+const SuccessIcon = require('../icons/SuccessIcon.jsx');
+const InformationIcon = require('../icons/InformationIcon.jsx');
+const WarningIcon = require('../icons/WarningIcon.jsx');
+const ErrorIcon = require('../icons/ErrorIcon.jsx');
 
+const TYPE_MAP = {
+  success: {
+    className: 'blx-success-modal',
+    icon: SuccessIcon
+  },
+  information: {
+    className: 'blx-information-modal',
+    icon: InformationIcon
+  },
+  warning: {
+    className: 'blx-warning-modal',
+    icon: WarningIcon
+  },
+  error: {
+    className: 'blx-error-modal',
+    icon: ErrorIcon
+  }
+};
 
 const ActionModal = (props) => {
   if (props.isHidden) return null;
 
   let confirmButton = null;
   if (props.onConfirm && props.confirmText) {
+    const Button = props.variant === 'warning' ? ButtonDanger : ButtonPrimary;
     confirmButton = (
-      <ButtonPrimary
+      <Button
         text={props.confirmText}
         onClick={props.onConfirm}
       />
@@ -46,19 +71,23 @@ const ActionModal = (props) => {
     );
   }
 
+  const Icon = TYPE_MAP[props.variant].icon;
+
   return (
     <BaseModal
       style={props.style}
-      className={props.className}
+      className={classnames('blx-action-modal', props.className, TYPE_MAP[props.variant].className)}
       isHidden={props.isHidden}
       onClose={props.onClose}
     >
-      <div>
-        <h4>{props.title}</h4>
-        <p>{props.message}</p>
-        {actionInfo}
-        {buttonBar}
+      <div className="blx-modal-content">
+        <div className="blx-modal-title">
+          <Icon className="blx-modal-icon" />
+          <h4>{props.title}</h4>
+        </div>
+        {props.children}
       </div>
+      {buttonBar}
     </BaseModal>
   );
 };
@@ -68,13 +97,13 @@ ActionModal.propTypes = {
   style: PropTypes.object,
   isHidden: PropTypes.bool,
   title: PropTypes.string,
-  message: PropTypes.string,
-  actionInfo: PropTypes.string,
   confirmText: PropTypes.string,
-  cancelText: PropTypes.string,
   onConfirm: PropTypes.func,
+  cancelText: PropTypes.string,
   onCancel: PropTypes.func,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  variant: PropTypes.oneOf(['success', 'information', 'warning', 'error']),
+  children: PropTypes.node
 };
 
 ActionModal.defaultProps = {
@@ -82,13 +111,13 @@ ActionModal.defaultProps = {
   style: null,
   isHidden: true,
   title: '',
-  message: '',
-  actionInfo: '',
   confirmText: '',
-  cancelText: '',
   onConfirm: null,
+  cancelText: '',
   onCancel: null,
-  onClose: () => {}
+  onClose: () => {},
+  variant: 'success',
+  children: null
 };
 
 module.exports = ActionModal;

@@ -1,21 +1,18 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const CloseIcon = require('../icons/CloseIcon.jsx');
-
+const classnames = require('classnames');
 
 const BaseModal = (props) => {
   if (props.isHidden) return null;
 
   return (
-    <div
-      style={props.style}
-      className={props.className}
-    >
+    <React.Fragment>
       <div
         className="blx-modal-overlay"
         onClick={props.onClose}
       />
-      <div className="blx-modal">
+      <div className={classnames('blx-modal', props.className)} style={props.style}>
         {
           props.isClosable && (
             <button className="blx-modal-close" aria-label="close" onClick={props.onClose}>
@@ -23,12 +20,9 @@ const BaseModal = (props) => {
             </button>
           )
         }
-        <div className="blx-modal-content">
-          { props.children }
-        </div>
+        {props.children}
       </div>
-
-    </div>
+    </React.Fragment>
   );
 };
 

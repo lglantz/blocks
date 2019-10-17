@@ -3,12 +3,20 @@ import React from "react"
 const { ActionModal } = require('blocks-react').Modals;
 const { ButtonPrimary } = require('blocks-react').Buttons;
 
+const MODAL_TYPES = {
+  SUCCESS: 'success',
+  INFORMATION: 'information',
+  WARNING: 'warning',
+  ERROR: 'error'
+}
+
 class ModalActionExample extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      modalVisible: false
+      modalVisible: false,
+      modalType: ''
     };
   }
 
@@ -22,17 +30,33 @@ class ModalActionExample extends React.Component {
         <ActionModal
           isHidden={!this.state.modalVisible}
           onClose={() => this.closeModal()}
-          title="Confirm action"
-          message="Are you sure you want to do this?"
-          confirmText="Confirm"
+          title="Action title"
+          confirmText="Do it"
           onConfirm={() => this.closeModal()}
           cancelText="Cancel"
           onCancel={() => this.closeModal()}
-        />
-        <ButtonPrimary
-          text="Open Action Modal"
-          onClick={() => this.setState(prevState => ({ modalVisible: !prevState.modalVisible }))}
-        />
+          variant={this.state.modalType}
+        >
+          <p>Are you sure you want to do this?</p>
+        </ActionModal>
+        <div className="blx-v-button-group">
+          <ButtonPrimary
+            text="Open Success Modal"
+            onClick={() => this.setState({ modalVisible: true, modalType: MODAL_TYPES.SUCCESS })}
+          />
+          <ButtonPrimary
+            text="Open Information Modal"
+            onClick={() => this.setState({ modalVisible: true, modalType: MODAL_TYPES.INFORMATION })}
+          />
+          <ButtonPrimary
+            text="Open Warning Modal"
+            onClick={() => this.setState({ modalVisible: true, modalType: MODAL_TYPES.WARNING })}
+          />
+          <ButtonPrimary
+            text="Open Error Modal"
+            onClick={() => this.setState({ modalVisible: true, modalType: MODAL_TYPES.ERROR })}
+          />
+        </div>
       </div>
     );
   }

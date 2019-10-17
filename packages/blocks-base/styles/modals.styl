@@ -2,6 +2,7 @@
 $modal-default-border = 1px solid $light-01;
 $modal-background-color = $secondary-00;
 $modal-overlay-background-color = $light-02;
+$modal-padding = 24px 40px;
 
 // modal styles
 .blx-modal {
@@ -11,10 +12,11 @@ $modal-overlay-background-color = $light-02;
   transform: translate(-50%, -50%);
   width: 600px;
   max-height: 90%;
-  padding: 24px 40px;
   z-index: 1001;
+  padding: $modal-padding;
 
   display: flex;
+  flex-direction: column;
 
   border-radius: 3px;
 
@@ -35,11 +37,20 @@ $modal-overlay-background-color = $light-02;
       fill: $primary-01
     }
   }
+}
 
-  .blx-modal-buttons {
-    display: flex;
-    justify-content: flex-end;
+.blx-action-modal {
+  padding: 0;
+  
+  .blx-modal-content {
+    padding: $modal-padding;
   }
+}
+
+.blx-modal-buttons {
+  justify-content: flex-end;
+  padding: 12px 0 24px;
+  border-top: 1px $light-01 solid;
 }
 
 .blx-modal-overlay {
@@ -59,13 +70,54 @@ $modal-overlay-background-color = $light-02;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
+}
 
-  h4 + p {
-    margin-top: 18px;
+.blx-modal-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.blx-modal-icon {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+// THEME //
+.blx-success-modal {
+  border-top: 4px solid $success;
+  
+  .blx-modal-icon {
+    background: $success;
+    fill: $white;
   }
+}
 
-  p {
-    color: $base-font-color;
-    margin-bottom: 18px;
+.blx-information-modal {
+  border-top: 4px solid $information;
+  
+  .blx-modal-icon {
+    background: $information;
+    fill: $white;
+  }
+}
+
+.blx-warning-modal {
+  border-top: 4px solid $warning;
+  
+  .blx-modal-icon {
+    background: $warning;
+    fill: $dark-00;
+  }
+}
+
+.blx-error-modal {
+  border-top: 4px solid $danger-00;
+  
+  .blx-modal-icon {
+    background: $danger-00;
+    fill: $white;
   }
 }

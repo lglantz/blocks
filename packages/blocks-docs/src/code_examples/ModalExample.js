@@ -20,7 +20,9 @@ class ModalExample extends React.Component {
           isHidden={!this.state.modalVisible}
           onClose={() => this.setState(prevState => ({ modalVisible: !prevState.modalVisible }))}
         >
-          <h4>Base Modal</h4>
+          <div className="blx-modal-title">
+            <h4>Base Modal</h4>
+          </div>
           <p>Hello! This is a base modal.</p>
         </BaseModal>
         <ButtonPrimary
