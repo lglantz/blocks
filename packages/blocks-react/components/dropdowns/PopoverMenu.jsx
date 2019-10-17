@@ -12,7 +12,7 @@ const PopoverMenu = (props) => {
   const classes = classnames('blx-popover-wrapper', props.className);
   const triggerClasses = classnames('blx-popover-trigger', {
     'blx-active': props.isOpen,
-    'blx-disabled': props.isDisabled
+    'blx-disabled': props.disabled
   });
   const menuClasses = classnames('blx-popover-menu', {
     'blx-hidden': !props.isOpen,
@@ -32,7 +32,7 @@ const PopoverMenu = (props) => {
       <div className="blx-dropdown blx-popover">
         <button
           className={triggerClasses}
-          disabled={props.isDisabled}
+          disabled={props.disabled}
           onClick={props.toggle}
           title={props.text}
           autoFocus={props.autoFocus}
@@ -91,7 +91,7 @@ PopoverMenu.propTypes = {
     element: PropTypes.node,
     key: PropTypes.string
   })),
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   onChange: PropTypes.func,
   autoFocus: PropTypes.bool,
   // FIXME: PropTypes.instanceOf(Element) breaks under server side rendering b/c Element is not in context

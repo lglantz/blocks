@@ -16,7 +16,7 @@ class DropdownDisabledExample extends React.Component {
       <Dropdown
         text="Choose an option"
         label="Add something"
-        isDisabled
+        disabled
         value={this.state.selectedValue}
         onChange={evt => this.setState({ selectedValue: evt.value })}
         options={

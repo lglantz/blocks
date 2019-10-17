@@ -80,7 +80,7 @@ class DropdownItem extends React.Component {
 
     const classes = classnames('blx-dropdown-item', this.props.className, {
       'blx-disabled': this.props.option.disabled,
-      'blx-selected': this.props.isSelected
+      'blx-selected': this.props.selected
     })
 
     return (
@@ -113,7 +113,7 @@ DropdownItem.propTypes = {
     key: PropTypes.string,
     useReactLink: PropTypes.bool,
   }).isRequired,
-  isSelected: PropTypes.bool,
+  selected: PropTypes.bool,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   onSelect: PropTypes.func
@@ -122,7 +122,7 @@ DropdownItem.propTypes = {
 DropdownItem.defaultProps = {
   className: '',
   style: null,
-  isSelected: false,
+  selected: false,
   onKeyDown: () => {},
   onKeyUp: () => {},
   onSelect: () => {}

@@ -11,7 +11,7 @@ const DropdownMenu = (props) => {
   let triggerContent = props.text;
   const triggerClassNames = classnames('blx-dropdown-trigger', {
     'blx-active': props.isOpen,
-    'blx-disabled': props.isDisabled,
+    'blx-disabled': props.disabled,
     'blx-invalid': !props.isValid
   });
 
@@ -34,15 +34,15 @@ const DropdownMenu = (props) => {
       <div className="blx-dropdown">
 
         {/* LABEL */}
-        { props.label && <label className={`blx-ui-text ${props.isDisabled ? 'blx-disabled' : ''}`}>
+        { props.label && <label className={`blx-ui-text ${props.disabled ? 'blx-disabled' : ''}`}>
             {props.label}
-          </label> 
+          </label>
         }
 
         {/* TRIGGER */}
         <button
           className={triggerClassNames}
-          disabled={props.isDisabled}
+          disabled={props.disabled}
           onClick={props.toggle}
           title={triggerContent}
           autoFocus={props.autoFocus}
@@ -65,7 +65,7 @@ const DropdownMenu = (props) => {
                   key={option.text || option.key}
                   option={option}
                   ref={props.optionsRefs[idx]}
-                  isSelected={props.value === option.value}
+                  selected={props.value === option.value}
                   onKeyDown={props.onKeyDown}
                   onKeyUp={props.onKeyUp}
                   onSelect={props.onSelect}
@@ -109,7 +109,7 @@ DropdownMenu.propTypes = {
     element: PropTypes.node,
     key: PropTypes.string
   })),
-  isDisabled: PropTypes.bool,
+  disabled: PropTypes.bool,
   onSelect: PropTypes.func,
   autoFocus: PropTypes.bool,
   isValid: PropTypes.bool,

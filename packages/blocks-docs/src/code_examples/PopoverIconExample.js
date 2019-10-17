@@ -36,7 +36,7 @@ const PopoverIconExample = () => (
     <PopoverMenu
       icon={<MoreIcon />}
       options={exampleOptions}
-      isDisabled
+      disabled
     />
   </div>
 );
