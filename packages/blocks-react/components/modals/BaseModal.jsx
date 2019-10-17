@@ -3,30 +3,35 @@ const PropTypes = require('prop-types');
 const CloseIcon = require('../icons/CloseIcon.jsx');
 const classnames = require('classnames');
 
-const BaseModal = (props) => {
-  if (props.isHidden) return null;
+const BaseModal = ({ classes, className, style, isHidden, isClosable, onClose, children }) => {
+  if (isHidden) return null;
 
   return (
     <React.Fragment>
       <div
-        className="blx-modal-overlay"
-        onClick={props.onClose}
+        className={classnames('blx-modal-overlay', classes.overlay)}
+        onClick={onClose}
       />
-      <div className={classnames('blx-modal', props.className)} style={props.style}>
+      <div className={classnames('blx-modal', classes.root, className)} style={style}>
         {
-          props.isClosable && (
-            <button className="blx-modal-close" aria-label="close" onClick={props.onClose}>
+          isClosable && (
+            <button className={classnames('blx-modal-close', classes.close)} aria-label="close" onClick={onClose}>
               <CloseIcon />
             </button>
           )
         }
-        {props.children}
+        {children}
       </div>
     </React.Fragment>
   );
 };
 
 BaseModal.propTypes = {
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    close: PropTypes.string,
+    overlay: PropTypes.string
+  }),
   className: PropTypes.string,
   style: PropTypes.object,
   isHidden: PropTypes.bool,
@@ -36,6 +41,7 @@ BaseModal.propTypes = {
 };
 
 BaseModal.defaultProps = {
+  classes: {},
   className: '',
   style: null,
   isHidden: true,
