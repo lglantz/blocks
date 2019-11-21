@@ -8,7 +8,11 @@ const through = require('through2');
 const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssvariables = require('postcss-css-variables');
+const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+
 
 const SOURCE_DIR = path.join(__dirname, 'styles');
 const OUTPUT_DIR = path.join(__dirname, 'dist');
@@ -106,8 +110,20 @@ function buildBlocksCSS() {
     .pipe(dest(OUTPUT_DIR));
 }
 
+function buildBlocksColors() {
+  return src('./colors/Colors.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest(OUTPUT_DIR));
+}
+
 exports.build = series(
   clean,
   buildStyleVariablesFromJson,
-  buildBlocksCSS
+  buildBlocksCSS,
+  buildBlocksColors
 );

@@ -18,11 +18,16 @@
   "homepage": "https://github.com/floored/blocks#readme",
   "devDependencies": {
     "autoprefixer": "^8.3.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "cssnano": "^4.1.10",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-babel": "^7.0.1",
+    "gulp-uglify": "^3.0.2",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.5",
     "postcss-css-variables": "^0.8.1",
     "stylus": "^0.54.5",
     "through2": "^3.0.1"

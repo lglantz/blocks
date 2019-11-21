@@ -1,3 +1,3 @@
 module.exports = {
-  Colors: require('./colors/Colors.js')
+  Colors: require('./dist/Colors.js')
 };
