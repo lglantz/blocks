@@ -85,6 +85,10 @@
         {
           "name": "Writing guidelines",
           "href": "/help/writing"
+        },
+        {
+          "name": "Browser Support",
+          "href": "/help/browsersupport"
         }
       ]
     }

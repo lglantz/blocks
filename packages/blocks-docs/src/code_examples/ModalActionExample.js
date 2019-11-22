@@ -16,7 +16,7 @@ class ModalActionExample extends React.Component {
 
     this.state = {
       modalVisible: false,
-      modalType: ''
+      modalType: null
     };
   }
 

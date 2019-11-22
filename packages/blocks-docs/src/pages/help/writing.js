@@ -11,9 +11,9 @@ const WritingGuidelinesPage = () => (
     >
     </Header>
     <div className="l-flex-vertical doc-section">
-      <div className="writing-guidelines-container">
+      <div className="help-text-container">
         <p className="blx-with-margin">Our goal when we speak is to be the perfect sidekick to our listener. We do this by:</p>
-        <ul className="writing-guidelines-list">
+        <ul className="help-text-list">
           <li><p className="blx-with-margin">Knowing our audience</p></li>
           <li><p className="blx-with-margin">Using plain language</p></li>
           <li><p className="blx-with-margin">Minding voice, tone, and style</p></li>
@@ -22,7 +22,7 @@ const WritingGuidelinesPage = () => (
 
         <h5 className="blx-with-margin">Where to use this</h5>
         <p className="blx-with-margin">Follow these guidelines when your writing will be “coming from” CBRE Build, the company. Here are some examples: </p>
-        <ul className="writing-guidelines-list">
+        <ul className="help-text-list">
           <li><p className="blx-with-margin">UI copywriting, emails, and notifications</p></li>
           <li><p className="blx-with-margin">Marketing sites and print material</p></li>
           <li><p className="blx-with-margin">Social media</p></li>
@@ -50,7 +50,7 @@ const WritingGuidelinesPage = () => (
 
         <p className="blx-with-margin">That solution is plain language. Plain language is a way of thinking. It’s permission to relax and be conversational. It’s an understanding that basic words do not indicate a simple mind. And it’s a commitment to clarity, which means working a little harder at thinking before we speak.</p>
 
-        <ul className="writing-guidelines-list">
+        <ul className="help-text-list">
           <li>
             <h5 className="blx-with-margin">The principles of plain language are clarity, simplicity, brevity, and warmth. </h5>
             <p className="blx-with-margin">Use them to measure everything you write. Make sure every word is pulling its weight.</p>
@@ -87,7 +87,7 @@ const WritingGuidelinesPage = () => (
         <p className="blx-with-margin">The perfect sidekick is a step ahead, but never in the way. They keep things light, but are never unprofessional. They’re serious about the mission. They know their partner’s minds. Unprompted, they expertly provide just the thing for the moment.</p>
 
         <p className="blx-with-margin">The perfect sidekick’s voice is:</p>
-        <ul className="writing-guidelines-list">
+        <ul className="help-text-list">
           <li><p className="blx-with-margin">Straightforward, conversational, and prepared</p></li>
           <li><p className="blx-with-margin">Expert, but not pompous</p></li>
           <li><p className="blx-with-margin">Genuine and grounded</p></li>
@@ -110,11 +110,11 @@ const WritingGuidelinesPage = () => (
         <h5 className="blx-with-margin">Style</h5>
         <p className="blx-with-margin">Style comes from choices we make about how we speak. Our choices reflect our values of warmth, clarity, and inclusion.</p>
 
-        <ul className="writing-guidelines-list">
+        <ul className="help-text-list">
           <li>
             <h5 className="blx-with-margin">Use the active voice</h5>
             <p className="blx-with-margin">People think in stories, and passive voice obscures the roles and the action. The first paragraph of the Plain Language section is so turgid because when we read it, we cannot visualize anyone doing anything.</p>
-            
+
             <p className="blx-with-margin">In the active voice, a subject does something to an object: “We released the app.” </p>
 
             <p className="blx-with-margin">In the passive voice, the object has something done to it, often by a mysterious entity: “The app was released.” </p>
@@ -122,7 +122,7 @@ const WritingGuidelinesPage = () => (
           <li>
             <h5 className="blx-with-margin">Use short words. And short sentences.</h5>
             <p className="blx-with-margin">They’re easier for everyone to understand. Air around the words invites us in, assuring us that a courteous human being is speaking.</p>
-            
+
             <p className="blx-with-margin">Look at the first and third paragraphs of the Plain Language section. Even without reading, we see that the first is knotty, treacherous territory. The third looks lighter, familiar, like speech.</p>
           </li>
           <li>
@@ -160,7 +160,7 @@ const WritingGuidelinesPage = () => (
         <h3>Writing accessibly</h3>
         <p className="blx-with-margin">We want everyone to understand what we write — even those who have to work harder at language, seeing, or hearing. Every word added to a page weighs down the brain on its climb to comprehension. Tired brains give up. And most people only read 20–30% of the text on a web page anyway. </p>
 
-        <ul className="writing-guidelines-list">
+        <ul className="help-text-list">
           <li>
             <h5 className="blx-with-margin">Write for skimming.</h5>
             <p className="blx-with-margin">Structure your content with headings and lists, and put the most important information first. </p>
