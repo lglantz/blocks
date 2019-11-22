@@ -89,6 +89,10 @@
         {
           "name": "Browser Support",
           "href": "/help/browsersupport"
+        },
+        {
+          "name": "How to update the docs",
+          "href": "/help/documentation-updates"
         }
       ]
     }
