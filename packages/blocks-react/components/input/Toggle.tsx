@@ -1,20 +1,38 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const classnames = require('classnames');
+//@ts-check
+import React from 'react';
+// import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-interface ToggleProps {
+interface props {
   className: string,
-  style: any,
-  options: any,
-  value: any,
-  label: any,
-  disabled: any
+  style?: any,
+  options: { text: string, value: string | number }[],
+  value: string | number,
+  label?: string,
+  disabled?: boolean,
 };
 
-
-const Toggle = ({ className, style, options, value, label, ...other }: ToggleProps) => {
+/**
+ * This is a toggle, it can have many options.
+ */
+const Toggle = ({
+  className,
+  style,
+  options,
+  value,
+  label = 'toggle',
+  disabled = false,
+  ...other
+}: {
+  className: string,
+  style?: any,
+  options: { text: string, value: string | number }[],
+  value: string | number,
+  label?: string,
+  disabled?: boolean,
+}) => {
   const classes = classnames('blx-toggle', className, {
-    'blx-disabled': other.disabled
+    'blx-disabled': disabled
   });
   return (
     <div
@@ -34,6 +52,7 @@ const Toggle = ({ className, style, options, value, label, ...other }: TogglePro
               id={`toggle-option-${idx}`}
               value={option.value}
               checked={option.value === value}
+              disabled={disabled}
               {...other}
             />
             <span className="blx-toggle-text">
@@ -46,28 +65,28 @@ const Toggle = ({ className, style, options, value, label, ...other }: TogglePro
   );
 }
 
-Toggle.propTypes = {
-  style: PropTypes.object,
-  className: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]).isRequired,
-  options: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]).isRequired
-  })).isRequired,
-  disabled: PropTypes.bool,
-  label: PropTypes.string
-};
+// Toggle.propTypes = {
+//   style: PropTypes.object,
+//   className: PropTypes.string,
+//   value: PropTypes.oneOfType([
+//     PropTypes.string,
+//     PropTypes.number
+//   ]).isRequired,
+//   options: PropTypes.arrayOf(PropTypes.shape({
+//     text: PropTypes.string.isRequired,
+//     value: PropTypes.oneOfType([
+//       PropTypes.string,
+//       PropTypes.number
+//     ]).isRequired
+//   })).isRequired,
+//   disabled: PropTypes.bool,
+//   label: PropTypes.string
+// };
 
-Toggle.defaultProps = {
-  disabled: false,
-  label: 'toggle'
-};
-
-module.exports = Toggle;
+// Toggle.defaultProps = {
+//   disabled: false,
+//   label: 'toggle'
+// };
+export default Toggle;
+// module.exports = Toggle;
 

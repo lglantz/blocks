@@ -1,26 +1,15 @@
-declare const React: any;
-declare const PropTypes: any;
-declare const classnames: any;
-interface ToggleProps {
+/**
+ * This is a toggle, it can have many options.
+ */
+declare const Toggle: ({ className, style, options, value, label, disabled, ...other }: {
     className: string;
-    style: any;
-    options: any;
-    value: any;
-    label: any;
-    disabled: any;
-}
-declare const Toggle: {
-    ({ className, style, options, value, label, ...other }: ToggleProps): any;
-    propTypes: {
-        style: any;
-        className: any;
-        value: any;
-        options: any;
-        disabled: any;
-        label: any;
-    };
-    defaultProps: {
-        disabled: boolean;
-        label: string;
-    };
-};
+    style?: any;
+    options: {
+        text: string;
+        value: string | number;
+    }[];
+    value: string | number;
+    label?: string;
+    disabled?: boolean;
+}) => any;
+export default Toggle;

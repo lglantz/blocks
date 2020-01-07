@@ -1,7 +1,7 @@
 import React from "react"
 
-const { Toggle } = require('blocks-react').Input;
-
+// const { Toggle } = require('blocks-react').Input;
+import Toggle from 'blocks-react/dist/input/Toggle';
 class ToggleBasicExample extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +18,7 @@ class ToggleBasicExample extends React.Component {
   render() {
     return (
       <Toggle
+        className={false}
         name="toggle-basic-example"
         label="Example Toggle" // ARIA text
         value={this.state.checkedValue}
