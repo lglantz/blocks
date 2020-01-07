@@ -1,2 +1,57 @@
-"use strict";var _extends=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var s in t)Object.prototype.hasOwnProperty.call(t,s)&&(e[s]=t[s])}return e};function _objectWithoutProperties(e,r){var t={};for(var s in e)0<=r.indexOf(s)||Object.prototype.hasOwnProperty.call(e,s)&&(t[s]=e[s]);return t}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),Toggle=function(e){var r=e.className,t=e.style,s=e.options,a=e.value,o=e.label,l=_objectWithoutProperties(e,["className","style","options","value","label"]),p=classnames("blx-toggle",r,{"blx-disabled":l.disabled});return React.createElement("div",{style:t,className:p,role:"radiogroup","aria-label":o},s.map(function(e,r){return React.createElement("label",{className:"blx-toggle-container",key:e.text},React.createElement("input",_extends({type:"radio",id:"toggle-option-"+r,value:e.value,checked:e.value===a},l)),React.createElement("span",{className:"blx-toggle-text"},e.text))}))};Toggle.propTypes={style:PropTypes.object,className:PropTypes.string,value:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired,options:PropTypes.arrayOf(PropTypes.shape({text:PropTypes.string.isRequired,value:PropTypes.oneOfType([PropTypes.string,PropTypes.number]).isRequired})).isRequired,disabled:PropTypes.bool,label:PropTypes.string},Toggle.defaultProps={disabled:!1,label:"toggle"},module.exports=Toggle;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImlucHV0L1RvZ2dsZS5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xhc3NuYW1lcyIsIlRvZ2dsZSIsIl9yZWYiLCJjbGFzc05hbWUiLCJzdHlsZSIsIm9wdGlvbnMiLCJ2YWx1ZSIsImxhYmVsIiwib3RoZXIiLCJfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMiLCJjbGFzc2VzIiwiYmx4LWRpc2FibGVkIiwiZGlzYWJsZWQiLCJjcmVhdGVFbGVtZW50Iiwicm9sZSIsImFyaWEtbGFiZWwiLCJtYXAiLCJvcHRpb24iLCJpZHgiLCJrZXkiLCJ0ZXh0IiwiX2V4dGVuZHMiLCJ0eXBlIiwiaWQiLCJjaGVja2VkIiwicHJvcFR5cGVzIiwib2JqZWN0Iiwic3RyaW5nIiwib25lT2ZUeXBlIiwibnVtYmVyIiwiaXNSZXF1aXJlZCIsImFycmF5T2YiLCJzaGFwZSIsImJvb2wiLCJkZWZhdWx0UHJvcHMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiNFVBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUVyQkcsT0FBUyxTQUFBQyxHQUEyRCxJQUF4REMsRUFBd0RELEVBQXhEQyxVQUFXQyxFQUE2Q0YsRUFBN0NFLE1BQU9DLEVBQXNDSCxFQUF0Q0csUUFBU0MsRUFBNkJKLEVBQTdCSSxNQUFPQyxFQUFzQkwsRUFBdEJLLE1BQVVDLEVBQVlDLHlCQUFBUCxFQUFBLENBQUEsWUFBQSxRQUFBLFVBQUEsUUFBQSxVQUNsRVEsRUFBVVYsV0FBVyxhQUFjRyxFQUFXLENBQ2xEUSxlQUFnQkgsRUFBTUksV0FFeEIsT0FDRWYsTUFBQWdCLGNBQUEsTUFBQSxDQUNFVCxNQUFPQSxFQUNQRCxVQUFXTyxFQUNYSSxLQUFLLGFBQ0xDLGFBQVlSLEdBR1ZGLEVBQVFXLElBQUksU0FBQ0MsRUFBUUMsR0FBVCxPQUNWckIsTUFBQWdCLGNBQUEsUUFBQSxDQUNFVixVQUFVLHVCQUNWZ0IsSUFBS0YsRUFBT0csTUFFWnZCLE1BQUFnQixjQUFBLFFBQUFRLFNBQUEsQ0FDRUMsS0FBSyxRQUNMQyxHQUFBLGlCQUFxQkwsRUFDckJaLE1BQU9XLEVBQU9YLE1BQ2RrQixRQUFTUCxFQUFPWCxRQUFVQSxHQUN0QkUsSUFFTlgsTUFBQWdCLGNBQUEsT0FBQSxDQUFNVixVQUFVLG1CQUNiYyxFQUFPRyxXQVN0Qm5CLE9BQU93QixVQUFZLENBQ2pCckIsTUFBT0wsVUFBVTJCLE9BQ2pCdkIsVUFBV0osVUFBVTRCLE9BQ3JCckIsTUFBT1AsVUFBVTZCLFVBQVUsQ0FDekI3QixVQUFVNEIsT0FDVjVCLFVBQVU4QixTQUNUQyxXQUNIekIsUUFBU04sVUFBVWdDLFFBQVFoQyxVQUFVaUMsTUFBTSxDQUN6Q1osS0FBTXJCLFVBQVU0QixPQUFPRyxXQUN2QnhCLE1BQU9QLFVBQVU2QixVQUFVLENBQ3pCN0IsVUFBVTRCLE9BQ1Y1QixVQUFVOEIsU0FDVEMsY0FDREEsV0FDSmxCLFNBQVViLFVBQVVrQyxLQUNwQjFCLE1BQU9SLFVBQVU0QixRQUduQjFCLE9BQU9pQyxhQUFlLENBQ3BCdEIsVUFBVSxFQUNWTCxNQUFPLFVBR1Q0QixPQUFPQyxRQUFVbkMiLCJmaWxlIjoiaW5wdXQvVG9nZ2xlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuY29uc3QgUHJvcFR5cGVzID0gcmVxdWlyZSgncHJvcC10eXBlcycpO1xuY29uc3QgY2xhc3NuYW1lcyA9IHJlcXVpcmUoJ2NsYXNzbmFtZXMnKTtcblxuY29uc3QgVG9nZ2xlID0gKHsgY2xhc3NOYW1lLCBzdHlsZSwgb3B0aW9ucywgdmFsdWUsIGxhYmVsLCAuLi5vdGhlciB9KSA9PiB7XG4gIGNvbnN0IGNsYXNzZXMgPSBjbGFzc25hbWVzKCdibHgtdG9nZ2xlJywgY2xhc3NOYW1lLCB7XG4gICAgJ2JseC1kaXNhYmxlZCc6IG90aGVyLmRpc2FibGVkXG4gIH0pO1xuICByZXR1cm4gKFxuICAgIDxkaXZcbiAgICAgIHN0eWxlPXtzdHlsZX1cbiAgICAgIGNsYXNzTmFtZT17Y2xhc3Nlc31cbiAgICAgIHJvbGU9XCJyYWRpb2dyb3VwXCJcbiAgICAgIGFyaWEtbGFiZWw9e2xhYmVsfVxuICAgID5cbiAgICAgIHtcbiAgICAgICAgb3B0aW9ucy5tYXAoKG9wdGlvbiwgaWR4KSA9PiAoXG4gICAgICAgICAgPGxhYmVsXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJibHgtdG9nZ2xlLWNvbnRhaW5lclwiXG4gICAgICAgICAgICBrZXk9e29wdGlvbi50ZXh0fVxuICAgICAgICAgID5cbiAgICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgICB0eXBlPVwicmFkaW9cIlxuICAgICAgICAgICAgICBpZD17YHRvZ2dsZS1vcHRpb24tJHtpZHh9YH1cbiAgICAgICAgICAgICAgdmFsdWU9e29wdGlvbi52YWx1ZX1cbiAgICAgICAgICAgICAgY2hlY2tlZD17b3B0aW9uLnZhbHVlID09PSB2YWx1ZX1cbiAgICAgICAgICAgICAgey4uLm90aGVyfVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImJseC10b2dnbGUtdGV4dFwiPlxuICAgICAgICAgICAgICB7b3B0aW9uLnRleHR9XG4gICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgKSlcbiAgICAgIH1cbiAgICA8L2Rpdj5cbiAgKTtcbn1cblxuVG9nZ2xlLnByb3BUeXBlcyA9IHtcbiAgc3R5bGU6IFByb3BUeXBlcy5vYmplY3QsXG4gIGNsYXNzTmFtZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgdmFsdWU6IFByb3BUeXBlcy5vbmVPZlR5cGUoW1xuICAgIFByb3BUeXBlcy5zdHJpbmcsXG4gICAgUHJvcFR5cGVzLm51bWJlclxuICBdKS5pc1JlcXVpcmVkLFxuICBvcHRpb25zOiBQcm9wVHlwZXMuYXJyYXlPZihQcm9wVHlwZXMuc2hhcGUoe1xuICAgIHRleHQ6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgICB2YWx1ZTogUHJvcFR5cGVzLm9uZU9mVHlwZShbXG4gICAgICBQcm9wVHlwZXMuc3RyaW5nLFxuICAgICAgUHJvcFR5cGVzLm51bWJlclxuICAgIF0pLmlzUmVxdWlyZWRcbiAgfSkpLmlzUmVxdWlyZWQsXG4gIGRpc2FibGVkOiBQcm9wVHlwZXMuYm9vbCxcbiAgbGFiZWw6IFByb3BUeXBlcy5zdHJpbmdcbn07XG5cblRvZ2dsZS5kZWZhdWx0UHJvcHMgPSB7XG4gIGRpc2FibGVkOiBmYWxzZSxcbiAgbGFiZWw6ICd0b2dnbGUnXG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IFRvZ2dsZTtcblxuIl19
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var React = require('react');
+var PropTypes = require('prop-types');
+var classnames = require('classnames');
+;
+var Toggle = function (_a) {
+    var className = _a.className, style = _a.style, options = _a.options, value = _a.value, label = _a.label, other = __rest(_a, ["className", "style", "options", "value", "label"]);
+    var classes = classnames('blx-toggle', className, {
+        'blx-disabled': other.disabled
+    });
+    return (React.createElement("div", { style: style, className: classes, role: "radiogroup", "aria-label": label }, options.map(function (option, idx) { return (React.createElement("label", { className: "blx-toggle-container", key: option.text },
+        React.createElement("input", __assign({ type: "radio", id: "toggle-option-" + idx, value: option.value, checked: option.value === value }, other)),
+        React.createElement("span", { className: "blx-toggle-text" }, option.text))); })));
+};
+Toggle.propTypes = {
+    style: PropTypes.object,
+    className: PropTypes.string,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired,
+    options: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]).isRequired
+    })).isRequired,
+    disabled: PropTypes.bool,
+    label: PropTypes.string
+};
+Toggle.defaultProps = {
+    disabled: false,
+    label: 'toggle'
+};
+module.exports = Toggle;

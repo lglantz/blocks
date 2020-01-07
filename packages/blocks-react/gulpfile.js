@@ -4,6 +4,7 @@ const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const replace = require('gulp-string-replace');
 const del = require('del');
+const ts = require('gulp-typescript');
 
 function clean(cb) {
   return del(['dist'], cb);
@@ -24,7 +25,18 @@ function transpileJSX() {
     .pipe(dest('./dist'));
 }
 
+function compileTSX() {
+  return src('./components/*/*.tsx')
+    .pipe(sourcemaps.init())
+    .pipe(ts({
+      jsx: 'react',
+      declaration: true
+    }))
+    .pipe(dest('./dist'));
+}
+
 exports.build = series(
   clean,
-  transpileJSX
+  transpileJSX,
+  compileTSX
 );

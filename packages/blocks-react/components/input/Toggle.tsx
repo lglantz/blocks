@@ -2,7 +2,17 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const classnames = require('classnames');
 
-const Toggle = ({ className, style, options, value, label, ...other }) => {
+interface ToggleProps {
+  className: string,
+  style: any,
+  options: any,
+  value: any,
+  label: any,
+  disabled: any
+};
+
+
+const Toggle = ({ className, style, options, value, label, ...other }: ToggleProps) => {
   const classes = classnames('blx-toggle', className, {
     'blx-disabled': other.disabled
   });
