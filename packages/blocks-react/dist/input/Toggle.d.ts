@@ -1,3 +1,5 @@
+declare const React: any;
+declare const classnames: any;
 /**
  * This is a toggle, it can have many options.
  */
@@ -12,4 +14,3 @@ declare const Toggle: ({ className, style, options, value, label, disabled, ...o
     label?: string;
     disabled?: boolean;
 }) => any;
-export default Toggle;

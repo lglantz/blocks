@@ -18,7 +18,6 @@ class ToggleBasicExample extends React.Component {
   render() {
     return (
       <Toggle
-        className={false}
         name="toggle-basic-example"
         label="Example Toggle" // ARIA text
         value={this.state.checkedValue}

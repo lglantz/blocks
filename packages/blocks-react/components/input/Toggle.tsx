@@ -1,17 +1,5 @@
-//@ts-check
-import React from 'react';
-// import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-interface props {
-  className: string,
-  style?: any,
-  options: { text: string, value: string | number }[],
-  value: string | number,
-  label?: string,
-  disabled?: boolean,
-};
-
+const React = require('react');
+const classnames = require('classnames');
 /**
  * This is a toggle, it can have many options.
  */
@@ -65,28 +53,4 @@ const Toggle = ({
   );
 }
 
-// Toggle.propTypes = {
-//   style: PropTypes.object,
-//   className: PropTypes.string,
-//   value: PropTypes.oneOfType([
-//     PropTypes.string,
-//     PropTypes.number
-//   ]).isRequired,
-//   options: PropTypes.arrayOf(PropTypes.shape({
-//     text: PropTypes.string.isRequired,
-//     value: PropTypes.oneOfType([
-//       PropTypes.string,
-//       PropTypes.number
-//     ]).isRequired
-//   })).isRequired,
-//   disabled: PropTypes.bool,
-//   label: PropTypes.string
-// };
-
-// Toggle.defaultProps = {
-//   disabled: false,
-//   label: 'toggle'
-// };
-export default Toggle;
-// module.exports = Toggle;
-
+module.exports = Toggle;
