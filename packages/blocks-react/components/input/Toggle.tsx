@@ -1,5 +1,5 @@
-const React = require('react');
-const classnames = require('classnames');
+import * as React from 'react';
+import classnames from 'classnames';
 /**
  * This is a toggle, it can have many options.
  */
@@ -53,4 +53,4 @@ const Toggle = ({
   );
 }
 
-module.exports = Toggle;
+export default Toggle;
