@@ -1,6 +1,5 @@
 import React from "react"
-
-const { SuccessAlert } = require('blocks-react').Alerts;
+import SuccessAlert from 'blocks-react/dist/alerts/SuccessAlert';
 
 const AlertSuccessExample = () => (
   <SuccessAlert

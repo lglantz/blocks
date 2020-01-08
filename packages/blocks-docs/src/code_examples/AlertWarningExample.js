@@ -1,6 +1,5 @@
 import React from "react"
-
-const { WarningAlert } = require('blocks-react').Alerts;
+import WarningAlert from 'blocks-react/dist/alerts/WarningAlert';
 
 const AlertWarningExample = () => (
   <WarningAlert

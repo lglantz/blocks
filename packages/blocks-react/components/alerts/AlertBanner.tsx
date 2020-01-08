@@ -1,21 +1,40 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const classnames = require('classnames');
+import * as React from 'react';
+import classnames from 'classnames';
+import CloseIcon from '../icons/CloseIcon';
 
-const CloseIcon = require('../icons/CloseIcon.jsx');
-
-class AlertBanner extends React.Component {
-  constructor(props) {
+type AlertBannerProps = {
+  className: string,
+  style: any,
+  title: string,
+  icon: any,
+  message: string,
+  closable: boolean,
+  onClose: any
+};
+type AlertBannerState = {
+  hidden: boolean,
+};
+/**
+ * AlertBanner description!!!
+ */
+class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
+  static defaultProps = {
+    className: '',
+    style: null,
+    title: '',
+    icon: null,
+    message: '',
+    closable: false,
+    onClose: null
+  };
+  constructor(props: AlertBannerProps) {
     super(props);
-
     this.state = {
       hidden: false
     };
-
-    this.onClose = this.onClose.bind(this);
+    // this.onClose = this.onClose.bind(this);
   }
-
-  onClose() {
+  onClose = () => {
     if (typeof this.props.onClose === 'function') {
       this.props.onClose();
     }
@@ -23,6 +42,9 @@ class AlertBanner extends React.Component {
       hidden: true
     });
   }
+  // onClose() {
+
+  // }
 
   render() {
     const classes = classnames('blx-alert', this.props.className, {
@@ -35,7 +57,7 @@ class AlertBanner extends React.Component {
       >
         <div className="blx-alert-icon-container">
           <span className="blx-alert-icon-background" />
-          { this.props.icon }
+          {this.props.icon}
         </div>
         <div className="blx-alert-text">
           <h4>
@@ -43,7 +65,7 @@ class AlertBanner extends React.Component {
           </h4>
           <p>{this.props.message}</p>
         </div>
-        { this.props.closable &&
+        {this.props.closable &&
           <button className="blx-alert-close" aria-label="close" onClick={this.onClose}>
             <CloseIcon />
           </button>
@@ -52,25 +74,4 @@ class AlertBanner extends React.Component {
     );
   }
 }
-
-AlertBanner.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  title: PropTypes.string,
-  icon: PropTypes.node,
-  message: PropTypes.string,
-  closable: PropTypes.bool,
-  onClose: PropTypes.func
-};
-
-AlertBanner.defaultProps = {
-  className: '',
-  style: null,
-  title: '',
-  icon: null,
-  message: '',
-  closable: false,
-  onClose: null
-};
-
-module.exports = AlertBanner;
+export default AlertBanner;

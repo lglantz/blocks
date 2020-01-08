@@ -1,6 +1,5 @@
 import React from "react"
-
-const { TextArea } = require('blocks-react').Input;
+import TextArea from 'blocks-react/dist/input/TextArea';
 
 class TextAreaExample extends React.Component {
   constructor(props) {
@@ -20,6 +19,7 @@ class TextAreaExample extends React.Component {
       <TextArea
         value={this.state.value}
         onChange={e => this.onChange(e)}
+
       />
     );
   }

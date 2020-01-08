@@ -1,9 +1,26 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const classnames = require('classnames');
+import * as React from 'react';
+import classnames from 'classnames';
 
+type TextAreaProps = {
+  label: string,
+  isValid: boolean,
+  invalidErrorMessage: string,
+} & JSX.IntrinsicElements["textarea"]
+/**
+ * Text Area Block
+ */
+class TextArea extends React.Component<TextAreaProps> {
+  textAreaRef: React.RefObject<any>;
+  static defaultProps = {
+    className: '',
+    style: null,
+    label: '',
+    disabled: false,
+    isValid: true,
+    invalidErrorMessage: '',
+    onKeyUp: null
+  };
 
-class TextArea extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +67,7 @@ class TextArea extends React.Component {
     const classes = classnames('blx-text-field', className, {
       'blx-disabled': other.disabled
     });
-    const textAreaClasses = classnames({'blx-invalid': !isValid});
+    const textAreaClasses = classnames({ 'blx-invalid': !isValid });
 
     return (
       <div
@@ -75,25 +92,4 @@ class TextArea extends React.Component {
   }
 }
 
-TextArea.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  label: PropTypes.string,
-  disabled: PropTypes.bool,
-  isValid: PropTypes.bool,
-  invalidErrorMessage: PropTypes.string,
-  onKeyUp: PropTypes.func
-};
-
-TextArea.defaultProps = {
-  className: '',
-  style: null,
-  label: '',
-  disabled: false,
-  isValid: true,
-  invalidErrorMessage: '',
-  onKeyUp: null
-};
-
-module.exports = TextArea;
-
+export default TextArea;

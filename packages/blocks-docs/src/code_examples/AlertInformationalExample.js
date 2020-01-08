@@ -1,6 +1,5 @@
 import React from "react"
-
-const { InformationalAlert } = require('blocks-react').Alerts;
+import InformationalAlert from 'blocks-react/dist/alerts/InformationalAlert';
 
 const AlertInformationalExample = () => (
   <InformationalAlert

@@ -1,2 +1,68 @@
-"use strict";var _createClass=function(){function s(e,t){for(var n=0;n<t.length;n++){var s=t[n];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(e,s.key,s)}}return function(e,t,n){return t&&s(e.prototype,t),n&&s(e,n),e}}();function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function _inherits(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),CloseIcon=require("../icons/CloseIcon.js"),AlertBanner=function(){function n(e){_classCallCheck(this,n);var t=_possibleConstructorReturn(this,(n.__proto__||Object.getPrototypeOf(n)).call(this,e));return t.state={hidden:!1},t.onClose=t.onClose.bind(t),t}return _inherits(n,React.Component),_createClass(n,[{key:"onClose",value:function(){"function"==typeof this.props.onClose&&this.props.onClose(),this.setState({hidden:!0})}},{key:"render",value:function(){var e=classnames("blx-alert",this.props.className,{"blx-hidden":this.state.hidden});return React.createElement("div",{style:this.props.style,className:e},React.createElement("div",{className:"blx-alert-icon-container"},React.createElement("span",{className:"blx-alert-icon-background"}),this.props.icon),React.createElement("div",{className:"blx-alert-text"},React.createElement("h4",null,this.props.title),React.createElement("p",null,this.props.message)),this.props.closable&&React.createElement("button",{className:"blx-alert-close","aria-label":"close",onClick:this.onClose},React.createElement(CloseIcon,null)))}}]),n}();AlertBanner.propTypes={className:PropTypes.string,style:PropTypes.object,title:PropTypes.string,icon:PropTypes.node,message:PropTypes.string,closable:PropTypes.bool,onClose:PropTypes.func},AlertBanner.defaultProps={className:"",style:null,title:"",icon:null,message:"",closable:!1,onClose:null},module.exports=AlertBanner;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFsZXJ0cy9BbGVydEJhbm5lci5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xhc3NuYW1lcyIsIkNsb3NlSWNvbiIsIkFsZXJ0QmFubmVyIiwicHJvcHMiLCJfY2xhc3NDYWxsQ2hlY2siLCJ0aGlzIiwiX3RoaXMiLCJfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybiIsIl9fcHJvdG9fXyIsIk9iamVjdCIsImdldFByb3RvdHlwZU9mIiwiY2FsbCIsInN0YXRlIiwiaGlkZGVuIiwib25DbG9zZSIsImJpbmQiLCJDb21wb25lbnQiLCJzZXRTdGF0ZSIsImNsYXNzZXMiLCJjbGFzc05hbWUiLCJibHgtaGlkZGVuIiwiY3JlYXRlRWxlbWVudCIsInN0eWxlIiwiaWNvbiIsInRpdGxlIiwibWVzc2FnZSIsImNsb3NhYmxlIiwiYXJpYS1sYWJlbCIsIm9uQ2xpY2siLCJwcm9wVHlwZXMiLCJzdHJpbmciLCJvYmplY3QiLCJub2RlIiwiYm9vbCIsImZ1bmMiLCJkZWZhdWx0UHJvcHMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiNDNCQUFBLElBQU1BLE1BQVFDLFFBQVEsU0FDaEJDLFVBQVlELFFBQVEsY0FDcEJFLFdBQWFGLFFBQVEsY0FFckJHLFVBQVlILFFBQVEseUJBRXBCSSx1QkFDSixTQUFBQSxFQUFZQyxHQUFPQyxnQkFBQUMsS0FBQUgsR0FBQSxJQUFBSSxFQUFBQywyQkFBQUYsTUFBQUgsRUFBQU0sV0FBQUMsT0FBQUMsZUFBQVIsSUFBQVMsS0FBQU4sS0FDWEYsSUFEVyxPQUdqQkcsRUFBS00sTUFBUSxDQUNYQyxRQUFRLEdBR1ZQLEVBQUtRLFFBQVVSLEVBQUtRLFFBQVFDLEtBQWJULEdBUEVBLHFCQURLVCxNQUFNbUIsMkRBWU0sbUJBQXZCWCxLQUFLRixNQUFNVyxTQUNwQlQsS0FBS0YsTUFBTVcsVUFFYlQsS0FBS1ksU0FBUyxDQUNaSixRQUFRLHFDQUtWLElBQU1LLEVBQVVsQixXQUFXLFlBQWFLLEtBQUtGLE1BQU1nQixVQUFXLENBQzVEQyxhQUFjZixLQUFLTyxNQUFNQyxTQUUzQixPQUNFaEIsTUFBQXdCLGNBQUEsTUFBQSxDQUNFQyxNQUFPakIsS0FBS0YsTUFBTW1CLE1BQ2xCSCxVQUFXRCxHQUVYckIsTUFBQXdCLGNBQUEsTUFBQSxDQUFLRixVQUFVLDRCQUNidEIsTUFBQXdCLGNBQUEsT0FBQSxDQUFNRixVQUFVLDhCQUNkZCxLQUFLRixNQUFNb0IsTUFFZjFCLE1BQUF3QixjQUFBLE1BQUEsQ0FBS0YsVUFBVSxrQkFDYnRCLE1BQUF3QixjQUFBLEtBQUEsS0FDR2hCLEtBQUtGLE1BQU1xQixPQUVkM0IsTUFBQXdCLGNBQUEsSUFBQSxLQUFJaEIsS0FBS0YsTUFBTXNCLFVBRWZwQixLQUFLRixNQUFNdUIsVUFDWDdCLE1BQUF3QixjQUFBLFNBQUEsQ0FBUUYsVUFBVSxrQkFBa0JRLGFBQVcsUUFBUUMsUUFBU3ZCLEtBQUtTLFNBQ25FakIsTUFBQXdCLGNBQUNwQixVQUFELGlCQVFaQyxZQUFZMkIsVUFBWSxDQUN0QlYsVUFBV3BCLFVBQVUrQixPQUNyQlIsTUFBT3ZCLFVBQVVnQyxPQUNqQlAsTUFBT3pCLFVBQVUrQixPQUNqQlAsS0FBTXhCLFVBQVVpQyxLQUNoQlAsUUFBUzFCLFVBQVUrQixPQUNuQkosU0FBVTNCLFVBQVVrQyxLQUNwQm5CLFFBQVNmLFVBQVVtQyxNQUdyQmhDLFlBQVlpQyxhQUFlLENBQ3pCaEIsVUFBVyxHQUNYRyxNQUFPLEtBQ1BFLE1BQU8sR0FDUEQsS0FBTSxLQUNORSxRQUFTLEdBQ1RDLFVBQVUsRUFDVlosUUFBUyxNQUdYc0IsT0FBT0MsUUFBVW5DIiwiZmlsZSI6ImFsZXJ0cy9BbGVydEJhbm5lci5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbmNvbnN0IFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcbmNvbnN0IGNsYXNzbmFtZXMgPSByZXF1aXJlKCdjbGFzc25hbWVzJyk7XG5cbmNvbnN0IENsb3NlSWNvbiA9IHJlcXVpcmUoJy4uL2ljb25zL0Nsb3NlSWNvbi5qc3gnKTtcblxuY2xhc3MgQWxlcnRCYW5uZXIgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKTtcblxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICBoaWRkZW46IGZhbHNlXG4gICAgfTtcblxuICAgIHRoaXMub25DbG9zZSA9IHRoaXMub25DbG9zZS5iaW5kKHRoaXMpO1xuICB9XG5cbiAgb25DbG9zZSgpIHtcbiAgICBpZiAodHlwZW9mIHRoaXMucHJvcHMub25DbG9zZSA9PT0gJ2Z1bmN0aW9uJykge1xuICAgICAgdGhpcy5wcm9wcy5vbkNsb3NlKCk7XG4gICAgfVxuICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgaGlkZGVuOiB0cnVlXG4gICAgfSk7XG4gIH1cblxuICByZW5kZXIoKSB7XG4gICAgY29uc3QgY2xhc3NlcyA9IGNsYXNzbmFtZXMoJ2JseC1hbGVydCcsIHRoaXMucHJvcHMuY2xhc3NOYW1lLCB7XG4gICAgICAnYmx4LWhpZGRlbic6IHRoaXMuc3RhdGUuaGlkZGVuXG4gICAgfSk7XG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXZcbiAgICAgICAgc3R5bGU9e3RoaXMucHJvcHMuc3R5bGV9XG4gICAgICAgIGNsYXNzTmFtZT17Y2xhc3Nlc31cbiAgICAgID5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJibHgtYWxlcnQtaWNvbi1jb250YWluZXJcIj5cbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJibHgtYWxlcnQtaWNvbi1iYWNrZ3JvdW5kXCIgLz5cbiAgICAgICAgICB7IHRoaXMucHJvcHMuaWNvbiB9XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImJseC1hbGVydC10ZXh0XCI+XG4gICAgICAgICAgPGg0PlxuICAgICAgICAgICAge3RoaXMucHJvcHMudGl0bGV9XG4gICAgICAgICAgPC9oND5cbiAgICAgICAgICA8cD57dGhpcy5wcm9wcy5tZXNzYWdlfTwvcD5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIHsgdGhpcy5wcm9wcy5jbG9zYWJsZSAmJlxuICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPVwiYmx4LWFsZXJ0LWNsb3NlXCIgYXJpYS1sYWJlbD1cImNsb3NlXCIgb25DbGljaz17dGhpcy5vbkNsb3NlfT5cbiAgICAgICAgICAgIDxDbG9zZUljb24gLz5cbiAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgfVxuICAgICAgPC9kaXY+XG4gICAgKTtcbiAgfVxufVxuXG5BbGVydEJhbm5lci5wcm9wVHlwZXMgPSB7XG4gIGNsYXNzTmFtZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgc3R5bGU6IFByb3BUeXBlcy5vYmplY3QsXG4gIHRpdGxlOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBpY29uOiBQcm9wVHlwZXMubm9kZSxcbiAgbWVzc2FnZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgY2xvc2FibGU6IFByb3BUeXBlcy5ib29sLFxuICBvbkNsb3NlOiBQcm9wVHlwZXMuZnVuY1xufTtcblxuQWxlcnRCYW5uZXIuZGVmYXVsdFByb3BzID0ge1xuICBjbGFzc05hbWU6ICcnLFxuICBzdHlsZTogbnVsbCxcbiAgdGl0bGU6ICcnLFxuICBpY29uOiBudWxsLFxuICBtZXNzYWdlOiAnJyxcbiAgY2xvc2FibGU6IGZhbHNlLFxuICBvbkNsb3NlOiBudWxsXG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IEFsZXJ0QmFubmVyO1xuIl19
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var CloseIcon_1 = require("../icons/CloseIcon");
+/**
+ * AlertBanner description!!!
+ */
+var AlertBanner = /** @class */ (function (_super) {
+    __extends(AlertBanner, _super);
+    function AlertBanner(props) {
+        var _this = _super.call(this, props) || this;
+        _this.onClose = function () {
+            if (typeof _this.props.onClose === 'function') {
+                _this.props.onClose();
+            }
+            _this.setState({
+                hidden: true
+            });
+        };
+        _this.state = {
+            hidden: false
+        };
+        return _this;
+        // this.onClose = this.onClose.bind(this);
+    }
+    // onClose() {
+    // }
+    AlertBanner.prototype.render = function () {
+        var classes = classnames_1["default"]('blx-alert', this.props.className, {
+            'blx-hidden': this.state.hidden
+        });
+        return (React.createElement("div", { style: this.props.style, className: classes },
+            React.createElement("div", { className: "blx-alert-icon-container" },
+                React.createElement("span", { className: "blx-alert-icon-background" }),
+                this.props.icon),
+            React.createElement("div", { className: "blx-alert-text" },
+                React.createElement("h4", null, this.props.title),
+                React.createElement("p", null, this.props.message)),
+            this.props.closable &&
+                React.createElement("button", { className: "blx-alert-close", "aria-label": "close", onClick: this.onClose },
+                    React.createElement(CloseIcon_1["default"], null))));
+    };
+    AlertBanner.defaultProps = {
+        className: '',
+        style: null,
+        title: '',
+        icon: null,
+        message: '',
+        closable: false,
+        onClose: null
+    };
+    return AlertBanner;
+}(React.Component));
+exports["default"] = AlertBanner;

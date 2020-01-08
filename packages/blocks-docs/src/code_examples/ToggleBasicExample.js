@@ -1,5 +1,6 @@
 import React from "react"
 import Toggle from 'blocks-react/dist/input/Toggle';
+
 class ToggleBasicExample extends React.Component {
   constructor(props) {
     super(props);

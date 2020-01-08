@@ -1,18 +1,10 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-type ToggleProps = {
-  className: string,
-  style?: any,
-  options: { text: string, value: string | number }[],
-  value: string | number,
-  label?: string,
-  disabled?: boolean,
-}
 /**
  * This is a toggle, it can have many options.
  */
-const Toggle = ({
+const Toggle= ({
   className,
   style,
   options,
@@ -53,6 +45,15 @@ const Toggle = ({
       }
     </div>
   );
+}
+
+type ToggleProps = {
+  className: string,
+  style?: any,
+  options: { text: string, value: string | number }[],
+  value: string | number,
+  label?: string,
+  disabled?: boolean,
 }
 
 export default Toggle;
