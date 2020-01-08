@@ -1,6 +1,4 @@
 import React from "react"
-
-// const { Toggle } = require('blocks-react').Input;
 import Toggle from 'blocks-react/dist/input/Toggle';
 class ToggleBasicExample extends React.Component {
   constructor(props) {
