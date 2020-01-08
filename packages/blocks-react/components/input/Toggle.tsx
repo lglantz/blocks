@@ -1,5 +1,14 @@
 import * as React from 'react';
 import classnames from 'classnames';
+
+type ToggleProps = {
+  className: string,
+  style?: any,
+  options: { text: string, value: string | number }[],
+  value: string | number,
+  label?: string,
+  disabled?: boolean,
+}
 /**
  * This is a toggle, it can have many options.
  */
@@ -11,14 +20,7 @@ const Toggle = ({
   label = 'toggle',
   disabled = false,
   ...other
-}: {
-  className: string,
-  style?: any,
-  options: { text: string, value: string | number }[],
-  value: string | number,
-  label?: string,
-  disabled?: boolean,
-}) => {
+}: ToggleProps) => {
   const classes = classnames('blx-toggle', className, {
     'blx-disabled': disabled
   });
