@@ -1,11 +1,10 @@
-import * as React from 'react';
+/// <reference types="react" />
 /**
  * This is a toggle, it can have many options.
  */
-declare const Toggle: React.FunctionComponent<ToggleProps>;
-declare type ToggleProps = {
+declare const Toggle: ({ className, style, options, value, label, disabled, ...other }: {
     className: string;
-    style?: any;
+    style?: object;
     options: {
         text: string;
         value: string | number;
@@ -13,5 +12,5 @@ declare type ToggleProps = {
     value: string | number;
     label?: string;
     disabled?: boolean;
-};
+}) => JSX.Element;
 export default Toggle;

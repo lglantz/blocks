@@ -28,16 +28,12 @@ var classnames_1 = require("classnames");
  * This is a toggle, it can have many options.
  */
 var Toggle = function (_a) {
-    var className = _a.className, style = _a.style, options = _a.options, value = _a.value, label = _a.label, disabled = _a.disabled, other = __rest(_a, ["className", "style", "options", "value", "label", "disabled"]);
+    var className = _a.className, style = _a.style, options = _a.options, value = _a.value, _b = _a.label, label = _b === void 0 ? 'toogle' : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, other = __rest(_a, ["className", "style", "options", "value", "label", "disabled"]);
     var classes = classnames_1["default"]('blx-toggle', className, {
         'blx-disabled': disabled
     });
     return (React.createElement("div", { style: style, className: classes, role: "radiogroup", "aria-label": label }, options.map(function (option, idx) { return (React.createElement("label", { className: "blx-toggle-container", key: option.text },
         React.createElement("input", __assign({ type: "radio", id: "toggle-option-" + idx, value: option.value, checked: option.value === value, disabled: disabled }, other)),
         React.createElement("span", { className: "blx-toggle-text" }, option.text))); })));
-};
-Toggle.defaultProps = {
-    label: 'toggle',
-    disabled: false
 };
 exports["default"] = Toggle;
