@@ -1,6 +1,7 @@
 import React from "react"
 
-const { ButtonPrimary, ButtonSecondary } = require('blocks-react').Buttons;
+import ButtonPrimary from 'blocks-react/dist/buttons/ButtonPrimary';
+import ButtonSecondary from 'blocks-react/dist/buttons/ButtonSecondary';
 
 const ButtonLinkExample = () => (
   <div className="blx-h-button-group">

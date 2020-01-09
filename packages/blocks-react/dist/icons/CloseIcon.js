@@ -1,2 +1,20 @@
-"use strict";var React=require("react"),Icon=require("./Icon.js"),CloseIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{fillRule:"nonzero",d:"M11.414 10l4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414L8.586 10l-4.95-4.95L5.05 3.636 10 8.586l4.95-4.95 1.414 1.414z"}))};module.exports=CloseIcon;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL0Nsb3NlSWNvbi5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiSWNvbiIsIkNsb3NlSWNvbiIsInByb3BzIiwiY3JlYXRlRWxlbWVudCIsImZpbGxSdWxlIiwiZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJhQUFBLElBQU1BLE1BQVFDLFFBQVEsU0FFaEJDLEtBQU9ELFFBQVEsYUFFZkUsVUFBWSxTQUFDQyxHQUNqQixPQUNFSixNQUFBSyxjQUFDSCxLQUFTRSxFQUNSSixNQUFBSyxjQUFBLE9BQUEsQ0FDRUMsU0FBUyxVQUNUQyxFQUFFLHNJQU1WQyxPQUFPQyxRQUFVTiIsImZpbGUiOiJpY29ucy9DbG9zZUljb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbmNvbnN0IEljb24gPSByZXF1aXJlKCcuL0ljb24uanN4Jyk7XG5cbmNvbnN0IENsb3NlSWNvbiA9IChwcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxJY29uIHsuLi5wcm9wc30+XG4gICAgICA8cGF0aFxuICAgICAgICBmaWxsUnVsZT1cIm5vbnplcm9cIlxuICAgICAgICBkPVwiTTExLjQxNCAxMGw0Ljk1IDQuOTUtMS40MTQgMS40MTQtNC45NS00Ljk1LTQuOTUgNC45NS0xLjQxNC0xLjQxNEw4LjU4NiAxMGwtNC45NS00Ljk1TDUuMDUgMy42MzYgMTAgOC41ODZsNC45NS00Ljk1IDEuNDE0IDEuNDE0elwiXG4gICAgICAvPlxuICAgIDwvSWNvbj5cbiAgKTtcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBDbG9zZUljb247XG4iXX0=
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var Icon_1 = require("./Icon");
+var CloseIcon = function (props) {
+    return (React.createElement(Icon_1["default"], __assign({}, props),
+        React.createElement("path", { fillRule: "nonzero", d: "M11.414 10l4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414L8.586 10l-4.95-4.95L5.05 3.636 10 8.586l4.95-4.95 1.414 1.414z" })));
+};
+exports["default"] = CloseIcon;

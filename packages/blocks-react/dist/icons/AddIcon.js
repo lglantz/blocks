@@ -1,2 +1,20 @@
-"use strict";var React=require("react"),Icon=require("./Icon.js"),AddIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{fillRule:"nonzero",d:"M11 9h6v2h-6v6H9v-6H3V9h6V3h2v6z"}))};module.exports=AddIcon;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL0FkZEljb24uanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsIkljb24iLCJBZGRJY29uIiwicHJvcHMiLCJjcmVhdGVFbGVtZW50IiwiZmlsbFJ1bGUiLCJkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6ImFBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUVoQkMsS0FBT0QsUUFBUSxhQUVmRSxRQUFVLFNBQUNDLEdBQ2YsT0FDRUosTUFBQUssY0FBQ0gsS0FBU0UsRUFDUkosTUFBQUssY0FBQSxPQUFBLENBQ0VDLFNBQVMsVUFDVEMsRUFBRSx1Q0FNVkMsT0FBT0MsUUFBVU4iLCJmaWxlIjoiaWNvbnMvQWRkSWNvbi5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcblxuY29uc3QgSWNvbiA9IHJlcXVpcmUoJy4vSWNvbi5qc3gnKTtcblxuY29uc3QgQWRkSWNvbiA9IChwcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxJY29uIHsuLi5wcm9wc30+XG4gICAgICA8cGF0aFxuICAgICAgICBmaWxsUnVsZT1cIm5vbnplcm9cIlxuICAgICAgICBkPVwiTTExIDloNnYyaC02djZIOXYtNkgzVjloNlYzaDJ2NnpcIlxuICAgICAgLz5cbiAgICA8L0ljb24+XG4gICk7XG59XG5cbm1vZHVsZS5leHBvcnRzID0gQWRkSWNvbjtcbiJdfQ==
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var Icon_1 = require("./Icon");
+var AddIcon = function (props) {
+    return (React.createElement(Icon_1["default"], __assign({}, props),
+        React.createElement("path", { fillRule: "nonzero", d: "M11 9h6v2h-6v6H9v-6H3V9h6V3h2v6z" })));
+};
+exports["default"] = AddIcon;

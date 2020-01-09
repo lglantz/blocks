@@ -1,6 +1,6 @@
 import React from "react"
 
-const { PopoverMenu } = require('blocks-react').Dropdowns;
+import PopoverMenu from 'blocks-react/dist/dropdowns/PopoverMenu';
 
 const exampleOptions = [
   {

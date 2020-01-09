@@ -1,40 +1,40 @@
 import React from "react"
 
-const { PopoverMenu } = require('blocks-react').Dropdowns;
-const { DownIcon } = require('blocks-react').Icons;
+import PopoverMenu from 'blocks-react/dist/dropdowns/PopoverMenu';
+import DownIcon from 'blocks-react/dist/icons/DownIcon';
 
 const exampleOptions = [
   {
     text: 'Action',
-    onClick: () => {}
+    onClick: () => { }
   },
   {
     text: 'Long Named Disabled Action',
     disabled: true,
-    onClick: () => {}
+    onClick: () => { }
   },
   {
     text: 'Correct Action',
-    onClick: () => {}
+    onClick: () => { }
   },
   {
     text: 'Another Action',
-    onClick: () => {}
+    onClick: () => { }
   },
   {
     text: 'One More Action',
-    onClick: () => {}
+    onClick: () => { }
   }
 ];
 
 const exampleOptions2 = [
   {
     text: 'Correct Action',
-    onClick: () => {}
+    onClick: () => { }
   },
   {
     text: 'Another Action',
-    onClick: () => {}
+    onClick: () => { }
   }
 ];
 

@@ -1,7 +1,5 @@
 import React from "react"
-
-const { RadioButton } = require('blocks-react').Input;
-
+import RadioButton from 'blocks-react/dist/input/RadioButton';
 class RadioBasicExample extends React.Component {
   constructor(props) {
     super(props);

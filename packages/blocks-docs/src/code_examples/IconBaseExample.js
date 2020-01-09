@@ -1,9 +1,8 @@
 import React from "react"
-
-const { AddIcon,
-        CloseIcon,
-        MoreIcon,
-        MoreVerticalIcon} = require('blocks-react').Icons;
+import AddIcon from 'blocks-react/dist/icons/AddIcon';
+import CloseIcon from 'blocks-react/dist/icons/CloseIcon';
+import MoreIcon from 'blocks-react/dist/icons/MoreIcon';
+import MoreVerticalIcon from 'blocks-react/dist/icons/MoreVerticalIcon';
 const { Colors } = require('blocks-base');
 
 const IconBaseExamples = () => (

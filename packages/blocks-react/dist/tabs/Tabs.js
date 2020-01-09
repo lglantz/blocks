@@ -1,2 +1,24 @@
-"use strict";var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),Tabs=function(s){var e=classnames(s.className,{"blx-vertical-tabs":s.vertical,"blx-horizontal-tabs":!s.vertical,"blx-disabled":s.disabled}),a=React.Children.map(s.children,function(e){return React.cloneElement(e,{tabIndex:s.disabled?"-1":void 0})});return React.createElement("ul",{style:s.style,className:e},a)};Tabs.propTypes={className:PropTypes.string,style:PropTypes.object,disabled:PropTypes.bool,vertical:PropTypes.bool},Tabs.defaultProps={className:"",style:null,disabled:!1,vertical:!1},module.exports=Tabs;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMvVGFicy5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xhc3NuYW1lcyIsIlRhYnMiLCJwcm9wcyIsImNsYXNzZXMiLCJjbGFzc05hbWUiLCJibHgtdmVydGljYWwtdGFicyIsInZlcnRpY2FsIiwiYmx4LWhvcml6b250YWwtdGFicyIsImJseC1kaXNhYmxlZCIsImRpc2FibGVkIiwiY2hpbGRyZW4iLCJDaGlsZHJlbiIsIm1hcCIsImNoaWxkIiwiY2xvbmVFbGVtZW50IiwidGFiSW5kZXgiLCJ1bmRlZmluZWQiLCJjcmVhdGVFbGVtZW50Iiwic3R5bGUiLCJwcm9wVHlwZXMiLCJzdHJpbmciLCJvYmplY3QiLCJib29sIiwiZGVmYXVsdFByb3BzIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6ImFBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUdyQkcsS0FBTyxTQUFDQyxHQUNaLElBQU1DLEVBQVVILFdBQVdFLEVBQU1FLFVBQVcsQ0FDMUNDLG9CQUFxQkgsRUFBTUksU0FDM0JDLHVCQUF3QkwsRUFBTUksU0FDOUJFLGVBQWdCTixFQUFNTyxXQUdsQkMsRUFBV2IsTUFBTWMsU0FBU0MsSUFBSVYsRUFBTVEsU0FBVSxTQUFBRyxHQUFBLE9BQ2xEaEIsTUFBTWlCLGFBQWFELEVBQU8sQ0FDeEJFLFNBQVViLEVBQU1PLFNBQVcsVUFBT08sTUFJdEMsT0FDRW5CLE1BQUFvQixjQUFBLEtBQUEsQ0FDRUMsTUFBT2hCLEVBQU1nQixNQUNiZCxVQUFXRCxHQUVWTyxJQUtQVCxLQUFLa0IsVUFBWSxDQUNmZixVQUFXTCxVQUFVcUIsT0FDckJGLE1BQU9uQixVQUFVc0IsT0FDakJaLFNBQVVWLFVBQVV1QixLQUNwQmhCLFNBQVVQLFVBQVV1QixNQUd0QnJCLEtBQUtzQixhQUFlLENBQ2xCbkIsVUFBVyxHQUNYYyxNQUFPLEtBQ1BULFVBQVUsRUFDVkgsVUFBVSxHQUdaa0IsT0FBT0MsUUFBVXhCIiwiZmlsZSI6InRhYnMvVGFicy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbmNvbnN0IFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcbmNvbnN0IGNsYXNzbmFtZXMgPSByZXF1aXJlKCdjbGFzc25hbWVzJyk7XG5cblxuY29uc3QgVGFicyA9IChwcm9wcykgPT4ge1xuICBjb25zdCBjbGFzc2VzID0gY2xhc3NuYW1lcyhwcm9wcy5jbGFzc05hbWUsIHtcbiAgICAnYmx4LXZlcnRpY2FsLXRhYnMnOiBwcm9wcy52ZXJ0aWNhbCxcbiAgICAnYmx4LWhvcml6b250YWwtdGFicyc6ICFwcm9wcy52ZXJ0aWNhbCxcbiAgICAnYmx4LWRpc2FibGVkJzogcHJvcHMuZGlzYWJsZWRcbiAgfSk7XG5cbiAgY29uc3QgY2hpbGRyZW4gPSBSZWFjdC5DaGlsZHJlbi5tYXAocHJvcHMuY2hpbGRyZW4sIGNoaWxkID0+IChcbiAgICBSZWFjdC5jbG9uZUVsZW1lbnQoY2hpbGQsIHtcbiAgICAgIHRhYkluZGV4OiBwcm9wcy5kaXNhYmxlZCA/IFwiLTFcIiA6IHVuZGVmaW5lZFxuICAgIH0pXG4gICkpO1xuXG4gIHJldHVybiAoXG4gICAgPHVsXG4gICAgICBzdHlsZT17cHJvcHMuc3R5bGV9XG4gICAgICBjbGFzc05hbWU9e2NsYXNzZXN9XG4gICAgPlxuICAgICAge2NoaWxkcmVufVxuICAgIDwvdWw+XG4gICk7XG59XG5cblRhYnMucHJvcFR5cGVzID0ge1xuICBjbGFzc05hbWU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIHN0eWxlOiBQcm9wVHlwZXMub2JqZWN0LFxuICBkaXNhYmxlZDogUHJvcFR5cGVzLmJvb2wsXG4gIHZlcnRpY2FsOiBQcm9wVHlwZXMuYm9vbFxufTtcblxuVGFicy5kZWZhdWx0UHJvcHMgPSB7XG4gIGNsYXNzTmFtZTogJycsXG4gIHN0eWxlOiBudWxsLFxuICBkaXNhYmxlZDogZmFsc2UsXG4gIHZlcnRpY2FsOiBmYWxzZVxufTtcblxubW9kdWxlLmV4cG9ydHMgPSBUYWJzO1xuXG4iXX0=
+"use strict";
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var Tabs = function (props) {
+    var classes = classnames_1["default"](props.className, {
+        'blx-vertical-tabs': props.vertical,
+        'blx-horizontal-tabs': !props.vertical,
+        'blx-disabled': props.disabled
+    });
+    var children = React.Children.map(props.children, function (child) { return (
+    //@ts-ignore
+    React.cloneElement(child, {
+        tabIndex: props.disabled ? "-1" : undefined
+    })); });
+    return (React.createElement("ul", { style: props.style, className: classes }, children));
+};
+Tabs.defaultProps = {
+    className: '',
+    style: null,
+    disabled: false,
+    vertical: false
+};
+exports["default"] = Tabs;

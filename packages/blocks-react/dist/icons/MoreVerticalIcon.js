@@ -1,2 +1,20 @@
-"use strict";var React=require("react"),Icon=require("./Icon.js"),MoreVerticalIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{fillRule:"nonzero",transform:"rotate(90 10 10)",d:"M10 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM2 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"}))};module.exports=MoreVerticalIcon;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL01vcmVWZXJ0aWNhbEljb24uanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsIkljb24iLCJNb3JlVmVydGljYWxJY29uIiwicHJvcHMiLCJjcmVhdGVFbGVtZW50IiwiZmlsbFJ1bGUiLCJ0cmFuc2Zvcm0iLCJkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6ImFBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUVoQkMsS0FBT0QsUUFBUSxhQUVmRSxpQkFBbUIsU0FBQ0MsR0FDeEIsT0FDRUosTUFBQUssY0FBQ0gsS0FBU0UsRUFDUkosTUFBQUssY0FBQSxPQUFBLENBQ0VDLFNBQVMsVUFDVEMsVUFBVSxtQkFDVkMsRUFBRSw2R0FNVkMsT0FBT0MsUUFBVVAiLCJmaWxlIjoiaWNvbnMvTW9yZVZlcnRpY2FsSWNvbi5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcblxuY29uc3QgSWNvbiA9IHJlcXVpcmUoJy4vSWNvbi5qc3gnKTtcblxuY29uc3QgTW9yZVZlcnRpY2FsSWNvbiA9IChwcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxJY29uIHsuLi5wcm9wc30+XG4gICAgICA8cGF0aFxuICAgICAgICBmaWxsUnVsZT1cIm5vbnplcm9cIlxuICAgICAgICB0cmFuc2Zvcm09XCJyb3RhdGUoOTAgMTAgMTApXCJcbiAgICAgICAgZD1cIk0xMCAxMmEyIDIgMCAxIDEgMC00IDIgMiAwIDAgMSAwIDR6bTggMGEyIDIgMCAxIDEgMC00IDIgMiAwIDAgMSAwIDR6TTIgMTJhMiAyIDAgMSAxIDAtNCAyIDIgMCAwIDEgMCA0elwiXG4gICAgICAvPlxuICAgIDwvSWNvbj5cbiAgKTtcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBNb3JlVmVydGljYWxJY29uO1xuIl19
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var Icon_1 = require("./Icon");
+var MoreVerticalIcon = function (props) {
+    return (React.createElement(Icon_1["default"], __assign({}, props),
+        React.createElement("path", { fillRule: "nonzero", transform: "rotate(90 10 10)", d: "M10 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM2 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" })));
+};
+exports["default"] = MoreVerticalIcon;

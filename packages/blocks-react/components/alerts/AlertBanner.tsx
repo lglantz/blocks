@@ -2,18 +2,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import CloseIcon from '../icons/CloseIcon';
 
-type AlertBannerProps = {
-  className: string,
-  style: any,
-  title: string,
-  icon: any,
-  message: string,
-  closable: boolean,
-  onClose: any
-};
-type AlertBannerState = {
-  hidden: boolean,
-};
 /**
  * AlertBanner description!!!
  */
@@ -47,6 +35,7 @@ class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
   // }
 
   render() {
+    console.log('alertbanner')
     const classes = classnames('blx-alert', this.props.className, {
       'blx-hidden': this.state.hidden
     });
@@ -74,4 +63,16 @@ class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
     );
   }
 }
+type AlertBannerProps = {
+  className?: string,
+  style?: any,
+  title?: string,
+  icon?: any,
+  message?: string,
+  closable?: boolean,
+  onClose?: any
+};
+type AlertBannerState = {
+  hidden: boolean,
+};
 export default AlertBanner;

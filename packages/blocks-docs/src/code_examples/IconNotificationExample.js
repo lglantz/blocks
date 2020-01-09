@@ -1,9 +1,8 @@
 import React from "react"
-
-const { ErrorIcon,
-        HelpIcon,
-        SuccessIcon,
-        WarningIcon} = require('blocks-react').Icons;
+import ErrorIcon from 'blocks-react/dist/icons/ErrorIcon';
+import HelpIcon from 'blocks-react/dist/icons/HelpIcon';
+import SuccessIcon from 'blocks-react/dist/icons/SuccessIcon';
+import WarningIcon from 'blocks-react/dist/icons/WarningIcon';
 
 const IconNotificationExamples = () => (
   <div>

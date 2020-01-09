@@ -8,8 +8,8 @@ declare const ErrorAlert: {
     };
 };
 declare type ErrorAlertTypes = {
-    className: string;
-    title: string;
-    closable: boolean;
+    className?: string;
+    title?: string;
+    closable?: boolean;
 };
 export default ErrorAlert;

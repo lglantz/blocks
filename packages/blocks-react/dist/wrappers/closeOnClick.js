@@ -1,2 +1,88 @@
-"use strict";var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},_createClass=function(){function o(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(e,t,n){return t&&o(e.prototype,t),n&&o(e,n),e}}();function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function _inherits(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var React=require("react"),PropTypes=require("prop-types");function closeOnClick(e){var t=(_inherits(n,React.Component),_createClass(n,[{key:"open",value:function(){var e=this;this.setState({isOpen:!0},function(){document.body.addEventListener("click",e.closeOnClick)})}},{key:"close",value:function(e){var t=this;this.setState({isOpen:!1},function(){document.body.removeEventListener("click",t.closeOnClick)}),e.stopPropagation()}},{key:"toggle",value:function(e){e.stopPropagation(),e.preventDefault(),this.state.isOpen?this.close(e):this.open()}},{key:"closeOnClick",value:function(e){this.ref.current&&(e.target===this.ref.current||this.ref.current.contains(e.target)||(this.close(e),this.props.afterCloseOnClick&&this.props.afterCloseOnClick()))}},{key:"render",value:function(){return React.createElement(e,_extends({},this.props,this.state,{forwardedRef:this.ref,isOpen:this.state.isOpen,toggle:this.toggle,open:this.open,close:this.close}))}}]),n);function n(e){_classCallCheck(this,n);var t=_possibleConstructorReturn(this,(n.__proto__||Object.getPrototypeOf(n)).call(this,e));return t.state={isOpen:!!e.isOpen},t.open=t.open.bind(t),t.close=t.close.bind(t),t.toggle=t.toggle.bind(t),t.closeOnClick=t.closeOnClick.bind(t),t.ref=React.createRef(),t}return t.propTypes={isOpen:PropTypes.bool,afterCloseOnClick:PropTypes.func},t.defaultProps={isOpen:!1,afterCloseOnClick:null},t}module.exports=closeOnClick;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndyYXBwZXJzL2Nsb3NlT25DbGljay5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xvc2VPbkNsaWNrIiwiV3JhcHBlZENvbXBvbmVudCIsIkNvbXBvbmVudFdpdGhDbG9zZU9uQ2xpY2siLCJfaW5oZXJpdHMiLCJDb21wb25lbnQiLCJfY3JlYXRlQ2xhc3MiLCJrZXkiLCJ2YWx1ZSIsIl90aGlzMiIsInRoaXMiLCJzZXRTdGF0ZSIsImlzT3BlbiIsImRvY3VtZW50IiwiYm9keSIsImFkZEV2ZW50TGlzdGVuZXIiLCJlIiwiX3RoaXMzIiwicmVtb3ZlRXZlbnRMaXN0ZW5lciIsInN0b3BQcm9wYWdhdGlvbiIsInByZXZlbnREZWZhdWx0Iiwic3RhdGUiLCJjbG9zZSIsIm9wZW4iLCJyZWYiLCJjdXJyZW50IiwidGFyZ2V0IiwiY29udGFpbnMiLCJwcm9wcyIsImFmdGVyQ2xvc2VPbkNsaWNrIiwiY3JlYXRlRWxlbWVudCIsIl9leHRlbmRzIiwiZm9yd2FyZGVkUmVmIiwidG9nZ2xlIiwiX2NsYXNzQ2FsbENoZWNrIiwiX3RoaXMiLCJfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybiIsIl9fcHJvdG9fXyIsIk9iamVjdCIsImdldFByb3RvdHlwZU9mIiwiY2FsbCIsImJpbmQiLCJjcmVhdGVSZWYiLCJwcm9wVHlwZXMiLCJib29sIiwiZnVuYyIsImRlZmF1bHRQcm9wcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJ1aUNBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUUxQixTQUFTRSxhQUFhQyxHQUFrQixJQUNoQ0MsR0FEZ0NDLFVBQUFELEVBQ0VMLE1BQU1PLFdBRFJDLGFBQUFILEVBQUEsQ0FBQSxDQUFBSSxJQUFBLE9BQUFDLE1BQUEsV0FlN0IsSUFBQUMsRUFBQUMsS0FDTEEsS0FBS0MsU0FBUyxDQUNaQyxRQUFRLEdBQ1AsV0FDREMsU0FBU0MsS0FBS0MsaUJBQWlCLFFBQVNOLEVBQUtSLGtCQW5CYixDQUFBTSxJQUFBLFFBQUFDLE1BQUEsU0F1QjlCUSxHQUFHLElBQUFDLEVBQUFQLEtBQ1BBLEtBQUtDLFNBQVMsQ0FDWkMsUUFBUSxHQUNQLFdBQ0RDLFNBQVNDLEtBQUtJLG9CQUFvQixRQUFTRCxFQUFLaEIsZ0JBRWxEZSxFQUFFRyxvQkE3QmdDLENBQUFaLElBQUEsU0FBQUMsTUFBQSxTQWdDN0JRLEdBQ0xBLEVBQUVHLGtCQUNGSCxFQUFFSSxpQkFDRVYsS0FBS1csTUFBTVQsT0FDYkYsS0FBS1ksTUFBTU4sR0FFWE4sS0FBS2EsU0F0QzJCLENBQUFoQixJQUFBLGVBQUFDLE1BQUEsU0EwQ3ZCUSxHQUNOTixLQUFLYyxJQUFJQyxVQUNWVCxFQUFFVSxTQUFXaEIsS0FBS2MsSUFBSUMsU0FBV2YsS0FBS2MsSUFBSUMsUUFBUUUsU0FBU1gsRUFBRVUsVUFDakVoQixLQUFLWSxNQUFNTixHQUNQTixLQUFLa0IsTUFBTUMsbUJBQW1CbkIsS0FBS2tCLE1BQU1DLHdCQTlDWCxDQUFBdEIsSUFBQSxTQUFBQyxNQUFBLFdBa0RsQyxPQUNFVixNQUFBZ0MsY0FBQzVCLEVBQUQ2QixTQUFBLEdBQ01yQixLQUFLa0IsTUFDTGxCLEtBQUtXLE1BRlgsQ0FHRVcsYUFBY3RCLEtBQUtjLElBQ25CWixPQUFRRixLQUFLVyxNQUFNVCxPQUNuQnFCLE9BQVF2QixLQUFLdUIsT0FDYlYsS0FBTWIsS0FBS2EsS0FDWEQsTUFBT1osS0FBS1ksYUExRGtCbkIsR0FFcEMsU0FBQUEsRUFBWXlCLEdBQU9NLGdCQUFBeEIsS0FBQVAsR0FBQSxJQUFBZ0MsRUFBQUMsMkJBQUExQixNQUFBUCxFQUFBa0MsV0FBQUMsT0FBQUMsZUFBQXBDLElBQUFxQyxLQUFBOUIsS0FDWGtCLElBRFcsT0FHakJPLEVBQUtkLE1BQVEsQ0FBRVQsU0FBVWdCLEVBQU1oQixRQUUvQnVCLEVBQUtaLEtBQU9ZLEVBQUtaLEtBQUtrQixLQUFWTixHQUNaQSxFQUFLYixNQUFRYSxFQUFLYixNQUFNbUIsS0FBWE4sR0FDYkEsRUFBS0YsT0FBU0UsRUFBS0YsT0FBT1EsS0FBWk4sR0FDZEEsRUFBS2xDLGFBQWVrQyxFQUFLbEMsYUFBYXdDLEtBQWxCTixHQUVwQkEsRUFBS1gsSUFBTTFCLE1BQU00QyxZQVZBUCxFQXdFckIsT0FWQWhDLEVBQTBCd0MsVUFBWSxDQUNwQy9CLE9BQVFaLFVBQVU0QyxLQUNsQmYsa0JBQW1CN0IsVUFBVTZDLE1BRy9CMUMsRUFBMEIyQyxhQUFlLENBQ3ZDbEMsUUFBUSxFQUNSaUIsa0JBQW1CLE1BR2QxQixFQUdUNEMsT0FBT0MsUUFBVS9DIiwiZmlsZSI6IndyYXBwZXJzL2Nsb3NlT25DbGljay5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbmNvbnN0IFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcblxuZnVuY3Rpb24gY2xvc2VPbkNsaWNrKFdyYXBwZWRDb21wb25lbnQpIHtcbiAgY2xhc3MgQ29tcG9uZW50V2l0aENsb3NlT25DbGljayBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gICAgY29uc3RydWN0b3IocHJvcHMpIHtcbiAgICAgIHN1cGVyKHByb3BzKTtcblxuICAgICAgdGhpcy5zdGF0ZSA9IHsgaXNPcGVuOiAhIXByb3BzLmlzT3BlbiB9O1xuXG4gICAgICB0aGlzLm9wZW4gPSB0aGlzLm9wZW4uYmluZCh0aGlzKTtcbiAgICAgIHRoaXMuY2xvc2UgPSB0aGlzLmNsb3NlLmJpbmQodGhpcyk7XG4gICAgICB0aGlzLnRvZ2dsZSA9IHRoaXMudG9nZ2xlLmJpbmQodGhpcyk7XG4gICAgICB0aGlzLmNsb3NlT25DbGljayA9IHRoaXMuY2xvc2VPbkNsaWNrLmJpbmQodGhpcyk7XG5cbiAgICAgIHRoaXMucmVmID0gUmVhY3QuY3JlYXRlUmVmKCk7XG4gICAgfVxuXG4gICAgb3BlbigpIHtcbiAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICBpc09wZW46IHRydWVcbiAgICAgIH0sICgpID0+IHtcbiAgICAgICAgZG9jdW1lbnQuYm9keS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIHRoaXMuY2xvc2VPbkNsaWNrKTtcbiAgICAgIH0pO1xuICAgIH1cblxuICAgIGNsb3NlKGUpIHtcbiAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICBpc09wZW46IGZhbHNlXG4gICAgICB9LCAoKSA9PiB7XG4gICAgICAgIGRvY3VtZW50LmJvZHkucmVtb3ZlRXZlbnRMaXN0ZW5lcignY2xpY2snLCB0aGlzLmNsb3NlT25DbGljayk7XG4gICAgICB9KTtcbiAgICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7XG4gICAgfVxuXG4gICAgdG9nZ2xlKGUpIHtcbiAgICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7XG4gICAgICBlLnByZXZlbnREZWZhdWx0KCk7XG4gICAgICBpZiAodGhpcy5zdGF0ZS5pc09wZW4pIHtcbiAgICAgICAgdGhpcy5jbG9zZShlKTtcbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIHRoaXMub3BlbigpO1xuICAgICAgfVxuICAgIH1cblxuICAgIGNsb3NlT25DbGljayhlKSB7XG4gICAgICBpZiAoIXRoaXMucmVmLmN1cnJlbnQpIHJldHVybjtcbiAgICAgIGlmIChlLnRhcmdldCA9PT0gdGhpcy5yZWYuY3VycmVudCB8fCB0aGlzLnJlZi5jdXJyZW50LmNvbnRhaW5zKGUudGFyZ2V0KSkgcmV0dXJuO1xuICAgICAgdGhpcy5jbG9zZShlKTtcbiAgICAgIGlmICh0aGlzLnByb3BzLmFmdGVyQ2xvc2VPbkNsaWNrKSB0aGlzLnByb3BzLmFmdGVyQ2xvc2VPbkNsaWNrKCk7IC8vIGFueXRoaW5nIHRoYXQgbmVlZHMgdG8gaGFwcGVuIHdoZW4gdGhlIGRyb3Bkb3duIGNsb3NlcyBieSBjbGlja2luZyBvdXRzaWRlIG9mIGl0XG4gICAgfVxuXG4gICAgcmVuZGVyKCkge1xuICAgICAgcmV0dXJuIChcbiAgICAgICAgPFdyYXBwZWRDb21wb25lbnRcbiAgICAgICAgICB7Li4udGhpcy5wcm9wc31cbiAgICAgICAgICB7Li4udGhpcy5zdGF0ZX1cbiAgICAgICAgICBmb3J3YXJkZWRSZWY9e3RoaXMucmVmfVxuICAgICAgICAgIGlzT3Blbj17dGhpcy5zdGF0ZS5pc09wZW59XG4gICAgICAgICAgdG9nZ2xlPXt0aGlzLnRvZ2dsZX1cbiAgICAgICAgICBvcGVuPXt0aGlzLm9wZW59XG4gICAgICAgICAgY2xvc2U9e3RoaXMuY2xvc2V9XG4gICAgICAgIC8+XG4gICAgICApO1xuICAgIH1cbiAgfVxuXG4gIENvbXBvbmVudFdpdGhDbG9zZU9uQ2xpY2sucHJvcFR5cGVzID0ge1xuICAgIGlzT3BlbjogUHJvcFR5cGVzLmJvb2wsXG4gICAgYWZ0ZXJDbG9zZU9uQ2xpY2s6IFByb3BUeXBlcy5mdW5jXG4gIH07XG5cbiAgQ29tcG9uZW50V2l0aENsb3NlT25DbGljay5kZWZhdWx0UHJvcHMgPSB7XG4gICAgaXNPcGVuOiBmYWxzZSxcbiAgICBhZnRlckNsb3NlT25DbGljazogbnVsbFxuICB9O1xuXG4gIHJldHVybiBDb21wb25lbnRXaXRoQ2xvc2VPbkNsaWNrO1xufVxuXG5tb2R1bGUuZXhwb3J0cyA9IGNsb3NlT25DbGljaztcbiJdfQ==
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+function closeOnClick(WrappedComponent) {
+    var ComponentWithCloseOnClick = /** @class */ (function (_super) {
+        __extends(ComponentWithCloseOnClick, _super);
+        function ComponentWithCloseOnClick(props) {
+            var _this = _super.call(this, props) || this;
+            _this.state = { isOpen: !!props.isOpen };
+            _this.open = _this.open.bind(_this);
+            _this.close = _this.close.bind(_this);
+            _this.toggle = _this.toggle.bind(_this);
+            _this.closeOnClick = _this.closeOnClick.bind(_this);
+            _this.ref = React.createRef();
+            return _this;
+        }
+        ComponentWithCloseOnClick.prototype.open = function () {
+            var _this = this;
+            this.setState({
+                isOpen: true
+            }, function () {
+                document.body.addEventListener('click', _this.closeOnClick);
+            });
+        };
+        ComponentWithCloseOnClick.prototype.close = function (e) {
+            var _this = this;
+            this.setState({
+                isOpen: false
+            }, function () {
+                document.body.removeEventListener('click', _this.closeOnClick);
+            });
+            e.stopPropagation();
+        };
+        ComponentWithCloseOnClick.prototype.toggle = function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            if (this.state.isOpen) {
+                this.close(e);
+            }
+            else {
+                this.open();
+            }
+        };
+        ComponentWithCloseOnClick.prototype.closeOnClick = function (e) {
+            if (!this.ref.current)
+                return;
+            if (e.target === this.ref.current || this.ref.current.contains(e.target))
+                return;
+            this.close(e);
+            if (this.props.afterCloseOnClick)
+                this.props.afterCloseOnClick(); // anything that needs to happen when the dropdown closes by clicking outside of it
+        };
+        ComponentWithCloseOnClick.prototype.render = function () {
+            return (React.createElement(WrappedComponent, __assign({}, this.props, this.state, { forwardedRef: this.ref, isOpen: this.state.isOpen, toggle: this.toggle, open: this.open, close: this.close })));
+        };
+        ComponentWithCloseOnClick.defaultProps = {
+            isOpen: false,
+            afterCloseOnClick: null
+        };
+        return ComponentWithCloseOnClick;
+    }(React.Component));
+    return ComponentWithCloseOnClick;
+}
+exports["default"] = closeOnClick;

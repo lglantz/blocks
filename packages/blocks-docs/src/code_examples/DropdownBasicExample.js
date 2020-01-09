@@ -1,6 +1,5 @@
 import React from "react"
-
-const { Dropdown } = require('blocks-react').Dropdowns;
+import Dropdown from 'blocks-react/dist/dropdowns/Dropdown';
 
 class DropdownBasicExample extends React.Component {
   constructor(props) {
@@ -14,6 +13,7 @@ class DropdownBasicExample extends React.Component {
   render() {
     return (
       <Dropdown
+      
         text="Choose an option"
         scrollable
         value={this.state.selectedValue}

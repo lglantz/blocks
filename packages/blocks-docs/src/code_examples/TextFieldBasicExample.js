@@ -1,6 +1,5 @@
 import React from "react"
-
-const { TextField } = require('blocks-react').Input;
+import TextField from 'blocks-react/dist/input/TextField';
 
 class TextFieldBasicExample extends React.Component {
   constructor(props) {

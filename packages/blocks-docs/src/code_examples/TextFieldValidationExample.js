@@ -1,7 +1,6 @@
 import React from "react"
-
-const { TextField } = require('blocks-react').Input;
-const { SuccessIcon } = require('blocks-react').Icons;
+import TextField from 'blocks-react/dist/input/TextField';
+import SuccessIcon from 'blocks-react/dist/icons/SuccessIcon';
 
 class TextFieldValidationExample extends React.Component {
   constructor(props) {

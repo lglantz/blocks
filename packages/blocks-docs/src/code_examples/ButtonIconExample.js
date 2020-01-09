@@ -1,7 +1,17 @@
 import React from "react"
+import ButtonPrimary from 'blocks-react/dist/buttons/ButtonPrimary';
+import ButtonSecondary from 'blocks-react/dist/buttons/ButtonSecondary';
+import ButtonDanger from 'blocks-react/dist/buttons/ButtonDanger';
+import ButtonDark from 'blocks-react/dist/buttons/ButtonDark';
+import UpIcon from 'blocks-react/dist/icons/UpIcon';
+import MoreIcon from 'blocks-react/dist/icons/MoreIcon';
+import SuccessIcon from 'blocks-react/dist/icons/SuccessIcon';
+import CloseIcon from 'blocks-react/dist/icons/CloseIcon';
+import AddIcon from 'blocks-react/dist/icons/AddIcon';
+import BackIcon from 'blocks-react/dist/icons/BackIcon';
+import NextIcon from 'blocks-react/dist/icons/NextIcon';
+import DownIcon from 'blocks-react/dist/icons/DownIcon';
 
-const { ButtonPrimary, ButtonSecondary, ButtonDanger, ButtonDark } = require('blocks-react').Buttons;
-const { UpIcon, MoreIcon, SuccessIcon, CloseIcon, AddIcon, BackIcon, NextIcon, DownIcon } = require('blocks-react').Icons;
 const { Colors } = require('blocks-base');
 
 const ButtonIconExample = () => (

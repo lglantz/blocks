@@ -1,8 +1,6 @@
 import React from "react"
-
-const { BaseModal } = require('blocks-react').Modals;
-const { ButtonPrimary } = require('blocks-react').Buttons;
-
+import BaseModal from 'blocks-react/dist/modals/BaseModal';
+import ButtonPrimary from 'blocks-react/dist/buttons/ButtonPrimary';
 class ModalExample extends React.Component {
   constructor(props) {
     super(props);

@@ -1,7 +1,6 @@
 import React from "react"
-
-const { ActionModal } = require('blocks-react').Modals;
-const { ButtonPrimary } = require('blocks-react').Buttons;
+import ActionModal from 'blocks-react/dist/modals/ActionModal';
+import ButtonPrimary from 'blocks-react/dist/buttons/ButtonPrimary';
 
 const MODAL_TYPES = {
   SUCCESS: 'success',

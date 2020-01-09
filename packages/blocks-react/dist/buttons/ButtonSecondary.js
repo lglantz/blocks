@@ -1,2 +1,26 @@
-"use strict";var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},React=require("react"),PropTypes=require("prop-types"),Button=require("./Button.js"),LinkButton=require("./LinkButton.js"),ButtonSecondary=React.forwardRef(function(e,t){var r=e.href?LinkButton:Button;return React.createElement(r,_extends({},e,{ref:t,className:"blx-secondary "+e.className}))});ButtonSecondary.propTypes={className:PropTypes.string,style:PropTypes.object},ButtonSecondary.defaultProps={className:"",style:null},module.exports=ButtonSecondary;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1dHRvbnMvQnV0dG9uU2Vjb25kYXJ5LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJQcm9wVHlwZXMiLCJCdXR0b24iLCJMaW5rQnV0dG9uIiwiQnV0dG9uU2Vjb25kYXJ5IiwiZm9yd2FyZFJlZiIsInByb3BzIiwicmVmIiwiQ29tcG9uZW50IiwiaHJlZiIsImNyZWF0ZUVsZW1lbnQiLCJfZXh0ZW5kcyIsImNsYXNzTmFtZSIsInByb3BUeXBlcyIsInN0cmluZyIsInN0eWxlIiwib2JqZWN0IiwiZGVmYXVsdFByb3BzIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IjRMQUFNQSxNQUFRQyxRQUFRLFNBQ2hCQyxVQUFZRCxRQUFRLGNBRXBCRSxPQUFTRixRQUFRLGVBQ2pCRyxXQUFhSCxRQUFRLG1CQUdyQkksZ0JBQWtCTCxNQUFNTSxXQUFXLFNBQUNDLEVBQU9DLEdBQy9DLElBQU1DLEVBQVlGLEVBQU1HLEtBQU9OLFdBQWFELE9BRTVDLE9BQ0NILE1BQUFXLGNBQUNGLEVBQURHLFNBQUEsR0FDT0wsRUFEUCxDQUVHQyxJQUFLQSxFQUNMSyxVQUFBLGlCQUE0Qk4sRUFBTU0sZUFLeENSLGdCQUFnQlMsVUFBWSxDQUMxQkQsVUFBV1gsVUFBVWEsT0FDckJDLE1BQU9kLFVBQVVlLFFBR25CWixnQkFBZ0JhLGFBQWUsQ0FDN0JMLFVBQVcsR0FDWEcsTUFBTyxNQUdURyxPQUFPQyxRQUFVZiIsImZpbGUiOiJidXR0b25zL0J1dHRvblNlY29uZGFyeS5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbmNvbnN0IFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcblxuY29uc3QgQnV0dG9uID0gcmVxdWlyZSgnLi9CdXR0b24uanN4Jyk7XG5jb25zdCBMaW5rQnV0dG9uID0gcmVxdWlyZSgnLi9MaW5rQnV0dG9uLmpzeCcpO1xuXG5cbmNvbnN0IEJ1dHRvblNlY29uZGFyeSA9IFJlYWN0LmZvcndhcmRSZWYoKHByb3BzLCByZWYpID0+IHtcbiAgY29uc3QgQ29tcG9uZW50ID0gcHJvcHMuaHJlZiA/IExpbmtCdXR0b24gOiBCdXR0b247XG5cbiAgcmV0dXJuIChcbiAgIDxDb21wb25lbnRcbiAgICAgIHsuLi5wcm9wc31cbiAgICAgIHJlZj17cmVmfVxuICAgICAgY2xhc3NOYW1lPXtgYmx4LXNlY29uZGFyeSAke3Byb3BzLmNsYXNzTmFtZX1gfVxuICAgIC8+XG4gICk7XG59KTtcblxuQnV0dG9uU2Vjb25kYXJ5LnByb3BUeXBlcyA9IHtcbiAgY2xhc3NOYW1lOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBzdHlsZTogUHJvcFR5cGVzLm9iamVjdFxufTtcblxuQnV0dG9uU2Vjb25kYXJ5LmRlZmF1bHRQcm9wcyA9IHtcbiAgY2xhc3NOYW1lOiAnJyxcbiAgc3R5bGU6IG51bGxcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gQnV0dG9uU2Vjb25kYXJ5O1xuXG4iXX0=
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var Button_1 = require("./Button");
+var LinkButton_1 = require("./LinkButton");
+var ButtonSecondary = React.forwardRef(function (props, ref) {
+    var Component = props.href ? LinkButton_1["default"] : Button_1["default"];
+    return (React.createElement(Component, __assign({}, props, { href: props.href, ref: ref, className: "blx-secondary " + props.className })));
+});
+ButtonSecondary.defaultProps = {
+    className: '',
+    href: undefined,
+    style: null
+};
+exports["default"] = ButtonSecondary;

@@ -1,2 +1,42 @@
-"use strict";var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var s in a)Object.prototype.hasOwnProperty.call(a,s)&&(e[s]=a[s])}return e};function _objectWithoutProperties(e,t){var a={};for(var s in e)0<=t.indexOf(s)||Object.prototype.hasOwnProperty.call(e,s)&&(a[s]=e[s]);return a}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),Checkbox=function(e){var t=e.style,a=e.className,s=e.children,r=_objectWithoutProperties(e,["style","className","children"]),c=classnames("blx-checkbox",a,{"blx-disabled":r.disabled});return React.createElement("label",{style:t,className:c},React.createElement("div",{className:"blx-label"},s),React.createElement("input",_extends({type:"checkbox"},r)),React.createElement("span",{className:"blx-checkmark"}))};Checkbox.propTypes={style:PropTypes.object,className:PropTypes.string,disabled:PropTypes.bool},Checkbox.defaultProps={style:null,className:"",disabled:!1},module.exports=Checkbox;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImlucHV0L0NoZWNrYm94LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJQcm9wVHlwZXMiLCJjbGFzc25hbWVzIiwiQ2hlY2tib3giLCJfcmVmIiwic3R5bGUiLCJjbGFzc05hbWUiLCJjaGlsZHJlbiIsIm90aGVyIiwiX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzIiwiY2xhc3NlcyIsImJseC1kaXNhYmxlZCIsImRpc2FibGVkIiwiY3JlYXRlRWxlbWVudCIsIl9leHRlbmRzIiwidHlwZSIsInByb3BUeXBlcyIsIm9iamVjdCIsInN0cmluZyIsImJvb2wiLCJkZWZhdWx0UHJvcHMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiNFVBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUdyQkcsU0FBVyxTQUFBQyxHQUE4QyxJQUEzQ0MsRUFBMkNELEVBQTNDQyxNQUFPQyxFQUFvQ0YsRUFBcENFLFVBQVdDLEVBQXlCSCxFQUF6QkcsU0FBYUMsRUFBWUMseUJBQUFMLEVBQUEsQ0FBQSxRQUFBLFlBQUEsYUFDdkRNLEVBQVVSLFdBQVcsZUFBZ0JJLEVBQVcsQ0FDcERLLGVBQWdCSCxFQUFNSSxXQUd4QixPQUNFYixNQUFBYyxjQUFBLFFBQUEsQ0FDRVIsTUFBT0EsRUFDUEMsVUFBV0ksR0FFWFgsTUFBQWMsY0FBQSxNQUFBLENBQUtQLFVBQVUsYUFDWkMsR0FFSFIsTUFBQWMsY0FBQSxRQUFBQyxTQUFBLENBQ0VDLEtBQUssWUFDRFAsSUFFTlQsTUFBQWMsY0FBQSxPQUFBLENBQU1QLFVBQVUsb0JBS3RCSCxTQUFTYSxVQUFZLENBQ25CWCxNQUFPSixVQUFVZ0IsT0FDakJYLFVBQVdMLFVBQVVpQixPQUNyQk4sU0FBVVgsVUFBVWtCLE1BR3RCaEIsU0FBU2lCLGFBQWUsQ0FDdEJmLE1BQU8sS0FDUEMsVUFBVyxHQUNYTSxVQUFVLEdBR1pTLE9BQU9DLFFBQVVuQiIsImZpbGUiOiJpbnB1dC9DaGVja2JveC5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbmNvbnN0IFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcbmNvbnN0IGNsYXNzbmFtZXMgPSByZXF1aXJlKCdjbGFzc25hbWVzJyk7XG5cblxuY29uc3QgQ2hlY2tib3ggPSAoeyBzdHlsZSwgY2xhc3NOYW1lLCBjaGlsZHJlbiwgLi4ub3RoZXIgfSkgPT4ge1xuICBjb25zdCBjbGFzc2VzID0gY2xhc3NuYW1lcygnYmx4LWNoZWNrYm94JywgY2xhc3NOYW1lLCB7XG4gICAgJ2JseC1kaXNhYmxlZCc6IG90aGVyLmRpc2FibGVkXG4gIH0pO1xuXG4gIHJldHVybiAoXG4gICAgPGxhYmVsXG4gICAgICBzdHlsZT17c3R5bGV9XG4gICAgICBjbGFzc05hbWU9e2NsYXNzZXN9XG4gICAgPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJibHgtbGFiZWxcIj5cbiAgICAgICAge2NoaWxkcmVufVxuICAgICAgPC9kaXY+XG4gICAgICA8aW5wdXRcbiAgICAgICAgdHlwZT1cImNoZWNrYm94XCJcbiAgICAgICAgey4uLm90aGVyfVxuICAgICAgLz5cbiAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImJseC1jaGVja21hcmtcIiAvPlxuICAgIDwvbGFiZWw+XG4gICk7XG59XG5cbkNoZWNrYm94LnByb3BUeXBlcyA9IHtcbiAgc3R5bGU6IFByb3BUeXBlcy5vYmplY3QsXG4gIGNsYXNzTmFtZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgZGlzYWJsZWQ6IFByb3BUeXBlcy5ib29sXG59O1xuXG5DaGVja2JveC5kZWZhdWx0UHJvcHMgPSB7XG4gIHN0eWxlOiBudWxsLFxuICBjbGFzc05hbWU6ICcnLFxuICBkaXNhYmxlZDogZmFsc2Vcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gQ2hlY2tib3g7XG5cbiJdfQ==
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var Checkbox = function (_a) {
+    var style = _a.style, className = _a.className, children = _a.children, other = __rest(_a, ["style", "className", "children"]);
+    var classes = classnames_1["default"]('blx-checkbox', className, {
+        'blx-disabled': other.disabled
+    });
+    return (React.createElement("label", { style: style, className: classes },
+        React.createElement("div", { className: "blx-label" }, children),
+        React.createElement("input", __assign({ type: "checkbox" }, other)),
+        React.createElement("span", { className: "blx-checkmark" })));
+};
+Checkbox.defaultProps = {
+    style: null,
+    className: '',
+    disabled: false
+};
+exports["default"] = Checkbox;

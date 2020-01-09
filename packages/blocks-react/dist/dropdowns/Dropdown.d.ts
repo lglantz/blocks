@@ -1,0 +1,32 @@
+import * as React from 'react';
+declare type DropdownMenuPropTypes = {
+    className?: string;
+    style?: any;
+    isOpen?: boolean;
+    scrollable?: boolean;
+    toggle: any;
+    text?: string;
+    icon?: any;
+    label?: string;
+    value?: string | number;
+    options?: {
+        text: string | number;
+        disabled: boolean;
+        value: string | number;
+        triggerContent: string;
+        href: string;
+        element: any;
+        key: string;
+    }[];
+    disabled?: boolean;
+    onSelect?: any;
+    autoFocus?: boolean;
+    isValid?: boolean;
+    invalidErrorMessage?: string;
+    onKeyDown?: any;
+    onKeyUp?: any;
+    onTriggerFocus?: any;
+    optionsRefs: any[];
+};
+declare const _default: React.FunctionComponent<DropdownMenuPropTypes>;
+export default _default;

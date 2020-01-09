@@ -7,7 +7,8 @@ import formatXml from 'xml-formatter'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import reqUtil from '../js_utils/request'
 
-const { Tabs, RadioTabItem } = require('blocks-react').Tabs;
+import Tabs from 'blocks-react/dist/tabs/Tabs';
+import RadioTabItem from 'blocks-react/dist/tabs/RadioSubTabItem';
 
 
 class Snippet extends React.Component {

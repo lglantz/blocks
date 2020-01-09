@@ -1,7 +1,6 @@
 import React from "react"
-
-const { TextField } = require('blocks-react').Input;
-const { AddIcon } = require('blocks-react').Icons;
+import TextField from 'blocks-react/dist/input/TextField';
+import AddIcon from 'blocks-react/dist/icons/AddIcon';
 
 class TextFieldBasicExample extends React.Component {
   constructor(props) {

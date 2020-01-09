@@ -1,2 +1,29 @@
-"use strict";var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),ReactLink=require("react-router-dom").Link,LinkSubTabItem=function(e){var s=classnames("blx-sub-tab",{"blx-active":e.active,"blx-hidden":!e.visible,"blx-disabled":e.disabled}),a=e.useReactLink?React.createElement(ReactLink,{className:s,to:e.href},e.text):React.createElement("a",{className:s,href:e.href},e.text);return React.createElement("div",{style:e.style,className:e.className},a,e.children)};LinkSubTabItem.propTypes={className:PropTypes.string,style:PropTypes.object,text:PropTypes.string.isRequired,visible:PropTypes.bool,active:PropTypes.bool,disabled:PropTypes.bool},LinkSubTabItem.defaultProps={className:"",style:null,visible:!0,active:!1,disabled:!1},module.exports=LinkSubTabItem;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMvTGlua1N1YlRhYkl0ZW0uanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsIlByb3BUeXBlcyIsImNsYXNzbmFtZXMiLCJSZWFjdExpbmsiLCJMaW5rIiwiTGlua1N1YlRhYkl0ZW0iLCJwcm9wcyIsImNsYXNzZXMiLCJibHgtYWN0aXZlIiwiYWN0aXZlIiwiYmx4LWhpZGRlbiIsInZpc2libGUiLCJibHgtZGlzYWJsZWQiLCJkaXNhYmxlZCIsImxpbmsiLCJ1c2VSZWFjdExpbmsiLCJjcmVhdGVFbGVtZW50IiwiY2xhc3NOYW1lIiwidG8iLCJocmVmIiwidGV4dCIsInN0eWxlIiwiY2hpbGRyZW4iLCJwcm9wVHlwZXMiLCJzdHJpbmciLCJvYmplY3QiLCJpc1JlcXVpcmVkIiwiYm9vbCIsImRlZmF1bHRQcm9wcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJhQUFBLElBQU1BLE1BQVFDLFFBQVEsU0FDaEJDLFVBQVlELFFBQVEsY0FDcEJFLFdBQWFGLFFBQVEsY0FDckJHLFVBQVlILFFBQVEsb0JBQW9CSSxLQUd4Q0MsZUFBaUIsU0FBQ0MsR0FDdEIsSUFBTUMsRUFBVUwsV0FBVyxjQUFlLENBQ3hDTSxhQUFjRixFQUFNRyxPQUNwQkMsY0FBZUosRUFBTUssUUFDckJDLGVBQWdCTixFQUFNTyxXQUVsQkMsRUFBT1IsRUFBTVMsYUFDakJoQixNQUFBaUIsY0FBQ2IsVUFBRCxDQUFXYyxVQUFXVixFQUFTVyxHQUFJWixFQUFNYSxNQUFPYixFQUFNYyxNQUN0RHJCLE1BQUFpQixjQUFBLElBQUEsQ0FBR0MsVUFBV1YsRUFBU1ksS0FBTWIsRUFBTWEsTUFBT2IsRUFBTWMsTUFFbEQsT0FDRXJCLE1BQUFpQixjQUFBLE1BQUEsQ0FDRUssTUFBT2YsRUFBTWUsTUFDYkosVUFBV1gsRUFBTVcsV0FFZkgsRUFDQVIsRUFBTWdCLFdBS2RqQixlQUFla0IsVUFBWSxDQUN6Qk4sVUFBV2hCLFVBQVV1QixPQUNyQkgsTUFBT3BCLFVBQVV3QixPQUNqQkwsS0FBTW5CLFVBQVV1QixPQUFPRSxXQUN2QmYsUUFBU1YsVUFBVTBCLEtBQ25CbEIsT0FBUVIsVUFBVTBCLEtBQ2xCZCxTQUFVWixVQUFVMEIsTUFHdEJ0QixlQUFldUIsYUFBZSxDQUM1QlgsVUFBVyxHQUNYSSxNQUFPLEtBQ1BWLFNBQVMsRUFDVEYsUUFBUSxFQUNSSSxVQUFVLEdBR1pnQixPQUFPQyxRQUFVekIiLCJmaWxlIjoidGFicy9MaW5rU3ViVGFiSXRlbS5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbmNvbnN0IFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcbmNvbnN0IGNsYXNzbmFtZXMgPSByZXF1aXJlKCdjbGFzc25hbWVzJyk7XG5jb25zdCBSZWFjdExpbmsgPSByZXF1aXJlKCdyZWFjdC1yb3V0ZXItZG9tJykuTGluaztcblxuXG5jb25zdCBMaW5rU3ViVGFiSXRlbSA9IChwcm9wcykgPT4ge1xuICBjb25zdCBjbGFzc2VzID0gY2xhc3NuYW1lcygnYmx4LXN1Yi10YWInLCB7XG4gICAgJ2JseC1hY3RpdmUnOiBwcm9wcy5hY3RpdmUsXG4gICAgJ2JseC1oaWRkZW4nOiAhcHJvcHMudmlzaWJsZSxcbiAgICAnYmx4LWRpc2FibGVkJzogcHJvcHMuZGlzYWJsZWRcbiAgfSk7XG4gIGNvbnN0IGxpbmsgPSBwcm9wcy51c2VSZWFjdExpbmsgP1xuICAgIDxSZWFjdExpbmsgY2xhc3NOYW1lPXtjbGFzc2VzfSB0bz17cHJvcHMuaHJlZn0+e3Byb3BzLnRleHR9PC9SZWFjdExpbms+IDpcbiAgICA8YSBjbGFzc05hbWU9e2NsYXNzZXN9IGhyZWY9e3Byb3BzLmhyZWZ9Pntwcm9wcy50ZXh0fTwvYT47XG4gICAgXG4gIHJldHVybiAoXG4gICAgPGRpdlxuICAgICAgc3R5bGU9e3Byb3BzLnN0eWxlfVxuICAgICAgY2xhc3NOYW1lPXtwcm9wcy5jbGFzc05hbWV9XG4gICAgPlxuICAgICAgeyBsaW5rIH1cbiAgICAgIHsgcHJvcHMuY2hpbGRyZW4gfVxuICAgIDwvZGl2PlxuICApO1xufVxuXG5MaW5rU3ViVGFiSXRlbS5wcm9wVHlwZXMgPSB7XG4gIGNsYXNzTmFtZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgc3R5bGU6IFByb3BUeXBlcy5vYmplY3QsXG4gIHRleHQ6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgdmlzaWJsZTogUHJvcFR5cGVzLmJvb2wsXG4gIGFjdGl2ZTogUHJvcFR5cGVzLmJvb2wsXG4gIGRpc2FibGVkOiBQcm9wVHlwZXMuYm9vbFxufTtcblxuTGlua1N1YlRhYkl0ZW0uZGVmYXVsdFByb3BzID0ge1xuICBjbGFzc05hbWU6ICcnLFxuICBzdHlsZTogbnVsbCxcbiAgdmlzaWJsZTogdHJ1ZSxcbiAgYWN0aXZlOiBmYWxzZSxcbiAgZGlzYWJsZWQ6IGZhbHNlXG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IExpbmtTdWJUYWJJdGVtO1xuXG4iXX0=
+"use strict";
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var Link_1 = require("react-router-dom/Link");
+var LinkSubTabItem = function (props) {
+    var classes = classnames_1["default"]('blx-sub-tab', {
+        'blx-active': props.active,
+        'blx-hidden': !props.visible,
+        'blx-disabled': props.disabled
+    });
+    var link = props.useReactLink
+        //@ts-ignore
+        ? React.createElement(Link_1["default"], { className: classes, to: props.href }, props.text)
+        : React.createElement("a", { className: classes, href: props.href }, props.text);
+    return (React.createElement("div", { style: props.style, className: props.className },
+        link,
+        props.children));
+};
+LinkSubTabItem.defaultProps = {
+    className: '',
+    style: null,
+    visible: true,
+    active: false,
+    disabled: false,
+    href: undefined,
+    useReactLink: false
+};
+exports["default"] = LinkSubTabItem;

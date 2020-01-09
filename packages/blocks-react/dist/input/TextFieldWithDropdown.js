@@ -1,2 +1,49 @@
-"use strict";var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),TextField=require("./TextField.js"),Dropdown=require("../dropdowns/Dropdown.js"),TextFieldWithDropdown=function(e){var p=classnames("blx-text-field-with-dropdown",e.className,{"blx-disabled":e.disabled});return React.createElement("div",{style:e.style,className:p},React.createElement(TextField,e.textField),React.createElement(Dropdown,e.dropdown))};TextFieldWithDropdown.propTypes={className:PropTypes.string,style:PropTypes.object,disabled:PropTypes.bool,textField:PropTypes.shape({label:PropTypes.string,onChange:PropTypes.func,name:PropTypes.string,type:PropTypes.string,placeholder:PropTypes.string,invalidErrorMessage:PropTypes.string,value:PropTypes.string,isValid:PropTypes.bool}),dropdown:PropTypes.shape({text:PropTypes.string,onChange:PropTypes.func,options:PropTypes.arrayOf(PropTypes.shape({text:PropTypes.oneOfType([PropTypes.string,PropTypes.number]),value:PropTypes.oneOfType([PropTypes.string,PropTypes.number]),href:PropTypes.string,disabled:PropTypes.bool})),value:PropTypes.oneOfType([PropTypes.string,PropTypes.number])})},TextFieldWithDropdown.defaultProps={className:"",style:null,disabled:!1,textField:{label:null,onChange:function(){},name:"",type:"text",placeholder:"Text input",invalidErrorMessage:"",value:"",isValid:!0},dropdown:{text:"Choose an option",onChange:function(){},options:[],value:null}},module.exports=TextFieldWithDropdown;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImlucHV0L1RleHRGaWVsZFdpdGhEcm9wZG93bi5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xhc3NuYW1lcyIsIlRleHRGaWVsZCIsIkRyb3Bkb3duIiwiVGV4dEZpZWxkV2l0aERyb3Bkb3duIiwicHJvcHMiLCJjbGFzc2VzIiwiY2xhc3NOYW1lIiwiYmx4LWRpc2FibGVkIiwiZGlzYWJsZWQiLCJjcmVhdGVFbGVtZW50Iiwic3R5bGUiLCJ0ZXh0RmllbGQiLCJkcm9wZG93biIsInByb3BUeXBlcyIsInN0cmluZyIsIm9iamVjdCIsImJvb2wiLCJzaGFwZSIsImxhYmVsIiwib25DaGFuZ2UiLCJmdW5jIiwibmFtZSIsInR5cGUiLCJwbGFjZWhvbGRlciIsImludmFsaWRFcnJvck1lc3NhZ2UiLCJ2YWx1ZSIsImlzVmFsaWQiLCJ0ZXh0Iiwib3B0aW9ucyIsImFycmF5T2YiLCJvbmVPZlR5cGUiLCJudW1iZXIiLCJocmVmIiwiZGVmYXVsdFByb3BzIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6ImFBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUVyQkcsVUFBWUgsUUFBUSxrQkFDcEJJLFNBQVdKLFFBQVEsNEJBR25CSyxzQkFBd0IsU0FBQ0MsR0FDN0IsSUFBTUMsRUFBVUwsV0FBVywrQkFBZ0NJLEVBQU1FLFVBQVcsQ0FDMUVDLGVBQWdCSCxFQUFNSSxXQUV4QixPQUNFWCxNQUFBWSxjQUFBLE1BQUEsQ0FDRUMsTUFBT04sRUFBTU0sTUFDYkosVUFBV0QsR0FFWFIsTUFBQVksY0FBQ1IsVUFBY0csRUFBTU8sV0FDckJkLE1BQUFZLGNBQUNQLFNBQWFFLEVBQU1RLFlBSzFCVCxzQkFBc0JVLFVBQVksQ0FDaENQLFVBQVdQLFVBQVVlLE9BQ3JCSixNQUFPWCxVQUFVZ0IsT0FDakJQLFNBQVVULFVBQVVpQixLQUNwQkwsVUFBV1osVUFBVWtCLE1BQU0sQ0FDekJDLE1BQU9uQixVQUFVZSxPQUNqQkssU0FBVXBCLFVBQVVxQixLQUNwQkMsS0FBTXRCLFVBQVVlLE9BQ2hCUSxLQUFNdkIsVUFBVWUsT0FDaEJTLFlBQWF4QixVQUFVZSxPQUN2QlUsb0JBQXFCekIsVUFBVWUsT0FDL0JXLE1BQU8xQixVQUFVZSxPQUNqQlksUUFBUzNCLFVBQVVpQixPQUVyQkosU0FBVWIsVUFBVWtCLE1BQU0sQ0FDeEJVLEtBQU01QixVQUFVZSxPQUNoQkssU0FBVXBCLFVBQVVxQixLQUNwQlEsUUFBUzdCLFVBQVU4QixRQUFROUIsVUFBVWtCLE1BQU0sQ0FDekNVLEtBQU01QixVQUFVK0IsVUFBVSxDQUN4Qi9CLFVBQVVlLE9BQ1ZmLFVBQVVnQyxTQUVaTixNQUFPMUIsVUFBVStCLFVBQVUsQ0FDekIvQixVQUFVZSxPQUNWZixVQUFVZ0MsU0FFWkMsS0FBTWpDLFVBQVVlLE9BQ2hCTixTQUFVVCxVQUFVaUIsUUFFdEJTLE1BQU8xQixVQUFVK0IsVUFBVSxDQUN6Qi9CLFVBQVVlLE9BQ1ZmLFVBQVVnQyxZQUtoQjVCLHNCQUFzQjhCLGFBQWUsQ0FDbkMzQixVQUFXLEdBQ1hJLE1BQU8sS0FDUEYsVUFBVSxFQUNWRyxVQUFXLENBQ1RPLE1BQU8sS0FDUEMsU0FBVSxhQUNWRSxLQUFNLEdBQ05DLEtBQU0sT0FDTkMsWUFBYSxhQUNiQyxvQkFBcUIsR0FDckJDLE1BQU8sR0FDUEMsU0FBUyxHQUVYZCxTQUFVLENBQ1JlLEtBQU0sbUJBQ05SLFNBQVUsYUFDVlMsUUFBUyxHQUNUSCxNQUFPLE9BSVhTLE9BQU9DLFFBQVVoQyIsImZpbGUiOiJpbnB1dC9UZXh0RmllbGRXaXRoRHJvcGRvd24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5jb25zdCBQcm9wVHlwZXMgPSByZXF1aXJlKCdwcm9wLXR5cGVzJyk7XG5jb25zdCBjbGFzc25hbWVzID0gcmVxdWlyZSgnY2xhc3NuYW1lcycpO1xuXG5jb25zdCBUZXh0RmllbGQgPSByZXF1aXJlKCcuL1RleHRGaWVsZC5qc3gnKTtcbmNvbnN0IERyb3Bkb3duID0gcmVxdWlyZSgnLi4vZHJvcGRvd25zL0Ryb3Bkb3duLmpzeCcpO1xuXG5cbmNvbnN0IFRleHRGaWVsZFdpdGhEcm9wZG93biA9IChwcm9wcykgPT4ge1xuICBjb25zdCBjbGFzc2VzID0gY2xhc3NuYW1lcygnYmx4LXRleHQtZmllbGQtd2l0aC1kcm9wZG93bicsIHByb3BzLmNsYXNzTmFtZSwge1xuICAgICdibHgtZGlzYWJsZWQnOiBwcm9wcy5kaXNhYmxlZFxuICB9KTtcbiAgcmV0dXJuIChcbiAgICA8ZGl2XG4gICAgICBzdHlsZT17cHJvcHMuc3R5bGV9XG4gICAgICBjbGFzc05hbWU9e2NsYXNzZXN9XG4gICAgPlxuICAgICAgPFRleHRGaWVsZCB7Li4ucHJvcHMudGV4dEZpZWxkfS8+XG4gICAgICA8RHJvcGRvd24gey4uLnByb3BzLmRyb3Bkb3dufS8+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cblRleHRGaWVsZFdpdGhEcm9wZG93bi5wcm9wVHlwZXMgPSB7XG4gIGNsYXNzTmFtZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgc3R5bGU6IFByb3BUeXBlcy5vYmplY3QsXG4gIGRpc2FibGVkOiBQcm9wVHlwZXMuYm9vbCxcbiAgdGV4dEZpZWxkOiBQcm9wVHlwZXMuc2hhcGUoe1xuICAgIGxhYmVsOiBQcm9wVHlwZXMuc3RyaW5nLFxuICAgIG9uQ2hhbmdlOiBQcm9wVHlwZXMuZnVuYyxcbiAgICBuYW1lOiBQcm9wVHlwZXMuc3RyaW5nLFxuICAgIHR5cGU6IFByb3BUeXBlcy5zdHJpbmcsXG4gICAgcGxhY2Vob2xkZXI6IFByb3BUeXBlcy5zdHJpbmcsXG4gICAgaW52YWxpZEVycm9yTWVzc2FnZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgICB2YWx1ZTogUHJvcFR5cGVzLnN0cmluZyxcbiAgICBpc1ZhbGlkOiBQcm9wVHlwZXMuYm9vbFxuICB9KSxcbiAgZHJvcGRvd246IFByb3BUeXBlcy5zaGFwZSh7XG4gICAgdGV4dDogUHJvcFR5cGVzLnN0cmluZyxcbiAgICBvbkNoYW5nZTogUHJvcFR5cGVzLmZ1bmMsXG4gICAgb3B0aW9uczogUHJvcFR5cGVzLmFycmF5T2YoUHJvcFR5cGVzLnNoYXBlKHtcbiAgICAgIHRleHQ6IFByb3BUeXBlcy5vbmVPZlR5cGUoW1xuICAgICAgICBQcm9wVHlwZXMuc3RyaW5nLFxuICAgICAgICBQcm9wVHlwZXMubnVtYmVyXG4gICAgICBdKSxcbiAgICAgIHZhbHVlOiBQcm9wVHlwZXMub25lT2ZUeXBlKFtcbiAgICAgICAgUHJvcFR5cGVzLnN0cmluZyxcbiAgICAgICAgUHJvcFR5cGVzLm51bWJlclxuICAgICAgXSksXG4gICAgICBocmVmOiBQcm9wVHlwZXMuc3RyaW5nLFxuICAgICAgZGlzYWJsZWQ6IFByb3BUeXBlcy5ib29sXG4gICAgfSkpLFxuICAgIHZhbHVlOiBQcm9wVHlwZXMub25lT2ZUeXBlKFtcbiAgICAgIFByb3BUeXBlcy5zdHJpbmcsXG4gICAgICBQcm9wVHlwZXMubnVtYmVyXG4gICAgXSlcbiAgfSlcbn07XG5cblRleHRGaWVsZFdpdGhEcm9wZG93bi5kZWZhdWx0UHJvcHMgPSB7XG4gIGNsYXNzTmFtZTogJycsXG4gIHN0eWxlOiBudWxsLFxuICBkaXNhYmxlZDogZmFsc2UsXG4gIHRleHRGaWVsZDoge1xuICAgIGxhYmVsOiBudWxsLFxuICAgIG9uQ2hhbmdlOiAoKSA9PiB7fSxcbiAgICBuYW1lOiAnJyxcbiAgICB0eXBlOiAndGV4dCcsXG4gICAgcGxhY2Vob2xkZXI6ICdUZXh0IGlucHV0JyxcbiAgICBpbnZhbGlkRXJyb3JNZXNzYWdlOiAnJyxcbiAgICB2YWx1ZTogJycsXG4gICAgaXNWYWxpZDogdHJ1ZVxuICB9LFxuICBkcm9wZG93bjoge1xuICAgIHRleHQ6ICdDaG9vc2UgYW4gb3B0aW9uJyxcbiAgICBvbkNoYW5nZTogKCkgPT4ge30sXG4gICAgb3B0aW9uczogW10sXG4gICAgdmFsdWU6IG51bGxcbiAgfVxufTtcblxubW9kdWxlLmV4cG9ydHMgPSBUZXh0RmllbGRXaXRoRHJvcGRvd247XG5cbiJdfQ==
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var TextField_1 = require("./TextField");
+var Dropdown_1 = require("../dropdowns/Dropdown");
+var TextFieldWithDropdown = function (props) {
+    var classes = classnames_1["default"]('blx-text-field-with-dropdown', props.className, {
+        'blx-disabled': props.disabled
+    });
+    return (React.createElement("div", { style: props.style, className: classes },
+        //@ts-ignore 
+        React.createElement(TextField_1["default"], __assign({}, props.textField)),
+        //@ts-ignore 
+        React.createElement(Dropdown_1["default"], __assign({}, props.dropdown))));
+};
+TextFieldWithDropdown.defaultProps = {
+    className: '',
+    style: null,
+    disabled: false,
+    textField: {
+        label: null,
+        onChange: function () { },
+        name: '',
+        type: 'text',
+        placeholder: 'Text input',
+        invalidErrorMessage: '',
+        value: '',
+        isValid: true
+    },
+    dropdown: {
+        text: 'Choose an option',
+        onChange: function () { },
+        options: [],
+        value: null
+    }
+};
+exports["default"] = TextFieldWithDropdown;

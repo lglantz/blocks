@@ -1,9 +1,7 @@
 import React, {Fragment} from "react"
-
-const { TextField } = require('blocks-react').Input;
-const { HelpIcon } = require('blocks-react').Icons;
-const { Tooltip } = require('blocks-react')
-
+import TextField from 'blocks-react/dist/input/TextField';
+import HelpIcon from 'blocks-react/dist/icons/HelpIcon';
+import Tooltip from 'blocks-react/dist/tooltips/Tooltip';
 
 const TooltipTitle = () => (
   <Fragment>

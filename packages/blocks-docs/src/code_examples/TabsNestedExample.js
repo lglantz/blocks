@@ -1,7 +1,12 @@
 import React from "react"
 
-const { Tabs, RadioTabItem, RadioSubTabItem, LinkTabItem, LinkSubTabItem } = require('blocks-react').Tabs;
-const { Accordion } = require('blocks-react');
+import LinkSubTabItem from 'blocks-react/dist/tabs/LinkSubTabItem'
+import LinkTabItem from 'blocks-react/dist/tabs/LinkTabItem'
+import RadioSubTabItem from 'blocks-react/dist/tabs/RadioSubTabItem'
+import RadioTabItem from 'blocks-react/dist/tabs/RadioTabItem'
+import Tabs from 'blocks-react/dist/tabs/Tabs'
+
+import Accordion from 'blocks-react/dist/accordion/AccordionSection';
 
 const FOUR_RANGE = [0, 1, 2, 3];
 

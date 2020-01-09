@@ -1,6 +1,6 @@
 import React from "react"
 
-const { Dropdown } = require('blocks-react').Dropdowns;
+import  Dropdown from 'blocks-react/dist/dropdowns/Dropdown';
 
 class DropdownDisabledExample extends React.Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 import React from "react"
-
-const { TextFieldWithDropdown } = require('blocks-react').Input;
+import TextFieldWithDropdown from 'blocks-react/dist/input/TextFieldWithDropdown';
 
 class TextFieldDropdownExample extends React.Component {
   constructor(props) {

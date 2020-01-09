@@ -1,9 +1,8 @@
 import React from "react"
-
-const { BackIcon,
-        DownIcon,
-        NextIcon,
-        UpIcon } = require('blocks-react').Icons;
+import BackIcon from 'blocks-react/dist/icons/BackIcon';
+import DownIcon from 'blocks-react/dist/icons/DownIcon';
+import NextIcon from 'blocks-react/dist/icons/NextIcon';
+import UpIcon from 'blocks-react/dist/icons/UpIcon';
 
 const IconArrowExamples = () => (
   <div>

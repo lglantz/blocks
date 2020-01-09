@@ -1,15 +1,8 @@
-/// <reference types="react" />
-declare const SuccessAlert: {
-    (props: SuccessAlertTypes): JSX.Element;
-    defaultProps: {
-        className: string;
-        title: string;
-        closable: boolean;
-    };
-};
+import * as React from 'react';
+declare const SuccessAlert: React.FunctionComponent<SuccessAlertTypes>;
 declare type SuccessAlertTypes = {
-    className: string;
-    title: string;
-    closable: boolean;
+    className?: string;
+    title?: string;
+    closable?: boolean;
 };
 export default SuccessAlert;

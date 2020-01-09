@@ -4,15 +4,15 @@ import classnames from 'classnames';
 /**
  * This is a toggle, it can have many options.
  */
-const Toggle= ({
+const Toggle: React.FunctionComponent<ToggleProps> = ({
   className,
   style,
   options,
   value,
-  label = 'toggle',
-  disabled = false,
+  label,
+  disabled,
   ...other
-}: ToggleProps) => {
+}) => {
   const classes = classnames('blx-toggle', className, {
     'blx-disabled': disabled
   });
@@ -54,6 +54,10 @@ type ToggleProps = {
   value: string | number,
   label?: string,
   disabled?: boolean,
+}
+Toggle.defaultProps = {
+  label: 'toggle',
+  disabled: false,
 }
 
 export default Toggle;

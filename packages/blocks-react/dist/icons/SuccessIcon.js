@@ -1,2 +1,20 @@
-"use strict";var React=require("react"),Icon=require("./Icon.js"),SuccessIcon=function(e){return React.createElement(Icon,e,React.createElement("path",{fillRule:"nonzero",d:"M6.37 9.463L5 10.953l3.648 3.354 5.982-6.99L13.092 6l-4.618 5.397z"}))};module.exports=SuccessIcon;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zL1N1Y2Nlc3NJY29uLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJJY29uIiwiU3VjY2Vzc0ljb24iLCJwcm9wcyIsImNyZWF0ZUVsZW1lbnQiLCJmaWxsUnVsZSIsImQiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiYUFBQSxJQUFNQSxNQUFRQyxRQUFRLFNBRWhCQyxLQUFPRCxRQUFRLGFBRWZFLFlBQWMsU0FBQ0MsR0FDbkIsT0FDRUosTUFBQUssY0FBQ0gsS0FBU0UsRUFDUkosTUFBQUssY0FBQSxPQUFBLENBQ0VDLFNBQVMsVUFDVEMsRUFBRSx5RUFNVkMsT0FBT0MsUUFBVU4iLCJmaWxlIjoiaWNvbnMvU3VjY2Vzc0ljb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5cbmNvbnN0IEljb24gPSByZXF1aXJlKCcuL0ljb24uanN4Jyk7XG5cbmNvbnN0IFN1Y2Nlc3NJY29uID0gKHByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPEljb24gey4uLnByb3BzfT5cbiAgICAgIDxwYXRoXG4gICAgICAgIGZpbGxSdWxlPVwibm9uemVyb1wiXG4gICAgICAgIGQ9XCJNNi4zNyA5LjQ2M0w1IDEwLjk1M2wzLjY0OCAzLjM1NCA1Ljk4Mi02Ljk5TDEzLjA5MiA2bC00LjYxOCA1LjM5N3pcIlxuICAgICAgLz5cbiAgICA8L0ljb24+XG4gICk7XG59XG5cbm1vZHVsZS5leHBvcnRzID0gU3VjY2Vzc0ljb247XG4iXX0=
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var Icon_1 = require("./Icon");
+var SuccessIcon = function (props) {
+    return (React.createElement(Icon_1["default"], __assign({}, props),
+        React.createElement("path", { fillRule: "nonzero", d: "M6.37 9.463L5 10.953l3.648 3.354 5.982-6.99L13.092 6l-4.618 5.397z" })));
+};
+exports["default"] = SuccessIcon;

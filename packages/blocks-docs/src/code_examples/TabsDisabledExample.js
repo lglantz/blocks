@@ -1,6 +1,6 @@
 import React from "react"
-
-const { Tabs, RadioTabItem } = require('blocks-react').Tabs;
+import Tabs from 'blocks-react/dist/tabs/Tabs';
+import RadioTabItem from 'blocks-react/dist/tabs/RadioTabItem';
 
 class TabsDisabledExample extends React.Component {
   constructor(props) {

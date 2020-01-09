@@ -1,7 +1,7 @@
 import React from "react"
 
-const { Dropdown } = require('blocks-react').Dropdowns;
-const { AddIcon } = require('blocks-react').Icons;
+import Dropdown from 'blocks-react/dist/dropdowns/Dropdown';
+import AddIcon from 'blocks-react/dist/icons/AddIcon';
 
 class DropdownIconExample extends React.Component {
   constructor(props) {

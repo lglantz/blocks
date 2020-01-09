@@ -1,7 +1,6 @@
 import React from "react"
-
-const { Tooltip } = require('blocks-react');
-const { HelpIcon } = require('blocks-react').Icons;
+import Tooltip from 'blocks-react/dist/tooltips/Tooltip';
+import HelpIcon from 'blocks-react/dist/icons/HelpIcon';
 
 const TooltipBasicExample = () => (
   <div>

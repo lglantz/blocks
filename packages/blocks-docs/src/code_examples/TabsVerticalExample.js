@@ -1,6 +1,6 @@
 import React from "react"
-
-const { Tabs, LinkTabItem } = require('blocks-react').Tabs;
+import Tabs from 'blocks-react/dist/tabs/Tabs';
+import LinkTabItem from 'blocks-react/dist/tabs/LinkTabItem';
 
 const TabsVerticalExample = () => (
   <Tabs vertical>

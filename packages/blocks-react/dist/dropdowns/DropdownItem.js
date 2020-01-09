@@ -1,2 +1,91 @@
-"use strict";var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n])}return e},_createClass=function(){function n(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(e,t,o){return t&&n(e.prototype,t),o&&n(e,o),e}}();function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function _inherits(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),ReactLink=require("react-router-dom").Link,DropdownItem=function(){function o(e){_classCallCheck(this,o);var t=_possibleConstructorReturn(this,(o.__proto__||Object.getPrototypeOf(o)).call(this,e));return t.onSelect=t.onClick.bind(t),t.onKeyDown=t.onKeyDown.bind(t),t.onKeyUp=t.onKeyUp.bind(t),t}return _inherits(o,React.Component),_createClass(o,[{key:"onClick",value:function(e){e.stopPropagation(),this.props.onSelect(e,this.props.option)}},{key:"onKeyDown",value:function(e){this.props.onKeyDown(e,this.props.option)}},{key:"onKeyUp",value:function(e){this.props.onKeyUp(e,this.props.option)}},{key:"getLinkItem",value:function(){return this.props.option.useReactLink?React.createElement(ReactLink,{to:this.props.option.href,disabled:this.props.option.disabled,onKeyDown:this.onKeyDown,onKeyUp:this.onKeyUp,onClick:this.onSelect},this.props.option.text||this.props.option.element):React.createElement("a",{href:this.props.option.href,target:this.props.option.newTab?"_blank":null,disabled:this.props.option.disabled,title:this.props.option.text,onKeyDown:this.onKeyDown,onKeyUp:this.onKeyUp,onClick:this.onSelect},this.props.option.text||this.props.option.element)}},{key:"getButtonItem",value:function(){return React.createElement("button",{disabled:this.props.option.disabled,title:this.props.option.text,onKeyDown:this.onKeyDown,onKeyUp:this.onKeyUp,onClick:this.onSelect},this.props.option.text||this.props.option.element)}},{key:"render",value:function(){var e=null;e=this.props.option.href?this.getLinkItem():this.getButtonItem();var t=classnames("blx-dropdown-item",this.props.className,{"blx-disabled":this.props.option.disabled,"blx-selected":this.props.selected});return React.createElement("li",{style:this.props.style,className:t,ref:this.props.forwardedRef},e)}}]),o}();DropdownItem.propTypes={className:PropTypes.string,style:PropTypes.object,option:PropTypes.shape({text:PropTypes.oneOfType([PropTypes.string,PropTypes.number]),disabled:PropTypes.bool,value:PropTypes.oneOfType([PropTypes.string,PropTypes.number]),href:PropTypes.string,element:PropTypes.node,key:PropTypes.string,useReactLink:PropTypes.bool}).isRequired,selected:PropTypes.bool,onKeyDown:PropTypes.func,onKeyUp:PropTypes.func,onSelect:PropTypes.func},DropdownItem.defaultProps={className:"",style:null,selected:!1,onKeyDown:function(){},onKeyUp:function(){},onSelect:function(){}},module.exports=React.forwardRef(function(e,t){return React.createElement(DropdownItem,_extends({},e,{forwardedRef:t}))});
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRyb3Bkb3ducy9Ecm9wZG93bkl0ZW0uanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsIlByb3BUeXBlcyIsImNsYXNzbmFtZXMiLCJSZWFjdExpbmsiLCJMaW5rIiwiRHJvcGRvd25JdGVtIiwicHJvcHMiLCJfY2xhc3NDYWxsQ2hlY2siLCJ0aGlzIiwiX3RoaXMiLCJfcG9zc2libGVDb25zdHJ1Y3RvclJldHVybiIsIl9fcHJvdG9fXyIsIk9iamVjdCIsImdldFByb3RvdHlwZU9mIiwiY2FsbCIsIm9uU2VsZWN0Iiwib25DbGljayIsImJpbmQiLCJvbktleURvd24iLCJvbktleVVwIiwiQ29tcG9uZW50IiwiZSIsInN0b3BQcm9wYWdhdGlvbiIsIm9wdGlvbiIsInVzZVJlYWN0TGluayIsImNyZWF0ZUVsZW1lbnQiLCJ0byIsImhyZWYiLCJkaXNhYmxlZCIsInRleHQiLCJlbGVtZW50IiwidGFyZ2V0IiwibmV3VGFiIiwidGl0bGUiLCJpdGVtIiwiZ2V0TGlua0l0ZW0iLCJnZXRCdXR0b25JdGVtIiwiY2xhc3NlcyIsImNsYXNzTmFtZSIsImJseC1kaXNhYmxlZCIsImJseC1zZWxlY3RlZCIsInNlbGVjdGVkIiwic3R5bGUiLCJyZWYiLCJmb3J3YXJkZWRSZWYiLCJwcm9wVHlwZXMiLCJzdHJpbmciLCJvYmplY3QiLCJzaGFwZSIsIm9uZU9mVHlwZSIsIm51bWJlciIsImJvb2wiLCJ2YWx1ZSIsIm5vZGUiLCJrZXkiLCJpc1JlcXVpcmVkIiwiZnVuYyIsImRlZmF1bHRQcm9wcyIsIm1vZHVsZSIsImV4cG9ydHMiLCJmb3J3YXJkUmVmIiwiX2V4dGVuZHMiXSwibWFwcGluZ3MiOiJ1aUNBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUNyQkcsVUFBWUgsUUFBUSxvQkFBb0JJLEtBR3hDQyx3QkFDSixTQUFBQSxFQUFZQyxHQUFPQyxnQkFBQUMsS0FBQUgsR0FBQSxJQUFBSSxFQUFBQywy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UEQsVUFBVSxFQUNWdkIsVUFBVyxhQUNYQyxRQUFTLGFBQ1RKLFNBQVUsY0FHWjJDLE9BQU9DLFFBQVU1RCxNQUFNNkQsV0FBVyxTQUFDdEQsRUFBT3FDLEdBQVIsT0FDaEM1QyxNQUFBMEIsY0FBQ3BCLGFBQUR3RCxTQUFBLEdBQWtCdkQsRUFBbEIsQ0FBeUJzQyxhQUFjRCIsImZpbGUiOiJkcm9wZG93bnMvRHJvcGRvd25JdGVtLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuY29uc3QgUHJvcFR5cGVzID0gcmVxdWlyZSgncHJvcC10eXBlcycpO1xuY29uc3QgY2xhc3NuYW1lcyA9IHJlcXVpcmUoJ2NsYXNzbmFtZXMnKTtcbmNvbnN0IFJlYWN0TGluayA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlci1kb20nKS5MaW5rO1xuXG5cbmNsYXNzIERyb3Bkb3duSXRlbSBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIGNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpO1xuXG4gICAgdGhpcy5vblNlbGVjdCA9IHRoaXMub25DbGljay5iaW5kKHRoaXMpO1xuICAgIHRoaXMub25LZXlEb3duID0gdGhpcy5vbktleURvd24uYmluZCh0aGlzKTtcbiAgICB0aGlzLm9uS2V5VXAgPSB0aGlzLm9uS2V5VXAuYmluZCh0aGlzKTtcbiAgfVxuXG4gIG9uQ2xpY2soZSkge1xuICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7XG4gICAgdGhpcy5wcm9wcy5vblNlbGVjdChlLCB0aGlzLnByb3BzLm9wdGlvbik7XG4gIH1cblxuICBvbktleURvd24oZSkge1xuICAgIHRoaXMucHJvcHMub25LZXlEb3duKGUsIHRoaXMucHJvcHMub3B0aW9uKTtcbiAgfVxuXG4gIG9uS2V5VXAoZSkge1xuICAgIHRoaXMucHJvcHMub25LZXlVcChlLCB0aGlzLnByb3BzLm9wdGlvbik7XG4gIH1cblxuICBnZXRMaW5rSXRlbSgpIHtcbiAgICBpZiAodGhpcy5wcm9wcy5vcHRpb24udXNlUmVhY3RMaW5rKSB7XG4gICAgICByZXR1cm4gKFxuICAgICAgICA8UmVhY3RMaW5rXG4gICAgICAgICAgdG89e3RoaXMucHJvcHMub3B0aW9uLmhyZWZ9XG4gICAgICAgICAgZGlzYWJsZWQ9e3RoaXMucHJvcHMub3B0aW9uLmRpc2FibGVkfVxuICAgICAgICAgIG9uS2V5RG93bj17dGhpcy5vbktleURvd259XG4gICAgICAgICAgb25LZXlVcD17dGhpcy5vbktleVVwfVxuICAgICAgICAgIG9uQ2xpY2s9e3RoaXMub25TZWxlY3R9XG4gICAgICAgID5cbiAgICAgICAgICB7dGhpcy5wcm9wcy5vcHRpb24udGV4dCB8fCB0aGlzLnByb3BzLm9wdGlvbi5lbGVtZW50fVxuICAgICAgICA8L1JlYWN0TGluaz5cbiAgICAgICk7XG4gICAgfVxuXG4gICAgcmV0dXJuIChcbiAgICAgIDxhXG4gICAgICAgIGhyZWY9e3RoaXMucHJvcHMub3B0aW9uLmhyZWZ9XG4gICAgICAgIHRhcmdldD17dGhpcy5wcm9wcy5vcHRpb24ubmV3VGFiID8gJ19ibGFuaycgOiBudWxsfVxuICAgICAgICBkaXNhYmxlZD17dGhpcy5wcm9wcy5vcHRpb24uZGlzYWJsZWR9XG4gICAgICAgIHRpdGxlPXt0aGlzLnByb3BzLm9wdGlvbi50ZXh0fVxuICAgICAgICBvbktleURvd249e3RoaXMub25LZXlEb3dufVxuICAgICAgICBvbktleVVwPXt0aGlzLm9uS2V5VXB9XG4gICAgICAgIG9uQ2xpY2s9e3RoaXMub25TZWxlY3R9XG4gICAgICA+XG4gICAgICAgIHt0aGlzLnByb3BzLm9wdGlvbi50ZXh0IHx8IHRoaXMucHJvcHMub3B0aW9uLmVsZW1lbnR9XG4gICAgICA8L2E+XG4gICAgKTtcbiAgfVxuXG4gIGdldEJ1dHRvbkl0ZW0oKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxidXR0b25cbiAgICAgICAgZGlzYWJsZWQ9e3RoaXMucHJvcHMub3B0aW9uLmRpc2FibGVkfVxuICAgICAgICB0aXRsZT17dGhpcy5wcm9wcy5vcHRpb24udGV4dH1cbiAgICAgICAgb25LZXlEb3duPXt0aGlzLm9uS2V5RG93bn1cbiAgICAgICAgb25LZXlVcD17dGhpcy5vbktleVVwfVxuICAgICAgICBvbkNsaWNrPXt0aGlzLm9uU2VsZWN0fVxuICAgICAgPlxuICAgICAgICB7dGhpcy5wcm9wcy5vcHRpb24udGV4dCB8fCB0aGlzLnByb3BzLm9wdGlvbi5lbGVtZW50fVxuICAgICAgPC9idXR0b24+XG4gICAgKTtcbiAgfVxuXG4gIHJlbmRlcigpIHtcbiAgICBsZXQgaXRlbSA9IG51bGw7XG4gICAgaWYgKHRoaXMucHJvcHMub3B0aW9uLmhyZWYpIHtcbiAgICAgIGl0ZW0gPSB0aGlzLmdldExpbmtJdGVtKCk7XG4gICAgfSBlbHNlIHtcbiAgICAgIGl0ZW0gPSB0aGlzLmdldEJ1dHRvbkl0ZW0oKTtcbiAgICB9XG5cbiAgICBjb25zdCBjbGFzc2VzID0gY2xhc3NuYW1lcygnYmx4LWRyb3Bkb3duLWl0ZW0nLCB0aGlzLnByb3BzLmNsYXNzTmFtZSwge1xuICAgICAgJ2JseC1kaXNhYmxlZCc6IHRoaXMucHJvcHMub3B0aW9uLmRpc2FibGVkLFxuICAgICAgJ2JseC1zZWxlY3RlZCc6IHRoaXMucHJvcHMuc2VsZWN0ZWRcbiAgICB9KVxuXG4gICAgcmV0dXJuIChcbiAgICAgIDxsaVxuICAgICAgICBzdHlsZT17dGhpcy5wcm9wcy5zdHlsZX1cbiAgICAgICAgY2xhc3NOYW1lPXtjbGFzc2VzfVxuICAgICAgICByZWY9e3RoaXMucHJvcHMuZm9yd2FyZGVkUmVmfVxuICAgICAgPlxuICAgICAgICB7aXRlbX1cbiAgICAgIDwvbGk+XG4gICAgKTtcbiAgfVxufVxuXG5Ecm9wZG93bkl0ZW0ucHJvcFR5cGVzID0ge1xuICBjbGFzc05hbWU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIHN0eWxlOiBQcm9wVHlwZXMub2JqZWN0LFxuICBvcHRpb246IFByb3BUeXBlcy5zaGFwZSh7XG4gICAgdGV4dDogUHJvcFR5cGVzLm9uZU9mVHlwZShbXG4gICAgICBQcm9wVHlwZXMuc3RyaW5nLFxuICAgICAgUHJvcFR5cGVzLm51bWJlclxuICAgIF0pLFxuICAgIGRpc2FibGVkOiBQcm9wVHlwZXMuYm9vbCxcbiAgICB2YWx1ZTogUHJvcFR5cGVzLm9uZU9mVHlwZShbXG4gICAgICBQcm9wVHlwZXMuc3RyaW5nLFxuICAgICAgUHJvcFR5cGVzLm51bWJlclxuICAgIF0pLFxuICAgIGhyZWY6IFByb3BUeXBlcy5zdHJpbmcsXG4gICAgZWxlbWVudDogUHJvcFR5cGVzLm5vZGUsXG4gICAga2V5OiBQcm9wVHlwZXMuc3RyaW5nLFxuICAgIHVzZVJlYWN0TGluazogUHJvcFR5cGVzLmJvb2wsXG4gIH0pLmlzUmVxdWlyZWQsXG4gIHNlbGVjdGVkOiBQcm9wVHlwZXMuYm9vbCxcbiAgb25LZXlEb3duOiBQcm9wVHlwZXMuZnVuYyxcbiAgb25LZXlVcDogUHJvcFR5cGVzLmZ1bmMsXG4gIG9uU2VsZWN0OiBQcm9wVHlwZXMuZnVuY1xufTtcblxuRHJvcGRvd25JdGVtLmRlZmF1bHRQcm9wcyA9IHtcbiAgY2xhc3NOYW1lOiAnJyxcbiAgc3R5bGU6IG51bGwsXG4gIHNlbGVjdGVkOiBmYWxzZSxcbiAgb25LZXlEb3duOiAoKSA9PiB7fSxcbiAgb25LZXlVcDogKCkgPT4ge30sXG4gIG9uU2VsZWN0OiAoKSA9PiB7fVxufTtcblxubW9kdWxlLmV4cG9ydHMgPSBSZWFjdC5mb3J3YXJkUmVmKChwcm9wcywgcmVmKSA9PiAoXG4gIDxEcm9wZG93bkl0ZW0gey4uLnByb3BzfSBmb3J3YXJkZWRSZWY9e3JlZn0gLz5cbikpO1xuIl19
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var Link_1 = require("react-router-dom/Link");
+var DropdownItem = /** @class */ (function (_super) {
+    __extends(DropdownItem, _super);
+    function DropdownItem(props) {
+        var _this = _super.call(this, props) || this;
+        _this.onClick = function (e) {
+            e.stopPropagation();
+            _this.props.onSelect(e, _this.props.option);
+        };
+        _this.onKeyDown = function (e) {
+            _this.props.onKeyDown(e, _this.props.option);
+        };
+        _this.onKeyUp = function (e) {
+            _this.props.onKeyUp(e, _this.props.option);
+        };
+        return _this;
+    }
+    DropdownItem.prototype.getLinkItem = function () {
+        if (this.props.option.useReactLink) {
+            return (
+            //@ts-ignore
+            React.createElement(Link_1["default"], { to: this.props.option.href, disabled: this.props.option.disabled, onKeyDown: this.onKeyDown, onKeyUp: this.onKeyUp, onClick: this.onClick }, this.props.option.text || this.props.option.element));
+        }
+        return (React.createElement("a", { href: this.props.option.href, target: this.props.option.newTab ? '_blank' : null, 
+            //@ts-ignore
+            disabled: this.props.option.disabled, title: this.props.option.text, onKeyDown: this.onKeyDown, onKeyUp: this.onKeyUp, onClick: this.onClick }, this.props.option.text || this.props.option.element));
+    };
+    DropdownItem.prototype.getButtonItem = function () {
+        return (React.createElement("button", { disabled: this.props.option.disabled, title: this.props.option.text, onKeyDown: this.onKeyDown, onKeyUp: this.onKeyUp, onClick: this.onClick }, this.props.option.text || this.props.option.element));
+    };
+    DropdownItem.prototype.render = function () {
+        var item = null;
+        if (this.props.option.href) {
+            item = this.getLinkItem();
+        }
+        else {
+            item = this.getButtonItem();
+        }
+        var classes = classnames_1["default"]('blx-dropdown-item', this.props.className, {
+            'blx-disabled': this.props.option.disabled,
+            'blx-selected': this.props.selected
+        });
+        return (React.createElement("li", { style: this.props.style, className: classes, ref: this.props.forwardedRef }, item));
+    };
+    DropdownItem.defaultProps = {
+        className: '',
+        style: null,
+        selected: false,
+        onKeyDown: function () { },
+        onKeyUp: function () { },
+        onSelect: function () { }
+    };
+    return DropdownItem;
+}(React.Component));
+DropdownItem.defaultProps = {
+    className: '',
+    style: null,
+    selected: false,
+    onKeyDown: function () { },
+    onKeyUp: function () { },
+    onSelect: function () { }
+};
+exports["default"] = React.forwardRef(function (props, ref) { return (React.createElement(DropdownItem, __assign({}, props, { forwardedRef: ref }))); });

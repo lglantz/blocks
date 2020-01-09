@@ -1,2 +1,24 @@
-"use strict";var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),ReactLink=require("react-router-dom").Link,LinkTabItem=function(e){var t=classnames("blx-tab-item",{"blx-active":e.active}),s=e.useReactLink?React.createElement(ReactLink,{className:t,to:e.href},e.text):React.createElement("a",{className:t,href:e.href},e.text);return React.createElement("li",{style:e.style,className:e.className},s,e.children)};LinkTabItem.propTypes={className:PropTypes.string,style:PropTypes.object,text:PropTypes.string.isRequired,href:PropTypes.string.isRequired,active:PropTypes.bool,useReactLink:PropTypes.bool},LinkTabItem.defaultProps={className:"",style:null,active:!1,useReactLink:!1},module.exports=LinkTabItem;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMvTGlua1RhYkl0ZW0uanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsIlByb3BUeXBlcyIsImNsYXNzbmFtZXMiLCJSZWFjdExpbmsiLCJMaW5rIiwiTGlua1RhYkl0ZW0iLCJwcm9wcyIsImNsYXNzZXMiLCJibHgtYWN0aXZlIiwiYWN0aXZlIiwibGluayIsInVzZVJlYWN0TGluayIsImNyZWF0ZUVsZW1lbnQiLCJjbGFzc05hbWUiLCJ0byIsImhyZWYiLCJ0ZXh0Iiwic3R5bGUiLCJjaGlsZHJlbiIsInByb3BUeXBlcyIsInN0cmluZyIsIm9iamVjdCIsImlzUmVxdWlyZWQiLCJib29sIiwiZGVmYXVsdFByb3BzIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6ImFBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUNyQkcsVUFBWUgsUUFBUSxvQkFBb0JJLEtBR3hDQyxZQUFjLFNBQUNDLEdBQ25CLElBQU1DLEVBQVVMLFdBQVcsZUFBZ0IsQ0FDekNNLGFBQWNGLEVBQU1HLFNBRWhCQyxFQUFPSixFQUFNSyxhQUNqQlosTUFBQWEsY0FBQ1QsVUFBRCxDQUFXVSxVQUFXTixFQUFTTyxHQUFJUixFQUFNUyxNQUFPVCxFQUFNVSxNQUN0RGpCLE1BQUFhLGNBQUEsSUFBQSxDQUFHQyxVQUFXTixFQUFTUSxLQUFNVCxFQUFNUyxNQUFPVCxFQUFNVSxNQUVsRCxPQUNFakIsTUFBQWEsY0FBQSxLQUFBLENBQ0VLLE1BQU9YLEVBQU1XLE1BQ2JKLFVBQVdQLEVBQU1PLFdBRWZILEVBQ0FKLEVBQU1ZLFdBS2RiLFlBQVljLFVBQVksQ0FDdEJOLFVBQVdaLFVBQVVtQixPQUNyQkgsTUFBT2hCLFVBQVVvQixPQUNqQkwsS0FBTWYsVUFBVW1CLE9BQU9FLFdBQ3ZCUCxLQUFNZCxVQUFVbUIsT0FBT0UsV0FDdkJiLE9BQVFSLFVBQVVzQixLQUNsQlosYUFBY1YsVUFBVXNCLE1BRzFCbEIsWUFBWW1CLGFBQWUsQ0FDekJYLFVBQVcsR0FDWEksTUFBTyxLQUNQUixRQUFRLEVBQ1JFLGNBQWMsR0FHaEJjLE9BQU9DLFFBQVVyQiIsImZpbGUiOiJ0YWJzL0xpbmtUYWJJdGVtLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuY29uc3QgUHJvcFR5cGVzID0gcmVxdWlyZSgncHJvcC10eXBlcycpO1xuY29uc3QgY2xhc3NuYW1lcyA9IHJlcXVpcmUoJ2NsYXNzbmFtZXMnKTtcbmNvbnN0IFJlYWN0TGluayA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlci1kb20nKS5MaW5rO1xuXG5cbmNvbnN0IExpbmtUYWJJdGVtID0gKHByb3BzKSA9PiB7XG4gIGNvbnN0IGNsYXNzZXMgPSBjbGFzc25hbWVzKCdibHgtdGFiLWl0ZW0nLCB7XG4gICAgJ2JseC1hY3RpdmUnOiBwcm9wcy5hY3RpdmVcbiAgfSk7XG4gIGNvbnN0IGxpbmsgPSBwcm9wcy51c2VSZWFjdExpbmsgP1xuICAgIDxSZWFjdExpbmsgY2xhc3NOYW1lPXtjbGFzc2VzfSB0bz17cHJvcHMuaHJlZn0+e3Byb3BzLnRleHR9PC9SZWFjdExpbms+IDpcbiAgICA8YSBjbGFzc05hbWU9e2NsYXNzZXN9IGhyZWY9e3Byb3BzLmhyZWZ9Pntwcm9wcy50ZXh0fTwvYT47XG5cbiAgcmV0dXJuIChcbiAgICA8bGlcbiAgICAgIHN0eWxlPXtwcm9wcy5zdHlsZX1cbiAgICAgIGNsYXNzTmFtZT17cHJvcHMuY2xhc3NOYW1lfVxuICAgID5cbiAgICAgIHsgbGluayB9XG4gICAgICB7IHByb3BzLmNoaWxkcmVuIH1cbiAgICA8L2xpPlxuICApO1xufTtcblxuTGlua1RhYkl0ZW0ucHJvcFR5cGVzID0ge1xuICBjbGFzc05hbWU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIHN0eWxlOiBQcm9wVHlwZXMub2JqZWN0LFxuICB0ZXh0OiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG4gIGhyZWY6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgYWN0aXZlOiBQcm9wVHlwZXMuYm9vbCxcbiAgdXNlUmVhY3RMaW5rOiBQcm9wVHlwZXMuYm9vbFxufTtcblxuTGlua1RhYkl0ZW0uZGVmYXVsdFByb3BzID0ge1xuICBjbGFzc05hbWU6ICcnLFxuICBzdHlsZTogbnVsbCxcbiAgYWN0aXZlOiBmYWxzZSxcbiAgdXNlUmVhY3RMaW5rOiBmYWxzZVxufTtcblxubW9kdWxlLmV4cG9ydHMgPSBMaW5rVGFiSXRlbTtcblxuIl19
+"use strict";
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var Link_1 = require("react-router-dom/Link");
+var LinkTabItem = function (props) {
+    var classes = classnames_1["default"]('blx-tab-item', {
+        'blx-active': props.active
+    });
+    var link = props.useReactLink
+        //@ts-ignore
+        ? React.createElement(Link_1["default"], { className: classes, to: props.href }, props.text)
+        : React.createElement("a", { className: classes, href: props.href }, props.text);
+    return (React.createElement("li", { style: props.style, className: props.className },
+        link,
+        props.children));
+};
+LinkTabItem.defaultProps = {
+    className: '',
+    style: null,
+    active: false,
+    useReactLink: false
+};
+exports["default"] = LinkTabItem;

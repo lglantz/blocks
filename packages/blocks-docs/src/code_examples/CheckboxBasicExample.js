@@ -1,6 +1,5 @@
 import React from "react"
-
-const { Checkbox } = require('blocks-react').Input;
+import Checkbox from 'blocks-react/dist/input/Checkbox';
 
 class CheckboxBasicExample extends React.Component {
   constructor(props) {

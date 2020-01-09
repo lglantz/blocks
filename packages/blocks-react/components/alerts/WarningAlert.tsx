@@ -17,9 +17,9 @@ WarningAlert.defaultProps = {
 };
 
 type WarningAlertTypes = {
-  className: string,
-  title: string,
-  closable: boolean,
+  className?: string,
+  title?: string,
+  closable?: boolean,
 };
 export default WarningAlert;
 

@@ -1,2 +1,59 @@
-"use strict";var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e};function _objectWithoutProperties(e,t){var r={};for(var n in e)0<=t.indexOf(n)||Object.prototype.hasOwnProperty.call(e,n)&&(r[n]=e[n]);return r}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),ReactLink=require("react-router-dom").Link,LinkButton=React.forwardRef(function(e,t){var r=e.icon,n=e.className,a=e.leftIcon,o=e.text,s=e.rightIcon,c=e.href,l=e.useReactLink,i=e.isExternal,p=_objectWithoutProperties(e,["icon","className","leftIcon","text","rightIcon","href","useReactLink","isExternal"]),u=classnames("blx-button",n,{"blx-icon-button":!!r,"blx-disabled":p.disabled});return l?React.createElement(ReactLink,_extends({className:u,to:c,ref:t},p),a,o&&React.createElement("span",null,o),r,s):React.createElement("a",_extends({className:u,href:c,target:i?"_blank":"_self",ref:t},p),a,o&&React.createElement("span",null,o),r,s)});LinkButton.propTypes={className:PropTypes.string,href:PropTypes.string.isRequired,text:PropTypes.string,isExternal:PropTypes.bool,useReactLink:PropTypes.bool,leftIcon:PropTypes.node,rightIcon:PropTypes.node,icon:PropTypes.node,disabled:PropTypes.bool},LinkButton.defaultProps={className:"blx-primary",text:"",isExternal:!1,useReactLink:!1,leftIcon:null,rightIcon:null,icon:null,disabled:!1},module.exports=LinkButton;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1dHRvbnMvTGlua0J1dHRvbi5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xhc3NuYW1lcyIsIlJlYWN0TGluayIsIkxpbmsiLCJMaW5rQnV0dG9uIiwiZm9yd2FyZFJlZiIsInByb3BzIiwicmVmIiwiaWNvbiIsImNsYXNzTmFtZSIsImxlZnRJY29uIiwidGV4dCIsInJpZ2h0SWNvbiIsImhyZWYiLCJ1c2VSZWFjdExpbmsiLCJpc0V4dGVybmFsIiwib3RoZXIiLCJfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMiLCJjbGFzc2VzIiwiYmx4LWljb24tYnV0dG9uIiwiYmx4LWRpc2FibGVkIiwiZGlzYWJsZWQiLCJjcmVhdGVFbGVtZW50IiwiX2V4dGVuZHMiLCJ0byIsInRhcmdldCIsInByb3BUeXBlcyIsInN0cmluZyIsImlzUmVxdWlyZWQiLCJib29sIiwibm9kZSIsImRlZmF1bHRQcm9wcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI0VUFBQSxJQUFNQSxNQUFRQyxRQUFRLFNBQ2hCQyxVQUFZRCxRQUFRLGNBQ3BCRSxXQUFhRixRQUFRLGNBQ3JCRyxVQUFZSCxRQUFRLG9CQUFvQkksS0FHeENDLFdBQWFOLE1BQU1PLFdBQVcsU0FBQ0MsRUFBT0MsR0FBUSxJQUMxQ0MsRUFBeUZGLEVBQXpGRSxLQUFNQyxFQUFtRkgsRUFBbkZHLFVBQVdDLEVBQXdFSixFQUF4RUksU0FBVUMsRUFBOERMLEVBQTlESyxLQUFNQyxFQUF3RE4sRUFBeERNLFVBQVdDLEVBQTZDUCxFQUE3Q08sS0FBTUMsRUFBdUNSLEVBQXZDUSxhQUFjQyxFQUF5QlQsRUFBekJTLFdBQWVDLEVBRHJDQyx5QkFDK0NYLEVBRC9DLENBQUEsT0FBQSxZQUFBLFdBQUEsT0FBQSxZQUFBLE9BQUEsZUFBQSxlQUU1Q1ksRUFBVWpCLFdBQVcsYUFBY1EsRUFBVyxDQUNsRFUsb0JBQXFCWCxFQUNyQlksZUFBZ0JKLEVBQU1LLFdBR3hCLE9BQUlQLEVBRUFoQixNQUFBd0IsY0FBQ3BCLFVBQURxQixTQUFBLENBQ0VkLFVBQVdTLEVBQ1hNLEdBQUlYLEVBQ0pOLElBQUtBLEdBQ0RTLEdBRUZOLEVBQ0FDLEdBQVFiLE1BQUF3QixjQUFBLE9BQUEsS0FBT1gsR0FDZkgsRUFDQUksR0FNTmQsTUFBQXdCLGNBQUEsSUFBQUMsU0FBQSxDQUNFZCxVQUFXUyxFQUNYTCxLQUFNQSxFQUNOWSxPQUFRVixFQUFhLFNBQVcsUUFDaENSLElBQUtBLEdBQ0RTLEdBRUZOLEVBQ0FDLEdBQVFiLE1BQUF3QixjQUFBLE9BQUEsS0FBT1gsR0FDZkgsRUFDQUksS0FLUlIsV0FBV3NCLFVBQVksQ0FDckJqQixVQUFXVCxVQUFVMkIsT0FDckJkLEtBQU1iLFVBQVUyQixPQUFPQyxXQUN2QmpCLEtBQU1YLFVBQVUyQixPQUNoQlosV0FBWWYsVUFBVTZCLEtBQ3RCZixhQUFjZCxVQUFVNkIsS0FDeEJuQixTQUFVVixVQUFVOEIsS0FDcEJsQixVQUFXWixVQUFVOEIsS0FDckJ0QixLQUFNUixVQUFVOEIsS0FDaEJULFNBQVVyQixVQUFVNkIsTUFHdEJ6QixXQUFXMkIsYUFBZSxDQUN4QnRCLFVBQVcsY0FDWEUsS0FBTSxHQUNOSSxZQUFZLEVBQ1pELGNBQWMsRUFDZEosU0FBVSxLQUNWRSxVQUFXLEtBQ1hKLEtBQU0sS0FDTmEsVUFBVSxHQUdaVyxPQUFPQyxRQUFVN0IiLCJmaWxlIjoiYnV0dG9ucy9MaW5rQnV0dG9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuY29uc3QgUHJvcFR5cGVzID0gcmVxdWlyZSgncHJvcC10eXBlcycpO1xuY29uc3QgY2xhc3NuYW1lcyA9IHJlcXVpcmUoJ2NsYXNzbmFtZXMnKTtcbmNvbnN0IFJlYWN0TGluayA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlci1kb20nKS5MaW5rO1xuXG5cbmNvbnN0IExpbmtCdXR0b24gPSBSZWFjdC5mb3J3YXJkUmVmKChwcm9wcywgcmVmKSA9PiB7XG4gIGNvbnN0IHsgaWNvbiwgY2xhc3NOYW1lLCBsZWZ0SWNvbiwgdGV4dCwgcmlnaHRJY29uLCBocmVmLCB1c2VSZWFjdExpbmssIGlzRXh0ZXJuYWwsIC4uLm90aGVyIH0gPSBwcm9wcztcbiAgY29uc3QgY2xhc3NlcyA9IGNsYXNzbmFtZXMoJ2JseC1idXR0b24nLCBjbGFzc05hbWUsIHtcbiAgICAnYmx4LWljb24tYnV0dG9uJzogISFpY29uLFxuICAgICdibHgtZGlzYWJsZWQnOiBvdGhlci5kaXNhYmxlZFxuICB9KTtcblxuICBpZiAodXNlUmVhY3RMaW5rKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxSZWFjdExpbmtcbiAgICAgICAgY2xhc3NOYW1lPXtjbGFzc2VzfVxuICAgICAgICB0bz17aHJlZn1cbiAgICAgICAgcmVmPXtyZWZ9XG4gICAgICAgIHsuLi5vdGhlcn1cbiAgICAgID5cbiAgICAgICAgeyBsZWZ0SWNvbiB9XG4gICAgICAgIHsgdGV4dCAmJiA8c3Bhbj57dGV4dH08L3NwYW4+IH1cbiAgICAgICAgeyBpY29uIH1cbiAgICAgICAgeyByaWdodEljb24gfVxuICAgICAgPC9SZWFjdExpbms+XG4gICAgKTtcbiAgfVxuXG4gIHJldHVybiAoXG4gICAgPGFcbiAgICAgIGNsYXNzTmFtZT17Y2xhc3Nlc31cbiAgICAgIGhyZWY9e2hyZWZ9XG4gICAgICB0YXJnZXQ9e2lzRXh0ZXJuYWwgPyAnX2JsYW5rJyA6ICdfc2VsZid9XG4gICAgICByZWY9e3JlZn1cbiAgICAgIHsuLi5vdGhlcn1cbiAgICA+XG4gICAgICB7IGxlZnRJY29uIH1cbiAgICAgIHsgdGV4dCAmJiA8c3Bhbj57dGV4dH08L3NwYW4+IH1cbiAgICAgIHsgaWNvbiB9XG4gICAgICB7IHJpZ2h0SWNvbiB9XG4gICAgPC9hPlxuICApO1xufSk7XG5cbkxpbmtCdXR0b24ucHJvcFR5cGVzID0ge1xuICBjbGFzc05hbWU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIGhyZWY6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgdGV4dDogUHJvcFR5cGVzLnN0cmluZyxcbiAgaXNFeHRlcm5hbDogUHJvcFR5cGVzLmJvb2wsXG4gIHVzZVJlYWN0TGluazogUHJvcFR5cGVzLmJvb2wsXG4gIGxlZnRJY29uOiBQcm9wVHlwZXMubm9kZSxcbiAgcmlnaHRJY29uOiBQcm9wVHlwZXMubm9kZSxcbiAgaWNvbjogUHJvcFR5cGVzLm5vZGUsXG4gIGRpc2FibGVkOiBQcm9wVHlwZXMuYm9vbFxufTtcblxuTGlua0J1dHRvbi5kZWZhdWx0UHJvcHMgPSB7XG4gIGNsYXNzTmFtZTogJ2JseC1wcmltYXJ5JyxcbiAgdGV4dDogJycsXG4gIGlzRXh0ZXJuYWw6IGZhbHNlLFxuICB1c2VSZWFjdExpbms6IGZhbHNlLFxuICBsZWZ0SWNvbjogbnVsbCxcbiAgcmlnaHRJY29uOiBudWxsLFxuICBpY29uOiBudWxsLFxuICBkaXNhYmxlZDogZmFsc2Vcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gTGlua0J1dHRvbjtcbiJdfQ==
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var Link_1 = require("react-router-dom/Link");
+var LinkButton = React.forwardRef(function (props, ref) {
+    var icon = props.icon, className = props.className, leftIcon = props.leftIcon, text = props.text, rightIcon = props.rightIcon, href = props.href, useReactLink = props.useReactLink, isExternal = props.isExternal, other = __rest(props, ["icon", "className", "leftIcon", "text", "rightIcon", "href", "useReactLink", "isExternal"]);
+    var classes = classnames_1["default"]('blx-button', className, {
+        'blx-icon-button': !!icon,
+        'blx-disabled': other.disabled
+    });
+    if (useReactLink) {
+        return (
+        //@ts-ignore
+        React.createElement(Link_1["default"], __assign({ className: classes, to: href, ref: ref }, other),
+            leftIcon,
+            text && React.createElement("span", null, text),
+            icon,
+            rightIcon));
+    }
+    return (React.createElement("a", __assign({ className: classes, href: href, target: isExternal ? '_blank' : '_self', ref: ref }, other),
+        leftIcon,
+        text && React.createElement("span", null, text),
+        icon,
+        rightIcon));
+});
+LinkButton.defaultProps = {
+    className: 'blx-primary',
+    text: '',
+    isExternal: false,
+    useReactLink: false,
+    leftIcon: null,
+    rightIcon: null,
+    icon: null,
+    disabled: false
+};
+exports["default"] = LinkButton;

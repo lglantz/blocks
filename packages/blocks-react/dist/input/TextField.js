@@ -1,2 +1,90 @@
-"use strict";var _extends=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var l=arguments[a];for(var t in l)Object.prototype.hasOwnProperty.call(l,t)&&(e[t]=l[t])}return e};function _objectWithoutProperties(e,a){var l={};for(var t in e)0<=a.indexOf(t)||Object.prototype.hasOwnProperty.call(e,t)&&(l[t]=e[t]);return l}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),TextField=function(e){var a=e.label,l=e.isValid,t=e.invalidErrorMessage,r=e.prefix,s=e.suffix,n=e.icon,i=e.style,p=e.className,o=e.forwardedRef,c=e.helperText,d=_objectWithoutProperties(e,["label","isValid","invalidErrorMessage","prefix","suffix","icon","style","className","forwardedRef","helperText"]),x=null;a&&(x=React.createElement("label",{className:"blx-ui-text"},a));var f=null;l||(f=React.createElement("span",{className:"blx-invalid-input-message"},t));var u=null;r&&(u=React.createElement("span",{className:"blx-text-field-prefix"},r));var m=null;s&&(m=React.createElement("span",{className:"blx-text-field-suffix"},s));var y=null;n&&(y=React.createElement("span",{className:"blx-text-field-icon"},n));var T=null;d.maxLength?T=React.createElement("span",{className:"blx-text-field-helper-text"},d.value.length+"/"+d.maxLength):c&&(T=React.createElement("span",{className:"blx-text-field-helper-text"},""+c));var b=classnames("blx-text-field",p,{"blx-disabled":d.disabled}),v=classnames({"blx-invalid":!l});return React.createElement("div",{style:i,className:b},x,React.createElement("div",{className:"blx-text-field-container"},u,m,React.createElement("input",_extends({className:v,ref:o},d)),y),f,T)};TextField.propTypes={className:PropTypes.string,style:PropTypes.object,label:PropTypes.oneOfType([PropTypes.string,PropTypes.node]),prefix:PropTypes.oneOfType([PropTypes.string,PropTypes.node]),suffix:PropTypes.oneOfType([PropTypes.string,PropTypes.node]),icon:PropTypes.node,disabled:PropTypes.bool,isValid:PropTypes.bool,invalidErrorMessage:PropTypes.string,helperText:PropTypes.string},TextField.defaultProps={className:"",style:null,label:"",prefix:null,suffix:null,icon:null,disabled:!1,isValid:!0,invalidErrorMessage:"",helperText:null},module.exports=React.forwardRef(function(e,a){return React.createElement(TextField,_extends({},e,{forwardedRef:a}))});
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImlucHV0L1RleHRGaWVsZC5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY2xhc3NuYW1lcyIsIlRleHRGaWVsZCIsIl9yZWYiLCJsYWJlbCIsImlzVmFsaWQiLCJpbnZhbGlkRXJyb3JNZXNzYWdlIiwicHJlZml4Iiwic3VmZml4IiwiaWNvbiIsInN0eWxlIiwiY2xhc3NOYW1lIiwiZm9yd2FyZGVkUmVmIiwiaGVscGVyVGV4dCIsIm90aGVyIiwiX29iamVjdFdpdGhvdXRQcm9wZXJ0aWVzIiwibGFiZWxFbGVtZW50IiwiY3JlYXRlRWxlbWVudCIsImludmFsaWRMYWJlbE1lc3NhZ2UiLCJwcmVmaXhFbGVtZW50Iiwic3VmZml4RWxlbWVudCIsImljb25FbGVtZW50IiwiaGVscGVyVGV4dEVsZW1lbnQiLCJtYXhMZW5ndGgiLCJ2YWx1ZSIsImxlbmd0aCIsImNsYXNzZXMiLCJibHgtZGlzYWJsZWQiLCJkaXNhYmxlZCIsInRleHRGaWVsZENsYXNzZXMiLCJibHgtaW52YWxpZCIsIl9leHRlbmRzIiwicmVmIiwicHJvcFR5cGVzIiwic3RyaW5nIiwib2JqZWN0Iiwib25lT2ZUeXBlIiwibm9kZSIsImJvb2wiLCJkZWZhdWx0UHJvcHMiLCJtb2R1bGUiLCJleHBvcnRzIiwiZm9yd2FyZFJlZiIsInByb3BzIl0sIm1hcHBpbmdzIjoiNFVBQUEsSUFBTUEsTUFBUUMsUUFBUSxTQUNoQkMsVUFBWUQsUUFBUSxjQUNwQkUsV0FBYUYsUUFBUSxjQUdyQkcsVUFBWSxTQUFBQyxHQUF5SCxJQUF0SEMsRUFBc0hELEVBQXRIQyxNQUFPQyxFQUErR0YsRUFBL0dFLFFBQVNDLEVBQXNHSCxFQUF0R0csb0JBQXFCQyxFQUFpRkosRUFBakZJLE9BQVFDLEVBQXlFTCxFQUF6RUssT0FBUUMsRUFBaUVOLEVBQWpFTSxLQUFNQyxFQUEyRFAsRUFBM0RPLE1BQU9DLEVBQW9EUixFQUFwRFEsVUFBV0MsRUFBeUNULEVBQXpDUyxhQUFjQyxFQUEyQlYsRUFBM0JVLFdBQWVDLEVBQVlDLHlCQUFBWixFQUFBLENBQUEsUUFBQSxVQUFBLHNCQUFBLFNBQUEsU0FBQSxPQUFBLFFBQUEsWUFBQSxlQUFBLGVBRXJJYSxFQUFlLEtBQ2ZaLElBQ0ZZLEVBQWVsQixNQUFBbUIsY0FBQSxRQUFBLENBQU9OLFVBQVUsZUFBZVAsSUFJakQsSUFBSWMsRUFBc0IsS0FDckJiLElBQ0hhLEVBQXNCcEIsTUFBQW1CLGNBQUEsT0FBQSxDQUFNTixVQUFVLDZCQUE2QkwsSUFJckUsSUFBSWEsRUFBZ0IsS0FDaEJaLElBQ0ZZLEVBQWdCckIsTUFBQW1CLGNBQUEsT0FBQSxDQUFNTixVQUFVLHlCQUF5QkosSUFJM0QsSUFBSWEsRUFBZ0IsS0FDaEJaLElBQ0ZZLEVBQWdCdEIsTUFBQW1CLGNBQUEsT0FBQSxDQUFNTixVQUFVLHlCQUF5QkgsSUFJM0QsSUFBSWEsRUFBYyxLQUNkWixJQUNGWSxFQUFjdkIsTUFBQW1CLGNBQUEsT0FBQSxDQUFNTixVQUFVLHVCQUF1QkYsSUFJdkQsSUFBSWEsRUFBb0IsS0FFcEJSLEVBQU1TLFVBQ1JELEVBQW9CeEIsTUFBQW1CLGNBQUEsT0FBQSxDQUFNTixVQUFVLDhCQUFpQ0csRUFBTVUsTUFBTUMsT0FBN0QsSUFBdUVYLEVBQU1TLFdBQ3pGVixJQUNSUyxFQUFvQnhCLE1BQUFtQixjQUFBLE9BQUEsQ0FBTU4sVUFBVSw4QkFBaEIsR0FBaURFLElBSXZFLElBQU1hLEVBQVV6QixXQUFXLGlCQUFrQlUsRUFBVyxDQUN0RGdCLGVBQWdCYixFQUFNYyxXQUVsQkMsRUFBbUI1QixXQUFXLENBQUM2QixlQUFnQnpCLElBRXJELE9BQ0VQLE1BQUFtQixjQUFBLE1BQUEsQ0FDRVAsTUFBT0EsRUFDUEMsVUFBV2UsR0FFVlYsRUFDRGxCLE1BQUFtQixjQUFBLE1BQUEsQ0FBS04sVUFBVSw0QkFDWlEsRUFDQUMsRUFDRHRCLE1BQUFtQixjQUFBLFFBQUFjLFNBQUEsQ0FDRXBCLFVBQVdrQixFQUNYRyxJQUFLcEIsR0FDREUsSUFFTE8sR0FFRkgsRUFDQUksSUFLUHBCLFVBQVUrQixVQUFZLENBQ3BCdEIsVUFBV1gsVUFBVWtDLE9BQ3JCeEIsTUFBT1YsVUFBVW1DLE9BQ2pCL0IsTUFBT0osVUFBVW9DLFVBQVUsQ0FDekJwQyxVQUFVa0MsT0FDVmxDLFVBQVVxQyxPQUVaOUIsT0FBUVAsVUFBVW9DLFVBQVUsQ0FDMUJwQyxVQUFVa0MsT0FDVmxDLFVBQVVxQyxPQUVaN0IsT0FBUVIsVUFBVW9DLFVBQVUsQ0FDMUJwQyxVQUFVa0MsT0FDVmxDLFVBQVVxQyxPQUVaNUIsS0FBTVQsVUFBVXFDLEtBQ2hCVCxTQUFVNUIsVUFBVXNDLEtBQ3BCakMsUUFBU0wsVUFBVXNDLEtBQ25CaEMsb0JBQXFCTixVQUFVa0MsT0FDL0JyQixXQUFZYixVQUFVa0MsUUFHeEJoQyxVQUFVcUMsYUFBZSxDQUN2QjVCLFVBQVcsR0FDWEQsTUFBTyxLQUNQTixNQUFPLEdBQ1BHLE9BQVEsS0FDUkMsT0FBUSxLQUNSQyxLQUFNLEtBQ05tQixVQUFVLEVBQ1Z2QixTQUFTLEVBQ1RDLG9CQUFxQixHQUNyQk8sV0FBWSxNQUdkMkIsT0FBT0MsUUFBVTNDLE1BQU00QyxXQUFXLFNBQUNDLEVBQU9YLEdBQVIsT0FDaENsQyxNQUFBbUIsY0FBQ2YsVUFBRDZCLFNBQUEsR0FBZVksRUFBZixDQUFzQi9CLGFBQWNvQiIsImZpbGUiOiJpbnB1dC9UZXh0RmllbGQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5jb25zdCBQcm9wVHlwZXMgPSByZXF1aXJlKCdwcm9wLXR5cGVzJyk7XG5jb25zdCBjbGFzc25hbWVzID0gcmVxdWlyZSgnY2xhc3NuYW1lcycpO1xuXG5cbmNvbnN0IFRleHRGaWVsZCA9ICh7IGxhYmVsLCBpc1ZhbGlkLCBpbnZhbGlkRXJyb3JNZXNzYWdlLCBwcmVmaXgsIHN1ZmZpeCwgaWNvbiwgc3R5bGUsIGNsYXNzTmFtZSwgZm9yd2FyZGVkUmVmLCBoZWxwZXJUZXh0LCAuLi5vdGhlciB9KSA9PiB7XG4gIC8vIGxhYmVsIGVsZW1lbnRcbiAgbGV0IGxhYmVsRWxlbWVudCA9IG51bGw7XG4gIGlmIChsYWJlbCkge1xuICAgIGxhYmVsRWxlbWVudCA9IDxsYWJlbCBjbGFzc05hbWU9XCJibHgtdWktdGV4dFwiPntsYWJlbH08L2xhYmVsPjtcbiAgfVxuXG4gIC8vIGludmFsaWQgbWVzc2FnZSBhbmQgY2xhc3NcbiAgbGV0IGludmFsaWRMYWJlbE1lc3NhZ2UgPSBudWxsO1xuICBpZiAoIWlzVmFsaWQpIHtcbiAgICBpbnZhbGlkTGFiZWxNZXNzYWdlID0gPHNwYW4gY2xhc3NOYW1lPVwiYmx4LWludmFsaWQtaW5wdXQtbWVzc2FnZVwiPntpbnZhbGlkRXJyb3JNZXNzYWdlfTwvc3Bhbj47XG4gIH1cblxuICAvLyBwcmVmaXggZWxlbWVudFxuICBsZXQgcHJlZml4RWxlbWVudCA9IG51bGw7XG4gIGlmIChwcmVmaXgpIHtcbiAgICBwcmVmaXhFbGVtZW50ID0gPHNwYW4gY2xhc3NOYW1lPVwiYmx4LXRleHQtZmllbGQtcHJlZml4XCI+e3ByZWZpeH08L3NwYW4+O1xuICB9XG5cbiAgLy8gc3VmZml4IGVsZW1lbnRcbiAgbGV0IHN1ZmZpeEVsZW1lbnQgPSBudWxsO1xuICBpZiAoc3VmZml4KSB7XG4gICAgc3VmZml4RWxlbWVudCA9IDxzcGFuIGNsYXNzTmFtZT1cImJseC10ZXh0LWZpZWxkLXN1ZmZpeFwiPntzdWZmaXh9PC9zcGFuPjtcbiAgfVxuXG4gIC8vIGljb24gZWxlbWVudFxuICBsZXQgaWNvbkVsZW1lbnQgPSBudWxsO1xuICBpZiAoaWNvbikge1xuICAgIGljb25FbGVtZW50ID0gPHNwYW4gY2xhc3NOYW1lPVwiYmx4LXRleHQtZmllbGQtaWNvblwiPntpY29ufTwvc3Bhbj47XG4gIH1cblxuICAvLyBoZWxwZXIgdGV4dFxuICBsZXQgaGVscGVyVGV4dEVsZW1lbnQgPSBudWxsO1xuXG4gIGlmIChvdGhlci5tYXhMZW5ndGgpIHtcbiAgICBoZWxwZXJUZXh0RWxlbWVudCA9IDxzcGFuIGNsYXNzTmFtZT1cImJseC10ZXh0LWZpZWxkLWhlbHBlci10ZXh0XCI+e2Ake290aGVyLnZhbHVlLmxlbmd0aH0vJHtvdGhlci5tYXhMZW5ndGh9YH08L3NwYW4+O1xuICB9ZWxzZSBpZiAoaGVscGVyVGV4dCkge1xuICAgIGhlbHBlclRleHRFbGVtZW50ID0gPHNwYW4gY2xhc3NOYW1lPVwiYmx4LXRleHQtZmllbGQtaGVscGVyLXRleHRcIj57YCR7aGVscGVyVGV4dH1gfTwvc3Bhbj47XG4gIH1cblxuICAvLyByb290IGxldmVsIGNsYXNzZXNcbiAgY29uc3QgY2xhc3NlcyA9IGNsYXNzbmFtZXMoJ2JseC10ZXh0LWZpZWxkJywgY2xhc3NOYW1lLCB7XG4gICAgJ2JseC1kaXNhYmxlZCc6IG90aGVyLmRpc2FibGVkXG4gIH0pO1xuICBjb25zdCB0ZXh0RmllbGRDbGFzc2VzID0gY2xhc3NuYW1lcyh7J2JseC1pbnZhbGlkJzogIWlzVmFsaWR9KTtcblxuICByZXR1cm4gKFxuICAgIDxkaXZcbiAgICAgIHN0eWxlPXtzdHlsZX1cbiAgICAgIGNsYXNzTmFtZT17Y2xhc3Nlc31cbiAgICA+XG4gICAgICB7bGFiZWxFbGVtZW50fVxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJibHgtdGV4dC1maWVsZC1jb250YWluZXJcIj5cbiAgICAgICAge3ByZWZpeEVsZW1lbnR9XG4gICAgICAgIHtzdWZmaXhFbGVtZW50fVxuICAgICAgICA8aW5wdXRcbiAgICAgICAgICBjbGFzc05hbWU9e3RleHRGaWVsZENsYXNzZXN9XG4gICAgICAgICAgcmVmPXtmb3J3YXJkZWRSZWZ9XG4gICAgICAgICAgey4uLm90aGVyfVxuICAgICAgICAvPlxuICAgICAgICB7aWNvbkVsZW1lbnR9XG4gICAgICA8L2Rpdj5cbiAgICAgIHtpbnZhbGlkTGFiZWxNZXNzYWdlfVxuICAgICAge2hlbHBlclRleHRFbGVtZW50fVxuICAgIDwvZGl2PlxuICApO1xufVxuXG5UZXh0RmllbGQucHJvcFR5cGVzID0ge1xuICBjbGFzc05hbWU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIHN0eWxlOiBQcm9wVHlwZXMub2JqZWN0LFxuICBsYWJlbDogUHJvcFR5cGVzLm9uZU9mVHlwZShbXG4gICAgUHJvcFR5cGVzLnN0cmluZyxcbiAgICBQcm9wVHlwZXMubm9kZVxuICBdKSxcbiAgcHJlZml4OiBQcm9wVHlwZXMub25lT2ZUeXBlKFtcbiAgICBQcm9wVHlwZXMuc3RyaW5nLFxuICAgIFByb3BUeXBlcy5ub2RlXG4gIF0pLFxuICBzdWZmaXg6IFByb3BUeXBlcy5vbmVPZlR5cGUoW1xuICAgIFByb3BUeXBlcy5zdHJpbmcsXG4gICAgUHJvcFR5cGVzLm5vZGVcbiAgXSksXG4gIGljb246IFByb3BUeXBlcy5ub2RlLFxuICBkaXNhYmxlZDogUHJvcFR5cGVzLmJvb2wsXG4gIGlzVmFsaWQ6IFByb3BUeXBlcy5ib29sLFxuICBpbnZhbGlkRXJyb3JNZXNzYWdlOiBQcm9wVHlwZXMuc3RyaW5nLFxuICBoZWxwZXJUZXh0OiBQcm9wVHlwZXMuc3RyaW5nLFxufTtcblxuVGV4dEZpZWxkLmRlZmF1bHRQcm9wcyA9IHtcbiAgY2xhc3NOYW1lOiAnJyxcbiAgc3R5bGU6IG51bGwsXG4gIGxhYmVsOiAnJyxcbiAgcHJlZml4OiBudWxsLFxuICBzdWZmaXg6IG51bGwsXG4gIGljb246IG51bGwsXG4gIGRpc2FibGVkOiBmYWxzZSxcbiAgaXNWYWxpZDogdHJ1ZSxcbiAgaW52YWxpZEVycm9yTWVzc2FnZTogJycsXG4gIGhlbHBlclRleHQ6IG51bGxcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gUmVhY3QuZm9yd2FyZFJlZigocHJvcHMsIHJlZikgPT4gKFxuICA8VGV4dEZpZWxkIHsuLi5wcm9wc30gZm9yd2FyZGVkUmVmPXtyZWZ9IC8+XG4pKTtcblxuIl19
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var TextField = function (_a) {
+    var label = _a.label, isValid = _a.isValid, invalidErrorMessage = _a.invalidErrorMessage, prefix = _a.prefix, suffix = _a.suffix, icon = _a.icon, style = _a.style, className = _a.className, forwardedRef = _a.forwardedRef, helperText = _a.helperText, other = __rest(_a, ["label", "isValid", "invalidErrorMessage", "prefix", "suffix", "icon", "style", "className", "forwardedRef", "helperText"]);
+    // label element
+    var labelElement = null;
+    if (label) {
+        labelElement = React.createElement("label", { className: "blx-ui-text" }, label);
+    }
+    // invalid message and class
+    var invalidLabelMessage = null;
+    if (!isValid) {
+        invalidLabelMessage = React.createElement("span", { className: "blx-invalid-input-message" }, invalidErrorMessage);
+    }
+    // prefix element
+    var prefixElement = null;
+    if (prefix) {
+        prefixElement = React.createElement("span", { className: "blx-text-field-prefix" }, prefix);
+    }
+    // suffix element
+    var suffixElement = null;
+    if (suffix) {
+        suffixElement = React.createElement("span", { className: "blx-text-field-suffix" }, suffix);
+    }
+    // icon element
+    var iconElement = null;
+    if (icon) {
+        iconElement = React.createElement("span", { className: "blx-text-field-icon" }, icon);
+    }
+    // helper text
+    var helperTextElement = null;
+    if (other.maxLength) {
+        helperTextElement = React.createElement("span", { className: "blx-text-field-helper-text" }, other.value.length + "/" + other.maxLength);
+    }
+    else if (helperText) {
+        helperTextElement = React.createElement("span", { className: "blx-text-field-helper-text" }, "" + helperText);
+    }
+    // root level classes
+    var classes = classnames_1["default"]('blx-text-field', className, {
+        'blx-disabled': other.disabled
+    });
+    var textFieldClasses = classnames_1["default"]({ 'blx-invalid': !isValid });
+    return (React.createElement("div", { style: style, className: classes },
+        labelElement,
+        React.createElement("div", { className: "blx-text-field-container" },
+            prefixElement,
+            suffixElement,
+            React.createElement("input", __assign({ className: textFieldClasses, ref: forwardedRef }, other)),
+            iconElement),
+        invalidLabelMessage,
+        helperTextElement));
+};
+TextField.defaultProps = {
+    className: '',
+    style: null,
+    label: '',
+    prefix: null,
+    suffix: null,
+    icon: null,
+    disabled: false,
+    isValid: true,
+    invalidErrorMessage: '',
+    helperText: null,
+    value: []
+};
+exports["default"] = React.forwardRef(function (props, ref) { return (React.createElement(TextField, __assign({}, props, { forwardedRef: ref }))); });

@@ -2,8 +2,8 @@ import React from "react"
 
 import { Link, StaticQuery, graphql } from "gatsby"
 
-const Accordion = require('blocks-react').Accordion;
-const Tabs = require('blocks-react').Tabs.Tabs;
+import Accordion from 'blocks-react/dist/accordion/AccordionSection';
+import Tabs from 'blocks-react/dist/tabs/Tabs';
 
 
 const Navigation = () => (

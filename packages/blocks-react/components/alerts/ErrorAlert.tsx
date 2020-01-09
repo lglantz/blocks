@@ -16,8 +16,8 @@ ErrorAlert.defaultProps = {
   closable: false
 };
 type ErrorAlertTypes = {
-  className: string,
-  title: string,
-  closable: boolean,
+  className?: string,
+  title?: string,
+  closable?: boolean,
 };
 export default ErrorAlert;

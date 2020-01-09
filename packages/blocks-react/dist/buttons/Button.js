@@ -1,2 +1,47 @@
-"use strict";var _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e};function _objectWithoutProperties(e,t){var r={};for(var o in e)0<=t.indexOf(o)||Object.prototype.hasOwnProperty.call(e,o)&&(r[o]=e[o]);return r}var React=require("react"),PropTypes=require("prop-types"),classnames=require("classnames"),BasicButton=React.forwardRef(function(e,t){var r=e.icon,o=e.className,n=e.leftIcon,s=e.text,a=e.rightIcon,c=_objectWithoutProperties(e,["icon","className","leftIcon","text","rightIcon"]),l=classnames("blx-button",o,{"blx-icon-button":!!r,"blx-disabled":c.disabled});return React.createElement("button",_extends({className:l,ref:t},c),n,s&&React.createElement("span",null,s),r,a)});BasicButton.propTypes={className:PropTypes.string,text:PropTypes.string,leftIcon:PropTypes.node,rightIcon:PropTypes.node,icon:PropTypes.node,disabled:PropTypes.bool},BasicButton.defaultProps={className:"blx-primary",text:"",leftIcon:null,rightIcon:null,icon:null,disabled:!1},module.exports=BasicButton;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1dHRvbnMvQnV0dG9uLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJQcm9wVHlwZXMiLCJjbGFzc25hbWVzIiwiQmFzaWNCdXR0b24iLCJmb3J3YXJkUmVmIiwicHJvcHMiLCJyZWYiLCJpY29uIiwiY2xhc3NOYW1lIiwibGVmdEljb24iLCJ0ZXh0IiwicmlnaHRJY29uIiwib3RoZXIiLCJfb2JqZWN0V2l0aG91dFByb3BlcnRpZXMiLCJjbGFzc2VzIiwiYmx4LWljb24tYnV0dG9uIiwiYmx4LWRpc2FibGVkIiwiZGlzYWJsZWQiLCJjcmVhdGVFbGVtZW50IiwiX2V4dGVuZHMiLCJwcm9wVHlwZXMiLCJzdHJpbmciLCJub2RlIiwiYm9vbCIsImRlZmF1bHRQcm9wcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI0VUFBQSxJQUFNQSxNQUFRQyxRQUFRLFNBQ2hCQyxVQUFZRCxRQUFRLGNBQ3BCRSxXQUFhRixRQUFRLGNBR3JCRyxZQUFjSixNQUFNSyxXQUFXLFNBQUNDLEVBQU9DLEdBQVEsSUFDM0NDLEVBQXlERixFQUF6REUsS0FBTUMsRUFBbURILEVBQW5ERyxVQUFXQyxFQUF3Q0osRUFBeENJLFNBQVVDLEVBQThCTCxFQUE5QkssS0FBTUMsRUFBd0JOLEVBQXhCTSxVQUFjQyxFQURKQyx5QkFDY1IsRUFEZCxDQUFBLE9BQUEsWUFBQSxXQUFBLE9BQUEsY0FFN0NTLEVBQVVaLFdBQVcsYUFBY00sRUFBVyxDQUNsRE8sb0JBQXFCUixFQUNyQlMsZUFBZ0JKLEVBQU1LLFdBR3hCLE9BQ0VsQixNQUFBbUIsY0FBQSxTQUFBQyxTQUFBLENBQ0VYLFVBQVdNLEVBQ1hSLElBQUtBLEdBQ0RNLEdBRUZILEVBQ0FDLEdBQVFYLE1BQUFtQixjQUFBLE9BQUEsS0FBT1IsR0FDZkgsRUFDQUksS0FLUlIsWUFBWWlCLFVBQVksQ0FDdEJaLFVBQVdQLFVBQVVvQixPQUNyQlgsS0FBTVQsVUFBVW9CLE9BQ2hCWixTQUFVUixVQUFVcUIsS0FDcEJYLFVBQVdWLFVBQVVxQixLQUNyQmYsS0FBTU4sVUFBVXFCLEtBQ2hCTCxTQUFVaEIsVUFBVXNCLE1BR3RCcEIsWUFBWXFCLGFBQWUsQ0FDekJoQixVQUFXLGNBQ1hFLEtBQU0sR0FDTkQsU0FBVSxLQUNWRSxVQUFXLEtBQ1hKLEtBQU0sS0FDTlUsVUFBVSxHQUdaUSxPQUFPQyxRQUFVdkIiLCJmaWxlIjoiYnV0dG9ucy9CdXR0b24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG5jb25zdCBQcm9wVHlwZXMgPSByZXF1aXJlKCdwcm9wLXR5cGVzJyk7XG5jb25zdCBjbGFzc25hbWVzID0gcmVxdWlyZSgnY2xhc3NuYW1lcycpO1xuXG5cbmNvbnN0IEJhc2ljQnV0dG9uID0gUmVhY3QuZm9yd2FyZFJlZigocHJvcHMsIHJlZikgPT4ge1xuICBjb25zdCB7IGljb24sIGNsYXNzTmFtZSwgbGVmdEljb24sIHRleHQsIHJpZ2h0SWNvbiwgLi4ub3RoZXIgfSA9IHByb3BzO1xuICBjb25zdCBjbGFzc2VzID0gY2xhc3NuYW1lcygnYmx4LWJ1dHRvbicsIGNsYXNzTmFtZSwge1xuICAgICdibHgtaWNvbi1idXR0b24nOiAhIWljb24sXG4gICAgJ2JseC1kaXNhYmxlZCc6IG90aGVyLmRpc2FibGVkXG4gIH0pO1xuICBcbiAgcmV0dXJuIChcbiAgICA8YnV0dG9uXG4gICAgICBjbGFzc05hbWU9e2NsYXNzZXN9XG4gICAgICByZWY9e3JlZn1cbiAgICAgIHsuLi5vdGhlcn1cbiAgICA+XG4gICAgICB7IGxlZnRJY29uIH1cbiAgICAgIHsgdGV4dCAmJiA8c3Bhbj57dGV4dH08L3NwYW4+IH1cbiAgICAgIHsgaWNvbiB9XG4gICAgICB7IHJpZ2h0SWNvbiB9XG4gICAgPC9idXR0b24+XG4gICk7XG59KTtcblxuQmFzaWNCdXR0b24ucHJvcFR5cGVzID0ge1xuICBjbGFzc05hbWU6IFByb3BUeXBlcy5zdHJpbmcsXG4gIHRleHQ6IFByb3BUeXBlcy5zdHJpbmcsXG4gIGxlZnRJY29uOiBQcm9wVHlwZXMubm9kZSxcbiAgcmlnaHRJY29uOiBQcm9wVHlwZXMubm9kZSxcbiAgaWNvbjogUHJvcFR5cGVzLm5vZGUsXG4gIGRpc2FibGVkOiBQcm9wVHlwZXMuYm9vbFxufTtcblxuQmFzaWNCdXR0b24uZGVmYXVsdFByb3BzID0ge1xuICBjbGFzc05hbWU6ICdibHgtcHJpbWFyeScsXG4gIHRleHQ6ICcnLFxuICBsZWZ0SWNvbjogbnVsbCxcbiAgcmlnaHRJY29uOiBudWxsLFxuICBpY29uOiBudWxsLFxuICBkaXNhYmxlZDogZmFsc2Vcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gQmFzaWNCdXR0b247XG4iXX0=
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+exports.__esModule = true;
+var React = require("react");
+var classnames_1 = require("classnames");
+var BasicButton = React.forwardRef(function (props, ref) {
+    var icon = props.icon, className = props.className, leftIcon = props.leftIcon, text = props.text, rightIcon = props.rightIcon, other = __rest(props, ["icon", "className", "leftIcon", "text", "rightIcon"]);
+    var classes = classnames_1["default"]('blx-button', className, {
+        'blx-icon-button': !!icon,
+        'blx-disabled': other.disabled
+    });
+    return (React.createElement("button", __assign({ className: classes, ref: ref }, other),
+        leftIcon,
+        text && React.createElement("span", null, text),
+        icon,
+        rightIcon));
+});
+BasicButton.defaultProps = {
+    className: 'blx-primary',
+    text: '',
+    leftIcon: null,
+    rightIcon: null,
+    icon: null,
+    disabled: false
+};
+exports["default"] = BasicButton;
