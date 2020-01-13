@@ -62,11 +62,4 @@ type AccordionSectionProps = {
   onToggle: any
 };
 
-AccordionSection.defaultProps = {
-  className: '',
-  style: null,
-  open: false,
-  onToggle: onToggle
-};
-
 export default AccordionSection;

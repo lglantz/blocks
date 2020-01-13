@@ -57,10 +57,4 @@ var AccordionSection = /** @class */ (function (_super) {
     };
     return AccordionSection;
 }(React.Component));
-AccordionSection.defaultProps = {
-    className: '',
-    style: null,
-    open: false,
-    onToggle: onToggle
-};
 exports["default"] = AccordionSection;

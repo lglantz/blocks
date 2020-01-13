@@ -35,12 +35,8 @@ var AlertBanner = /** @class */ (function (_super) {
             hidden: false
         };
         return _this;
-        // this.onClose = this.onClose.bind(this);
     }
-    // onClose() {
-    // }
     AlertBanner.prototype.render = function () {
-        console.log('alertbanner');
         var classes = classnames_1["default"]('blx-alert', this.props.className, {
             'blx-hidden': this.state.hidden
         });

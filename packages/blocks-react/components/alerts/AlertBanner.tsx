@@ -20,7 +20,6 @@ class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
     this.state = {
       hidden: false
     };
-    // this.onClose = this.onClose.bind(this);
   }
   onClose = () => {
     if (typeof this.props.onClose === 'function') {
@@ -30,12 +29,8 @@ class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
       hidden: true
     });
   }
-  // onClose() {
-
-  // }
 
   render() {
-    console.log('alertbanner')
     const classes = classnames('blx-alert', this.props.className, {
       'blx-hidden': this.state.hidden
     });
