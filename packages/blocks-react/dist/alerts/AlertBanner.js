@@ -16,9 +16,7 @@ exports.__esModule = true;
 var React = require("react");
 var classnames_1 = require("classnames");
 var CloseIcon_1 = require("../icons/CloseIcon");
-/**
- * AlertBanner description!!!
- */
+/** AlertBanner*/
 var AlertBanner = /** @class */ (function (_super) {
     __extends(AlertBanner, _super);
     function AlertBanner(props) {
@@ -62,4 +60,6 @@ var AlertBanner = /** @class */ (function (_super) {
     };
     return AlertBanner;
 }(React.Component));
+;
+;
 exports["default"] = AlertBanner;

@@ -2,9 +2,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import CloseIcon from '../icons/CloseIcon';
 
-/**
- * AlertBanner description!!!
- */
+/** AlertBanner*/
 class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
   static defaultProps = {
     className: '',
@@ -58,16 +56,24 @@ class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
     );
   }
 }
-type AlertBannerProps = {
+interface AlertBannerProps {
+  /** classname */
   className?: string,
-  style?: any,
-  title?: string,
-  icon?: any,
-  message?: string,
+  /** closable */
   closable?: boolean,
-  onClose?: any
+  /** icon */
+  icon?: JSX.Element,
+  /** Message */
+  message?: string,
+  /** onClose */
+  onClose?: () => void,
+  /** style */
+  style?: object,
+  /** title */
+  title?: string,
 };
-type AlertBannerState = {
+interface AlertBannerState {
   hidden: boolean,
 };
-export default AlertBanner;
+export default AlertBanner as React.ComponentClass<AlertBannerProps, AlertBannerState>;
+

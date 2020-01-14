@@ -14,6 +14,7 @@ exports.__esModule = true;
 var React = require("react");
 var AlertBanner_1 = require("./AlertBanner");
 var InformationIcon_1 = require("../icons/InformationIcon");
+/** InformationalAlert */
 var InformationalAlert = function (props) { return (React.createElement(AlertBanner_1["default"], __assign({}, props, { className: "blx-information " + props.className, icon: React.createElement(InformationIcon_1["default"], { className: "blx-alert-icon" }) }))); };
 InformationalAlert.defaultProps = {
     className: '',

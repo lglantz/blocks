@@ -2,7 +2,19 @@ import * as React from 'react';
 import AlertBanner from './AlertBanner';
 import ErrorIcon from '../icons/ErrorIcon';
 
-const ErrorAlert = (props: ErrorAlertTypes) => (
+/** ErrorAlert */
+const ErrorAlert: React.FC<{
+  /** classname */
+  className?: string,
+  /** closable */
+  closable?: boolean,
+  /** Message */
+  message?: string,
+  /** onClose */
+  onClose?: ()=> void,
+  /** title */
+  title?: string,
+}> = props => (
   <AlertBanner
     {...props}
     className={`blx-error ${props.className}`}
@@ -15,9 +27,5 @@ ErrorAlert.defaultProps = {
   title: 'Error',
   closable: false
 };
-type ErrorAlertTypes = {
-  className?: string,
-  title?: string,
-  closable?: boolean,
-};
+
 export default ErrorAlert;

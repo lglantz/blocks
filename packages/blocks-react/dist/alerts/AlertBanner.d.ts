@@ -1,31 +1,22 @@
 import * as React from 'react';
-/**
- * AlertBanner description!!!
- */
-declare class AlertBanner extends React.Component<AlertBannerProps, AlertBannerState> {
-    static defaultProps: {
-        className: string;
-        style: any;
-        title: string;
-        icon: any;
-        message: string;
-        closable: boolean;
-        onClose: any;
-    };
-    constructor(props: AlertBannerProps);
-    onClose: () => void;
-    render(): JSX.Element;
-}
-declare type AlertBannerProps = {
+interface AlertBannerProps {
+    /** classname */
     className?: string;
-    style?: any;
-    title?: string;
-    icon?: any;
-    message?: string;
+    /** closable */
     closable?: boolean;
-    onClose?: any;
-};
-declare type AlertBannerState = {
+    /** icon */
+    icon?: JSX.Element;
+    /** Message */
+    message?: string;
+    /** onClose */
+    onClose?: () => void;
+    /** style */
+    style?: object;
+    /** title */
+    title?: string;
+}
+interface AlertBannerState {
     hidden: boolean;
-};
-export default AlertBanner;
+}
+declare const _default: React.ComponentClass<AlertBannerProps, AlertBannerState>;
+export default _default;

@@ -1,15 +1,15 @@
-/// <reference types="react" />
-declare const ErrorAlert: {
-    (props: ErrorAlertTypes): JSX.Element;
-    defaultProps: {
-        className: string;
-        title: string;
-        closable: boolean;
-    };
-};
-declare type ErrorAlertTypes = {
+import * as React from 'react';
+/** ErrorAlert */
+declare const ErrorAlert: React.FC<{
+    /** classname */
     className?: string;
-    title?: string;
+    /** closable */
     closable?: boolean;
-};
+    /** Message */
+    message?: string;
+    /** onClose */
+    onClose?: () => void;
+    /** title */
+    title?: string;
+}>;
 export default ErrorAlert;

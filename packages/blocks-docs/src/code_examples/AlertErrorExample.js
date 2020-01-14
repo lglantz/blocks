@@ -1,5 +1,5 @@
 import React from "react"
-import ErrorAlert from 'blocks-react/dist/alerts/ErrorAlert';
+import { ErrorAlert } from 'blocks-react/dist/alerts';
 
 const AlertErrorExample = () => (
   <ErrorAlert

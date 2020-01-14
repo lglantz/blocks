@@ -1,8 +1,21 @@
+// @ts-check
 import * as React from 'react';
 import AlertBanner from './AlertBanner';
 import WarningIcon from '../icons/WarningIcon';
 
-const WarningAlert = (props: WarningAlertTypes) => (
+/** WarningAlert */
+const WarningAlert: React.FC<{
+  /** classname */
+  className?: string,
+  /** closable */
+  closable?: boolean,
+  /** Message */
+  message?: string,
+  /** onClose */
+  onClose?: () => void,
+  /** title */
+  title?: string,
+}> = props => (
   <AlertBanner
     {...props}
     className={`blx-warning ${props.className}`}
@@ -16,10 +29,4 @@ WarningAlert.defaultProps = {
   closable: true
 };
 
-type WarningAlertTypes = {
-  className?: string,
-  title?: string,
-  closable?: boolean,
-};
 export default WarningAlert;
-

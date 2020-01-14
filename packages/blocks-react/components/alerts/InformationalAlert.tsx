@@ -2,9 +2,22 @@ import * as React from 'react';
 import AlertBanner from './AlertBanner';
 import InformationIcon from '../icons/InformationIcon';
 
-const InformationalAlert = (props: InformationalAlertTypes) => (
+/** InformationalAlert */
+const InformationalAlert: React.FC<{
+  /** classname */
+  className?: string,
+  /** closable */
+  closable?: boolean,
+  /** Message */
+  message?: string,
+  /** onClose */
+  onClose?: ()=> void,
+  /** title */
+  title?: string,
+}> = props => (
   <AlertBanner
     {...props}
+
     className={`blx-information ${props.className}`}
     icon={<InformationIcon className="blx-alert-icon" />}
   />
@@ -15,10 +28,5 @@ InformationalAlert.defaultProps = {
   title: 'Information',
   closable: false
 };
-type InformationalAlertTypes = {
-  className?: string,
-  title?: string,
-  closable?: boolean,
-};
-export default InformationalAlert;
 
+export default InformationalAlert;

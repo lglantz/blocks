@@ -26,11 +26,11 @@ function transpileJSX() {
 }
 
 function compileTSX() {
-  return src('./components/*/*.tsx')
+  return src('./components/*/*.{ts,tsx}')
     .pipe(sourcemaps.init())
     .pipe(ts({
       jsx: 'react',
-      declaration: true
+      declaration: true,
     }))
     .pipe(dest('./dist'));
 }

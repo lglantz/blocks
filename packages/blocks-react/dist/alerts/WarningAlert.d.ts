@@ -1,15 +1,15 @@
-/// <reference types="react" />
-declare const WarningAlert: {
-    (props: WarningAlertTypes): JSX.Element;
-    defaultProps: {
-        className: string;
-        title: string;
-        closable: boolean;
-    };
-};
-declare type WarningAlertTypes = {
+import * as React from 'react';
+/** WarningAlert */
+declare const WarningAlert: React.FC<{
+    /** classname */
     className?: string;
-    title?: string;
+    /** closable */
     closable?: boolean;
-};
+    /** Message */
+    message?: string;
+    /** onClose */
+    onClose?: () => void;
+    /** title */
+    title?: string;
+}>;
 export default WarningAlert;
