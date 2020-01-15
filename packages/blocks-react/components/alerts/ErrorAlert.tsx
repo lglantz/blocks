@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import AlertBanner from './AlertBanner';
 import ErrorIcon from '../icons/ErrorIcon';
 
@@ -21,6 +22,14 @@ const ErrorAlert: React.FC<{
     icon={<ErrorIcon className="blx-alert-icon" />}
   />
 );
+
+ErrorAlert.propTypes = {
+  className: PropTypes.string.isRequired,
+  closable: PropTypes.bool,
+  message: PropTypes.string,
+  onClose: PropTypes.func,
+  title: PropTypes.string,
+};
 
 ErrorAlert.defaultProps = {
   className: '',

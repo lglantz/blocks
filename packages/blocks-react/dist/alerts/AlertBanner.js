@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = require("react");
+var PropTypes = require("prop-types");
 var classnames_1 = require("classnames");
 var CloseIcon_1 = require("../icons/CloseIcon");
 /** AlertBanner*/
@@ -49,17 +50,26 @@ var AlertBanner = /** @class */ (function (_super) {
                 React.createElement("button", { className: "blx-alert-close", "aria-label": "close", onClick: this.onClose },
                     React.createElement(CloseIcon_1["default"], null))));
     };
-    AlertBanner.defaultProps = {
-        className: '',
-        style: null,
-        title: '',
-        icon: null,
-        message: '',
-        closable: false,
-        onClose: null
-    };
     return AlertBanner;
 }(React.Component));
+AlertBanner.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    title: PropTypes.string,
+    icon: PropTypes.node,
+    message: PropTypes.string,
+    closable: PropTypes.bool,
+    onClose: PropTypes.func
+};
+AlertBanner.defaultProps = {
+    className: '',
+    style: null,
+    title: '',
+    icon: null,
+    message: '',
+    closable: false,
+    onClose: null
+};
 ;
 ;
 exports["default"] = AlertBanner;

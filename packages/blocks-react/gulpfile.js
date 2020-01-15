@@ -11,7 +11,7 @@ function clean(cb) {
 }
 
 function transpileJSX() {
-  return src('./components/*/*.jsx')
+  return src('./components/*/*.{js,jsx}')
     .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['es2015', 'react'],

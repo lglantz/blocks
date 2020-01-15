@@ -11,12 +11,19 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 exports.__esModule = true;
-// @ts-check
 var React = require("react");
+var PropTypes = require("prop-types");
 var AlertBanner_1 = require("./AlertBanner");
 var WarningIcon_1 = require("../icons/WarningIcon");
 /** WarningAlert */
 var WarningAlert = function (props) { return (React.createElement(AlertBanner_1["default"], __assign({}, props, { className: "blx-warning " + props.className, icon: React.createElement(WarningIcon_1["default"], { className: "blx-alert-icon" }) }))); };
+WarningAlert.propTypes = {
+    className: PropTypes.string.isRequired,
+    closable: PropTypes.bool,
+    message: PropTypes.string,
+    onClose: PropTypes.func,
+    title: PropTypes.string
+};
 WarningAlert.defaultProps = {
     className: '',
     title: 'Warning',

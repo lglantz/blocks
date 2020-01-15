@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import AlertBanner from './AlertBanner';
 import SuccessIcon from '../icons/SuccessIcon';
 
@@ -21,6 +22,14 @@ const SuccessAlert: React.FC<{
     icon={<SuccessIcon className="blx-alert-icon" />}
   />
 );
+
+SuccessAlert.propTypes = {
+  className: PropTypes.string.isRequired,
+  closable: PropTypes.bool,
+  message: PropTypes.string,
+  onClose: PropTypes.func,
+  title: PropTypes.string,
+};
 
 SuccessAlert.defaultProps = {
   className: '',

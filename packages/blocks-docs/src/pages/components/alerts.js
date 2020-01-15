@@ -10,7 +10,6 @@ import AlertInformationalExample from "../../code_examples/AlertInformationalExa
 import AlertWarningExample from "../../code_examples/AlertWarningExample"
 import AlertErrorExample from "../../code_examples/AlertErrorExample"
 
-
 const AlertsPage = () => (
   <Layout>
     <Header

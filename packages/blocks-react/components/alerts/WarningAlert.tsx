@@ -1,5 +1,5 @@
-// @ts-check
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import AlertBanner from './AlertBanner';
 import WarningIcon from '../icons/WarningIcon';
 
@@ -22,6 +22,14 @@ const WarningAlert: React.FC<{
     icon={<WarningIcon className="blx-alert-icon" />}
   />
 );
+
+WarningAlert.propTypes = {
+  className: PropTypes.string.isRequired,
+  closable: PropTypes.bool,
+  message: PropTypes.string,
+  onClose: PropTypes.func,
+  title: PropTypes.string,
+};
 
 WarningAlert.defaultProps = {
   className: '',
