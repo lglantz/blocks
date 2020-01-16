@@ -5,13 +5,7 @@ import { Location } from "@reach/router"
 import Layout from "../components/layout"
 
 export default function Template({ data }) {
-  const { frontmatter, body } = data.mdx
-  // const navigation = data.allIndexJson.edges.map(edge => ({
-  //   ...edge.node,
-  //   selected: edge.node.subsections[0].name,
-  // }))
-  // console.log("navigation", navigation)
-
+  const { body } = data.mdx
   return (
     <Location>
       {({ location }) => (

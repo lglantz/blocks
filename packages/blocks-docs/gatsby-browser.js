@@ -6,5 +6,6 @@
 
 // You can delete this file if you're not using it
 
-require('./node_modules/blocks-base/dist/blocks.css');
-require('./src/css/_all.styl');
+require("github-markdown-css/github-markdown.css")
+require("./node_modules/blocks-base/dist/blocks.css")
+require("./src/css/_all.styl")
