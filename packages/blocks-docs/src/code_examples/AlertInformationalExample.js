@@ -1,5 +1,5 @@
 import React from "react"
-import { InformationalAlert } from 'blocks-react/dist/alerts/';
+import { InformationalAlert } from 'blocks-react/dist';
 
 const AlertInformationalExample = () => (
   <InformationalAlert

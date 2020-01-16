@@ -9,4 +9,4 @@ Breadcrumbs.defaultProps = {
     style: null,
     breadcrumbs: []
 };
-module.exports = Breadcrumbs;
+exports["default"] = Breadcrumbs;

@@ -26,7 +26,7 @@ function transpileJSX() {
 }
 
 function compileTSX() {
-  return src('./components/*/*.{ts,tsx}')
+return src('./components/{*/*,*}.{ts,tsx}')
     .pipe(sourcemaps.init())
     .pipe(ts({
       jsx: 'react',

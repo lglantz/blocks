@@ -37,4 +37,4 @@ Breadcrumbs.defaultProps = {
   breadcrumbs: []
 };
 
-module.exports = Breadcrumbs;
+export default Breadcrumbs;
