@@ -1,21 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Location } from "@reach/router"
 import Layout from "../components/layout"
 
 export default function Template({ data }) {
   const { body } = data.mdx
   return (
-    <Location>
-      {({ location }) => (
-        <Layout location={location}>
-          <div className="markdown-body" style={{ padding: 40 }}>
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
-        </Layout>
-      )}
-    </Location>
+    <Layout>
+      <div className="markdown-body" style={{ padding: 40 }}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
+    </Layout>
   )
 }
 
