@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const execSync = require("child_process").execSync
 
 exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
@@ -23,14 +17,11 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
   return
 }
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  // Destructure the createPage function from the actions object
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  // const ymlDoc = yaml.safeLoad(fs.readFileSync("./index.yaml", "utf-8"));
-  // const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
   const result = await graphql(`
     {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMdx {
         edges {
           node {
             id
@@ -46,5 +37,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  console.log("here", result.data.allMdx.edges)
+  result.data.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: require.resolve("./src/templates/pageTemplate.js"),
+      context: { id: node.id },
+    })
+  })
 }

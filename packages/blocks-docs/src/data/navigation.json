@@ -80,7 +80,7 @@
       "subsections": [
         {
           "name": "New Block Flowchart",
-          "href": "/help/newblock"
+          "href": "/help/new-block"
         },
         {
           "name": "Writing guidelines",
@@ -88,7 +88,7 @@
         },
         {
           "name": "Browser Support",
-          "href": "/help/browsersupport"
+          "href": "/help/browser-support"
         },
         {
           "name": "How to update the docs",
