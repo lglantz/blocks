@@ -1,6 +1,6 @@
 {
   "name": "blocks-react",
-  "version": "0.1.19",
+  "version": "0.1.22",
   "description": "cbre build design system react components",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/floored/blocks#readme",
   "dependencies": {
-    "blocks-base": "^0.1.18",
+    "blocks-base": "^0.1.20",
     "classnames": "^2.2.6"
   },
   "peerDependencies": {
