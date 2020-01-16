@@ -6,6 +6,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-stylus`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `design-pages`,
+        path: `./src/design-pages/`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
